@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gradle on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/gradle/</link>
+    <description>Recent content in Gradle on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:22:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/gradle/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>gradle代理设置</title>
+      <link>http://ox0spy.github.io/post/android/set-gradle-proxy/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/android/set-gradle-proxy/</guid>
+      <description>Android使用Gradle做构建工具，编译apk时可能需要从网上下载一些依赖包，国内网络情况大家都懂得。 Gradle代理设置 :::bash $ cat ~/.gradle/gradle.properties systemProp.http.proxyHost=your-proxy systemProp.http.proxyPort=proxy-port</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>upgrade elasticsearch 1.2.1 to 1.4.5 - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ox0spy" />
+  <meta name="description" content="一年前刚开始做应用市场数据统计，团队选用了ELK中的EL (Elasticsearch, Logstash)，没有用Kibana；而且根据产品、运营需求调用ES Restful API，自" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/elasticsearch/upgrade-elasticsearch-1.2.1-to-1.4.5/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="upgrade elasticsearch 1.2.1 to 1.4.5" />
+<meta property="og:description" content="一年前刚开始做应用市场数据统计，团队选用了ELK中的EL (Elasticsearch, Logstash)，没有用Kibana；而且根据产品、运营需求调用ES Restful API，自" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/elasticsearch/upgrade-elasticsearch-1.2.1-to-1.4.5/" />
+
+
+
+<meta property="article:published_time" content="2017-12-15T19:22:01&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-12-15T19:22:01&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="upgrade elasticsearch 1.2.1 to 1.4.5">
+<meta itemprop="description" content="一年前刚开始做应用市场数据统计，团队选用了ELK中的EL (Elasticsearch, Logstash)，没有用Kibana；而且根据产品、运营需求调用ES Restful API，自">
+
+
+<meta itemprop="datePublished" content="2017-12-15T19:22:01&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:22:01&#43;08:00" />
+<meta itemprop="wordCount" content="1692">
+
+
+
+<meta itemprop="keywords" content="dashboard, elasticsearch, logstash, elk," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="upgrade elasticsearch 1.2.1 to 1.4.5"/>
+<meta name="twitter:description" content="一年前刚开始做应用市场数据统计，团队选用了ELK中的EL (Elasticsearch, Logstash)，没有用Kibana；而且根据产品、运营需求调用ES Restful API，自"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">upgrade elasticsearch 1.2.1 to 1.4.5</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/elasticsearch/"> elasticsearch </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#安装logstash-1-4-3">安装Logstash 1.4.3</a>
+<ul>
+<li><a href="#安装需要的软件包">安装需要的软件包</a></li>
+<li><a href="#修改配置文件">修改配置文件</a></li>
+<li><a href="#启动测试">启动测试</a></li>
+</ul></li>
+<li><a href="#安装elasticsearch-1-4-5">安装Elasticsearch 1.4.5</a>
+<ul>
+<li><a href="#安装需要的软件包-1">安装需要的软件包</a></li>
+<li><a href="#修改配置文件-1">修改配置文件</a></li>
+<li><a href="#启动elasticsearch">启动Elasticsearch</a></li>
+<li><a href="#监控插件使用">监控插件使用</a></li>
+</ul></li>
+<li><a href="#配置supervisor">配置supervisor</a></li>
+<li><a href="#常用的es命令别名">常用的ES命令别名</a></li>
+<li><a href="#升级">升级</a></li>
+<li><a href="#碰到的问题">碰到的问题</a>
+<ul>
+<li><a href="#没有将shard同步到新加入的es-1-4-5机器上">没有将shard同步到新加入的ES 1.4.5机器上</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>一年前刚开始做应用市场数据统计，团队选用了ELK中的EL (Elasticsearch, Logstash)，没有用Kibana；而且根据产品、运营需求调用ES Restful API，自己做Web展示。
+用了以下插件:analysis-icu, analysis-ik, analysis-mmseg, analysis-pinyin
+当时ES版本为1.2.1，一直没有升级，最近升级到1.4.5。</p>
+
+<p>我们之前服务器是Debian 7，现在服务器是CentOS 6.5；服务器版本和ES没有关系，至少我没碰到任何系统问题。</p>
+
+<p>目前有两台ES 1.2.1，准备用三台ES 1.4.5替换。刚开始没有root权限，只好下载压缩包安装。</p>
+
+<p>注: Elasticsearch和Logstash都需要安装JDK, 我们用的JDK 1.7</p>
+
+<h1 id="安装logstash-1-4-3">安装Logstash 1.4.3</h1>
+
+<h2 id="安装需要的软件包">安装需要的软件包</h2>
+
+<pre><code>:::bash
+
+$ cd /data/software
+$ wget https://download.elastic.co/logstash/logstash/logstash-1.4.3.tar.gz
+$ tar zxf logstash-1.4.3.tar.gz
+</code></pre>
+
+<h2 id="修改配置文件">修改配置文件</h2>
+
+<pre><code>:::bash
+
+$ cat /data/softwares/logstash-1.4.3/logstash.conf | grep -Ev '^#|^$'
+input {
+  redis {
+    codec =&gt; &quot;json&quot;
+    data_type =&gt; &quot;list&quot;
+    host =&gt; &quot;x.x.x.x&quot;
+    key =&gt; &quot;appstore:logstash&quot;
+    password =&gt; &quot;passwd&quot;
+    tags =&gt; [&quot;appstore_logs&quot;]
+    db =&gt; 0
+  }
+  redis {
+    codec =&gt; &quot;json&quot;
+    data_type =&gt; &quot;list&quot;
+    host =&gt; &quot;x.x.x.x&quot;
+    password =&gt; &quot;passwd&quot;
+    key =&gt; &quot;appstore:overview_reports&quot;
+    tags =&gt; [&quot;overview_reports&quot;]
+    db =&gt; 0
+  }
+  redis {
+    codec =&gt; &quot;json&quot;
+    data_type =&gt; &quot;list&quot;
+    host =&gt; &quot;x.x.x.x&quot;
+    password =&gt; &quot;passwd&quot;
+    key =&gt; 'appstore:imei_reports'
+    tags =&gt; [&quot;imei_reports&quot;]
+    db =&gt; 1
+  }
+  redis { 
+     codec =&gt; &quot;json&quot; 
+     data_type =&gt; &quot;list&quot; 
+     host =&gt; &quot;x.x.x.x&quot; 
+     password =&gt; &quot;tclonline&quot;
+     key =&gt; &quot;appstore:overview_date_reports&quot; 
+     tags =&gt; [&quot;overview_date_reports&quot;] 
+     db =&gt; 3
+   } 
+   redis { 
+     codec =&gt; &quot;json&quot; 
+     data_type =&gt; &quot;list&quot; 
+     host =&gt; &quot;x.x.x.x&quot; 
+     password =&gt; &quot;pwd&quot;
+     key =&gt; &quot;appstore:overview_model_reports&quot; 
+     tags =&gt; [&quot;overview_model_reports&quot;] 
+     db =&gt; 3
+
+   } 
+}
+filter {
+  if &quot;appstore_logs&quot; in [tags] {
+    date {
+      match =&gt; [ &quot;timestamp&quot; , &quot;UNIX&quot; ]
+    }
+  }
+  if &quot;imei_reports&quot; in [tags] {
+    date {
+      match =&gt; [ &quot;timestamp&quot; , &quot;UNIX&quot; ]
+    }
+  }
+}
+output {
+  if &quot;appstore_logs&quot; in [tags] {
+    elasticsearch { 
+      index =&gt; logstash
+      index_type =&gt; &quot;appstore_stats&quot;
+      cluster =&gt; &quot;elasticsearch_dashboard&quot;
+      node_name =&gt; &quot;logstash_appstore_logs&quot;
+    }
+    redis{
+      data_type =&gt; &quot;list&quot;
+      db =&gt; 3
+      host =&gt; &quot;x.x.x.x&quot; 
+      password =&gt; &quot;passwd&quot;
+      key =&gt; &quot;logstash:appstore_logs&quot;
+    }
+  }
+  if &quot;overview_reports&quot; in [tags] {
+    elasticsearch { 
+      index =&gt; dashboard
+      index_type =&gt; &quot;overview_records&quot;
+      cluster =&gt; &quot;elasticsearch_dashboard&quot;
+      node_name =&gt; &quot;logstash_overview_reports&quot;
+    }
+  }
+   if &quot;imei_reports&quot; in [tags] {
+    elasticsearch {
+      index =&gt; imei
+      index_type =&gt; &quot;imei_records&quot;
+      cluster =&gt; &quot;elasticsearch_dashboard&quot;
+      node_name =&gt; &quot;logstash_imei_reports&quot;
+    }
+  }
+   if &quot;overview_date_reports&quot; in [tags] { 
+     elasticsearch { 
+       cluster =&gt; &quot;elasticsearch_dashboard&quot; 
+       index =&gt; dashboard 
+       index_type =&gt; &quot;overview_date_records&quot; 
+       node_name =&gt; &quot;logstash_overview_date_reports&quot;
+     } 
+   } 
+    if &quot;overview_model_reports&quot; in [tags] { 
+     elasticsearch { 
+       cluster =&gt; &quot;elasticsearch_dashboard&quot; 
+       index =&gt; dashboard 
+       index_type =&gt; &quot;overview_model_records&quot; 
+       node_name =&gt; &quot;logstash_overview_model_reports&quot;
+     } 
+   }   
+}
+</code></pre>
+
+<h2 id="启动测试">启动测试</h2>
+
+<pre><code>:::bash
+
+$ cd /data/softwares/logstash-1.4.3
+$ bin/logstash -f logstash.conf
+</code></pre>
+
+<h1 id="安装elasticsearch-1-4-5">安装Elasticsearch 1.4.5</h1>
+
+<h2 id="安装需要的软件包-1">安装需要的软件包</h2>
+
+<pre><code>:::bash
+
+$ cd /data/software
+$ wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.4.5.tar.gz
+$ tar zxf elasticsearch-1.4.5.tar.gz
+</code></pre>
+
+<p>安装插件：</p>
+
+<pre><code>:::bash
+
+$ cd /data/software # 安装分词插件
+$ git clone -b 1.4.0 https://github.com/medcl/elasticsearch-rtf.git
+$ cd elasticsearch-rtf
+$ cp -vrf plugins/analysis-ik /data/softwares/elasticsearch-1.4.5/plugins/
+$ cp -vrf config/ik config/mmseg /data/softwares/elasticsearch-1.4.5/config/
+
+
+:::bash
+
+$ cd /data/software # 监控插件
+$ cd elasticsearch-1.4.5
+$ bin/plugin -install mobz/elasticsearch-head # head插件
+$ bin/plugin -install lukas-vlcek/bigdesk     # bigdesk插件
+</code></pre>
+
+<h2 id="修改配置文件-1">修改配置文件</h2>
+
+<pre><code>:::bash
+
+$ cat /data/softwares/elasticsearch-1.4.5/config/elasticsearch.yml | grep -Ev '^#|^$'
+cluster.name: elasticsearch_dashboard
+node.name: &quot;es1&quot;
+node.master: true
+node.data: true
+index.number_of_shards: 5
+index.number_of_replicas: 2
+path.data: /data/softwares/elasticsearch-1.4.5/data
+path.work: /data/softwares/elasticsearch-1.4.5/work
+path.logs: /data/log/elasticsearch
+path.plugins: /data/softwares/elasticsearch-1.4.5/plugins
+network.bind_host: 192.168.1.2
+network.publish_host: 192.168.1.2
+network.host: 192.168.1.2
+transport.tcp.port: 9300
+http.port: 9200
+indices.recovery.max_bytes_per_sec: 200mb
+indices.recovery.concurrent_streams: 8
+discovery.zen.minimum_master_nodes: 2
+discovery.zen.ping.timeout: 10s
+discovery.zen.ping.multicast.enabled: true
+discovery.zen.ping.unicast.hosts: [&quot;192.168.1.2&quot;, &quot;192.168.1.6&quot;, &quot;192.168.1.7&quot;]
+index:
+  analysis:
+    analyzer:
+      standardPlusWordDelimiter:
+        type: custom
+        tokenizer: standard
+        filter: [standard, wordDelim, lowercase, stop, dict]
+      ik:
+        alias: [ik_analyzer]
+        type: ik
+      ik_max_word:
+        type: ik
+        use_smart: false
+      ik_smart:
+        type: ik
+        use_smart: true
+      pinyin_ngram_analyzer:
+        type: custom
+        tokenizer: my_pinyin
+        filter: [standard,lowercase,nGram,trim,unique]     
+    tokenizer:
+      my_pinyin:
+        type: pinyin
+        first_letter: prefix
+        padding_char : &quot;&quot;
+    filter:
+      wordDelim:
+        type: word_delimiter
+        preserve_original: true
+      dict:
+        type: dictionary_decompounder
+        word_list: [cool, iris, fire, bug, flag, fox, grease, monkey, flash, block, forecast, screen, grab, cookie, auto, fill, text, all, so, think, mega, upload, download, video, map, spring, fix, input, clip, fly, lang, up, down, persona, css, html, all, http, ball, firefox, bookmark, chat, zilla, edit, menu, menus, status, bar, with, easy, sync, search, google, time, window, js, super, scroll, title, close, undo, user, inspect, inspector, browser, context, dictionary, mail, button, url, password, secure, image, new, tab, delete, click, name, smart, down, manager, open, query, net, link, blog, this, color, select, key, keys, foxy, translate, word]
+</code></pre>
+
+<p>注：
+1. 删除了注释
+2. 其它机器配置文件类似，只需要修改和IP相关的字段值</p>
+
+<h2 id="启动elasticsearch">启动Elasticsearch</h2>
+
+<p>测试能否正常启动：</p>
+
+<pre><code>:::bash
+
+$ cd /data/software/elasticsearch-1.4.5
+$ bin/elasticsearch  # 启动ES，测试是否可以正常启动
+$ tail -f /data/log/elasticsearch/elasticsearch_dashboard.log # 查看日志
+</code></pre>
+
+<h2 id="监控插件使用">监控插件使用</h2>
+
+<ul>
+<li>head: http://&lt;your-es-ip&gt;:9200/_plugin/head/</li>
+<li>bigdesk: http://&lt;your-es-ip&gt;:9200/_plugin/bigdesk/</li>
+</ul>
+
+<h1 id="配置supervisor">配置supervisor</h1>
+
+<p>如果可以正常启动，我们通过supervisor管理Elasticsearch和Logstash。</p>
+
+<pre><code>:::bash
+
+$ sudo pip install supervisor # 后来拿到root权限，否则还要先弄Python virtual env
+$ 修改/etc/init.d/supervisor 以及 chkconfig 添加系统启动就不说了
+
+
+:::bash
+
+$ cat /etc/supervisor/supervisord.conf | grep -Ev '^;|^$'
+[unix_http_server]
+file=/var/run/supervisor.sock    ; (the path to the socket file)
+chmod=0700                       ; sockef file mode (default 0700)
+[rpcinterface:supervisor]
+supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
+[supervisord]
+http_port=/var/run/supervisor.sock ; (default is to run a UNIX domain socket server)
+logfile=/data/log/supervisor/supervisord.log ; (main log file;default $CWD/supervisord.log)
+logfile_maxbytes=50MB       ; (max main logfile bytes b4 rotation;default 50MB)
+logfile_backups=10          ; (num of main logfile rotation backups;default 10)
+loglevel=debug              ; (logging level;default info; others: debug,warn)
+pidfile=/var/run/supervisord.pid ; (supervisord pidfile;default supervisord.pid)
+nodaemon=false              ; (start in foreground if true;default false)
+minfds=1024                 ; (min. avail startup file descriptors;default 1024)
+minprocs=200                ; (min. avail process descriptors;default 200)
+childlogdir=/data/log/supervisor ; ('AUTO' child log dir, default $TEMP)
+[supervisorctl]
+serverurl=unix:////var/run/supervisor.sock ; use a unix:// URL  for a unix socket
+[include]
+files = /etc/supervisor/conf.d/*.conf
+
+
+:::bash
+
+$ cat /etc/supervisor/conf.d/elasticsearch.conf 
+[program:elasticsearch]
+command=/data/softwares/elasticsearch-1.4.5/bin/elasticsearch -Xmx6g -Xms6g -XX:PermSize=512m -Des.max-open-files=true
+directory=/data/softwares/elasticsearch-1.4.5
+user=work
+autostart=true
+autorestart=true
+stdout_logfile=/data/log/supervisor/elasticsearch.stdout
+stderr_logfile=/data/log/supervisor/elasticsearch.stderr
+
+
+:::bash
+
+$ cat /etc/supervisor/conf.d/logstash.conf 
+[program:logstash]
+command=/data/softwares/logstash-1.4.3/bin/logstash -f logstash.conf
+directory=/data/softwares/logstash-1.4.3
+user=work
+autostart=true
+autorestart=true
+stdout_logfile=/data/log/supervisor/logstash.stdout
+stderr_logfile=/data/log/supervisor/logstash.stderr
+</code></pre>
+
+<h1 id="常用的es命令别名">常用的ES命令别名</h1>
+
+<pre><code>:::bash
+
+$ tail -n3 ~/.bashrc 
+alias esh=&quot;curl $(ip -4 -o addr show dev eth0 | awk '{split($4,a,&quot;/&quot;);print a[1]}'):9200/_cluster/health?pretty&quot;
+alias esi=&quot;curl $(ip -4 -o addr show dev eth0 | awk '{split($4,a,&quot;/&quot;);print a[1]}'):9200/_cat/indices?pretty&quot;
+alias ess=&quot;curl $(ip -4 -o addr show dev eth0 | awk '{split($4,a,&quot;/&quot;);print a[1]}'):9200/_cat/shards&quot;
+alias esdownlocal=&quot;curl $(ip -4 -o addr show dev eth0 | awk '{split($4,a,&quot;/&quot;);print a[1]}'):9200/_cluster/nodes/_local/_shutdown&quot;
+alias esdownall=&quot;curl $(ip -4 -o addr show dev eth0 | awk '{split($4,a,&quot;/&quot;);print a[1]}'):9200/_shutdown&quot;
+</code></pre>
+
+<h1 id="升级">升级</h1>
+
+<p>通过上面步骤，配置好3台Elasticsearch 1.4.5，然后，将这三台ES机器加入以前的Elasticsearch 1.2.1的集群。
+数据逐步同步到ES 1.4.5后，逐步将ES 1.2.1的机器停掉。</p>
+
+<h1 id="碰到的问题">碰到的问题</h1>
+
+<h2 id="没有将shard同步到新加入的es-1-4-5机器上">没有将shard同步到新加入的ES 1.4.5机器上</h2>
+
+<p>修改number_of_replicas，根据机器个数修改。</p>
+
+<pre><code>:::bash
+
+$ curl -XPUT '&lt;your-ip&gt;:9200/&lt;your-index&gt;/_settings' -d '{
+     &quot;index&quot; : {
+         &quot;number_of_replicas&quot; : 2
+      }
+}'
+</code></pre>
+
+<p>明确让某个index的某个shard分配到指定机器上。</p>
+
+<pre><code>:::bash
+
+$ curl -XPOST '&lt;your-es-ip&gt;:9200/_cluster/reroute' -d '{
+    &quot;commands&quot; : [ {
+        &quot;move&quot; :
+            {
+              &quot;index&quot; : &quot;your-index&quot;, &quot;shard&quot; : shard-no,
+              &quot;from_node&quot; : &quot;es-node-name&quot;, &quot;to_node&quot; : &quot;es-node-name&quot;
+            }
+        },
+        {
+          &quot;allocate&quot; : {
+              &quot;index&quot; : &quot;your-index&quot;, &quot;shard&quot; : shard-no, &quot;node&quot; : &quot;es-node-name&quot;
+          }
+        }
+    ]
+}'
+</code></pre>
+
+<p>比如：</p>
+
+<pre><code>:::bash
+
+$ curl -XPOST 'localhost:9200/_cluster/reroute' -d '{
+    &quot;commands&quot; : [ {
+        &quot;move&quot; :
+            {
+              &quot;index&quot; : &quot;logstash_v1_new&quot;, &quot;shard&quot; : 4,
+              &quot;from_node&quot; : &quot;Yojimbo&quot;, &quot;to_node&quot; : &quot;es3&quot;
+            }
+        },
+        {
+          &quot;allocate&quot; : {
+              &quot;index&quot; : &quot;logstash_v1_new&quot;, &quot;shard&quot; : 4, &quot;node&quot; : &quot;es2&quot;
+          }
+        }
+    ]
+}'
+</code></pre>
+
+<p>参考：</p>
+
+<ol>
+<li><a href="http://stackoverflow.com/questions/23656458/elasticsearch-what-to-do-with-unassigned-shards/">http://stackoverflow.com/questions/23656458/elasticsearch-what-to-do-with-unassigned-shards/</a></li>
+<li><a href="http://stackoverflow.com/questions/25135869/how-to-rebalance-shard-elasticsearch">http://stackoverflow.com/questions/25135869/how-to-rebalance-shard-elasticsearch</a></li>
+<li><a href="https://t37.net/how-to-fix-your-elasticsearch-cluster-stuck-in-initializing-shards-mode.html">https://t37.net/how-to-fix-your-elasticsearch-cluster-stuck-in-initializing-shards-mode.html</a></li>
+<li><a href="http://stackoverflow.com/questions/19967472/elasticsearch-unassigned-shards-how-to-fix">http://stackoverflow.com/questions/19967472/elasticsearch-unassigned-shards-how-to-fix</a></li>
+</ol>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ox0spy</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2017-12-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/dashboard/">dashboard</a>
+          
+          <a href="/tags/elasticsearch/"> elasticsearch</a>
+          
+          <a href="/tags/logstash/"> logstash</a>
+          
+          <a href="/tags/elk/"> elk</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/ubuntu/install-ssmtp/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">ssmtp发送邮件</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/ubuntu/upgrade-ubuntu-from-10.04-to-12.04/">
+            <span class="next-text nav-default">upgrade ubuntu from 10.04 to 12.04</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

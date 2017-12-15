@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>压力测试工具ab &amp;&amp; webbench - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="crazygit" />
+  <meta name="description" content="ab ab是apache自带的压力测试工具。使用简单，便于一些简单的压力测试. 安装 :::bash $ sudo apt-get install apache2-utils 使用帮助 :::bash $ ab -h Usage: ab [options] [http[s]://]hostname[:port]/path Options are: -n requests Number of requests to perform # 请求次" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/web-test/ab-webbench/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="压力测试工具ab &amp;&amp; webbench" />
+<meta property="og:description" content="ab ab是apache自带的压力测试工具。使用简单，便于一些简单的压力测试. 安装 :::bash $ sudo apt-get install apache2-utils 使用帮助 :::bash $ ab -h Usage: ab [options] [http[s]://]hostname[:port]/path Options are: -n requests Number of requests to perform # 请求次" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/web-test/ab-webbench/" />
+
+
+
+<meta property="article:published_time" content="2017-12-15T19:21:59&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-12-15T19:21:59&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="压力测试工具ab &amp;&amp; webbench">
+<meta itemprop="description" content="ab ab是apache自带的压力测试工具。使用简单，便于一些简单的压力测试. 安装 :::bash $ sudo apt-get install apache2-utils 使用帮助 :::bash $ ab -h Usage: ab [options] [http[s]://]hostname[:port]/path Options are: -n requests Number of requests to perform # 请求次">
+
+
+<meta itemprop="datePublished" content="2017-12-15T19:21:59&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:59&#43;08:00" />
+<meta itemprop="wordCount" content="868">
+
+
+
+<meta itemprop="keywords" content="ab, workbench," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="压力测试工具ab &amp;&amp; webbench"/>
+<meta name="twitter:description" content="ab ab是apache自带的压力测试工具。使用简单，便于一些简单的压力测试. 安装 :::bash $ sudo apt-get install apache2-utils 使用帮助 :::bash $ ab -h Usage: ab [options] [http[s]://]hostname[:port]/path Options are: -n requests Number of requests to perform # 请求次"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">压力测试工具ab &amp;&amp; webbench</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/web-test/"> web-test </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#ab">ab</a>
+<ul>
+<li><a href="#安装">安装</a></li>
+<li><a href="#使用帮助">使用帮助</a></li>
+<li><a href="#使用示例">使用示例</a></li>
+<li><a href="#更多">更多</a></li>
+</ul></li>
+<li><a href="#webbench">webbench</a>
+<ul>
+<li><a href="#安装-1">安装</a></li>
+<li><a href="#使用帮助-1">使用帮助</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h2 id="ab">ab</h2>
+
+<p>ab是apache自带的压力测试工具。使用简单，便于一些简单的压力测试.</p>
+
+<h3 id="安装">安装</h3>
+
+<pre><code>:::bash
+$ sudo apt-get install apache2-utils
+</code></pre>
+
+<h3 id="使用帮助">使用帮助</h3>
+
+<pre><code>:::bash
+$ ab -h
+Usage: ab [options] [http[s]://]hostname[:port]/path
+Options are:
+    -n requests     Number of requests to perform # 请求次数
+    -c concurrency  Number of multiple requests to make at a time # 并发数
+    -t timelimit    Seconds to max. to spend on benchmarking # 压力测试的最大时间
+                    This implies -n 50000
+    -s timeout      Seconds to max. wait for each response
+                    Default is 30 seconds
+    -b windowsize   Size of TCP send/receive buffer, in bytes
+    -B address      Address to bind to when making outgoing connections
+    -p postfile     File containing data to POST. Remember also to set -T  # POST方式，同时必须使用-T指定“Content-Type”
+    -u putfile      File containing data to PUT. Remember also to set -T   # PUT方式
+    -T content-type Content-type header to use for POST/PUT data, eg.
+                    'application/x-www-form-urlencoded'
+                    Default is 'text/plain'
+    -v verbosity    How much troubleshooting info to print
+    -w              Print out results in HTML tables # 以html表格形式输出结果
+    -i              Use HEAD instead of GET # 使用Head请求
+    -x attributes   String to insert as table attributes
+    -y attributes   String to insert as tr attributes
+    -z attributes   String to insert as td or th attributes
+    -C attribute    Add cookie, eg. 'Apache=1234'. (repeatable)
+    -H attribute    Add Arbitrary header line, eg. 'Accept-Encoding: gzip'  # 添加HTTP头信息
+                    Inserted after all normal header lines. (repeatable)
+    -A attribute    Add Basic WWW Authentication, the attributes   # 添加认证信息
+                    are a colon separated username and password.
+    -P attribute    Add Basic Proxy Authentication, the attributes
+                    are a colon separated username and password.
+    -X proxy:port   Proxyserver and port number to use
+    -V              Print version number and exit
+    -k              Use HTTP KeepAlive feature
+    -d              Do not show percentiles served table.
+    -S              Do not show confidence estimators and warnings.
+    -q              Do not show progress when doing more than 150 requests
+    -l              Accept variable document length (use this for dynamic pages)
+    -g filename     Output collected data to gnuplot format file.
+    -e filename     Output CSV file with percentages served
+    -r              Don't exit on socket receive errors.   # 在接收到socket错误时不退出
+    -h              Display usage information (this message)
+    -Z ciphersuite  Specify SSL/TLS cipher suite (See openssl ciphers)
+    -f protocol     Specify SSL/TLS protocol
+                    (SSL3, TLS1, TLS1.1, TLS1.2 or ALL)
+</code></pre>
+
+<h3 id="使用示例">使用示例</h3>
+
+<pre><code>:::bash
+
+# GET
+
+# 30秒内并行1000个客户端，请求默认的50000次请求
+$ ab -c 1000 -t  30 http://www.baidu.com/
+# 并发100个客户端，请求10000次
+$ ab -c 100 -n 10000 http://www.baidu.com/
+
+# POST
+
+$ cat data.json
+{&quot;apps&quot;: [{&quot;package_name&quot;: &quot;com.baidu.browser.apps&quot;, &quot;app_name&quot;:&quot;百度浏览器&quot;, &quot;version_code&quot;: 1, &quot;version_name&quot;: &quot;5.3.4.1&quot;}], &quot;pm_name&quot;:&quot;TCL M2M&quot;}
+
+# post json 数据
+$ ab -c 1000 -t 30 -p data.json -T &quot;application/json&quot; -r &quot;127.0.0.1:8888/m3/apps/update&quot;
+</code></pre>
+
+<h3 id="更多">更多</h3>
+
+<p>关于其他的命令选项及命令的结果输出介绍，可以参看：</p>
+
+<p><a href="http://httpd.apache.org/docs/2.2/programs/ab.html">http://httpd.apache.org/docs/2.2/programs/ab.html</a></p>
+
+<h2 id="webbench">webbench</h2>
+
+<p>另一个轻量级的压力测试工具，据说比ab好用，但是好像不支持模拟POST请求</p>
+
+<h3 id="安装-1">安装</h3>
+
+<p>可以到<a href="http://home.tiscali.cz/~cz210552/webbench.html">http://home.tiscali.cz/~cz210552/webbench.html</a>获取最新版本的下载地址</p>
+
+<pre><code>$ wget http://home.tiscali.cz/~cz210552/distfiles/webbench-1.5.tar.gz
+</code></pre>
+
+<p>解压之后</p>
+
+<pre><code>$ make &amp;&amp; sudo make install
+</code></pre>
+
+<h3 id="使用帮助-1">使用帮助</h3>
+
+<p>使用上和ab差不多，具体参数可以参考下面</p>
+
+<pre><code>:::bash
+$ webbench
+webbench [option]... URL
+-f|--force               Don't wait for reply from server.
+-r|--reload              Send reload request - Pragma: no-cache.
+-t|--time &lt;sec&gt;          Run benchmark for &lt;sec&gt; seconds. Default 30.
+-p|--proxy &lt;server:port&gt; Use proxy server for request.
+-c|--clients &lt;n&gt;         Run &lt;n&gt; HTTP clients at once. Default one.
+-9|--http09              Use HTTP/0.9 style requests.
+-1|--http10              Use HTTP/1.0 protocol.
+-2|--http11              Use HTTP/1.1 protocol.
+--get                    Use GET request method.
+--head                   Use HEAD request method.
+--options                Use OPTIONS request method.
+--trace                  Use TRACE request method.
+-?|-h|--help             This information.
+-V|--version             Display program version.
+</code></pre>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">crazygit</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2017-12-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/ab/">ab</a>
+          
+          <a href="/tags/workbench/"> workbench</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/redis/change-data-dir-on-ubuntu/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">ubuntu 16.04上修改redis data dir</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/python/flask-redis-gevent/">
+            <span class="next-text nav-default">高并发下连接redis导致redis连接失败</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>gitlab安装 - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ox0spy" />
+  <meta name="description" content="公司没有统一的代码管理平台，虽然曾经用过stash、jira、confluence，但调研后还是觉得用gitlab。 下面介绍下gitlab安" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/configuration/gitlab-setup-centos6/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="gitlab安装" />
+<meta property="og:description" content="公司没有统一的代码管理平台，虽然曾经用过stash、jira、confluence，但调研后还是觉得用gitlab。 下面介绍下gitlab安" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/configuration/gitlab-setup-centos6/" />
+
+
+
+<meta property="article:published_time" content="2017-12-15T19:21:57&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-12-15T19:21:57&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="gitlab安装">
+<meta itemprop="description" content="公司没有统一的代码管理平台，虽然曾经用过stash、jira、confluence，但调研后还是觉得用gitlab。 下面介绍下gitlab安">
+
+
+<meta itemprop="datePublished" content="2017-12-15T19:21:57&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:57&#43;08:00" />
+<meta itemprop="wordCount" content="1139">
+
+
+
+<meta itemprop="keywords" content="gitlab," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="gitlab安装"/>
+<meta name="twitter:description" content="公司没有统一的代码管理平台，虽然曾经用过stash、jira、confluence，但调研后还是觉得用gitlab。 下面介绍下gitlab安"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">gitlab安装</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/configuration/"> configuration </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#系统环境">系统环境</a></li>
+<li><a href="#安装gitlab">安装gitlab</a></li>
+<li><a href="#配置gitlab">配置gitlab</a></li>
+<li><a href="#备份">备份</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>公司没有统一的代码管理平台，虽然曾经用过stash、jira、confluence，但调研后还是觉得用gitlab。
+下面介绍下gitlab安装、配置。</p>
+
+<h2 id="系统环境">系统环境</h2>
+
+<p>查看系统版本。</p>
+
+<pre><code>:::bash
+$ cat /etc/issue
+CentOS release 6.6 (Final)
+Kernel \r on an \m
+</code></pre>
+
+<h2 id="安装gitlab">安装gitlab</h2>
+
+<p><a href="https://about.gitlab.com/downloads/#centos6">官方安装文档</a>介绍的比较详细，
+我用公司邮箱发送邮件，所以，没有安装postfix。</p>
+
+<pre><code>:::bash
+$ sudo yum install curl openssh-server cronie
+$ sudo lokkit -s http -s ssh
+$ curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | sudo bash
+$ sudo yum install gitlab-ce
+</code></pre>
+
+<h2 id="配置gitlab">配置gitlab</h2>
+
+<p>数据库使用的是PostgreSQL，使用公司邮件服务器。</p>
+
+<pre><code>:::bash
+--- /etc/gitlab/gitlab.rb.back  2015-09-07 16:31:05.247042700 +0800
++++ /etc/gitlab/gitlab.rb   2015-09-09 14:47:33.710061343 +0800
+@@ -3,7 +3,7 @@
+## Url on which GitLab will be reachable.
+## For more details on configuring external_url see:
+## https://gitlab.com/gitlab-org/omnibus-gitlab/blob/629def0a7a26e7c2326566f0758d4a27857b52a3/README.md#configuring-the-external-url-for-gitlab
+-external_url 'http://iZ23rkm97f5Z'
++external_url 'http://your-git-domain'
+
+
+## Note: configuration settings below are optional.
+@@ -14,23 +14,23 @@
+
+# gitlab_rails['gitlab_ssh_host'] = 'ssh.host_example.com'
+gitlab_rails['time_zone'] = 'UTC'
+-# gitlab_rails['gitlab_email_enabled'] = true
+-# gitlab_rails['gitlab_email_from'] = 'example@example.com'
+-# gitlab_rails['gitlab_email_display_name'] = 'Example'
+-# gitlab_rails['gitlab_email_reply_to'] = 'noreply@example.com'
+-# gitlab_rails['gitlab_default_can_create_group'] = true
+-# gitlab_rails['gitlab_username_changing_enabled'] = true
+-# gitlab_rails['gitlab_default_theme'] = 2
+-# gitlab_rails['gitlab_restricted_visibility_levels'] = nil # to restrict public and internal: ['public', 'internal']
+-# gitlab_rails['gitlab_default_projects_features_issues'] = true
+-# gitlab_rails['gitlab_default_projects_features_merge_requests'] = true
+-# gitlab_rails['gitlab_default_projects_features_wiki'] = true
+-# gitlab_rails['gitlab_default_projects_features_snippets'] = false
+-# gitlab_rails['gitlab_default_projects_features_visibility_level'] = 'private'
+-# gitlab_rails['gitlab_repository_downloads_path'] = 'tmp/repositories'
++gitlab_rails['gitlab_email_enabled'] = true
++gitlab_rails['gitlab_email_from'] = 'noreply@yourdomain'
++gitlab_rails['gitlab_email_display_name'] = 'Gitlab'
++gitlab_rails['gitlab_email_reply_to'] = 'noreply@yourdomain'
++gitlab_rails['gitlab_default_can_create_group'] = true
++gitlab_rails['gitlab_username_changing_enabled'] = true
++gitlab_rails['gitlab_default_theme'] = 2
++gitlab_rails['gitlab_restricted_visibility_levels'] = ['public', 'internal'] # to restrict public and internal: ['public', 'internal']
++gitlab_rails['gitlab_default_projects_features_issues'] = true
++gitlab_rails['gitlab_default_projects_features_merge_requests'] = true
++gitlab_rails['gitlab_default_projects_features_wiki'] = true
++gitlab_rails['gitlab_default_projects_features_snippets'] = false
++gitlab_rails['gitlab_default_projects_features_visibility_level'] = 'private'
++gitlab_rails['gitlab_repository_downloads_path'] = 'tmp/repositories'
+# gitlab_rails['gravatar_plain_url'] = 'http://www.gravatar.com/avatar/%{hash}?s=%{size}&amp;d=identicon'
+# gitlab_rails['gravatar_ssl_url'] = 'https://secure.gravatar.com/avatar/%{hash}?s=%{size}&amp;d=identicon'
+-# gitlab_rails['webhook_timeout'] = 10
++gitlab_rails['webhook_timeout'] = 10
+
+## For setting up LDAP
+## see https://gitlab.com/gitlab-org/omnibus-gitlab/blob/629def0a7a26e7c2326566f0758d4a27857b52a3/README.md#setting-up-ldap-sign-in
+@@ -107,9 +107,9 @@
+## For setting up backups
+## see https://gitlab.com/gitlab-org/omnibus-gitlab/blob/629def0a7a26e7c2326566f0758d4a27857b52a3/README.md#backups
+
+-# gitlab_rails['backup_path'] = &quot;/var/opt/gitlab/backups&quot;
+-# gitlab_rails['backup_archive_permissions'] = 0644 # See: http://doc.gitlab.com/ce/raketasks/backup_restore.html#backup-archive-permissions
+-# gitlab_rails['backup_keep_time'] = 604800
++gitlab_rails['backup_path'] = &quot;/var/opt/gitlab/backups&quot;
++gitlab_rails['backup_archive_permissions'] = 0644 # See: http://doc.gitlab.com/ce/raketasks/backup_restore.html#backup-archive-permissions
++gitlab_rails['backup_keep_time'] = 604800
+# gitlab_rails['backup_upload_connection'] = {
+#   'provider' =&gt; 'AWS',
+#   'region' =&gt; 'eu-west-1',
+@@ -128,9 +128,9 @@
+# gitlab_rails['satellites_timeout'] = 30
+
+## GitLab Shell settings for GitLab
+-# gitlab_rails['gitlab_shell_ssh_port'] = 22
+-# gitlab_rails['git_max_size'] = 20971520
+-# gitlab_rails['git_timeout'] = 10
++gitlab_rails['gitlab_shell_ssh_port'] = 22
++gitlab_rails['git_max_size'] = 20971520
++gitlab_rails['git_timeout'] = 10
+
+## Extra customization
+# gitlab_rails['extra_google_analytics_id'] = '_your_tracking_id'
+@@ -161,9 +161,9 @@
+# GitLab application settings #
+###############################
+
+-# gitlab_rails['uploads_directory'] = &quot;/var/opt/gitlab/gitlab-rails/uploads&quot;
+-# gitlab_rails['rate_limit_requests_per_period'] = 10
+-# gitlab_rails['rate_limit_period'] = 60
++gitlab_rails['uploads_directory'] = &quot;/var/opt/gitlab/gitlab-rails/uploads&quot;
++gitlab_rails['rate_limit_requests_per_period'] = 10
++gitlab_rails['rate_limit_period'] = 60
+
+# Change the initial default admin password.
+# Only applicable on inital setup, changing this setting after database is created and seeded
+@@ -176,13 +176,13 @@
+## see https://gitlab.com/gitlab-org/omnibus-gitlab/blob/629def0a7a26e7c2326566f0758d4a27857b52a3/doc/settings/database.md#database-settings
+## Only needed if you use an external database.
+
+-# gitlab_rails['db_adapter'] = &quot;postgresql&quot;
+-# gitlab_rails['db_encoding'] = &quot;unicode&quot;
+-# gitlab_rails['db_database'] = &quot;gitlabhq_production&quot;
+-# gitlab_rails['db_pool'] = 10
+-# gitlab_rails['db_username'] = &quot;gitlab&quot;
+-# gitlab_rails['db_password'] = nil
+-# gitlab_rails['db_host'] = nil
++gitlab_rails['db_adapter'] = &quot;postgresql&quot;
++gitlab_rails['db_encoding'] = &quot;unicode&quot;
++gitlab_rails['db_database'] = &quot;gitlab&quot;
++gitlab_rails['db_pool'] = 10
++gitlab_rails['db_username'] = &quot;gitlab&quot;
++gitlab_rails['db_password'] = nil
++gitlab_rails['db_host'] = nil
+# gitlab_rails['db_port'] = 5432
+# gitlab_rails['db_socket'] = nil
+# gitlab_rails['db_sslmode'] = nil
+@@ -206,15 +206,15 @@
+# see https://gitlab.com/gitlab-org/omnibus-gitlab/blob/629def0a7a26e7c2326566f0758d4a27857b52a3/doc/settings/smtp.md#smtp-settings
+# Use smtp instead of sendmail/postfix.
+
+-# gitlab_rails['smtp_enable'] = true
+-# gitlab_rails['smtp_address'] = &quot;smtp.server&quot;
+-# gitlab_rails['smtp_port'] = 456
+-# gitlab_rails['smtp_user_name'] = &quot;smtp user&quot;
+-# gitlab_rails['smtp_password'] = &quot;smtp password&quot;
+-# gitlab_rails['smtp_domain'] = &quot;example.com&quot;
+-# gitlab_rails['smtp_authentication'] = &quot;login&quot;
+-# gitlab_rails['smtp_enable_starttls_auto'] = true
+-# gitlab_rails['smtp_tls'] = false
++gitlab_rails['smtp_enable'] = true
++gitlab_rails['smtp_address'] = &quot;smtp.xxx.com&quot;
++gitlab_rails['smtp_port'] = 25
++gitlab_rails['smtp_user_name'] = &quot;noreply@yourdomain&quot;
++gitlab_rails['smtp_password'] = &quot;yourpassword&quot;
++gitlab_rails['smtp_domain'] = &quot;yourdomain&quot;
++gitlab_rails['smtp_authentication'] = &quot;login&quot;
++gitlab_rails['smtp_enable_starttls_auto'] = false
++gitlab_rails['smtp_tls'] = false
+# gitlab_rails['smtp_openssl_verify_mode'] = 'none' # Can be: 'none', 'peer', 'client_once', 'fail_if_no_peer_cert', see http://api.rubyonrails.org/classes/ActionMailer/Base.html
+# gitlab_rails['smtp_ca_path'] = &quot;/etc/ssl/certs&quot;
+# gitlab_rails['smtp_ca_file'] = &quot;/etc/ssl/certs/ca-certificates.crt&quot;
+@@ -242,18 +242,18 @@
+##################
+## Tweak unicorn settings.
+
+-# unicorn['worker_timeout'] = 60
+-# unicorn['worker_processes'] = 2
++unicorn['worker_timeout'] = 60
++unicorn['worker_processes'] = 2
+
+## Advanced settings
+-# unicorn['listen'] = '127.0.0.1'
+-# unicorn['port'] = 8080
+-# unicorn['socket'] = '/var/opt/gitlab/gitlab-rails/sockets/gitlab.socket'
+-# unicorn['pidfile'] = '/opt/gitlab/var/unicorn/unicorn.pid'
++unicorn['listen'] = '127.0.0.1'
++unicorn['port'] = 8088
++unicorn['socket'] = '/var/opt/gitlab/gitlab-rails/sockets/gitlab.socket'
++unicorn['pidfile'] = '/opt/gitlab/var/unicorn/unicorn.pid'
+# unicorn['tcp_nopush'] = true
+-# unicorn['backlog_socket'] = 1024
++unicorn['backlog_socket'] = 1024
+# Make sure somaxconn is equal or higher then backlog_socket
+-# unicorn['somaxconn'] = 1024
++unicorn['somaxconn'] = 1024
+# We do not recommend changing this setting
+# unicorn['log_directory'] = &quot;/var/log/gitlab/unicorn&quot;
+
+@@ -290,11 +290,11 @@
+# GitLab PostgreSQL #
+#####################
+
+-# postgresql['enable'] = true
+-# postgresql['listen_address'] = nil
+-# postgresql['port'] = 5432
+-# postgresql['data_dir'] = &quot;/var/opt/gitlab/postgresql/data&quot;
+-# postgresql['shared_buffers'] = &quot;256MB&quot; # recommend value is 1/4 of total RAM, up to 14GB.
++postgresql['enable'] = true
++postgresql['listen_address'] = nil
++postgresql['port'] = 5432
++postgresql['data_dir'] = &quot;/var/opt/gitlab/postgresql/data&quot;
++postgresql['shared_buffers'] = &quot;256MB&quot; # recommend value is 1/4 of total RAM, up to 14GB.
+
+## Advanced settings
+# postgresql['ha'] = false
+@@ -326,7 +326,7 @@
+################
+## Can be disabled if you are using your own redis instance.
+
+-# redis['enable'] = true
++redis['enable'] = true
+# redis['username'] = &quot;gitlab-redis&quot;
+# redis['uid'] = nil
+# redis['gid'] = nil
+@@ -470,14 +470,14 @@
+## see https://gitlab.com/gitlab-org/omnibus-gitlab/tree/629def0a7a26e7c2326566f0758d4a27857b52a3/doc/settings/database.md#database-settings
+## Only needed if you use an external database.
+
+-# gitlab_ci['db_adapter'] = &quot;postgresql&quot;
+-# gitlab_ci['db_encoding'] = &quot;unicode&quot;
+-# gitlab_ci['db_database'] = &quot;gitlab_ci_production&quot;
++gitlab_ci['db_adapter'] = &quot;postgresql&quot;
++gitlab_ci['db_encoding'] = &quot;unicode&quot;
++gitlab_ci['db_database'] = &quot;gitlab_ci_production&quot;
+# gitlab_ci['db_pool'] = 10
+-# gitlab_ci['db_username'] = &quot;gitlab_ci&quot;
+-# gitlab_ci['db_password'] = nil
+-# gitlab_ci['db_host'] = nil
+-# gitlab_ci['db_port'] = 5432
++gitlab_ci['db_username'] = &quot;gitlab_ci&quot;
++gitlab_ci['db_password'] = nil
++gitlab_ci['db_host'] = nil
++gitlab_ci['db_port'] = 5432
+# gitlab_ci['db_socket'] = nil
+# gitlab_ci['db_sslmode'] = nil
+# gitlab_ci['db_sslrootcert'] = nil
+@@ -497,6 +497,15 @@
+###################################
+## see https://gitlab.com/gitlab-org/omnibus-gitlab/tree/629def0a7a26e7c2326566f0758d4a27857b52a3/doc/settings/smtp.md#smtp-settings
+
++gitlab_ci['smtp_enable'] = true
++gitlab_ci['smtp_address'] = &quot;smtp.xxx.com&quot;
++gitlab_ci['smtp_port'] = 25
++gitlab_ci['smtp_user_name'] = &quot;noreply@yourdomain&quot;
++gitlab_ci['smtp_password'] = &quot;yourpassword&quot;
++gitlab_ci['smtp_domain'] = &quot;yourdomain&quot;
++gitlab_ci['smtp_authentication'] = &quot;login&quot;
++gitlab_ci['smtp_enable_starttls_auto'] = false
++gitlab_ci['smtp_tls'] = false
+# gitlab_ci['smtp_enable'] = true
+# gitlab_ci['smtp_address'] = &quot;smtp.server&quot;
+# gitlab_ci['smtp_port'] = 456
+</code></pre>
+
+<p>根据/etc/gitlab/gitlab.rb重新配置gitlab。</p>
+
+<pre><code>:::bash
+$ sudo gitlab-ctl reconfigure
+</code></pre>
+
+<p>使用默认用户名:<code>root</code> 密码:<code>5iveL!fe</code>登陆，登陆后修改默认密码。</p>
+
+<h2 id="备份">备份</h2>
+
+<pre><code>:::bash
+$ sudo crontab -l
+0 2 * * * /opt/gitlab/bin/gitlab-rake gitlab:backup:create
+</code></pre>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ox0spy</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2017-12-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/gitlab/">gitlab</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/configuration/gerrit-replication/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">gerrit备份</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/configuration/git-remove-large-files-in-history/">
+            <span class="next-text nav-default">git从历史中删除大文件</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

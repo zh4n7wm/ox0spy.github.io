@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ox0spy" />
+  <meta name="description" content="Hugo theme even example site." />
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/" />
+<link href="http://ox0spy.github.io/index.xml" rel="alternate" type="application/rss+xml" title="wiseturtles&#39;s team blog" />
+  <link href="http://ox0spy.github.io/index.xml" rel="feed" type="application/rss+xml" title="wiseturtles&#39;s team blog" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="wiseturtles&#39;s team blog" />
+<meta property="og:description" content="Hugo theme even example site." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://ox0spy.github.io/" />
+
+
+
+<meta property="og:updated_time" content="2017-12-15T19:21:59&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="wiseturtles&#39;s team blog">
+<meta itemprop="description" content="Hugo theme even example site.">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="wiseturtles&#39;s team blog"/>
+<meta name="twitter:description" content="Hugo theme even example site."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          
+  <section id="posts" class="posts">
+    
+    
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/go/05-go-hello-beego/">go学习笔记5之beego框架</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/go/"> go </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Beego框架准备 $ go get github.com/astaxie/beego $ go get github.com/beego/bee 创建程序hello-beego.go :::go package main import ( &quot;github.com/astaxie/beego&quot; ) type MainController struct { beego.Controller } func (this *MainController) Get() { this.Ctx.WriteString(&quot;hello world&quot;) } func main() { beego.Router(&quot;/&quot;, &amp;MainController{}) beego.Run() } 执行go run hello-beego.go, 访
+    </div>
+    <div class="read-more">
+      <a href="/post/go/05-go-hello-beego/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/web-test/gunicorn-worker-class/">gunicorn 几种 worker class 性能测试比较</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/web-test/"> web-test </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      简介 Gunicorn, 一个支持WSGI协议的web服务器 Flask, 一个轻量级的python web框架 Gunicorn目前自带支持几种工作方式: sync (默认值) eventlet gevent tornado 测试
+    </div>
+    <div class="read-more">
+      <a href="/post/web-test/gunicorn-worker-class/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/python/python-performance/">python performance</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/python/"> python </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Python IPC https://docs.python.org/3/library/ipc.html 线程与协程 http://blog.rainy.im/2016/04/07/python-thread-and-coroutine/ Python中的进程、线程、协程、同步、异步和回调 Gevent http://www.sunzhongwei.com/gevent.html gevent: Asynchronous I/O made easy Logging，gevent 与死锁 Python 3 asyncio https://community.nitrous.io/tutorials/asynchronous-programming-with-python-3
+    </div>
+    <div class="read-more">
+      <a href="/post/python/python-performance/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/python/python-sorted/">python sort</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/python/"> python </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      #!/usr/bin/env python # -*- coding: utf-8 -*- import random def get_random_list(num): t = [] for i in range(0, num): t.append(random.randint(0, 200)) return t def bubble_sort(t): '''从小到大''' passnum = len(t) - 1 exchanges = True while passnum &gt; 0 and exchanges: for i in range(passnum): if t[i] &gt; t[i + 1]: exchanges = True t[i], t[i + 1] = t[i + 1],
+    </div>
+    <div class="read-more">
+      <a href="/post/python/python-sorted/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/python/python-download-large-file-without-out-of-memory/">python下载大文件</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/python/"> python </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      requests :::python def download_file(url): local_filename = url.split('/')[-1] # NOTE the stream=True parameter r = requests.get(url, stream=True) with open(local_filename, 'wb') as f: for chunk in r.iter_content(chunk_size=1024): if chunk: # filter out keep-alive new chunks f.write(chunk) f.flush() return local_filename urllib2 :::python file = urllib2.urlopen('url') with open('filename','w') as f: while True: tmp = file.read(1024) if not tmp: break f.write(tmp) 详见: http://stackoverflow.com/questions/16694907/how-to-download-large-file-in-python-with-requests-py http://stackoverflow.com/questions/27053028/how-to-download-large-file-without-memoryerror-in-python
+    </div>
+    <div class="read-more">
+      <a href="/post/python/python-download-large-file-without-out-of-memory/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/redis/install-redis-cluster/">redis集群搭建</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/redis/"> redis </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Redis集群搭建 # 下载 $ wget http://download.redis.io/releases/redis-3.0.4.tar.gz $ tar -zxvf redis-3.0.4.tar.gz $ cd redis-3.0.4 # 编译 $ make # 检查依赖， 如果有错误就修复 # 如果遇到错误“Test replication partial resync: ok psync”, 可以忽略或再
+    </div>
+    <div class="read-more">
+      <a href="/post/redis/install-redis-cluster/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/python/scrapyd/">scrapyd和scrapyd-client使用教程</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/python/"> python </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      scrapyd是一个用于部署和运行scrapy爬虫的程序，它允许你通过JSON API来部署爬虫项目和控制爬虫运行 概览 项目和版本 scrapyd
+    </div>
+    <div class="read-more">
+      <a href="/post/python/scrapyd/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/python/get-starred-scrapy/">scrapy入门</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/python/"> python </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      常用命令 # 运行一个爬虫 $ scrapy runspider stackoverflow_spider.py -o top-stackoverflow-questions.json # 创建项目 $ scrapy startproject tutorial # 开始爬取 $ scrapy crawl dmoz 有用的代码片段 http://snipplr.com/all/tags/scrapy/ 命令行工具 命令行工具运行时会加载Scrapy的配置文件
+    </div>
+    <div class="read-more">
+      <a href="/post/python/get-starred-scrapy/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/redis/change-data-dir-on-ubuntu/">ubuntu 16.04上修改redis data dir</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/redis/"> redis </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      修改redis 的data dir redis是通过sudo apt-get install redis-server命令安装的。 修改 /etc/redis/redis.conf dir /data/redisdata 注：将redis data dir 修改为dir /data/redisdata 修改 /etc/systemd/system/redis.service
+    </div>
+    <div class="read-more">
+      <a href="/post/redis/change-data-dir-on-ubuntu/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/web-test/ab-webbench/">压力测试工具ab &amp;&amp; webbench</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/web-test/"> web-test </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      ab ab是apache自带的压力测试工具。使用简单，便于一些简单的压力测试. 安装 :::bash $ sudo apt-get install apache2-utils 使用帮助 :::bash $ ab -h Usage: ab [options] [http[s]://]hostname[:port]/path Options are: -n requests Number of requests to perform # 请求次
+    </div>
+    <div class="read-more">
+      <a href="/post/web-test/ab-webbench/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/python/flask-redis-gevent/">高并发下连接redis导致redis连接失败</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/python/"> python </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      现象 最近线上的redis服务器会莫名出现无法突然之间无法连接的情况，需要重启一下redis服务器才能正常工作，感觉很诡异. 查看redis日志
+    </div>
+    <div class="read-more">
+      <a href="/post/python/flask-redis-gevent/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/configuration/android-command-line-tools/">android命令行工具</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/configuration/"> configuration </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Android命令行工具 android 下面介绍命令行下使用android脚本。 场景：命令行下安装android build tools、sdk、API。 获取所有可用
+    </div>
+    <div class="read-more">
+      <a href="/post/configuration/android-command-line-tools/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/install/centos-supervisord/">centos上安装supervisor</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/install/"> install </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      安装 部署项目从Ubuntu转战到CentOS, 使用yum命令安装supervisor后，发现无法正常使用，因此只有使用pip安装. :::bash $ sudo pip install
+    </div>
+    <div class="read-more">
+      <a href="/post/install/centos-supervisord/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/configuration/chef-tutorial/">chef tutorial</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/configuration/"> configuration </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Chef入门. Chef组件 workstation (个人工作电脑, 用来编写cookbook) chef server (存放cookbooks的中央仓库) node (被chef server管理
+    </div>
+    <div class="read-more">
+      <a href="/post/configuration/chef-tutorial/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/configuration/create-restricted-linux-user-for-ssh-tunnel/">create restricted linux user for ssh tunnel</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/configuration/"> configuration </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      由于国内访问一些网站特别慢，所以，使用一台新加坡节点的机器做代理，提高浏览器、mobile访问网站速度。 最近发现访问AWS的EC2也特别慢，
+    </div>
+    <div class="read-more">
+      <a href="/post/configuration/create-restricted-linux-user-for-ssh-tunnel/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/configuration/fuck-gfw/">fuck gfw</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/configuration/"> configuration </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      系统是ArchLinux. supervisor supervisor是一个进程启动管理工具，安装: $ sudo pacman -S supervisor 配置文件/etc/supervisord.conf默
+    </div>
+    <div class="read-more">
+      <a href="/post/configuration/fuck-gfw/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/install/gerrit/">gerrit搭建指南</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/install/"> install </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      什么是Gerrit Gerrit，一种免费、开放源代码的代码审查软件，使用网页界面。利用网页浏览器，同一个团队的软件程序员，可以相互审阅彼此修
+    </div>
+    <div class="read-more">
+      <a href="/post/install/gerrit/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/go/04-go-notes/">go学习笔记4之知识点记录</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/go/"> go </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Go环境配置 如果你想在同一个系统中安装多个版本的Go，你可以参考第三方工具GVM，这是目前在这 方面做得最好的工具。 GOPATH允许多个目录,
+    </div>
+    <div class="read-more">
+      <a href="/post/go/04-go-notes/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/configuration/iptables/">iptables配置</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/configuration/"> configuration </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      最近使用阿里云ECS，发现既然没有提供安全组，能让小白用户方便的配置下允许外网访问的端口。 默认所有绑定到外网ip或四个零的端口，外网都可以访
+    </div>
+    <div class="read-more">
+      <a href="/post/configuration/iptables/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/configuration/nginx-config-https-spdy/">nginx配置ssl证书</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/configuration/"> configuration </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      本文参考: http://www.cocoachina.com/ios/20150703/12392.html https://hack0nair.me/2014-08-14-nginx-with-ssl-of-wosign/ http://note.sdo.com/u/634668972018478681/n/Z1NG3C6A959F29DD2FA2D543B8C9B30B551810C3 http://op.baidu.com/2015/04/https-s01a01/ http://oncenote.com/2014/10/21/Security-1-HTTPS/ http://oncenote.com/2015/09/16/Security-2-HTTPS2/ https://www.vobe.io/114 Nginx配置SSL证书, 启用HTTPS iOS9把所有的http请求都改为https了：iOS9系统发送的网络请求将
+    </div>
+    <div class="read-more">
+      <a href="/post/configuration/nginx-config-https-spdy/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+  </section>
+  
+  <nav class="pagination">
+      <a class="prev" href="/page/2/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text">上一页</span>
+      </a>
+    
+      <a class="next" href="/page/4/">
+        <span class="next-text">下一页</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+  </nav>
+
+        </div>
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

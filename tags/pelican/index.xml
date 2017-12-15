@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pelican on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/pelican/</link>
+    <description>Recent content in Pelican on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:22:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/pelican/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>pelican &#43; github 搭建个人blog</title>
+      <link>http://ox0spy.github.io/post/pelican/setup-pelican/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/pelican/setup-pelican/</guid>
+      <description>为什么选择Pelican 想搭建一个博客，不想受门户网站博客的限制，想用更纯净的方式写作，方便数据转移， 专注内容而不是格式，在这个页面http</description>
+    </item>
+    
+    <item>
+      <title>如何发表文章</title>
+      <link>http://ox0spy.github.io/post/pelican/about-wiseturtles/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/pelican/about-wiseturtles/</guid>
+      <description>为什么要有这个博客 方便知识的整理，分享和交流。更主要的是慢慢感觉年纪越来越大(黑线！！！)，记性越来越差，需要一个可以记录东西的地方. 古话说</description>
+    </item>
+    
+  </channel>
+</rss>

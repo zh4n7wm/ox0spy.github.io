@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>elastichsearch反向代理设置 - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ox0spy" />
+  <meta name="description" content="内网的ES集群，平时操作都是通过命令行，有点不方便，而且安装的site插件也没法使用 ，比较蛋疼，所以配置nginx作为elasticsear" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/elasticsearch/elasticsearch-reverse-proxy/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="elastichsearch反向代理设置" />
+<meta property="og:description" content="内网的ES集群，平时操作都是通过命令行，有点不方便，而且安装的site插件也没法使用 ，比较蛋疼，所以配置nginx作为elasticsear" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/elasticsearch/elasticsearch-reverse-proxy/" />
+
+
+
+<meta property="article:published_time" content="2017-12-15T19:22:01&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-12-15T19:22:01&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="elastichsearch反向代理设置">
+<meta itemprop="description" content="内网的ES集群，平时操作都是通过命令行，有点不方便，而且安装的site插件也没法使用 ，比较蛋疼，所以配置nginx作为elasticsear">
+
+
+<meta itemprop="datePublished" content="2017-12-15T19:22:01&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:22:01&#43;08:00" />
+<meta itemprop="wordCount" content="357">
+
+
+
+<meta itemprop="keywords" content="elasticsearch, reverse, proxy," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="elastichsearch反向代理设置"/>
+<meta name="twitter:description" content="内网的ES集群，平时操作都是通过命令行，有点不方便，而且安装的site插件也没法使用 ，比较蛋疼，所以配置nginx作为elasticsear"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">elastichsearch反向代理设置</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/elasticsearch/"> elasticsearch </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>内网的ES集群，平时操作都是通过命令行，有点不方便，而且安装的site插件也没法使用
+，比较蛋疼，所以配置nginx作为elasticsearch的反向代理，并且添加认证信息.</p>
+
+<p>如果是直接用域名的根节点作为反向代理的话，比较简单，直接配置一下就可以，但是问
+题是根节点被暂用，需要设置一个前缀来来访问, 就稍微麻烦一点.</p>
+
+<p>nginx配置如下:</p>
+
+<pre>
+    location ~ ^/es/ {
+            rewrite ^/es/(.*)$ /$1 break;
+            include proxy_params;
+            proxy_pass http://es_node_ip:9200;
+            proxy_redirect http://$host/ http://$host/es/;
+            auth_basic "please login";
+            auth_basic_user_file /data/passwd/es.htpasswd;
+    }
+</pre>
+
+<p>几点需要注意：</p>
+
+<ol>
+<li><code>include proxy_params;</code> proxy_params为一些反向代理设置参数，没有的话可以去掉</li>
+<li><code>proxy_pass http://es_node_ip:9200;</code> 需要替换es_node_ip 为ES集群的IP,</li>
+<li><code>auth_basic_user_file /data/passwd/es.htpasswd</code>中<code>/data/passwd/es.htpasswd</code>为认证文件，可以用apache工具或一些<a href="http://tool.oschina.net/htpasswd">在线工具</a>生成</li>
+</ol>
+
+<p>假设域名为www.example.com, 那么就可以直接访问</p>
+
+<ul>
+<li><a href="http://www.example.com/es/">http://www.example.com/es/</a></li>
+<li><a href="http://www.example.com/es/_plugin/head/">http://www.example.com/es/_plugin/head/</a></li>
+</ul>
+
+<p>配置好之后，用起来爽多了。</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ox0spy</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2017-12-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/elasticsearch/">elasticsearch</a>
+          
+          <a href="/tags/reverse/"> reverse</a>
+          
+          <a href="/tags/proxy/"> proxy</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/elasticsearch/elasticsearch-snapshot-restore/">
+            <span class="next-text nav-default">elastichsearch数据备份，恢复，及迁移</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

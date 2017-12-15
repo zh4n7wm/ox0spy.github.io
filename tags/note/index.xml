@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Note on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/note/</link>
+    <description>Recent content in Note on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:21:58 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/note/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>go学习笔记4之知识点记录</title>
+      <link>http://ox0spy.github.io/post/go/04-go-notes/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/go/04-go-notes/</guid>
+      <description>Go环境配置 如果你想在同一个系统中安装多个版本的Go，你可以参考第三方工具GVM，这是目前在这 方面做得最好的工具。 GOPATH允许多个目录,</description>
+    </item>
+    
+  </channel>
+</rss>

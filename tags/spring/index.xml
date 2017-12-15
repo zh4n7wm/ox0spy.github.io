@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/spring/</link>
+    <description>Recent content in Spring on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:22:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>java spring 学习索引</title>
+      <link>http://ox0spy.github.io/post/java/get_started_with_java_web/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/java/get_started_with_java_web/</guid>
+      <description>近期由于工作需要，需要学习Java Web开发，虽然以前也接触过Java, 不过也就仅限于写个&amp;rdquo;Hello World&amp;rdquo;. 为了尽快掌握Java We</description>
+    </item>
+    
+  </channel>
+</rss>

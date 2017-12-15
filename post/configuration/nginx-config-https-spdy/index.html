@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>nginx配置ssl证书 - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ox0spy" />
+  <meta name="description" content="本文参考: http://www.cocoachina.com/ios/20150703/12392.html https://hack0nair.me/2014-08-14-nginx-with-ssl-of-wosign/ http://note.sdo.com/u/634668972018478681/n/Z1NG3C6A959F29DD2FA2D543B8C9B30B551810C3 http://op.baidu.com/2015/04/https-s01a01/ http://oncenote.com/2014/10/21/Security-1-HTTPS/ http://oncenote.com/2015/09/16/Security-2-HTTPS2/ https://www.vobe.io/114 Nginx配置SSL证书, 启用HTTPS iOS9把所有的http请求都改为https了：iOS9系统发送的网络请求将" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/configuration/nginx-config-https-spdy/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="nginx配置ssl证书" />
+<meta property="og:description" content="本文参考: http://www.cocoachina.com/ios/20150703/12392.html https://hack0nair.me/2014-08-14-nginx-with-ssl-of-wosign/ http://note.sdo.com/u/634668972018478681/n/Z1NG3C6A959F29DD2FA2D543B8C9B30B551810C3 http://op.baidu.com/2015/04/https-s01a01/ http://oncenote.com/2014/10/21/Security-1-HTTPS/ http://oncenote.com/2015/09/16/Security-2-HTTPS2/ https://www.vobe.io/114 Nginx配置SSL证书, 启用HTTPS iOS9把所有的http请求都改为https了：iOS9系统发送的网络请求将" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/configuration/nginx-config-https-spdy/" />
+
+
+
+<meta property="article:published_time" content="2017-12-15T19:21:58&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-12-15T19:21:58&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="nginx配置ssl证书">
+<meta itemprop="description" content="本文参考: http://www.cocoachina.com/ios/20150703/12392.html https://hack0nair.me/2014-08-14-nginx-with-ssl-of-wosign/ http://note.sdo.com/u/634668972018478681/n/Z1NG3C6A959F29DD2FA2D543B8C9B30B551810C3 http://op.baidu.com/2015/04/https-s01a01/ http://oncenote.com/2014/10/21/Security-1-HTTPS/ http://oncenote.com/2015/09/16/Security-2-HTTPS2/ https://www.vobe.io/114 Nginx配置SSL证书, 启用HTTPS iOS9把所有的http请求都改为https了：iOS9系统发送的网络请求将">
+
+
+<meta itemprop="datePublished" content="2017-12-15T19:21:58&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:58&#43;08:00" />
+<meta itemprop="wordCount" content="679">
+
+
+
+<meta itemprop="keywords" content="nginx, ssl, https," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="nginx配置ssl证书"/>
+<meta name="twitter:description" content="本文参考: http://www.cocoachina.com/ios/20150703/12392.html https://hack0nair.me/2014-08-14-nginx-with-ssl-of-wosign/ http://note.sdo.com/u/634668972018478681/n/Z1NG3C6A959F29DD2FA2D543B8C9B30B551810C3 http://op.baidu.com/2015/04/https-s01a01/ http://oncenote.com/2014/10/21/Security-1-HTTPS/ http://oncenote.com/2015/09/16/Security-2-HTTPS2/ https://www.vobe.io/114 Nginx配置SSL证书, 启用HTTPS iOS9把所有的http请求都改为https了：iOS9系统发送的网络请求将"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">nginx配置ssl证书</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/configuration/"> configuration </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#nginx配置ssl证书-启用https">Nginx配置SSL证书, 启用HTTPS</a>
+<ul>
+<li><a href="#申请证书">申请证书</a></li>
+<li><a href="#配置nginx">配置Nginx</a></li>
+<li><a href="#测试https">测试HTTPS</a></li>
+<li><a href="#测试spdy">测试SPDY</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>本文参考:</p>
+
+<ul>
+<li><a href="http://www.cocoachina.com/ios/20150703/12392.html">http://www.cocoachina.com/ios/20150703/12392.html</a></li>
+<li><a href="https://hack0nair.me/2014-08-14-nginx-with-ssl-of-wosign/">https://hack0nair.me/2014-08-14-nginx-with-ssl-of-wosign/</a></li>
+<li><a href="http://note.sdo.com/u/634668972018478681/n/Z1NG3C6A959F29DD2FA2D543B8C9B30B551810C3">http://note.sdo.com/u/634668972018478681/n/Z1NG3C6A959F29DD2FA2D543B8C9B30B551810C3</a></li>
+<li><a href="http://op.baidu.com/2015/04/https-s01a01/">http://op.baidu.com/2015/04/https-s01a01/</a></li>
+<li><a href="http://oncenote.com/2014/10/21/Security-1-HTTPS/">http://oncenote.com/2014/10/21/Security-1-HTTPS/</a></li>
+<li><a href="http://oncenote.com/2015/09/16/Security-2-HTTPS2/">http://oncenote.com/2015/09/16/Security-2-HTTPS2/</a></li>
+<li><a href="https://www.vobe.io/114">https://www.vobe.io/114</a></li>
+</ul>
+
+<h1 id="nginx配置ssl证书-启用https">Nginx配置SSL证书, 启用HTTPS</h1>
+
+<blockquote>
+<p>iOS9把所有的http请求都改为https了：iOS9系统发送的网络请求将统一使用TLS 1.2 SSL。
+采用TLS 1.2 协议，目的是 强制增强数据访问安全，而且 系统 Foundation 框架下的相关网络请求，
+将不再默认使用 Http 等不安全的网络协议，而默认采用 TLS 1.2。服务器因此需要更新，以解析相关数据。
+如不更新，可通过在 Info.plist 中声明，倒退回不安全的网络请求。</p>
+</blockquote>
+
+<p>为了客户端接口更加安全，申请免费SSL证书，启用HTTPS。</p>
+
+<h2 id="申请证书">申请证书</h2>
+
+<p>从Wosign申请免费证书，<a href="https://www.wosign.com/DVSSL/DV_KuaiSSL_Free.htm">地址</a></p>
+
+<h2 id="配置nginx">配置Nginx</h2>
+
+<p>证书申请到会提示下载一个zip文件，解压缩后有 <code>for Nginx.zip</code>，解压缩<code>for Nginx.zip</code>得到 <code>*.crt</code> 和 <code>*.key</code>。
+将<code>.crt</code> 和 <code>.key</code> 文件放入Nginx主机的 /etc/ssl 目录。</p>
+
+<p>生成dhparam.pem:</p>
+
+<pre><code>:::bash
+$ cd /etc/ssl/certs
+$ openssl dhparam -out dhparam.pem 4096
+</code></pre>
+
+<p>同时，启用了spdy，参考: <a href="https://www.vobe.io/114">https://www.vobe.io/114</a></p>
+
+<p>Nginx配置文件(<code>/etc/nginx/sites-avaiable/default</code>)如下:</p>
+
+<pre><code>#server {
+#   listen 80;
+#   server_name your-domain;
+#   add_header Strict-Transport-Security max-age=15768000;
+#   return 301 https://your-domain$request_uri;
+#}
+
+server {
+    listen 80; # 如果希望http直接跳转到https，删除该行，并去掉上面的注释
+    listen 443 ssl spdy;
+    spdy_headers_comp 1;
+    server_name your-domain;
+
+    ssl on;
+    ssl_certificate      /etc/ssl/your-domain.crt;
+    ssl_certificate_key  /etc/ssl/your-domain.key;
+
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+
+    ssl_ciphers 'AES256+EECDH:AES256+EDH:!aNULL';
+    #ssl_ciphers &quot;ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA:ECDHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES256-GCM-SHA384:AES128-GCM-SHA256:AES256-SHA256:AES128-SHA256:AES256-SHA:AES128-SHA:DES-CBC3-SHA:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!MD5:!PSK:!RC4&quot;
+
+    ssl_prefer_server_ciphers  on;
+    ssl_dhparam /etc/ssl/certs/dhparam.pem;
+
+    ssl_session_cache    shared:SSL:20m;
+    ssl_session_timeout  60m;
+
+    ssl_stapling on;
+    ssl_stapling_verify on;
+    #ssl_trusted_certificate /etc/nginx/cert/trustchain.crt;
+    #resolver 8.8.4.4 8.8.8.8 valid=300s;
+    #resolver_timeout 10s;
+
+    add_header Strict-Transport-Security max-age=15768000;
+
+    add_header X-Frame-Options DENY;
+    add_header X-Content-Type-Options nosniff;
+
+    add_header Alternate-Protocol 443:npn-spdy/3.1;
+
+    proxy_set_header   Host                 $http_host;
+    proxy_set_header   X-Forwarded-Proto    $scheme;
+    proxy_set_header   X-Forwarded-For      $remote_addr;
+    proxy_redirect     off;
+
+    location /your-service {
+        proxy_pass         http://localhost:8888;
+    }
+}
+</code></pre>
+
+<h2 id="测试https">测试HTTPS</h2>
+
+<p>curl测试服务器上的https接口:</p>
+
+<pre><code>:::bash
+$ curl https://your-domain/your-services
+</code></pre>
+
+<p>测试HTTPS配置的是否安全：<a href="https://www.ssllabs.com/ssltest/">https://www.ssllabs.com/ssltest/</a></p>
+
+<p>注：如果安全评分比较低，请认真阅读<a href="http://note.sdo.com/u/634668972018478681/n/Z1NG3C6A959F29DD2FA2D543B8C9B30B551810C3">Strong SSL Security on nginx</a></p>
+
+<h2 id="测试spdy">测试SPDY</h2>
+
+<p>检测配置的SPDY：<a href="https://spdycheck.org/">https://spdycheck.org/</a></p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ox0spy</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2017-12-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/nginx/">nginx</a>
+          
+          <a href="/tags/ssl/"> ssl</a>
+          
+          <a href="/tags/https/"> https</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/configuration/iptables/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">iptables配置</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/install/setup-opengrok/">
+            <span class="next-text nav-default">opengrok安装使用指南</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

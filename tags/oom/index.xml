@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oom on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/oom/</link>
+    <description>Recent content in Oom on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:21:59 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/oom/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>python下载大文件</title>
+      <link>http://ox0spy.github.io/post/python/python-download-large-file-without-out-of-memory/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/python/python-download-large-file-without-out-of-memory/</guid>
+      <description>requests :::python def download_file(url): local_filename = url.split(&#39;/&#39;)[-1] # NOTE the stream=True parameter r = requests.get(url, stream=True) with open(local_filename, &#39;wb&#39;) as f: for chunk in r.iter_content(chunk_size=1024): if chunk: # filter out keep-alive new chunks f.write(chunk) f.flush() return local_filename urllib2 :::python file = urllib2.urlopen(&#39;url&#39;) with open(&#39;filename&#39;,&#39;w&#39;) as f: while True: tmp = file.read(1024) if not tmp: break f.write(tmp) 详见: http://stackoverflow.com/questions/16694907/how-to-download-large-file-in-python-with-requests-py http://stackoverflow.com/questions/27053028/how-to-download-large-file-without-memoryerror-in-python</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>在mac osx练习hive - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ox0spy" />
+  <meta name="description" content="Hive 安装 将Hive的metastore存在MySQL中。 Mac OSX 上安装 Hive $ brew install hive mysql $ brew services start mysql $ tail -n 3 ~/.zshrc # Hive export HIVE_HOME=&amp;quot;/usr/local/opt/hive&amp;quot; export HCAT_HOME=&amp;quot;$HIVE_HOME/libexec/hcatalog&amp;quot; $ source ~/.zshrc 为Hive在MySQL中创" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/bigdata/hive/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="在mac osx练习hive" />
+<meta property="og:description" content="Hive 安装 将Hive的metastore存在MySQL中。 Mac OSX 上安装 Hive $ brew install hive mysql $ brew services start mysql $ tail -n 3 ~/.zshrc # Hive export HIVE_HOME=&quot;/usr/local/opt/hive&quot; export HCAT_HOME=&quot;$HIVE_HOME/libexec/hcatalog&quot; $ source ~/.zshrc 为Hive在MySQL中创" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/bigdata/hive/" />
+
+
+
+<meta property="article:published_time" content="2017-12-15T19:22:01&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-12-15T19:22:01&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="在mac osx练习hive">
+<meta itemprop="description" content="Hive 安装 将Hive的metastore存在MySQL中。 Mac OSX 上安装 Hive $ brew install hive mysql $ brew services start mysql $ tail -n 3 ~/.zshrc # Hive export HIVE_HOME=&quot;/usr/local/opt/hive&quot; export HCAT_HOME=&quot;$HIVE_HOME/libexec/hcatalog&quot; $ source ~/.zshrc 为Hive在MySQL中创">
+
+
+<meta itemprop="datePublished" content="2017-12-15T19:22:01&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:22:01&#43;08:00" />
+<meta itemprop="wordCount" content="470">
+
+
+
+<meta itemprop="keywords" content="mac, hive, bigdata," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="在mac osx练习hive"/>
+<meta name="twitter:description" content="Hive 安装 将Hive的metastore存在MySQL中。 Mac OSX 上安装 Hive $ brew install hive mysql $ brew services start mysql $ tail -n 3 ~/.zshrc # Hive export HIVE_HOME=&quot;/usr/local/opt/hive&quot; export HCAT_HOME=&quot;$HIVE_HOME/libexec/hcatalog&quot; $ source ~/.zshrc 为Hive在MySQL中创"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">在mac osx练习hive</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/bigdata/"> bigdata </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#hive">Hive</a>
+<ul>
+<li><a href="#安装">安装</a>
+<ul>
+<li><a href="#参考">参考</a></li>
+</ul></li>
+<li><a href="#访问hdfs和主机">访问hdfs和主机</a></li>
+<li><a href="#hive数据处理">Hive数据处理</a>
+<ul>
+<li><a href="#创建表结构-并加载数据">创建表结构，并加载数据</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h1 id="hive">Hive</h1>
+
+<h2 id="安装">安装</h2>
+
+<p>将Hive的metastore存在MySQL中。</p>
+
+<p>Mac OSX 上安装 Hive</p>
+
+<pre><code>$ brew install hive mysql
+$ brew services start mysql
+$ tail -n 3 ~/.zshrc
+# Hive
+export HIVE_HOME=&quot;/usr/local/opt/hive&quot;
+export HCAT_HOME=&quot;$HIVE_HOME/libexec/hcatalog&quot;
+$ source ~/.zshrc
+</code></pre>
+
+<p>为Hive在MySQL中创建数据库，并分配用户访问权限。</p>
+
+<pre><code>$ mysql -u root -p
+mysql&gt; create database metastore;
+mysql&gt; grant all privileges on metastore.* to 'hive'@'localhost' identified by 'hive';
+</code></pre>
+
+<p>下载MySQL jdbc connector：</p>
+
+<pre><code>$ wget -P /tmp/ https://cdn.mysql.com//Downloads/Connector-J/mysql-connector-java-5.1.42.tar.gz
+$ cd /tmp/ &amp;&amp; tar zxf mysql-connector-java-5.1.42.tar.gz
+$ mv mysql-connector-java-5.1.42/mysql-connector-java-5.1.42-bin.jar $(brew --prefix hive)/libexec/lib/
+</code></pre>
+
+<p>修改 libexec/conf/hive-site.xml</p>
+
+<pre><code>$ cd $(brew --prefix hive)
+$ cp libexec/conf/hive-default.xml.template libexec/conf/hive-site.xml
+$ 修改 hive-site.xml
+&lt;property&gt;
+    &lt;name&gt;javax.jdo.option.ConnectionURL&lt;/name&gt;
+    &lt;value&gt;jdbc:mysql://localhost/metastore?useSSL=false&lt;/value&gt;
+    &lt;description&gt;
+    JDBC connect string for a JDBC metastore.
+    To use SSL to encrypt/authenticate the connection, provide database-specific SSL flag in the connection URL.
+    For example, jdbc:postgresql://myhost/db?ssl=true for postgres database.
+    &lt;/description&gt;
+&lt;/property&gt;
+&lt;property&gt;
+    &lt;name&gt;javax.jdo.option.ConnectionDriverName&lt;/name&gt;
+    &lt;value&gt;com.mysql.jdbc.Driver&lt;/value&gt;
+    &lt;description&gt;Driver class name for a JDBC metastore&lt;/description&gt;
+&lt;/property&gt;
+&lt;property&gt;
+    &lt;name&gt;javax.jdo.option.ConnectionUserName&lt;/name&gt;
+    &lt;value&gt;hive&lt;/value&gt;
+    &lt;description&gt;Username to use against metastore database&lt;/description&gt;
+&lt;/property&gt;
+&lt;property&gt;
+    &lt;name&gt;javax.jdo.option.ConnectionPassword&lt;/name&gt;
+    &lt;value&gt;hive&lt;/value&gt;
+    &lt;description&gt;password to use against metastore database&lt;/description&gt;
+&lt;/property&gt;
+</code></pre>
+
+<p>运行 Hive：</p>
+
+<pre><code>$ hive
+hive&gt; show tables;
+</code></pre>
+
+<h3 id="参考">参考</h3>
+
+<ul>
+<li><a href="https://www.cloudera.com/documentation/enterprise/5-6-x/topics/cdh_ig_hive_metastore_configure.html">Configuring the Hive Metastore</a></li>
+</ul>
+
+<h2 id="访问hdfs和主机">访问hdfs和主机</h2>
+
+<ul>
+<li>!前缀运行宿主操作系统的命令</li>
+<li>dfs 命令访问hdfs</li>
+</ul>
+
+<p>示例：</p>
+
+<pre><code>hive&gt; !pwd;
+hive&gt; dfs -ls;
+
+注：命令都必须以';'结尾
+</code></pre>
+
+<h2 id="hive数据处理">Hive数据处理</h2>
+
+<h3 id="创建表结构-并加载数据">创建表结构，并加载数据</h3>
+
+<pre><code>hive&gt; CREATE TABLE records (year STRING, temperature INT, quality INT) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
+hive&gt; LOAD DATA LOCAL INPATH './sample.txt' OVERWRITE INTO TABLE records;
+
+注：最后一条命令从本机的当前目录加载数据
+   OVERWRITE关键字告诉Hive删除表对应目录中已有的所有文件；如果省去这一关键字，Hive就简单地把新的文件加入目录。
+</code></pre>
+
+<p>演示如何用Hive解决之前Pig解决的问题 - 得到年度最高气温：</p>
+
+<pre><code>hive&gt; SELECT year, MAX(temperature) FROM records WHERE temperature != 9999 and (quality = 0 OR quality = 1 OR quality = 4 OR quality = 5 OR quality = 9) GROUP BY year;
+</code></pre>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ox0spy</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2017-12-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/mac/">mac</a>
+          
+          <a href="/tags/hive/"> hive</a>
+          
+          <a href="/tags/bigdata/"> bigdata</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/bigdata/install-hadoop-on-mac-osx/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">在mac osx上安装hadoop</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/bigdata/pig/">
+            <span class="next-text nav-default">在mac osx练习pig使用</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

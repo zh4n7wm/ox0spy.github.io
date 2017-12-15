@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Configuration on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/categories/configuration/</link>
+    <description>Recent content in Configuration on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:21:58 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/categories/configuration/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>android命令行工具</title>
+      <link>http://ox0spy.github.io/post/configuration/android-command-line-tools/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/android-command-line-tools/</guid>
+      <description>Android命令行工具 android 下面介绍命令行下使用android脚本。 场景：命令行下安装android build tools、sdk、API。 获取所有可用</description>
+    </item>
+    
+    <item>
+      <title>chef tutorial</title>
+      <link>http://ox0spy.github.io/post/configuration/chef-tutorial/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/chef-tutorial/</guid>
+      <description>Chef入门. Chef组件 workstation (个人工作电脑, 用来编写cookbook) chef server (存放cookbooks的中央仓库) node (被chef server管理</description>
+    </item>
+    
+    <item>
+      <title>create restricted linux user for ssh tunnel</title>
+      <link>http://ox0spy.github.io/post/configuration/create-restricted-linux-user-for-ssh-tunnel/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/create-restricted-linux-user-for-ssh-tunnel/</guid>
+      <description>由于国内访问一些网站特别慢，所以，使用一台新加坡节点的机器做代理，提高浏览器、mobile访问网站速度。 最近发现访问AWS的EC2也特别慢，</description>
+    </item>
+    
+    <item>
+      <title>fuck gfw</title>
+      <link>http://ox0spy.github.io/post/configuration/fuck-gfw/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/fuck-gfw/</guid>
+      <description>系统是ArchLinux. supervisor supervisor是一个进程启动管理工具，安装: $ sudo pacman -S supervisor 配置文件/etc/supervisord.conf默</description>
+    </item>
+    
+    <item>
+      <title>iptables配置</title>
+      <link>http://ox0spy.github.io/post/configuration/iptables/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/iptables/</guid>
+      <description>最近使用阿里云ECS，发现既然没有提供安全组，能让小白用户方便的配置下允许外网访问的端口。 默认所有绑定到外网ip或四个零的端口，外网都可以访</description>
+    </item>
+    
+    <item>
+      <title>nginx配置ssl证书</title>
+      <link>http://ox0spy.github.io/post/configuration/nginx-config-https-spdy/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/nginx-config-https-spdy/</guid>
+      <description>本文参考: http://www.cocoachina.com/ios/20150703/12392.html https://hack0nair.me/2014-08-14-nginx-with-ssl-of-wosign/ http://note.sdo.com/u/634668972018478681/n/Z1NG3C6A959F29DD2FA2D543B8C9B30B551810C3 http://op.baidu.com/2015/04/https-s01a01/ http://oncenote.com/2014/10/21/Security-1-HTTPS/ http://oncenote.com/2015/09/16/Security-2-HTTPS2/ https://www.vobe.io/114 Nginx配置SSL证书, 启用HTTPS iOS9把所有的http请求都改为https了：iOS9系统发送的网络请求将</description>
+    </item>
+    
+    <item>
+      <title>python gevent安装报错</title>
+      <link>http://ox0spy.github.io/post/configuration/gevent-install-error/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/gevent-install-error/</guid>
+      <description>Mac上pip安装gevent报错信息如下： libev/ev.c:1029:42: error: &#39;_Noreturn&#39; keyword must precede function declarator 解决： :::bash $ CFLAGS=&#39;-std=c99&#39; pip install gevent 这里有讨论：https://github.com/NixOS/</description>
+    </item>
+    
+    <item>
+      <title>python pypi源</title>
+      <link>http://ox0spy.github.io/post/configuration/python-pypi/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/python-pypi/</guid>
+      <description>pip安装 :::bash $ wget https://bootstrap.pypa.io/get-pip.py $ sudo python get-pip.py 或者，直接使用发行版的包管理安装: :::bash $ sudo apt-get install python-pip # Debian/Ubuntu pip配置 官方源比较慢，上面是一些国内源。 国内pypi源 https://pypi.mirrors.ustc.edu.cn/simple/ http://mirrors.aliyun.com/pypi/simple/ http://pypi.v2ex.com/simple http://pypi.douban.com/</description>
+    </item>
+    
+    <item>
+      <title>国内程序员常用镜像</title>
+      <link>http://ox0spy.github.io/post/configuration/mirrors-for-china-developer/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/mirrors-for-china-developer/</guid>
+      <description>作为伟大国家中的一名码农，大家都经常会碰到莫名其妙的无法访问。所以，整理下我用的镜像。。 mirrors 常使用的国内源 tuna aliyun 163 ustc 注：主流Linux的包都有同</description>
+    </item>
+    
+    <item>
+      <title>advanced ssh config with aws ec2</title>
+      <link>http://ox0spy.github.io/post/configuration/assh-aws-ec2/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/assh-aws-ec2/</guid>
+      <description>assh安装 $ brew install assh</description>
+    </item>
+    
+    <item>
+      <title>ansible入门</title>
+      <link>http://ox0spy.github.io/post/configuration/ansible-get-started/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/ansible-get-started/</guid>
+      <description>Ansible是 安装ansible Mac上安装 $ brew install ansible Mac上brew安装后，默认的hosts配置文件路径是/usr/local/etc/a</description>
+    </item>
+    
+    <item>
+      <title>debian 8.2上安装sentry</title>
+      <link>http://ox0spy.github.io/post/configuration/setup-sentry-on-debian8.2/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/setup-sentry-on-debian8.2/</guid>
+      <description>Sentry是一个很好用的错误、异常收集平台，支持Python, Node.js, PHP, Ruby, Java, Go以及Android、iOS。 官方安装文档 系统环境 查看系统版本。 :::bash</description>
+    </item>
+    
+    <item>
+      <title>gerrit备份</title>
+      <link>http://ox0spy.github.io/post/configuration/gerrit-replication/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/gerrit-replication/</guid>
+      <description>将Gerrit实时同步到其它系统完成Gerrit git repos备份。通常用这种方式完成Gerrit Mirror。 通过Gerrit replication plugin</description>
+    </item>
+    
+    <item>
+      <title>gitlab安装</title>
+      <link>http://ox0spy.github.io/post/configuration/gitlab-setup-centos6/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/gitlab-setup-centos6/</guid>
+      <description>公司没有统一的代码管理平台，虽然曾经用过stash、jira、confluence，但调研后还是觉得用gitlab。 下面介绍下gitlab安</description>
+    </item>
+    
+    <item>
+      <title>git从历史中删除大文件</title>
+      <link>http://ox0spy.github.io/post/configuration/git-remove-large-files-in-history/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/git-remove-large-files-in-history/</guid>
+      <description>如果有人在git库中提交了超大文件导致所有人下载代码都比较耗时怎么办？ 删除git库中的大文件 我们知道git会保留历史记录，即使删除这些大文件</description>
+    </item>
+    
+    <item>
+      <title>mysql自动备份，并同步到amazons3</title>
+      <link>http://ox0spy.github.io/post/configuration/mysql-backup-to-amazon-s3/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/mysql-backup-to-amazon-s3/</guid>
+      <description>MySQL自动备份，并将本地备份同步到Amazon S3，然后配置邮件通知。 注: 系统为Ubuntu 14.04，Debian系统也类似。 安装au</description>
+    </item>
+    
+    <item>
+      <title>nginx获取客户端真实ip，x-real-ip和x-forwarded-for注意</title>
+      <link>http://ox0spy.github.io/post/configuration/nginx-config/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/nginx-config/</guid>
+      <description>本文参考于: http://serverfault.com/questions/314574/nginx-real-ip-header-and-x-forwarded-for-seems-wrong/414166 http://luyadong.blog.51cto.com/2876653/851964 http://nginx.org/en/docs/http/ngx_http_realip_module.html http://distinctplace.com/infrastructure/2014/04/23/story-behind-x-forwarded-for-and-x-real-ip-headers/ X-Real-IP和X-Forwarded-For的注意 在配置nginx反向代理时，我们往往做如下配置 location /uri { proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr;</description>
+    </item>
+    
+    <item>
+      <title>saltstack介绍</title>
+      <link>http://ox0spy.github.io/post/configuration/saltstack/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/saltstack/</guid>
+      <description>本文只介绍了SaltStack在CentOS上的安装，其它其它有类似的包管理工具可以安装. CentOS上安装salt-master和salt</description>
+    </item>
+    
+    <item>
+      <title>too many files open</title>
+      <link>http://ox0spy.github.io/post/configuration/too-many-files-open/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/too-many-files-open/</guid>
+      <description>Linux 将下面的行加入 /etc/security/limits.conf * soft nofile 8192 * hard nofile 8192 将下面的行加入 /etc/sysctl.conf ，提高kernel性能，可以不添加。 net.ipv4.tcp_tw_reuse = 1 net.ipv4.tcp_tw_recycle = 1 net.ipv4.ip_local_port_range = 1024 65000 fs.file-max = 65000 运行 sudo sysctl -p 将对 /etc/sysctl.conf 的修改生效。</description>
+    </item>
+    
+    <item>
+      <title>ubuntu/debian自动安装安全更新</title>
+      <link>http://ox0spy.github.io/post/configuration/debian-ubuntu-automatic-security-updates/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/debian-ubuntu-automatic-security-updates/</guid>
+      <description>有台Ubuntu机器，仅仅为了科学上网，但，这年头漏洞这么多，万一哪天成肉鸡了呢。。。 本文简单记录下Ubuntu系统配置自己安装系统安全补丁</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://ox0spy.github.io/post/configuration/nginx-config-copy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/nginx-config-copy/</guid>
+      <description>##################### global config ##################### daemon on; master_process on; timer_resolution 100ms; lock_file /var/run/nginx.lock; worker_priority -10; user admin admin; pid /var/run/nginx.pid; worker_processes auto; worker_rlimit_nofile 102400; error_log /var/log/nginx/error.log; ##################### event config ##################### events { use epoll; worker_connections 51200; multi_accept off; } ##################### http config ##################### http { server_tokens off; sendfile on; tcp_nopush on; tcp_nodelay on; keepalive_timeout 10; client_header_timeout 10; client_body_timeout 10; reset_timedout_connection on; send_timeout 10; # 限制同一IP并</description>
+    </item>
+    
+  </channel>
+</rss>

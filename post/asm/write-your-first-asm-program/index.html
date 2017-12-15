@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>write your first asm program - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ox0spy" />
+  <meta name="description" content="用汇编写个Hello World，同时看看如何一步一步将c程序编译成可执行文件。 开发环境准备 所有开发都在Ubuntu上完成，需要用的软件包：b" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/asm/write-your-first-asm-program/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="write your first asm program" />
+<meta property="og:description" content="用汇编写个Hello World，同时看看如何一步一步将c程序编译成可执行文件。 开发环境准备 所有开发都在Ubuntu上完成，需要用的软件包：b" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/asm/write-your-first-asm-program/" />
+
+
+
+<meta property="article:published_time" content="2017-12-15T19:21:58&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-12-15T19:21:58&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="write your first asm program">
+<meta itemprop="description" content="用汇编写个Hello World，同时看看如何一步一步将c程序编译成可执行文件。 开发环境准备 所有开发都在Ubuntu上完成，需要用的软件包：b">
+
+
+<meta itemprop="datePublished" content="2017-12-15T19:21:58&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:58&#43;08:00" />
+<meta itemprop="wordCount" content="791">
+
+
+
+<meta itemprop="keywords" content="asm, linux," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="write your first asm program"/>
+<meta name="twitter:description" content="用汇编写个Hello World，同时看看如何一步一步将c程序编译成可执行文件。 开发环境准备 所有开发都在Ubuntu上完成，需要用的软件包：b"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">write your first asm program</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/asm/"> asm </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#开发环境准备">开发环境准备</a></li>
+<li><a href="#asm-hello-world">asm Hello World</a></li>
+<li><a href="#如何一步一步编译-链接c程序">如何一步一步编译、链接c程序</a></li>
+<li><a href="#asm-hello-world-改进版">asm Hello World (改进版)</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>用汇编写个Hello World，同时看看如何一步一步将c程序编译成可执行文件。</p>
+
+<h2 id="开发环境准备">开发环境准备</h2>
+
+<p>所有开发都在Ubuntu上完成，需要用的软件包：binutils, gcc, gdb。</p>
+
+<p>Ubuntu上安装软件很方便，指令如下：</p>
+
+<pre><code>$ sudo apt-get install binutils gcc gdb
+</code></pre>
+
+<h2 id="asm-hello-world">asm Hello World</h2>
+
+<p>用asm写个Hello World，<code>.data</code>数据段中定义msg变量为 <code>&quot;Hello World\n&quot;</code>，<code>.text</code>指令段从<code>_start</code>开始，否则需要ld时指定<code>-e label</code>。
+程序调用了printf输出msg，然后调用exit(0)退出。</p>
+
+<pre><code>$ cat hello.s
+#hello.s Just a Hello World in asm.
+.section .data
+msg:
+    .ascii &quot;Hello World\n&quot;
+.section .text
+.globl _start
+_start:
+    movl $4, %eax
+    movl $1, %ebx
+    movl $msg, %ecx
+    movl $12, %edx
+    int $0x80
+    movl $1, %eax
+    movl $0, %ebx
+    int $0x80
+$ as -o hello.o hello.s
+$ ld -o hello hello.o
+$ ./hello
+Hello World
+</code></pre>
+
+<h2 id="如何一步一步编译-链接c程序">如何一步一步编译、链接c程序</h2>
+
+<pre><code>$ cat helloc.c
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main()
+{
+    printf(&quot;Hello World\n&quot;);
+    exit(0);
+}
+
+$ gcc -S helloc.c
+$ as -o helloc.o helloc.s
+$ ld -e main -lc -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o helloc helloc.o
+$ ./helloc
+Hello World
+</code></pre>
+
+<p>说明：</p>
+
+<ul>
+<li>gcc -S生成c代码对应的汇编代码，但是汇编代码中的<code>.globl label</code>为main</li>
+<li>因为汇编代码的<code>.globl label</code>是<code>main</code>，所以必须使用<code>-e</code>参数指定label为<code>main</code>；默认是<code>_start</code></li>
+<li>因为汇编代码直接使用了c的库函数printf、exit，所以必须指定-lc链接c标准库</li>
+<li>-lc动态链接c标准库，所以，必须指定运行时加载动态库的程序，即：<code>-dynamic-linker /lib64/ld-linux-x86-64.so.2</code></li>
+</ul>
+
+<h2 id="asm-hello-world-改进版">asm Hello World (改进版)</h2>
+
+<p>既然汇编代码中可以直接调用c的标准库函数，那就看看怎么改进之前的hello.s。
+下面代码调用c库中的puts和exit函数。
+可以用gcc编译、链接汇编代码，而gcc默认只认<code>.globl main</code>而不是<code>.globl _start</code>，所以，我们下面用<code>.globl main</code>。</p>
+
+<pre><code>$ cat new_hello.s
+#new_hello.s Just a &quot;Hello World&quot;
+.section .data
+msg:
+    .string &quot;Hello World&quot;
+.section .text
+.global main
+main:
+    movl $msg, %edi
+    call puts
+    movl $0, %edi
+    call exit
+$ as -o new_hello.o new_hello.s
+$ ld -e main -lc -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o new_hello new_hello.o
+$ ./new_hello
+Hello World
+
+$ gcc -o new_hello new_hello.s  # 当然可以直接用这条指令编译、链接生成可执行文件
+</code></pre>
+
+<p>本文简单介绍了如何用汇编写<code>Hello World</code>，并尝试手动编译、链接c程序，最好介绍了在汇编中如何调用c库函数。</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ox0spy</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2017-12-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/asm/">asm</a>
+          
+          <a href="/tags/linux/"> linux</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/install/setup-wamp/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">wamp(windows &#43; apache &#43; mysql &#43; php) 环境搭建</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/configuration/mirrors-for-china-developer/">
+            <span class="next-text nav-default">国内程序员常用镜像</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

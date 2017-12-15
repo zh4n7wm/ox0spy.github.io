@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Beego on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/beego/</link>
+    <description>Recent content in Beego on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:21:59 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/beego/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>go学习笔记5之beego框架</title>
+      <link>http://ox0spy.github.io/post/go/05-go-hello-beego/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/go/05-go-hello-beego/</guid>
+      <description>Beego框架准备 $ go get github.com/astaxie/beego $ go get github.com/beego/bee 创建程序hello-beego.go :::go package main import ( &amp;quot;github.com/astaxie/beego&amp;quot; ) type MainController struct { beego.Controller } func (this *MainController) Get() { this.Ctx.WriteString(&amp;quot;hello world&amp;quot;) } func main() { beego.Router(&amp;quot;/&amp;quot;, &amp;amp;MainController{}) beego.Run() } 执行go run hello-beego.go, 访</description>
+    </item>
+    
+  </channel>
+</rss>

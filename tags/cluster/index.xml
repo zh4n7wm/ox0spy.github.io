@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cluster on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/cluster/</link>
+    <description>Recent content in Cluster on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:21:59 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/cluster/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>redis集群搭建</title>
+      <link>http://ox0spy.github.io/post/redis/install-redis-cluster/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/redis/install-redis-cluster/</guid>
+      <description>Redis集群搭建 # 下载 $ wget http://download.redis.io/releases/redis-3.0.4.tar.gz $ tar -zxvf redis-3.0.4.tar.gz $ cd redis-3.0.4 # 编译 $ make # 检查依赖， 如果有错误就修复 # 如果遇到错误“Test replication partial resync: ok psync”, 可以忽略或再</description>
+    </item>
+    
+  </channel>
+</rss>

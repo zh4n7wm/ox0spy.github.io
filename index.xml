@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/</link>
+    <description>Recent content on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:22:01 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>elastichsearch反向代理设置</title>
+      <link>http://ox0spy.github.io/post/elasticsearch/elasticsearch-reverse-proxy/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/elasticsearch/elasticsearch-reverse-proxy/</guid>
+      <description>内网的ES集群，平时操作都是通过命令行，有点不方便，而且安装的site插件也没法使用 ，比较蛋疼，所以配置nginx作为elasticsear</description>
+    </item>
+    
+    <item>
+      <title>elastichsearch数据备份，恢复，及迁移</title>
+      <link>http://ox0spy.github.io/post/elasticsearch/elasticsearch-snapshot-restore/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/elasticsearch/elasticsearch-snapshot-restore/</guid>
+      <description>参考资料: https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-your-cluster.html https://www.elastic.co/guide/en/elasticsearch/guide/current/_restoring_from_a_snapshot.html https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html https://www.elastic.co/blog/introducing-snapshot-restore http://stackoverflow.com/questions/27903929/elasticsearch-snapshot-across-cluster 最近工作需要，要将一个索引的数据迁移到新的另一个集群，查阅了一些资料过后，便开始操作。由于数据量大，整个过程也花费了不少</description>
+    </item>
+    
+    <item>
+      <title>hadoop with python</title>
+      <link>http://ox0spy.github.io/post/bigdata/hadoop-with-python/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/bigdata/hadoop-with-python/</guid>
+      <description>HDFS 可以通过hdfs命令访问HDFS文件系统： $ hdfs dfs -ls / $ hdfs dfs -get /var/log/hadoop.log /tmp/ # 将HDFS的/var/log/hadoop.log拷贝到本机/tmp/目</description>
+    </item>
+    
+    <item>
+      <title>hive分析elb访问日志</title>
+      <link>http://ox0spy.github.io/post/bigdata/%E5%88%86%E6%9E%90elb%E8%AE%BF%E9%97%AE%E6%97%A5%E5%BF%97/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/bigdata/%E5%88%86%E6%9E%90elb%E8%AE%BF%E9%97%AE%E6%97%A5%E5%BF%97/</guid>
+      <description>Hive分析ELB访问日志 Hive 分析 创建Hive table CREATE EXTERNAL TABLE IF NOT EXISTS elb_raw_access_logs ( request_timestamp string, elb_name string, request_ip string, request_port int, backend_ip string, backend_port int, request_processing_time double, backend_processing_time double, client_response_time double, elb_response_code string, backend_response_code string, received_bytes bigint, sent_bytes bigint, request_verb string, url string, protocol string, user_agent string, ssl_cipher string, ssl_protocol string )</description>
+    </item>
+    
+    <item>
+      <title>install nagios 4 on ubuntu/debian</title>
+      <link>http://ox0spy.github.io/post/ubuntu/ubuntu-debian-install-nagios4/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/ubuntu/ubuntu-debian-install-nagios4/</guid>
+      <description>Ucloud后台监控系统功能很简单，最近发现之前设置过的监控项也无法正常显示，更不能编辑了。 虽然，马上就要将系统迁移到公司自己大家的云平台，</description>
+    </item>
+    
+    <item>
+      <title>linux 小贴士</title>
+      <link>http://ox0spy.github.io/post/ubuntu/linux-tips/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/ubuntu/linux-tips/</guid>
+      <description>ssh端口转发 由于服务器上一些服务的端口没有对外开发，但是在开发时又想直接使用服务器上的这些服务，该怎么办？ 以我们服务器A(192.167.</description>
+    </item>
+    
+    <item>
+      <title>mac osx 上安装 tensorflow [cpu support only]</title>
+      <link>http://ox0spy.github.io/post/bigdata/install-tensorflow/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/bigdata/install-tensorflow/</guid>
+      <description>Mac OSX 上安装 TensorFlow [CPU support only] 本文介绍在 Mac OSX 系统上如何安装 Tensorflow ，但除了操作系统包管理有差异，其它内容使用于其它操作系统。 TensorFlow 可以在 Python 2 中运行，但，Pytho</description>
+    </item>
+    
+    <item>
+      <title>pandas分析nginx日志</title>
+      <link>http://ox0spy.github.io/post/bigdata/pandas%E5%88%86%E6%9E%90nginx%E6%97%A5%E5%BF%97/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/bigdata/pandas%E5%88%86%E6%9E%90nginx%E6%97%A5%E5%BF%97/</guid>
+      <description>Pandas分析Nginx日志 安装所需Python库 $ pip install numpy pandas matplotlib 注：所有工作都在Python 3中实践 （Python 2应该也没有问题） Ngin</description>
+    </item>
+    
+    <item>
+      <title>spark</title>
+      <link>http://ox0spy.github.io/post/bigdata/spark/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/bigdata/spark/</guid>
+      <description>Spark 安装 Apache-Spark $ brew install apache-spark 用IPython作为 PySpark 的交互式终端 创建 Python 3虚拟环境：py3 $ mkvirtualenv -p python3.6 py3 $ pip install ipython 修改 Zsh 环境变量： $ cat ~/.zshrc # spark with Python export SPARK_HOME=&amp;quot;/usr/local/opt/apache-spark/libexec&amp;quot; export PYSPARK_DRIVER_PYTHON=&amp;quot;$HOME/.virtualenvs/py3/bin/ipython&amp;quot; #export PYSPARK_DRIVER_PYTHON_OPTS=&amp;quot;&amp;quot; export PYTHONPATH=&amp;quot;$SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.10.4-src.zip:$PYTHONPATH&amp;quot; 测</description>
+    </item>
+    
+    <item>
+      <title>ssmtp发送邮件</title>
+      <link>http://ox0spy.github.io/post/ubuntu/install-ssmtp/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/ubuntu/install-ssmtp/</guid>
+      <description>工作中很多场景需要发送邮件，如：报警邮件、日报等。本文介绍如何安装、配置sSMTP做邮件发送。 安装 :::bash $ sudo apt-get install ssmtp 配置 /etc/ssmtp/revaliases :::bash $ cat /etc/ssmtp/revaliases # sSMTP aliases # # Format: local_account:outgoing_address:mailhub #</description>
+    </item>
+    
+    <item>
+      <title>upgrade elasticsearch 1.2.1 to 1.4.5</title>
+      <link>http://ox0spy.github.io/post/elasticsearch/upgrade-elasticsearch-1.2.1-to-1.4.5/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/elasticsearch/upgrade-elasticsearch-1.2.1-to-1.4.5/</guid>
+      <description>一年前刚开始做应用市场数据统计，团队选用了ELK中的EL (Elasticsearch, Logstash)，没有用Kibana；而且根据产品、运营需求调用ES Restful API，自</description>
+    </item>
+    
+    <item>
+      <title>upgrade ubuntu from 10.04 to 12.04</title>
+      <link>http://ox0spy.github.io/post/ubuntu/upgrade-ubuntu-from-10.04-to-12.04/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/ubuntu/upgrade-ubuntu-from-10.04-to-12.04/</guid>
+      <description>公司开发人员电脑都安装的是Ubuntu 10.04，现在越来越不好用，而且，很多同事发现编译最新的Firefox OS都有问题，所以，我尝试升级</description>
+    </item>
+    
+    <item>
+      <title>wifi hotspot setup on ubuntu 12.04</title>
+      <link>http://ox0spy.github.io/post/ubuntu/wifi-hotspot-setup-on-ubuntu/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/ubuntu/wifi-hotspot-setup-on-ubuntu/</guid>
+      <description>hotspot配置参考：http://thenewbieblog.wordpress.com/2012/05/01/wifi-hotspot</description>
+    </item>
+    
+    <item>
+      <title>在mac osx上安装hadoop</title>
+      <link>http://ox0spy.github.io/post/bigdata/install-hadoop-on-mac-osx/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/bigdata/install-hadoop-on-mac-osx/</guid>
+      <description>安装Hadoop 只是安装来学习Hadoop，所以，在自己笔记本上安装的。正式的线上环境会用多台机器搭建集群 或者 直接使用AWS的EMR。 我希望</description>
+    </item>
+    
+    <item>
+      <title>在mac osx练习hive</title>
+      <link>http://ox0spy.github.io/post/bigdata/hive/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/bigdata/hive/</guid>
+      <description>Hive 安装 将Hive的metastore存在MySQL中。 Mac OSX 上安装 Hive $ brew install hive mysql $ brew services start mysql $ tail -n 3 ~/.zshrc # Hive export HIVE_HOME=&amp;quot;/usr/local/opt/hive&amp;quot; export HCAT_HOME=&amp;quot;$HIVE_HOME/libexec/hcatalog&amp;quot; $ source ~/.zshrc 为Hive在MySQL中创</description>
+    </item>
+    
+    <item>
+      <title>在mac osx练习pig使用</title>
+      <link>http://ox0spy.github.io/post/bigdata/pig/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/bigdata/pig/</guid>
+      <description>Pig 看《Hadoop权威指南第三版》并记录在 Mac OSX 系统上练习Pig使用。 安装 在Mac OSX 上安装命令如下： $ brew install pig 命令行使用 Pig Latin语言 Pig Lat</description>
+    </item>
+    
+    <item>
+      <title>c10k</title>
+      <link>http://ox0spy.github.io/post/performance/c10k/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/performance/c10k/</guid>
+      <description> C10K  http://www.kegel.com/c10k.html http://www.cnblogs.com/fll/archive/2008/05/17/1201540.html  </description>
+    </item>
+    
+    <item>
+      <title>export android cantacts with vcard format via adb</title>
+      <link>http://ox0spy.github.io/post/android/export-android-contacts-via-adb/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/android/export-android-contacts-via-adb/</guid>
+      <description>参考: http://www.commandlinefu.com/commands/view/11688/dump-android-contacts-sms 昨天手机(TCL S960)掉地下把屏幕摔坏了，Google被xx后，就没在用过其它通讯录同步，只好想办法从坏手机里导出，屏幕完全坏了</description>
+    </item>
+    
+    <item>
+      <title>gradle代理设置</title>
+      <link>http://ox0spy.github.io/post/android/set-gradle-proxy/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/android/set-gradle-proxy/</guid>
+      <description>Android使用Gradle做构建工具，编译apk时可能需要从网上下载一些依赖包，国内网络情况大家都懂得。 Gradle代理设置 :::bash $ cat ~/.gradle/gradle.properties systemProp.http.proxyHost=your-proxy systemProp.http.proxyPort=proxy-port</description>
+    </item>
+    
+    <item>
+      <title>install docker on mac osx</title>
+      <link>http://ox0spy.github.io/post/mac-osx/install-docker-on-mac-osx/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/mac-osx/install-docker-on-mac-osx/</guid>
+      <description>从docker官网下载dmg包安装每次更新非常麻烦，幸运的是可以在Mac上通过brew安装Docker。 Docker不能直接在Mac上运行，</description>
+    </item>
+    
+    <item>
+      <title>java spring 学习索引</title>
+      <link>http://ox0spy.github.io/post/java/get_started_with_java_web/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/java/get_started_with_java_web/</guid>
+      <description>近期由于工作需要，需要学习Java Web开发，虽然以前也接触过Java, 不过也就仅限于写个&amp;rdquo;Hello World&amp;rdquo;. 为了尽快掌握Java We</description>
+    </item>
+    
+    <item>
+      <title>jenkins自动构建ios应用</title>
+      <link>http://ox0spy.github.io/post/mac-osx/jenkins-build-ios-apps/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/mac-osx/jenkins-build-ios-apps/</guid>
+      <description>最近折腾用Jenkins自动构建iOS应用。 编译环境 为了构建iOS应用，必须找台Mac电脑做slave。 安装很简单，貌似brew install jenki</description>
+    </item>
+    
+    <item>
+      <title>mac pro初体验</title>
+      <link>http://ox0spy.github.io/post/mac-osx/mac-pro-get-started/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/mac-osx/mac-pro-get-started/</guid>
+      <description>貌似如今不玩下Mac总觉得逼格不够，最近08年买的Thinkpad R60也坏掉了，就入手一台Mac Pro。 下面记录下环境配置和最近使用感受。</description>
+    </item>
+    
+    <item>
+      <title>mac python valueerror: unknown locale: utf-8</title>
+      <link>http://ox0spy.github.io/post/mac-osx/mac-python-valueerror-unknown-locale-utf-8/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/mac-osx/mac-python-valueerror-unknown-locale-utf-8/</guid>
+      <description>Mac brew更新软件报locale utf-8 unknown。 问题描述 brew update &amp;amp;&amp;amp; brew upgrade，更新 mpv 时报错: ValueError: unknown locale: UTF-8 确定当前locale :::bash $ locale LANG= LC_COLLATE=&amp;quot;C&amp;quot; LC_CTYPE=&amp;quot;UTF-8&amp;quot; LC_MESSAGES=&amp;quot;C&amp;quot; LC_MONETARY=&amp;quot;C&amp;quot;</description>
+    </item>
+    
+    <item>
+      <title>mac system intregrity protection - operation not permitted</title>
+      <link>http://ox0spy.github.io/post/mac-osx/mac-system-intregrity-protection/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/mac-osx/mac-system-intregrity-protection/</guid>
+      <description>貌似刚拿到电脑是自己手动编译安装了vim 7.3，后来都是brew install vim最新版本。 今天vim出了点问题，发现系统上还有个vim 7.3，准备删</description>
+    </item>
+    
+    <item>
+      <title>maven通过plugin在tomcat、jetty中运行项目</title>
+      <link>http://ox0spy.github.io/post/java/maven-tomcat-jetty-run/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/java/maven-tomcat-jetty-run/</guid>
+      <description>记录下如何在pom.xml中配置插件，通过tomcat、Jetty运行项目. 配置pom.xml &amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.tomcat.maven&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;tomcat6-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.2&amp;lt;/version&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.tomcat.maven&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;tomcat7-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.2&amp;lt;/version&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.mortbay.jetty&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jetty-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt; 测试 Maven Tomcat plugin</description>
+    </item>
+    
+    <item>
+      <title>mysql查看用户权限</title>
+      <link>http://ox0spy.github.io/post/mysql/show-users-grants/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/mysql/show-users-grants/</guid>
+      <description>命令 SHOW GRANTS 官方文档: http://dev.mysql.com/doc/refman/5.6/en/show-grants.html 常看帮助 :::mysql mysql&amp;gt; HELP SHOW GRANTS; 查看当前登陆用户在当前机器上的权限 :::mysql mysql&amp;gt; SHOW GRANTS; mysql&amp;gt; SHOW GRANTS FOR CURRENT_USER; mysql&amp;gt; SHOW GRANTS FOR CURRENT_USER(); 查看特定用户在特定主机上的权限 :::mysql # 查看t</description>
+    </item>
+    
+    <item>
+      <title>nginx as database load balancer for mysql</title>
+      <link>http://ox0spy.github.io/post/mysql/nginx-as-database-load-balancer-for-mysql/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/mysql/nginx-as-database-load-balancer-for-mysql/</guid>
+      <description>这个配置能完成几件事情： 如题，通过Nginx做MySQL负载均衡 从外网的内网中的RDS 安装 $ sudo apt-get install nginx 配置 /etc/nginx/nginx.conf user www-data; worker_processes auto; pid /run/nginx.pid; events { worker_connections 768; # multi_accept on; } stream { include</description>
+    </item>
+    
+    <item>
+      <title>node.js入门</title>
+      <link>http://ox0spy.github.io/post/node/getstarted-node.js/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/node/getstarted-node.js/</guid>
+      <description>大家都知道Node.js是基于JavaScript的，使JavaScript可以用于后台开发。 为啥学JavaScript 公司项目需要 Java</description>
+    </item>
+    
+    <item>
+      <title>pelican &#43; github 搭建个人blog</title>
+      <link>http://ox0spy.github.io/post/pelican/setup-pelican/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/pelican/setup-pelican/</guid>
+      <description>为什么选择Pelican 想搭建一个博客，不想受门户网站博客的限制，想用更纯净的方式写作，方便数据转移， 专注内容而不是格式，在这个页面http</description>
+    </item>
+    
+    <item>
+      <title>你要访问的页面不存在了</title>
+      <link>http://ox0spy.github.io/post/pages/404/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/pages/404/</guid>
+      <description>  </description>
+    </item>
+    
+    <item>
+      <title>关于我们</title>
+      <link>http://ox0spy.github.io/post/pages/about-us/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/pages/about-us/</guid>
+      <description>我们是一群活跃于成都南边的程序猿, 喜欢技术分享和交流。不定期聚在一起, 畅谈技术, 理想和人生！ 为什么要有这个博客 方便知识的整理，分享和交流, 结</description>
+    </item>
+    
+    <item>
+      <title>如何发表文章</title>
+      <link>http://ox0spy.github.io/post/pelican/about-wiseturtles/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/pelican/about-wiseturtles/</guid>
+      <description>为什么要有这个博客 方便知识的整理，分享和交流。更主要的是慢慢感觉年纪越来越大(黑线！！！)，记性越来越差，需要一个可以记录东西的地方. 古话说</description>
+    </item>
+    
+    <item>
+      <title>申请招商银行香港一卡通</title>
+      <link>http://ox0spy.github.io/post/life/hongkong-cmbchina/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/life/hongkong-cmbchina/</guid>
+      <description>记录下申请招商银行香港一卡通的需要的资料。 招商银行香港一卡通 业务介绍：http://hk.cmbchina.com/Personal/Det</description>
+    </item>
+    
+    <item>
+      <title>django入门</title>
+      <link>http://ox0spy.github.io/post/python/get-starred-django/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/python/get-starred-django/</guid>
+      <description>常用命令 # 安装 $ pip install Django # 创建项目 $ django-admin startproject mysite # 创建app $ python manage.py startapp myapp # 生成migration文件 $ python manage.py makemigrations polls # 打印Sql语句 $ python manage.py sqlmigrate polls 0001 Models 创建Mod</description>
+    </item>
+    
+    <item>
+      <title>flask中通过fileconfig配置多个logger</title>
+      <link>http://ox0spy.github.io/post/python/flask-logging/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/python/flask-logging/</guid>
+      <description>Flask中如何通过配置文件配置logger 创建app.py文件 $ cat app.py from flask import Flask import logging import logging.config def configure_logger(app): logging.config.fileConfig(&amp;quot;log.conf&amp;quot;) # 获取当前所有的logger print logging.Logger.manager.loggerDict.keys() app.logger.info(&amp;quot;logger start&amp;quot;) def app_factory(): app = Flask(&#39;root&#39;) configure_logger(app)</description>
+    </item>
+    
+    <item>
+      <title>golang评价</title>
+      <link>http://ox0spy.github.io/post/go/golang-chaos/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/go/golang-chaos/</guid>
+      <description>djvu9 作为一具码了差不多20年C++的C++11爱好者，我觉得对于大部分后端半栈码农，golang才是未来的方向。C++缺乏可用的标准库，Jav</description>
+    </item>
+    
+    <item>
+      <title>go学习笔记1之安装go</title>
+      <link>http://ox0spy.github.io/post/go/01-go-install/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/go/01-go-install/</guid>
+      <description>本文参考于: Installing Go - Getting Started 必备技能之翻墙 这个是必须的技能，不然go的官网都没法访问, 后面也不用看了。 开发环境搭建 整个安装过程比较简单，下载安装包</description>
+    </item>
+    
+    <item>
+      <title>go学习笔记2之初识go</title>
+      <link>http://ox0spy.github.io/post/go/02-go-on-first-sight/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/go/02-go-on-first-sight/</guid>
+      <description>本文参考于: How to Write Go Code 代码组织 工作空间 Go tool先天就是设计来与开源仓库协作的，不管你愿不愿意发布你的代码，构建开发环境的方式是一样的。 Go</description>
+    </item>
+    
+    <item>
+      <title>go学习笔记3之打造sublime text 3作为go的集成开发环境</title>
+      <link>http://ox0spy.github.io/post/go/03-go-ide/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/go/03-go-ide/</guid>
+      <description>可用于GO开发的工具 可以用于GO开发的工具和插件目前已经非常多了,如VIM, Emacs, atom等，这里IDEs and Plugins for Go罗列了许多可以作为GO开发 的</description>
+    </item>
+    
+    <item>
+      <title>go学习笔记5之beego框架</title>
+      <link>http://ox0spy.github.io/post/go/05-go-hello-beego/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/go/05-go-hello-beego/</guid>
+      <description>Beego框架准备 $ go get github.com/astaxie/beego $ go get github.com/beego/bee 创建程序hello-beego.go :::go package main import ( &amp;quot;github.com/astaxie/beego&amp;quot; ) type MainController struct { beego.Controller } func (this *MainController) Get() { this.Ctx.WriteString(&amp;quot;hello world&amp;quot;) } func main() { beego.Router(&amp;quot;/&amp;quot;, &amp;amp;MainController{}) beego.Run() } 执行go run hello-beego.go, 访</description>
+    </item>
+    
+    <item>
+      <title>gunicorn 几种 worker class 性能测试比较</title>
+      <link>http://ox0spy.github.io/post/web-test/gunicorn-worker-class/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/web-test/gunicorn-worker-class/</guid>
+      <description>简介 Gunicorn, 一个支持WSGI协议的web服务器 Flask, 一个轻量级的python web框架 Gunicorn目前自带支持几种工作方式: sync (默认值) eventlet gevent tornado 测试</description>
+    </item>
+    
+    <item>
+      <title>python performance</title>
+      <link>http://ox0spy.github.io/post/python/python-performance/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/python/python-performance/</guid>
+      <description>Python IPC https://docs.python.org/3/library/ipc.html 线程与协程 http://blog.rainy.im/2016/04/07/python-thread-and-coroutine/ Python中的进程、线程、协程、同步、异步和回调 Gevent http://www.sunzhongwei.com/gevent.html gevent: Asynchronous I/O made easy Logging，gevent 与死锁 Python 3 asyncio https://community.nitrous.io/tutorials/asynchronous-programming-with-python-3</description>
+    </item>
+    
+    <item>
+      <title>python sort</title>
+      <link>http://ox0spy.github.io/post/python/python-sorted/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/python/python-sorted/</guid>
+      <description>#!/usr/bin/env python # -*- coding: utf-8 -*- import random def get_random_list(num): t = [] for i in range(0, num): t.append(random.randint(0, 200)) return t def bubble_sort(t): &#39;&#39;&#39;从小到大&#39;&#39;&#39; passnum = len(t) - 1 exchanges = True while passnum &amp;gt; 0 and exchanges: for i in range(passnum): if t[i] &amp;gt; t[i + 1]: exchanges = True t[i], t[i + 1] = t[i + 1],</description>
+    </item>
+    
+    <item>
+      <title>python下载大文件</title>
+      <link>http://ox0spy.github.io/post/python/python-download-large-file-without-out-of-memory/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/python/python-download-large-file-without-out-of-memory/</guid>
+      <description>requests :::python def download_file(url): local_filename = url.split(&#39;/&#39;)[-1] # NOTE the stream=True parameter r = requests.get(url, stream=True) with open(local_filename, &#39;wb&#39;) as f: for chunk in r.iter_content(chunk_size=1024): if chunk: # filter out keep-alive new chunks f.write(chunk) f.flush() return local_filename urllib2 :::python file = urllib2.urlopen(&#39;url&#39;) with open(&#39;filename&#39;,&#39;w&#39;) as f: while True: tmp = file.read(1024) if not tmp: break f.write(tmp) 详见: http://stackoverflow.com/questions/16694907/how-to-download-large-file-in-python-with-requests-py http://stackoverflow.com/questions/27053028/how-to-download-large-file-without-memoryerror-in-python</description>
+    </item>
+    
+    <item>
+      <title>redis集群搭建</title>
+      <link>http://ox0spy.github.io/post/redis/install-redis-cluster/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/redis/install-redis-cluster/</guid>
+      <description>Redis集群搭建 # 下载 $ wget http://download.redis.io/releases/redis-3.0.4.tar.gz $ tar -zxvf redis-3.0.4.tar.gz $ cd redis-3.0.4 # 编译 $ make # 检查依赖， 如果有错误就修复 # 如果遇到错误“Test replication partial resync: ok psync”, 可以忽略或再</description>
+    </item>
+    
+    <item>
+      <title>scrapyd和scrapyd-client使用教程</title>
+      <link>http://ox0spy.github.io/post/python/scrapyd/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/python/scrapyd/</guid>
+      <description>scrapyd是一个用于部署和运行scrapy爬虫的程序，它允许你通过JSON API来部署爬虫项目和控制爬虫运行 概览 项目和版本 scrapyd</description>
+    </item>
+    
+    <item>
+      <title>scrapy入门</title>
+      <link>http://ox0spy.github.io/post/python/get-starred-scrapy/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/python/get-starred-scrapy/</guid>
+      <description>常用命令 # 运行一个爬虫 $ scrapy runspider stackoverflow_spider.py -o top-stackoverflow-questions.json # 创建项目 $ scrapy startproject tutorial # 开始爬取 $ scrapy crawl dmoz 有用的代码片段 http://snipplr.com/all/tags/scrapy/ 命令行工具 命令行工具运行时会加载Scrapy的配置文件</description>
+    </item>
+    
+    <item>
+      <title>ubuntu 16.04上修改redis data dir</title>
+      <link>http://ox0spy.github.io/post/redis/change-data-dir-on-ubuntu/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/redis/change-data-dir-on-ubuntu/</guid>
+      <description>修改redis 的data dir redis是通过sudo apt-get install redis-server命令安装的。 修改 /etc/redis/redis.conf dir /data/redisdata 注：将redis data dir 修改为dir /data/redisdata 修改 /etc/systemd/system/redis.service</description>
+    </item>
+    
+    <item>
+      <title>压力测试工具ab &amp;&amp; webbench</title>
+      <link>http://ox0spy.github.io/post/web-test/ab-webbench/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/web-test/ab-webbench/</guid>
+      <description>ab ab是apache自带的压力测试工具。使用简单，便于一些简单的压力测试. 安装 :::bash $ sudo apt-get install apache2-utils 使用帮助 :::bash $ ab -h Usage: ab [options] [http[s]://]hostname[:port]/path Options are: -n requests Number of requests to perform # 请求次</description>
+    </item>
+    
+    <item>
+      <title>高并发下连接redis导致redis连接失败</title>
+      <link>http://ox0spy.github.io/post/python/flask-redis-gevent/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/python/flask-redis-gevent/</guid>
+      <description>现象 最近线上的redis服务器会莫名出现无法突然之间无法连接的情况，需要重启一下redis服务器才能正常工作，感觉很诡异. 查看redis日志</description>
+    </item>
+    
+    <item>
+      <title>android命令行工具</title>
+      <link>http://ox0spy.github.io/post/configuration/android-command-line-tools/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/android-command-line-tools/</guid>
+      <description>Android命令行工具 android 下面介绍命令行下使用android脚本。 场景：命令行下安装android build tools、sdk、API。 获取所有可用</description>
+    </item>
+    
+    <item>
+      <title>centos上安装supervisor</title>
+      <link>http://ox0spy.github.io/post/install/centos-supervisord/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/install/centos-supervisord/</guid>
+      <description>安装 部署项目从Ubuntu转战到CentOS, 使用yum命令安装supervisor后，发现无法正常使用，因此只有使用pip安装. :::bash $ sudo pip install</description>
+    </item>
+    
+    <item>
+      <title>chef tutorial</title>
+      <link>http://ox0spy.github.io/post/configuration/chef-tutorial/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/chef-tutorial/</guid>
+      <description>Chef入门. Chef组件 workstation (个人工作电脑, 用来编写cookbook) chef server (存放cookbooks的中央仓库) node (被chef server管理</description>
+    </item>
+    
+    <item>
+      <title>create restricted linux user for ssh tunnel</title>
+      <link>http://ox0spy.github.io/post/configuration/create-restricted-linux-user-for-ssh-tunnel/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/create-restricted-linux-user-for-ssh-tunnel/</guid>
+      <description>由于国内访问一些网站特别慢，所以，使用一台新加坡节点的机器做代理，提高浏览器、mobile访问网站速度。 最近发现访问AWS的EC2也特别慢，</description>
+    </item>
+    
+    <item>
+      <title>fuck gfw</title>
+      <link>http://ox0spy.github.io/post/configuration/fuck-gfw/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/fuck-gfw/</guid>
+      <description>系统是ArchLinux. supervisor supervisor是一个进程启动管理工具，安装: $ sudo pacman -S supervisor 配置文件/etc/supervisord.conf默</description>
+    </item>
+    
+    <item>
+      <title>gerrit搭建指南</title>
+      <link>http://ox0spy.github.io/post/install/gerrit/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/install/gerrit/</guid>
+      <description>什么是Gerrit Gerrit，一种免费、开放源代码的代码审查软件，使用网页界面。利用网页浏览器，同一个团队的软件程序员，可以相互审阅彼此修</description>
+    </item>
+    
+    <item>
+      <title>go学习笔记4之知识点记录</title>
+      <link>http://ox0spy.github.io/post/go/04-go-notes/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/go/04-go-notes/</guid>
+      <description>Go环境配置 如果你想在同一个系统中安装多个版本的Go，你可以参考第三方工具GVM，这是目前在这 方面做得最好的工具。 GOPATH允许多个目录,</description>
+    </item>
+    
+    <item>
+      <title>iptables配置</title>
+      <link>http://ox0spy.github.io/post/configuration/iptables/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/iptables/</guid>
+      <description>最近使用阿里云ECS，发现既然没有提供安全组，能让小白用户方便的配置下允许外网访问的端口。 默认所有绑定到外网ip或四个零的端口，外网都可以访</description>
+    </item>
+    
+    <item>
+      <title>nginx配置ssl证书</title>
+      <link>http://ox0spy.github.io/post/configuration/nginx-config-https-spdy/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/nginx-config-https-spdy/</guid>
+      <description>本文参考: http://www.cocoachina.com/ios/20150703/12392.html https://hack0nair.me/2014-08-14-nginx-with-ssl-of-wosign/ http://note.sdo.com/u/634668972018478681/n/Z1NG3C6A959F29DD2FA2D543B8C9B30B551810C3 http://op.baidu.com/2015/04/https-s01a01/ http://oncenote.com/2014/10/21/Security-1-HTTPS/ http://oncenote.com/2015/09/16/Security-2-HTTPS2/ https://www.vobe.io/114 Nginx配置SSL证书, 启用HTTPS iOS9把所有的http请求都改为https了：iOS9系统发送的网络请求将</description>
+    </item>
+    
+    <item>
+      <title>opengrok安装使用指南</title>
+      <link>http://ox0spy.github.io/post/install/setup-opengrok/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/install/setup-opengrok/</guid>
+      <description>本文主要参考了下面的文章: http://hub.opensolaris.org/bin/view/Project+opengrok/installdescription http://src.opensolaris.org/source/xref/opengrok/trunk/README.txt 注意：最好是单独建立一个用户，并保证该用户对代码和后面创建索引的目录读写权限 准备工作 以opengrok用户身份</description>
+    </item>
+    
+    <item>
+      <title>openresty</title>
+      <link>http://ox0spy.github.io/post/install/openresty/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/install/openresty/</guid>
+      <description>什么是OpenResty OpenResty（也称为 ngx_openresty）是一个全功能的 Web 应用服务器，它打包了标准 的Nginx 核心，很多</description>
+    </item>
+    
+    <item>
+      <title>python gevent安装报错</title>
+      <link>http://ox0spy.github.io/post/configuration/gevent-install-error/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/gevent-install-error/</guid>
+      <description>Mac上pip安装gevent报错信息如下： libev/ev.c:1029:42: error: &#39;_Noreturn&#39; keyword must precede function declarator 解决： :::bash $ CFLAGS=&#39;-std=c99&#39; pip install gevent 这里有讨论：https://github.com/NixOS/</description>
+    </item>
+    
+    <item>
+      <title>python pypi源</title>
+      <link>http://ox0spy.github.io/post/configuration/python-pypi/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/python-pypi/</guid>
+      <description>pip安装 :::bash $ wget https://bootstrap.pypa.io/get-pip.py $ sudo python get-pip.py 或者，直接使用发行版的包管理安装: :::bash $ sudo apt-get install python-pip # Debian/Ubuntu pip配置 官方源比较慢，上面是一些国内源。 国内pypi源 https://pypi.mirrors.ustc.edu.cn/simple/ http://mirrors.aliyun.com/pypi/simple/ http://pypi.v2ex.com/simple http://pypi.douban.com/</description>
+    </item>
+    
+    <item>
+      <title>ubuntu&#43;vim配置汇编程序开发环境</title>
+      <link>http://ox0spy.github.io/post/asm/setup-asm-development-environment/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/asm/setup-asm-development-environment/</guid>
+      <description>本文专门介绍Ubuntu系统上基于Vim配置汇编程序开发环境。 Ubuntu系统配置 所有开发都在Ubuntu上完成，需要用的软件包：binut</description>
+    </item>
+    
+    <item>
+      <title>wamp(windows &#43; apache &#43; mysql &#43; php) 环境搭建</title>
+      <link>http://ox0spy.github.io/post/install/setup-wamp/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/install/setup-wamp/</guid>
+      <description>最近开始学习PHP，工欲善其事，必先利其器。第一步当然是环境搭建啦！ PHP开发基本也就是在不同平台下，要么是LAMP(Linux + Apache + Mysql + P</description>
+    </item>
+    
+    <item>
+      <title>write your first asm program</title>
+      <link>http://ox0spy.github.io/post/asm/write-your-first-asm-program/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/asm/write-your-first-asm-program/</guid>
+      <description>用汇编写个Hello World，同时看看如何一步一步将c程序编译成可执行文件。 开发环境准备 所有开发都在Ubuntu上完成，需要用的软件包：b</description>
+    </item>
+    
+    <item>
+      <title>国内程序员常用镜像</title>
+      <link>http://ox0spy.github.io/post/configuration/mirrors-for-china-developer/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/mirrors-for-china-developer/</guid>
+      <description>作为伟大国家中的一名码农，大家都经常会碰到莫名其妙的无法访问。所以，整理下我用的镜像。。 mirrors 常使用的国内源 tuna aliyun 163 ustc 注：主流Linux的包都有同</description>
+    </item>
+    
+    <item>
+      <title>在64位机器上编写、运行32位汇编代码</title>
+      <link>http://ox0spy.github.io/post/asm/write-32bit-asm-program-and-run-on-64bit-machine/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/asm/write-32bit-asm-program-and-run-on-64bit-machine/</guid>
+      <description>我按照 &amp;lt;&amp;lt;professional assembly language&amp;gt;&amp;gt;（中文名为：编译语言程序设计) 学习汇编，但使用pushl在我的Ubuntu 64bit上报错Erro</description>
+    </item>
+    
+    <item>
+      <title>编译、链接、运行汇编程序</title>
+      <link>http://ox0spy.github.io/post/asm/compile-link-and-run-asm-program/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/asm/compile-link-and-run-asm-program/</guid>
+      <description>学习汇编过程中每次输入as, ld的一堆命令行参数编译、链接程序实在很麻烦。 所以，写个小脚本完成汇编程序的编译、链接及运行。 脚本介绍 脚本内容如</description>
+    </item>
+    
+    <item>
+      <title>advanced ssh config with aws ec2</title>
+      <link>http://ox0spy.github.io/post/configuration/assh-aws-ec2/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/assh-aws-ec2/</guid>
+      <description>assh安装 $ brew install assh</description>
+    </item>
+    
+    <item>
+      <title>ansible入门</title>
+      <link>http://ox0spy.github.io/post/configuration/ansible-get-started/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/ansible-get-started/</guid>
+      <description>Ansible是 安装ansible Mac上安装 $ brew install ansible Mac上brew安装后，默认的hosts配置文件路径是/usr/local/etc/a</description>
+    </item>
+    
+    <item>
+      <title>debian 8.2上安装sentry</title>
+      <link>http://ox0spy.github.io/post/configuration/setup-sentry-on-debian8.2/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/setup-sentry-on-debian8.2/</guid>
+      <description>Sentry是一个很好用的错误、异常收集平台，支持Python, Node.js, PHP, Ruby, Java, Go以及Android、iOS。 官方安装文档 系统环境 查看系统版本。 :::bash</description>
+    </item>
+    
+    <item>
+      <title>free</title>
+      <link>http://ox0spy.github.io/post/linux-commands/free/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/linux-commands/free/</guid>
+      <description>本来转载自: http://www.cnblogs.com/coldplayerest/archive/2010/02/20/1669949.html 更多free命令可参看: 这里 http://www.linuxatemyram.com/ top命令输出解释 下面是free的运行结果，一共有4行。为了方便说明，我加上了列号. 1 2 3 4 5 6</description>
+    </item>
+    
+    <item>
+      <title>gerrit备份</title>
+      <link>http://ox0spy.github.io/post/configuration/gerrit-replication/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/gerrit-replication/</guid>
+      <description>将Gerrit实时同步到其它系统完成Gerrit git repos备份。通常用这种方式完成Gerrit Mirror。 通过Gerrit replication plugin</description>
+    </item>
+    
+    <item>
+      <title>gitlab安装</title>
+      <link>http://ox0spy.github.io/post/configuration/gitlab-setup-centos6/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/gitlab-setup-centos6/</guid>
+      <description>公司没有统一的代码管理平台，虽然曾经用过stash、jira、confluence，但调研后还是觉得用gitlab。 下面介绍下gitlab安</description>
+    </item>
+    
+    <item>
+      <title>git从历史中删除大文件</title>
+      <link>http://ox0spy.github.io/post/configuration/git-remove-large-files-in-history/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/git-remove-large-files-in-history/</guid>
+      <description>如果有人在git库中提交了超大文件导致所有人下载代码都比较耗时怎么办？ 删除git库中的大文件 我们知道git会保留历史记录，即使删除这些大文件</description>
+    </item>
+    
+    <item>
+      <title>htop</title>
+      <link>http://ox0spy.github.io/post/linux-commands/htop/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/linux-commands/htop/</guid>
+      <description>本文转摘自 Linux运维笔记. 并做适当修改 简介 Htop是一款运行于Linux系统监控与进程管理软件，用于取代Unix下传统的top。与top</description>
+    </item>
+    
+    <item>
+      <title>mysql自动备份，并同步到amazons3</title>
+      <link>http://ox0spy.github.io/post/configuration/mysql-backup-to-amazon-s3/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/mysql-backup-to-amazon-s3/</guid>
+      <description>MySQL自动备份，并将本地备份同步到Amazon S3，然后配置邮件通知。 注: 系统为Ubuntu 14.04，Debian系统也类似。 安装au</description>
+    </item>
+    
+    <item>
+      <title>netstat</title>
+      <link>http://ox0spy.github.io/post/linux-commands/netstat/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/linux-commands/netstat/</guid>
+      <description>本文参考： http://www.cnblogs.com/ggjucheng/archive/2012/01/08/2316661.html http://www.binarytides.com/linux-netstat-command-examples/ 作用 Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast</description>
+    </item>
+    
+    <item>
+      <title>nginx获取客户端真实ip，x-real-ip和x-forwarded-for注意</title>
+      <link>http://ox0spy.github.io/post/configuration/nginx-config/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/nginx-config/</guid>
+      <description>本文参考于: http://serverfault.com/questions/314574/nginx-real-ip-header-and-x-forwarded-for-seems-wrong/414166 http://luyadong.blog.51cto.com/2876653/851964 http://nginx.org/en/docs/http/ngx_http_realip_module.html http://distinctplace.com/infrastructure/2014/04/23/story-behind-x-forwarded-for-and-x-real-ip-headers/ X-Real-IP和X-Forwarded-For的注意 在配置nginx反向代理时，我们往往做如下配置 location /uri { proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr;</description>
+    </item>
+    
+    <item>
+      <title>ps</title>
+      <link>http://ox0spy.github.io/post/linux-commands/ps/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/linux-commands/ps/</guid>
+      <description>本文参考： 10 basic examples of Linux ps command http://man.linuxde.net/ps 作用 ps命令用来列出系统中当前运行的那些进程。ps命令列出的是当前那些进程的快照，就是执行ps命令的那个时刻的那些</description>
+    </item>
+    
+    <item>
+      <title>saltstack介绍</title>
+      <link>http://ox0spy.github.io/post/configuration/saltstack/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/saltstack/</guid>
+      <description>本文只介绍了SaltStack在CentOS上的安装，其它其它有类似的包管理工具可以安装. CentOS上安装salt-master和salt</description>
+    </item>
+    
+    <item>
+      <title>too many files open</title>
+      <link>http://ox0spy.github.io/post/configuration/too-many-files-open/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/too-many-files-open/</guid>
+      <description>Linux 将下面的行加入 /etc/security/limits.conf * soft nofile 8192 * hard nofile 8192 将下面的行加入 /etc/sysctl.conf ，提高kernel性能，可以不添加。 net.ipv4.tcp_tw_reuse = 1 net.ipv4.tcp_tw_recycle = 1 net.ipv4.ip_local_port_range = 1024 65000 fs.file-max = 65000 运行 sudo sysctl -p 将对 /etc/sysctl.conf 的修改生效。</description>
+    </item>
+    
+    <item>
+      <title>top</title>
+      <link>http://ox0spy.github.io/post/linux-commands/top/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/linux-commands/top/</guid>
+      <description>简介 top命令的具体就不解释了，记录一些实用的命令 # redis用户此时所使用的内存总数 # 这里的内存使用 top -bn1 -u redis | awk &#39;{mem += $10} END {print mem}&#39; # 查看服务器所</description>
+    </item>
+    
+    <item>
+      <title>ubuntu/debian自动安装安全更新</title>
+      <link>http://ox0spy.github.io/post/configuration/debian-ubuntu-automatic-security-updates/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/debian-ubuntu-automatic-security-updates/</guid>
+      <description>有台Ubuntu机器，仅仅为了科学上网，但，这年头漏洞这么多，万一哪天成肉鸡了呢。。。 本文简单记录下Ubuntu系统配置自己安装系统安全补丁</description>
+    </item>
+    
+    <item>
+      <title>uptime</title>
+      <link>http://ox0spy.github.io/post/linux-commands/uptime/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/linux-commands/uptime/</guid>
+      <description>用途 man page uptime gives a one line display of the following information. The cur‐ rent time, how long the system has been running, how many users are currently logged on, and the system load averages for the past 1, 5, and 15 minutes. System load averages is the average number of processes that are either in a runnable or uninterruptable state. A process in a</description>
+    </item>
+    
+    <item>
+      <title>从源码编译安装vim 7.4</title>
+      <link>http://ox0spy.github.io/post/vim/build-vim-7.4-from-source-code/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/vim/build-vim-7.4-from-source-code/</guid>
+      <description>准备编译环境 $ sudo apt-get build-dep vim $ sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \ libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \ libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \ ruby-dev mercurial $ sudo apt-get install checkinstall 删除系统vim包 $ sudo apt-get purge vim-tiny vim-common vim-runtime vim 下载编译 $ hg clone https://code.google.com/p/vim/ $ cd vim $ ./configure --with-features=huge \ --enable-multibyte \ --enable-perlinterp=dynamic</description>
+    </item>
+    
+    <item>
+      <title>linux远程文件拷贝</title>
+      <link>http://ox0spy.github.io/post/linux-commands/copy-remote-file/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:56 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/linux-commands/copy-remote-file/</guid>
+      <description>我们经常会碰到从一个主机上拷贝文件到其他主机，本文汇总下常用方法。 ssh 提到远程文件拷贝，大家肯定首先想到的是ssh。(啥? 你想到的是ftp??</description>
+    </item>
+    
+    <item>
+      <title>setup haproxy and keepalived on debian (wheezy)</title>
+      <link>http://ox0spy.github.io/post/configuration/setup-haproxy-and-keepalived-on-debian-wheezy/</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/setup-haproxy-and-keepalived-on-debian-wheezy/</guid>
+      <description>准备机器 harpoxy_MASTER - 172.16.8.129 haproxy_BACKUP - 172.16.8.130 WEB_APP_SERVER_1 - 172.16.8.131 WEB_APP_SERVER_2 - 172.16.8.132 注: 1. virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP) 2. 所有机器都安装的Debian 7.5 (wheezy) 安装</description>
+    </item>
+    
+    <item>
+      <title>Setup LVS and Keepalived on Debian</title>
+      <link>http://ox0spy.github.io/post/configuration/setup-lvs-and-keepalived-on-debian/</link>
+      <pubDate>Thu, 26 Jun 2014 00:00:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/setup-lvs-and-keepalived-on-debian/</guid>
+      <description>准备机器 LVS_MASTER - 172.16.8.129 LVS_BACKUP - 172.16.8.130 WEB_APP_SERVER_1 - 172.16.8.131 WEB_APP_SERVER_2 - 172.16.8.132 注: 1. virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP) 2. 所有机器都安装的Debian 7.5 (wheezy) 安装</description>
+    </item>
+    
+    <item>
+      <title>Linux Bash Tips</title>
+      <link>http://ox0spy.github.io/post/configuration/linux-bash-tips/</link>
+      <pubDate>Wed, 14 Aug 2013 00:00:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/linux-bash-tips/</guid>
+      <description>Command line option parse while (( $# &amp;gt; 0 )) ; do case $1 in --local_branch) git_local_branch=$2 shift ;; --remote_branch) git_remote_branch=$2 shift ;; --remote_repo) git_remote_repo=$2 shift ;; --tag) git_tag=$2 shift ;; -f|--force) git_force=&amp;quot;-f&amp;quot; ;; --keyfile) export git_publish_keyfile=$2 shift ;; esac shift done  Pointer variable The example shows how to make a bash environment variable reference the value of another:
+$ foo=bar $ name=foo $ echo ${!name} bar  The example shows how to get a list of all variables beginning with &amp;ldquo;H&amp;rdquo; (Note: the wildcard can only go at the end)</description>
+    </item>
+    
+    <item>
+      <title>Setup OpenGrok</title>
+      <link>http://ox0spy.github.io/post/configuration/setup-opengrok/</link>
+      <pubDate>Wed, 14 Aug 2013 00:00:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/setup-opengrok/</guid>
+      <description>OpenGrok安装使用指南 参考： https://github.com/OpenGrok/OpenGrok/wiki/How-to-install-OpenGrok 注意：最好是单独建立一个opengrok用户，并保证该用户对代码和后面创建索引的目录读写权限 下面整个流程</description>
+    </item>
+    
+    <item>
+      <title>Setup cgit</title>
+      <link>http://ox0spy.github.io/post/configuration/setup-cgit/</link>
+      <pubDate>Wed, 14 Aug 2013 00:00:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/setup-cgit/</guid>
+      <description>cgit setup cgit install $ git://hjemli.net/pub/git/cgit $ cd cgit $ git submodule init # register the git submodule in .git/config $ $EDITOR .git/config # if you want to specify a different url for git $ git submodule update # clone/fetch and checkout correct git version $ make $ sudo make install  setup cgitrc $ cat /etc/cgitrc # # cgit config # css=/cgit/cgit.css logo=/cgit/cgit.png # if you don&#39;t want that webcrawler (like google) index your site robots=noindex, nofollow # # List of repositories.</description>
+    </item>
+    
+    <item>
+      <title>Setup new Jenkins slave</title>
+      <link>http://ox0spy.github.io/post/configuration/setup-new-jenkins-slave/</link>
+      <pubDate>Wed, 14 Aug 2013 00:00:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/setup-new-jenkins-slave/</guid>
+      <description>Setup new Jenkins slave Install Ubuntu 10.04 Create jenkins/jenkins (user/group) # login new Jenkins slave $ sudo addgroup jenkins $ sudo useradd -m -s /bin/bash -g jenkins jenkins $ sudo su - jenkins $ scp -r jenkins@172.26.32.85:~/.ssh ~/ $ passwd jenkins # change hostname $ sudo vim /etc/hostname # login Jenkins master $ ssh jenkins@master $ ssh-copy-id jenkins@new-slave-host # login new Jenkins slave $ sudo scp jenkins@master:/etc/apt/sources.list /etc/apt/sources.list $ sudo apt-get update $ sudo apt-get upgrade $ sudo apt-get install git-core  Setup nis/autofs $ sudo tail -n 1 /etc/passwd /etc/group /etc/shadow ==&amp;gt; /etc/passwd &amp;lt;== +:::::: ==&amp;gt; /etc/group &amp;lt;== +::: ==&amp;gt; /etc/shadow &amp;lt;== +:::::::: $ sudo apt-get install nis portmap autofs $ sudo bash -c &#39;echo &amp;quot;ypserver int.</description>
+    </item>
+    
+    <item>
+      <title>Git Tips</title>
+      <link>http://ox0spy.github.io/post/configuration/git-tips/</link>
+      <pubDate>Fri, 09 Aug 2013 00:00:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/git-tips/</guid>
+      <description>Git Tips Revert a git patch Chengdu Gerrit has “Revert Change” button, so you can revert patch very easy. But, Shanghai Gerrit version is too old, it doesn’t support “Revert Change” on Gerrit, for this case, you can try the below git commands.
+Check git repository status:
+$ git status  Make git repository clean:
+$ git checkout . $ git clean -fd  Find &amp;lt;commit&amp;gt; which you want to revert:</description>
+    </item>
+    
+    <item>
+      <title>Bash Multiprocess</title>
+      <link>http://ox0spy.github.io/post/configuration/bash-multiprocess/</link>
+      <pubDate>Tue, 06 Aug 2013 00:00:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/bash-multiprocess/</guid>
+      <description>Git同步 成都和上海分别建有git server, 虽有 Gerrit Replication, 但新创建分支、git库无法自动同步, 直到该git库有新Gerrit merge. 所以, 写脚本通过 gitweb_url?a=project_index 获取所有g</description>
+    </item>
+    
+    <item>
+      <title>HTTP Command Line Tools</title>
+      <link>http://ox0spy.github.io/post/configuration/http-command-line-tools/</link>
+      <pubDate>Tue, 06 Aug 2013 00:00:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/http-command-line-tools/</guid>
+      <description>Linux Network Tools wget  GNU Wget is a free utility for non-interactive download of files from the Web. It supports HTTP, HTTPS, and FTP protocols, as well as retrieval through HTTP proxies.
+ log to a server using POST and then proceed to download the desired pages, presumably only accessible to authorized users Log in to the server. This can be done only once.
+wget --save-cookies cookies.txt \ --post-data &#39;user=foo&amp;amp;password=bar&#39; \ http://server.</description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>http://ox0spy.github.io/post/configuration/hello-world/</link>
+      <pubDate>Tue, 06 Aug 2013 00:00:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/hello-world/</guid>
+      <description>Hello World.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://ox0spy.github.io/post/configuration/nginx-config-copy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/nginx-config-copy/</guid>
+      <description>##################### global config ##################### daemon on; master_process on; timer_resolution 100ms; lock_file /var/run/nginx.lock; worker_priority -10; user admin admin; pid /var/run/nginx.pid; worker_processes auto; worker_rlimit_nofile 102400; error_log /var/log/nginx/error.log; ##################### event config ##################### events { use epoll; worker_connections 51200; multi_accept off; } ##################### http config ##################### http { server_tokens off; sendfile on; tcp_nopush on; tcp_nodelay on; keepalive_timeout 10; client_header_timeout 10; client_body_timeout 10; reset_timedout_connection on; send_timeout 10; # 限制同一IP并</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://ox0spy.github.io/post/data-science/pydata/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/data-science/pydata/</guid>
+      <description>pandas的plot没有显示所画图片 三种方法解决: import matplotlib.pyplot as plt; plt.show() plt.ion() echo &amp;ldquo;c.InteractiveShellApp.pylab = &amp;lsquo;auto&amp;rsquo;&amp;rdquo; &amp;gt;&amp;gt; ~/.ipython/profile_default/ipython_config.py</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://ox0spy.github.io/post/mysql/mysql-cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/mysql/mysql-cluster/</guid>
+      <description>MMM MySQL高可用集群之MySQL-MMM</description>
+    </item>
+    
+    <item>
+      <title>jvm</title>
+      <link>http://ox0spy.github.io/post/java/jvm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/java/jvm/</guid>
+      <description>Java options JAVA_OPTIONS=&amp;ldquo;-server -XX:+AggressiveOpts -XX:+UseFastAccessorMethods -Xms1096m -Xmx1096m&amp;rdquo; if [[ &amp;ldquo;gcprof&amp;rdquo; == &amp;ldquo;$1&amp;rdquo; ]]; then JAVA_OPTIONS=&amp;ldquo;$JAVA_OPTIONS -Xloggc:gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps&amp;rdquo; shift fi JVM GC GC专家系列目录索引 深入理解JVM 火焰图 白话火焰图 Java火焰图 SCALE13x: Linux Profiling at Netflix Java in Flames CPU Flame Graphs</description>
+    </item>
+    
+    <item>
+      <title>mac osx tips</title>
+      <link>http://ox0spy.github.io/post/mac-osx/mac-tips/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/mac-osx/mac-tips/</guid>
+      <description>抓包 如果你用Mac， 可以把iPhone 使用数据线连接到Mac上，$rvictl -s udid 就可以抓iPhone 的网络通讯报文了，可以使用wiresh</description>
+    </item>
+    
+    <item>
+      <title>numpy</title>
+      <link>http://ox0spy.github.io/post/bigdata/numpy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/bigdata/numpy/</guid>
+      <description>花式索引 花式索引和切片不一样，它总是将数据复制到新数组中。 整数数组进行索引： In [60]: arr = np.empty((8, 4)) In [61]: for i in range(8): arr[i] = i In [62]: arr Out[62]: array([[ 0., 0., 0., 0.], [ 1., 1., 1., 1.], [ 2., 2.,</description>
+    </item>
+    
+    <item>
+      <title>openresty study</title>
+      <link>http://ox0spy.github.io/post/openresty/openresty-study/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/openresty/openresty-study/</guid>
+      <description> openresty best practices  https://moonbingbing.gitbooks.io/openresty-best-practices/content/base/web_evolution.html  </description>
+    </item>
+    
+    <item>
+      <title>前端入门</title>
+      <link>http://ox0spy.github.io/post/frontend/frontend-study/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/frontend/frontend-study/</guid>
+      <description>前端学习 前端资料 Web 技术文档 HTML Learn to Code HTML &amp;amp; CSS JavaScript相关知识 JavaScript入门 JavaScript入门教程 JavaScript</description>
+    </item>
+    
+    <item>
+      <title>安装basemap</title>
+      <link>http://ox0spy.github.io/post/bigdata/basemap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/bigdata/basemap/</guid>
+      <description>Basemap 安装Basemap 安装 basemap 的依赖库： $ pip install numpy pandas matplotlib # 注：basemap release包中带有 GEOS，所以，直接使用 release 包中的 目前 basemap 不支持 pip 安装</description>
+    </item>
+    
+  </channel>
+</rss>

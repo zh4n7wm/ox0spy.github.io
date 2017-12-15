@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hadoop on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/hadoop/</link>
+    <description>Recent content in Hadoop on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:22:01 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/hadoop/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>hadoop with python</title>
+      <link>http://ox0spy.github.io/post/bigdata/hadoop-with-python/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/bigdata/hadoop-with-python/</guid>
+      <description>HDFS 可以通过hdfs命令访问HDFS文件系统： $ hdfs dfs -ls / $ hdfs dfs -get /var/log/hadoop.log /tmp/ # 将HDFS的/var/log/hadoop.log拷贝到本机/tmp/目</description>
+    </item>
+    
+    <item>
+      <title>在mac osx上安装hadoop</title>
+      <link>http://ox0spy.github.io/post/bigdata/install-hadoop-on-mac-osx/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/bigdata/install-hadoop-on-mac-osx/</guid>
+      <description>安装Hadoop 只是安装来学习Hadoop，所以，在自己笔记本上安装的。正式的线上环境会用多台机器搭建集群 或者 直接使用AWS的EMR。 我希望</description>
+    </item>
+    
+  </channel>
+</rss>

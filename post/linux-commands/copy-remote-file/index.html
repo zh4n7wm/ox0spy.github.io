@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>linux远程文件拷贝 - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ox0spy" />
+  <meta name="description" content="我们经常会碰到从一个主机上拷贝文件到其他主机，本文汇总下常用方法。 ssh 提到远程文件拷贝，大家肯定首先想到的是ssh。(啥? 你想到的是ftp??" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/linux-commands/copy-remote-file/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="linux远程文件拷贝" />
+<meta property="og:description" content="我们经常会碰到从一个主机上拷贝文件到其他主机，本文汇总下常用方法。 ssh 提到远程文件拷贝，大家肯定首先想到的是ssh。(啥? 你想到的是ftp??" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/linux-commands/copy-remote-file/" />
+
+
+
+<meta property="article:published_time" content="2017-12-15T19:21:56&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-12-15T19:21:56&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="linux远程文件拷贝">
+<meta itemprop="description" content="我们经常会碰到从一个主机上拷贝文件到其他主机，本文汇总下常用方法。 ssh 提到远程文件拷贝，大家肯定首先想到的是ssh。(啥? 你想到的是ftp??">
+
+
+<meta itemprop="datePublished" content="2017-12-15T19:21:56&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:56&#43;08:00" />
+<meta itemprop="wordCount" content="729">
+
+
+
+<meta itemprop="keywords" content="linux, ssh, sync, python, tar," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="linux远程文件拷贝"/>
+<meta name="twitter:description" content="我们经常会碰到从一个主机上拷贝文件到其他主机，本文汇总下常用方法。 ssh 提到远程文件拷贝，大家肯定首先想到的是ssh。(啥? 你想到的是ftp??"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">linux远程文件拷贝</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/linux-commands/"> linux-commands </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#ssh">ssh</a></li>
+<li><a href="#http">HTTP</a></li>
+<li><a href="#rsync">rsync</a></li>
+<li><a href="#zsync">zsync</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>我们经常会碰到从一个主机上拷贝文件到其他主机，本文汇总下常用方法。</p>
+
+<h2 id="ssh">ssh</h2>
+
+<p>提到远程文件拷贝，大家肯定首先想到的是ssh。(啥? 你想到的是ftp?? 搭建个ftp好麻烦&hellip;)</p>
+
+<p>避免输入用户密码，可以先运行:</p>
+
+<pre><code>:::bash
+$ ssh-copy-id &lt;user@remote-host&gt;  # 输入密码，它会将你的key(~/.ssh/id_rsa.pub)添加到remote-host:~user/.ssh/authorized_keys
+</code></pre>
+
+<p>通过scp做文件拷贝:</p>
+
+<pre><code>:::bash
+$ scp [-r] [-P port] &lt;your-local-file&gt; []&lt;user&gt;@]&lt;remote-host&gt;:&lt;remote-file-path&gt;
+</code></pre>
+
+<p>如果网络比较慢可以先压缩再拷贝:</p>
+
+<pre><code>:::bash
+$ ssh user@remote-host &quot;tar zcf - /file/path/to/copy&quot; | tar zxf - -C /file/path/to/receive  # 从remote-host拷贝文件回来
+$ tar zcf - /file/path/to/copy | ssh user@remote-host &quot;tar zxf - -C /file/path/to/receive&quot;  # 将本地文件拷贝到remote-host
+</code></pre>
+
+<h2 id="http">HTTP</h2>
+
+<p>也可以通过HTTP协议拷贝，如果本地正好有nginx/apache，ln -s 创建个软链接到外部可以访问的路径，从其它机器可以通过wget下载。
+但，不是所有机器都装了nginx/apache，可以通过Python自带模块快速启动一个HTTP Simple Server。</p>
+
+<pre><code>:::bash
+$ python -mSimpleHTTPServer  # 默认监听8000端口，你当然可以自己指定端口
+$ python -mSimpleHTTPServer 8888  # 指定监听端口为8888
+$ wget listen-ip:port/&lt;file/path&gt; # 从其它主机拷贝文件
+</code></pre>
+
+<p>既然已经有了HTTP Server，你当然可以通过浏览器访问了。</p>
+
+<p>HTTP完全可以支持断点续传，wget -c 就可以。</p>
+
+<h2 id="rsync">rsync</h2>
+
+<p>大家可能都体会过scp传输过程中，网络、主机异常导致必须重新传，小文件、网络快还好，不然真的想打人。
+你一定想如果可以断点续传就好了，rsync可以完成你的心愿。</p>
+
+<pre><code>:::bash
+$ rsync -P --rsh=ssh --progress &lt;your-local-file&gt; user@remote-host:&lt;receive-file-path&gt;
+$ rsync -P -v -e ssh &lt;local-file&gt; user@remote-host:receive-file-path  # 本地同步文件到remote-host
+$ rsync -P -v -e ssh user@remote-host:receive-file-path &lt;local-file-path&gt;  # remote-host文件同步到本地
+</code></pre>
+
+<p>rsync功能强大，以后再补充。</p>
+
+<h2 id="zsync">zsync</h2>
+
+<p>先安装后看文档吧，基于HTTP的rsync，使用有一定限制，必须服务端有 .zsync 才行。优点是速度非常快。</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ox0spy</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2017-12-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/linux/">linux</a>
+          
+          <a href="/tags/ssh/"> ssh</a>
+          
+          <a href="/tags/sync/"> sync</a>
+          
+          <a href="/tags/python/"> python</a>
+          
+          <a href="/tags/tar/"> tar</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/vim/build-vim-7.4-from-source-code/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">从源码编译安装vim 7.4</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/configuration/setup-haproxy-and-keepalived-on-debian-wheezy/">
+            <span class="next-text nav-default">setup haproxy and keepalived on debian (wheezy)</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

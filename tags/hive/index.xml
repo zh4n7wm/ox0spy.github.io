@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hive on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/hive/</link>
+    <description>Recent content in Hive on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:22:01 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/hive/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>hive分析elb访问日志</title>
+      <link>http://ox0spy.github.io/post/bigdata/%E5%88%86%E6%9E%90elb%E8%AE%BF%E9%97%AE%E6%97%A5%E5%BF%97/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/bigdata/%E5%88%86%E6%9E%90elb%E8%AE%BF%E9%97%AE%E6%97%A5%E5%BF%97/</guid>
+      <description>Hive分析ELB访问日志 Hive 分析 创建Hive table CREATE EXTERNAL TABLE IF NOT EXISTS elb_raw_access_logs ( request_timestamp string, elb_name string, request_ip string, request_port int, backend_ip string, backend_port int, request_processing_time double, backend_processing_time double, client_response_time double, elb_response_code string, backend_response_code string, received_bytes bigint, sent_bytes bigint, request_verb string, url string, protocol string, user_agent string, ssl_cipher string, ssl_protocol string )</description>
+    </item>
+    
+    <item>
+      <title>在mac osx练习hive</title>
+      <link>http://ox0spy.github.io/post/bigdata/hive/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/bigdata/hive/</guid>
+      <description>Hive 安装 将Hive的metastore存在MySQL中。 Mac OSX 上安装 Hive $ brew install hive mysql $ brew services start mysql $ tail -n 3 ~/.zshrc # Hive export HIVE_HOME=&amp;quot;/usr/local/opt/hive&amp;quot; export HCAT_HOME=&amp;quot;$HIVE_HOME/libexec/hcatalog&amp;quot; $ source ~/.zshrc 为Hive在MySQL中创</description>
+    </item>
+    
+  </channel>
+</rss>

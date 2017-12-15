@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>setup haproxy and keepalived on debian (wheezy) - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ox0spy" />
+  <meta name="description" content="准备机器 harpoxy_MASTER - 172.16.8.129 haproxy_BACKUP - 172.16.8.130 WEB_APP_SERVER_1 - 172.16.8.131 WEB_APP_SERVER_2 - 172.16.8.132 注: 1. virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP) 2. 所有机器都安装的Debian 7.5 (wheezy) 安装" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/configuration/setup-haproxy-and-keepalived-on-debian-wheezy/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="setup haproxy and keepalived on debian (wheezy)" />
+<meta property="og:description" content="准备机器 harpoxy_MASTER - 172.16.8.129 haproxy_BACKUP - 172.16.8.130 WEB_APP_SERVER_1 - 172.16.8.131 WEB_APP_SERVER_2 - 172.16.8.132 注: 1. virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP) 2. 所有机器都安装的Debian 7.5 (wheezy) 安装" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/configuration/setup-haproxy-and-keepalived-on-debian-wheezy/" />
+
+
+
+<meta property="article:published_time" content="2014-07-01T00:00:00&#43;08:00"/>
+
+<meta property="article:modified_time" content="2014-07-01T00:00:00&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="setup haproxy and keepalived on debian (wheezy)">
+<meta itemprop="description" content="准备机器 harpoxy_MASTER - 172.16.8.129 haproxy_BACKUP - 172.16.8.130 WEB_APP_SERVER_1 - 172.16.8.131 WEB_APP_SERVER_2 - 172.16.8.132 注: 1. virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP) 2. 所有机器都安装的Debian 7.5 (wheezy) 安装">
+
+
+<meta itemprop="datePublished" content="2014-07-01T00:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2014-07-01T00:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="1183">
+
+
+
+<meta itemprop="keywords" content="haproxy,keepalived," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="setup haproxy and keepalived on debian (wheezy)"/>
+<meta name="twitter:description" content="准备机器 harpoxy_MASTER - 172.16.8.129 haproxy_BACKUP - 172.16.8.130 WEB_APP_SERVER_1 - 172.16.8.131 WEB_APP_SERVER_2 - 172.16.8.132 注: 1. virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP) 2. 所有机器都安装的Debian 7.5 (wheezy) 安装"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">setup haproxy and keepalived on debian (wheezy)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2014-07-01 </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#准备机器">准备机器</a></li>
+<li><a href="#安装软件">安装软件</a>
+<ul>
+<li><a href="#haproxy-master上安装配置haproxy和keepalived">haproxy_MASTER上安装配置haproxy和keepalived</a>
+<ul>
+<li><a href="#配置haproxy">配置haproxy</a></li>
+<li><a href="#配置keepalived">配置keepalived</a></li>
+</ul></li>
+<li><a href="#haproxy-backup上安装配置haproxy和keepalived">haproxy_BACKUP上安装配置haproxy和keepalived</a>
+<ul>
+<li><a href="#配置haproxy-1">配置haproxy</a></li>
+<li><a href="#配置keepalived-1">配置keepalived</a></li>
+</ul></li>
+<li><a href="#配置web-app-server-1">配置WEB_APP_SERVER_1</a>
+<ul>
+<li><a href="#安装nginx">安装nginx</a></li>
+<li><a href="#配置ip">配置IP</a></li>
+</ul></li>
+<li><a href="#配置web-app-server-2">配置WEB_APP_SERVER_2</a>
+<ul>
+<li><a href="#安装nginx-1">安装nginx</a></li>
+<li><a href="#配置ip-1">配置IP</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#启动haproxy-keepalived">启动haproxy, keepalived</a></li>
+<li><a href="#测试">测试</a>
+<ul>
+<li><a href="#查看服务器状态">查看服务器状态</a></li>
+<li><a href="#查看haproxy状态">查看haproxy状态</a></li>
+<li><a href="#关闭haproxy-master查看web服务是否正常工作">关闭haproxy_MASTER查看web服务是否正常工作</a></li>
+<li><a href="#关闭web-app-server-1查看web服务是否正常工作">关闭WEB_APP_SERVER_1查看web服务是否正常工作</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h1 id="准备机器">准备机器</h1>
+
+<ul>
+<li>harpoxy_MASTER - 172.16.8.129</li>
+<li>haproxy_BACKUP - 172.16.8.130</li>
+<li>WEB_APP_SERVER_1 - 172.16.8.131</li>
+<li>WEB_APP_SERVER_2 - 172.16.8.132</li>
+</ul>
+
+<p>注:
+1. virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP)
+2. 所有机器都安装的Debian 7.5 (wheezy)</p>
+
+<h1 id="安装软件">安装软件</h1>
+
+<h2 id="haproxy-master上安装配置haproxy和keepalived">haproxy_MASTER上安装配置haproxy和keepalived</h2>
+
+<pre><code>$ ssh haproxy_MASTER
+$ sudo bash -c &quot;echo 'deb http://ftp.debian.org/debian/ wheezy-backports main' &gt;&gt; /etc/apt/sources.list&quot;
+$ sudo apt-get update
+$ sudo apt-get install haproxy keepalived
+</code></pre>
+
+<h3 id="配置haproxy">配置haproxy</h3>
+
+<pre><code>$ cat /etc/haproxy/haproxy.cfg
+global
+        log 127.0.0.1   local0 notice
+        maxconn 2000
+        chroot /var/lib/haproxy
+        user haproxy
+        group haproxy
+        daemon
+
+defaults
+        log     global
+        mode    http
+        option  httplog
+        option  dontlognull
+        option  redispatch
+        contimeout 5000
+        clitimeout 50000
+        srvtimeout 50000
+        retries 3
+        errorfile 400 /etc/haproxy/errors/400.http
+        errorfile 403 /etc/haproxy/errors/403.http
+        errorfile 408 /etc/haproxy/errors/408.http
+        errorfile 500 /etc/haproxy/errors/500.http
+        errorfile 502 /etc/haproxy/errors/502.http
+        errorfile 503 /etc/haproxy/errors/503.http
+        errorfile 504 /etc/haproxy/errors/504.http
+
+listen webserver 0.0.0.0:80
+    mode http
+    stats enable
+    stats uri /haproxy?stats
+    stats realm Strictly\ Private
+    stats auth admin:admin
+    balance roundrobin
+    #option httpclose
+    option http-server-close
+    timeout http-keep-alive 3000
+    option forwardfor
+    cookie SRVNAME insert
+    server app1 172.16.8.131:80 cookie S1 check
+    server app2 172.16.8.132:80 cookie S2 check
+</code></pre>
+
+<h3 id="配置keepalived">配置keepalived</h3>
+
+<pre><code>$ cat /etc/keepalived/keepalived.conf
+global_defs {
+router_id LVS_MASTER #BACKUP上修改为LVS_BACKUP
+}
+
+vrrp_instance VI_1 {
+    state MASTER          #BACKUP上修改为BACKUP
+    interface eth0
+    virtual_router_id 51  #与备机的id必须一致
+    priority 100          #BACKUP上修改为80
+    advert_int 1
+    authentication {
+        auth_type PASS
+        auth_pass 1111
+    }
+    virtual_ipaddress {
+        172.16.8.252     #virtual server
+    }
+}
+</code></pre>
+
+<h2 id="haproxy-backup上安装配置haproxy和keepalived">haproxy_BACKUP上安装配置haproxy和keepalived</h2>
+
+<pre><code>$ ssh haproxy_BACKUP
+$ sudo bash -c &quot;echo 'deb http://ftp.debian.org/debian/ wheezy-backports main' &gt;&gt; /etc/apt/sources.list&quot;
+$ sudo apt-get update
+$ sudo apt-get install haproxy keepalived
+</code></pre>
+
+<h3 id="配置haproxy-1">配置haproxy</h3>
+
+<pre><code>$ cat /etc/haproxy/haproxy.cfg
+global
+        log 127.0.0.1   local0 notice
+        maxconn 2000
+        chroot /var/lib/haproxy
+        user haproxy
+        group haproxy
+        daemon
+
+defaults
+        log     global
+        mode    http
+        option  httplog
+        option  dontlognull
+        option  redispatch
+        contimeout 5000
+        clitimeout 50000
+        srvtimeout 50000
+        retries 3
+        errorfile 400 /etc/haproxy/errors/400.http
+        errorfile 403 /etc/haproxy/errors/403.http
+        errorfile 408 /etc/haproxy/errors/408.http
+        errorfile 500 /etc/haproxy/errors/500.http
+        errorfile 502 /etc/haproxy/errors/502.http
+        errorfile 503 /etc/haproxy/errors/503.http
+        errorfile 504 /etc/haproxy/errors/504.http
+
+listen webserver 0.0.0.0:80
+    mode http
+    stats enable
+    stats uri /haproxy?stats
+    stats realm Strictly\ Private
+    stats auth admin:admin
+    balance roundrobin
+    #option httpclose
+    option http-server-close
+    timeout http-keep-alive 3000
+    option forwardfor
+    cookie SRVNAME insert
+    server app1 172.16.8.131:80 cookie S1 check
+    server app2 172.16.8.132:80 cookie S2 check
+</code></pre>
+
+<h3 id="配置keepalived-1">配置keepalived</h3>
+
+<pre><code>$ cat /etc/keepalived/keepalived.conf
+global_defs {
+router_id LVS_BACKUP #BACKUP上修改为LVS_BACKUP
+}
+
+vrrp_instance VI_1 {
+    state BACKUP          #BACKUP上修改为BACKUP
+    interface eth0
+    virtual_router_id 51  #与备机的id必须一致
+    priority 80           #BACKUP上修改为80
+    advert_int 1
+    authentication {
+        auth_type PASS
+        auth_pass 1111
+    }
+    virtual_ipaddress {
+        172.16.8.252     #virtual server
+    }
+}
+</code></pre>
+
+<h2 id="配置web-app-server-1">配置WEB_APP_SERVER_1</h2>
+
+<h3 id="安装nginx">安装nginx</h3>
+
+<pre><code>$ ssh WEB_APP_SERVER_1
+$ sudo apt-get install nginx
+$ sudo bash -c 'echo &quot;Web App Server 1&quot; &gt; /usr/share/nginx/www/index.html'
+</code></pre>
+
+<h3 id="配置ip">配置IP</h3>
+
+<pre><code>$ sudo ifconfig eth0:0 172.16.8.252 netmask 255.255.255.255 up
+</code></pre>
+
+<p>修改配置文件 （上面的配置重启后需要重新输入命令）</p>
+
+<pre><code>$ cat /etc/network/interfaces
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+auto eth0
+auto eth0:0
+
+iface lo inet loopback
+
+# The primary network interface
+allow-hotplug eth0
+#iface eth0 inet dhcp
+iface eth0 inet static
+        address 172.16.8.131
+        netmask 255.255.255.0
+        gateway 172.16.8.2
+
+iface eth0:0 inet static
+        address 172.16.8.252
+        netmask 255.255.255.255
+        gateway 172.16.8.2
+</code></pre>
+
+<h2 id="配置web-app-server-2">配置WEB_APP_SERVER_2</h2>
+
+<h3 id="安装nginx-1">安装nginx</h3>
+
+<pre><code>$ ssh WEB_APP_SERVER_2
+$ sudo apt-get install nginx
+$ sudo bash -c 'echo &quot;Web App Server 2&quot; &gt; /usr/share/nginx/www/index.html'
+</code></pre>
+
+<h3 id="配置ip-1">配置IP</h3>
+
+<pre><code>$ sudo ifconfig eth0:0 172.16.8.252 netmask 255.255.255.255 up
+</code></pre>
+
+<p>修改配置文件 （上面的配置重启后需要重新输入命令）</p>
+
+<pre><code>$ cat /etc/network/interfaces
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+auto eth0
+auto eth0:0
+
+iface lo inet loopback
+
+# The primary network interface
+allow-hotplug eth0
+#iface eth0 inet dhcp
+iface eth0 inet static
+        address 172.16.8.132
+        netmask 255.255.255.0
+        gateway 172.16.8.2
+
+iface eth0:0 inet static
+        address 172.16.8.252
+        netmask 255.255.255.255
+        gateway 172.16.8.2
+</code></pre>
+
+<h1 id="启动haproxy-keepalived">启动haproxy, keepalived</h1>
+
+<pre><code>$ ssh haproxy_MASTER
+$ sudo service haproxy restart
+$ sudo service keepalived restart
+
+$ ssh haproxy_BACKUP
+$ sudo service haproxy restart
+$ sudo service keepalived restart
+</code></pre>
+
+<h1 id="测试">测试</h1>
+
+<h2 id="查看服务器状态">查看服务器状态</h2>
+
+<pre><code>$ while true; do curl 172.16.8.252; curl 172.16.8.252; sleep 1; done
+Web App Server 1
+Web App Server 2
+Web App Server 1
+Web App Server 2
+...
+</code></pre>
+
+<h2 id="查看haproxy状态">查看haproxy状态</h2>
+
+<ul>
+<li>用/etc/haproxy/haproxy.cfg中的用户名、密码登录 <a href="http://172.16.8.129/haproxy?stats">http://172.16.8.129/haproxy?stats</a></li>
+</ul>
+
+<h2 id="关闭haproxy-master查看web服务是否正常工作">关闭haproxy_MASTER查看web服务是否正常工作</h2>
+
+<pre><code>$ ssh haproxy_MASTER
+$ sudo shutdown -h now
+
+$ while true; do curl 172.16.8.252; curl 172.16.8.252; sleep 1; done
+Web App Server 1
+Web App Server 2
+Web App Server 1
+Web App Server 2
+...
+</code></pre>
+
+<h2 id="关闭web-app-server-1查看web服务是否正常工作">关闭WEB_APP_SERVER_1查看web服务是否正常工作</h2>
+
+<pre><code>$ ssh WEB_APP_SERVER_1
+$ sudo shutdown -h now
+
+$ while true; do curl 172.16.8.252; curl 172.16.8.252; sleep 1; done
+Web App Server 2
+Web App Server 2
+Web App Server 2
+Web App Server 2
+...
+</code></pre>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ox0spy</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2014-07-01</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/haproxy/">haproxy</a>
+          
+          <a href="/tags/keepalived/">keepalived</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/linux-commands/copy-remote-file/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">linux远程文件拷贝</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/configuration/setup-lvs-and-keepalived-on-debian/">
+            <span class="next-text nav-default">Setup LVS and Keepalived on Debian</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

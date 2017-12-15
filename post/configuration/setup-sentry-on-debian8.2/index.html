@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>debian 8.2上安装sentry - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ox0spy" />
+  <meta name="description" content="Sentry是一个很好用的错误、异常收集平台，支持Python, Node.js, PHP, Ruby, Java, Go以及Android、iOS。 官方安装文档 系统环境 查看系统版本。 :::bash" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/configuration/setup-sentry-on-debian8.2/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="debian 8.2上安装sentry" />
+<meta property="og:description" content="Sentry是一个很好用的错误、异常收集平台，支持Python, Node.js, PHP, Ruby, Java, Go以及Android、iOS。 官方安装文档 系统环境 查看系统版本。 :::bash" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/configuration/setup-sentry-on-debian8.2/" />
+
+
+
+<meta property="article:published_time" content="2017-12-15T19:21:57&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-12-15T19:21:57&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="debian 8.2上安装sentry">
+<meta itemprop="description" content="Sentry是一个很好用的错误、异常收集平台，支持Python, Node.js, PHP, Ruby, Java, Go以及Android、iOS。 官方安装文档 系统环境 查看系统版本。 :::bash">
+
+
+<meta itemprop="datePublished" content="2017-12-15T19:21:57&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:57&#43;08:00" />
+<meta itemprop="wordCount" content="963">
+
+
+
+<meta itemprop="keywords" content="sentry," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="debian 8.2上安装sentry"/>
+<meta name="twitter:description" content="Sentry是一个很好用的错误、异常收集平台，支持Python, Node.js, PHP, Ruby, Java, Go以及Android、iOS。 官方安装文档 系统环境 查看系统版本。 :::bash"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">debian 8.2上安装sentry</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/configuration/"> configuration </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#系统环境">系统环境</a></li>
+<li><a href="#准备数据库环境">准备数据库环境</a></li>
+<li><a href="#安装sentry">安装sentry</a></li>
+<li><a href="#正式环境运行sentry">正式环境运行sentry</a>
+<ul>
+<li><a href="#supervisor管理sentry-sentry-worker">supervisor管理sentry, sentry_worker</a></li>
+<li><a href="#配置nginx">配置Nginx</a></li>
+</ul></li>
+<li><a href="#测试">测试</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>Sentry是一个很好用的错误、异常收集平台，支持Python, Node.js, PHP, Ruby, Java, Go以及Android、iOS。</p>
+
+<p><a href="http://sentry.readthedocs.org/en/stable/index.html#">官方安装文档</a></p>
+
+<h2 id="系统环境">系统环境</h2>
+
+<p>查看系统版本。</p>
+
+<pre><code>:::bash
+$ lsb_release -a
+No LSB modules are available.
+Distributor ID: Debian
+Description:    Debian GNU/Linux 8.2 (jessie)
+Release:    8.2
+Codename:   jessie
+</code></pre>
+
+<h2 id="准备数据库环境">准备数据库环境</h2>
+
+<p>virtualenv的安装、配置就不再介绍了。</p>
+
+<pre><code>:::bash
+$ sudo apt-get install postgresql libpq-dev
+$ mkvirtualenv sentry
+(sentry)$ pip install psycopg2
+</code></pre>
+
+<p>在PostgreSQL中为sentry创建数据库。</p>
+
+<pre><code>:::bash
+$ sudo -u postgre createuser --superuser sentry
+$ sudo -u sentry psql
+postgres=# \password sentry
+Enter new password:
+Enter it again:
+postgres=# \q
+$ sudo -u sentry createdb -E utf8 sentry
+</code></pre>
+
+<h2 id="安装sentry">安装sentry</h2>
+
+<p>数据库使用的是PostgreSQL，使用公司邮件服务器发送邮件。</p>
+
+<pre><code>:::bash
+$ workon sentry
+(sentry)$ pip install sentry
+(sentry)$ sentry init /tmp/settings.py
+(sentry)$ sudo mv /tmp/settings.py /etc/sentry/sentry.conf.py
+</code></pre>
+
+<p>/etc/sentry/sentry.conf.py中的数据库配置如下：</p>
+
+<pre><code>:::bash
+DATABASES = {
+    'default': {
+        # You can swap out the engine for MySQL easily by changing this value
+        # to ``django.db.backends.mysql`` or to PostgreSQL with
+        # ``sentry.db.postgres``
+
+        # If you change this, you'll also need to install the appropriate python
+        # package: psycopg2 (Postgres) or mysql-python
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': 'sentry',
+        'USER': 'sentry',
+        'PASSWORD': 'xxxx',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+</code></pre>
+
+<p>/etc/sentry/sentry.conf.py中的Web服务配置如下：</p>
+
+<pre><code>:::bash
+# You MUST configure the absolute URI root for Sentry:
+SENTRY_URL_PREFIX = 'http://your-ip'  # No trailing slash!
+
+SENTRY_WEB_HOST = 'localhost'
+SENTRY_WEB_PORT = 9000
+SENTRY_WEB_OPTIONS = {
+    'workers': 4,  # the number of gunicorn workers
+    # 'secure_scheme_headers': {'X-FORWARDED-PROTO': 'https'},
+}
+</code></pre>
+
+<p>/etc/sentry/sentry.conf.py中的邮件配置根据个人情况修改。</p>
+
+<p>修改完配置运行如下命令:</p>
+
+<pre><code>:::bash
+(sentry)$ sentry --config=/etc/sentry/sentry.conf.py upgrade
+(sentry)$ sentry --config=/etc/sentry/sentry.conf.py repair
+</code></pre>
+
+<p>创建sentry超级用户:</p>
+
+<pre><code>:::bash
+(sentry)$ sentry --config=/etc/sentry/sentry.conf.py createsuperuser
+</code></pre>
+
+<p>启动Web服务命令如下:</p>
+
+<pre><code>:::bash
+(sentry)$ sentry --config=/etc/sentry/sentry.conf.py start
+</code></pre>
+
+<p>启动后就可以访问 <a href="http://your-ip:9000">http://your-ip:9000</a> 了，用刚才创建的超级用户登录。</p>
+
+<p>启动sentry worker:</p>
+
+<pre><code>:::bash
+(sentry)$ sentry --config=/etc/sentry/sentry.conf.py celery worker -B -l WARNING
+</code></pre>
+
+<h2 id="正式环境运行sentry">正式环境运行sentry</h2>
+
+<h3 id="supervisor管理sentry-sentry-worker">supervisor管理sentry, sentry_worker</h3>
+
+<p>通过supervisor管理sentry, sentry_worker；并用nginx做反向代理。</p>
+
+<p>supervisor的安装也不再介绍。</p>
+
+<p>supervisor管理sentry:</p>
+
+<pre><code>:::bash
+$ cat /etc/supervisor/conf.d/sentry.conf
+[program:sentry]
+#directory=/var/www/.virtualenvs/sentry/bin/
+environment=VIRTUAL_ENV_PATH=&quot;/var/www/.virtualenvs/sentry/bin/&quot;
+command=/var/www/.virtualenvs/sentry/bin/sentry --config=/etc/sentry/sentry.conf.py start
+user=develop
+stdout_logfile=/data/log/supervisor/sentry.stdout
+stderr_logfile=/data/log/supervisor/sentry.stderr
+autostart=true
+autorestart=true
+killasgroup=true
+</code></pre>
+
+<p>supervisor管理sentry_worker:</p>
+
+<pre><code>:::bash
+$ cat /etc/supervisor/conf.d/sentry_worker.conf
+[program:sentry_worker]
+#directory=/var/www/.virtualenvs/sentry/bin/
+environment=VIRTUAL_ENV_PATH=&quot;/var/www/.virtualenvs/sentry/bin/&quot;
+command=/var/www/.virtualenvs/sentry/bin/sentry --config=/etc/sentry/sentry.conf.py celery worker -B -l WARNING
+user=develop
+stdout_logfile=/data/log/supervisor/sentry_worker.stdout
+stderr_logfile=/data/log/supervisor/sentry_worker.stderr
+autostart=true
+autorestart=true
+killasgroup=true
+</code></pre>
+
+<p>启动sentry, sentry_worker:</p>
+
+<pre><code>:::bash
+$ sudo service supervisor restart
+$ sudo supervisorctl  # 查看sentry, sentry_worker运行情况
+</code></pre>
+
+<h3 id="配置nginx">配置Nginx</h3>
+
+<p>/etc/nginx/sites-available/default的server配置中增加如下内容:</p>
+
+<pre><code>```
+proxy_set_header   Host                 $http_host;
+proxy_set_header   X-Real-IP            $remote_addr;
+proxy_set_header   X-Forwarded-For      $proxy_add_x_forwarded_for;
+proxy_set_header   X-Forwarded-Proto    $scheme;
+proxy_redirect     off;
+
+location / {
+    proxy_pass         http://localhost:9000;
+}
+
+location ~* /api/(?P&lt;projectid&gt;\d+/)?store/ {
+        proxy_pass        http://127.0.0.1:9000;
+}
+```
+</code></pre>
+
+<p>重启nginx，并通过<a href="http://your-ip">http://your-ip</a> 访问。</p>
+
+<h2 id="测试">测试</h2>
+
+<p>开始我们就提到过sentry支持目前所有主流语言，
+参考<a href="https://docs.getsentry.com/hosted/clients/python/">这里</a>
+可以检查是否能将错误、异常发生到自己搭建的sentry。</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ox0spy</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2017-12-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/sentry/">sentry</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/configuration/ansible-get-started/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">ansible入门</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/linux-commands/free/">
+            <span class="next-text nav-default">free</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

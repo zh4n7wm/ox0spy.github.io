@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>install nagios 4 on ubuntu/debian - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ox0spy" />
+  <meta name="description" content="Ucloud后台监控系统功能很简单，最近发现之前设置过的监控项也无法正常显示，更不能编辑了。 虽然，马上就要将系统迁移到公司自己大家的云平台，" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/ubuntu/ubuntu-debian-install-nagios4/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="install nagios 4 on ubuntu/debian" />
+<meta property="og:description" content="Ucloud后台监控系统功能很简单，最近发现之前设置过的监控项也无法正常显示，更不能编辑了。 虽然，马上就要将系统迁移到公司自己大家的云平台，" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/ubuntu/ubuntu-debian-install-nagios4/" />
+
+
+
+<meta property="article:published_time" content="2017-12-15T19:22:01&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-12-15T19:22:01&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="install nagios 4 on ubuntu/debian">
+<meta itemprop="description" content="Ucloud后台监控系统功能很简单，最近发现之前设置过的监控项也无法正常显示，更不能编辑了。 虽然，马上就要将系统迁移到公司自己大家的云平台，">
+
+
+<meta itemprop="datePublished" content="2017-12-15T19:22:01&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:22:01&#43;08:00" />
+<meta itemprop="wordCount" content="1363">
+
+
+
+<meta itemprop="keywords" content="ubuntu, debian, monitor, management," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="install nagios 4 on ubuntu/debian"/>
+<meta name="twitter:description" content="Ucloud后台监控系统功能很简单，最近发现之前设置过的监控项也无法正常显示，更不能编辑了。 虽然，马上就要将系统迁移到公司自己大家的云平台，"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">install nagios 4 on ubuntu/debian</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/ubuntu/"> ubuntu </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#监控主机安装nagios">监控主机安装Nagios</a>
+<ul>
+<li><a href="#安装需要的软件包">安装需要的软件包</a></li>
+<li><a href="#创建用户-组">创建用户、组</a></li>
+<li><a href="#安装nagios-4">安装nagios 4</a></li>
+<li><a href="#安装nagios-plugins-2-0-3">安装nagios-plugins-2.0.3</a></li>
+<li><a href="#安装nagios-nrpe-2-15">安装nagios-nrpe-2.15</a></li>
+</ul></li>
+<li><a href="#被监控主机安装nagios-nrpe">被监控主机安装Nagios NRPE</a></li>
+<li><a href="#配置">配置</a>
+<ul>
+<li><a href="#配置监控主机">配置监控主机</a></li>
+<li><a href="#配置被监控主机">配置被监控主机</a></li>
+</ul></li>
+<li><a href="#配置过程中碰到的问题">配置过程中碰到的问题</a>
+<ul>
+<li><a href="#监控服务器上没有check-nrpe命令">监控服务器上没有check_nrpe命令</a></li>
+<li><a href="#check-nrpe-error-could-not-complete-ssl-handshake">CHECK_NRPE: Error - Could not complete SSL handshake.</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>Ucloud后台监控系统功能很简单，最近发现之前设置过的监控项也无法正常显示，更不能编辑了。
+虽然，马上就要将系统迁移到公司自己大家的云平台，但，最近Ucloud服务器压力很大，周末抽空先将Nagios搭建起来，让自己能及时收到报警。</p>
+
+<p>我们Ucloud服务器都用的Debian 7 (wheezy)，源里只有nagios3，所以，自己编译、安装Nagios 4。</p>
+
+<h1 id="监控主机安装nagios">监控主机安装Nagios</h1>
+
+<h2 id="安装需要的软件包">安装需要的软件包</h2>
+
+<pre><code>:::bash
+
+$ sudo apt-get install build-essential libgd2-xpm-dev openssl libssl-dev apache2 php5 libapache2-mod-php5 apache2-utils postfix
+</code></pre>
+
+<h2 id="创建用户-组">创建用户、组</h2>
+
+<pre><code>:::bash
+
+$ sudo useradd nagios
+$ sudo groupadd nagcmd
+$ sudo usermod -a -G nagcmd nagios
+</code></pre>
+
+<h2 id="安装nagios-4">安装nagios 4</h2>
+
+<pre><code>:::bash
+
+$ cd /data/software
+$ wget http://prdownloads.sourceforge.net/sourceforge/nagios/nagios-4.0.8.tar.gz
+$ tar zxf nagios-4.0.8.tar.gz
+$ cd nagios-4.0.8
+$ ./configure --with-nagios-group=nagios --with-command-group=nagcmd --with-mail=$(which sendmail)
+$ sudo make all
+$ sudo make install &amp;&amp; make install-commandmode &amp;&amp; make install-init &amp;&amp; make install-config
+$ sudo ln -s /etc/init.d/nagios /etc/rcS.d/S99nagios # 开机自启动
+$ sudo service nagios restart
+</code></pre>
+
+<p>配置apache2</p>
+
+<pre><code>:::bash
+
+$ sudo /usr/bin/install -c -m 644 sample-config/httpd.conf /etc/apache2/sites-available/nagios.conf
+$ sudo ln -s /etc/apache2/sites-available/nagios.conf /etc/apache2/sites-enabled/
+$ sudo a2enmod rewrite
+$ sudo a2enmod cgi
+$ sudo htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
+$ sudo service apache2 restart
+</code></pre>
+
+<p>浏览器访问 http://监控主机IP/nagios 查看监控情况, 登录用户名、密码就是 htpasswd 设置的。
+nagios 4将被安装到 /usr/local/nagios 目录，该目录下的 etc 是配置文件夹。</p>
+
+<h2 id="安装nagios-plugins-2-0-3">安装nagios-plugins-2.0.3</h2>
+
+<pre><code>:::bash
+
+$ cd /data/software
+$ wget https://nagios-plugins.org/download/nagios-plugins-2.0.3.tar.gz
+$ tar zxf nagios-plugins-2.0.3.tar.gz
+$ cd nagios-plugins-2.0.3
+$ ./configure --with-nagios-user=nagios --with-nagios-group=nagios --with-openssl
+$ make all &amp;&amp; make install
+</code></pre>
+
+<p>nagios-plugins 命令安装在 /usr/local/nagios/libexec 目录。</p>
+
+<h2 id="安装nagios-nrpe-2-15">安装nagios-nrpe-2.15</h2>
+
+<pre><code>:::bash
+
+$ cd /data/software
+$ wget -O nrpe-2.15.tar.gz &quot;http://downloads.sourceforge.net/project/nagios/nrpe-2.x/nrpe-2.15/nrpe-2.15.tar.gz?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fnagios%2Ffiles%2Fnrpe-2.x%2Fnrpe-2.15%2F&amp;ts=1432369927&amp;use_mirror=liquidtelecom&quot;
+$ tar zxf nrpe-2.15.tar.gz
+$ cd nrpe-2.15
+$ ./configure --with-nagios-user=nagios --with-nagios-group=nagios --with-ssl=/usr/bin/openssl --with-ssl-lib=/usr/lib/x86_64-linux-gnu 
+$ make all
+$ find -iname 'check_nrpe'
+$ sudo /usr/bin/install -c -m 755 ./src/check_nrpe /usr/local/nagios/libexec/
+</code></pre>
+
+<p>测试是否可以工作:</p>
+
+<pre><code>:::bash
+
+$ /usr/local/nagios/libexec/check_nrpe -H 10.4.2.2 # 该IP是被监控主机的IP
+NRPE v2.13
+</code></pre>
+
+<h1 id="被监控主机安装nagios-nrpe">被监控主机安装Nagios NRPE</h1>
+
+<p>安装nagios-plugins, nagios-nrpe-server</p>
+
+<pre><code>:::bash
+$ sudo apt-get install nagios-plugins nagios-nrpe-server
+</code></pre>
+
+<p>配置nagios-nrpe-server，允许监控主机连接该被监控主机。</p>
+
+<pre><code>:::bash
+$ sudo vim /etc/nagios/nrpe.cfg
+$ 将 监控主机IP 填入 allowed_hosts 字段，如: allowed_hosts=127.0.0.1,10.4.22.22
+$ sudo service nagios-nrpe-server restart
+</code></pre>
+
+<h1 id="配置">配置</h1>
+
+<h2 id="配置监控主机">配置监控主机</h2>
+
+<p>/usr/local/nagios/etc/nagios.cfg</p>
+
+<pre><code>:::bash
+$ diff -u nagios.cfg.back nagios.cfg
+--- nagios.cfg.back2015-05-23 11:07:51.436491931 +0800
++++ nagios.cfg2015-05-23 22:08:09.872618927 +0800
+@@ -30,6 +30,9 @@
+cfg_file=/usr/local/nagios/etc/objects/contacts.cfg
+cfg_file=/usr/local/nagios/etc/objects/timeperiods.cfg
+cfg_file=/usr/local/nagios/etc/objects/templates.cfg
++cfg_file=/usr/local/nagios/etc/objects/hosts.cfg
++cfg_file=/usr/local/nagios/etc/objects/groups.cfg
++cfg_file=/usr/local/nagios/etc/objects/services.cfg
+
+# Definitions for monitoring the local (Linux) host
+cfg_file=/usr/local/nagios/etc/objects/localhost.cfg
+@@ -1174,7 +1177,7 @@
+# using the $ADMINEMAIL$ and $ADMINPAGER$ macros in your notification
+# commands.
+
+-admin_email=nagios@localhost
++admin_email=your-emai-address
+admin_pager=pagenagios@localhost
+</code></pre>
+
+<p>/usr/local/nagios/etc/objects/hosts.cfg</p>
+
+<pre><code>:::bash
+
+$ # Define a host for the local machine
+##############
+# appstore01 #
+##############
+define host{
+    use                             linux-server  ; Name of host template to use
+                                    ; This host definition will inherit all variables that are defined
+                                    ; in (or inherited by) the linux-server host template definition.
+    host_name                       appstore01
+    alias                           appstore01 on ucloud
+    address                         10.4.2.2
+    }
+
+##############
+# appstore02 #
+##############
+define host{
+    use                             linux-server  ; Name of host template to use
+                                    ; This host definition will inherit all variables that are defined
+                                    ; in (or inherited by) the linux-server host template definition.
+    host_name                       appstore02
+    alias                           appstore02 on ucloud
+    address                         10.4.2.22
+    }
+</code></pre>
+
+<p>/usr/local/nagios/etc/objects/groups.cfg</p>
+
+<pre><code>:::bash
+
+# Define an optional hostgroup for Linux machines
+define hostgroup{
+    hostgroup_name  appstore-group ; The name of the hostgroup
+    alias           appstore server group ; Long name of the group
+    members         appstore01,appstore02     ; Comma separated list of hosts that belong to this group
+    }
+</code></pre>
+
+<p>/etc/local/nagios/etc/objects/commands.cfg</p>
+
+<pre><code>:::bash
+$ diff -u objects/commands.cfg.back objects/commands.cfg
++########################
++# add by zhang wanming #
++########################
++# 'check_mysql' command definition
++define command{
++   command_name    check_mysql
++   command_line    $USER1$/check_mysql -H $HOSTADDRESS$ -u $ARG1$ -p $ARG2$ -d $ARG3$ -P 3306
++   }
+
++# 'check_http_with_url_port' command definition
++define command{
++        command_name    check_http_with_url_port
++        command_line    $USER1$/check_http -I $HOSTADDRESS$ -u $ARG1$ -p $ARG2$
++        }
++
++# 'check_nrpe' command definition
++define command{
++        command_name check_nrpe
++        command_line $USER1$/check_nrpe -H $HOSTADDRESS$ -c $ARG1$
++        }
++
++# 'check_memcached' command definition
++define command{
++        command_name check_memcached
++        command_line $USER1$/check_tcp -H $HOSTADDRESS$ -p 11211 -t 5 -E -s 'stats\r\nquit\r\n' -e 'uptime' -M crit
++        }
+</code></pre>
+
+<p>/etc/local/nagios/etc/objects/services.cfg</p>
+
+<pre><code>:::bash
+
+$ cat objects/services.cfg 
+define service {
+        use                             generic-service
+        hostgroup_name                  appstore-group
+        service_description             PING
+        check_command                   check_ping!100.0,20%!500.0,60%
+}
+
+define service {
+        use                             generic-service
+        hostgroup_name                  appstore-group
+        service_description             SSH
+        check_command                   check_ssh!-p 1122
+}
+
+#################
+# HTTP services #
+#################
+define service {
+        use                             generic-service
+        hostgroup_name                  appstore-group
+        service_description             Nginx
+        check_command                   check_http
+}
+
+define service {
+        use                             generic-service
+        hostgroup_name                  appstore-group
+        service_description             check http tdnaceweb
+        check_command                   check_nrpe!check_http_tdanceweb
+}
+
+define service {
+        use                             generic-service
+        hostgroup_name                  appstore-group
+        service_description             check http appstore
+        check_command                   check_nrpe!check_http_appstore
+}
+
+define service {
+        use                             generic-service
+        hostgroup_name                  appstore-group
+        service_description             check http launcher
+        check_command                   check_nrpe!check_http_launcher
+}
+
+#########
+# Redis #
+#########
+define service {
+        use                             generic-service
+        hostgroup_name                  appstore-group
+        service_description             Redis
+        check_command                   check_nrpe!check_redis
+}
+
+#############
+# Memcached #
+#############
+define service {
+        use                             generic-service
+        hostgroup_name                  appstore-group
+        service_description             Memcached
+        check_command                   check_nrpe!check_memcached
+}
+
+#########
+# MySQL #
+#########
+define service {
+        use                             generic-service
+        host_name                       appstore01
+        service_description             MySQL
+        check_command                   check_nrpe!check_mysql
+}
+
+################
+# disk/partion #
+################
+define service {
+        use                             generic-service
+        hostgroup_name                  appstore-group
+        service_description             check root disk
+        check_command                   check_nrpe!check_disk_root
+}
+
+define service {
+        use                             generic-service
+        hostgroup_name                  appstore-group
+        service_description             check root data
+        check_command                   check_nrpe!check_disk_data
+}
+</code></pre>
+
+<h2 id="配置被监控主机">配置被监控主机</h2>
+
+<pre><code>:::bash
+$ cat /etc/nagios/nrpe_local.cfg 
+######################################
+# Do any local nrpe configuration here
+######################################
+command[check_disk_root]=/usr/lib/nagios/plugins/check_disk -w 25% -c 10% -p /
+command[check_disk_data]=/usr/lib/nagios/plugins/check_disk -w 25% -c 10% -p /data
+command[check_redis]=/usr/lib/nagios/plugins/check_tcp -H localhost -p 6379 -t 5 -E -s 'info\r\n' -q 'quit\r\n' -e 'uptime_in_days' -M crit
+command[check_memcached]=/usr/lib/nagios/plugins/check_tcp -H localhost -p 11211 -t 5 -E -s 'stats\r\nquit\r\n' -e 'uptime' -M crit
+command[check_mysql]=/usr/lib/nagios/plugins/check_mysql -H localhost -u user -p passwd -d your-database
+command[check_http_tdanceweb]=/usr/lib/nagios/plugins/check_http -H localhost -p 6688 -t 3
+command[check_http_appstore]=/usr/lib/nagios/plugins/check_http -H localhost -p 8888 -t 3 -u /m3/subjects
+command[check_http_launcher]=/usr/lib/nagios/plugins/check_http -H localhost -p 9999 -t 3
+</code></pre>
+
+<h1 id="配置过程中碰到的问题">配置过程中碰到的问题</h1>
+
+<h2 id="监控服务器上没有check-nrpe命令">监控服务器上没有check_nrpe命令</h2>
+
+<p>如果没有安装nrpe，请下载、编译、安装，请参考 安装nagios-nrpe-2.15</p>
+
+<h2 id="check-nrpe-error-could-not-complete-ssl-handshake">CHECK_NRPE: Error - Could not complete SSL handshake.</h2>
+
+<p>编辑/etc/nagios/nrpe.cfg, 确定 allowed_hosts 中加入监控主机IP，多个IP以 &ldquo;,&rdquo; 分隔。
+如: allowed_hosts=127.0.0.1,10.4.13.14</p>
+
+<p>然后，重新加载 nagios-nrpe-server 配置文件，如下：</p>
+
+<pre><code>:::bash
+
+$ service nagios-nrpe-server reload
+</code></pre>
+
+<p>下次再学习并补充联系人及报警相关设置。</p>
+
+<p>参考：</p>
+
+<ol>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-14-04">https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-14-04</a></li>
+<li><a href="http://netkiller.github.io/monitoring/nagios/">http://netkiller.github.io/monitoring/nagios/</a></li>
+</ol>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ox0spy</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2017-12-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/ubuntu/">ubuntu</a>
+          
+          <a href="/tags/debian/"> debian</a>
+          
+          <a href="/tags/monitor/"> monitor</a>
+          
+          <a href="/tags/management/"> management</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/bigdata/%E5%88%86%E6%9E%90elb%E8%AE%BF%E9%97%AE%E6%97%A5%E5%BF%97/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">hive分析elb访问日志</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/ubuntu/linux-tips/">
+            <span class="next-text nav-default">linux 小贴士</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

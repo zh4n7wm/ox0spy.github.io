@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>go学习笔记3之打造sublime text 3作为go的集成开发环境 - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="crazygit" />
+  <meta name="description" content="可用于GO开发的工具 可以用于GO开发的工具和插件目前已经非常多了,如VIM, Emacs, atom等，这里IDEs and Plugins for Go罗列了许多可以作为GO开发 的" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/go/03-go-ide/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="go学习笔记3之打造sublime text 3作为go的集成开发环境" />
+<meta property="og:description" content="可用于GO开发的工具 可以用于GO开发的工具和插件目前已经非常多了,如VIM, Emacs, atom等，这里IDEs and Plugins for Go罗列了许多可以作为GO开发 的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/go/03-go-ide/" />
+
+
+
+<meta property="article:published_time" content="2017-12-15T19:21:59&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-12-15T19:21:59&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="go学习笔记3之打造sublime text 3作为go的集成开发环境">
+<meta itemprop="description" content="可用于GO开发的工具 可以用于GO开发的工具和插件目前已经非常多了,如VIM, Emacs, atom等，这里IDEs and Plugins for Go罗列了许多可以作为GO开发 的">
+
+
+<meta itemprop="datePublished" content="2017-12-15T19:21:59&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:59&#43;08:00" />
+<meta itemprop="wordCount" content="902">
+
+
+
+<meta itemprop="keywords" content="go, ide, sublime," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="go学习笔记3之打造sublime text 3作为go的集成开发环境"/>
+<meta name="twitter:description" content="可用于GO开发的工具 可以用于GO开发的工具和插件目前已经非常多了,如VIM, Emacs, atom等，这里IDEs and Plugins for Go罗列了许多可以作为GO开发 的"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">go学习笔记3之打造sublime text 3作为go的集成开发环境</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/go/"> go </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#可用于go开发的工具">可用于GO开发的工具</a></li>
+<li><a href="#安装sublime-text-3及插件">安装Sublime text 3及插件</a></li>
+<li><a href="#安装插件依赖的go-package">安装插件依赖的Go Package</a></li>
+<li><a href="#配置插件">配置插件:</a></li>
+<li><a href="#使用">使用</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h3 id="可用于go开发的工具">可用于GO开发的工具</h3>
+
+<p>可以用于GO开发的工具和插件目前已经非常多了,如VIM, Emacs, atom等，这里<a href="https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins">IDEs and Plugins for
+Go</a>罗列了许多可以作为GO开发
+的IDE和插件，我们可以根据自己的使用习惯自行选择。本文主要阐述如何利用Sublime
+Text 3 作为GO的开发环境.</p>
+
+<h3 id="安装sublime-text-3及插件">安装Sublime text 3及插件</h3>
+
+<p>到Sublime 官网选择适合自己系统的版本<a href="http://www.sublimetext.com/3">http://www.sublimetext.com/3</a>, 我选择的是
+Ubuntu 64位的tarball包，解压出来可以直接用了。</p>
+
+<p>依次安装插件</p>
+
+<ul>
+<li>Package Control</li>
+<li>GoSublime</li>
+<li>GoDef</li>
+</ul>
+
+<p>这里我只列出了Go开发必须的插件, 其他的一些插件可以根据自身需要选择安装或者从
+<a href="http://blog.wiseturtles.com/posts/go-introduce.html">http://blog.wiseturtles.com/posts/go-introduce.html</a>选择热门插件</p>
+
+<h3 id="安装插件依赖的go-package">安装插件依赖的Go Package</h3>
+
+<p>上面的插件需要用到一些go cmd tools, 但是这些工具因为墙的问题，没法直接下载，好
+在Github上面由这些工具的镜像，因此我们可以曲线救国，从镜像下载。在下载之前，首先，还是要先设置<code>GOPATH</code>变
+量, 怎么设置可以参考本系列文章第二篇<a href="http://blog.wiseturtles.com/posts/go-introduce.html">http://blog.wiseturtles.com/posts/go-introduce.html</a></p>
+
+<p>安装必备的cmd tools</p>
+
+<pre><code>:::bash
+#　创建目录
+$ export GOPATH='your_go_path'
+$ mkdir -p $GOPATH/src/golang.org/x
+
+# 根据实际需要下载对应分支的tools
+$ git clone -b release-branch.go1.4 git@github.com:golang/tools.git $GOPATH/src/golang.org/x/tools
+$ cd $GOPATH
+# 安装工具
+$ go install golang.org/x/tools/cmd/goimports
+$ go install golang.org/x/tools/cmd/vet
+$ go install golang.org/x/tools/cmd/oracle
+$ go install golang.org/x/tools/cmd/godoc
+
+# 安装不需要翻墙的工具
+$ go get github.com/rogpeppe/godef
+
+# 最后两个是我做web开发需要安装的包，没有需要的话可以不下载
+$ go get github.com/astaxie/beego
+$ go get github.com/beego/bee
+</code></pre>
+
+<h3 id="配置插件">配置插件:</h3>
+
+<ul>
+<li><p>GoSublime 配置, Preferences -&gt; Package Settings -&gt; GoSublime -&gt;　Settings - User</p>
+
+<pre><code>{
+    // you may set specific environment variables here
+    // e.g &quot;env&quot;: { &quot;PATH&quot;: &quot;$HOME/go/bin:$PATH&quot; }
+    // in values, $PATH and ${PATH} are replaced with
+    // the corresponding environment(PATH) variable, if it exists.
+    //根据实际情况设置如下变量
+    &quot;env&quot;: {&quot;GOROOT&quot;: &quot;/usr/local/go&quot;, &quot;GOPATH&quot;: &quot;$HOME/golang&quot;, &quot;PATH&quot;: &quot;$GOPATH/bin:$GOROOT/bin:$PATH&quot; },
+
+    &quot;fmt_cmd&quot;: [&quot;goimports&quot;],
+
+    // enable comp-lint, this will effectively disable the live linter
+    &quot;comp_lint_enabled&quot;: true,
+
+    // list of commands to run
+    &quot;comp_lint_commands&quot;: [
+        // run `golint` on all files in the package
+        // &quot;shell&quot;:true is required in order to run the command through your shell (to expand `*.go`)
+        // also see: the documentation for the `shell` setting in the default settings file ctrl+dot,ctrl+4
+        {&quot;cmd&quot;: [&quot;golint *.go&quot;], &quot;shell&quot;: true},
+
+        // run go vet on the package
+        {&quot;cmd&quot;: [&quot;go&quot;, &quot;vet&quot;]},
+
+        // run `go install` on the package. GOBIN is set,
+        // so `main` packages shouldn't result in the installation of a binary
+        {&quot;cmd&quot;: [&quot;go&quot;, &quot;install&quot;]}
+    ],
+
+    &quot;on_save&quot;: [
+        // run comp-lint when you save,
+        // naturally, you can also bind this command `gs_comp_lint`
+        // to a key binding if you want
+        {&quot;cmd&quot;: &quot;gs_comp_lint&quot;}
+    ]
+}
+</code></pre></li>
+
+<li><p>GoDef 配置, Preferences -&gt; Package Settings -&gt; GoDef -&gt;　Settings - User</p>
+
+<pre><code>{
+    //根据实际情况设置如下变量
+    &quot;gopath&quot;: &quot;/home/linliang/golang&quot;
+}
+</code></pre></li>
+</ul>
+
+<h3 id="使用">使用</h3>
+
+<p>创建一个Go文件，默认情况下:</p>
+
+<ul>
+<li>连续两次输入<code>Ctrl + dot(.)</code>, 可以查看GoSublime的功能和快捷键</li>
+<li>使用<code>gd</code>可以使用GoDef插件的跳转</li>
+</ul>
+
+<p>更多使用可以参考两个插件的帮助文档</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">crazygit</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2017-12-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/go/">go</a>
+          
+          <a href="/tags/ide/"> ide</a>
+          
+          <a href="/tags/sublime/"> sublime</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/go/02-go-on-first-sight/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">go学习笔记2之初识go</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/go/05-go-hello-beego/">
+            <span class="next-text nav-default">go学习笔记5之beego框架</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

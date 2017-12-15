@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>redis集群搭建 - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="crazygit" />
+  <meta name="description" content="Redis集群搭建 # 下载 $ wget http://download.redis.io/releases/redis-3.0.4.tar.gz $ tar -zxvf redis-3.0.4.tar.gz $ cd redis-3.0.4 # 编译 $ make # 检查依赖， 如果有错误就修复 # 如果遇到错误“Test replication partial resync: ok psync”, 可以忽略或再" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/redis/install-redis-cluster/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="redis集群搭建" />
+<meta property="og:description" content="Redis集群搭建 # 下载 $ wget http://download.redis.io/releases/redis-3.0.4.tar.gz $ tar -zxvf redis-3.0.4.tar.gz $ cd redis-3.0.4 # 编译 $ make # 检查依赖， 如果有错误就修复 # 如果遇到错误“Test replication partial resync: ok psync”, 可以忽略或再" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/redis/install-redis-cluster/" />
+
+
+
+<meta property="article:published_time" content="2017-12-15T19:21:59&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-12-15T19:21:59&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="redis集群搭建">
+<meta itemprop="description" content="Redis集群搭建 # 下载 $ wget http://download.redis.io/releases/redis-3.0.4.tar.gz $ tar -zxvf redis-3.0.4.tar.gz $ cd redis-3.0.4 # 编译 $ make # 检查依赖， 如果有错误就修复 # 如果遇到错误“Test replication partial resync: ok psync”, 可以忽略或再">
+
+
+<meta itemprop="datePublished" content="2017-12-15T19:21:59&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:59&#43;08:00" />
+<meta itemprop="wordCount" content="1000">
+
+
+
+<meta itemprop="keywords" content="redis,cluster,install," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="redis集群搭建"/>
+<meta name="twitter:description" content="Redis集群搭建 # 下载 $ wget http://download.redis.io/releases/redis-3.0.4.tar.gz $ tar -zxvf redis-3.0.4.tar.gz $ cd redis-3.0.4 # 编译 $ make # 检查依赖， 如果有错误就修复 # 如果遇到错误“Test replication partial resync: ok psync”, 可以忽略或再"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">redis集群搭建</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/redis/"> redis </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#redis集群搭建">Redis集群搭建</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h2 id="redis集群搭建">Redis集群搭建</h2>
+
+<pre><code class="language-bash"># 下载
+$ wget http://download.redis.io/releases/redis-3.0.4.tar.gz
+$ tar -zxvf redis-3.0.4.tar.gz
+$ cd redis-3.0.4
+
+# 编译
+$ make
+
+# 检查依赖， 如果有错误就修复
+# 如果遇到错误“Test replication partial resync: ok psync”, 可以忽略或再重复执
+# 行几次make test就可以通过了
+$ make test
+
+# 安装
+$ sudo make install
+
+# 添加开机启动, 会有一些交互提问，按需选择即可
+$ sudo utils/install_server.sh
+Welcome to the redis service installer
+This script will help you easily set up a running redis server
+
+Please select the redis port for this instance: [6379] 
+Selecting default: 6379 
+Please select the redis config file name [/etc/redis/6379.conf] 
+Selected default - /etc/redis/6379.conf
+Please select the redis log file name [/var/log/redis_6379.log] 
+Selected default - /var/log/redis_6379.log
+Please select the data directory for this instance [/var/lib/redis/6379] 
+Selected default - /var/lib/redis/6379
+Please select the redis executable path [/usr/local/bin/redis-server] 
+Selected config:
+Port           : 6379 
+Config file    : /etc/redis/6379.conf
+Log file       : /var/log/redis_6379.log
+Data dir       : /var/lib/redis/6379
+Executable     : /usr/local/bin/redis-server
+Cli Executable : /usr/local/bin/redis-cli
+Is this ok? Then press ENTER to go on or Ctrl-C to abort.
+Copied /tmp/6379.conf =&gt; /etc/init.d/redis_6379
+Installing service...
+ Adding system startup for /etc/init.d/redis_6379 ...
+   /etc/rc0.d/K20redis_6379 -&gt; ../init.d/redis_6379
+   /etc/rc1.d/K20redis_6379 -&gt; ../init.d/redis_6379
+   /etc/rc6.d/K20redis_6379 -&gt; ../init.d/redis_6379
+   /etc/rc2.d/S20redis_6379 -&gt; ../init.d/redis_6379
+   /etc/rc3.d/S20redis_6379 -&gt; ../init.d/redis_6379
+   /etc/rc4.d/S20redis_6379 -&gt; ../init.d/redis_6379
+   /etc/rc5.d/S20redis_6379 -&gt; ../init.d/redis_6379
+Success!
+Starting Redis server...
+Installation successful!
+
+
+# 因为要搭建单机集群，重复执行上面的命令，同时设置6380, 6381
+# 完成后，可以看到如下文件
+$ ls /etc/init.d/redis_*
+/etc/init.d/redis_6379  /etc/init.d/redis_6380  /etc/init.d/redis_6381
+$ ls /etc/redis/
+6379.conf  6380.conf  6381.conf
+
+
+# 开启集群
+$ sudo sed -i 's/# cluster-enabled yes/cluster-enabled yes/' /etc/redis/*.conf
+
+# 同时去掉/etc/redis/*.conf 文件的`cluster-config-file` 的注释，并分别设置为
+# cluster-config-file /etc/redis/nodes-6379.conf
+# cluster-config-file /etc/redis/nodes-6380.conf
+# cluster-config-file /etc/redis/nodes-6381.conf
+
+# 重启redis服务
+$ ps -ef |grep redis
+root     31033     1  0 00:18 ?        00:00:00 /usr/local/bin/redis-server *:6379 [cluster]    
+root     31072     1  0 00:18 ?        00:00:00 /usr/local/bin/redis-server *:6380 [cluster]    
+root     31111     1  0 00:18 ?        00:00:00 /usr/local/bin/redis-server *:6381 [cluster]    
+
+# 安装redis client需要的依赖
+$ sudo apt-get install ruby
+$ sudo gem install redis
+
+# 查看可用的命令
+$ src/redis-trib.rb help 
+Usage: redis-trib &lt;command&gt; &lt;options&gt; &lt;arguments ...&gt;
+
+  create          host1:port1 ... hostN:portN
+                  --replicas &lt;arg&gt;
+  check           host:port
+  fix             host:port
+  reshard         host:port
+                  --from &lt;arg&gt;
+                  --to &lt;arg&gt;
+                  --slots &lt;arg&gt;
+                  --yes
+  add-node        new_host:new_port existing_host:existing_port
+                  --slave
+                  --master-id &lt;arg&gt;
+  del-node        host:port node_id
+  set-timeout     host:port milliseconds
+  call            host:port command arg arg .. arg
+  import          host:port
+                  --from &lt;arg&gt;
+  help            (show this help)
+
+For check, fix, reshard, del-node, set-timeout you can specify the host and port of any working node in the cluster.
+
+
+# 创建集群
+$ sudo src/redis-trib.rb create 127.0.0.1:6379 127.0.0.1:6380 127.0.0.1:6381
+&gt;&gt;&gt; Creating cluster
+Connecting to node 127.0.0.1:6379: OK
+Connecting to node 127.0.0.1:6380: OK
+Connecting to node 127.0.0.1:6381: OK
+&gt;&gt;&gt; Performing hash slots allocation on 3 nodes...
+Using 3 masters:
+127.0.0.1:6379
+127.0.0.1:6380
+127.0.0.1:6381
+M: 50eee84811854ce707bb25ce05f1688eafa46c8d 127.0.0.1:6379
+   slots:0-5460 (5461 slots) master
+M: 3cdc94999a66c325dd91ca4af70fa9a9fe1bc623 127.0.0.1:6380
+   slots:5461-10922 (5462 slots) master
+M: 059fd2e13499b22aedfa0f0ad3707fe7534d96db 127.0.0.1:6381
+   slots:10923-16383 (5461 slots) master
+Can I set the above configuration? (type 'yes' to accept): yes
+&gt;&gt;&gt; Nodes configuration updated
+&gt;&gt;&gt; Assign a different config epoch to each node
+&gt;&gt;&gt; Sending CLUSTER MEET messages to join the cluster
+Waiting for the cluster to join.
+&gt;&gt;&gt; Performing Cluster Check (using node 127.0.0.1:6379)
+M: 50eee84811854ce707bb25ce05f1688eafa46c8d 127.0.0.1:6379
+   slots:0-5460 (5461 slots) master
+M: 3cdc94999a66c325dd91ca4af70fa9a9fe1bc623 127.0.0.1:6380
+   slots:5461-10922 (5462 slots) master
+M: 059fd2e13499b22aedfa0f0ad3707fe7534d96db 127.0.0.1:6381
+   slots:10923-16383 (5461 slots) master
+[OK] All nodes agree about slots configuration.
+&gt;&gt;&gt; Check for open slots...
+&gt;&gt;&gt; Check slots coverage...
+[OK] All 16384 slots covered.
+
+# 也可以设置主从, 但是需要注意，如果设置了replicas，则需要更多的结点
+# --replicas 1 需要6个结点
+# --replicas 2 需要12个结点
+$ sudo src/redis-trib.rb create --replicas 1 127.0.0.1:6379 127.0.0.1:6380 127.0.0.1:6381 ip:port....
+
+
+# 检查集群状态
+$ sudo src/redis-trib.rb check 127.0.0.1:6379
+Connecting to node 127.0.0.1:6379: OK
+Connecting to node 127.0.0.1:6380: OK
+Connecting to node 127.0.0.1:6381: OK
+&gt;&gt;&gt; Performing Cluster Check (using node 127.0.0.1:6379)
+M: 50eee84811854ce707bb25ce05f1688eafa46c8d 127.0.0.1:6379
+   slots:0-5460 (5461 slots) master
+   0 additional replica(s)
+M: 3cdc94999a66c325dd91ca4af70fa9a9fe1bc623 127.0.0.1:6380
+   slots:5461-10922 (5462 slots) master
+   0 additional replica(s)
+M: 059fd2e13499b22aedfa0f0ad3707fe7534d96db 127.0.0.1:6381
+   slots:10923-16383 (5461 slots) master
+   0 additional replica(s)
+[OK] All nodes agree about slots configuration.
+&gt;&gt;&gt; Check for open slots...
+&gt;&gt;&gt; Check slots coverage...
+[OK] All 16384 slots covered.
+
+# 使用了集群之后，不能像以前一样使用命令行客户端了, 需要加参数`-c`
+$ redis-cli
+127.0.0.1:6379&gt; ping
+PONG
+127.0.0.1:6379&gt; set a b
+(error) MOVED 15495 127.0.0.1:6381   # 设置失败
+
+$ redis-cli -c
+127.0.0.1:6379&gt; set a b
+-&gt; Redirected to slot [15495] located at 127.0.0.1:6381
+OK
+
+# 同理python redis模块也是不能直接用集群模式了，需要替换成支持redis cluster的python模块
+# 完毕
+</code></pre>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">crazygit</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2017-12-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/redis/">redis</a>
+          
+          <a href="/tags/cluster/">cluster</a>
+          
+          <a href="/tags/install/">install</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/python/python-download-large-file-without-out-of-memory/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">python下载大文件</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/python/scrapyd/">
+            <span class="next-text nav-default">scrapyd和scrapyd-client使用教程</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

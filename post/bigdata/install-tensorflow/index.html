@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>mac osx 上安装 tensorflow [cpu support only] - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ox0spy" />
+  <meta name="description" content="Mac OSX 上安装 TensorFlow [CPU support only] 本文介绍在 Mac OSX 系统上如何安装 Tensorflow ，但除了操作系统包管理有差异，其它内容使用于其它操作系统。 TensorFlow 可以在 Python 2 中运行，但，Pytho" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/bigdata/install-tensorflow/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="mac osx 上安装 tensorflow [cpu support only]" />
+<meta property="og:description" content="Mac OSX 上安装 TensorFlow [CPU support only] 本文介绍在 Mac OSX 系统上如何安装 Tensorflow ，但除了操作系统包管理有差异，其它内容使用于其它操作系统。 TensorFlow 可以在 Python 2 中运行，但，Pytho" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/bigdata/install-tensorflow/" />
+
+
+
+<meta property="article:published_time" content="2017-12-15T19:22:01&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-12-15T19:22:01&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="mac osx 上安装 tensorflow [cpu support only]">
+<meta itemprop="description" content="Mac OSX 上安装 TensorFlow [CPU support only] 本文介绍在 Mac OSX 系统上如何安装 Tensorflow ，但除了操作系统包管理有差异，其它内容使用于其它操作系统。 TensorFlow 可以在 Python 2 中运行，但，Pytho">
+
+
+<meta itemprop="datePublished" content="2017-12-15T19:22:01&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:22:01&#43;08:00" />
+<meta itemprop="wordCount" content="790">
+
+
+
+<meta itemprop="keywords" content="tensorflow, mac," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="mac osx 上安装 tensorflow [cpu support only]"/>
+<meta name="twitter:description" content="Mac OSX 上安装 TensorFlow [CPU support only] 本文介绍在 Mac OSX 系统上如何安装 Tensorflow ，但除了操作系统包管理有差异，其它内容使用于其它操作系统。 TensorFlow 可以在 Python 2 中运行，但，Pytho"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">mac osx 上安装 tensorflow [cpu support only]</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/bigdata/"> bigdata </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#mac-osx-上安装-tensorflow-cpu-support-only">Mac OSX 上安装 TensorFlow [CPU support only]</a>
+<ul>
+<li><a href="#安装-python-3">安装 Python 3</a></li>
+<li><a href="#安装-virtualenv">安装 virtualenv</a></li>
+<li><a href="#安装-tensorflow">安装 TensorFlow</a></li>
+<li><a href="#安装-ipython">安装 IPython</a></li>
+<li><a href="#测试是否安装成功">测试是否安装成功</a>
+<ul>
+<li><a href="#三种办法避免这类错误">三种办法避免这类错误</a>
+<ul>
+<li><a href="#设置-tensorflow-log-level-避免-warning-输出">设置 tensorflow log level，避免 warning 输出</a></li>
+<li><a href="#安装别人编译好的-tensorflow">安装别人编译好的 TensorFlow</a></li>
+<li><a href="#自己编译-tensorflow">自己编译 TensorFlow</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h2 id="mac-osx-上安装-tensorflow-cpu-support-only">Mac OSX 上安装 TensorFlow [CPU support only]</h2>
+
+<p>本文介绍在 <code>Mac OSX</code> 系统上如何安装 Tensorflow ，但除了操作系统包管理有差异，其它内容使用于其它操作系统。</p>
+
+<p>TensorFlow 可以在 Python 2 中运行，但，Python 3 才是未来。所以，建议大家直接使用 Python 3！</p>
+
+<p>注：本文安装的是 <code>TensorFlow with CPU support only</code> ，以后再介绍如何安装 <code>TensorFlow with GPU support</code>。</p>
+
+<h3 id="安装-python-3">安装 Python 3</h3>
+
+<pre><code>$ brew install python3
+</code></pre>
+
+<h3 id="安装-virtualenv">安装 virtualenv</h3>
+
+<p>安装 virtualenv</p>
+
+<pre><code>$ sudo pip install -U virtualenv virtualenvwrapper
+</code></pre>
+
+<p>将下面命令加入 <code>~/.bashrc</code> 或 <code>~/.zshrc</code>，比如我使用<code>zsh</code>，所以加到 <code>~/.zshrc</code> 文件末尾:</p>
+
+<pre><code>$ echo 'test -f /usr/local/bin/virtualenvwrapper.sh &amp;&amp; source /usr/local/bin/virtualenvwrapper.sh' &gt;&gt; ~/.zshrc
+</code></pre>
+
+<h3 id="安装-tensorflow">安装 TensorFlow</h3>
+
+<pre><code>$ mkvirtualenv -p python3 tensorflow
+$ pip install -U tensorflow
+</code></pre>
+
+<h3 id="安装-ipython">安装 IPython</h3>
+
+<p>IPython 是一个体验特别好的 Python 交互式终端，安装：</p>
+
+<pre><code>$ workon tensorflow
+$ pip install ipython
+</code></pre>
+
+<h3 id="测试是否安装成功">测试是否安装成功</h3>
+
+<pre><code>$ ipython
+In [1]: import tensorflow as tf
+In [2]: hello = tf.constant('Hello, TensorFlow!')
+In [3]: sess = tf.Session()
+In [4]: print(sess.run(hello))
+b'Hello, TensorFlow!'
+</code></pre>
+
+<p>看到成功输出 <code>b'Hello, TensorFlow!'</code> 说明已经成功安装 TensorFlow ！</p>
+
+<p>这行之后：</p>
+
+<pre><code>In [3]: sess = tf.Session()
+</code></pre>
+
+<p>可能会看到类似下面的输出：</p>
+
+<pre><code>2017-06-14 13:50:49.512831: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-06-14 13:50:49.512872: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-06-14 13:50:49.512881: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-06-14 13:50:49.512894: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-06-14 13:50:49.512903: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+</code></pre>
+
+<p>上面输出中的 <code>W</code> 表示 <code>警告</code> (<code>Warning</code>)，提示从源码编译并开启一些编译选项后可以加快CPU计算速度。</p>
+
+<h4 id="三种办法避免这类错误">三种办法避免这类错误</h4>
+
+<p>上面的 <code>Warning</code> 信息并不影响学习 <code>TensorFlow</code> ，只是会导致 <code>TensorFlow</code> 运行的不够快。但，如果你还是不希望看到这些 <code>Warning</code> ，可以用下面的三种方法之一。</p>
+
+<p>第一种仅仅是让你不再看到 <code>Warning</code>，而最后两种能让 <code>TensorFlow</code> 运行的更快！</p>
+
+<h5 id="设置-tensorflow-log-level-避免-warning-输出">设置 tensorflow log level，避免 warning 输出</h5>
+
+<blockquote>
+<p><code>TF_CPP_MIN_LOG_LEVEL</code></p>
+
+<ul>
+<li>It defaults to 0, showing all logs</li>
+<li>To filter out INFO set to 1</li>
+<li>WARNINGS, additionally 2</li>
+<li>and to additionally filter out ERROR logs set to 3</li>
+</ul>
+</blockquote>
+
+<pre><code>$ ipython
+In [1]: import os
+In [2]: os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+In [3]: import tensorflow as tf
+In [4]: hello = tf.constant('Hello, TensorFlow!')
+In [5]: sess = tf.Session()
+In [6]: print(sess.run(hello))
+b'Hello, TensorFlow!'
+</code></pre>
+
+<h5 id="安装别人编译好的-tensorflow">安装别人编译好的 TensorFlow</h5>
+
+<p>移步<a href="https://github.com/lakshayg/tensorflow-build">lakshayg/tensorflow-build</a></p>
+
+<p>更多，请参考：<a href="https://github.com/yaroslavvb/tensorflow-community-wheels">https://github.com/yaroslavvb/tensorflow-community-wheels</a></p>
+
+<h5 id="自己编译-tensorflow">自己编译 TensorFlow</h5>
+
+<p>请参考官方文档：<a href="https://www.tensorflow.org/install/install_sources">Installing TensorFlow from Sources</a></p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ox0spy</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2017-12-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/tensorflow/">tensorflow</a>
+          
+          <a href="/tags/mac/"> mac</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/ubuntu/linux-tips/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">linux 小贴士</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/bigdata/pandas%E5%88%86%E6%9E%90nginx%E6%97%A5%E5%BF%97/">
+            <span class="next-text nav-default">pandas分析nginx日志</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

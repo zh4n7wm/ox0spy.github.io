@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title> - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ox0spy" />
+  <meta name="description" content="##################### global config ##################### daemon on; master_process on; timer_resolution 100ms; lock_file /var/run/nginx.lock; worker_priority -10; user admin admin; pid /var/run/nginx.pid; worker_processes auto; worker_rlimit_nofile 102400; error_log /var/log/nginx/error.log; ##################### event config ##################### events { use epoll; worker_connections 51200; multi_accept off; } ##################### http config ##################### http { server_tokens off; sendfile on; tcp_nopush on; tcp_nodelay on; keepalive_timeout 10; client_header_timeout 10; client_body_timeout 10; reset_timedout_connection on; send_timeout 10; # 限制同一IP并" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/configuration/nginx-config-copy/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="##################### global config ##################### daemon on; master_process on; timer_resolution 100ms; lock_file /var/run/nginx.lock; worker_priority -10; user admin admin; pid /var/run/nginx.pid; worker_processes auto; worker_rlimit_nofile 102400; error_log /var/log/nginx/error.log; ##################### event config ##################### events { use epoll; worker_connections 51200; multi_accept off; } ##################### http config ##################### http { server_tokens off; sendfile on; tcp_nopush on; tcp_nodelay on; keepalive_timeout 10; client_header_timeout 10; client_body_timeout 10; reset_timedout_connection on; send_timeout 10; # 限制同一IP并" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/configuration/nginx-config-copy/" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="##################### global config ##################### daemon on; master_process on; timer_resolution 100ms; lock_file /var/run/nginx.lock; worker_priority -10; user admin admin; pid /var/run/nginx.pid; worker_processes auto; worker_rlimit_nofile 102400; error_log /var/log/nginx/error.log; ##################### event config ##################### events { use epoll; worker_connections 51200; multi_accept off; } ##################### http config ##################### http { server_tokens off; sendfile on; tcp_nopush on; tcp_nodelay on; keepalive_timeout 10; client_header_timeout 10; client_body_timeout 10; reset_timedout_connection on; send_timeout 10; # 限制同一IP并">
+
+
+
+<meta itemprop="wordCount" content="464">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="##################### global config ##################### daemon on; master_process on; timer_resolution 100ms; lock_file /var/run/nginx.lock; worker_priority -10; user admin admin; pid /var/run/nginx.pid; worker_processes auto; worker_rlimit_nofile 102400; error_log /var/log/nginx/error.log; ##################### event config ##################### events { use epoll; worker_connections 51200; multi_accept off; } ##################### http config ##################### http { server_tokens off; sendfile on; tcp_nopush on; tcp_nodelay on; keepalive_timeout 10; client_header_timeout 10; client_body_timeout 10; reset_timedout_connection on; send_timeout 10; # 限制同一IP并"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title"></h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 0001-01-01 </span>
+        <div class="post-category">
+            
+              <a href="/categories/configuration/"> configuration </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#global-config">global config</a></li>
+<li><a href="#daemon-on">daemon on;</a></li>
+<li><a href="#master-process-on">master_process on;</a></li>
+<li><a href="#timer-resolution-100ms">timer_resolution 100ms;</a></li>
+<li><a href="#lock-file-var-run-nginx-lock">lock_file /var/run/nginx.lock;</a></li>
+<li><a href="#worker-priority-10">worker_priority -10;</a></li>
+<li><a href="#event-config">event config</a></li>
+<li><a href="#http-config">http config</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>#####################</p>
+
+<h1 id="global-config">global config</h1>
+
+<p>#####################</p>
+
+<h1 id="daemon-on">daemon on;</h1>
+
+<h1 id="master-process-on">master_process on;</h1>
+
+<h1 id="timer-resolution-100ms">timer_resolution 100ms;</h1>
+
+<h1 id="lock-file-var-run-nginx-lock">lock_file /var/run/nginx.lock;</h1>
+
+<h1 id="worker-priority-10">worker_priority -10;</h1>
+
+<p>user admin admin;
+pid /var/run/nginx.pid;
+worker_processes auto;
+worker_rlimit_nofile 102400;
+error_log /var/log/nginx/error.log;</p>
+
+<p>#####################</p>
+
+<h1 id="event-config">event config</h1>
+
+<p>#####################</p>
+
+<p>events {
+    use epoll;
+    worker_connections 51200;
+    multi_accept off;
+}</p>
+
+<p>#####################</p>
+
+<h1 id="http-config">http config</h1>
+
+<p>#####################</p>
+
+<p>http {
+    server_tokens off;
+    sendfile on;
+    tcp_nopush on;
+    tcp_nodelay on;</p>
+
+<pre><code>keepalive_timeout 10;
+client_header_timeout 10;
+client_body_timeout 10;
+reset_timedout_connection on;
+send_timeout 10;
+
+# 限制同一IP并发连接数
+limit_conn_zone $binary_remote_addr zone=manyconns:5m;
+limit_conn_status 405;
+limit_conn manyconns 100;
+
+# 限制同一IP请求量, 每秒不超过2个req, 峰值为10, 那么客户端以5req/s
+# 的速度，每5秒发一次，平均下来，不超过rate限制，不会报错
+limit_req_zone $binary_remote_addr zone=manyreqs:10m rate=2r/s;
+limit_req_status 404;
+limit_req zone=manyreqs burst=10 nodelay;
+
+include /etc/nginx/mime.types;
+default_type text/html;
+charset UTF-8;
+
+
+gzip on;
+gzip_disable &quot;msie[1-6]&quot;;   # 为IE6关闭gzip, 兼容老浏览器
+gzip_min_length  1100;
+gzip_comp_level   6;
+gzip_buffers     16 8k;
+gzip_types  text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript image/png image/gif image/jpeg;
+gzip_proxied any;
+
+##
+#client_body,client_header config
+##
+
+client_body_temp_path   /dev/shm/nginx/client_body_temp 1 2;
+client_body_timeout     60s;
+client_header_timeout   60s;
+client_max_body_size    1m;
+
+##
+#request state
+##
+req_status_zone server &quot;$host,$server_addr:$server_port&quot; 10M;
+
+##
+#uwsgi global
+##
+
+uwsgi_temp_path             /dev/shm/nginx/uwsgi_temp 2 2;
+uwsgi_max_temp_file_size    1024m;
+uwsgi_temp_file_write_size  8k;
+uwsgi_buffering             on;
+uwsgi_ignore_client_abort   on;
+uwsgi_buffer_size           8k;
+uwsgi_buffers               24 8k;
+uwsgi_busy_buffers_size     8k;
+uwsgi_connect_timeout       60s;
+uwsgi_send_timeout          60s;
+uwsgi_read_timeout          60s;
+
+
+# uwsgi cache
+# 配置uwsgi cache 后， nginx 会多启动两个进程 (cache manager process) 和 (cache loader process)
+uwsgi_cache_path /tmp/uwsgi_cache levels=1:2 keys_zone=CACHE:10m inactive=10s;
+
+##
+#proxy config
+##
+
+proxy_buffering             on;
+proxy_buffers               8 4k;
+
+proxy_temp_path             /dev/shm/nginx/proxy_temp 1 2;
+proxy_cache_path            /dev/shm/nginx/proxy_cache  levels=1:2 keys_zone=cache:128m inactive=1d max_size=1g;
+proxy_connect_timeout       60s;
+proxy_read_timeout          60s;
+proxy_send_timeout          60s;
+
+#####################
+# http config
+#####################
+
+upstream mysite
+{
+    # ip_hash;
+    # keepalive;
+    # least_conn;
+    server unix:/tmp/mysite.sock weight=10 max_fails=1 fail_timeout=10;
+    server 192.168.1.1:8080 weight=20 backup; # 标示这个server不会做load balancer, 除非其他server挂了
+    server 192.168.1.1:8080 weight=20 down;  # 标示这个server不可用
+}
+
+server {
+    # listen 80 backlog=2048 deferred keepalive=on fastopen=100;
+    listen 80 backlog=1024 deferred;
+    server_name     localhost;
+
+    location / {
+        uwsgi_pass  mysite;
+    }
+
+    location /cached {
+        uwsgi_cache CACHE;
+        uwsgi_buffering on;
+        uwsgi_cache_key $scheme$request_method$host$request_uri$args;
+        uwsgi_pass  mysite;
+        uwsgi_cache_valid 200 20s;
+
+        uwsgi_pass  mysite;
+    }
+
+    location /nginx_status {
+
+        limit_except GET {
+            allow 192.168.1.0/32;
+            deny  all;
+        }
+
+        access_log off;
+        stub_status on;
+        access_log off;
+        allow 127.0.0.1;
+    }
+
+    location /reqstat {
+        access_log off;
+        allow 127.0.0.1;
+        deny all;
+        req_status_show;
+    }
+}
+
+include /usr/local/nginx/conf/sites-enabled/*.conf;
+</code></pre>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ox0spy</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">0001-01-01</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/configuration/hello-world/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Hello World</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/data-science/pydata/">
+            <span class="next-text nav-default"></span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

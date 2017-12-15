@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Redis on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/categories/redis/</link>
+    <description>Recent content in Redis on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:21:59 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/categories/redis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>redis集群搭建</title>
+      <link>http://ox0spy.github.io/post/redis/install-redis-cluster/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/redis/install-redis-cluster/</guid>
+      <description>Redis集群搭建 # 下载 $ wget http://download.redis.io/releases/redis-3.0.4.tar.gz $ tar -zxvf redis-3.0.4.tar.gz $ cd redis-3.0.4 # 编译 $ make # 检查依赖， 如果有错误就修复 # 如果遇到错误“Test replication partial resync: ok psync”, 可以忽略或再</description>
+    </item>
+    
+    <item>
+      <title>ubuntu 16.04上修改redis data dir</title>
+      <link>http://ox0spy.github.io/post/redis/change-data-dir-on-ubuntu/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/redis/change-data-dir-on-ubuntu/</guid>
+      <description>修改redis 的data dir redis是通过sudo apt-get install redis-server命令安装的。 修改 /etc/redis/redis.conf dir /data/redisdata 注：将redis data dir 修改为dir /data/redisdata 修改 /etc/systemd/system/redis.service</description>
+    </item>
+    
+  </channel>
+</rss>

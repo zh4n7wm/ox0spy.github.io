@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ox0spy" />
+  <meta name="description" content="Hugo theme even example site." />
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/" />
+<link href="http://ox0spy.github.io/index.xml" rel="alternate" type="application/rss+xml" title="wiseturtles&#39;s team blog" />
+  <link href="http://ox0spy.github.io/index.xml" rel="feed" type="application/rss+xml" title="wiseturtles&#39;s team blog" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="wiseturtles&#39;s team blog" />
+<meta property="og:description" content="Hugo theme even example site." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://ox0spy.github.io/" />
+
+
+
+<meta property="og:updated_time" content="2017-12-15T19:21:57&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="wiseturtles&#39;s team blog">
+<meta itemprop="description" content="Hugo theme even example site.">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="wiseturtles&#39;s team blog"/>
+<meta name="twitter:description" content="Hugo theme even example site."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          
+  <section id="posts" class="posts">
+    
+    
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/configuration/nginx-config/">nginx获取客户端真实ip，x-real-ip和x-forwarded-for注意</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/configuration/"> configuration </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      本文参考于: http://serverfault.com/questions/314574/nginx-real-ip-header-and-x-forwarded-for-seems-wrong/414166 http://luyadong.blog.51cto.com/2876653/851964 http://nginx.org/en/docs/http/ngx_http_realip_module.html http://distinctplace.com/infrastructure/2014/04/23/story-behind-x-forwarded-for-and-x-real-ip-headers/ X-Real-IP和X-Forwarded-For的注意 在配置nginx反向代理时，我们往往做如下配置 location /uri { proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr;
+    </div>
+    <div class="read-more">
+      <a href="/post/configuration/nginx-config/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/linux-commands/ps/">ps</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/linux-commands/"> linux-commands </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      本文参考： 10 basic examples of Linux ps command http://man.linuxde.net/ps 作用 ps命令用来列出系统中当前运行的那些进程。ps命令列出的是当前那些进程的快照，就是执行ps命令的那个时刻的那些
+    </div>
+    <div class="read-more">
+      <a href="/post/linux-commands/ps/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/configuration/saltstack/">saltstack介绍</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/configuration/"> configuration </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      本文只介绍了SaltStack在CentOS上的安装，其它其它有类似的包管理工具可以安装. CentOS上安装salt-master和salt
+    </div>
+    <div class="read-more">
+      <a href="/post/configuration/saltstack/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/configuration/too-many-files-open/">too many files open</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/configuration/"> configuration </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Linux 将下面的行加入 /etc/security/limits.conf * soft nofile 8192 * hard nofile 8192 将下面的行加入 /etc/sysctl.conf ，提高kernel性能，可以不添加。 net.ipv4.tcp_tw_reuse = 1 net.ipv4.tcp_tw_recycle = 1 net.ipv4.ip_local_port_range = 1024 65000 fs.file-max = 65000 运行 sudo sysctl -p 将对 /etc/sysctl.conf 的修改生效。
+    </div>
+    <div class="read-more">
+      <a href="/post/configuration/too-many-files-open/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/linux-commands/top/">top</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/linux-commands/"> linux-commands </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      简介 top命令的具体就不解释了，记录一些实用的命令 # redis用户此时所使用的内存总数 # 这里的内存使用 top -bn1 -u redis | awk '{mem += $10} END {print mem}' # 查看服务器所
+    </div>
+    <div class="read-more">
+      <a href="/post/linux-commands/top/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/configuration/debian-ubuntu-automatic-security-updates/">ubuntu/debian自动安装安全更新</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/configuration/"> configuration </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      有台Ubuntu机器，仅仅为了科学上网，但，这年头漏洞这么多，万一哪天成肉鸡了呢。。。 本文简单记录下Ubuntu系统配置自己安装系统安全补丁
+    </div>
+    <div class="read-more">
+      <a href="/post/configuration/debian-ubuntu-automatic-security-updates/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/linux-commands/uptime/">uptime</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/linux-commands/"> linux-commands </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      用途 man page uptime gives a one line display of the following information. The cur‐ rent time, how long the system has been running, how many users are currently logged on, and the system load averages for the past 1, 5, and 15 minutes. System load averages is the average number of processes that are either in a runnable or uninterruptable state. A process in a
+    </div>
+    <div class="read-more">
+      <a href="/post/linux-commands/uptime/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/vim/build-vim-7.4-from-source-code/">从源码编译安装vim 7.4</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/vim/"> vim </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      准备编译环境 $ sudo apt-get build-dep vim $ sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \ libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \ libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \ ruby-dev mercurial $ sudo apt-get install checkinstall 删除系统vim包 $ sudo apt-get purge vim-tiny vim-common vim-runtime vim 下载编译 $ hg clone https://code.google.com/p/vim/ $ cd vim $ ./configure --with-features=huge \ --enable-multibyte \ --enable-perlinterp=dynamic
+    </div>
+    <div class="read-more">
+      <a href="/post/vim/build-vim-7.4-from-source-code/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/linux-commands/copy-remote-file/">linux远程文件拷贝</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/linux-commands/"> linux-commands </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      我们经常会碰到从一个主机上拷贝文件到其他主机，本文汇总下常用方法。 ssh 提到远程文件拷贝，大家肯定首先想到的是ssh。(啥? 你想到的是ftp??
+    </div>
+    <div class="read-more">
+      <a href="/post/linux-commands/copy-remote-file/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/configuration/setup-haproxy-and-keepalived-on-debian-wheezy/">setup haproxy and keepalived on debian (wheezy)</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2014-07-01 </span>
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      准备机器 harpoxy_MASTER - 172.16.8.129 haproxy_BACKUP - 172.16.8.130 WEB_APP_SERVER_1 - 172.16.8.131 WEB_APP_SERVER_2 - 172.16.8.132 注: 1. virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP) 2. 所有机器都安装的Debian 7.5 (wheezy) 安装
+    </div>
+    <div class="read-more">
+      <a href="/post/configuration/setup-haproxy-and-keepalived-on-debian-wheezy/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/configuration/setup-lvs-and-keepalived-on-debian/">Setup LVS and Keepalived on Debian</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2014-06-26 </span>
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      准备机器 LVS_MASTER - 172.16.8.129 LVS_BACKUP - 172.16.8.130 WEB_APP_SERVER_1 - 172.16.8.131 WEB_APP_SERVER_2 - 172.16.8.132 注: 1. virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP) 2. 所有机器都安装的Debian 7.5 (wheezy) 安装
+    </div>
+    <div class="read-more">
+      <a href="/post/configuration/setup-lvs-and-keepalived-on-debian/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/configuration/linux-bash-tips/">Linux Bash Tips</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2013-08-14 </span>
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Command line option parse while (( $# &gt; 0 )) ; do case $1 in --local_branch) git_local_branch=$2 shift ;; --remote_branch) git_remote_branch=$2 shift ;; --remote_repo) git_remote_repo=$2 shift ;; --tag) git_tag=$2 shift ;; -f|--force) git_force=&quot;-f&quot; ;; --keyfile) export git_publish_keyfile=$2 shift ;; esac shift done  Pointer variable The example shows how to make a bash environment variable reference the value of another:
+$ foo=bar $ name=foo $ echo ${!name} bar  The example shows how to get a list of all variables beginning with &ldquo;H&rdquo; (Note: the wildcard can only go at the end)
+    </div>
+    <div class="read-more">
+      <a href="/post/configuration/linux-bash-tips/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/configuration/setup-opengrok/">Setup OpenGrok</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2013-08-14 </span>
+      <div class="post-category">
+          
+            <a href="/categories/opengrok/"> OpenGrok </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      OpenGrok安装使用指南 参考： https://github.com/OpenGrok/OpenGrok/wiki/How-to-install-OpenGrok 注意：最好是单独建立一个opengrok用户，并保证该用户对代码和后面创建索引的目录读写权限 下面整个流程
+    </div>
+    <div class="read-more">
+      <a href="/post/configuration/setup-opengrok/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/configuration/setup-cgit/">Setup cgit</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2013-08-14 </span>
+      <div class="post-category">
+          
+            <a href="/categories/git/"> Git </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      cgit setup cgit install $ git://hjemli.net/pub/git/cgit $ cd cgit $ git submodule init # register the git submodule in .git/config $ $EDITOR .git/config # if you want to specify a different url for git $ git submodule update # clone/fetch and checkout correct git version $ make $ sudo make install  setup cgitrc $ cat /etc/cgitrc # # cgit config # css=/cgit/cgit.css logo=/cgit/cgit.png # if you don't want that webcrawler (like google) index your site robots=noindex, nofollow # # List of repositories.
+    </div>
+    <div class="read-more">
+      <a href="/post/configuration/setup-cgit/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/configuration/setup-new-jenkins-slave/">Setup new Jenkins slave</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2013-08-14 </span>
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Setup new Jenkins slave Install Ubuntu 10.04 Create jenkins/jenkins (user/group) # login new Jenkins slave $ sudo addgroup jenkins $ sudo useradd -m -s /bin/bash -g jenkins jenkins $ sudo su - jenkins $ scp -r jenkins@172.26.32.85:~/.ssh ~/ $ passwd jenkins # change hostname $ sudo vim /etc/hostname # login Jenkins master $ ssh jenkins@master $ ssh-copy-id jenkins@new-slave-host # login new Jenkins slave $ sudo scp jenkins@master:/etc/apt/sources.list /etc/apt/sources.list $ sudo apt-get update $ sudo apt-get upgrade $ sudo apt-get install git-core  Setup nis/autofs $ sudo tail -n 1 /etc/passwd /etc/group /etc/shadow ==&gt; /etc/passwd &lt;== +:::::: ==&gt; /etc/group &lt;== +::: ==&gt; /etc/shadow &lt;== +:::::::: $ sudo apt-get install nis portmap autofs $ sudo bash -c 'echo &quot;ypserver int.
+    </div>
+    <div class="read-more">
+      <a href="/post/configuration/setup-new-jenkins-slave/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/configuration/git-tips/">Git Tips</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2013-08-09 </span>
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Git Tips Revert a git patch Chengdu Gerrit has “Revert Change” button, so you can revert patch very easy. But, Shanghai Gerrit version is too old, it doesn’t support “Revert Change” on Gerrit, for this case, you can try the below git commands.
+Check git repository status:
+$ git status  Make git repository clean:
+$ git checkout . $ git clean -fd  Find &lt;commit&gt; which you want to revert:
+    </div>
+    <div class="read-more">
+      <a href="/post/configuration/git-tips/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/configuration/bash-multiprocess/">Bash Multiprocess</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2013-08-06 </span>
+      <div class="post-category">
+          
+            <a href="/categories/linux/"> Linux </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Git同步 成都和上海分别建有git server, 虽有 Gerrit Replication, 但新创建分支、git库无法自动同步, 直到该git库有新Gerrit merge. 所以, 写脚本通过 gitweb_url?a=project_index 获取所有g
+    </div>
+    <div class="read-more">
+      <a href="/post/configuration/bash-multiprocess/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/configuration/http-command-line-tools/">HTTP Command Line Tools</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2013-08-06 </span>
+      <div class="post-category">
+          
+            <a href="/categories/http/"> HTTP </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Linux Network Tools wget  GNU Wget is a free utility for non-interactive download of files from the Web. It supports HTTP, HTTPS, and FTP protocols, as well as retrieval through HTTP proxies.
+ log to a server using POST and then proceed to download the desired pages, presumably only accessible to authorized users Log in to the server. This can be done only once.
+wget --save-cookies cookies.txt \ --post-data 'user=foo&amp;password=bar' \ http://server.
+    </div>
+    <div class="read-more">
+      <a href="/post/configuration/http-command-line-tools/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/configuration/hello-world/">Hello World</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2013-08-06 </span>
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Hello World.
+    </div>
+    <div class="read-more">
+      <a href="/post/configuration/hello-world/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/configuration/nginx-config-copy/"></a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 0001-01-01 </span>
+      <div class="post-category">
+          
+            <a href="/categories/configuration/"> configuration </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      ##################### global config ##################### daemon on; master_process on; timer_resolution 100ms; lock_file /var/run/nginx.lock; worker_priority -10; user admin admin; pid /var/run/nginx.pid; worker_processes auto; worker_rlimit_nofile 102400; error_log /var/log/nginx/error.log; ##################### event config ##################### events { use epoll; worker_connections 51200; multi_accept off; } ##################### http config ##################### http { server_tokens off; sendfile on; tcp_nopush on; tcp_nodelay on; keepalive_timeout 10; client_header_timeout 10; client_body_timeout 10; reset_timedout_connection on; send_timeout 10; # 限制同一IP并
+    </div>
+    <div class="read-more">
+      <a href="/post/configuration/nginx-config-copy/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+  </section>
+  
+  <nav class="pagination">
+      <a class="prev" href="/page/4/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text">上一页</span>
+      </a>
+    
+      <a class="next" href="/page/6/">
+        <span class="next-text">下一页</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+  </nav>
+
+        </div>
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

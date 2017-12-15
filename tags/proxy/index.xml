@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Proxy on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/proxy/</link>
+    <description>Recent content in Proxy on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:22:01 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/proxy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>elastichsearch反向代理设置</title>
+      <link>http://ox0spy.github.io/post/elasticsearch/elasticsearch-reverse-proxy/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/elasticsearch/elasticsearch-reverse-proxy/</guid>
+      <description>内网的ES集群，平时操作都是通过命令行，有点不方便，而且安装的site插件也没法使用 ，比较蛋疼，所以配置nginx作为elasticsear</description>
+    </item>
+    
+  </channel>
+</rss>

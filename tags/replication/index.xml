@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Replication on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/replication/</link>
+    <description>Recent content in Replication on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:21:57 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/replication/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>gerrit备份</title>
+      <link>http://ox0spy.github.io/post/configuration/gerrit-replication/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/gerrit-replication/</guid>
+      <description>将Gerrit实时同步到其它系统完成Gerrit git repos备份。通常用这种方式完成Gerrit Mirror。 通过Gerrit replication plugin</description>
+    </item>
+    
+  </channel>
+</rss>

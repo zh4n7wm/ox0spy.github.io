@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Linux Bash Tips - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ox0spy" />
+  <meta name="description" content="Command line option parse while (( $# &amp;gt; 0 )) ; do case $1 in --local_branch) git_local_branch=$2 shift ;; --remote_branch) git_remote_branch=$2 shift ;; --remote_repo) git_remote_repo=$2 shift ;; --tag) git_tag=$2 shift ;; -f|--force) git_force=&amp;quot;-f&amp;quot; ;; --keyfile) export git_publish_keyfile=$2 shift ;; esac shift done  Pointer variable The example shows how to make a bash environment variable reference the value of another:
+$ foo=bar $ name=foo $ echo ${!name} bar  The example shows how to get a list of all variables beginning with &amp;ldquo;H&amp;rdquo; (Note: the wildcard can only go at the end)" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/configuration/linux-bash-tips/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Linux Bash Tips" />
+<meta property="og:description" content="Command line option parse while (( $# &gt; 0 )) ; do case $1 in --local_branch) git_local_branch=$2 shift ;; --remote_branch) git_remote_branch=$2 shift ;; --remote_repo) git_remote_repo=$2 shift ;; --tag) git_tag=$2 shift ;; -f|--force) git_force=&quot;-f&quot; ;; --keyfile) export git_publish_keyfile=$2 shift ;; esac shift done  Pointer variable The example shows how to make a bash environment variable reference the value of another:
+$ foo=bar $ name=foo $ echo ${!name} bar  The example shows how to get a list of all variables beginning with &ldquo;H&rdquo; (Note: the wildcard can only go at the end)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/configuration/linux-bash-tips/" />
+
+
+
+<meta property="article:published_time" content="2013-08-14T00:00:00&#43;08:00"/>
+
+<meta property="article:modified_time" content="2013-08-14T00:00:00&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Linux Bash Tips">
+<meta itemprop="description" content="Command line option parse while (( $# &gt; 0 )) ; do case $1 in --local_branch) git_local_branch=$2 shift ;; --remote_branch) git_remote_branch=$2 shift ;; --remote_repo) git_remote_repo=$2 shift ;; --tag) git_tag=$2 shift ;; -f|--force) git_force=&quot;-f&quot; ;; --keyfile) export git_publish_keyfile=$2 shift ;; esac shift done  Pointer variable The example shows how to make a bash environment variable reference the value of another:
+$ foo=bar $ name=foo $ echo ${!name} bar  The example shows how to get a list of all variables beginning with &ldquo;H&rdquo; (Note: the wildcard can only go at the end)">
+
+
+<meta itemprop="datePublished" content="2013-08-14T00:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2013-08-14T00:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="417">
+
+
+
+<meta itemprop="keywords" content="Linux,Bash,Programming," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Linux Bash Tips"/>
+<meta name="twitter:description" content="Command line option parse while (( $# &gt; 0 )) ; do case $1 in --local_branch) git_local_branch=$2 shift ;; --remote_branch) git_remote_branch=$2 shift ;; --remote_repo) git_remote_repo=$2 shift ;; --tag) git_tag=$2 shift ;; -f|--force) git_force=&quot;-f&quot; ;; --keyfile) export git_publish_keyfile=$2 shift ;; esac shift done  Pointer variable The example shows how to make a bash environment variable reference the value of another:
+$ foo=bar $ name=foo $ echo ${!name} bar  The example shows how to get a list of all variables beginning with &ldquo;H&rdquo; (Note: the wildcard can only go at the end)"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Linux Bash Tips</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2013-08-14 </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#command-line-option-parse">Command line option parse</a></li>
+<li><a href="#pointer-variable">Pointer variable</a></li>
+<li><a href="#send-email">Send email</a></li>
+<li><a href="#newline">Newline</a></li>
+<li><a href="#bash-command-line-editor">Bash command line editor</a>
+<ul>
+<li><a href="#set-vi-mode-in-bash">Set vi mode in Bash</a>
+<ul>
+<li><a href="#find-history-commands">find history commands</a></li>
+</ul></li>
+<li><a href="#set-emacs-mode-in-bash">Set emacs mode in Bash</a></li>
+</ul></li>
+<li><a href="#bash-with-mysql">Bash with MySQL</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h2 id="command-line-option-parse">Command line option parse</h2>
+
+<pre><code>while (( $# &gt; 0 )) ; do
+    case $1 in
+        --local_branch)
+            git_local_branch=$2
+            shift
+            ;;
+        --remote_branch)
+            git_remote_branch=$2
+            shift
+            ;;
+        --remote_repo)
+            git_remote_repo=$2
+            shift
+            ;;
+        --tag)
+            git_tag=$2
+            shift
+            ;;
+        -f|--force)
+            git_force=&quot;-f&quot;
+            ;;
+        --keyfile)
+            export git_publish_keyfile=$2
+            shift
+            ;;
+    esac
+    shift
+done
+</code></pre>
+
+<h2 id="pointer-variable">Pointer variable</h2>
+
+<p>The example shows how to make a bash environment variable reference the value of another:</p>
+
+<pre><code>$ foo=bar
+$ name=foo
+$ echo ${!name}
+bar
+</code></pre>
+
+<p>The example shows how to get a list of all variables beginning with &ldquo;H&rdquo; (Note: the wildcard can only go at the end)</p>
+
+<pre><code>$ echo ${!H*}
+foo fs_abc_opts fs_name
+</code></pre>
+
+<h2 id="send-email">Send email</h2>
+
+<pre><code>$ cat a
+From: &quot;Liang Lin&quot; &lt;linliang@tcl.com&gt;
+To: &quot;Wanming Zhang&quot; &lt;wanming.zhang@tcl.com&gt;
+CC:
+Subject: Test
+Dears,
+
+hello world!
+
+$ cat a | sendmail -t -f root@localhost
+</code></pre>
+
+<h2 id="newline">Newline</h2>
+
+<ul>
+<li><p>check if exist &lsquo;\r&rsquo; in inputfile</p>
+
+<p>$ od -c inputfile | grep -E &lsquo;\r&rsquo;</p></li>
+
+<li><p>remove &lsquo;\r&rsquo;</p>
+
+<p>$ tr -d &lsquo;\r&rsquo; &lt; inputfile &gt; outputfile</p></li>
+</ul>
+
+<p>or</p>
+
+<pre><code>$ sed -i 's#\r##g' inputfile
+</code></pre>
+
+<ul>
+<li><p>converting all CR newlines to LF</p>
+
+<p>$ tr &lsquo;\r&rsquo; &lsquo;\n&rsquo; &lt; inputfile &gt; outputfile</p></li>
+</ul>
+
+<p>or</p>
+
+<pre><code>$ sed -i 's#\r#\n#g' inputfile
+</code></pre>
+
+<ul>
+<li><p>converting DOS format file to UNIX format</p>
+
+<p>$ fromdos inputfile</p></li>
+</ul>
+
+<p>Reference: <a href="https://en.wikipedia.org/wiki/Newline">https://en.wikipedia.org/wiki/Newline</a></p>
+
+<h2 id="bash-command-line-editor">Bash command line editor</h2>
+
+<h3 id="set-vi-mode-in-bash">Set vi mode in Bash</h3>
+
+<p>Vi mode allows for the use of vi like commands when at the bash prompt. When set to this mode initially you will be in insert mode (be able to type at the prompt unlike when you enter vi). Hitting the escape key takes you into command mode.</p>
+
+<pre><code>$ set -o vi
+</code></pre>
+
+<h4 id="find-history-commands">find history commands</h4>
+
+<pre><code>$ ESC , /keyword
+
+e.g.:
+$ /ls , then press enter
+$ ls mtk6582* | xargs
+</code></pre>
+
+<h3 id="set-emacs-mode-in-bash">Set emacs mode in Bash</h3>
+
+<p>This is usually the default editing mode when in the bash environment and means that you are able to use commands like those in Emacs (defined in the Readline library) to move the cursor, cut and paste text, or undo editing.</p>
+
+<pre><code>$ set -o emacs
+</code></pre>
+
+<h2 id="bash-with-mysql">Bash with MySQL</h2>
+
+<p>Simple bash example to store the output of a MySQL query in an array:</p>
+
+<pre><code>dbquery=$(mysql -u username -p password -e &quot;use table; select field from table;&quot;)
+array=( $( for i in $dbquery ; do echo $i ; done ) )
+
+# you can check the contents of your new array with:
+echo ${array[@]}
+
+# Now that you have a nice array, you can do things like this:
+for i in ${array[@]};do
+    echo $i
+done
+
+# or, more sophisticated:
+cnt=${#array[@]}
+for (( i=0 ; i&amp;lt;cnt ; i++ ))
+do
+    echo &quot;Record No. $i: ${array[$i]}&quot;
+done
+</code></pre>
+
+<p>simple, but effective !</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ox0spy</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2013-08-14</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/linux/">Linux</a>
+          
+          <a href="/tags/bash/">Bash</a>
+          
+          <a href="/tags/programming/">Programming</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/configuration/setup-lvs-and-keepalived-on-debian/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Setup LVS and Keepalived on Debian</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/configuration/setup-opengrok/">
+            <span class="next-text nav-default">Setup OpenGrok</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

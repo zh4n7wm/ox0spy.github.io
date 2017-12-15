@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/categories/java/</link>
+    <description>Recent content in Java on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:22:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>java spring 学习索引</title>
+      <link>http://ox0spy.github.io/post/java/get_started_with_java_web/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/java/get_started_with_java_web/</guid>
+      <description>近期由于工作需要，需要学习Java Web开发，虽然以前也接触过Java, 不过也就仅限于写个&amp;rdquo;Hello World&amp;rdquo;. 为了尽快掌握Java We</description>
+    </item>
+    
+    <item>
+      <title>maven通过plugin在tomcat、jetty中运行项目</title>
+      <link>http://ox0spy.github.io/post/java/maven-tomcat-jetty-run/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/java/maven-tomcat-jetty-run/</guid>
+      <description>记录下如何在pom.xml中配置插件，通过tomcat、Jetty运行项目. 配置pom.xml &amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.tomcat.maven&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;tomcat6-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.2&amp;lt;/version&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.tomcat.maven&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;tomcat7-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.2&amp;lt;/version&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.mortbay.jetty&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jetty-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt; 测试 Maven Tomcat plugin</description>
+    </item>
+    
+    <item>
+      <title>jvm</title>
+      <link>http://ox0spy.github.io/post/java/jvm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/java/jvm/</guid>
+      <description>Java options JAVA_OPTIONS=&amp;ldquo;-server -XX:+AggressiveOpts -XX:+UseFastAccessorMethods -Xms1096m -Xmx1096m&amp;rdquo; if [[ &amp;ldquo;gcprof&amp;rdquo; == &amp;ldquo;$1&amp;rdquo; ]]; then JAVA_OPTIONS=&amp;ldquo;$JAVA_OPTIONS -Xloggc:gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps&amp;rdquo; shift fi JVM GC GC专家系列目录索引 深入理解JVM 火焰图 白话火焰图 Java火焰图 SCALE13x: Linux Profiling at Netflix Java in Flames CPU Flame Graphs</description>
+    </item>
+    
+  </channel>
+</rss>

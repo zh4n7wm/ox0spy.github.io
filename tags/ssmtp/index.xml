@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ssmtp on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/ssmtp/</link>
+    <description>Recent content in Ssmtp on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:22:01 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/ssmtp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ssmtp发送邮件</title>
+      <link>http://ox0spy.github.io/post/ubuntu/install-ssmtp/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/ubuntu/install-ssmtp/</guid>
+      <description>工作中很多场景需要发送邮件，如：报警邮件、日报等。本文介绍如何安装、配置sSMTP做邮件发送。 安装 :::bash $ sudo apt-get install ssmtp 配置 /etc/ssmtp/revaliases :::bash $ cat /etc/ssmtp/revaliases # sSMTP aliases # # Format: local_account:outgoing_address:mailhub #</description>
+    </item>
+    
+  </channel>
+</rss>

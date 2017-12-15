@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Centos on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/centos/</link>
+    <description>Recent content in Centos on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:21:58 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/centos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>centos上安装supervisor</title>
+      <link>http://ox0spy.github.io/post/install/centos-supervisord/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/install/centos-supervisord/</guid>
+      <description>安装 部署项目从Ubuntu转战到CentOS, 使用yum命令安装supervisor后，发现无法正常使用，因此只有使用pip安装. :::bash $ sudo pip install</description>
+    </item>
+    
+    <item>
+      <title>saltstack介绍</title>
+      <link>http://ox0spy.github.io/post/configuration/saltstack/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/saltstack/</guid>
+      <description>本文只介绍了SaltStack在CentOS上的安装，其它其它有类似的包管理工具可以安装. CentOS上安装salt-master和salt</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pip on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/pip/</link>
+    <description>Recent content in Pip on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:21:58 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/pip/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>python gevent安装报错</title>
+      <link>http://ox0spy.github.io/post/configuration/gevent-install-error/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/gevent-install-error/</guid>
+      <description>Mac上pip安装gevent报错信息如下： libev/ev.c:1029:42: error: &#39;_Noreturn&#39; keyword must precede function declarator 解决： :::bash $ CFLAGS=&#39;-std=c99&#39; pip install gevent 这里有讨论：https://github.com/NixOS/</description>
+    </item>
+    
+    <item>
+      <title>python pypi源</title>
+      <link>http://ox0spy.github.io/post/configuration/python-pypi/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/python-pypi/</guid>
+      <description>pip安装 :::bash $ wget https://bootstrap.pypa.io/get-pip.py $ sudo python get-pip.py 或者，直接使用发行版的包管理安装: :::bash $ sudo apt-get install python-pip # Debian/Ubuntu pip配置 官方源比较慢，上面是一些国内源。 国内pypi源 https://pypi.mirrors.ustc.edu.cn/simple/ http://mirrors.aliyun.com/pypi/simple/ http://pypi.v2ex.com/simple http://pypi.douban.com/</description>
+    </item>
+    
+  </channel>
+</rss>

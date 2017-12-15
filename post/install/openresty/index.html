@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>openresty - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="crazygit" />
+  <meta name="description" content="什么是OpenResty OpenResty（也称为 ngx_openresty）是一个全功能的 Web 应用服务器，它打包了标准 的Nginx 核心，很多" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/install/openresty/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="openresty" />
+<meta property="og:description" content="什么是OpenResty OpenResty（也称为 ngx_openresty）是一个全功能的 Web 应用服务器，它打包了标准 的Nginx 核心，很多" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/install/openresty/" />
+
+
+
+<meta property="article:published_time" content="2017-12-15T19:21:58&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-12-15T19:21:58&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="openresty">
+<meta itemprop="description" content="什么是OpenResty OpenResty（也称为 ngx_openresty）是一个全功能的 Web 应用服务器，它打包了标准 的Nginx 核心，很多">
+
+
+<meta itemprop="datePublished" content="2017-12-15T19:21:58&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:58&#43;08:00" />
+<meta itemprop="wordCount" content="1012">
+
+
+
+<meta itemprop="keywords" content="nginx, openresty," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="openresty"/>
+<meta name="twitter:description" content="什么是OpenResty OpenResty（也称为 ngx_openresty）是一个全功能的 Web 应用服务器，它打包了标准 的Nginx 核心，很多"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">openresty</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/install/"> install </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#什么是openresty">什么是OpenResty</a></li>
+<li><a href="#下载及安装">下载及安装</a></li>
+<li><a href="#添加开机启动脚本">添加开机启动脚本</a></li>
+<li><a href="#使用logrotate切割日志">使用logrotate切割日志</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h2 id="什么是openresty">什么是OpenResty</h2>
+
+<p>OpenResty（也称为 ngx_openresty）是一个全功能的 Web 应用服务器，它打包了标准
+的Nginx 核心，很多的常用的第三方模块，以及它们的大多数依赖项。对于经常需要使用
+nginx第三方模块的人来说，是一个非常不错的选择.</p>
+
+<h2 id="下载及安装">下载及安装</h2>
+
+<p>关于如何下载及安装OpenResty, <a href="http://openresty.org/cn/">官网</a>已经有很详细的介
+绍，不再赘述。</p>
+
+<h2 id="添加开机启动脚本">添加开机启动脚本</h2>
+
+<ol>
+<li><p>创建如下文件:</p>
+
+<pre><code>:::bash
+$ cat /etc/init.d/nginx
+
+#!/bin/bash
+#
+# chkconfig: 2345 55 25
+# Description: Nginx init.d script, put in /etc/init.d, chmod +x /etc/init.d/nginx
+#              For Debian, run: update-rc.d -f nginx defaults
+#              For CentOS, run: chkconfig --add nginx
+#
+### BEGIN INIT INFO
+# Provides:          nginx
+# Required-Start:    $all
+# Required-Stop:     $all
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: nginx init.d script
+# Description:       OpenResty (aka. ngx_openresty) is a full-fledged web application server by bundling the standard Nginx core,
+#                    lots of 3rd-party Nginx modules, as well as most of their external dependencies.
+### END INIT INFO
+#
+
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+DESC=&quot;Nginx Daemon&quot;
+NAME=nginx
+PREFIX=/etc/openresty/nginx
+DAEMON=$PREFIX/sbin/$NAME
+CONF=$PREFIX/conf/$NAME.conf
+PID=$PREFIX/logs/$NAME.pid
+SCRIPT=/etc/init.d/$NAME
+
+if [ ! -x &quot;$DAEMON&quot; ] || [ ! -f &quot;$CONF&quot; ]; then
+    echo -e &quot;\033[33m $DAEMON has no permission to run. \033[0m&quot;
+    echo -e &quot;\033[33m Or $CONF doesn't exist. \033[0m&quot;
+    sleep 1
+    exit 1
+fi
+
+do_start() {
+    if [ -f $PID ]; then
+        echo -e &quot;\033[33m $PID already exists. \033[0m&quot;
+        echo -e &quot;\033[33m $DESC is already running or crashed. \033[0m&quot;
+        echo -e &quot;\033[32m $DESC Reopening $CONF ... \033[0m&quot;
+        $DAEMON -s reopen -c $CONF
+        sleep 1
+        echo -e &quot;\033[36m $DESC reopened. \033[0m&quot;
+    else
+        echo -e &quot;\033[32m $DESC Starting $CONF ... \033[0m&quot;
+        $DAEMON -c $CONF
+        sleep 1
+        echo -e &quot;\033[36m $DESC started. \033[0m&quot;
+    fi
+}
+
+do_stop() {
+    if [ ! -f $PID ]; then
+        echo -e &quot;\033[33m $PID doesn't exist. \033[0m&quot;
+        echo -e &quot;\033[33m $DESC isn't running. \033[0m&quot;
+    else
+        echo -e &quot;\033[32m $DESC Stopping $CONF ... \033[0m&quot;
+        $DAEMON -s stop -c $CONF
+        sleep 1
+        echo -e &quot;\033[36m $DESC stopped. \033[0m&quot;
+    fi
+}
+
+do_reload() {
+    if [ ! -f $PID ]; then
+        echo -e &quot;\033[33m $PID doesn't exist. \033[0m&quot;
+        echo -e &quot;\033[33m $DESC isn't running. \033[0m&quot;
+        echo -e &quot;\033[32m $DESC Starting $CONF ... \033[0m&quot;
+        $DAEMON -c $CONF
+        sleep 1
+        echo -e &quot;\033[36m $DESC started. \033[0m&quot;
+    else
+        echo -e &quot;\033[32m $DESC Reloading $CONF ... \033[0m&quot;
+        $DAEMON -s reload -c $CONF
+        sleep 1
+        echo -e &quot;\033[36m $DESC reloaded. \033[0m&quot;
+    fi
+}
+
+do_quit() {
+    if [ ! -f $PID ]; then
+        echo -e &quot;\033[33m $PID doesn't exist. \033[0m&quot;
+        echo -e &quot;\033[33m $DESC isn't running. \033[0m&quot;
+    else
+        echo -e &quot;\033[32m $DESC Quitting $CONF ... \033[0m&quot;
+        $DAEMON -s quit -c $CONF
+        sleep 1
+        echo -e &quot;\033[36m $DESC quitted. \033[0m&quot;
+    fi
+}
+
+do_test() {
+    echo -e &quot;\033[32m $DESC Testing $CONF ... \033[0m&quot;
+    $DAEMON -t -c $CONF
+}
+
+do_info() {
+    $DAEMON -V
+}
+
+case &quot;$1&quot; in
+start)
+do_start
+;;
+stop)
+do_stop
+;;
+reload)
+do_reload
+;;
+restart)
+do_stop
+do_start
+;;
+quit)
+do_quit
+;;
+test)
+do_test
+;;
+info)
+do_info
+;;
+*)
+echo &quot;Usage: $SCRIPT {start|stop|reload|restart|quit|test|info}&quot;
+exit 2
+;;
+esac
+
+exit 0
+</code></pre></li>
+
+<li><p>给文件设置执行权限<code>chmod +x /etc/init.d/nginx</code></p></li>
+
+<li><p>添加到开机启动</p>
+
+<ul>
+<li><p>CentOS系统</p>
+
+<pre><code>:::bash
+chkconfig --list nginx   # 列出系统nginx服务启动情况
+chkconfig --add nginx    # 添加nginx服务
+chkconfig --level 35 nginx on # 设定nginx在等级3和5为开机运行服务，--level 35表示操作只在等级3和5执行，on表示启动，off表示关闭
+</code></pre></li>
+
+<li><p>Debian系统</p>
+
+<pre><code>:::bash
+sudo update-rc.d -f nginx remove  # 删除nginx服务
+sudo update-rc.d apache2 defaults # 添加nginx服务
+</code></pre></li>
+</ul></li>
+</ol>
+
+<h2 id="使用logrotate切割日志">使用logrotate切割日志</h2>
+
+<p>创建如下文件</p>
+
+<pre><code>:::bash
+$ cat /etc/logrotate.d/nginx
+/etc/openresty/nginx/logs/*.log {
+    daily
+    missingok
+    rotate 52
+    dateext
+    dateformat  -%Y-%m-%d
+    compress
+    delaycompress
+    notifempty
+    create 0640 www-data adm
+    sharedscripts
+    postrotate
+        [ ! -f /etc/openresty/nginx/logs/nginx.pid ] || kill -USR1 `cat /etc/openresty/nginx/logs/nginx.pid`
+    endscript
+}
+</code></pre>
+
+<p>注释：</p>
+
+<ul>
+<li><code>/etc/openresty/nginx/logs/*.log</code> 为OpenResty的log目录</li>
+<li>daily：每天轮询</li>
+<li>missingok: 如果日志丢失，不报错继续滚动下一个日志</li>
+<li>rotate 52：保留最多52次滚动的日志</li>
+<li>dateext：日期扩展</li>
+<li>dateformat: 日期格式</li>
+<li>compress：旧日志默认用gzip压缩</li>
+<li>notifempty:当日志为空时不进行滚动</li>
+<li>create: mode owner group 转储文件，使用指定的文件模式创建新的日志文件</li>
+<li>/etc/openresty/nginx/logs/nginx.pid：nginx主进程pid</li>
+</ul>
+
+<p>测试:</p>
+
+<pre><code>:::bash
+$ logroate -f /etc/logrotate.d/nginx
+</code></pre>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">crazygit</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2017-12-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/nginx/">nginx</a>
+          
+          <a href="/tags/openresty/"> openresty</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/install/setup-opengrok/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">opengrok安装使用指南</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/configuration/gevent-install-error/">
+            <span class="next-text nav-default">python gevent安装报错</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

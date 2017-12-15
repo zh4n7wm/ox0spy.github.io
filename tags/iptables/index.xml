@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Iptables on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/iptables/</link>
+    <description>Recent content in Iptables on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:21:58 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/iptables/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>iptables配置</title>
+      <link>http://ox0spy.github.io/post/configuration/iptables/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/iptables/</guid>
+      <description>最近使用阿里云ECS，发现既然没有提供安全组，能让小白用户方便的配置下允许外网访问的端口。 默认所有绑定到外网ip或四个零的端口，外网都可以访</description>
+    </item>
+    
+  </channel>
+</rss>

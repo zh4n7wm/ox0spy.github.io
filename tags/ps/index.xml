@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ps on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/ps/</link>
+    <description>Recent content in Ps on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:21:57 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/ps/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ps</title>
+      <link>http://ox0spy.github.io/post/linux-commands/ps/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/linux-commands/ps/</guid>
+      <description>本文参考： 10 basic examples of Linux ps command http://man.linuxde.net/ps 作用 ps命令用来列出系统中当前运行的那些进程。ps命令列出的是当前那些进程的快照，就是执行ps命令的那个时刻的那些</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>opengrok安装使用指南 - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="crazygit" />
+  <meta name="description" content="本文主要参考了下面的文章: http://hub.opensolaris.org/bin/view/Project&#43;opengrok/installdescription http://src.opensolaris.org/source/xref/opengrok/trunk/README.txt 注意：最好是单独建立一个用户，并保证该用户对代码和后面创建索引的目录读写权限 准备工作 以opengrok用户身份" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/install/setup-opengrok/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="opengrok安装使用指南" />
+<meta property="og:description" content="本文主要参考了下面的文章: http://hub.opensolaris.org/bin/view/Project&#43;opengrok/installdescription http://src.opensolaris.org/source/xref/opengrok/trunk/README.txt 注意：最好是单独建立一个用户，并保证该用户对代码和后面创建索引的目录读写权限 准备工作 以opengrok用户身份" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/install/setup-opengrok/" />
+
+
+
+<meta property="article:published_time" content="2017-12-15T19:21:58&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-12-15T19:21:58&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="opengrok安装使用指南">
+<meta itemprop="description" content="本文主要参考了下面的文章: http://hub.opensolaris.org/bin/view/Project&#43;opengrok/installdescription http://src.opensolaris.org/source/xref/opengrok/trunk/README.txt 注意：最好是单独建立一个用户，并保证该用户对代码和后面创建索引的目录读写权限 准备工作 以opengrok用户身份">
+
+
+<meta itemprop="datePublished" content="2017-12-15T19:21:58&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:58&#43;08:00" />
+<meta itemprop="wordCount" content="1823">
+
+
+
+<meta itemprop="keywords" content="opengrok," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="opengrok安装使用指南"/>
+<meta name="twitter:description" content="本文主要参考了下面的文章: http://hub.opensolaris.org/bin/view/Project&#43;opengrok/installdescription http://src.opensolaris.org/source/xref/opengrok/trunk/README.txt 注意：最好是单独建立一个用户，并保证该用户对代码和后面创建索引的目录读写权限 准备工作 以opengrok用户身份"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">opengrok安装使用指南</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/install/"> install </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#准备工作">准备工作</a></li>
+<li><a href="#部署opengrok">部署OpenGrok</a>
+<ul>
+<li><a href="#创建索引">创建索引</a></li>
+<li><a href="#项目代码更新或者添加新的项目">项目代码更新或者添加新的项目</a></li>
+<li><a href="#可选操作">可选操作</a></li>
+<li><a href="#直接调用命令行接口">直接调用命令行接口</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>本文主要参考了下面的文章:</p>
+
+<ul>
+<li><a href="http://hub.opensolaris.org/bin/view/Project+opengrok/installdescription">http://hub.opensolaris.org/bin/view/Project+opengrok/installdescription</a></li>
+<li><a href="http://src.opensolaris.org/source/xref/opengrok/trunk/README.txt">http://src.opensolaris.org/source/xref/opengrok/trunk/README.txt</a></li>
+</ul>
+
+<p>注意：最好是单独建立一个用户，并保证该用户对代码和后面创建索引的目录读写权限</p>
+
+<h2 id="准备工作">准备工作</h2>
+
+<p>以opengrok用户身份登录安装jdk和Exuberant Ctags.</p>
+
+<pre><code>$ sudo apt-get install sun-java6-jdk ctags
+</code></pre>
+
+<p>获取opengrok安装包（opengrok-0.11.1.tar.gz）和tomcat安装包(apachetomcat-7.0.6.tar.gz)解压安装包到任意目录下面</p>
+
+<pre><code>$ cd /var/local/
+$ tar -zxvf /path/to/opengrok-0.11.1.tar.gz
+$ tar -zxvf /path/to/apachetomcat-7.0.6.tar.gz
+</code></pre>
+
+<p>下载需要使用的代码到一个目录下面</p>
+
+<pre><code>$ mkdir -p ~/opengrok/projects/project1
+$ mkdir -p ~/opnegrok/projects/project2
+$ cd ~/opengrok/projects/project1
+$ download code of project1 (such as: git clone ... or repo init ... &amp;&amp; repo sync)
+$ cd ~/opengrok/projects/project2
+$ download code of project2 (such as: git clone ... or repo init ... &amp;&amp; repo sync)
+</code></pre>
+
+<p>目录结构如下:</p>
+
+<pre>
+opengrok/projects----project1
+            |----project2
+            |----project3
+            |----.......
+</pre>
+
+<p>启动tomcat，确认tomcat没有问题</p>
+
+<pre><code>$ /var/local/apache-tomcat-7.0.6/bin/startup.sh
+</code></pre>
+
+<p>访问<a href="http://127.0.0.1:8080">http://127.0.0.1:8080</a>检查tomcat 是否正常工作</p>
+
+<h2 id="部署opengrok">部署OpenGrok</h2>
+
+<p>执行命令</p>
+
+<pre><code>$ sudo OPENGROK_TOMCAT_BASE=/var/local/apache-tomcat-7.0.6 /var/local/opengrok-0.11.1/bin/OpenGrok deploy
+</code></pre>
+
+<p>这一步实际操作是<code>/var/local/opengrok-0.11.1/lib/source.war</code>部署到<code>/var/local/apache-tomcat-7.0.6/webapps/</code>
+访问
+<a href="http://127.0.0.1:8080/source">http://127.0.0.1:8080/source</a>
+已经可以看到opengrok页面了，但是没有项目的数据信息。
+在<code>/var/local/apache-tomcat-7.0.6/webapps/</code>目录下面可以看到一个source目录和source.war，就是刚刚部属的产物。
+source.war已经没有什么用了，可以删除。</p>
+
+<h3 id="创建索引">创建索引</h3>
+
+<p>创建索引时，会创建三个目录，一个data目录来存放索引信息，一个etc目录创建配置信息和一个log目录。
+ 如想让~/opengrok/来存放索引,则指定<code>OPENGROK_INSTANCE_BASE=~/opengrok</code>, 则指定<code>OPENGROK_INSTANCE_BASE=~/opengrok</code></p>
+
+<pre><code>$ OPENGROK_VERBOSE=true OPENGROK_INSTANCE_BASE=~/opengrok/ ./OpenGrok index ~/opengrok/projects/
+</code></pre>
+
+<p>这一步命令的执行时间视~/opengrok/projects/的代码数量决定。 最后会在~/opengrok 目录下面看到data,etc,log 三个目录</p>
+
+<p>访问<a href="http://127.0.0.1:8080/source">http://127.0.0.1:8080/source</a>,enjoy it!</p>
+
+<h3 id="项目代码更新或者添加新的项目">项目代码更新或者添加新的项目</h3>
+
+<p>首先更新项目代码或者下载新的项目到~/opengrok/projects目录下面。
+然后重新执行</p>
+
+<pre><code>$ OPENGROK_VERBOSE=true OPENGROK_INSTANCE_BASE=~/opengrok/ ./OpenGrok index ~/opengrok/projects/
+</code></pre>
+
+<p>命令即可。</p>
+
+<h3 id="可选操作">可选操作</h3>
+
+<p>可以通过修改<code>/var/local/apache-tomcat-7.0.6/webapps/source/index_body.html</code>来定制化你的OpenGrok首页。
+如添加公司LOGO或一些有用的帮助信息。</p>
+
+<h3 id="直接调用命令行接口">直接调用命令行接口</h3>
+
+<p>上面创建索引的命令其实</p>
+
+<pre><code>$ OPENGROK_VERBOSE=true OPENGROK_INSTANCE_BASE=~/opengrok/ ./OpenGrok index ~/opengrok/projects/
+</code></pre>
+
+<p>其实调用的是opengrok lib目录下的jar包：</p>
+
+<pre><code>java -Xmx2048m -Dorg.opensolaris.opengrok.history.cvs=/usr/bin/cvs
+-Dorg.opensolaris.opengrok.history.git=/usr/bin/git
+-Djava.util.logging.config.file=/data/opengrok/opengrok_data/logging.properties
+-jar /data/opengrok/opengrok-0.11.1/bin/../lib/opengrok.jar
+-P -S -r on -v -c /usr/bin/ctags-exuberant -a on
+-W /data/opengrok/opengrok_data/etc/configuration.xml
+-U localhost:2424 -s /data/opengrok/projects/
+-d /data/opengrok/opengrok_data/data -H..
+</code></pre>
+
+<p>上面各个参数的意思如下:</p>
+
+<pre><code>$ java -jar opengrok.jar
+
+Usage: opengrok.jar [options]
+-?
+    Help
+
+-A ext:analyzer
+    Files with the named extension should be analyzed with the specified class
+
+-a on/off
+    Allow or disallow leading wildcards in a search
+
+-B url
+    Base URL of the user Information provider. Default: &quot;http://www.opensolaris.org/viewProfile.jspa?username=&quot;
+
+-C
+    Print per project percentage progress information(I/O extensive, since one read through dir structure is made before indexing, needs -v, otherwise it just goes to the log)
+
+-c /path/to/ctags
+    Path to Exuberant Ctags from http://ctags.sf.net by default takes the Exuberant Ctags in PATH.
+
+-D
+    Store history cache in a database (needs the JDBC driver in the classpath, typically derbyclient.jar or derby.jar)
+
+-d /path/to/data/root
+    The directory where OpenGrok stores the generated data
+
+-e
+    Economical - consumes less disk space. It does not generate hyper text cross reference files offline, but will do so on demand - which could be sightly slow.
+
+-H
+    Generate history cache for all repositories
+
+-h /path/to/repository
+    just generate history cache for the specified repos (absolute path from source root)
+
+-I pattern
+    Only files matching this pattern will be examined (supports wildcards, example: -I *.java -I *.c)
+
+-i pattern
+    Ignore the named files or directories (supports wildcards, example: -i *.so -i *.dll)
+
+-j class
+    Name of the JDBC driver class used by the history cache. Can use one of the shorthands &quot;client&quot; (org.apache.derby.jdbc.ClientDriver) or &quot;embedded&quot; (org.apache.derby.jdbc.EmbeddedDriver). Default: &quot;client&quot;
+
+-k /path/to/repository
+    Kill the history cache for the given repository and exit. Use '*' to delete the cache for all repositories.
+
+-K
+    List all repository pathes and exit.
+
+-L path
+    Path to the subdirectory in the web-application containing the requested stylesheet. The following factory-defaults exist: &quot;default&quot;, &quot;offwhite&quot; and &quot;polished&quot;
+
+-l on/off
+    Turn on/off locking of the Lucene database during index generation
+
+-m number
+    The maximum words to index in a file
+
+-N /path/to/symlink
+    Allow this symlink to be followed. Option may be repeated.
+
+-n
+    Do not generate indexes, but process all other command line options
+
+-O on/off
+    Turn on/off the optimization of the index database as part of the indexing step
+
+-P
+    Generate a project for each of the top-level directories in source root
+
+-p /path/to/default/project
+    This is the path to the project that should be selected by default in the web application(when no other project set either in cookie or in parameter). You should strip off the source root.
+
+-Q on/off
+    Turn on/off quick context scan. By default only the first 32k of a file is scanned, and a '[..all..]' link is inserted if the file is bigger. Activating this may slow the server down (Note: this is setting only affects the web application)
+
+-q
+    Run as quietly as possible
+
+-R /path/to/configuration
+    Read configuration from the specified file
+
+-r on/off
+    Turn on/off support for remote SCM systems
+
+-S
+    Search for &quot;external&quot; source repositories and add them
+
+-s /path/to/source/root
+    The root directory of the source tree
+
+-T number
+    The number of threads to use for index generation. By default the number of threads will be set to the number of available CPUs
+
+-t number
+    Default tabsize to use (number of spaces per tab character)
+
+-U host:port
+    Send the current configuration to the specified address (This is most likely the web-app configured with ConfigAddress)
+
+-u url
+    URL to the database that contains the history cache. Default: If -j specifies &quot;embedded&quot;, &quot;jdbc:derby:$DATA_ROOT/cachedb;create=true&quot;; otherwise, &quot;jdbc:derby://localhost/cachedb;create=true&quot;
+
+-V
+    Print version and quit
+
+-v
+    Print progress information as we go along
+
+-W /path/to/configuration
+    Write the current configuration to the specified file (so that the web application can use the same configuration
+
+-w webapp-context
+    Context of webapp. Default is /source. If you specify a different name, make sure to rename source.war to that name.
+
+-X url:suffix
+    URL Suffix for the user Information provider. Default: &quot;&quot;
+
+-z number
+    depth of scanning for repositories in directory structure relative to source root
+</code></pre>
+
+<hr />
+
+<p><strong>PS:默认情况下，调用OpenGork脚本是会生成项目的历史记录的，如果不想生成脚本的历史记录, 可以修改
+OpenGrok脚本的<code>UpdateGeneratedData</code> 方法，去掉<code>StdInvocation -H</code>的<code>-H</code></strong></p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">crazygit</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2017-12-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/opengrok/">opengrok</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/configuration/nginx-config-https-spdy/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">nginx配置ssl证书</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/install/openresty/">
+            <span class="next-text nav-default">openresty</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>go学习笔记4之知识点记录 - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="crazygit" />
+  <meta name="description" content="Go环境配置 如果你想在同一个系统中安装多个版本的Go，你可以参考第三方工具GVM，这是目前在这 方面做得最好的工具。 GOPATH允许多个目录," />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/go/04-go-notes/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="go学习笔记4之知识点记录" />
+<meta property="og:description" content="Go环境配置 如果你想在同一个系统中安装多个版本的Go，你可以参考第三方工具GVM，这是目前在这 方面做得最好的工具。 GOPATH允许多个目录," />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/go/04-go-notes/" />
+
+
+
+<meta property="article:published_time" content="2017-12-15T19:21:58&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-12-15T19:21:58&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="go学习笔记4之知识点记录">
+<meta itemprop="description" content="Go环境配置 如果你想在同一个系统中安装多个版本的Go，你可以参考第三方工具GVM，这是目前在这 方面做得最好的工具。 GOPATH允许多个目录,">
+
+
+<meta itemprop="datePublished" content="2017-12-15T19:21:58&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:58&#43;08:00" />
+<meta itemprop="wordCount" content="1050">
+
+
+
+<meta itemprop="keywords" content="go, ide, note," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="go学习笔记4之知识点记录"/>
+<meta name="twitter:description" content="Go环境配置 如果你想在同一个系统中安装多个版本的Go，你可以参考第三方工具GVM，这是目前在这 方面做得最好的工具。 GOPATH允许多个目录,"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">go学习笔记4之知识点记录</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/go/"> go </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#go环境配置">Go环境配置</a></li>
+<li><a href="#go-命令">Go 命令</a></li>
+<li><a href="#go字符串">Go字符串</a></li>
+<li><a href="#iota枚举">iota枚举</a></li>
+<li><a href="#默认变量及函数名规则">默认变量及函数名规则</a></li>
+<li><a href="#数组">数组</a></li>
+<li><a href="#slice">Slice</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h3 id="go环境配置">Go环境配置</h3>
+
+<ul>
+<li><p>如果你想在同一个系统中安装多个版本的Go，你可以参考第三方工具<a href="https://github.com/moovweb/gvm">GVM</a>，这是目前在这
+方面做得最好的工具。</p></li>
+
+<li><p>GOPATH允许多个目录, 当GOPATH有多个目录时，为了让每个目录下的bin目录都加入环境变量
+可以设置<code>${GOPATH//://bin:}/bin</code></p>
+
+<pre><code>:::bash
+export GOROOT=&quot;/usr/local/go&quot;
+export GOPATH=&quot;$HOME/golang:$HOME/github/golang&quot;
+export PATH=$PATH:$GOROOT/bin:${GOPATH//://bin:}/bin
+</code></pre></li>
+</ul>
+
+<h3 id="go-命令">Go 命令</h3>
+
+<p>详细使用可以参考
+<a href="https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/01.3.md">https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/01.3.md</a></p>
+
+<ul>
+<li>go build</li>
+<li>go clean</li>
+<li>go fmt</li>
+<li>go install</li>
+<li>go test</li>
+<li>go tool fix</li>
+<li>go tool vet directory|files</li>
+<li>go generate</li>
+<li>godoc</li>
+<li>go version</li>
+<li>go env</li>
+<li>go list</li>
+<li>go run</li>
+</ul>
+
+<h3 id="go字符串">Go字符串</h3>
+
+<p>字符串是用一对双引号（&rdquo;&ldquo;）或反引号（``）括起来定义，它的类型是string
+如果要声明一个多行的字符串怎么办？可以通过`来声明</p>
+
+<pre><code>:::go
+ m := `hello
+        world`
+</code></pre>
+
+<h3 id="iota枚举">iota枚举</h3>
+
+<p>Go里面有一个关键字iota，这个关键字用来声明enum的时候采用，它默认开始值是0，每调用一次加1：</p>
+
+<pre><code>:::go
+const(
+    x = iota  // x == 0
+    y = iota  // y == 1
+    z = iota  // z == 2
+    w  // 常量声明省略值时，默认和之前一个值的字面相同。这里隐式地说w = iota，因此w == 3。其实上面y和z可同样不用&quot;= iota&quot;
+)
+
+const v = iota // 每遇到一个const关键字，iota就会重置，此时v == 0
+
+const (
+e, f, g = iota, iota, iota //e=0,f=0,g=0 iota在同一行值相同
+)
+</code></pre>
+
+<blockquote>
+<p>除非被显式设置为其它值或iota，每个const分组的第一个常量被默认设置为它的0值，第二及后续的常量被默认设置为它前面那个常量的值，如果前面那个常量的值是iota，则它也被设置为iota。</p>
+</blockquote>
+
+<h3 id="默认变量及函数名规则">默认变量及函数名规则</h3>
+
+<ul>
+<li>大写字母开头的变量是可导出的，也就是其它包可以读取的，是公用变量；小写字母开头的就是不可导出的，是私有变量。</li>
+<li>大写字母开头的函数也是一样，相当于class中的带public关键词的公有函数；小写字母开头的就是有private关键词的私有函数。</li>
+</ul>
+
+<h3 id="数组">数组</h3>
+
+<p>声明</p>
+
+<pre><code>:::go
+a := [3]int{1, 2, 3} // 声明了一个长度为3的int数组
+b := [10]int{1, 2, 3} // 声明了一个长度为10的int数组，其中前三个元素初始化为1、2、3，其它默认为0
+c := [...]int{4, 5, 6} // 可以省略长度而采用`...`的方式，Go会自动根据元素个数来计算长度
+</code></pre>
+
+<p>二维数组</p>
+
+<pre><code>:::go
+// 声明了一个二维数组，该数组以两个数组作为元素，其中每个数组中又有4个int类型的元素
+doubleArray := [2][4]int{[4]int{1, 2, 3, 4}, [4]int{5, 6, 7, 8}}
+
+// 上面的声明可以简化，直接忽略内部的类型
+easyArray := [2][4]int{{1, 2, 3, 4}, {5, 6, 7, 8}}
+</code></pre>
+
+<p><em>注意</em>: 数组之间的赋值是值的赋值，即当把一个数组作为参数传入函数的时候，传入的其实是该数组的副本，而不是它的指针。如果要使用指针，那么就需要用到后面介绍的slice类型了。</p>
+
+<h3 id="slice">Slice</h3>
+
+<p>注意slice和数组在声明时的区别：声明数组时，方括号内写明了数组的长度或使用&hellip;自动计算长度，而声明slice时，方括号内没有任何字符。</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">crazygit</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2017-12-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/go/">go</a>
+          
+          <a href="/tags/ide/"> ide</a>
+          
+          <a href="/tags/note/"> note</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/install/gerrit/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">gerrit搭建指南</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/configuration/iptables/">
+            <span class="next-text nav-default">iptables配置</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sync on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/sync/</link>
+    <description>Recent content in Sync on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:21:56 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/sync/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>linux远程文件拷贝</title>
+      <link>http://ox0spy.github.io/post/linux-commands/copy-remote-file/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:56 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/linux-commands/copy-remote-file/</guid>
+      <description>我们经常会碰到从一个主机上拷贝文件到其他主机，本文汇总下常用方法。 ssh 提到远程文件拷贝，大家肯定首先想到的是ssh。(啥? 你想到的是ftp??</description>
+    </item>
+    
+  </channel>
+</rss>

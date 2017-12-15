@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Performance on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/categories/performance/</link>
+    <description>Recent content in Performance on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:22:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/categories/performance/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>c10k</title>
+      <link>http://ox0spy.github.io/post/performance/c10k/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/performance/c10k/</guid>
+      <description> C10K  http://www.kegel.com/c10k.html http://www.cnblogs.com/fll/archive/2008/05/17/1201540.html  </description>
+    </item>
+    
+  </channel>
+</rss>

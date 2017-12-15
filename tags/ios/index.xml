@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ios on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/ios/</link>
+    <description>Recent content in Ios on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:22:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>jenkins自动构建ios应用</title>
+      <link>http://ox0spy.github.io/post/mac-osx/jenkins-build-ios-apps/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/mac-osx/jenkins-build-ios-apps/</guid>
+      <description>最近折腾用Jenkins自动构建iOS应用。 编译环境 为了构建iOS应用，必须找台Mac电脑做slave。 安装很简单，貌似brew install jenki</description>
+    </item>
+    
+  </channel>
+</rss>

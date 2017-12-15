@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gitlab on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/gitlab/</link>
+    <description>Recent content in Gitlab on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:21:57 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>gitlab安装</title>
+      <link>http://ox0spy.github.io/post/configuration/gitlab-setup-centos6/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/gitlab-setup-centos6/</guid>
+      <description>公司没有统一的代码管理平台，虽然曾经用过stash、jira、confluence，但调研后还是觉得用gitlab。 下面介绍下gitlab安</description>
+    </item>
+    
+  </channel>
+</rss>

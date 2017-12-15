@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Workbench on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/workbench/</link>
+    <description>Recent content in Workbench on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:21:59 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/workbench/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>压力测试工具ab &amp;&amp; webbench</title>
+      <link>http://ox0spy.github.io/post/web-test/ab-webbench/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/web-test/ab-webbench/</guid>
+      <description>ab ab是apache自带的压力测试工具。使用简单，便于一些简单的压力测试. 安装 :::bash $ sudo apt-get install apache2-utils 使用帮助 :::bash $ ab -h Usage: ab [options] [http[s]://]hostname[:port]/path Options are: -n requests Number of requests to perform # 请求次</description>
+    </item>
+    
+  </channel>
+</rss>

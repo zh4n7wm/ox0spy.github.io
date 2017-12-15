@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/categories/go/</link>
+    <description>Recent content in Go on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:21:59 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>golang评价</title>
+      <link>http://ox0spy.github.io/post/go/golang-chaos/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/go/golang-chaos/</guid>
+      <description>djvu9 作为一具码了差不多20年C++的C++11爱好者，我觉得对于大部分后端半栈码农，golang才是未来的方向。C++缺乏可用的标准库，Jav</description>
+    </item>
+    
+    <item>
+      <title>go学习笔记1之安装go</title>
+      <link>http://ox0spy.github.io/post/go/01-go-install/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/go/01-go-install/</guid>
+      <description>本文参考于: Installing Go - Getting Started 必备技能之翻墙 这个是必须的技能，不然go的官网都没法访问, 后面也不用看了。 开发环境搭建 整个安装过程比较简单，下载安装包</description>
+    </item>
+    
+    <item>
+      <title>go学习笔记2之初识go</title>
+      <link>http://ox0spy.github.io/post/go/02-go-on-first-sight/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/go/02-go-on-first-sight/</guid>
+      <description>本文参考于: How to Write Go Code 代码组织 工作空间 Go tool先天就是设计来与开源仓库协作的，不管你愿不愿意发布你的代码，构建开发环境的方式是一样的。 Go</description>
+    </item>
+    
+    <item>
+      <title>go学习笔记3之打造sublime text 3作为go的集成开发环境</title>
+      <link>http://ox0spy.github.io/post/go/03-go-ide/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/go/03-go-ide/</guid>
+      <description>可用于GO开发的工具 可以用于GO开发的工具和插件目前已经非常多了,如VIM, Emacs, atom等，这里IDEs and Plugins for Go罗列了许多可以作为GO开发 的</description>
+    </item>
+    
+    <item>
+      <title>go学习笔记5之beego框架</title>
+      <link>http://ox0spy.github.io/post/go/05-go-hello-beego/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/go/05-go-hello-beego/</guid>
+      <description>Beego框架准备 $ go get github.com/astaxie/beego $ go get github.com/beego/bee 创建程序hello-beego.go :::go package main import ( &amp;quot;github.com/astaxie/beego&amp;quot; ) type MainController struct { beego.Controller } func (this *MainController) Get() { this.Ctx.WriteString(&amp;quot;hello world&amp;quot;) } func main() { beego.Router(&amp;quot;/&amp;quot;, &amp;amp;MainController{}) beego.Run() } 执行go run hello-beego.go, 访</description>
+    </item>
+    
+    <item>
+      <title>go学习笔记4之知识点记录</title>
+      <link>http://ox0spy.github.io/post/go/04-go-notes/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/go/04-go-notes/</guid>
+      <description>Go环境配置 如果你想在同一个系统中安装多个版本的Go，你可以参考第三方工具GVM，这是目前在这 方面做得最好的工具。 GOPATH允许多个目录,</description>
+    </item>
+    
+  </channel>
+</rss>

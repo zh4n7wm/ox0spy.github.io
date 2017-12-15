@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/android/</link>
+    <description>Recent content in Android on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:22:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>export android cantacts with vcard format via adb</title>
+      <link>http://ox0spy.github.io/post/android/export-android-contacts-via-adb/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/android/export-android-contacts-via-adb/</guid>
+      <description>参考: http://www.commandlinefu.com/commands/view/11688/dump-android-contacts-sms 昨天手机(TCL S960)掉地下把屏幕摔坏了，Google被xx后，就没在用过其它通讯录同步，只好想办法从坏手机里导出，屏幕完全坏了</description>
+    </item>
+    
+    <item>
+      <title>android命令行工具</title>
+      <link>http://ox0spy.github.io/post/configuration/android-command-line-tools/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/android-command-line-tools/</guid>
+      <description>Android命令行工具 android 下面介绍命令行下使用android脚本。 场景：命令行下安装android build tools、sdk、API。 获取所有可用</description>
+    </item>
+    
+    <item>
+      <title>Setup OpenGrok</title>
+      <link>http://ox0spy.github.io/post/configuration/setup-opengrok/</link>
+      <pubDate>Wed, 14 Aug 2013 00:00:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/setup-opengrok/</guid>
+      <description>OpenGrok安装使用指南 参考： https://github.com/OpenGrok/OpenGrok/wiki/How-to-install-OpenGrok 注意：最好是单独建立一个opengrok用户，并保证该用户对代码和后面创建索引的目录读写权限 下面整个流程</description>
+    </item>
+    
+  </channel>
+</rss>

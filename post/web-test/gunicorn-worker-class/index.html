@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>gunicorn 几种 worker class 性能测试比较 - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="crazygit" />
+  <meta name="description" content="简介 Gunicorn, 一个支持WSGI协议的web服务器 Flask, 一个轻量级的python web框架 Gunicorn目前自带支持几种工作方式: sync (默认值) eventlet gevent tornado 测试" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/web-test/gunicorn-worker-class/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="gunicorn 几种 worker class 性能测试比较" />
+<meta property="og:description" content="简介 Gunicorn, 一个支持WSGI协议的web服务器 Flask, 一个轻量级的python web框架 Gunicorn目前自带支持几种工作方式: sync (默认值) eventlet gevent tornado 测试" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/web-test/gunicorn-worker-class/" />
+
+
+
+<meta property="article:published_time" content="2017-12-15T19:21:59&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-12-15T19:21:59&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="gunicorn 几种 worker class 性能测试比较">
+<meta itemprop="description" content="简介 Gunicorn, 一个支持WSGI协议的web服务器 Flask, 一个轻量级的python web框架 Gunicorn目前自带支持几种工作方式: sync (默认值) eventlet gevent tornado 测试">
+
+
+<meta itemprop="datePublished" content="2017-12-15T19:21:59&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:59&#43;08:00" />
+<meta itemprop="wordCount" content="602">
+
+
+
+<meta itemprop="keywords" content="gunicorn, flask, gevent, eventlet, tornado," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="gunicorn 几种 worker class 性能测试比较"/>
+<meta name="twitter:description" content="简介 Gunicorn, 一个支持WSGI协议的web服务器 Flask, 一个轻量级的python web框架 Gunicorn目前自带支持几种工作方式: sync (默认值) eventlet gevent tornado 测试"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">gunicorn 几种 worker class 性能测试比较</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/web-test/"> web-test </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#简介">简介</a></li>
+<li><a href="#测试环境准备">测试环境准备</a></li>
+<li><a href="#开始测试">开始测试</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h2 id="简介">简介</h2>
+
+<ul>
+<li>Gunicorn, 一个支持WSGI协议的web服务器</li>
+<li>Flask, 一个轻量级的python web框架</li>
+</ul>
+
+<p>Gunicorn目前自带支持几种工作方式:</p>
+
+<ul>
+<li>sync (默认值)</li>
+<li>eventlet</li>
+<li>gevent</li>
+<li>tornado</li>
+</ul>
+
+<h2 id="测试环境准备">测试环境准备</h2>
+
+<ol>
+<li>python 2.7+</li>
+<li>redis-server 2.8.4</li>
+<li>压力测试工具ab</li>
+
+<li><p>代码及相关python包准备
+创建虚一个新的虚拟环境并安装需要的包</p>
+
+<pre><code>:::bash
+$ mkvirtualenv test
+$ workon test
+
+$ cat requirements.txt
+gunicorn==19.3.0
+flask==0.10.1
+flask-redis==0.1.0
+gevent==1.0.2
+tornado==4.2
+eventlet==0.17.4
+
+$ pip install -r requirements.txt
+</code></pre>
+
+<p>测试程序<code>app.py</code></p>
+
+<pre><code>:::python
+from flask import Flask
+from flask_redis import FlaskRedis
+
+REDIS_URL = &quot;redis://:password-string@localhost:6379/0&quot;
+app = Flask(__name__)
+app.config.from_object(__name__)
+
+redis = FlaskRedis(app, True)
+
+@app.route(&quot;/&quot;)
+def index():
+    redis.incr(&quot;hit&quot;, 1)
+    return redis.get(&quot;hit&quot;)
+
+if __name__ == '__main__':
+    app.run()
+</code></pre></li>
+</ol>
+
+<h2 id="开始测试">开始测试</h2>
+
+<ol>
+<li><p>使用ab工具,并行500个客户端, 发送50000次请求</p>
+
+<pre><code>$ ab -c 500 -t 30 -r &quot;http://127.0.0.1:8000/&quot;
+</code></pre></li>
+
+<li><p>分别使用四种方式启动使用服务， 并开启４个worker</p>
+
+<pre><code>$ gunicorn -w 4 app:app --error-logfile - --worker-class sync
+$ gunicorn -w 4 app:app --error-logfile - --worker-class gevent
+$ gunicorn -w 4 app:app --error-logfile - --worker-class tornado
+$ gunicorn -w 4 app:app --error-logfile - --worker-class eventlet
+</code></pre></li>
+
+<li><p>结果比较</p></li>
+</ol>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+    <tbody>
+        <tr>
+            <td>
+                Worker class
+            </td>
+            <td>
+                Time taken for tests
+            </td>
+            <td>
+                Complete requests
+            </td>
+            <td>
+                Failed requests
+            </td>
+            <td>
+                Requests per second
+            </td>
+            <td>
+                用户平均请求等待时间
+            </td>
+            <td>
+                服务器平均处理时间
+            </td>
+            <td>
+                最小连接时间
+            </td>
+            <td>
+                平均连接时间
+            </td>
+            <td>
+                50%的连接时间
+            </td>
+            <td>
+                最大连接时间
+            </td>
+        </tr>
+        <tr>
+            <td>
+                sync
+            </td>
+            <td>
+                37.363 s
+            </td>
+            <td>
+                49928
+            </td>
+            <td>
+                793
+            </td>
+            <td>
+                1336.29
+            </td>
+            <td>
+                374.169 ms
+            </td>
+            <td>
+                0.748 ms
+            </td>
+            <td>
+                5 ms
+            </td>
+            <td>
+                75 ms
+            </td>
+            <td>
+                17 ms
+            </td>
+            <td>
+                31746 ms
+            </td>
+        </tr>
+        <tr>
+            <td>
+               tornado
+            </td>
+            <td>
+               13.995
+            </td>
+            <td>
+                50000
+            </td>
+            <td>
+                543
+            </td>
+            <td>
+               3572.64
+            </td>
+            <td>
+                139.953 ms
+            </td>
+            <td>
+                0.280 ms
+            </td>
+            <td>
+                6 ms
+            </td>
+            <td>
+                110 ms
+            </td>
+            <td>
+                24 ms
+            </td>
+            <td>
+                13837 ms
+            </td>
+        </tr>
+        <tr>
+            <td>
+              eventlet
+            </td>
+            <td>
+              8.156
+            </td>
+            <td>
+                50000
+            </td>
+            <td>
+                0
+            </td>
+            <td>
+               6130.74
+            </td>
+            <td>
+               81.556
+            </td>
+            <td>
+                0.163 ms
+            </td>
+            <td>
+                2 ms
+            </td>
+            <td>
+                80 ms
+            </td>
+            <td>
+               62 ms
+            </td>
+            <td>
+               3153 ms
+            </td>
+        </tr>
+        <tr>
+            <td>
+                gevent
+            </td>
+            <td>
+                7.647 s
+            </td>
+            <td>
+                50000
+            </td>
+            <td>
+                0
+            </td>
+            <td>
+               6538.23
+            </td>
+            <td>
+                76.473 ms
+            </td>
+            <td>
+                0.153 ms
+            </td>
+            <td>
+                1 ms
+            </td>
+            <td>
+                74 ms
+            </td>
+            <td>
+                52 ms
+            </td>
+            <td>
+                1122 ms
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p>从测试结果来看，默认自带sync效率很低，并且在测试时发现，采用sync方式在高并发时
+会出现woker重启的情况, 如下:</p>
+
+<pre>
+[2015-06-25 11:31:06 +0000] [27040] [CRITICAL] WORKER TIMEOUT (pid:27064)
+[2015-06-25 11:31:06 +0000] [27040] [CRITICAL] WORKER TIMEOUT (pid:27051)
+[2015-06-25 11:31:06 +0000] [27040] [CRITICAL] WORKER TIMEOUT (pid:27045)
+[2015-06-25 11:31:06 +0000] [27040] [CRITICAL] WORKER TIMEOUT (pid:27046)
+[2015-06-25 11:31:06 +0000] [27064] [INFO] Worker exiting (pid: 27064)
+[2015-06-25 11:31:06 +0000] [27051] [INFO] Worker exiting (pid: 27051)
+[2015-06-25 11:31:06 +0000] [27045] [INFO] Worker exiting (pid: 27045)
+[2015-06-25 11:31:06 +0000] [27046] [INFO] Worker exiting (pid: 27046)
+[2015-06-25 11:31:06 +0000] [27263] [INFO] Booting worker with pid: 27263
+[2015-06-25 11:31:06 +0000] [27264] [INFO] Booting worker with pid: 27264
+[2015-06-25 11:31:06 +0000] [27277] [INFO] Booting worker with pid: 27277
+[2015-06-25 11:31:06 +0000] [27280] [INFO] Booting worker with pid: 27280
+</pre>
+
+<p>eventlet 和gevent两种方式效果最好，数据基本差不多.</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">crazygit</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2017-12-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/gunicorn/">gunicorn</a>
+          
+          <a href="/tags/flask/"> flask</a>
+          
+          <a href="/tags/gevent/"> gevent</a>
+          
+          <a href="/tags/eventlet/"> eventlet</a>
+          
+          <a href="/tags/tornado/"> tornado</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/go/05-go-hello-beego/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">go学习笔记5之beego框架</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/python/python-performance/">
+            <span class="next-text nav-default">python performance</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

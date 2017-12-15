@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nginx on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/nginx/</link>
+    <description>Recent content in Nginx on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:22:01 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>pandas分析nginx日志</title>
+      <link>http://ox0spy.github.io/post/bigdata/pandas%E5%88%86%E6%9E%90nginx%E6%97%A5%E5%BF%97/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/bigdata/pandas%E5%88%86%E6%9E%90nginx%E6%97%A5%E5%BF%97/</guid>
+      <description>Pandas分析Nginx日志 安装所需Python库 $ pip install numpy pandas matplotlib 注：所有工作都在Python 3中实践 （Python 2应该也没有问题） Ngin</description>
+    </item>
+    
+    <item>
+      <title>nginx as database load balancer for mysql</title>
+      <link>http://ox0spy.github.io/post/mysql/nginx-as-database-load-balancer-for-mysql/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/mysql/nginx-as-database-load-balancer-for-mysql/</guid>
+      <description>这个配置能完成几件事情： 如题，通过Nginx做MySQL负载均衡 从外网的内网中的RDS 安装 $ sudo apt-get install nginx 配置 /etc/nginx/nginx.conf user www-data; worker_processes auto; pid /run/nginx.pid; events { worker_connections 768; # multi_accept on; } stream { include</description>
+    </item>
+    
+    <item>
+      <title>nginx配置ssl证书</title>
+      <link>http://ox0spy.github.io/post/configuration/nginx-config-https-spdy/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/nginx-config-https-spdy/</guid>
+      <description>本文参考: http://www.cocoachina.com/ios/20150703/12392.html https://hack0nair.me/2014-08-14-nginx-with-ssl-of-wosign/ http://note.sdo.com/u/634668972018478681/n/Z1NG3C6A959F29DD2FA2D543B8C9B30B551810C3 http://op.baidu.com/2015/04/https-s01a01/ http://oncenote.com/2014/10/21/Security-1-HTTPS/ http://oncenote.com/2015/09/16/Security-2-HTTPS2/ https://www.vobe.io/114 Nginx配置SSL证书, 启用HTTPS iOS9把所有的http请求都改为https了：iOS9系统发送的网络请求将</description>
+    </item>
+    
+    <item>
+      <title>openresty</title>
+      <link>http://ox0spy.github.io/post/install/openresty/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/install/openresty/</guid>
+      <description>什么是OpenResty OpenResty（也称为 ngx_openresty）是一个全功能的 Web 应用服务器，它打包了标准 的Nginx 核心，很多</description>
+    </item>
+    
+    <item>
+      <title>nginx获取客户端真实ip，x-real-ip和x-forwarded-for注意</title>
+      <link>http://ox0spy.github.io/post/configuration/nginx-config/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/nginx-config/</guid>
+      <description>本文参考于: http://serverfault.com/questions/314574/nginx-real-ip-header-and-x-forwarded-for-seems-wrong/414166 http://luyadong.blog.51cto.com/2876653/851964 http://nginx.org/en/docs/http/ngx_http_realip_module.html http://distinctplace.com/infrastructure/2014/04/23/story-behind-x-forwarded-for-and-x-real-ip-headers/ X-Real-IP和X-Forwarded-For的注意 在配置nginx反向代理时，我们往往做如下配置 location /uri { proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr;</description>
+    </item>
+    
+  </channel>
+</rss>

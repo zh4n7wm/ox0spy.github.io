@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Bash Multiprocess - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ox0spy" />
+  <meta name="description" content="Git同步 成都和上海分别建有git server, 虽有 Gerrit Replication, 但新创建分支、git库无法自动同步, 直到该git库有新Gerrit merge. 所以, 写脚本通过 gitweb_url?a=project_index 获取所有g" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/configuration/bash-multiprocess/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Bash Multiprocess" />
+<meta property="og:description" content="Git同步 成都和上海分别建有git server, 虽有 Gerrit Replication, 但新创建分支、git库无法自动同步, 直到该git库有新Gerrit merge. 所以, 写脚本通过 gitweb_url?a=project_index 获取所有g" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/configuration/bash-multiprocess/" />
+
+
+
+<meta property="article:published_time" content="2013-08-06T00:00:00&#43;08:00"/>
+
+<meta property="article:modified_time" content="2013-08-06T00:00:00&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Bash Multiprocess">
+<meta itemprop="description" content="Git同步 成都和上海分别建有git server, 虽有 Gerrit Replication, 但新创建分支、git库无法自动同步, 直到该git库有新Gerrit merge. 所以, 写脚本通过 gitweb_url?a=project_index 获取所有g">
+
+
+<meta itemprop="datePublished" content="2013-08-06T00:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2013-08-06T00:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="499">
+
+
+
+<meta itemprop="keywords" content="Linux,Bash,Git," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Bash Multiprocess"/>
+<meta name="twitter:description" content="Git同步 成都和上海分别建有git server, 虽有 Gerrit Replication, 但新创建分支、git库无法自动同步, 直到该git库有新Gerrit merge. 所以, 写脚本通过 gitweb_url?a=project_index 获取所有g"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Bash Multiprocess</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2013-08-06 </span>
+        <div class="post-category">
+            
+              <a href="/categories/linux/"> Linux </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#git同步">Git同步</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h2 id="git同步">Git同步</h2>
+
+<p>成都和上海分别建有git server, 虽有 Gerrit Replication, 但新创建分支、git库无法自动同步, 直到该git库有新Gerrit merge.</p>
+
+<p>所以, 写脚本通过 gitweb_url?a=project_index 获取所有git库, 然后, 已经下载的就做 git remote update, 否则通过 git clone &ndash;mirror克隆裸库到本地.</p>
+
+<p>当项目增加，需要同步的git库太多后，速度就是大问题了.</p>
+
+<p>下面Bash脚本用6个进程同步 (进程数可以自己调整)</p>
+
+<pre><code>#!/bin/bash
+################################################################
+# Multiprocess Sync ShangHai modules, if no permission, skip it.
+################################################################
+
+PROGRAM=&quot;$0&quot;
+GIT=/tools/bin/git
+SH_MOD=&quot;alps jrd mtk6572 mtk6575 mtk6582 mtk6589&quot;
+GIT_LIST=&quot;/tmp/$$.list&quot;
+PID_FILE=&quot;/tmp/sync_git.pid&quot;
+FIFO_FILE=&quot;/tmp/$$.fifo&quot;
+THREAD=6
+
+if [ -f $PID_FILE ]; then
+    echo &quot;$0 already running ...&quot;
+    exit
+else
+    echo &quot;$$&quot; &gt; $PID_FILE
+fi
+
+function clean_up()
+{
+    rm -f $FIFO_FILE $GIT_LIST $PID_FILE
+}
+
+function send_email()
+{
+    test -z &quot;$(which sendmail)&quot; &amp;&amp; \
+        echo &quot;can not find sendmail command&quot; &amp;&amp; return
+
+    local parent_lineno=&quot;$1&quot;
+    local message=&quot;$2&quot;
+    local code=&quot;${3:-1}&quot;
+    local err_msg=&quot;&quot;
+    if [[ -n &quot;$message&quot; ]] ; then
+        err_msg=&quot;Error on or near line ${parent_lineno}: ${message}; exiting with status ${code}&quot;
+    else
+        err_msg=&quot;Error on or near line ${parent_lineno}; exiting with status ${code}&quot;
+    fi
+
+    local mail_content=$(mktemp -u)
+
+
+cat &lt;&lt; EOF &gt; $mail_content
+From: &quot;Wanming Zhang&quot; &lt;Wanming.Zhang@tcl.com&gt;
+To: &quot;Wanming Zhang&quot; &lt;Wanming.Zhang@tcl.com&gt;
+CC: &quot;Liang Lin&quot; &lt;LinLiang@tcl.com&gt;
+Subject:Sync Source Code From Other Site Failed
+Dears,
+
+$err_msg
+
+Please check script $PROGRAM and log file.
+
+This script run by git user's crontab.
+EOF
+
+    cat $mail_content | sendmail -t -f root@localhost
+    rm -f $mail_content
+}
+
+trap 'send_email ${LINENO}' ERR
+
+function update_git()
+{
+    test $# -ne 2 &amp;&amp; return
+
+    platform=$1
+    git_repo=$2
+
+    PRE_URL=&quot;git@172.24.61.94:$platform&quot;
+    MOD_DIR=&quot;/data/git/repositories/$platform&quot;
+    x_dir=&quot;$MOD_DIR/$git_repo&quot;
+    if [ -d $x_dir ];then
+        echo &quot;`date +'%Y-%m-%d %H:%M'` Update $x_dir&quot;
+        cd $x_dir &amp;&amp; pwd &amp;&amp; $GIT remote update &amp;&amp; git gc
+    else
+        echo &quot;`date +'%Y-%m-%d %H:%M'` New add repo $x_dir &quot;
+        rm -f $x_dir &amp;&amp; $GIT clone --mirror $PRE_URL/$git_repo $x_dir
+    fi
+}
+
+# always remove temporary files
+trap clean_up EXIT
+
+rm -f $GIT_LIST
+for mod in $SH_MOD
+do
+    MOD_URL=&quot;http://gitweb.tcl-ta.com/gitweb-$mod/?a=project_index&quot;
+
+    if echo $mod | grep -qE &quot;^(alps|mtk6575)$&quot;; then
+        MOD_URL=&quot;http://gitweb.tcl-ta.com:8080/gitweb-$mod/?a=project_index&quot;
+    fi
+
+    curl $MOD_URL 2&gt;/dev/null | grep -P '^\S+\.git\s+$' | sed &quot;s#^#&quot;$mod&quot;:#&quot; &gt;&gt; $GIT_LIST || \
+        echo &quot;WARNING: curl $MOD_URL failed.&quot;
+done
+
+mkfifo $FIFO_FILE
+exec 6&lt;&gt;$FIFO_FILE
+rm -f $FIFO_FILE
+
+for ((i=0; i&lt;$THREAD; i++)); do
+    echo
+done &gt;&amp;6
+
+for x in $(cat $GIT_LIST); do
+    read -u6
+
+    {
+        platform=$(echo $x | cut -d':' -f1)
+        git_repo=$(echo $x | cut -d':' -f2)
+
+        update_git $platform $git_repo || \
+            echo &quot;update_git $platform $git_repo failed.&quot;
+
+        echo &gt;&amp;6
+    } &amp;
+done
+
+rm -f $GIT_LIST
+
+wait
+
+exec 6&gt;&amp;-  # close df6
+
+rm -f $PID_FILE
+
+exit 0
+</code></pre>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ox0spy</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2013-08-06</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/linux/">Linux</a>
+          
+          <a href="/tags/bash/">Bash</a>
+          
+          <a href="/tags/git/">Git</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/configuration/git-tips/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Git Tips</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/configuration/http-command-line-tools/">
+            <span class="next-text nav-default">HTTP Command Line Tools</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

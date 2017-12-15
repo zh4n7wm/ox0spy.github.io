@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gerrit on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/gerrit/</link>
+    <description>Recent content in Gerrit on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:21:58 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/gerrit/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>gerrit搭建指南</title>
+      <link>http://ox0spy.github.io/post/install/gerrit/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/install/gerrit/</guid>
+      <description>什么是Gerrit Gerrit，一种免费、开放源代码的代码审查软件，使用网页界面。利用网页浏览器，同一个团队的软件程序员，可以相互审阅彼此修</description>
+    </item>
+    
+    <item>
+      <title>gerrit备份</title>
+      <link>http://ox0spy.github.io/post/configuration/gerrit-replication/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/gerrit-replication/</guid>
+      <description>将Gerrit实时同步到其它系统完成Gerrit git repos备份。通常用这种方式完成Gerrit Mirror。 通过Gerrit replication plugin</description>
+    </item>
+    
+  </channel>
+</rss>

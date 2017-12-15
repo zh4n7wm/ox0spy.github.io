@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>go学习笔记2之初识go - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="crazygit" />
+  <meta name="description" content="本文参考于: How to Write Go Code 代码组织 工作空间 Go tool先天就是设计来与开源仓库协作的，不管你愿不愿意发布你的代码，构建开发环境的方式是一样的。 Go" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/go/02-go-on-first-sight/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="go学习笔记2之初识go" />
+<meta property="og:description" content="本文参考于: How to Write Go Code 代码组织 工作空间 Go tool先天就是设计来与开源仓库协作的，不管你愿不愿意发布你的代码，构建开发环境的方式是一样的。 Go" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/go/02-go-on-first-sight/" />
+
+
+
+<meta property="article:published_time" content="2017-12-15T19:21:59&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-12-15T19:21:59&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="go学习笔记2之初识go">
+<meta itemprop="description" content="本文参考于: How to Write Go Code 代码组织 工作空间 Go tool先天就是设计来与开源仓库协作的，不管你愿不愿意发布你的代码，构建开发环境的方式是一样的。 Go">
+
+
+<meta itemprop="datePublished" content="2017-12-15T19:21:59&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:59&#43;08:00" />
+<meta itemprop="wordCount" content="1479">
+
+
+
+<meta itemprop="keywords" content="go, 入门," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="go学习笔记2之初识go"/>
+<meta name="twitter:description" content="本文参考于: How to Write Go Code 代码组织 工作空间 Go tool先天就是设计来与开源仓库协作的，不管你愿不愿意发布你的代码，构建开发环境的方式是一样的。 Go"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">go学习笔记2之初识go</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/go/"> go </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#代码组织">代码组织</a>
+<ul>
+<li><a href="#工作空间">工作空间</a></li>
+<li><a href="#设置gopath环境变量">设置GOPATH环境变量</a></li>
+<li><a href="#包路径">包路径</a></li>
+<li><a href="#第一个go程序">第一个Go程序</a></li>
+<li><a href="#第一个go库">第一个Go库</a></li>
+<li><a href="#包名">包名</a></li>
+</ul></li>
+<li><a href="#测试">测试</a></li>
+<li><a href="#第三方包">第三方包</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>本文参考于:
+<a href="https://golang.org/doc/code.html">How to Write Go Code</a></p>
+
+<h2 id="代码组织">代码组织</h2>
+
+<h3 id="工作空间">工作空间</h3>
+
+<p>Go tool先天就是设计来与开源仓库协作的，不管你愿不愿意发布你的代码，构建开发环境的方式是一样的。</p>
+
+<p>Go代码必须保存在一个工作空间里，　一个工作空间要有三个根目录</p>
+
+<ul>
+<li><p>src
+Go源代码</p></li>
+
+<li><p>pkg
+Go库文件</p></li>
+
+<li><p>bin
+包含可执行命令</p></li>
+</ul>
+
+<p>一个工作空间的示例:
+<pre>
+bin/
+    hello                          # command executable
+    outyet                         # command executable
+pkg/
+    linux_amd64/
+        github.com/golang/example/
+            stringutil.a           # package object
+src/
+    github.com/golang/example/
+        .git/                      # Git repository metadata
+    hello/
+        hello.go               # command source
+    outyet/
+        main.go                # command source
+        main_test.go           # test source
+    stringutil/
+        reverse.go             # package source
+        reverse_test.go        # test source
+    github.com/golang/project1/
+        &hellip;&hellip;
+    github.com/golang/project2/
+        &hellip;&hellip;
+</pre></p>
+
+<h3 id="设置gopath环境变量">设置GOPATH环境变量</h3>
+
+<p>GOPATH是Go中唯一必须需要设置的环境变量, GOPATH就是工作空间的路径, 并且GOPATH可
+以设置多个值，区别是使用<code>go get</code>命令的时候默认将下载的包安装在GOPATH第一个路径
+下面，我自己一般设置两个路径作为GOPATH的值，一个用于专门下载第三方包，一个作为
+自己的工作环境,　这有的好处是可以在代码版本控制时, 不受第三方库的影响</p>
+
+<p>如:</p>
+
+<pre><code># $HOME/golang作为第三方包的下载目录
+# $HOME/github/golang作为自己的开发目录
+$ export GOPATH=&quot;$HOME/golang:$HOME/github/golang&quot;
+
+# 将每个GOPATH下面的bin目录添加到PATH变量
+$ export PATH=$PATH:$GOROOT/bin:${GOPATH//://bin:}/bin
+</code></pre>
+
+<h3 id="包路径">包路径</h3>
+
+<p>无论你是否要发布你的程序, 你都应该以要发布的方式来构建你的程序,最好的包名是
+github.com/user</p>
+
+<pre><code>$ mkdir -p $GOPATH/src/github.com/user
+</code></pre>
+
+<h3 id="第一个go程序">第一个Go程序</h3>
+
+<p>下面，我将介绍如何将从头构建一个简单的go程序.
+首先, 我们以<code>/data/github/golang</code>为工作空间</p>
+
+<pre><code>$ mkdir -p /data/github/golang
+$ cd /data/github/golang
+$ export GOPATH=$(pwd)
+</code></pre>
+
+<p>为了创建一个简单的程序. 首先要选择包路径, 如<code>github.com/crazygit/hello</code>, 并创建对于的目录结构</p>
+
+<pre><code>$ mkdir -p $GOPATH/src/github.com/crazygit/hello
+</code></pre>
+
+<p>在目录<code>$GOPATH/src/github.com/crazygit/hello</code>里创建<code>hello.go</code></p>
+
+<pre><code>:::go
+package main
+
+import &quot;fmt&quot;
+
+func main() {
+        fmt.Println(&quot;Hello world&quot;)
+}
+</code></pre>
+
+<p>使用go工具编译并安装程序</p>
+
+<pre><code>$ cd $GOPATH
+$ go install github.com/crazygit/hello
+</code></pre>
+
+<p>或者</p>
+
+<pre><code>$ cd $GOPATH/github.com/crazygit/hello
+$ go install
+</code></pre>
+
+<p>执行了之后，可以看到<code>$GOPATH</code>中多了一个<code>bin</code>目录，里面有一个名为<code>hello</code>的可执行文件</p>
+
+<pre><code>$ $GOPATH/bin/hello
+Hello, world.
+</code></pre>
+
+<h3 id="第一个go库">第一个Go库</h3>
+
+<p>让我们再创建一个库，同样，先创建包路径<code>github.com/crazygit/stringutil</code></p>
+
+<pre><code>$ mkdir $GOPATH/src/github.com/crazygit/stringutil
+</code></pre>
+
+<p>在里面再创建一个名为<code>reverse.go</code></p>
+
+<pre><code>:::go
+package stringutil
+
+func Reverse(s string) string {
+    r := []rune(s)
+    for i, j := 0, len(r)-1; i &lt; len(r)/2; i, j = i+1, j-1 {
+        r[i], r[j] = r[j], r[i]
+    }
+    return string(r)
+}
+</code></pre>
+
+<p>编译</p>
+
+<pre><code>$ cd $GOPATH
+$ go build github.com/crazygit/stringutil
+</code></pre>
+
+<p>编译过程不会有什么文件产生, 可以使用<code>go install</code>, 它会创建pkg目录
+并生成<code>pkg/linux_amd64/github.com/crazygit/stringutil.a</code>文件.</p>
+
+<p>修改<code>hello.go</code>,让它使用我们刚刚创建的库</p>
+
+<pre><code>:::go
+import (
+    &quot;fmt&quot;
+    &quot;github.com/crazygit/stringutil&quot;
+)
+
+func main() {
+    fmt.Println(&quot;Hello world&quot;)
+    fmt.Printf(stringutil.Reverse(&quot;!oG ,olleH&quot;))
+}
+</code></pre>
+
+<p>安装，当安装的的时候，它会自动根据安装依赖,所以安装<code>hello</code>时, 它会自动安装<code>stringutil</code></p>
+
+<pre><code>$ go install github.com/crazygit/hello
+</code></pre>
+
+<p>运行</p>
+
+<pre><code>$ $GOPATH/bin/hello
+Hello, Go!
+</code></pre>
+
+<h3 id="包名">包名</h3>
+
+<p>Go代码文件的第一句话必须是</p>
+
+<pre><code>:::go
+package name
+</code></pre>
+
+<p>name就是要引起的包名，所有在同一个包下的包名也一样</p>
+
+<p>go里面为了方便，会使用引入包路径的最后一段作为包名，如 <code>crazygit/rot14</code>的包名就是<code>rot14</code></p>
+
+<p>可执行的命令必须引入包<code>package main</code></p>
+
+<h2 id="测试">测试</h2>
+
+<p>Go自带了一个使用<code>go test</code>的测试框架，为了写一个测试文件。</p>
+
+<p>应该创建一个文件名<code>_test.go</code>结尾的文件，函数名为如<code>TestXXX</code>的, 并且有参数<code>t *testing.T</code></p>
+
+<p>让我们为stringutil包创建测试<code>$GOPATH/src/github.com/crazygit/stringutil/reverse_test.go</code></p>
+
+<pre><code>:::go
+package stringutil
+
+import &quot;testing&quot;
+
+func TestReverse(t *testing.T) {
+    cases := []struct {
+        in, want string
+    }{
+        {&quot;Hello, world&quot;, &quot;dlrow ,olleH&quot;},
+        {&quot;Hello, 世界&quot;, &quot;界世 ,olleH&quot;},
+        {&quot;&quot;, &quot;&quot;},
+    }
+
+    for _, c := range cases {
+        got := Reverse(c.in)
+        if got != c.want {
+            t.Errorf(&quot;Reverse(%q) == %q, want %q&quot;, c.in, got, c.want)
+        }
+    }
+}
+</code></pre>
+
+<p>执行测试</p>
+
+<pre><code>$ go test github.com/crazygit/stringutil
+ok      github.com/crazygit/stringutil  0.002s
+</code></pre>
+
+<h2 id="第三方包">第三方包</h2>
+
+<pre><code>$ go get github.com/golang/example/hello
+$ $GOPATH/bin/hello
+Hello, Go examples!
+</code></pre>
+
+<p>如果当前包已经存在，<code>go get</code>会跳过下载</p>
+
+<p>到此，我们对go有了个大致的印象，虽然有些地方看不懂，不过没有关系，我们后面会继续学习。</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">crazygit</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2017-12-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/go/">go</a>
+          
+          <a href="/tags/%E5%85%A5%E9%97%A8/"> 入门</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/go/01-go-install/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">go学习笔记1之安装go</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/go/03-go-ide/">
+            <span class="next-text nav-default">go学习笔记3之打造sublime text 3作为go的集成开发环境</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

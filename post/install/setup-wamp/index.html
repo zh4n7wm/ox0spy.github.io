@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>wamp(windows &#43; apache &#43; mysql &#43; php) 环境搭建 - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="crazygit" />
+  <meta name="description" content="最近开始学习PHP，工欲善其事，必先利其器。第一步当然是环境搭建啦！ PHP开发基本也就是在不同平台下，要么是LAMP(Linux &#43; Apache &#43; Mysql &#43; P" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/install/setup-wamp/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="wamp(windows &#43; apache &#43; mysql &#43; php) 环境搭建" />
+<meta property="og:description" content="最近开始学习PHP，工欲善其事，必先利其器。第一步当然是环境搭建啦！ PHP开发基本也就是在不同平台下，要么是LAMP(Linux &#43; Apache &#43; Mysql &#43; P" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/install/setup-wamp/" />
+
+
+
+<meta property="article:published_time" content="2017-12-15T19:21:58&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-12-15T19:21:58&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="wamp(windows &#43; apache &#43; mysql &#43; php) 环境搭建">
+<meta itemprop="description" content="最近开始学习PHP，工欲善其事，必先利其器。第一步当然是环境搭建啦！ PHP开发基本也就是在不同平台下，要么是LAMP(Linux &#43; Apache &#43; Mysql &#43; P">
+
+
+<meta itemprop="datePublished" content="2017-12-15T19:21:58&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:58&#43;08:00" />
+<meta itemprop="wordCount" content="3845">
+
+
+
+<meta itemprop="keywords" content="php, wamp," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="wamp(windows &#43; apache &#43; mysql &#43; php) 环境搭建"/>
+<meta name="twitter:description" content="最近开始学习PHP，工欲善其事，必先利其器。第一步当然是环境搭建啦！ PHP开发基本也就是在不同平台下，要么是LAMP(Linux &#43; Apache &#43; Mysql &#43; P"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">wamp(windows &#43; apache &#43; mysql &#43; php) 环境搭建</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/install/"> install </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#apache安装">Apache安装</a>
+<ul>
+<li><a href="#1-下载安装apache包">1.下载安装Apache包</a></li>
+<li><a href="#2-安装和修改apache配置文件">2. 安装和修改Apache配置文件</a></li>
+<li><a href="#3-安装和启动apache服务">3. 安装和启动Apache服务</a></li>
+</ul></li>
+<li><a href="#mysql安装">Mysql安装</a>
+<ul>
+<li><a href="#1-下载安装包">1. 下载安装包</a></li>
+<li><a href="#2-安装mysql服务和使用">2. 安装Mysql服务和使用</a></li>
+</ul></li>
+<li><a href="#php安装">PHP安装</a>
+<ul>
+<li><a href="#1-下载并配置">1. 下载并配置</a></li>
+</ul></li>
+<li><a href="#xdebug安装">Xdebug安装</a></li>
+<li><a href="#php集成开发环境">PHP集成开发环境</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>最近开始学习PHP，工欲善其事，必先利其器。第一步当然是环境搭建啦！</p>
+
+<p>PHP开发基本也就是在不同平台下，要么是LAMP(Linux + Apache + Mysql + PHP)，要么就是WAMP(Windows + Apache + Mysql +PHP),
+个人感觉在ubuntu环境下搭建环境比较简单，只需要一个命令</p>
+
+<pre><code>$ sudo apt-get install -y apache2 mysql-server-5.5 php5 php5-gd php5-mysql php5-xdebug libapache2-mod-php5 phpmyadmin 
+</code></pre>
+
+<p>然后通过少许配置， LAMP环境就基本上搭建好了。系统默认帮我们做了很多事情，但是为了学习，我们还是尝试下在windows下搭建吧！虽然在windows下面也有很多WAMP的集成环境，如：
+&gt;XAMPP - XAMPP是一款具有中文说明的功能全面的集成环境，XAMPP并不仅仅针对Windows，而是一个适用于Linux、Windows、Mac OS X 和Solaris 的易于安装的Apache 发行版。软件包中包含Apache 服务器、MySQL、SQLite、PHP、Perl、FileZilla FTP Server、Tomcat等等。默认安装开放了所有功能，安全性有问题，需要进行额外的安全设定。
+&gt;
+&gt;WampServer - WampServe集成了Apache、MySQL、PHP、phpmyadmin，支持Apache的mod_rewrite，PHP扩展、Apache模块只需要在菜单“开启/关闭”上点点就搞定，省去了修改配置文件的麻烦。
+&gt;
+&gt;AppServ - 集成了Apache、PHP、MySQL、phpMyAdmin，较为轻量。
+&gt;
+&gt;总的来说，无论从安全性和性能上来讲，LAMP（Linux + Apache + MySQL + PHP）都优于WAMP（Windows + Apache + MySQL + PHP），不过由于Windows具有易用的特点，WAMP也未尝不是初学者的一个不错的选择。
+&gt;</p>
+
+<p>上面WAMP集成环境的内容介绍引用自<br />
+<a href="http://www.williamlong.info/archives/1281.html">http://www.williamlong.info/archives/1281.html</a></p>
+
+<p>关于集成的开发环境，还不得不提到ZendServer， 这个也是一个相当不错的环境，相比XAMPP更加精简一些。</p>
+
+<p>如果我们可以自己搭建一次整个开发环境的话，对这个过程将会更加熟悉。废话不多说，下面就让我们开始搭建吧！</p>
+
+<h2 id="apache安装">Apache安装</h2>
+
+<h3 id="1-下载安装apache包">1.下载安装Apache包</h3>
+
+<p>根据<a href="http://httpd.apache.org/docs/2.4/platform/windows.html中如下一段话：">http://httpd.apache.org/docs/2.4/platform/windows.html中如下一段话：</a></p>
+
+<blockquote>
+<p>The Apache HTTP Server Project itself does not provide binary releases of software, only source code. If you cannot compile the Apache HTTP Server yourself, you can obtain a binary package from numerous binary &gt;distributions available on the Internet.
+Popular options for deploying Apache httpd, and, optionally, PHP and MySQL, on Microsoft Windows, include:</p>
+
+<p>•  ApacheHaus</p>
+
+<p>•  Apache Lounge</p>
+
+<p>•  WampServer</p>
+
+<p>•  XAMPP</p>
+</blockquote>
+
+<p>从上面可以知道，Apache官方并没有提供windows下的二进制安装包，
+可以从它推荐的站点下载apache二进制安装包。
+在此选择<br />
+<a href="https://www.apachelounge.com/download/">https://www.apachelounge.com/download/</a>
+网站上的<br />
+<a href="https://www.apachelounge.com/download/win32/binaries/httpd-2.4.4-win32.zip">https://www.apachelounge.com/download/win32/binaries/httpd-2.4.4-win32.zip</a></p>
+
+<p>由于上面这个安装包是根据Visual Studio C++ 2010 SP1 VC10 环境下编译的。
+&gt;Be sure that you have installed the Visual C++ 2010 SP1 Redistributable Package x86 : VC10 SP1 vcredist_x86.exe</p>
+
+<p>因此需要额外从
+<a href="http://www.microsoft.com/en-us/download/confirmation.aspx?id=8328">http://www.microsoft.com/en-us/download/confirmation.aspx?id=8328</a></p>
+
+<p>下载vcredist_x86.exe（这里根据自己的系统类型选择安装，我的是32位的系统，因此选择这个）</p>
+
+<h3 id="2-安装和修改apache配置文件">2. 安装和修改Apache配置文件</h3>
+
+<p>首先安装vcredist_x86.exe。再将下载的httpd-2.4.4-win32.zip解压到任意目录下，如：<code>D:\wamp\Apache24</code>.
+修改配置文件<code>D:\wamp\Apache24\conf\httpd.conf</code>.</p>
+
+<p>由于在<code>httpd.conf</code>中默认为httpd-2.4.4-win32.zip解压是解压到<code>c:\Apache24</code>目录下面的。
+因此需要将<code>httpd.conf</code>文件中所有的<code>c:/Apache24</code>替换成<code>D:/wamp/Apache24</code>（<strong>注意</strong>:在<code>httpd.conf</code>文件中表示文件路径都是用的正斜杠，而不是反斜杠）。跟大部分网上讲的配置方法一样，在<code>httpd.conf</code> 中有如下几处是需要注意修改的</p>
+
+<pre>
+    ServerRoot "D:/wamp/Apache24"  # apache服务器安装路径
+    Listen 80                      # 服务器监听的端口
+    ServerName localhost:80        # 服务器的域名，测试环境下一般是localhost
+    ServerAdmin lianglin999@gmail.com   # 服务器维护人员的邮箱
+    DocumentRoot "D:/wamp/Apache24/htdocs"  # 服务器的根目录
+    &lt;Directory "D:/wamp/Apache24/htdocs"&gt;    # 这里和服务器的根目录路径一致
+</pre>
+
+<h3 id="3-安装和启动apache服务">3. 安装和启动Apache服务</h3>
+
+<p>先将<code>D:\wamp\Apache24\bin\</code>添加到系统环境变量中。方便后面安装和启动服务。
+运行cmd窗口，执行如下命令</p>
+
+<pre><code>httpd -k install -n service_name            # 安装apache服务 -n 是可选的，表示指定服务名字，不加-n使用默认的服务名字
+httpd -k start/stop/restart -n service_name # 运行/停止/重启 apache服务, 同样，如果上面没有使用-n参数，这里也可以省去
+httpd -k uninstall -n service_name          # 卸载apache服务
+net start/stop service_name                 # 也可以运行/停止 apache服务
+httpd -help                                 # 查看更多帮助信息
+</code></pre>
+
+<p>安装并运行Apache服务</p>
+
+<pre><code>httpd -k install
+httpd -k start
+</code></pre>
+
+<p>如果没有修改配置文件中的默认80端口的话，访问<br />
+<a href="http://localhost/">http://localhost/</a>
+如果修改了端口号为8000，则访问<br />
+<a href="http://localhost:8000">http://localhost:8000</a></p>
+
+<p>最后看到It works页面。表示apache服务器安装成功。
+如果没有，请检查上述步骤是不是有什么错误。</p>
+
+<h2 id="mysql安装">Mysql安装</h2>
+
+<h3 id="1-下载安装包">1. 下载安装包</h3>
+
+<p>从<a href="http://dev.mysql.com/downloads/">http://dev.mysql.com/downloads/</a>上面，可以获取Mysql的安装包，在Windows下面，Mysql的安装包主要有两种：一种是MySQL Community Server Windows msi安装包， 另一种是自己配置的zip包。
+msi类型的的安装简单方面，根据需求选择，直接一直“下一步”就可以了。zip包您想的需要自己修改配置文件，在安装包解压路径下，复制my-default.ini到my.ini进行配置，具体配置内容可以网上查询。</p>
+
+<p>在这里可以查看一篇别人介绍的<a href="http://www.chenyudong.com/archives/installing-mysql-on-microsoft-windows-using-a-noinstall-zip-archive.html">配置方法</a></p>
+
+<p>其实，也可以暂时不管配置什么的，先把Mysql用起来，需要的配置等要用时再来修改也不迟，那样印象更深刻，直接借鉴别人的配置，有些地方也不知道为什么要那么做。
+所以，我的做法就是不管配置什么的，直接用吧。</p>
+
+<h3 id="2-安装mysql服务和使用">2. 安装Mysql服务和使用</h3>
+
+<p>假设我使用的是zip包类型的Mysql，解压在<code>D:\wamp\mysql-5.6.13-win32\</code>目录下, 先把<code>D:\wamp\mysql-5.6.13-win32\bin</code>添加到环境变量，方便使用命令行。</p>
+
+<p>运行CMD窗口，跟安装Apache服务类似，直接运行</p>
+
+<pre><code>mysqld --install MySQL5.5(service_name)  # Mysql5.5 是service_name，是可选的，不指定的话它会默认使用一个服务名
+net start/stop MySQL5.5                  # 启动/停止Mysql服务
+mysqld --remove MySQL5.5                 # 移除Mysql服务
+
+# 更改Mysql数据库密码，第一次使用时，密码默认为空
+mysql -u root -p                        # 从命令行中进入mysql的客户端
+use mysql;                              # 使用mysql这个数据库
+update user set password=password(&quot;root_passwd&quot;) where user=&quot;root&quot;;      # 对root密码进行更改
+FLUSH PRIVILEGES;                       
+# 现在退出，便可以使用root_passwd密码登录了
+</code></pre>
+
+<p>更多安装细节可以查看<a href="http://dev.mysql.com/doc/refman/5.6/en/windows-installation.html">Mysql手册</a>。</p>
+
+<p>为了方便对数据库进行管理，我们可以安装phpmyadmin，一个web版本的Mysql数据库管理工具，具体安装方法网上比较多，也比较简单这里就不在讲解咯。</p>
+
+<h2 id="php安装">PHP安装</h2>
+
+<h3 id="1-下载并配置">1. 下载并配置</h3>
+
+<p>PHP安装包的版本分线程安全和非线程安全两种，具体两种有什么区别，网上有一大推讲解，本人也不是很了解，但是如果要使用apache服务器的话，只有下载线程安全的版本，非线程安全的版本没有php5apache2_4.dll文件。</p>
+
+<p>根据PHP安装手册，在安装PHP的时候，需要先进行一些配置。假设我们将安装包解压在<code>D:\wamp\php-5.5.3-Win32-VC11-x86</code>。
+首先复制<code>php.ini-development</code>为<code>php.ini</code>, 然后修改<code>php.ini</code>进行如下配置：</p>
+
+<pre>
+# 把;error_log = php_errors.log 修改为
+    error_log = D:\wamp\php-5.5.3-Win32-VC11-x86\logs
+
+# ;date.timezone =修改为
+    date.timezone = PRC
+    
+# 下面这2个,自己决定了
+    post_max_size = 100M
+# upload_max_filesize通常比post_max_size小
+    upload_max_filesize = 50M
+    
+# 修改相关路径
+# 上传暂存路径,别忘了创建对应的文件夹
+    upload_tmp_dir = D:\wamp\php-5.5.3-Win32-VC11-x86\tmp\upload
+    session.save_path = D:\wamp\php-5.5.3-Win32-VC11-x86\tmp\session
+    extension_dir = D:\wamp\php-5.5.3-Win32-VC11-x86\ext
+
+# 取消常用的扩展前面的分号注释
+    extension=php_curl.dll
+    extension=php_gd2.dll
+    extension=php_mbstring.dll
+    extension=php_mysql.dll
+    extension=php_mysqli.dll
+    extension=php_pdo_mysql.dll
+</pre>
+最后再创建相对应的目录`D:\wamp\php-5.5.3-Win32-VC11-x86\logs`,`D:\wamp\php-5.5.3-Win32-VC11-x86\tmp\upload`,`D:\wamp\php-5.5.3-Win32-VC11-x86\tmp\session`
+
+最后，让apache认识php，修改apache的配置文件`D:\wamp\Apache24\conf\httpd.conf`添加下面的内容
+
+    # php配置 
+    LoadModule php5_module "E:/wamp_x64/php-5.5.3-Win32-VC11-x64/php5apache2_4.dll"
+    AddHandler application/x-httpd-php .php
+
+    # 配置 php.ini 的路径
+    PHPIniDir "E:/wamp_x64/php-5.5.3-Win32-VC11-x64
+
+    # 同时修改
+    DirectoryIndex index.html index.php
+
+在apache根目录下创建`D:/wamp/Apache24/htdocs/phpinfo.php`文件，内容如下:
+<pre>
+    &lt;?php phpinfo() ?&gt;
+</pre>
+
+<p>重启apache服务，访问 <a href="http://localhost/phpinfo.php">http://localhost/phpinfo.php</a>, 如果看到php相关信息，表示php安装成功。</p>
+
+<h2 id="xdebug安装">Xdebug安装</h2>
+
+<p>Xdebug 是一个PHP开发的调试工具，跟它齐名的另一个叫<code>Zend Debugger</code>, 也是一个很不错的东西。
+安装xdebug，首先需要下载适合版本的xdebug，如果不知道自己应该下载哪个版本的话，可以将你phpinfo();方法得到的页面内容粘贴到<a href="http://xdebug.org/wizard.php">这里</a>，它会自动分析出哪个版本的xdebug插件适合你。
+将下载下来的dll文件保存到php的安装路径<code>D:\wamp\php-5.5.3-Win32-VC11-x86\ext</code>目录下，然后修改<code>D:\wamp\php-5.5.3-Win32-VC11-x86\php.ini</code>文件，添加如下内容：</p>
+
+<pre><code>[XDebug]
+zend_extension = &quot;D:\wamp\php-5.5.3-Win32-VC11-x86\extphp_xdebug.dll&quot;
+xdebug.auto_trace = 1
+xdebug.collect_params = 1
+xdebug.collect_return = 1
+xdebug.profiler_append = 0
+xdebug.profiler_enable = 1
+xdebug.profiler_enable_trigger = 0
+xdebug.profiler_output_dir = &quot;D:\wamp\php-5.5.3-Win32-VC11-x86\tmp&quot;
+xdebug.profiler_output_name = &quot;cachegrind.out.%t-%s&quot;
+xdebug.remote_enable = 1
+xdebug.remote_handler = &quot;dbgp&quot;
+xdebug.remote_host = &quot;localhost&quot;
+xdebug.remote_port = 9000
+xdebug.trace_output_dir = &quot;D:\wamp\php-5.5.3-Win32-VC11-x86\tmp&quot;
+</code></pre>
+
+<p>最后，重新启动apache即可。访问phpinfo();页面检查是否有xdebug，如果有，表示安装成功。</p>
+
+<h2 id="php集成开发环境">PHP集成开发环境</h2>
+
+<p>PHP的集成开发环境比较多: 如Zend Studio，Eclipse + PDT， Eclipse + PHPEclipse等。这些环境经过简单的配置之后都支持远程调试，还有一些浏览器的工具，如FireFox浏览器的&rdquo;FireBug + FirePHP&rdquo;插件，这些资料比较多，就不在这里重复了。</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">crazygit</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2017-12-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/php/">php</a>
+          
+          <a href="/tags/wamp/"> wamp</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/asm/setup-asm-development-environment/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">ubuntu&#43;vim配置汇编程序开发环境</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/asm/write-your-first-asm-program/">
+            <span class="next-text nav-default">write your first asm program</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

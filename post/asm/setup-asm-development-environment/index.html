@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>ubuntu&#43;vim配置汇编程序开发环境 - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ox0spy" />
+  <meta name="description" content="本文专门介绍Ubuntu系统上基于Vim配置汇编程序开发环境。 Ubuntu系统配置 所有开发都在Ubuntu上完成，需要用的软件包：binut" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/asm/setup-asm-development-environment/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="ubuntu&#43;vim配置汇编程序开发环境" />
+<meta property="og:description" content="本文专门介绍Ubuntu系统上基于Vim配置汇编程序开发环境。 Ubuntu系统配置 所有开发都在Ubuntu上完成，需要用的软件包：binut" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/asm/setup-asm-development-environment/" />
+
+
+
+<meta property="article:published_time" content="2017-12-15T19:21:58&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-12-15T19:21:58&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="ubuntu&#43;vim配置汇编程序开发环境">
+<meta itemprop="description" content="本文专门介绍Ubuntu系统上基于Vim配置汇编程序开发环境。 Ubuntu系统配置 所有开发都在Ubuntu上完成，需要用的软件包：binut">
+
+
+<meta itemprop="datePublished" content="2017-12-15T19:21:58&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:58&#43;08:00" />
+<meta itemprop="wordCount" content="1016">
+
+
+
+<meta itemprop="keywords" content="asm, linux, vim," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="ubuntu&#43;vim配置汇编程序开发环境"/>
+<meta name="twitter:description" content="本文专门介绍Ubuntu系统上基于Vim配置汇编程序开发环境。 Ubuntu系统配置 所有开发都在Ubuntu上完成，需要用的软件包：binut"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">ubuntu&#43;vim配置汇编程序开发环境</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/asm/"> asm </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#ubuntu系统配置">Ubuntu系统配置</a></li>
+<li><a href="#vim配置">Vim配置</a></li>
+<li><a href="#在ubuntu-64位系统上编译-运行32位汇编">在Ubuntu 64位系统上编译、运行32位汇编</a>
+<ul>
+<li><a href="#64位ubuntu编译-链接32位汇编程序">64位Ubuntu编译、链接32位汇编程序</a></li>
+<li><a href="#vim">Vim</a>
+<ul>
+<li><a href="#asm在vim中的语法检查">asm在Vim中的语法检查</a></li>
+</ul></li>
+<li><a href="#64位ubuntu通过gcc生成c代码对应的32位汇编代码">64位Ubuntu通过gcc生成C代码对应的32位汇编代码</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>本文专门介绍Ubuntu系统上基于Vim配置汇编程序开发环境。</p>
+
+<h2 id="ubuntu系统配置">Ubuntu系统配置</h2>
+
+<p>所有开发都在Ubuntu上完成，需要用的软件包：binutils, gcc, gdb等软件。</p>
+
+<p>Ubuntu上安装软件很方便，指令如下：</p>
+
+<pre><code>$ sudo apt-get install binutils gcc gdb libc6-i386 libc6-dev-i386
+</code></pre>
+
+<h2 id="vim配置">Vim配置</h2>
+
+<p>个人比较喜欢<a href="https://github.com/wklken/k-vim">k-vim</a>，根据项目的安装文档安装即可。</p>
+
+<p>汇编源代码的基本结构类似，每次都写一遍 <code>.section .data</code> 之类的很麻烦，通过下面补丁，新建汇编源文件时，自动加载模板：</p>
+
+<pre><code>diff --git a/vimrc b/vimrc
+index e073d53..596bcc1 100644
+--- a/vimrc
++++ b/vimrc
+@@ -580,7 +580,7 @@ autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,pe
+
+
+&quot; 定义函数AutoSetFileHead，自动插入文件头
+-autocmd BufNewFile *.sh,*.py exec &quot;:call AutoSetFileHead()&quot;
++autocmd BufNewFile *.sh,*.py,*.s exec &quot;:call AutoSetFileHead()&quot;
+function! AutoSetFileHead()
+    &quot;如果文件类型为.sh文件
+    if &amp;filetype == 'sh'
+@@ -593,9 +593,23 @@ function! AutoSetFileHead()
+        call append(1, &quot;\# encoding: utf-8&quot;)
+    endif
+
+-    normal G
+-    normal o
+-    normal o
++    &quot;如果文件类型为asm
++    if &amp;filetype == 'asm'
++        call setline(1, &quot;.section .data&quot;)
++        call append(1, &quot;.section .text&quot;)
++        call append(2, &quot;.globl _start&quot;)
++        call append(3, &quot;_start:&quot;)
++    endif
++
++    if &amp;filetype == 'asm'
++        normal G
++        normal o
++    else
++        normal G
++        normal o
++        normal o
++    endif
++
+endfunc
+</code></pre>
+
+<h2 id="在ubuntu-64位系统上编译-运行32位汇编">在Ubuntu 64位系统上编译、运行32位汇编</h2>
+
+<p>之前提到过我学习的参考书籍讲的是32位AT&amp;T汇编，而我的系统是64位，所以，这里介绍在64位Ubuntu上编译、运行32位汇编程序需要做那些配置。</p>
+
+<h3 id="64位ubuntu编译-链接32位汇编程序">64位Ubuntu编译、链接32位汇编程序</h3>
+
+<p>在 <code>~/.bashrc</code> 中添加下面的行：</p>
+
+<pre><code># asm i386
+alias as='as --32 -gstabs'
+alias ld='ld -m elf_i386'
+alias gcc='gcc -m32'
+</code></pre>
+
+<p>每次输入指令编译、运行、查看返回值也很麻烦，可以写个脚本自动完成这些工作，参考：<a href="http://blog.wiseturtles.com/posts/Compile-Link-and-Run-ASM-Program.html">编译、链接、运行汇编程序</a></p>
+
+<p>注：</p>
+
+<ul>
+<li>上面链接中提到的那坨脚本基本可以用 <code>gcc -m32 -o myhello myhello.s</code> 代替😂</li>
+<li>如果用上面的gcc指令编译汇编代码，只能在汇编代码中使用<code>.globl main</code>；而不能使用as默认的<code>.globl _start</code></li>
+</ul>
+
+<h3 id="vim">Vim</h3>
+
+<h4 id="asm在vim中的语法检查">asm在Vim中的语法检查</h4>
+
+<p><a href="https://github.com/wklken/k-vim">k-vim</a>使用<code>syntastic</code>做语法检查，<code>syntastic</code>对asm源码默认检查会使用<code>as</code>编译源码，如果不指定<code>as --32</code>有些32位处理器特有的指令会引起报错。</p>
+
+<p>现象就是每次在Vim中<code>:w</code>保存时，可能会报：<code>Error: invalid instruction suffix for 'push'</code> 或 <code>Error: 'jcxz' is not supported in 64-bit mode</code> 之类的错误。</p>
+
+<p>可以在vim配置中指定<code>g:syntastic_asm_compiler_options</code>参数，避免错误，补丁如下:</p>
+
+<pre><code>diff --git a/vimrc.bundles b/vimrc.bundles
+index c7428e8..7a4555d 100644
+--- a/vimrc.bundles
++++ b/vimrc.bundles
+@@ -299,6 +299,9 @@ call plug#end()
+    &quot; let g:syntastic_javascript_checkers = ['jsl', 'jshint']
+    &quot; let g:syntastic_html_checkers=['tidy', 'jshint']
+
++    &quot; FIXME: if asm, 在64位系统上写32位汇编才需要
++    let g:syntastic_asm_compiler_options = &quot;--32&quot;
++
+</code></pre>
+
+<p>注：参考syntastic文档 - <a href="https://github.com/scrooloose/syntastic/wiki/ASM:---gcc">ASM: gcc</a></p>
+
+<h3 id="64位ubuntu通过gcc生成c代码对应的32位汇编代码">64位Ubuntu通过gcc生成C代码对应的32位汇编代码</h3>
+
+<p>直接通过gcc生成C代码对应的汇编代码只需<code>gcc -S</code>，但生成32位汇编代码就需要：</p>
+
+<pre><code>$ gcc -m32 -S hello.c
+</code></pre>
+
+<p>注：需要安装<code>libc6-dev-i386</code>，否则会报错。</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ox0spy</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2017-12-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/asm/">asm</a>
+          
+          <a href="/tags/linux/"> linux</a>
+          
+          <a href="/tags/vim/"> vim</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/configuration/python-pypi/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">python pypi源</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/install/setup-wamp/">
+            <span class="next-text nav-default">wamp(windows &#43; apache &#43; mysql &#43; php) 环境搭建</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

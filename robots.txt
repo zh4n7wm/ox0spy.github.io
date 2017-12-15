@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: http://ox0spy.github.io/sitemap.xml

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>入门 on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/%E5%85%A5%E9%97%A8/</link>
+    <description>Recent content in 入门 on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:21:59 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/%E5%85%A5%E9%97%A8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>go学习笔记1之安装go</title>
+      <link>http://ox0spy.github.io/post/go/01-go-install/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/go/01-go-install/</guid>
+      <description>本文参考于: Installing Go - Getting Started 必备技能之翻墙 这个是必须的技能，不然go的官网都没法访问, 后面也不用看了。 开发环境搭建 整个安装过程比较简单，下载安装包</description>
+    </item>
+    
+    <item>
+      <title>go学习笔记2之初识go</title>
+      <link>http://ox0spy.github.io/post/go/02-go-on-first-sight/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/go/02-go-on-first-sight/</guid>
+      <description>本文参考于: How to Write Go Code 代码组织 工作空间 Go tool先天就是设计来与开源仓库协作的，不管你愿不愿意发布你的代码，构建开发环境的方式是一样的。 Go</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>saltstack介绍 - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ox0spy" />
+  <meta name="description" content="本文只介绍了SaltStack在CentOS上的安装，其它其它有类似的包管理工具可以安装. CentOS上安装salt-master和salt" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/configuration/saltstack/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="saltstack介绍" />
+<meta property="og:description" content="本文只介绍了SaltStack在CentOS上的安装，其它其它有类似的包管理工具可以安装. CentOS上安装salt-master和salt" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/configuration/saltstack/" />
+
+
+
+<meta property="article:published_time" content="2017-12-15T19:21:57&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-12-15T19:21:57&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="saltstack介绍">
+<meta itemprop="description" content="本文只介绍了SaltStack在CentOS上的安装，其它其它有类似的包管理工具可以安装. CentOS上安装salt-master和salt">
+
+
+<meta itemprop="datePublished" content="2017-12-15T19:21:57&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:57&#43;08:00" />
+<meta itemprop="wordCount" content="922">
+
+
+
+<meta itemprop="keywords" content="centos, saltstack," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="saltstack介绍"/>
+<meta name="twitter:description" content="本文只介绍了SaltStack在CentOS上的安装，其它其它有类似的包管理工具可以安装. CentOS上安装salt-master和salt"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">saltstack介绍</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/configuration/"> configuration </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#centos上安装salt-master和salt-minion">CentOS上安装salt-master和salt-minion</a>
+<ul>
+<li><a href="#安装salt-master">安装salt-master</a></li>
+<li><a href="#安装salt-minion">安装salt-minion</a></li>
+<li><a href="#简单测试">简单测试</a></li>
+</ul></li>
+<li><a href="#选择主机">选择主机</a>
+<ul>
+<li><a href="#globbing">globbing</a></li>
+<li><a href="#grains-system">grains system</a></li>
+<li><a href="#regular-expression">regular expression</a></li>
+<li><a href="#明确指定一个列表">明确指定一个列表</a></li>
+<li><a href="#multiple-target-types-can-be-combined-in-one-command">multiple target types can be combined in one command</a></li>
+</ul></li>
+<li><a href="#执行命令">执行命令</a>
+<ul>
+<li><a href="#执行单个命令-比如-在minion上执行-id-命令并输出">执行单个命令，比如：在minion上执行<code>id</code>命令并输出:</a></li>
+<li><a href="#执行脚本">执行脚本：</a></li>
+</ul></li>
+<li><a href="#tips">Tips</a>
+<ul>
+<li><a href="#以指定用户运行salt-master-避免每次输入salt指令都需要加-sudo-比如以centos用户运行salt-master">以指定用户运行salt-master，避免每次输入salt指令都需要加 sudo；比如以centos用户运行salt-master</a></li>
+<li><a href="#删除无法连接的salt-minion">删除无法连接的salt minion</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>本文只介绍了SaltStack在CentOS上的安装，其它其它有类似的包管理工具可以安装.</p>
+
+<h2 id="centos上安装salt-master和salt-minion">CentOS上安装salt-master和salt-minion</h2>
+
+<h3 id="安装salt-master">安装salt-master</h3>
+
+<p>在centos上安装salt-master:</p>
+
+<pre><code>$ sudo rpm --import https://repo.saltstack.com/yum/redhat/7/x86_64/latest/SALTSTACK-GPG-KEY.pub
+$ sudo bash -c 'cat - &gt; /etc/yum.repos.d/saltstack.repo &lt;&lt;&quot;EOF&quot;
+[saltstack-repo]
+name=SaltStack repo for RHEL/CentOS $releasever
+baseurl=https://repo.saltstack.com/yum/redhat/$releasever/$basearch/latest
+enabled=1
+gpgcheck=1
+gpgkey=https://repo.saltstack.com/yum/redhat/$releasever/$basearch/latest/SALTSTACK-GPG-KEY.pub
+EOF'
+$ sudo yum clean expire-cache
+$ sudo yum install -y salt-master
+$ sudo systemctl enable salt-master.service
+$ sudo systemctl restart salt-master.service
+</code></pre>
+
+<h3 id="安装salt-minion">安装salt-minion</h3>
+
+<p>在centos上安装salt-minion:</p>
+
+<pre><code>$ sudo rpm --import https://repo.saltstack.com/yum/redhat/7/x86_64/latest/SALTSTACK-GPG-KEY.pub
+$ sudo bash -c 'cat - &gt; /etc/yum.repos.d/saltstack.repo &lt;&lt;&quot;EOF&quot;
+[saltstack-repo]
+name=SaltStack repo for RHEL/CentOS $releasever
+baseurl=https://repo.saltstack.com/yum/redhat/$releasever/$basearch/latest
+enabled=1
+gpgcheck=1
+gpgkey=https://repo.saltstack.com/yum/redhat/$releasever/$basearch/latest/SALTSTACK-GPG-KEY.pub
+EOF'
+$ sudo yum clean expire-cache
+$ sudo yum install -y salt-minion
+$ sudo bash -c &quot;echo 'master: $SALT_MASTER' &gt;&gt; /etc/salt/minion&quot; # $SALT_MASTER 替换为salt master主机的IP
+$ sudo systemctl enable salt-minion.service
+$ sudo systemctl restart salt-minion.service
+</code></pre>
+
+<p>注: 如果salt-master使用默认配置，请确保salt-master的4505, 4506端口可以被salt-minion访问.</p>
+
+<h3 id="简单测试">简单测试</h3>
+
+<p>salt-minion设置过master IP并重启salt-minion后，应该在salt-master上可以通过下面命令看到minion:</p>
+
+<pre><code>[root@master ~]$ salt-key -L  # 列出所有minion
+[root@master ~]$ salt-key -A  # 接受所有minion，也可以通过 -a 接受指定minion
+</code></pre>
+
+<p>接受minion后，就可以在salt-master上发布命令到minion了。</p>
+
+<pre><code>[root@master ~]$ salt '*' test.ping  # 简单测试master &lt;-&gt; minion是否连通
+</code></pre>
+
+<h2 id="选择主机">选择主机</h2>
+
+<p>经常会看到 <code>salt '*' test.ping</code> 这里的 <code>'*'</code> 意思是作用于所有主机。</p>
+
+<p>下面介绍 salt 支持的匹配方式。</p>
+
+<h3 id="globbing">globbing</h3>
+
+<pre><code>[root@master ~]$ salt 'ubuntu*' disk.usage
+</code></pre>
+
+<h3 id="grains-system">grains system</h3>
+
+<pre><code>[root@master ~]$ salt -G 'os:CentOS' cmd.run 'id'
+</code></pre>
+
+<h3 id="regular-expression">regular expression</h3>
+
+<pre><code>[root@master ~]$ salt -E 'centos[0-9]' test.ping
+</code></pre>
+
+<h3 id="明确指定一个列表">明确指定一个列表</h3>
+
+<pre><code>[root@master ~]$ salt -L 'centos1,centos2' test.ping
+</code></pre>
+
+<h3 id="multiple-target-types-can-be-combined-in-one-command">multiple target types can be combined in one command</h3>
+
+<pre><code>[root@master ~]$ salt -C 'G@os:CentOS and centos* or S@192.168.50.*' test.ping
+</code></pre>
+
+<p>注: 参考 - <a href="https://docs.saltstack.com/en/getstarted/fundamentals/targeting.html">https://docs.saltstack.com/en/getstarted/fundamentals/targeting.html</a></p>
+
+<h2 id="执行命令">执行命令</h2>
+
+<h3 id="执行单个命令-比如-在minion上执行-id-命令并输出">执行单个命令，比如：在minion上执行<code>id</code>命令并输出:</h3>
+
+<pre><code>[root@master ~]$ salt '*' cmd.run 'id'
+</code></pre>
+
+<h3 id="执行脚本">执行脚本：</h3>
+
+<p>首先要开启<code>/etc/salt/master</code>的如下设置:</p>
+
+<pre><code>file_roots:
+  base:
+    - /srv/salt
+</code></pre>
+
+<p>如果salt-master没有<code>/srv/salt/scripts</code>目录请自己创建，然后写个简单脚本:</p>
+
+<pre><code>[root@master ~]$ cat /srv/salt/scripts/get_ip.sh
+#!/bin/bash
+
+ifconfig | grep 'inet ' | grep -Ev '127.0.0.1' | awk '{print $2}'
+
+[root@master ~]$ salt '*' cmd.script 'salt://scripts/get_ip.sh'
+</code></pre>
+
+<h2 id="tips">Tips</h2>
+
+<h3 id="以指定用户运行salt-master-避免每次输入salt指令都需要加-sudo-比如以centos用户运行salt-master">以指定用户运行salt-master，避免每次输入salt指令都需要加 sudo；比如以centos用户运行salt-master</h3>
+
+<pre><code>[centos@master ~]$ sudo chown -R centos /etc/salt /var/log/salt /var/cache/salt /var/run/salt
+[centos@master ~]$ sudo mkdir -p /srv/salt
+[centos@master ~]$ sudo chown -R centos /srv/salt
+在 /etc/salt/master 中设置 user: centos
+</code></pre>
+
+<p>注: 理论上salt-minion也可以通过这种方式运行以指定用户运行，但我测试会报错 &ldquo;Minion did not return. [No response]&rdquo;</p>
+
+<h3 id="删除无法连接的salt-minion">删除无法连接的salt minion</h3>
+
+<pre><code>[root@master ~]$ salt-run manage.down removekeys=True
+</code></pre>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ox0spy</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2017-12-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/centos/">centos</a>
+          
+          <a href="/tags/saltstack/"> saltstack</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/linux-commands/ps/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">ps</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/configuration/too-many-files-open/">
+            <span class="next-text nav-default">too many files open</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

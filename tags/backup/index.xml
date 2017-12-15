@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Backup on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/backup/</link>
+    <description>Recent content in Backup on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:21:57 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/backup/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>mysql自动备份，并同步到amazons3</title>
+      <link>http://ox0spy.github.io/post/configuration/mysql-backup-to-amazon-s3/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/mysql-backup-to-amazon-s3/</guid>
+      <description>MySQL自动备份，并将本地备份同步到Amazon S3，然后配置邮件通知。 注: 系统为Ubuntu 14.04，Debian系统也类似。 安装au</description>
+    </item>
+    
+  </channel>
+</rss>

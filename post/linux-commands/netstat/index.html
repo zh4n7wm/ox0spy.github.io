@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>netstat - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="crazygit" />
+  <meta name="description" content="本文参考： http://www.cnblogs.com/ggjucheng/archive/2012/01/08/2316661.html http://www.binarytides.com/linux-netstat-command-examples/ 作用 Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="http://ox0spy.github.io/post/linux-commands/netstat/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="netstat" />
+<meta property="og:description" content="本文参考： http://www.cnblogs.com/ggjucheng/archive/2012/01/08/2316661.html http://www.binarytides.com/linux-netstat-command-examples/ 作用 Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ox0spy.github.io/post/linux-commands/netstat/" />
+
+
+
+<meta property="article:published_time" content="2017-12-15T19:21:57&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-12-15T19:21:57&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="netstat">
+<meta itemprop="description" content="本文参考： http://www.cnblogs.com/ggjucheng/archive/2012/01/08/2316661.html http://www.binarytides.com/linux-netstat-command-examples/ 作用 Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast">
+
+
+<meta itemprop="datePublished" content="2017-12-15T19:21:57&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:57&#43;08:00" />
+<meta itemprop="wordCount" content="1502">
+
+
+
+<meta itemprop="keywords" content="linux, command, netstat," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="netstat"/>
+<meta name="twitter:description" content="本文参考： http://www.cnblogs.com/ggjucheng/archive/2012/01/08/2316661.html http://www.binarytides.com/linux-netstat-command-examples/ 作用 Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">netstat</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-15 </span>
+        <div class="post-category">
+            
+              <a href="/categories/linux-commands/"> linux-commands </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#作用">作用</a></li>
+<li><a href="#输出信息含义">输出信息含义</a></li>
+<li><a href="#常见参数">常见参数</a></li>
+<li><a href="#实用命令实例">实用命令实例</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>本文参考：</p>
+
+<ul>
+<li><a href="http://www.cnblogs.com/ggjucheng/archive/2012/01/08/2316661.html">http://www.cnblogs.com/ggjucheng/archive/2012/01/08/2316661.html</a></li>
+<li><a href="http://www.binarytides.com/linux-netstat-command-examples/">http://www.binarytides.com/linux-netstat-command-examples/</a></li>
+</ul>
+
+<h2 id="作用">作用</h2>
+
+<p>Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态
+(Interface Statistics)，masquerade 连接，多播成员 (Multicast Memberships) 等
+等。</p>
+
+<h2 id="输出信息含义">输出信息含义</h2>
+
+<p>执行netstat后，其输出结果为</p>
+
+<pre>
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address Foreign Address State
+tcp 0 2 210.34.6.89:telnet 210.34.6.96:2873 ESTABLISHED
+tcp 296 0 210.34.6.89:1165 210.34.6.84:netbios-ssn ESTABLISHED
+tcp 0 0 localhost.localdom:9001 localhost.localdom:1162 ESTABLISHED
+tcp 0 0 localhost.localdom:1162 localhost.localdom:9001 ESTABLISHED
+tcp 0 80 210.34.6.89:1161 210.34.6.10:netbios-ssn CLOSE
+
+Active UNIX domain sockets (w/o servers)
+Proto RefCnt Flags Type State I-Node Path
+unix 1 [ ] STREAM CONNECTED 16178 @000000dd
+unix 1 [ ] STREAM CONNECTED 16176 @000000dc
+unix 9 [ ] DGRAM 5292 /dev/log
+unix 1 [ ] STREAM CONNECTED 16182 @000000df
+</pre>
+
+<p>从整体上看，netstat的输出结果可以分为两个部分：</p>
+
+<p>一个是Active Internet connections，称为有源TCP连接，其中&rdquo;Recv-Q&rdquo;和&rdquo;Send-Q&rdquo;指%0A的是接收队列和发送队列。这些数字一般都应该是0。如果不是则表示软件包正在队列中堆积。这种情况只能在非常少的情况见到。</p>
+
+<p>另一个是Active UNIX domain sockets，称为有源Unix域套接口(和网络套接字一样，但是只能用于本机通信，性能可以提高一倍)。
+Proto显示连接使用的协议,RefCnt表示连接到本套接口上的进程号,Types显示套接口的类型,State显示套接口当前的状态,Path表示连接到套接口的其它进程使用的路径名。</p>
+
+<h2 id="常见参数">常见参数</h2>
+
+<ul>
+<li>-a (all)显示所有监听和未监听的连接</li>
+<li>-t (tcp)仅显示tcp相关选项</li>
+<li>-u (udp)仅显示udp相关选项</li>
+<li>-n 拒绝显示别名，能显示数字的全部转化成数字。</li>
+<li>-l 仅列出有在 Listen (监听) 的服務状态
+*</li>
+<li>-p 显示建立相关链接的程序名</li>
+<li>-r 显示路由信息，路由表</li>
+<li>-e 显示扩展信息，例如uid等</li>
+<li>-s 按各个协议进行统计</li>
+<li>-c 每隔一个固定时间，执行该netstat命令。</li>
+</ul>
+
+<p><strong>提示</strong>：LISTEN和LISTENING的状态只有用-a或者-l才能看到</p>
+
+<h2 id="实用命令实例">实用命令实例</h2>
+
+<pre><code>:::bash
+# 列出所有连接（包括监听和未监听的)
+$ netstat -a
+
+# 列出所有tcp连接
+$ netstat -at
+
+# 列出所有udp连接
+$ netstat -au
+
+# 默认情况下，netstat命令会做一个reverse dns lookup去查找连接的ip
+# 对应的主机名，这会降低输出速度，如果不需要，可以使用-n
+# 在netstat输出中不显示主机，端口和用户名(host, port or user)
+$ netstat -an
+
+# 列出所有处于监听状态的
+# -l选项不要与-a同时使用，不然也会列出未监听状态的连接
+$ netstat -l
+
+# 列出所有监听状态的tcp连击
+$ netstat -lt
+
+# 列出所有监听状态的udp连击
+$ netstat -lu
+
+# 列出所有的unix连接
+$ netstat -lx
+
+# 在netstat输出中显示PID和进程名称(-p),用户名(-e)
+# -p使用需要root权限,不然无法获取PID
+$ sudo netstat -ltpe
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       User       Inode       PID/Program name
+tcp        0      0 localhost:5037          *:*                     LISTEN      linliang   4530492     11684/adb
+tcp        0      0 localhost:63342         *:*                     LISTEN      linliang   10952269    6663/java
+tcp        0      0 localhost:9200          *:*                     LISTEN      linliang   10361577    12461/ssh
+tcp        0      0 *:http                  *:*                     LISTEN      root       12810       1344/nginx
+tcp        0      0 localhost:domain        *:*                     LISTEN      root       683         1481/dnsmasq
+
+# 上面的命令总如果使用-n,将会显示用户UID，而不是用户名
+
+# 列出所有的网络统计信息
+$ netstat -s
+Ip:
+14989101 total packets received
+0 forwarded
+0 incoming packets discarded
+14986294 incoming packets delivered
+11643610 requests sent out
+Icmp:
+    6034 ICMP messages received
+    71 input ICMP message failed.
+    ICMP input histogram:
+        destination unreachable: 5774
+        timeout in transit: 106
+        echo replies: 154
+    6882 ICMP messages sent
+    0 ICMP messages failed
+    ICMP output histogram:
+....
+
+# 显示TCP或UDP连接的统计信息
+$ netstat -st
+$ netstat -su
+
+# 显示kernel的路由信息(-r)
+$ netstat -rn
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+0.0.0.0         172.26.50.1     0.0.0.0         UG        0 0          0 eth1
+169.254.0.0     0.0.0.0         255.255.0.0     U         0 0          0 eth1
+172.26.50.0     0.0.0.0         255.255.255.0   U         0 0          0 eth1
+192.168.56.0    0.0.0.0         255.255.255.0   U         0 0          0 vboxnet0
+
+# 打印网络接口(-i)
+$ netstat -i
+Kernel Interface table
+Iface   MTU Met   RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg
+eth1       1500 0  10650979      0      0 0      10656895      0      0      0 BMRU
+lo        65536 0   5095802      0      0 0       5095802      0      0      0 LRU
+vboxnet0   1500 0         0      0      0 0          1505      0      0      0 BMRU
+
+# 上面的输出比较原始，为了获取友好输出，可以加上(-e)
+# 达到与ifconfig命令类似的效果
+$ netstat -ie
+Kernel Interface table
+eth1      Link encap:Ethernet  HWaddr 44:39:c4:8d:d9:64
+        inet addr:172.26.50.13  Bcast:172.26.50.255  Mask:255.255.255.0
+        inet6 addr: fe80::4639:c4ff:fe8d:d964/64 Scope:Link
+        UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+        RX packets:10651112 errors:0 dropped:0 overruns:0 frame:0
+        TX packets:10656940 errors:0 dropped:0 overruns:0 carrier:0
+        collisions:0 txqueuelen:1000
+        RX bytes:6607723134 (6.6 GB)  TX bytes:10396843122 (10.3 GB)
+        Interrupt:20 Memory:f7c00000-f7c20000
+
+lo        Link encap:Local Loopback
+        inet addr:127.0.0.1  Mask:255.0.0.0
+        inet6 addr: ::1/128 Scope:Host
+        UP LOOPBACK RUNNING  MTU:65536  Metric:1
+        RX packets:5095811 errors:0 dropped:0 overruns:0 frame:0
+        TX packets:5095811 errors:0 dropped:0 overruns:0 carrier:0
+        collisions:0 txqueuelen:0
+        RX bytes:2717552755 (2.7 GB)  TX bytes:2717552755 (2.7 GB)
+
+vboxnet0  Link encap:Ethernet  HWaddr 0a:00:27:00:00:00
+        inet addr:192.168.56.1  Bcast:192.168.56.255  Mask:255.255.255.0
+        inet6 addr: fe80::800:27ff:fe00:0/64 Scope:Link
+        UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+        RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+        TX packets:1505 errors:0 dropped:0 overruns:0 carrier:0
+        collisions:0 txqueuelen:1000
+        RX bytes:0 (0.0 B)  TX bytes:130893 (130.8 KB)
+</code></pre>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">crazygit</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2017-12-15</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/linux/">linux</a>
+          
+          <a href="/tags/command/"> command</a>
+          
+          <a href="/tags/netstat/"> netstat</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/configuration/mysql-backup-to-amazon-s3/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">mysql自动备份，并同步到amazons3</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/configuration/nginx-config/">
+            <span class="next-text nav-default">nginx获取客户端真实ip，x-real-ip和x-forwarded-for注意</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="http://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+
+
+</body>
+</html>

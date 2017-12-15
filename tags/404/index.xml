@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>404 on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/404/</link>
+    <description>Recent content in 404 on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:22:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/404/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>你要访问的页面不存在了</title>
+      <link>http://ox0spy.github.io/post/pages/404/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/pages/404/</guid>
+      <description>  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/programming/</link>
+    <description>Recent content in Programming on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 14 Aug 2013 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux Bash Tips</title>
+      <link>http://ox0spy.github.io/post/configuration/linux-bash-tips/</link>
+      <pubDate>Wed, 14 Aug 2013 00:00:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/linux-bash-tips/</guid>
+      <description>Command line option parse while (( $# &amp;gt; 0 )) ; do case $1 in --local_branch) git_local_branch=$2 shift ;; --remote_branch) git_remote_branch=$2 shift ;; --remote_repo) git_remote_repo=$2 shift ;; --tag) git_tag=$2 shift ;; -f|--force) git_force=&amp;quot;-f&amp;quot; ;; --keyfile) export git_publish_keyfile=$2 shift ;; esac shift done  Pointer variable The example shows how to make a bash environment variable reference the value of another:
+$ foo=bar $ name=foo $ echo ${!name} bar  The example shows how to get a list of all variables beginning with &amp;ldquo;H&amp;rdquo; (Note: the wildcard can only go at the end)</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jenkins on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/jenkins/</link>
+    <description>Recent content in Jenkins on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:22:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/jenkins/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>jenkins自动构建ios应用</title>
+      <link>http://ox0spy.github.io/post/mac-osx/jenkins-build-ios-apps/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/mac-osx/jenkins-build-ios-apps/</guid>
+      <description>最近折腾用Jenkins自动构建iOS应用。 编译环境 为了构建iOS应用，必须找台Mac电脑做slave。 安装很简单，貌似brew install jenki</description>
+    </item>
+    
+    <item>
+      <title>Setup new Jenkins slave</title>
+      <link>http://ox0spy.github.io/post/configuration/setup-new-jenkins-slave/</link>
+      <pubDate>Wed, 14 Aug 2013 00:00:00 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/configuration/setup-new-jenkins-slave/</guid>
+      <description>Setup new Jenkins slave Install Ubuntu 10.04 Create jenkins/jenkins (user/group) # login new Jenkins slave $ sudo addgroup jenkins $ sudo useradd -m -s /bin/bash -g jenkins jenkins $ sudo su - jenkins $ scp -r jenkins@172.26.32.85:~/.ssh ~/ $ passwd jenkins # change hostname $ sudo vim /etc/hostname # login Jenkins master $ ssh jenkins@master $ ssh-copy-id jenkins@new-slave-host # login new Jenkins slave $ sudo scp jenkins@master:/etc/apt/sources.list /etc/apt/sources.list $ sudo apt-get update $ sudo apt-get upgrade $ sudo apt-get install git-core  Setup nis/autofs $ sudo tail -n 1 /etc/passwd /etc/group /etc/shadow ==&amp;gt; /etc/passwd &amp;lt;== +:::::: ==&amp;gt; /etc/group &amp;lt;== +::: ==&amp;gt; /etc/shadow &amp;lt;== +:::::::: $ sudo apt-get install nis portmap autofs $ sudo bash -c &#39;echo &amp;quot;ypserver int.</description>
+    </item>
+    
+  </channel>
+</rss>

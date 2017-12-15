@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dashboard on wiseturtles&#39;s team blog</title>
+    <link>http://ox0spy.github.io/tags/dashboard/</link>
+    <description>Recent content in Dashboard on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Dec 2017 19:22:01 +0800</lastBuildDate>
+    
+	<atom:link href="http://ox0spy.github.io/tags/dashboard/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>upgrade elasticsearch 1.2.1 to 1.4.5</title>
+      <link>http://ox0spy.github.io/post/elasticsearch/upgrade-elasticsearch-1.2.1-to-1.4.5/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/elasticsearch/upgrade-elasticsearch-1.2.1-to-1.4.5/</guid>
+      <description>一年前刚开始做应用市场数据统计，团队选用了ELK中的EL (Elasticsearch, Logstash)，没有用Kibana；而且根据产品、运营需求调用ES Restful API，自</description>
+    </item>
+    
+  </channel>
+</rss>
