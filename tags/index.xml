@@ -131,7 +131,7 @@
     <item>
       <title>Blog</title>
       <link>http://ox0spy.github.io/tags/blog/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      <pubDate>Fri, 15 Dec 2017 21:08:54 +0800</pubDate>
       
       <guid>http://ox0spy.github.io/tags/blog/</guid>
       <description></description>
@@ -440,6 +440,15 @@
       <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
       
       <guid>http://ox0spy.github.io/tags/https/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>http://ox0spy.github.io/tags/hugo/</link>
+      <pubDate>Fri, 15 Dec 2017 21:08:54 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     

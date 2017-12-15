@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>elastichsearch反向代理设置 - wiseturtles&#39;s team blog</title>
+  <title>Setup Hugo Github Pages - wiseturtles&#39;s team blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="ox0spy" />
-  <meta name="description" content="内网的ES集群，平时操作都是通过命令行，有点不方便，而且安装的site插件也没法使用 ，比较蛋疼，所以配置nginx作为elasticsear" />
+  <meta name="description" content="hugo &#43; github pages 搭建 blog。 安装 hugo Mac brew 安装: $ brew install hugo go 命令行安装: $ go get -u github.com/gohugoio/hugo 创建一个静态blog 创建名为 blog 的静态博客 $ hugo new site blog 下载 theme $ git submodule add https://github.com/olOwOlo/hugo-theme-even themes/even $" />
 
   <meta name="keywords" content="Hugo, theme, even" />
 
@@ -29,7 +29,7 @@
 <meta name="generator" content="Hugo 0.32-DEV" />
 
 
-<link rel="canonical" href="http://ox0spy.github.io/post/elasticsearch/elasticsearch-reverse-proxy/" />
+<link rel="canonical" href="http://ox0spy.github.io/post/setup-hugo-github-pages/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -44,20 +44,16 @@
 <link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
 <link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
-<meta property="og:title" content="elastichsearch反向代理设置" />
-<meta property="og:description" content="内网的ES集群，平时操作都是通过命令行，有点不方便，而且安装的site插件也没法使用 ，比较蛋疼，所以配置nginx作为elasticsear" />
+<meta property="og:title" content="Setup Hugo Github Pages" />
+<meta property="og:description" content="hugo &#43; github pages 搭建 blog。 安装 hugo Mac brew 安装: $ brew install hugo go 命令行安装: $ go get -u github.com/gohugoio/hugo 创建一个静态blog 创建名为 blog 的静态博客 $ hugo new site blog 下载 theme $ git submodule add https://github.com/olOwOlo/hugo-theme-even themes/even $" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://ox0spy.github.io/post/elasticsearch/elasticsearch-reverse-proxy/" />
+<meta property="og:url" content="http://ox0spy.github.io/post/setup-hugo-github-pages/" />
 
 
 
-<meta property="article:published_time" content="2017-12-15T19:22:01&#43;08:00"/>
+<meta property="article:published_time" content="2017-12-15T21:08:54&#43;08:00"/>
 
-<meta property="article:modified_time" content="2017-12-15T19:22:01&#43;08:00"/>
-
-
-
-
+<meta property="article:modified_time" content="2017-12-15T21:08:54&#43;08:00"/>
 
 
 
@@ -65,19 +61,23 @@
 
 
 
-<meta itemprop="name" content="elastichsearch反向代理设置">
-<meta itemprop="description" content="内网的ES集群，平时操作都是通过命令行，有点不方便，而且安装的site插件也没法使用 ，比较蛋疼，所以配置nginx作为elasticsear">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:22:01&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:22:01&#43;08:00" />
-<meta itemprop="wordCount" content="357">
 
 
 
-<meta itemprop="keywords" content="elasticsearch, reverse, proxy," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="elastichsearch反向代理设置"/>
-<meta name="twitter:description" content="内网的ES集群，平时操作都是通过命令行，有点不方便，而且安装的site插件也没法使用 ，比较蛋疼，所以配置nginx作为elasticsear"/>
+
+<meta itemprop="name" content="Setup Hugo Github Pages">
+<meta itemprop="description" content="hugo &#43; github pages 搭建 blog。 安装 hugo Mac brew 安装: $ brew install hugo go 命令行安装: $ go get -u github.com/gohugoio/hugo 创建一个静态blog 创建名为 blog 的静态博客 $ hugo new site blog 下载 theme $ git submodule add https://github.com/olOwOlo/hugo-theme-even themes/even $">
+
+
+<meta itemprop="datePublished" content="2017-12-15T21:08:54&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-15T21:08:54&#43;08:00" />
+<meta itemprop="wordCount" content="244">
+
+
+
+<meta itemprop="keywords" content="blog,hugo," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Setup Hugo Github Pages"/>
+<meta name="twitter:description" content="hugo &#43; github pages 搭建 blog。 安装 hugo Mac brew 安装: $ brew install hugo go 命令行安装: $ go get -u github.com/gohugoio/hugo 创建一个静态blog 创建名为 blog 的静态博客 $ hugo new site blog 下载 theme $ git submodule add https://github.com/olOwOlo/hugo-theme-even themes/even $"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -140,15 +140,11 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">elastichsearch反向代理设置</h1>
+      <h1 class="post-title">Setup Hugo Github Pages</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2017-12-15 </span>
-        <div class="post-category">
-            
-              <a href="/categories/elasticsearch/"> elasticsearch </a>
-            
-          </div>
+        
         
       </div>
     </header>
@@ -159,47 +155,98 @@
   <h2 class="post-toc-title">文章目录</h2>
   
   <div class="post-toc-content always-active">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#安装-hugo">安装 hugo</a></li>
+<li><a href="#创建一个静态blog">创建一个静态blog</a></li>
+</ul></li>
+</ul>
+</nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      <p>内网的ES集群，平时操作都是通过命令行，有点不方便，而且安装的site插件也没法使用
-，比较蛋疼，所以配置nginx作为elasticsearch的反向代理，并且添加认证信息.</p>
+      
 
-<p>如果是直接用域名的根节点作为反向代理的话，比较简单，直接配置一下就可以，但是问
-题是根节点被暂用，需要设置一个前缀来来访问, 就稍微麻烦一点.</p>
+<p>hugo + github pages 搭建 blog。</p>
 
-<p>nginx配置如下:</p>
+<h2 id="安装-hugo">安装 hugo</h2>
 
-<pre>
-    location ~ ^/es/ {
-            rewrite ^/es/(.*)$ /$1 break;
-            include proxy_params;
-            proxy_pass http://es_node_ip:9200;
-            proxy_redirect http://$host/ http://$host/es/;
-            auth_basic "please login";
-            auth_basic_user_file /data/passwd/es.htpasswd;
-    }
-</pre>
+<p>Mac brew 安装:</p>
 
-<p>几点需要注意：</p>
+<pre><code>$ brew install hugo
+</code></pre>
+
+<p>go 命令行安装:</p>
+
+<pre><code>$ go get -u github.com/gohugoio/hugo
+</code></pre>
+
+<h2 id="创建一个静态blog">创建一个静态blog</h2>
 
 <ol>
-<li><code>include proxy_params;</code> proxy_params为一些反向代理设置参数，没有的话可以去掉</li>
-<li><code>proxy_pass http://es_node_ip:9200;</code> 需要替换es_node_ip 为ES集群的IP,</li>
-<li><code>auth_basic_user_file /data/passwd/es.htpasswd</code>中<code>/data/passwd/es.htpasswd</code>为认证文件，可以用apache工具或一些<a href="http://tool.oschina.net/htpasswd">在线工具</a>生成</li>
+<li><p>创建名为 <code>blog</code> 的静态博客</p>
+
+<p>$ hugo new site blog</p></li>
+
+<li><p>下载 <code>theme</code></p></li>
 </ol>
 
-<p>假设域名为www.example.com, 那么就可以直接访问</p>
+<p>$ git submodule add <a href="https://github.com/olOwOlo/hugo-theme-even">https://github.com/olOwOlo/hugo-theme-even</a> themes/even
+   $ cp themes/even/exampleSite/config.toml .</p>
 
-<ul>
-<li><a href="http://www.example.com/es/">http://www.example.com/es/</a></li>
-<li><a href="http://www.example.com/es/_plugin/head/">http://www.example.com/es/_plugin/head/</a></li>
-</ul>
+<p>注：编辑 <code>config.toml</code></p>
 
-<p>配置好之后，用起来爽多了。</p>
+<ol>
+<li><p>写第一篇文章</p>
+
+<p>$ hugo new hello-world.md
+$ vim content/hello-world.md  # 用vim编辑器写 Markdown 即可</p></li>
+
+<li><p>查看效果</p>
+
+<p>$ hugo server &ndash;theme=even &ndash;buildDrafts &ndash;watch</p></li>
+
+<li><p>生成静态文件</p>
+
+<p>$ hugo &ndash;theme even</p></li>
+</ol>
+
+<p>更多 <code>theme</code>: <a href="http://themes.gohugo.io/">http://themes.gohugo.io/</a></p>
+
+<ol>
+<li><p>在 <code>github.com</code> 上创建名为 <code>username.github.io</code> 的 <code>git</code> 库</p></li>
+
+<li><p>将生成的静态文件 <code>push</code> 到 <code>username.github.io</code></p>
+
+<p>$ cd public
+$ git init
+$ git add -A
+$ git commit -m &lsquo;initial commit.&rsquo;
+$ git push origin master</p></li>
+</ol>
+
+<p>将 <code>public</code> 作为 submodule</p>
+
+<pre><code>$ cd ../
+$ git submodule add git@github.com:ox0spy/ox0spy.github.io.git public
+</code></pre>
+
+<ol>
+<li>创建一个git库</li>
+</ol>
+
+<p>在 <code>github</code> 上创建一个新的 <code>git</code>库 来保存 <code>hugo</code>文件及 <code>*.md</code>。</p>
+
+<pre><code>$ git init
+$ git add .
+$ git commit -m 'initial commit.'
+$ git remote add origin git@github.com:ox0spy/hugo-blog.git
+$ git -u origin master
+</code></pre>
 
     </div>
 
@@ -227,25 +274,18 @@
     <footer class="post-footer">
       <div class="post-tags">
           
-          <a href="/tags/elasticsearch/">elasticsearch</a>
+          <a href="/tags/blog/">blog</a>
           
-          <a href="/tags/reverse/"> reverse</a>
-          
-          <a href="/tags/proxy/"> proxy</a>
+          <a href="/tags/hugo/">hugo</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/setup-hugo-github-pages/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Setup Hugo Github Pages</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/elasticsearch/elasticsearch-snapshot-restore/">
-            <span class="next-text nav-default">elastichsearch数据备份，恢复，及迁移</span>
+          <a class="next" href="/post/elasticsearch/elasticsearch-reverse-proxy/">
+            <span class="next-text nav-default">elastichsearch反向代理设置</span>
             <span class="prev-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

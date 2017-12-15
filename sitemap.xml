@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ox0spy.github.io/post/setup-hugo-github-pages/</loc>
+    <lastmod>2017-12-15T21:08:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://ox0spy.github.io/post/elasticsearch/elasticsearch-reverse-proxy/</loc>
     <lastmod>2017-12-15T19:22:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -827,7 +834,7 @@
   
   <url>
     <loc>http://ox0spy.github.io/tags/blog/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <lastmod>2017-12-15T21:08:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1119,6 +1126,13 @@
   <url>
     <loc>http://ox0spy.github.io/tags/https/</loc>
     <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://ox0spy.github.io/tags/hugo/</loc>
+    <lastmod>2017-12-15T21:08:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1439,7 +1453,7 @@
   
   <url>
     <loc>http://ox0spy.github.io/post/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <lastmod>2017-12-15T21:08:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1827,7 +1841,7 @@
   
   <url>
     <loc>http://ox0spy.github.io/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <lastmod>2017-12-15T21:08:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

@@ -6,10 +6,19 @@
     <description>Recent content in Posts on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 15 Dec 2017 19:22:01 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 15 Dec 2017 21:08:54 +0800</lastBuildDate>
     
 	<atom:link href="http://ox0spy.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Setup Hugo Github Pages</title>
+      <link>http://ox0spy.github.io/post/setup-hugo-github-pages/</link>
+      <pubDate>Fri, 15 Dec 2017 21:08:54 +0800</pubDate>
+      
+      <guid>http://ox0spy.github.io/post/setup-hugo-github-pages/</guid>
+      <description>hugo + github pages 搭建 blog。 安装 hugo Mac brew 安装: $ brew install hugo go 命令行安装: $ go get -u github.com/gohugoio/hugo 创建一个静态blog 创建名为 blog 的静态博客 $ hugo new site blog 下载 theme $ git submodule add https://github.com/olOwOlo/hugo-theme-even themes/even $</description>
+    </item>
     
     <item>
       <title>elastichsearch反向代理设置</title>
