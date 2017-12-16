@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Openresty on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/tags/openresty/</link>
+    <link>https://ox0spy.github.io/tags/openresty/</link>
     <description>Recent content in Openresty on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:21:58 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/tags/openresty/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/tags/openresty/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>openresty</title>
-      <link>http://ox0spy.github.io/post/install/openresty/</link>
+      <link>https://ox0spy.github.io/post/install/openresty/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/install/openresty/</guid>
+      <guid>https://ox0spy.github.io/post/install/openresty/</guid>
       <description>什么是OpenResty OpenResty（也称为 ngx_openresty）是一个全功能的 Web 应用服务器，它打包了标准 的Nginx 核心，很多</description>
     </item>
     

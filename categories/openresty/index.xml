@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Openresty on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/categories/openresty/</link>
+    <link>https://ox0spy.github.io/categories/openresty/</link>
     <description>Recent content in Openresty on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     
-	<atom:link href="http://ox0spy.github.io/categories/openresty/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/categories/openresty/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>openresty study</title>
-      <link>http://ox0spy.github.io/post/openresty/openresty-study/</link>
+      <link>https://ox0spy.github.io/post/openresty/openresty-study/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://ox0spy.github.io/post/openresty/openresty-study/</guid>
+      <guid>https://ox0spy.github.io/post/openresty/openresty-study/</guid>
       <description> openresty best practices  https://moonbingbing.gitbooks.io/openresty-best-practices/content/base/web_evolution.html  </description>
     </item>
     

@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gevent on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/tags/gevent/</link>
+    <link>https://ox0spy.github.io/tags/gevent/</link>
     <description>Recent content in Gevent on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:21:59 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/tags/gevent/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/tags/gevent/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>gunicorn 几种 worker class 性能测试比较</title>
-      <link>http://ox0spy.github.io/post/web-test/gunicorn-worker-class/</link>
+      <link>https://ox0spy.github.io/post/web-test/gunicorn-worker-class/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/web-test/gunicorn-worker-class/</guid>
+      <guid>https://ox0spy.github.io/post/web-test/gunicorn-worker-class/</guid>
       <description>简介 Gunicorn, 一个支持WSGI协议的web服务器 Flask, 一个轻量级的python web框架 Gunicorn目前自带支持几种工作方式: sync (默认值) eventlet gevent tornado 测试</description>
     </item>
     
     <item>
       <title>高并发下连接redis导致redis连接失败</title>
-      <link>http://ox0spy.github.io/post/python/flask-redis-gevent/</link>
+      <link>https://ox0spy.github.io/post/python/flask-redis-gevent/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/python/flask-redis-gevent/</guid>
+      <guid>https://ox0spy.github.io/post/python/flask-redis-gevent/</guid>
       <description>现象 最近线上的redis服务器会莫名出现无法突然之间无法连接的情况，需要重启一下redis服务器才能正常工作，感觉很诡异. 查看redis日志</description>
     </item>
     
     <item>
       <title>python gevent安装报错</title>
-      <link>http://ox0spy.github.io/post/configuration/gevent-install-error/</link>
+      <link>https://ox0spy.github.io/post/configuration/gevent-install-error/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/gevent-install-error/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/gevent-install-error/</guid>
       <description>Mac上pip安装gevent报错信息如下： libev/ev.c:1029:42: error: &#39;_Noreturn&#39; keyword must precede function declarator 解决： :::bash $ CFLAGS=&#39;-std=c99&#39; pip install gevent 这里有讨论：https://github.com/NixOS/</description>
     </item>
     

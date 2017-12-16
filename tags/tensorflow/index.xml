@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tensorflow on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/tags/tensorflow/</link>
+    <link>https://ox0spy.github.io/tags/tensorflow/</link>
     <description>Recent content in Tensorflow on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:22:01 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/tags/tensorflow/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/tags/tensorflow/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>mac osx 上安装 tensorflow [cpu support only]</title>
-      <link>http://ox0spy.github.io/post/bigdata/install-tensorflow/</link>
+      <link>https://ox0spy.github.io/post/bigdata/install-tensorflow/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/bigdata/install-tensorflow/</guid>
+      <guid>https://ox0spy.github.io/post/bigdata/install-tensorflow/</guid>
       <description>Mac OSX 上安装 TensorFlow [CPU support only] 本文介绍在 Mac OSX 系统上如何安装 Tensorflow ，但除了操作系统包管理有差异，其它内容使用于其它操作系统。 TensorFlow 可以在 Python 2 中运行，但，Pytho</description>
     </item>
     

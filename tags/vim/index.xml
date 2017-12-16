@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vim on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/tags/vim/</link>
+    <link>https://ox0spy.github.io/tags/vim/</link>
     <description>Recent content in Vim on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:21:58 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ubuntu&#43;vim配置汇编程序开发环境</title>
-      <link>http://ox0spy.github.io/post/asm/setup-asm-development-environment/</link>
+      <link>https://ox0spy.github.io/post/asm/setup-asm-development-environment/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/asm/setup-asm-development-environment/</guid>
+      <guid>https://ox0spy.github.io/post/asm/setup-asm-development-environment/</guid>
       <description>本文专门介绍Ubuntu系统上基于Vim配置汇编程序开发环境。 Ubuntu系统配置 所有开发都在Ubuntu上完成，需要用的软件包：binut</description>
     </item>
     
     <item>
       <title>从源码编译安装vim 7.4</title>
-      <link>http://ox0spy.github.io/post/vim/build-vim-7.4-from-source-code/</link>
+      <link>https://ox0spy.github.io/post/vim/build-vim-7.4-from-source-code/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/vim/build-vim-7.4-from-source-code/</guid>
+      <guid>https://ox0spy.github.io/post/vim/build-vim-7.4-from-source-code/</guid>
       <description>准备编译环境 $ sudo apt-get build-dep vim $ sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \ libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \ libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \ ruby-dev mercurial $ sudo apt-get install checkinstall 删除系统vim包 $ sudo apt-get purge vim-tiny vim-common vim-runtime vim 下载编译 $ hg clone https://code.google.com/p/vim/ $ cd vim $ ./configure --with-features=huge \ --enable-multibyte \ --enable-perlinterp=dynamic</description>
     </item>
     

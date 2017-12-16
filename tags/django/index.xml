@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Django on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/tags/django/</link>
+    <link>https://ox0spy.github.io/tags/django/</link>
     <description>Recent content in Django on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:21:59 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/tags/django/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/tags/django/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>django入门</title>
-      <link>http://ox0spy.github.io/post/python/get-starred-django/</link>
+      <link>https://ox0spy.github.io/post/python/get-starred-django/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/python/get-starred-django/</guid>
+      <guid>https://ox0spy.github.io/post/python/get-starred-django/</guid>
       <description>常用命令 # 安装 $ pip install Django # 创建项目 $ django-admin startproject mysite # 创建app $ python manage.py startapp myapp # 生成migration文件 $ python manage.py makemigrations polls # 打印Sql语句 $ python manage.py sqlmigrate polls 0001 Models 创建Mod</description>
     </item>
     

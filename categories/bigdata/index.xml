@@ -2,102 +2,102 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bigdata on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/categories/bigdata/</link>
+    <link>https://ox0spy.github.io/categories/bigdata/</link>
     <description>Recent content in Bigdata on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:22:01 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/categories/bigdata/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/categories/bigdata/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>hadoop with python</title>
-      <link>http://ox0spy.github.io/post/bigdata/hadoop-with-python/</link>
+      <link>https://ox0spy.github.io/post/bigdata/hadoop-with-python/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/bigdata/hadoop-with-python/</guid>
+      <guid>https://ox0spy.github.io/post/bigdata/hadoop-with-python/</guid>
       <description>HDFS 可以通过hdfs命令访问HDFS文件系统： $ hdfs dfs -ls / $ hdfs dfs -get /var/log/hadoop.log /tmp/ # 将HDFS的/var/log/hadoop.log拷贝到本机/tmp/目</description>
     </item>
     
     <item>
       <title>hive分析elb访问日志</title>
-      <link>http://ox0spy.github.io/post/bigdata/%E5%88%86%E6%9E%90elb%E8%AE%BF%E9%97%AE%E6%97%A5%E5%BF%97/</link>
+      <link>https://ox0spy.github.io/post/bigdata/%E5%88%86%E6%9E%90elb%E8%AE%BF%E9%97%AE%E6%97%A5%E5%BF%97/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/bigdata/%E5%88%86%E6%9E%90elb%E8%AE%BF%E9%97%AE%E6%97%A5%E5%BF%97/</guid>
+      <guid>https://ox0spy.github.io/post/bigdata/%E5%88%86%E6%9E%90elb%E8%AE%BF%E9%97%AE%E6%97%A5%E5%BF%97/</guid>
       <description>Hive分析ELB访问日志 Hive 分析 创建Hive table CREATE EXTERNAL TABLE IF NOT EXISTS elb_raw_access_logs ( request_timestamp string, elb_name string, request_ip string, request_port int, backend_ip string, backend_port int, request_processing_time double, backend_processing_time double, client_response_time double, elb_response_code string, backend_response_code string, received_bytes bigint, sent_bytes bigint, request_verb string, url string, protocol string, user_agent string, ssl_cipher string, ssl_protocol string )</description>
     </item>
     
     <item>
       <title>mac osx 上安装 tensorflow [cpu support only]</title>
-      <link>http://ox0spy.github.io/post/bigdata/install-tensorflow/</link>
+      <link>https://ox0spy.github.io/post/bigdata/install-tensorflow/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/bigdata/install-tensorflow/</guid>
+      <guid>https://ox0spy.github.io/post/bigdata/install-tensorflow/</guid>
       <description>Mac OSX 上安装 TensorFlow [CPU support only] 本文介绍在 Mac OSX 系统上如何安装 Tensorflow ，但除了操作系统包管理有差异，其它内容使用于其它操作系统。 TensorFlow 可以在 Python 2 中运行，但，Pytho</description>
     </item>
     
     <item>
       <title>pandas分析nginx日志</title>
-      <link>http://ox0spy.github.io/post/bigdata/pandas%E5%88%86%E6%9E%90nginx%E6%97%A5%E5%BF%97/</link>
+      <link>https://ox0spy.github.io/post/bigdata/pandas%E5%88%86%E6%9E%90nginx%E6%97%A5%E5%BF%97/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/bigdata/pandas%E5%88%86%E6%9E%90nginx%E6%97%A5%E5%BF%97/</guid>
+      <guid>https://ox0spy.github.io/post/bigdata/pandas%E5%88%86%E6%9E%90nginx%E6%97%A5%E5%BF%97/</guid>
       <description>Pandas分析Nginx日志 安装所需Python库 $ pip install numpy pandas matplotlib 注：所有工作都在Python 3中实践 （Python 2应该也没有问题） Ngin</description>
     </item>
     
     <item>
       <title>spark</title>
-      <link>http://ox0spy.github.io/post/bigdata/spark/</link>
+      <link>https://ox0spy.github.io/post/bigdata/spark/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/bigdata/spark/</guid>
+      <guid>https://ox0spy.github.io/post/bigdata/spark/</guid>
       <description>Spark 安装 Apache-Spark $ brew install apache-spark 用IPython作为 PySpark 的交互式终端 创建 Python 3虚拟环境：py3 $ mkvirtualenv -p python3.6 py3 $ pip install ipython 修改 Zsh 环境变量： $ cat ~/.zshrc # spark with Python export SPARK_HOME=&amp;quot;/usr/local/opt/apache-spark/libexec&amp;quot; export PYSPARK_DRIVER_PYTHON=&amp;quot;$HOME/.virtualenvs/py3/bin/ipython&amp;quot; #export PYSPARK_DRIVER_PYTHON_OPTS=&amp;quot;&amp;quot; export PYTHONPATH=&amp;quot;$SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.10.4-src.zip:$PYTHONPATH&amp;quot; 测</description>
     </item>
     
     <item>
       <title>在mac osx上安装hadoop</title>
-      <link>http://ox0spy.github.io/post/bigdata/install-hadoop-on-mac-osx/</link>
+      <link>https://ox0spy.github.io/post/bigdata/install-hadoop-on-mac-osx/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/bigdata/install-hadoop-on-mac-osx/</guid>
+      <guid>https://ox0spy.github.io/post/bigdata/install-hadoop-on-mac-osx/</guid>
       <description>安装Hadoop 只是安装来学习Hadoop，所以，在自己笔记本上安装的。正式的线上环境会用多台机器搭建集群 或者 直接使用AWS的EMR。 我希望</description>
     </item>
     
     <item>
       <title>在mac osx练习hive</title>
-      <link>http://ox0spy.github.io/post/bigdata/hive/</link>
+      <link>https://ox0spy.github.io/post/bigdata/hive/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/bigdata/hive/</guid>
+      <guid>https://ox0spy.github.io/post/bigdata/hive/</guid>
       <description>Hive 安装 将Hive的metastore存在MySQL中。 Mac OSX 上安装 Hive $ brew install hive mysql $ brew services start mysql $ tail -n 3 ~/.zshrc # Hive export HIVE_HOME=&amp;quot;/usr/local/opt/hive&amp;quot; export HCAT_HOME=&amp;quot;$HIVE_HOME/libexec/hcatalog&amp;quot; $ source ~/.zshrc 为Hive在MySQL中创</description>
     </item>
     
     <item>
       <title>在mac osx练习pig使用</title>
-      <link>http://ox0spy.github.io/post/bigdata/pig/</link>
+      <link>https://ox0spy.github.io/post/bigdata/pig/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/bigdata/pig/</guid>
+      <guid>https://ox0spy.github.io/post/bigdata/pig/</guid>
       <description>Pig 看《Hadoop权威指南第三版》并记录在 Mac OSX 系统上练习Pig使用。 安装 在Mac OSX 上安装命令如下： $ brew install pig 命令行使用 Pig Latin语言 Pig Lat</description>
     </item>
     
     <item>
       <title>numpy</title>
-      <link>http://ox0spy.github.io/post/bigdata/numpy/</link>
+      <link>https://ox0spy.github.io/post/bigdata/numpy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://ox0spy.github.io/post/bigdata/numpy/</guid>
+      <guid>https://ox0spy.github.io/post/bigdata/numpy/</guid>
       <description>花式索引 花式索引和切片不一样，它总是将数据复制到新数组中。 整数数组进行索引： In [60]: arr = np.empty((8, 4)) In [61]: for i in range(8): arr[i] = i In [62]: arr Out[62]: array([[ 0., 0., 0., 0.], [ 1., 1., 1., 1.], [ 2., 2.,</description>
     </item>
     
     <item>
       <title>安装basemap</title>
-      <link>http://ox0spy.github.io/post/bigdata/basemap/</link>
+      <link>https://ox0spy.github.io/post/bigdata/basemap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://ox0spy.github.io/post/bigdata/basemap/</guid>
+      <guid>https://ox0spy.github.io/post/bigdata/basemap/</guid>
       <description>Basemap 安装Basemap 安装 basemap 的依赖库： $ pip install numpy pandas matplotlib # 注：basemap release包中带有 GEOS，所以，直接使用 release 包中的 目前 basemap 不支持 pip 安装</description>
     </item>
     

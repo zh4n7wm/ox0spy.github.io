@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Saltstack on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/tags/saltstack/</link>
+    <link>https://ox0spy.github.io/tags/saltstack/</link>
     <description>Recent content in Saltstack on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:21:57 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/tags/saltstack/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/tags/saltstack/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>saltstack介绍</title>
-      <link>http://ox0spy.github.io/post/configuration/saltstack/</link>
+      <link>https://ox0spy.github.io/post/configuration/saltstack/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/saltstack/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/saltstack/</guid>
       <description>本文只介绍了SaltStack在CentOS上的安装，其它其它有类似的包管理工具可以安装. CentOS上安装salt-master和salt</description>
     </item>
     

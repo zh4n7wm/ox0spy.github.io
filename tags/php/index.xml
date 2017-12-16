@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Php on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/tags/php/</link>
+    <link>https://ox0spy.github.io/tags/php/</link>
     <description>Recent content in Php on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:21:58 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>wamp(windows &#43; apache &#43; mysql &#43; php) 环境搭建</title>
-      <link>http://ox0spy.github.io/post/install/setup-wamp/</link>
+      <link>https://ox0spy.github.io/post/install/setup-wamp/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/install/setup-wamp/</guid>
+      <guid>https://ox0spy.github.io/post/install/setup-wamp/</guid>
       <description>最近开始学习PHP，工欲善其事，必先利其器。第一步当然是环境搭建啦！ PHP开发基本也就是在不同平台下，要么是LAMP(Linux + Apache + Mysql + P</description>
     </item>
     

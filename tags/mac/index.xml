@@ -2,120 +2,120 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mac on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/tags/mac/</link>
+    <link>https://ox0spy.github.io/tags/mac/</link>
     <description>Recent content in Mac on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:22:01 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>mac osx 上安装 tensorflow [cpu support only]</title>
-      <link>http://ox0spy.github.io/post/bigdata/install-tensorflow/</link>
+      <link>https://ox0spy.github.io/post/bigdata/install-tensorflow/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/bigdata/install-tensorflow/</guid>
+      <guid>https://ox0spy.github.io/post/bigdata/install-tensorflow/</guid>
       <description>Mac OSX 上安装 TensorFlow [CPU support only] 本文介绍在 Mac OSX 系统上如何安装 Tensorflow ，但除了操作系统包管理有差异，其它内容使用于其它操作系统。 TensorFlow 可以在 Python 2 中运行，但，Pytho</description>
     </item>
     
     <item>
       <title>在mac osx上安装hadoop</title>
-      <link>http://ox0spy.github.io/post/bigdata/install-hadoop-on-mac-osx/</link>
+      <link>https://ox0spy.github.io/post/bigdata/install-hadoop-on-mac-osx/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/bigdata/install-hadoop-on-mac-osx/</guid>
+      <guid>https://ox0spy.github.io/post/bigdata/install-hadoop-on-mac-osx/</guid>
       <description>安装Hadoop 只是安装来学习Hadoop，所以，在自己笔记本上安装的。正式的线上环境会用多台机器搭建集群 或者 直接使用AWS的EMR。 我希望</description>
     </item>
     
     <item>
       <title>在mac osx练习hive</title>
-      <link>http://ox0spy.github.io/post/bigdata/hive/</link>
+      <link>https://ox0spy.github.io/post/bigdata/hive/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/bigdata/hive/</guid>
+      <guid>https://ox0spy.github.io/post/bigdata/hive/</guid>
       <description>Hive 安装 将Hive的metastore存在MySQL中。 Mac OSX 上安装 Hive $ brew install hive mysql $ brew services start mysql $ tail -n 3 ~/.zshrc # Hive export HIVE_HOME=&amp;quot;/usr/local/opt/hive&amp;quot; export HCAT_HOME=&amp;quot;$HIVE_HOME/libexec/hcatalog&amp;quot; $ source ~/.zshrc 为Hive在MySQL中创</description>
     </item>
     
     <item>
       <title>在mac osx练习pig使用</title>
-      <link>http://ox0spy.github.io/post/bigdata/pig/</link>
+      <link>https://ox0spy.github.io/post/bigdata/pig/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/bigdata/pig/</guid>
+      <guid>https://ox0spy.github.io/post/bigdata/pig/</guid>
       <description>Pig 看《Hadoop权威指南第三版》并记录在 Mac OSX 系统上练习Pig使用。 安装 在Mac OSX 上安装命令如下： $ brew install pig 命令行使用 Pig Latin语言 Pig Lat</description>
     </item>
     
     <item>
       <title>install docker on mac osx</title>
-      <link>http://ox0spy.github.io/post/mac-osx/install-docker-on-mac-osx/</link>
+      <link>https://ox0spy.github.io/post/mac-osx/install-docker-on-mac-osx/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/mac-osx/install-docker-on-mac-osx/</guid>
+      <guid>https://ox0spy.github.io/post/mac-osx/install-docker-on-mac-osx/</guid>
       <description>从docker官网下载dmg包安装每次更新非常麻烦，幸运的是可以在Mac上通过brew安装Docker。 Docker不能直接在Mac上运行，</description>
     </item>
     
     <item>
       <title>jenkins自动构建ios应用</title>
-      <link>http://ox0spy.github.io/post/mac-osx/jenkins-build-ios-apps/</link>
+      <link>https://ox0spy.github.io/post/mac-osx/jenkins-build-ios-apps/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/mac-osx/jenkins-build-ios-apps/</guid>
+      <guid>https://ox0spy.github.io/post/mac-osx/jenkins-build-ios-apps/</guid>
       <description>最近折腾用Jenkins自动构建iOS应用。 编译环境 为了构建iOS应用，必须找台Mac电脑做slave。 安装很简单，貌似brew install jenki</description>
     </item>
     
     <item>
       <title>mac pro初体验</title>
-      <link>http://ox0spy.github.io/post/mac-osx/mac-pro-get-started/</link>
+      <link>https://ox0spy.github.io/post/mac-osx/mac-pro-get-started/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/mac-osx/mac-pro-get-started/</guid>
+      <guid>https://ox0spy.github.io/post/mac-osx/mac-pro-get-started/</guid>
       <description>貌似如今不玩下Mac总觉得逼格不够，最近08年买的Thinkpad R60也坏掉了，就入手一台Mac Pro。 下面记录下环境配置和最近使用感受。</description>
     </item>
     
     <item>
       <title>mac python valueerror: unknown locale: utf-8</title>
-      <link>http://ox0spy.github.io/post/mac-osx/mac-python-valueerror-unknown-locale-utf-8/</link>
+      <link>https://ox0spy.github.io/post/mac-osx/mac-python-valueerror-unknown-locale-utf-8/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/mac-osx/mac-python-valueerror-unknown-locale-utf-8/</guid>
+      <guid>https://ox0spy.github.io/post/mac-osx/mac-python-valueerror-unknown-locale-utf-8/</guid>
       <description>Mac brew更新软件报locale utf-8 unknown。 问题描述 brew update &amp;amp;&amp;amp; brew upgrade，更新 mpv 时报错: ValueError: unknown locale: UTF-8 确定当前locale :::bash $ locale LANG= LC_COLLATE=&amp;quot;C&amp;quot; LC_CTYPE=&amp;quot;UTF-8&amp;quot; LC_MESSAGES=&amp;quot;C&amp;quot; LC_MONETARY=&amp;quot;C&amp;quot;</description>
     </item>
     
     <item>
       <title>mac system intregrity protection - operation not permitted</title>
-      <link>http://ox0spy.github.io/post/mac-osx/mac-system-intregrity-protection/</link>
+      <link>https://ox0spy.github.io/post/mac-osx/mac-system-intregrity-protection/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/mac-osx/mac-system-intregrity-protection/</guid>
+      <guid>https://ox0spy.github.io/post/mac-osx/mac-system-intregrity-protection/</guid>
       <description>貌似刚拿到电脑是自己手动编译安装了vim 7.3，后来都是brew install vim最新版本。 今天vim出了点问题，发现系统上还有个vim 7.3，准备删</description>
     </item>
     
     <item>
       <title>chef tutorial</title>
-      <link>http://ox0spy.github.io/post/configuration/chef-tutorial/</link>
+      <link>https://ox0spy.github.io/post/configuration/chef-tutorial/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/chef-tutorial/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/chef-tutorial/</guid>
       <description>Chef入门. Chef组件 workstation (个人工作电脑, 用来编写cookbook) chef server (存放cookbooks的中央仓库) node (被chef server管理</description>
     </item>
     
     <item>
       <title>ansible入门</title>
-      <link>http://ox0spy.github.io/post/configuration/ansible-get-started/</link>
+      <link>https://ox0spy.github.io/post/configuration/ansible-get-started/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/ansible-get-started/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/ansible-get-started/</guid>
       <description>Ansible是 安装ansible Mac上安装 $ brew install ansible Mac上brew安装后，默认的hosts配置文件路径是/usr/local/etc/a</description>
     </item>
     
     <item>
       <title>too many files open</title>
-      <link>http://ox0spy.github.io/post/configuration/too-many-files-open/</link>
+      <link>https://ox0spy.github.io/post/configuration/too-many-files-open/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/too-many-files-open/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/too-many-files-open/</guid>
       <description>Linux 将下面的行加入 /etc/security/limits.conf * soft nofile 8192 * hard nofile 8192 将下面的行加入 /etc/sysctl.conf ，提高kernel性能，可以不添加。 net.ipv4.tcp_tw_reuse = 1 net.ipv4.tcp_tw_recycle = 1 net.ipv4.ip_local_port_range = 1024 65000 fs.file-max = 65000 运行 sudo sysctl -p 将对 /etc/sysctl.conf 的修改生效。</description>
     </item>
     

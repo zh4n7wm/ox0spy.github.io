@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/tags/git/</link>
+    <link>https://ox0spy.github.io/tags/git/</link>
     <description>Recent content in Git on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:21:58 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>gerrit搭建指南</title>
-      <link>http://ox0spy.github.io/post/install/gerrit/</link>
+      <link>https://ox0spy.github.io/post/install/gerrit/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/install/gerrit/</guid>
+      <guid>https://ox0spy.github.io/post/install/gerrit/</guid>
       <description>什么是Gerrit Gerrit，一种免费、开放源代码的代码审查软件，使用网页界面。利用网页浏览器，同一个团队的软件程序员，可以相互审阅彼此修</description>
     </item>
     
     <item>
       <title>git从历史中删除大文件</title>
-      <link>http://ox0spy.github.io/post/configuration/git-remove-large-files-in-history/</link>
+      <link>https://ox0spy.github.io/post/configuration/git-remove-large-files-in-history/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/git-remove-large-files-in-history/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/git-remove-large-files-in-history/</guid>
       <description>如果有人在git库中提交了超大文件导致所有人下载代码都比较耗时怎么办？ 删除git库中的大文件 我们知道git会保留历史记录，即使删除这些大文件</description>
     </item>
     
     <item>
       <title>Setup cgit</title>
-      <link>http://ox0spy.github.io/post/configuration/setup-cgit/</link>
+      <link>https://ox0spy.github.io/post/configuration/setup-cgit/</link>
       <pubDate>Wed, 14 Aug 2013 00:00:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/setup-cgit/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/setup-cgit/</guid>
       <description>cgit setup cgit install $ git://hjemli.net/pub/git/cgit $ cd cgit $ git submodule init # register the git submodule in .git/config $ $EDITOR .git/config # if you want to specify a different url for git $ git submodule update # clone/fetch and checkout correct git version $ make $ sudo make install  setup cgitrc $ cat /etc/cgitrc # # cgit config # css=/cgit/cgit.css logo=/cgit/cgit.png # if you don&#39;t want that webcrawler (like google) index your site robots=noindex, nofollow # # List of repositories.</description>
     </item>
     
     <item>
       <title>Git Tips</title>
-      <link>http://ox0spy.github.io/post/configuration/git-tips/</link>
+      <link>https://ox0spy.github.io/post/configuration/git-tips/</link>
       <pubDate>Fri, 09 Aug 2013 00:00:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/git-tips/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/git-tips/</guid>
       <description>Git Tips Revert a git patch Chengdu Gerrit has “Revert Change” button, so you can revert patch very easy. But, Shanghai Gerrit version is too old, it doesn’t support “Revert Change” on Gerrit, for this case, you can try the below git commands.
 Check git repository status:
 $ git status  Make git repository clean:
@@ -52,10 +52,10 @@ $ git checkout . $ git clean -fd  Find &amp;lt;commit&amp;gt; which you want to 
     
     <item>
       <title>Bash Multiprocess</title>
-      <link>http://ox0spy.github.io/post/configuration/bash-multiprocess/</link>
+      <link>https://ox0spy.github.io/post/configuration/bash-multiprocess/</link>
       <pubDate>Tue, 06 Aug 2013 00:00:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/bash-multiprocess/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/bash-multiprocess/</guid>
       <description>Git同步 成都和上海分别建有git server, 虽有 Gerrit Replication, 但新创建分支、git库无法自动同步, 直到该git库有新Gerrit merge. 所以, 写脚本通过 gitweb_url?a=project_index 获取所有g</description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/categories/git/</link>
+    <link>https://ox0spy.github.io/categories/git/</link>
     <description>Recent content in Git on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 14 Aug 2013 00:00:00 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Setup cgit</title>
-      <link>http://ox0spy.github.io/post/configuration/setup-cgit/</link>
+      <link>https://ox0spy.github.io/post/configuration/setup-cgit/</link>
       <pubDate>Wed, 14 Aug 2013 00:00:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/setup-cgit/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/setup-cgit/</guid>
       <description>cgit setup cgit install $ git://hjemli.net/pub/git/cgit $ cd cgit $ git submodule init # register the git submodule in .git/config $ $EDITOR .git/config # if you want to specify a different url for git $ git submodule update # clone/fetch and checkout correct git version $ make $ sudo make install  setup cgitrc $ cat /etc/cgitrc # # cgit config # css=/cgit/cgit.css logo=/cgit/cgit.png # if you don&#39;t want that webcrawler (like google) index your site robots=noindex, nofollow # # List of repositories.</description>
     </item>
     

@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Debian on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/tags/debian/</link>
+    <link>https://ox0spy.github.io/tags/debian/</link>
     <description>Recent content in Debian on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:22:01 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/tags/debian/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/tags/debian/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>install nagios 4 on ubuntu/debian</title>
-      <link>http://ox0spy.github.io/post/ubuntu/ubuntu-debian-install-nagios4/</link>
+      <link>https://ox0spy.github.io/post/ubuntu/ubuntu-debian-install-nagios4/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/ubuntu/ubuntu-debian-install-nagios4/</guid>
+      <guid>https://ox0spy.github.io/post/ubuntu/ubuntu-debian-install-nagios4/</guid>
       <description>Ucloud后台监控系统功能很简单，最近发现之前设置过的监控项也无法正常显示，更不能编辑了。 虽然，马上就要将系统迁移到公司自己大家的云平台，</description>
     </item>
     
     <item>
       <title>ssmtp发送邮件</title>
-      <link>http://ox0spy.github.io/post/ubuntu/install-ssmtp/</link>
+      <link>https://ox0spy.github.io/post/ubuntu/install-ssmtp/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/ubuntu/install-ssmtp/</guid>
+      <guid>https://ox0spy.github.io/post/ubuntu/install-ssmtp/</guid>
       <description>工作中很多场景需要发送邮件，如：报警邮件、日报等。本文介绍如何安装、配置sSMTP做邮件发送。 安装 :::bash $ sudo apt-get install ssmtp 配置 /etc/ssmtp/revaliases :::bash $ cat /etc/ssmtp/revaliases # sSMTP aliases # # Format: local_account:outgoing_address:mailhub #</description>
     </item>
     
     <item>
       <title>ubuntu/debian自动安装安全更新</title>
-      <link>http://ox0spy.github.io/post/configuration/debian-ubuntu-automatic-security-updates/</link>
+      <link>https://ox0spy.github.io/post/configuration/debian-ubuntu-automatic-security-updates/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/debian-ubuntu-automatic-security-updates/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/debian-ubuntu-automatic-security-updates/</guid>
       <description>有台Ubuntu机器，仅仅为了科学上网，但，这年头漏洞这么多，万一哪天成肉鸡了呢。。。 本文简单记录下Ubuntu系统配置自己安装系统安全补丁</description>
     </item>
     
     <item>
       <title>Setup LVS and Keepalived on Debian</title>
-      <link>http://ox0spy.github.io/post/configuration/setup-lvs-and-keepalived-on-debian/</link>
+      <link>https://ox0spy.github.io/post/configuration/setup-lvs-and-keepalived-on-debian/</link>
       <pubDate>Thu, 26 Jun 2014 00:00:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/setup-lvs-and-keepalived-on-debian/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/setup-lvs-and-keepalived-on-debian/</guid>
       <description>准备机器 LVS_MASTER - 172.16.8.129 LVS_BACKUP - 172.16.8.130 WEB_APP_SERVER_1 - 172.16.8.131 WEB_APP_SERVER_2 - 172.16.8.132 注: 1. virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP) 2. 所有机器都安装的Debian 7.5 (wheezy) 安装</description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Shell on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/tags/shell/</link>
+    <link>https://ox0spy.github.io/tags/shell/</link>
     <description>Recent content in Shell on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:22:00 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>mac python valueerror: unknown locale: utf-8</title>
-      <link>http://ox0spy.github.io/post/mac-osx/mac-python-valueerror-unknown-locale-utf-8/</link>
+      <link>https://ox0spy.github.io/post/mac-osx/mac-python-valueerror-unknown-locale-utf-8/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/mac-osx/mac-python-valueerror-unknown-locale-utf-8/</guid>
+      <guid>https://ox0spy.github.io/post/mac-osx/mac-python-valueerror-unknown-locale-utf-8/</guid>
       <description>Mac brew更新软件报locale utf-8 unknown。 问题描述 brew update &amp;amp;&amp;amp; brew upgrade，更新 mpv 时报错: ValueError: unknown locale: UTF-8 确定当前locale :::bash $ locale LANG= LC_COLLATE=&amp;quot;C&amp;quot; LC_CTYPE=&amp;quot;UTF-8&amp;quot; LC_MESSAGES=&amp;quot;C&amp;quot; LC_MONETARY=&amp;quot;C&amp;quot;</description>
     </item>
     

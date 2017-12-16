@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Android on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/categories/android/</link>
+    <link>https://ox0spy.github.io/categories/android/</link>
     <description>Recent content in Android on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:22:00 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/categories/android/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/categories/android/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>export android cantacts with vcard format via adb</title>
-      <link>http://ox0spy.github.io/post/android/export-android-contacts-via-adb/</link>
+      <link>https://ox0spy.github.io/post/android/export-android-contacts-via-adb/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/android/export-android-contacts-via-adb/</guid>
+      <guid>https://ox0spy.github.io/post/android/export-android-contacts-via-adb/</guid>
       <description>参考: http://www.commandlinefu.com/commands/view/11688/dump-android-contacts-sms 昨天手机(TCL S960)掉地下把屏幕摔坏了，Google被xx后，就没在用过其它通讯录同步，只好想办法从坏手机里导出，屏幕完全坏了</description>
     </item>
     
     <item>
       <title>gradle代理设置</title>
-      <link>http://ox0spy.github.io/post/android/set-gradle-proxy/</link>
+      <link>https://ox0spy.github.io/post/android/set-gradle-proxy/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/android/set-gradle-proxy/</guid>
+      <guid>https://ox0spy.github.io/post/android/set-gradle-proxy/</guid>
       <description>Android使用Gradle做构建工具，编译apk时可能需要从网上下载一些依赖包，国内网络情况大家都懂得。 Gradle代理设置 :::bash $ cat ~/.gradle/gradle.properties systemProp.http.proxyHost=your-proxy systemProp.http.proxyPort=proxy-port</description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Adb on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/tags/adb/</link>
+    <link>https://ox0spy.github.io/tags/adb/</link>
     <description>Recent content in Adb on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:22:00 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/tags/adb/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/tags/adb/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>export android cantacts with vcard format via adb</title>
-      <link>http://ox0spy.github.io/post/android/export-android-contacts-via-adb/</link>
+      <link>https://ox0spy.github.io/post/android/export-android-contacts-via-adb/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/android/export-android-contacts-via-adb/</guid>
+      <guid>https://ox0spy.github.io/post/android/export-android-contacts-via-adb/</guid>
       <description>参考: http://www.commandlinefu.com/commands/view/11688/dump-android-contacts-sms 昨天手机(TCL S960)掉地下把屏幕摔坏了，Google被xx后，就没在用过其它通讯录同步，只好想办法从坏手机里导出，屏幕完全坏了</description>
     </item>
     

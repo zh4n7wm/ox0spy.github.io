@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sip on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/tags/sip/</link>
+    <link>https://ox0spy.github.io/tags/sip/</link>
     <description>Recent content in Sip on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:22:00 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/tags/sip/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/tags/sip/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>mac system intregrity protection - operation not permitted</title>
-      <link>http://ox0spy.github.io/post/mac-osx/mac-system-intregrity-protection/</link>
+      <link>https://ox0spy.github.io/post/mac-osx/mac-system-intregrity-protection/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/mac-osx/mac-system-intregrity-protection/</guid>
+      <guid>https://ox0spy.github.io/post/mac-osx/mac-system-intregrity-protection/</guid>
       <description>貌似刚拿到电脑是自己手动编译安装了vim 7.3，后来都是brew install vim最新版本。 今天vim出了点问题，发现系统上还有个vim 7.3，准备删</description>
     </item>
     

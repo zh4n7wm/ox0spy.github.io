@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web Test on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/categories/web-test/</link>
+    <link>https://ox0spy.github.io/categories/web-test/</link>
     <description>Recent content in Web Test on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:21:59 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/categories/web-test/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/categories/web-test/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>gunicorn 几种 worker class 性能测试比较</title>
-      <link>http://ox0spy.github.io/post/web-test/gunicorn-worker-class/</link>
+      <link>https://ox0spy.github.io/post/web-test/gunicorn-worker-class/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/web-test/gunicorn-worker-class/</guid>
+      <guid>https://ox0spy.github.io/post/web-test/gunicorn-worker-class/</guid>
       <description>简介 Gunicorn, 一个支持WSGI协议的web服务器 Flask, 一个轻量级的python web框架 Gunicorn目前自带支持几种工作方式: sync (默认值) eventlet gevent tornado 测试</description>
     </item>
     
     <item>
       <title>压力测试工具ab &amp;&amp; webbench</title>
-      <link>http://ox0spy.github.io/post/web-test/ab-webbench/</link>
+      <link>https://ox0spy.github.io/post/web-test/ab-webbench/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/web-test/ab-webbench/</guid>
+      <guid>https://ox0spy.github.io/post/web-test/ab-webbench/</guid>
       <description>ab ab是apache自带的压力测试工具。使用简单，便于一些简单的压力测试. 安装 :::bash $ sudo apt-get install apache2-utils 使用帮助 :::bash $ ab -h Usage: ab [options] [http[s]://]hostname[:port]/path Options are: -n requests Number of requests to perform # 请求次</description>
     </item>
     

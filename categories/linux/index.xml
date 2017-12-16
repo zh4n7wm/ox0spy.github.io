@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/categories/linux/</link>
+    <link>https://ox0spy.github.io/categories/linux/</link>
     <description>Recent content in Linux on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 06 Aug 2013 00:00:00 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Bash Multiprocess</title>
-      <link>http://ox0spy.github.io/post/configuration/bash-multiprocess/</link>
+      <link>https://ox0spy.github.io/post/configuration/bash-multiprocess/</link>
       <pubDate>Tue, 06 Aug 2013 00:00:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/bash-multiprocess/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/bash-multiprocess/</guid>
       <description>Git同步 成都和上海分别建有git server, 虽有 Gerrit Replication, 但新创建分支、git库无法自动同步, 直到该git库有新Gerrit merge. 所以, 写脚本通过 gitweb_url?a=project_index 获取所有g</description>
     </item>
     

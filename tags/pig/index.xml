@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pig on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/tags/pig/</link>
+    <link>https://ox0spy.github.io/tags/pig/</link>
     <description>Recent content in Pig on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:22:01 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/tags/pig/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/tags/pig/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>在mac osx练习pig使用</title>
-      <link>http://ox0spy.github.io/post/bigdata/pig/</link>
+      <link>https://ox0spy.github.io/post/bigdata/pig/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/bigdata/pig/</guid>
+      <guid>https://ox0spy.github.io/post/bigdata/pig/</guid>
       <description>Pig 看《Hadoop权威指南第三版》并记录在 Mac OSX 系统上练习Pig使用。 安装 在Mac OSX 上安装命令如下： $ brew install pig 命令行使用 Pig Latin语言 Pig Lat</description>
     </item>
     

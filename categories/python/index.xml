@@ -2,84 +2,84 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/categories/python/</link>
+    <link>https://ox0spy.github.io/categories/python/</link>
     <description>Recent content in Python on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:21:59 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>django入门</title>
-      <link>http://ox0spy.github.io/post/python/get-starred-django/</link>
+      <link>https://ox0spy.github.io/post/python/get-starred-django/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/python/get-starred-django/</guid>
+      <guid>https://ox0spy.github.io/post/python/get-starred-django/</guid>
       <description>常用命令 # 安装 $ pip install Django # 创建项目 $ django-admin startproject mysite # 创建app $ python manage.py startapp myapp # 生成migration文件 $ python manage.py makemigrations polls # 打印Sql语句 $ python manage.py sqlmigrate polls 0001 Models 创建Mod</description>
     </item>
     
     <item>
       <title>flask中通过fileconfig配置多个logger</title>
-      <link>http://ox0spy.github.io/post/python/flask-logging/</link>
+      <link>https://ox0spy.github.io/post/python/flask-logging/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/python/flask-logging/</guid>
+      <guid>https://ox0spy.github.io/post/python/flask-logging/</guid>
       <description>Flask中如何通过配置文件配置logger 创建app.py文件 $ cat app.py from flask import Flask import logging import logging.config def configure_logger(app): logging.config.fileConfig(&amp;quot;log.conf&amp;quot;) # 获取当前所有的logger print logging.Logger.manager.loggerDict.keys() app.logger.info(&amp;quot;logger start&amp;quot;) def app_factory(): app = Flask(&#39;root&#39;) configure_logger(app)</description>
     </item>
     
     <item>
       <title>python performance</title>
-      <link>http://ox0spy.github.io/post/python/python-performance/</link>
+      <link>https://ox0spy.github.io/post/python/python-performance/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/python/python-performance/</guid>
+      <guid>https://ox0spy.github.io/post/python/python-performance/</guid>
       <description>Python IPC https://docs.python.org/3/library/ipc.html 线程与协程 http://blog.rainy.im/2016/04/07/python-thread-and-coroutine/ Python中的进程、线程、协程、同步、异步和回调 Gevent http://www.sunzhongwei.com/gevent.html gevent: Asynchronous I/O made easy Logging，gevent 与死锁 Python 3 asyncio https://community.nitrous.io/tutorials/asynchronous-programming-with-python-3</description>
     </item>
     
     <item>
       <title>python sort</title>
-      <link>http://ox0spy.github.io/post/python/python-sorted/</link>
+      <link>https://ox0spy.github.io/post/python/python-sorted/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/python/python-sorted/</guid>
+      <guid>https://ox0spy.github.io/post/python/python-sorted/</guid>
       <description>#!/usr/bin/env python # -*- coding: utf-8 -*- import random def get_random_list(num): t = [] for i in range(0, num): t.append(random.randint(0, 200)) return t def bubble_sort(t): &#39;&#39;&#39;从小到大&#39;&#39;&#39; passnum = len(t) - 1 exchanges = True while passnum &amp;gt; 0 and exchanges: for i in range(passnum): if t[i] &amp;gt; t[i + 1]: exchanges = True t[i], t[i + 1] = t[i + 1],</description>
     </item>
     
     <item>
       <title>python下载大文件</title>
-      <link>http://ox0spy.github.io/post/python/python-download-large-file-without-out-of-memory/</link>
+      <link>https://ox0spy.github.io/post/python/python-download-large-file-without-out-of-memory/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/python/python-download-large-file-without-out-of-memory/</guid>
+      <guid>https://ox0spy.github.io/post/python/python-download-large-file-without-out-of-memory/</guid>
       <description>requests :::python def download_file(url): local_filename = url.split(&#39;/&#39;)[-1] # NOTE the stream=True parameter r = requests.get(url, stream=True) with open(local_filename, &#39;wb&#39;) as f: for chunk in r.iter_content(chunk_size=1024): if chunk: # filter out keep-alive new chunks f.write(chunk) f.flush() return local_filename urllib2 :::python file = urllib2.urlopen(&#39;url&#39;) with open(&#39;filename&#39;,&#39;w&#39;) as f: while True: tmp = file.read(1024) if not tmp: break f.write(tmp) 详见: http://stackoverflow.com/questions/16694907/how-to-download-large-file-in-python-with-requests-py http://stackoverflow.com/questions/27053028/how-to-download-large-file-without-memoryerror-in-python</description>
     </item>
     
     <item>
       <title>scrapyd和scrapyd-client使用教程</title>
-      <link>http://ox0spy.github.io/post/python/scrapyd/</link>
+      <link>https://ox0spy.github.io/post/python/scrapyd/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/python/scrapyd/</guid>
+      <guid>https://ox0spy.github.io/post/python/scrapyd/</guid>
       <description>scrapyd是一个用于部署和运行scrapy爬虫的程序，它允许你通过JSON API来部署爬虫项目和控制爬虫运行 概览 项目和版本 scrapyd</description>
     </item>
     
     <item>
       <title>scrapy入门</title>
-      <link>http://ox0spy.github.io/post/python/get-starred-scrapy/</link>
+      <link>https://ox0spy.github.io/post/python/get-starred-scrapy/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/python/get-starred-scrapy/</guid>
+      <guid>https://ox0spy.github.io/post/python/get-starred-scrapy/</guid>
       <description>常用命令 # 运行一个爬虫 $ scrapy runspider stackoverflow_spider.py -o top-stackoverflow-questions.json # 创建项目 $ scrapy startproject tutorial # 开始爬取 $ scrapy crawl dmoz 有用的代码片段 http://snipplr.com/all/tags/scrapy/ 命令行工具 命令行工具运行时会加载Scrapy的配置文件</description>
     </item>
     
     <item>
       <title>高并发下连接redis导致redis连接失败</title>
-      <link>http://ox0spy.github.io/post/python/flask-redis-gevent/</link>
+      <link>https://ox0spy.github.io/post/python/flask-redis-gevent/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/python/flask-redis-gevent/</guid>
+      <guid>https://ox0spy.github.io/post/python/flask-redis-gevent/</guid>
       <description>现象 最近线上的redis服务器会莫名出现无法突然之间无法连接的情况，需要重启一下redis服务器才能正常工作，感觉很诡异. 查看redis日志</description>
     </item>
     

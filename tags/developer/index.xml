@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Developer on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/tags/developer/</link>
+    <link>https://ox0spy.github.io/tags/developer/</link>
     <description>Recent content in Developer on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:21:58 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/tags/developer/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/tags/developer/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>国内程序员常用镜像</title>
-      <link>http://ox0spy.github.io/post/configuration/mirrors-for-china-developer/</link>
+      <link>https://ox0spy.github.io/post/configuration/mirrors-for-china-developer/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/mirrors-for-china-developer/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/mirrors-for-china-developer/</guid>
       <description>作为伟大国家中的一名码农，大家都经常会碰到莫名其妙的无法访问。所以，整理下我用的镜像。。 mirrors 常使用的国内源 tuna aliyun 163 ustc 注：主流Linux的包都有同</description>
     </item>
     

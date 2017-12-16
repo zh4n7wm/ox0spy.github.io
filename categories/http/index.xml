@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Http on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/categories/http/</link>
+    <link>https://ox0spy.github.io/categories/http/</link>
     <description>Recent content in Http on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 06 Aug 2013 00:00:00 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/categories/http/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/categories/http/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>HTTP Command Line Tools</title>
-      <link>http://ox0spy.github.io/post/configuration/http-command-line-tools/</link>
+      <link>https://ox0spy.github.io/post/configuration/http-command-line-tools/</link>
       <pubDate>Tue, 06 Aug 2013 00:00:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/http-command-line-tools/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/http-command-line-tools/</guid>
       <description>Linux Network Tools wget  GNU Wget is a free utility for non-interactive download of files from the Web. It supports HTTP, HTTPS, and FTP protocols, as well as retrieval through HTTP proxies.
  log to a server using POST and then proceed to download the desired pages, presumably only accessible to authorized users Log in to the server. This can be done only once.
 wget --save-cookies cookies.txt \ --post-data &#39;user=foo&amp;amp;password=bar&#39; \ http://server.</description>

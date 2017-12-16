@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sentry on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/tags/sentry/</link>
+    <link>https://ox0spy.github.io/tags/sentry/</link>
     <description>Recent content in Sentry on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:21:57 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/tags/sentry/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/tags/sentry/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>debian 8.2上安装sentry</title>
-      <link>http://ox0spy.github.io/post/configuration/setup-sentry-on-debian8.2/</link>
+      <link>https://ox0spy.github.io/post/configuration/setup-sentry-on-debian8.2/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/setup-sentry-on-debian8.2/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/setup-sentry-on-debian8.2/</guid>
       <description>Sentry是一个很好用的错误、异常收集平台，支持Python, Node.js, PHP, Ruby, Java, Go以及Android、iOS。 官方安装文档 系统环境 查看系统版本。 :::bash</description>
     </item>
     

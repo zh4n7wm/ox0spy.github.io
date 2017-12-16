@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pypi on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/tags/pypi/</link>
+    <link>https://ox0spy.github.io/tags/pypi/</link>
     <description>Recent content in Pypi on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:21:58 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/tags/pypi/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/tags/pypi/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>python pypi源</title>
-      <link>http://ox0spy.github.io/post/configuration/python-pypi/</link>
+      <link>https://ox0spy.github.io/post/configuration/python-pypi/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/python-pypi/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/python-pypi/</guid>
       <description>pip安装 :::bash $ wget https://bootstrap.pypa.io/get-pip.py $ sudo python get-pip.py 或者，直接使用发行版的包管理安装: :::bash $ sudo apt-get install python-pip # Debian/Ubuntu pip配置 官方源比较慢，上面是一些国内源。 国内pypi源 https://pypi.mirrors.ustc.edu.cn/simple/ http://mirrors.aliyun.com/pypi/simple/ http://pypi.v2ex.com/simple http://pypi.douban.com/</description>
     </item>
     

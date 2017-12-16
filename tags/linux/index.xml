@@ -2,202 +2,202 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/tags/linux/</link>
+    <link>https://ox0spy.github.io/tags/linux/</link>
     <description>Recent content in Linux on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:22:01 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>linux 小贴士</title>
-      <link>http://ox0spy.github.io/post/ubuntu/linux-tips/</link>
+      <link>https://ox0spy.github.io/post/ubuntu/linux-tips/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/ubuntu/linux-tips/</guid>
+      <guid>https://ox0spy.github.io/post/ubuntu/linux-tips/</guid>
       <description>ssh端口转发 由于服务器上一些服务的端口没有对外开发，但是在开发时又想直接使用服务器上的这些服务，该怎么办？ 以我们服务器A(192.167.</description>
     </item>
     
     <item>
       <title>create restricted linux user for ssh tunnel</title>
-      <link>http://ox0spy.github.io/post/configuration/create-restricted-linux-user-for-ssh-tunnel/</link>
+      <link>https://ox0spy.github.io/post/configuration/create-restricted-linux-user-for-ssh-tunnel/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/create-restricted-linux-user-for-ssh-tunnel/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/create-restricted-linux-user-for-ssh-tunnel/</guid>
       <description>由于国内访问一些网站特别慢，所以，使用一台新加坡节点的机器做代理，提高浏览器、mobile访问网站速度。 最近发现访问AWS的EC2也特别慢，</description>
     </item>
     
     <item>
       <title>ubuntu&#43;vim配置汇编程序开发环境</title>
-      <link>http://ox0spy.github.io/post/asm/setup-asm-development-environment/</link>
+      <link>https://ox0spy.github.io/post/asm/setup-asm-development-environment/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/asm/setup-asm-development-environment/</guid>
+      <guid>https://ox0spy.github.io/post/asm/setup-asm-development-environment/</guid>
       <description>本文专门介绍Ubuntu系统上基于Vim配置汇编程序开发环境。 Ubuntu系统配置 所有开发都在Ubuntu上完成，需要用的软件包：binut</description>
     </item>
     
     <item>
       <title>write your first asm program</title>
-      <link>http://ox0spy.github.io/post/asm/write-your-first-asm-program/</link>
+      <link>https://ox0spy.github.io/post/asm/write-your-first-asm-program/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/asm/write-your-first-asm-program/</guid>
+      <guid>https://ox0spy.github.io/post/asm/write-your-first-asm-program/</guid>
       <description>用汇编写个Hello World，同时看看如何一步一步将c程序编译成可执行文件。 开发环境准备 所有开发都在Ubuntu上完成，需要用的软件包：b</description>
     </item>
     
     <item>
       <title>在64位机器上编写、运行32位汇编代码</title>
-      <link>http://ox0spy.github.io/post/asm/write-32bit-asm-program-and-run-on-64bit-machine/</link>
+      <link>https://ox0spy.github.io/post/asm/write-32bit-asm-program-and-run-on-64bit-machine/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/asm/write-32bit-asm-program-and-run-on-64bit-machine/</guid>
+      <guid>https://ox0spy.github.io/post/asm/write-32bit-asm-program-and-run-on-64bit-machine/</guid>
       <description>我按照 &amp;lt;&amp;lt;professional assembly language&amp;gt;&amp;gt;（中文名为：编译语言程序设计) 学习汇编，但使用pushl在我的Ubuntu 64bit上报错Erro</description>
     </item>
     
     <item>
       <title>编译、链接、运行汇编程序</title>
-      <link>http://ox0spy.github.io/post/asm/compile-link-and-run-asm-program/</link>
+      <link>https://ox0spy.github.io/post/asm/compile-link-and-run-asm-program/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/asm/compile-link-and-run-asm-program/</guid>
+      <guid>https://ox0spy.github.io/post/asm/compile-link-and-run-asm-program/</guid>
       <description>学习汇编过程中每次输入as, ld的一堆命令行参数编译、链接程序实在很麻烦。 所以，写个小脚本完成汇编程序的编译、链接及运行。 脚本介绍 脚本内容如</description>
     </item>
     
     <item>
       <title>advanced ssh config with aws ec2</title>
-      <link>http://ox0spy.github.io/post/configuration/assh-aws-ec2/</link>
+      <link>https://ox0spy.github.io/post/configuration/assh-aws-ec2/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/assh-aws-ec2/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/assh-aws-ec2/</guid>
       <description>assh安装 $ brew install assh</description>
     </item>
     
     <item>
       <title>ansible入门</title>
-      <link>http://ox0spy.github.io/post/configuration/ansible-get-started/</link>
+      <link>https://ox0spy.github.io/post/configuration/ansible-get-started/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/ansible-get-started/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/ansible-get-started/</guid>
       <description>Ansible是 安装ansible Mac上安装 $ brew install ansible Mac上brew安装后，默认的hosts配置文件路径是/usr/local/etc/a</description>
     </item>
     
     <item>
       <title>free</title>
-      <link>http://ox0spy.github.io/post/linux-commands/free/</link>
+      <link>https://ox0spy.github.io/post/linux-commands/free/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/linux-commands/free/</guid>
+      <guid>https://ox0spy.github.io/post/linux-commands/free/</guid>
       <description>本来转载自: http://www.cnblogs.com/coldplayerest/archive/2010/02/20/1669949.html 更多free命令可参看: 这里 http://www.linuxatemyram.com/ top命令输出解释 下面是free的运行结果，一共有4行。为了方便说明，我加上了列号. 1 2 3 4 5 6</description>
     </item>
     
     <item>
       <title>htop</title>
-      <link>http://ox0spy.github.io/post/linux-commands/htop/</link>
+      <link>https://ox0spy.github.io/post/linux-commands/htop/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/linux-commands/htop/</guid>
+      <guid>https://ox0spy.github.io/post/linux-commands/htop/</guid>
       <description>本文转摘自 Linux运维笔记. 并做适当修改 简介 Htop是一款运行于Linux系统监控与进程管理软件，用于取代Unix下传统的top。与top</description>
     </item>
     
     <item>
       <title>netstat</title>
-      <link>http://ox0spy.github.io/post/linux-commands/netstat/</link>
+      <link>https://ox0spy.github.io/post/linux-commands/netstat/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/linux-commands/netstat/</guid>
+      <guid>https://ox0spy.github.io/post/linux-commands/netstat/</guid>
       <description>本文参考： http://www.cnblogs.com/ggjucheng/archive/2012/01/08/2316661.html http://www.binarytides.com/linux-netstat-command-examples/ 作用 Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast</description>
     </item>
     
     <item>
       <title>ps</title>
-      <link>http://ox0spy.github.io/post/linux-commands/ps/</link>
+      <link>https://ox0spy.github.io/post/linux-commands/ps/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/linux-commands/ps/</guid>
+      <guid>https://ox0spy.github.io/post/linux-commands/ps/</guid>
       <description>本文参考： 10 basic examples of Linux ps command http://man.linuxde.net/ps 作用 ps命令用来列出系统中当前运行的那些进程。ps命令列出的是当前那些进程的快照，就是执行ps命令的那个时刻的那些</description>
     </item>
     
     <item>
       <title>too many files open</title>
-      <link>http://ox0spy.github.io/post/configuration/too-many-files-open/</link>
+      <link>https://ox0spy.github.io/post/configuration/too-many-files-open/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/too-many-files-open/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/too-many-files-open/</guid>
       <description>Linux 将下面的行加入 /etc/security/limits.conf * soft nofile 8192 * hard nofile 8192 将下面的行加入 /etc/sysctl.conf ，提高kernel性能，可以不添加。 net.ipv4.tcp_tw_reuse = 1 net.ipv4.tcp_tw_recycle = 1 net.ipv4.ip_local_port_range = 1024 65000 fs.file-max = 65000 运行 sudo sysctl -p 将对 /etc/sysctl.conf 的修改生效。</description>
     </item>
     
     <item>
       <title>top</title>
-      <link>http://ox0spy.github.io/post/linux-commands/top/</link>
+      <link>https://ox0spy.github.io/post/linux-commands/top/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/linux-commands/top/</guid>
+      <guid>https://ox0spy.github.io/post/linux-commands/top/</guid>
       <description>简介 top命令的具体就不解释了，记录一些实用的命令 # redis用户此时所使用的内存总数 # 这里的内存使用 top -bn1 -u redis | awk &#39;{mem += $10} END {print mem}&#39; # 查看服务器所</description>
     </item>
     
     <item>
       <title>uptime</title>
-      <link>http://ox0spy.github.io/post/linux-commands/uptime/</link>
+      <link>https://ox0spy.github.io/post/linux-commands/uptime/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/linux-commands/uptime/</guid>
+      <guid>https://ox0spy.github.io/post/linux-commands/uptime/</guid>
       <description>用途 man page uptime gives a one line display of the following information. The cur‐ rent time, how long the system has been running, how many users are currently logged on, and the system load averages for the past 1, 5, and 15 minutes. System load averages is the average number of processes that are either in a runnable or uninterruptable state. A process in a</description>
     </item>
     
     <item>
       <title>linux远程文件拷贝</title>
-      <link>http://ox0spy.github.io/post/linux-commands/copy-remote-file/</link>
+      <link>https://ox0spy.github.io/post/linux-commands/copy-remote-file/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:56 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/linux-commands/copy-remote-file/</guid>
+      <guid>https://ox0spy.github.io/post/linux-commands/copy-remote-file/</guid>
       <description>我们经常会碰到从一个主机上拷贝文件到其他主机，本文汇总下常用方法。 ssh 提到远程文件拷贝，大家肯定首先想到的是ssh。(啥? 你想到的是ftp??</description>
     </item>
     
     <item>
       <title>Linux Bash Tips</title>
-      <link>http://ox0spy.github.io/post/configuration/linux-bash-tips/</link>
+      <link>https://ox0spy.github.io/post/configuration/linux-bash-tips/</link>
       <pubDate>Wed, 14 Aug 2013 00:00:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/linux-bash-tips/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/linux-bash-tips/</guid>
       <description>Command line option parse while (( $# &amp;gt; 0 )) ; do case $1 in --local_branch) git_local_branch=$2 shift ;; --remote_branch) git_remote_branch=$2 shift ;; --remote_repo) git_remote_repo=$2 shift ;; --tag) git_tag=$2 shift ;; -f|--force) git_force=&amp;quot;-f&amp;quot; ;; --keyfile) export git_publish_keyfile=$2 shift ;; esac shift done  Pointer variable The example shows how to make a bash environment variable reference the value of another:
 $ foo=bar $ name=foo $ echo ${!name} bar  The example shows how to get a list of all variables beginning with &amp;ldquo;H&amp;rdquo; (Note: the wildcard can only go at the end)</description>
     </item>
     
     <item>
       <title>Setup OpenGrok</title>
-      <link>http://ox0spy.github.io/post/configuration/setup-opengrok/</link>
+      <link>https://ox0spy.github.io/post/configuration/setup-opengrok/</link>
       <pubDate>Wed, 14 Aug 2013 00:00:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/setup-opengrok/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/setup-opengrok/</guid>
       <description>OpenGrok安装使用指南 参考： https://github.com/OpenGrok/OpenGrok/wiki/How-to-install-OpenGrok 注意：最好是单独建立一个opengrok用户，并保证该用户对代码和后面创建索引的目录读写权限 下面整个流程</description>
     </item>
     
     <item>
       <title>Setup cgit</title>
-      <link>http://ox0spy.github.io/post/configuration/setup-cgit/</link>
+      <link>https://ox0spy.github.io/post/configuration/setup-cgit/</link>
       <pubDate>Wed, 14 Aug 2013 00:00:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/setup-cgit/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/setup-cgit/</guid>
       <description>cgit setup cgit install $ git://hjemli.net/pub/git/cgit $ cd cgit $ git submodule init # register the git submodule in .git/config $ $EDITOR .git/config # if you want to specify a different url for git $ git submodule update # clone/fetch and checkout correct git version $ make $ sudo make install  setup cgitrc $ cat /etc/cgitrc # # cgit config # css=/cgit/cgit.css logo=/cgit/cgit.png # if you don&#39;t want that webcrawler (like google) index your site robots=noindex, nofollow # # List of repositories.</description>
     </item>
     
     <item>
       <title>Setup new Jenkins slave</title>
-      <link>http://ox0spy.github.io/post/configuration/setup-new-jenkins-slave/</link>
+      <link>https://ox0spy.github.io/post/configuration/setup-new-jenkins-slave/</link>
       <pubDate>Wed, 14 Aug 2013 00:00:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/setup-new-jenkins-slave/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/setup-new-jenkins-slave/</guid>
       <description>Setup new Jenkins slave Install Ubuntu 10.04 Create jenkins/jenkins (user/group) # login new Jenkins slave $ sudo addgroup jenkins $ sudo useradd -m -s /bin/bash -g jenkins jenkins $ sudo su - jenkins $ scp -r jenkins@172.26.32.85:~/.ssh ~/ $ passwd jenkins # change hostname $ sudo vim /etc/hostname # login Jenkins master $ ssh jenkins@master $ ssh-copy-id jenkins@new-slave-host # login new Jenkins slave $ sudo scp jenkins@master:/etc/apt/sources.list /etc/apt/sources.list $ sudo apt-get update $ sudo apt-get upgrade $ sudo apt-get install git-core  Setup nis/autofs $ sudo tail -n 1 /etc/passwd /etc/group /etc/shadow ==&amp;gt; /etc/passwd &amp;lt;== +:::::: ==&amp;gt; /etc/group &amp;lt;== +::: ==&amp;gt; /etc/shadow &amp;lt;== +:::::::: $ sudo apt-get install nis portmap autofs $ sudo bash -c &#39;echo &amp;quot;ypserver int.</description>
     </item>
     
     <item>
       <title>Git Tips</title>
-      <link>http://ox0spy.github.io/post/configuration/git-tips/</link>
+      <link>https://ox0spy.github.io/post/configuration/git-tips/</link>
       <pubDate>Fri, 09 Aug 2013 00:00:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/git-tips/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/git-tips/</guid>
       <description>Git Tips Revert a git patch Chengdu Gerrit has “Revert Change” button, so you can revert patch very easy. But, Shanghai Gerrit version is too old, it doesn’t support “Revert Change” on Gerrit, for this case, you can try the below git commands.
 Check git repository status:
 $ git status  Make git repository clean:
@@ -206,19 +206,19 @@ $ git checkout . $ git clean -fd  Find &amp;lt;commit&amp;gt; which you want to 
     
     <item>
       <title>Bash Multiprocess</title>
-      <link>http://ox0spy.github.io/post/configuration/bash-multiprocess/</link>
+      <link>https://ox0spy.github.io/post/configuration/bash-multiprocess/</link>
       <pubDate>Tue, 06 Aug 2013 00:00:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/bash-multiprocess/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/bash-multiprocess/</guid>
       <description>Git同步 成都和上海分别建有git server, 虽有 Gerrit Replication, 但新创建分支、git库无法自动同步, 直到该git库有新Gerrit merge. 所以, 写脚本通过 gitweb_url?a=project_index 获取所有g</description>
     </item>
     
     <item>
       <title>HTTP Command Line Tools</title>
-      <link>http://ox0spy.github.io/post/configuration/http-command-line-tools/</link>
+      <link>https://ox0spy.github.io/post/configuration/http-command-line-tools/</link>
       <pubDate>Tue, 06 Aug 2013 00:00:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/http-command-line-tools/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/http-command-line-tools/</guid>
       <description>Linux Network Tools wget  GNU Wget is a free utility for non-interactive download of files from the Web. It supports HTTP, HTTPS, and FTP protocols, as well as retrieval through HTTP proxies.
  log to a server using POST and then proceed to download the desired pages, presumably only accessible to authorized users Log in to the server. This can be done only once.
 wget --save-cookies cookies.txt \ --post-data &#39;user=foo&amp;amp;password=bar&#39; \ http://server.</description>

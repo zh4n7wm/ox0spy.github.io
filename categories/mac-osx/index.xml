@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mac Osx on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/categories/mac-osx/</link>
+    <link>https://ox0spy.github.io/categories/mac-osx/</link>
     <description>Recent content in Mac Osx on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:22:00 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/categories/mac-osx/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/categories/mac-osx/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>install docker on mac osx</title>
-      <link>http://ox0spy.github.io/post/mac-osx/install-docker-on-mac-osx/</link>
+      <link>https://ox0spy.github.io/post/mac-osx/install-docker-on-mac-osx/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/mac-osx/install-docker-on-mac-osx/</guid>
+      <guid>https://ox0spy.github.io/post/mac-osx/install-docker-on-mac-osx/</guid>
       <description>从docker官网下载dmg包安装每次更新非常麻烦，幸运的是可以在Mac上通过brew安装Docker。 Docker不能直接在Mac上运行，</description>
     </item>
     
     <item>
       <title>jenkins自动构建ios应用</title>
-      <link>http://ox0spy.github.io/post/mac-osx/jenkins-build-ios-apps/</link>
+      <link>https://ox0spy.github.io/post/mac-osx/jenkins-build-ios-apps/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/mac-osx/jenkins-build-ios-apps/</guid>
+      <guid>https://ox0spy.github.io/post/mac-osx/jenkins-build-ios-apps/</guid>
       <description>最近折腾用Jenkins自动构建iOS应用。 编译环境 为了构建iOS应用，必须找台Mac电脑做slave。 安装很简单，貌似brew install jenki</description>
     </item>
     
     <item>
       <title>mac pro初体验</title>
-      <link>http://ox0spy.github.io/post/mac-osx/mac-pro-get-started/</link>
+      <link>https://ox0spy.github.io/post/mac-osx/mac-pro-get-started/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/mac-osx/mac-pro-get-started/</guid>
+      <guid>https://ox0spy.github.io/post/mac-osx/mac-pro-get-started/</guid>
       <description>貌似如今不玩下Mac总觉得逼格不够，最近08年买的Thinkpad R60也坏掉了，就入手一台Mac Pro。 下面记录下环境配置和最近使用感受。</description>
     </item>
     
     <item>
       <title>mac python valueerror: unknown locale: utf-8</title>
-      <link>http://ox0spy.github.io/post/mac-osx/mac-python-valueerror-unknown-locale-utf-8/</link>
+      <link>https://ox0spy.github.io/post/mac-osx/mac-python-valueerror-unknown-locale-utf-8/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/mac-osx/mac-python-valueerror-unknown-locale-utf-8/</guid>
+      <guid>https://ox0spy.github.io/post/mac-osx/mac-python-valueerror-unknown-locale-utf-8/</guid>
       <description>Mac brew更新软件报locale utf-8 unknown。 问题描述 brew update &amp;amp;&amp;amp; brew upgrade，更新 mpv 时报错: ValueError: unknown locale: UTF-8 确定当前locale :::bash $ locale LANG= LC_COLLATE=&amp;quot;C&amp;quot; LC_CTYPE=&amp;quot;UTF-8&amp;quot; LC_MESSAGES=&amp;quot;C&amp;quot; LC_MONETARY=&amp;quot;C&amp;quot;</description>
     </item>
     
     <item>
       <title>mac system intregrity protection - operation not permitted</title>
-      <link>http://ox0spy.github.io/post/mac-osx/mac-system-intregrity-protection/</link>
+      <link>https://ox0spy.github.io/post/mac-osx/mac-system-intregrity-protection/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/mac-osx/mac-system-intregrity-protection/</guid>
+      <guid>https://ox0spy.github.io/post/mac-osx/mac-system-intregrity-protection/</guid>
       <description>貌似刚拿到电脑是自己手动编译安装了vim 7.3，后来都是brew install vim最新版本。 今天vim出了点问题，发现系统上还有个vim 7.3，准备删</description>
     </item>
     
     <item>
       <title>mac osx tips</title>
-      <link>http://ox0spy.github.io/post/mac-osx/mac-tips/</link>
+      <link>https://ox0spy.github.io/post/mac-osx/mac-tips/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://ox0spy.github.io/post/mac-osx/mac-tips/</guid>
+      <guid>https://ox0spy.github.io/post/mac-osx/mac-tips/</guid>
       <description>抓包 如果你用Mac， 可以把iPhone 使用数据线连接到Mac上，$rvictl -s udid 就可以抓iPhone 的网络通讯报文了，可以使用wiresh</description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Haproxy on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/tags/haproxy/</link>
+    <link>https://ox0spy.github.io/tags/haproxy/</link>
     <description>Recent content in Haproxy on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 01 Jul 2014 00:00:00 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/tags/haproxy/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/tags/haproxy/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>setup haproxy and keepalived on debian (wheezy)</title>
-      <link>http://ox0spy.github.io/post/configuration/setup-haproxy-and-keepalived-on-debian-wheezy/</link>
+      <link>https://ox0spy.github.io/post/configuration/setup-haproxy-and-keepalived-on-debian-wheezy/</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/setup-haproxy-and-keepalived-on-debian-wheezy/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/setup-haproxy-and-keepalived-on-debian-wheezy/</guid>
       <description>准备机器 harpoxy_MASTER - 172.16.8.129 haproxy_BACKUP - 172.16.8.130 WEB_APP_SERVER_1 - 172.16.8.131 WEB_APP_SERVER_2 - 172.16.8.132 注: 1. virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP) 2. 所有机器都安装的Debian 7.5 (wheezy) 安装</description>
     </item>
     

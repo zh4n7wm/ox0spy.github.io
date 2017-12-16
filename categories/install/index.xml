@@ -2,57 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Install on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/categories/install/</link>
+    <link>https://ox0spy.github.io/categories/install/</link>
     <description>Recent content in Install on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:21:58 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/categories/install/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/categories/install/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>centos上安装supervisor</title>
-      <link>http://ox0spy.github.io/post/install/centos-supervisord/</link>
+      <link>https://ox0spy.github.io/post/install/centos-supervisord/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/install/centos-supervisord/</guid>
+      <guid>https://ox0spy.github.io/post/install/centos-supervisord/</guid>
       <description>安装 部署项目从Ubuntu转战到CentOS, 使用yum命令安装supervisor后，发现无法正常使用，因此只有使用pip安装. :::bash $ sudo pip install</description>
     </item>
     
     <item>
       <title>gerrit搭建指南</title>
-      <link>http://ox0spy.github.io/post/install/gerrit/</link>
+      <link>https://ox0spy.github.io/post/install/gerrit/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/install/gerrit/</guid>
+      <guid>https://ox0spy.github.io/post/install/gerrit/</guid>
       <description>什么是Gerrit Gerrit，一种免费、开放源代码的代码审查软件，使用网页界面。利用网页浏览器，同一个团队的软件程序员，可以相互审阅彼此修</description>
     </item>
     
     <item>
       <title>opengrok安装使用指南</title>
-      <link>http://ox0spy.github.io/post/install/setup-opengrok/</link>
+      <link>https://ox0spy.github.io/post/install/setup-opengrok/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/install/setup-opengrok/</guid>
+      <guid>https://ox0spy.github.io/post/install/setup-opengrok/</guid>
       <description>本文主要参考了下面的文章: http://hub.opensolaris.org/bin/view/Project+opengrok/installdescription http://src.opensolaris.org/source/xref/opengrok/trunk/README.txt 注意：最好是单独建立一个用户，并保证该用户对代码和后面创建索引的目录读写权限 准备工作 以opengrok用户身份</description>
     </item>
     
     <item>
       <title>openresty</title>
-      <link>http://ox0spy.github.io/post/install/openresty/</link>
+      <link>https://ox0spy.github.io/post/install/openresty/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/install/openresty/</guid>
+      <guid>https://ox0spy.github.io/post/install/openresty/</guid>
       <description>什么是OpenResty OpenResty（也称为 ngx_openresty）是一个全功能的 Web 应用服务器，它打包了标准 的Nginx 核心，很多</description>
     </item>
     
     <item>
       <title>wamp(windows &#43; apache &#43; mysql &#43; php) 环境搭建</title>
-      <link>http://ox0spy.github.io/post/install/setup-wamp/</link>
+      <link>https://ox0spy.github.io/post/install/setup-wamp/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/install/setup-wamp/</guid>
+      <guid>https://ox0spy.github.io/post/install/setup-wamp/</guid>
       <description>最近开始学习PHP，工欲善其事，必先利其器。第一步当然是环境搭建啦！ PHP开发基本也就是在不同平台下，要么是LAMP(Linux + Apache + Mysql + P</description>
     </item>
     

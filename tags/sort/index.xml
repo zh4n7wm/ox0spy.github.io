@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sort on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/tags/sort/</link>
+    <link>https://ox0spy.github.io/tags/sort/</link>
     <description>Recent content in Sort on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Dec 2017 19:21:59 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/tags/sort/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/tags/sort/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>python sort</title>
-      <link>http://ox0spy.github.io/post/python/python-sorted/</link>
+      <link>https://ox0spy.github.io/post/python/python-sorted/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/python/python-sorted/</guid>
+      <guid>https://ox0spy.github.io/post/python/python-sorted/</guid>
       <description>#!/usr/bin/env python # -*- coding: utf-8 -*- import random def get_random_list(num): t = [] for i in range(0, num): t.append(random.randint(0, 200)) return t def bubble_sort(t): &#39;&#39;&#39;从小到大&#39;&#39;&#39; passnum = len(t) - 1 exchanges = True while passnum &amp;gt; 0 and exchanges: for i in range(passnum): if t[i] &amp;gt; t[i + 1]: exchanges = True t[i], t[i + 1] = t[i + 1],</description>
     </item>
     

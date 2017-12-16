@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Opengrok on wiseturtles&#39;s team blog</title>
-    <link>http://ox0spy.github.io/categories/opengrok/</link>
+    <link>https://ox0spy.github.io/categories/opengrok/</link>
     <description>Recent content in Opengrok on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 14 Aug 2013 00:00:00 +0800</lastBuildDate>
     
-	<atom:link href="http://ox0spy.github.io/categories/opengrok/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/categories/opengrok/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Setup OpenGrok</title>
-      <link>http://ox0spy.github.io/post/configuration/setup-opengrok/</link>
+      <link>https://ox0spy.github.io/post/configuration/setup-opengrok/</link>
       <pubDate>Wed, 14 Aug 2013 00:00:00 +0800</pubDate>
       
-      <guid>http://ox0spy.github.io/post/configuration/setup-opengrok/</guid>
+      <guid>https://ox0spy.github.io/post/configuration/setup-opengrok/</guid>
       <description>OpenGrok安装使用指南 参考： https://github.com/OpenGrok/OpenGrok/wiki/How-to-install-OpenGrok 注意：最好是单独建立一个opengrok用户，并保证该用户对代码和后面创建索引的目录读写权限 下面整个流程</description>
     </item>
     
