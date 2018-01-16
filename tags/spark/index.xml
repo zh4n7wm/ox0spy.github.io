@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spark on wiseturtles&#39;s team blog</title>
+    <link>https://ox0spy.github.io/tags/spark/</link>
+    <description>Recent content in Spark on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 16 Jan 2018 15:34:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://ox0spy.github.io/tags/spark/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spark with AWS S3 support</title>
+      <link>https://ox0spy.github.io/post/bigdata/spark-with-s3a/</link>
+      <pubDate>Tue, 16 Jan 2018 15:34:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/post/bigdata/spark-with-s3a/</guid>
+      <description>Spark with S3 从 Spark 上读取 AWS S3 中的文件。 Hadoop-AWS module: Integration with Amazon Web Services 该文档介绍如何在 Hadoop 中使用 AWS S3。 推荐使用 s3a://；s3n:// 和 s3:// 不推荐使用；Hadoop 3</description>
+    </item>
+    
+  </channel>
+</rss>
