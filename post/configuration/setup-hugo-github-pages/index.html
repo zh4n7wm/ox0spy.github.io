@@ -71,7 +71,7 @@
 
 <meta itemprop="datePublished" content="2017-12-15T21:08:54&#43;08:00" />
 <meta itemprop="dateModified" content="2017-12-15T21:08:54&#43;08:00" />
-<meta itemprop="wordCount" content="265">
+<meta itemprop="wordCount" content="236">
 
 
 
@@ -169,7 +169,6 @@
 <li><a href="#生成静态文件">生成静态文件</a></li>
 <li><a href="#在-github-com-上创建名为-username-github-io-的-git-库">在 <code>github.com</code> 上创建名为 <code>username.github.io</code> 的 <code>git</code> 库</a></li>
 <li><a href="#将生成的静态文件-push-到-username-github-io">将生成的静态文件 <code>push</code> 到 <code>username.github.io</code></a></li>
-<li><a href="#创建一个git库">创建一个git库</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -231,30 +230,34 @@ $ vim content/hello-world.md  # 用vim编辑器写 Markdown 即可
 
 <h3 id="在-github-com-上创建名为-username-github-io-的-git-库">在 <code>github.com</code> 上创建名为 <code>username.github.io</code> 的 <code>git</code> 库</h3>
 
+<p>Makefile 文件：</p>
+
+<pre><code>$ cat Makefile
+.PHONY: html, push, clean
+
+PUBLIC_DIR:=../github-blog-public
+PUBLIC_REPO:=git@github.com:ox0spy/ox0spy.github.io.git
+
+html: clean
+    hugo --theme even
+
+push: html
+    @rm -rf ${PUBLIC_DIR}
+    git clone ${PUBLIC_REPO} ${PUBLIC_DIR} &amp;&amp; \
+        cp -rf public/* ${PUBLIC_DIR} &amp;&amp; \
+        cd ${PUBLIC_DIR} &amp;&amp; \
+        git add -f --all &amp;&amp; \
+        git commit -m 'auto update.' &amp;&amp; \
+        git push -f -q ${PUBLIC_REPO}
+    make clean
+
+clean:
+    @rm -rf public/
+</code></pre>
+
 <h3 id="将生成的静态文件-push-到-username-github-io">将生成的静态文件 <code>push</code> 到 <code>username.github.io</code></h3>
 
-<pre><code>$ cd public
-$ git init
-$ git add -A
-$ git commit -m 'initial commit.'
-$ git push origin master
-</code></pre>
-
-<p>将 <code>public</code> 作为 submodule</p>
-
-<pre><code>$ cd ../
-$ git submodule add git@github.com:ox0spy/ox0spy.github.io.git public
-</code></pre>
-
-<h3 id="创建一个git库">创建一个git库</h3>
-
-<p>在 <code>github</code> 上创建一个新的 <code>git</code>库 来保存 <code>hugo</code>文件及 <code>*.md</code>。</p>
-
-<pre><code>$ git init
-$ git add .
-$ git commit -m 'initial commit.'
-$ git remote add origin git@github.com:ox0spy/hugo-blog.git
-$ git -u origin master
+<pre><code>$ make push
 </code></pre>
 
     </div>
