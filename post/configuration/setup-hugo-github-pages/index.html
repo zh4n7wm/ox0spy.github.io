@@ -71,7 +71,7 @@
 
 <meta itemprop="datePublished" content="2017-12-15T21:08:54&#43;08:00" />
 <meta itemprop="dateModified" content="2017-12-15T21:08:54&#43;08:00" />
-<meta itemprop="wordCount" content="236">
+<meta itemprop="wordCount" content="246">
 
 
 
@@ -242,8 +242,7 @@ html: clean
     hugo --theme even
 
 push: html
-    @rm -rf ${PUBLIC_DIR}
-    git clone ${PUBLIC_REPO} ${PUBLIC_DIR} &amp;&amp; \
+    { test -d ${PUBLIC_DIR}/.git &amp;&amp; git -C ${PUBLIC_DIR} pull origin master || git clone ${PUBLIC_REPO} ${PUBLIC_DIR} ;} &amp;&amp; \
         cp -rf public/* ${PUBLIC_DIR} &amp;&amp; \
         cd ${PUBLIC_DIR} &amp;&amp; \
         git add -f --all &amp;&amp; \
