@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ox0spy.github.io/post/aws/note-cross-account-with-roles/</loc>
+    <lastmod>2018-02-09T18:06:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/bigdata/spark-with-s3a/</loc>
     <lastmod>2018-01-16T15:34:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -805,6 +812,20 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/tags/aws/</loc>
+    <lastmod>2018-02-09T18:06:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/aws/</loc>
+    <lastmod>2018-02-09T18:06:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/tags/backup/</loc>
     <lastmod>2017-12-15T19:21:57+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1460,7 +1481,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/post/</loc>
-    <lastmod>2018-01-16T15:34:00+08:00</lastmod>
+    <lastmod>2018-02-09T18:06:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1855,7 +1876,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/</loc>
-    <lastmod>2018-01-16T15:34:00+08:00</lastmod>
+    <lastmod>2018-02-09T18:06:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
