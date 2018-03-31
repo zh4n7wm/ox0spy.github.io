@@ -6,10 +6,19 @@
     <description>Recent content in Posts on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 09 Feb 2018 18:06:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 31 Mar 2018 21:49:01 +0800</lastBuildDate>
     
 	<atom:link href="https://ox0spy.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DNSCrypt &#43; dnsmasq</title>
+      <link>https://ox0spy.github.io/post/configuration/dnscrypt-proxy-and-dnsmasq/</link>
+      <pubDate>Sat, 31 Mar 2018 21:49:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/post/configuration/dnscrypt-proxy-and-dnsmasq/</guid>
+      <description>本文介绍如何使用 dnscrypt-proxy + dnsmasq 避免 DNS 污染， dnscrypt-proxy 是 dnscrypt 的一种实现，它能让古老的 DNS 协议更安全，然后 dnsmasq 从 dnscrypt-proxy 上获取正确的 DNS 解析，并做本地缓存加快速度。 DNSCrypt DNSCrypt 是协议</description>
+    </item>
     
     <item>
       <title>使用 IAM 角色委派跨 AWS 账号的访问权限设置</title>

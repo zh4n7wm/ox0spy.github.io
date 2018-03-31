@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dns on wiseturtles&#39;s team blog</title>
+    <link>https://ox0spy.github.io/categories/dns/</link>
+    <description>Recent content in Dns on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 31 Mar 2018 21:49:01 +0800</lastBuildDate>
+    
+	<atom:link href="https://ox0spy.github.io/categories/dns/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DNSCrypt &#43; dnsmasq</title>
+      <link>https://ox0spy.github.io/post/configuration/dnscrypt-proxy-and-dnsmasq/</link>
+      <pubDate>Sat, 31 Mar 2018 21:49:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/post/configuration/dnscrypt-proxy-and-dnsmasq/</guid>
+      <description>本文介绍如何使用 dnscrypt-proxy + dnsmasq 避免 DNS 污染， dnscrypt-proxy 是 dnscrypt 的一种实现，它能让古老的 DNS 协议更安全，然后 dnsmasq 从 dnscrypt-proxy 上获取正确的 DNS 解析，并做本地缓存加快速度。 DNSCrypt DNSCrypt 是协议</description>
+    </item>
+    
+  </channel>
+</rss>

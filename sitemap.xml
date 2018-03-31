@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ox0spy.github.io/post/configuration/dnscrypt-proxy-and-dnsmasq/</loc>
+    <lastmod>2018-03-31T21:49:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/aws/note-cross-account-with-roles/</loc>
     <lastmod>2018-02-09T18:06:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -958,6 +965,13 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/categories/dns/</loc>
+    <lastmod>2018-03-31T21:49:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/tags/docker/</loc>
     <lastmod>2017-12-15T19:22:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1481,7 +1495,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/post/</loc>
-    <lastmod>2018-02-09T18:06:00+08:00</lastmod>
+    <lastmod>2018-03-31T21:49:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1876,7 +1890,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/</loc>
-    <lastmod>2018-02-09T18:06:00+08:00</lastmod>
+    <lastmod>2018-03-31T21:49:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
