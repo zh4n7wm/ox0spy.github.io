@@ -52,7 +52,7 @@
 
 
 
-<meta property="og:updated_time" content="2013-08-06T00:00:00&#43;08:00"/>
+<meta property="og:updated_time" content="2013-08-09T00:00:00&#43;08:00"/>
 
 
 
@@ -131,6 +131,30 @@
   <section id="posts" class="posts">
     
     
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/configuration/git-tips/">Git Tips</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2013-08-09 </span>
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Git Tips Revert a git patch Chengdu Gerrit has “Revert Change” button, so you can revert patch very easy. But, Shanghai Gerrit version is too old, it doesn’t support “Revert Change” on Gerrit, for this case, you can try the below git commands.
+Check git repository status:
+$ git status  Make git repository clean:
+$ git checkout . $ git clean -fd  Find &lt;commit&gt; which you want to revert:
+    </div>
+    <div class="read-more">
+      <a href="/post/configuration/git-tips/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
     
       <article class="post">
   <header class="post-header">
@@ -250,6 +274,31 @@ wget --save-cookies cookies.txt \ --post-data 'user=foo&amp;password=bar' \ http
     </div>
     <div class="read-more">
       <a href="/post/data-science/pydata/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/elasticsearch/elasticsearch-forbidden-12-index-read-only-allow-delete-api/"></a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 0001-01-01 </span>
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      由于我的 Mac OSX 硬盘基本没空间了，导致 ElasticSearch 创建索引报错了。
+ElasticSearch 报错:
+FORBIDDEN/12/index read-only / allow delete (api)  默认情况，当硬盘空间使用率超过 90% 时，ElasticSearch 就变成 read only 不允许再创建索引了。
+可以修改一些参数，改变它的默认行为：(可用空间小于 1G 才变成 read only)
+$ cat /usr/local/etc/elasticsearch/elasticsearch.yml cluster.routing.allocation.disk.watermark.low: 3gb cluster.routing.allocation.disk.watermark.high: 1gb cluster.routing.allocation.disk.watermark.flood_stage: 1gb  参考链接：Disk-based Shard Allocation
+    </div>
+    <div class="read-more">
+      <a href="/post/elasticsearch/elasticsearch-forbidden-12-index-read-only-allow-delete-api/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

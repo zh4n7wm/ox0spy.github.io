@@ -134,6 +134,31 @@
     
       <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/python/flask-logging/">flask中通过fileconfig配置多个logger</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/python/"> python </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Flask中如何通过配置文件配置logger 创建app.py文件 $ cat app.py from flask import Flask import logging import logging.config def configure_logger(app): logging.config.fileConfig(&quot;log.conf&quot;) # 获取当前所有的logger print logging.Logger.manager.loggerDict.keys() app.logger.info(&quot;logger start&quot;) def app_factory(): app = Flask('root') configure_logger(app)
+    </div>
+    <div class="read-more">
+      <a href="/post/python/flask-logging/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/go/golang-chaos/">golang评价</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2017-12-15 </span>
@@ -602,31 +627,6 @@
     </div>
     <div class="read-more">
       <a href="/post/configuration/create-restricted-linux-user-for-ssh-tunnel/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/configuration/fuck-gfw/">fuck gfw</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-12-15 </span>
-      <div class="post-category">
-          
-            <a href="/categories/configuration/"> configuration </a>
-          
-        </div>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      系统是ArchLinux. supervisor supervisor是一个进程启动管理工具，安装: $ sudo pacman -S supervisor 配置文件/etc/supervisord.conf默
-    </div>
-    <div class="read-more">
-      <a href="/post/configuration/fuck-gfw/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

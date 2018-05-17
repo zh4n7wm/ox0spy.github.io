@@ -6,10 +6,19 @@
     <description>Recent content on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 31 Mar 2018 21:49:01 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 17 May 2018 09:22:01 +0800</lastBuildDate>
     
 	<atom:link href="https://ox0spy.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Spark logs location on AWS EMR</title>
+      <link>https://ox0spy.github.io/post/bigdata/spark-log-location-on-emr/</link>
+      <pubDate>Thu, 17 May 2018 09:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/post/bigdata/spark-log-location-on-emr/</guid>
+      <description>在 EMR 上运行 Spark 程序的流程：添加 Spark 步骤 当 Spark 报错时，AWS EMR 页面 -&amp;gt; Steps 中的 View logs 中并没有程序运行的错误日志，没有错误日志很难知道Spark 程序为什么运</description>
+    </item>
     
     <item>
       <title>DNSCrypt &#43; dnsmasq</title>
@@ -960,6 +969,19 @@ wget --save-cookies cookies.txt \ --post-data &#39;user=foo&amp;amp;password=bar
       
       <guid>https://ox0spy.github.io/post/data-science/pydata/</guid>
       <description>pandas的plot没有显示所画图片 三种方法解决: import matplotlib.pyplot as plt; plt.show() plt.ion() echo &amp;ldquo;c.InteractiveShellApp.pylab = &amp;lsquo;auto&amp;rsquo;&amp;rdquo; &amp;gt;&amp;gt; ~/.ipython/profile_default/ipython_config.py</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://ox0spy.github.io/post/elasticsearch/elasticsearch-forbidden-12-index-read-only-allow-delete-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ox0spy.github.io/post/elasticsearch/elasticsearch-forbidden-12-index-read-only-allow-delete-api/</guid>
+      <description>由于我的 Mac OSX 硬盘基本没空间了，导致 ElasticSearch 创建索引报错了。
+ElasticSearch 报错:
+FORBIDDEN/12/index read-only / allow delete (api)  默认情况，当硬盘空间使用率超过 90% 时，ElasticSearch 就变成 read only 不允许再创建索引了。
+可以修改一些参数，改变它的默认行为：(可用空间小于 1G 才变成 read only)
+$ cat /usr/local/etc/elasticsearch/elasticsearch.yml cluster.routing.allocation.disk.watermark.low: 3gb cluster.routing.allocation.disk.watermark.high: 1gb cluster.routing.allocation.disk.watermark.flood_stage: 1gb  参考链接：Disk-based Shard Allocation</description>
     </item>
     
     <item>

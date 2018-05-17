@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Aws on wiseturtles&#39;s team blog</title>
-    <link>https://ox0spy.github.io/tags/aws/</link>
-    <description>Recent content in Aws on wiseturtles&#39;s team blog</description>
+    <title>Emr on wiseturtles&#39;s team blog</title>
+    <link>https://ox0spy.github.io/tags/emr/</link>
+    <description>Recent content in Emr on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 17 May 2018 09:22:01 +0800</lastBuildDate>
     
-	<atom:link href="https://ox0spy.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ox0spy.github.io/tags/emr/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://ox0spy.github.io/post/bigdata/spark-log-location-on-emr/</guid>
       <description>在 EMR 上运行 Spark 程序的流程：添加 Spark 步骤 当 Spark 报错时，AWS EMR 页面 -&amp;gt; Steps 中的 View logs 中并没有程序运行的错误日志，没有错误日志很难知道Spark 程序为什么运</description>
-    </item>
-    
-    <item>
-      <title>使用 IAM 角色委派跨 AWS 账号的访问权限设置</title>
-      <link>https://ox0spy.github.io/post/aws/note-cross-account-with-roles/</link>
-      <pubDate>Fri, 09 Feb 2018 18:06:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/post/aws/note-cross-account-with-roles/</guid>
-      <description>你可能会有多个 AWS 账号，比如：A-account, B-account。如果希望 A-account 中的服务 (比如：EC2) 有权限访问 B-account 上的服务 (比如：S3, s3</description>
     </item>
     
   </channel>

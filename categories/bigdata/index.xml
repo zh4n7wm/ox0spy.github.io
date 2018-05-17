@@ -6,10 +6,19 @@
     <description>Recent content in Bigdata on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 16 Jan 2018 15:34:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 17 May 2018 09:22:01 +0800</lastBuildDate>
     
 	<atom:link href="https://ox0spy.github.io/categories/bigdata/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Spark logs location on AWS EMR</title>
+      <link>https://ox0spy.github.io/post/bigdata/spark-log-location-on-emr/</link>
+      <pubDate>Thu, 17 May 2018 09:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/post/bigdata/spark-log-location-on-emr/</guid>
+      <description>在 EMR 上运行 Spark 程序的流程：添加 Spark 步骤 当 Spark 报错时，AWS EMR 页面 -&amp;gt; Steps 中的 View logs 中并没有程序运行的错误日志，没有错误日志很难知道Spark 程序为什么运</description>
+    </item>
     
     <item>
       <title>Spark with AWS S3 support</title>

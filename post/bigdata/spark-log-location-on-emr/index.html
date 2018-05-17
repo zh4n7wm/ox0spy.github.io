@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title> - wiseturtles&#39;s team blog</title>
+  <title>Spark logs location on AWS EMR - wiseturtles&#39;s team blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="ox0spy" />
-  <meta name="description" content="MMM MySQL高可用集群之MySQL-MMM" />
+  <meta name="description" content="在 EMR 上运行 Spark 程序的流程：添加 Spark 步骤 当 Spark 报错时，AWS EMR 页面 -&amp;gt; Steps 中的 View logs 中并没有程序运行的错误日志，没有错误日志很难知道Spark 程序为什么运" />
 
   <meta name="keywords" content="Hugo, theme, even" />
 
@@ -29,7 +29,7 @@
 <meta name="generator" content="Hugo 0.32-DEV" />
 
 
-<link rel="canonical" href="https://ox0spy.github.io/post/mysql/mysql-cluster/" />
+<link rel="canonical" href="https://ox0spy.github.io/post/bigdata/spark-log-location-on-emr/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -44,10 +44,16 @@
 <link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
 <link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
-<meta property="og:title" content="" />
-<meta property="og:description" content="MMM MySQL高可用集群之MySQL-MMM" />
+<meta property="og:title" content="Spark logs location on AWS EMR" />
+<meta property="og:description" content="在 EMR 上运行 Spark 程序的流程：添加 Spark 步骤 当 Spark 报错时，AWS EMR 页面 -&gt; Steps 中的 View logs 中并没有程序运行的错误日志，没有错误日志很难知道Spark 程序为什么运" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/mysql/mysql-cluster/" />
+<meta property="og:url" content="https://ox0spy.github.io/post/bigdata/spark-log-location-on-emr/" />
+
+
+
+<meta property="article:published_time" content="2018-05-17T09:22:01&#43;08:00"/>
+
+<meta property="article:modified_time" content="2018-05-17T09:22:01&#43;08:00"/>
 
 
 
@@ -59,23 +65,19 @@
 
 
 
+<meta itemprop="name" content="Spark logs location on AWS EMR">
+<meta itemprop="description" content="在 EMR 上运行 Spark 程序的流程：添加 Spark 步骤 当 Spark 报错时，AWS EMR 页面 -&gt; Steps 中的 View logs 中并没有程序运行的错误日志，没有错误日志很难知道Spark 程序为什么运">
+
+
+<meta itemprop="datePublished" content="2018-05-17T09:22:01&#43;08:00" />
+<meta itemprop="dateModified" content="2018-05-17T09:22:01&#43;08:00" />
+<meta itemprop="wordCount" content="146">
 
 
 
-
-
-<meta itemprop="name" content="">
-<meta itemprop="description" content="MMM MySQL高可用集群之MySQL-MMM">
-
-
-
-<meta itemprop="wordCount" content="21">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="MMM MySQL高可用集群之MySQL-MMM"/>
+<meta itemprop="keywords" content="aws, emr,bigdata,spark," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Spark logs location on AWS EMR"/>
+<meta name="twitter:description" content="在 EMR 上运行 Spark 程序的流程：添加 Spark 步骤 当 Spark 报错时，AWS EMR 页面 -&gt; Steps 中的 View logs 中并没有程序运行的错误日志，没有错误日志很难知道Spark 程序为什么运"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -138,13 +140,13 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title"></h1>
+      <h1 class="post-title">Spark logs location on AWS EMR</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 0001-01-01 </span>
+        <span class="post-time"> 2018-05-17 </span>
         <div class="post-category">
             
-              <a href="/categories/mysql/"> mysql </a>
+              <a href="/categories/bigdata/"> bigdata </a>
             
           </div>
         
@@ -157,29 +159,24 @@
   <h2 class="post-toc-title">文章目录</h2>
   
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#mmm">MMM</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
+    
   </div>
 </div>
 
     
     <div class="post-content">
-      
+      <p>在 EMR 上运行 Spark 程序的流程：<a href="https://docs.aws.amazon.com/zh_cn/emr/latest/ReleaseGuide/emr-spark-submit-step.html">添加 Spark 步骤</a></p>
 
-<h3 id="mmm">MMM</h3>
+<p>当 Spark 报错时，AWS EMR 页面 -&gt; Steps 中的 <code>View logs</code> 中并没有程序运行的错误日志，没有错误日志很难知道Spark 程序为什么运行失败了。</p>
+
+<p>查看Spark logs:</p>
 
 <ul>
-<li><a href="https://yq.aliyun.com/articles/38718">MySQL高可用集群之MySQL-MMM</a></li>
+<li>登陆emr slave/node: <code>/mnt/var/log/hadoop-yarn/containers/application_ID/container_ID/{stdout, stderr}</code></li>
+<li>Resource Manager 的 web 接口：<a href="https://docs.aws.amazon.com/zh_cn/emr/latest/ManagementGuide/emr-web-interfaces.html">查看 Amazon EMR 集群上托管的 Web 界面</a></li>
 </ul>
+
+<p>只要知道的如何查看错误日志，怎么解决运行Spark程序 或者 环境的问题就很简单了。</p>
 
     </div>
 
@@ -192,7 +189,7 @@
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">0001-01-01</span>
+    <span class="item-content">2018-05-17</span>
   </p>
   
   <p class="copyright-item">
@@ -205,19 +202,24 @@
     
 
     <footer class="post-footer">
-      
+      <div class="post-tags">
+          
+          <a href="/tags/aws/">aws</a>
+          
+          <a href="/tags/emr/"> emr</a>
+          
+          <a href="/tags/bigdata/">bigdata</a>
+          
+          <a href="/tags/spark/">spark</a>
+          
+        </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/elasticsearch/elasticsearch-forbidden-12-index-read-only-allow-delete-api/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default"></span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/java/jvm/">
-            <span class="next-text nav-default">jvm</span>
+          <a class="next" href="/post/configuration/dnscrypt-proxy-and-dnsmasq/">
+            <span class="next-text nav-default">DNSCrypt &#43; dnsmasq</span>
             <span class="prev-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

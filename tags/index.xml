@@ -95,7 +95,7 @@
     <item>
       <title>Aws</title>
       <link>https://ox0spy.github.io/tags/aws/</link>
-      <pubDate>Fri, 09 Feb 2018 18:06:00 +0800</pubDate>
+      <pubDate>Thu, 17 May 2018 09:22:01 +0800</pubDate>
       
       <guid>https://ox0spy.github.io/tags/aws/</guid>
       <description></description>
@@ -131,7 +131,7 @@
     <item>
       <title>Bigdata</title>
       <link>https://ox0spy.github.io/tags/bigdata/</link>
-      <pubDate>Tue, 16 Jan 2018 15:34:00 +0800</pubDate>
+      <pubDate>Thu, 17 May 2018 09:22:01 +0800</pubDate>
       
       <guid>https://ox0spy.github.io/tags/bigdata/</guid>
       <description></description>
@@ -269,6 +269,15 @@
       <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
       
       <guid>https://ox0spy.github.io/tags/elk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Emr</title>
+      <link>https://ox0spy.github.io/tags/emr/</link>
+      <pubDate>Thu, 17 May 2018 09:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/emr/</guid>
       <description></description>
     </item>
     
@@ -923,7 +932,7 @@
     <item>
       <title>Spark</title>
       <link>https://ox0spy.github.io/tags/spark/</link>
-      <pubDate>Tue, 16 Jan 2018 15:34:00 +0800</pubDate>
+      <pubDate>Thu, 17 May 2018 09:22:01 +0800</pubDate>
       
       <guid>https://ox0spy.github.io/tags/spark/</guid>
       <description></description>
