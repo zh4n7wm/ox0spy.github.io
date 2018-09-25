@@ -6,6 +6,7 @@
     <description>Recent content in Idea on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <lastBuildDate>Sat, 22 Sep 2018 14:06:00 +0800</lastBuildDate>
     
 	<atom:link href="https://ox0spy.github.io/categories/idea/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +14,7 @@
     <item>
       <title>code formatter with ide</title>
       <link>https://ox0spy.github.io/post/java/code-formatter-with-ide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 22 Sep 2018 14:06:00 +0800</pubDate>
       
       <guid>https://ox0spy.github.io/post/java/code-formatter-with-ide/</guid>
       <description>代码格式化 导入 Google java code style xml 配置 从 google style guide 下载配置文件。 IDEA Intellij 下载 intellij-java-google-style.xml IDEA -&amp;gt; Preferences -&amp;gt; Editor -&amp;gt; Code Style -&amp;gt; Java，Scheme -&amp;gt; Import Scheme -&amp;gt; Intellij IDEA code style xml，选择下载的 intellij-java-google-style.xml 文件</description>

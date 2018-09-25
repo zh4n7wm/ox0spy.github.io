@@ -3,8 +3,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ox0spy.github.io/post/java/liquibase-database-migration/</loc>
+    <lastmod>2018-09-25T21:06:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/post/java/code-formatter-with-ide/</loc>
+    <lastmod>2018-09-22T14:06:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/jenkins/jenkins-tips/</loc>
     <lastmod>2018-09-22T10:06:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/post/java/jvm/</loc>
+    <lastmod>2018-09-20T10:06:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -972,6 +993,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/categories/database/</loc>
+    <lastmod>2018-09-25T21:06:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1020,6 +1042,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/categories/eclipse/</loc>
+    <lastmod>2018-09-22T14:06:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1234,6 +1257,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/categories/idea/</loc>
+    <lastmod>2018-09-22T14:06:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1275,7 +1299,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/categories/java/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <lastmod>2018-09-25T21:06:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1345,6 +1369,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/categories/liquibase/</loc>
+    <lastmod>2018-09-25T21:06:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1400,6 +1425,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/categories/migration/</loc>
+    <lastmod>2018-09-25T21:06:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1566,7 +1592,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/post/</loc>
-    <lastmod>2018-09-22T10:06:00+08:00</lastmod>
+    <lastmod>2018-09-25T21:06:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1936,24 +1962,6 @@
   </url>
   
   <url>
-    <loc>https://ox0spy.github.io/post/java/code-formatter-with-ide/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/post/java/jvm/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/post/java/liquibase-database-migration/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://ox0spy.github.io/post/mac-osx/mac-tips/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1973,7 +1981,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/</loc>
-    <lastmod>2018-09-22T10:06:00+08:00</lastmod>
+    <lastmod>2018-09-25T21:06:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

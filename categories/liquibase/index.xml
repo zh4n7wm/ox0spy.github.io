@@ -6,6 +6,7 @@
     <description>Recent content in Liquibase on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <lastBuildDate>Tue, 25 Sep 2018 21:06:00 +0800</lastBuildDate>
     
 	<atom:link href="https://ox0spy.github.io/categories/liquibase/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +14,7 @@
     <item>
       <title>liquibase for Java database migration</title>
       <link>https://ox0spy.github.io/post/java/liquibase-database-migration/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 25 Sep 2018 21:06:00 +0800</pubDate>
       
       <guid>https://ox0spy.github.io/post/java/liquibase-database-migration/</guid>
       <description>维护项目中的数据库 schema 简介 团队开发项目时，每个人都有可能修改数据库表的结构，但不同人修改了表结构后，如何确保修改记录的同步？ 也许让所有人维护一</description>

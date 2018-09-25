@@ -6,10 +6,37 @@
     <description>Recent content in Java on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 15 Dec 2017 19:22:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 25 Sep 2018 21:06:00 +0800</lastBuildDate>
     
 	<atom:link href="https://ox0spy.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>liquibase for Java database migration</title>
+      <link>https://ox0spy.github.io/post/java/liquibase-database-migration/</link>
+      <pubDate>Tue, 25 Sep 2018 21:06:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/post/java/liquibase-database-migration/</guid>
+      <description>维护项目中的数据库 schema 简介 团队开发项目时，每个人都有可能修改数据库表的结构，但不同人修改了表结构后，如何确保修改记录的同步？ 也许让所有人维护一</description>
+    </item>
+    
+    <item>
+      <title>code formatter with ide</title>
+      <link>https://ox0spy.github.io/post/java/code-formatter-with-ide/</link>
+      <pubDate>Sat, 22 Sep 2018 14:06:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/post/java/code-formatter-with-ide/</guid>
+      <description>代码格式化 导入 Google java code style xml 配置 从 google style guide 下载配置文件。 IDEA Intellij 下载 intellij-java-google-style.xml IDEA -&amp;gt; Preferences -&amp;gt; Editor -&amp;gt; Code Style -&amp;gt; Java，Scheme -&amp;gt; Import Scheme -&amp;gt; Intellij IDEA code style xml，选择下载的 intellij-java-google-style.xml 文件</description>
+    </item>
+    
+    <item>
+      <title>jvm</title>
+      <link>https://ox0spy.github.io/post/java/jvm/</link>
+      <pubDate>Thu, 20 Sep 2018 10:06:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/post/java/jvm/</guid>
+      <description>Java options JAVA_OPTIONS=&amp;ldquo;-server -XX:+AggressiveOpts -XX:+UseFastAccessorMethods -Xms1096m -Xmx1096m&amp;rdquo; if [[ &amp;ldquo;gcprof&amp;rdquo; == &amp;ldquo;$1&amp;rdquo; ]]; then JAVA_OPTIONS=&amp;ldquo;$JAVA_OPTIONS -Xloggc:gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps&amp;rdquo; shift fi JVM GC GC专家系列目录索引 深入理解JVM 火焰图 白话火焰图 Java火焰图 SCALE13x: Linux Profiling at Netflix Java in Flames CPU Flame Graphs</description>
+    </item>
     
     <item>
       <title>java spring 学习索引</title>
@@ -27,33 +54,6 @@
       
       <guid>https://ox0spy.github.io/post/java/maven-tomcat-jetty-run/</guid>
       <description>记录下如何在pom.xml中配置插件，通过tomcat、Jetty运行项目. 配置pom.xml &amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.tomcat.maven&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;tomcat6-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.2&amp;lt;/version&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.tomcat.maven&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;tomcat7-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.2&amp;lt;/version&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.mortbay.jetty&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jetty-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt; 测试 Maven Tomcat plugin</description>
-    </item>
-    
-    <item>
-      <title>code formatter with ide</title>
-      <link>https://ox0spy.github.io/post/java/code-formatter-with-ide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ox0spy.github.io/post/java/code-formatter-with-ide/</guid>
-      <description>代码格式化 导入 Google java code style xml 配置 从 google style guide 下载配置文件。 IDEA Intellij 下载 intellij-java-google-style.xml IDEA -&amp;gt; Preferences -&amp;gt; Editor -&amp;gt; Code Style -&amp;gt; Java，Scheme -&amp;gt; Import Scheme -&amp;gt; Intellij IDEA code style xml，选择下载的 intellij-java-google-style.xml 文件</description>
-    </item>
-    
-    <item>
-      <title>jvm</title>
-      <link>https://ox0spy.github.io/post/java/jvm/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ox0spy.github.io/post/java/jvm/</guid>
-      <description>Java options JAVA_OPTIONS=&amp;ldquo;-server -XX:+AggressiveOpts -XX:+UseFastAccessorMethods -Xms1096m -Xmx1096m&amp;rdquo; if [[ &amp;ldquo;gcprof&amp;rdquo; == &amp;ldquo;$1&amp;rdquo; ]]; then JAVA_OPTIONS=&amp;ldquo;$JAVA_OPTIONS -Xloggc:gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps&amp;rdquo; shift fi JVM GC GC专家系列目录索引 深入理解JVM 火焰图 白话火焰图 Java火焰图 SCALE13x: Linux Profiling at Netflix Java in Flames CPU Flame Graphs</description>
-    </item>
-    
-    <item>
-      <title>liquibase for Java database migration</title>
-      <link>https://ox0spy.github.io/post/java/liquibase-database-migration/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ox0spy.github.io/post/java/liquibase-database-migration/</guid>
-      <description>维护项目中的数据库 schema 简介 团队开发项目时，每个人都有可能修改数据库表的结构，但不同人修改了表结构后，如何确保修改记录的同步？ 也许让所有人维护一</description>
     </item>
     
   </channel>
