@@ -38,6 +38,13 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/post/elasticsearch/elasticsearch-forbidden-12-index-read-only-allow-delete-api/</loc>
+    <lastmod>2018-07-22T14:06:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/bigdata/spark-log-location-on-emr/</loc>
     <lastmod>2018-05-17T09:22:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -778,12 +785,6 @@
   </url>
   
   <url>
-    <loc>https://ox0spy.github.io/post/elasticsearch/elasticsearch-forbidden-12-index-read-only-allow-delete-api/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://ox0spy.github.io/post/mysql/mysql-cluster/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1056,7 +1057,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/categories/elasticsearch/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <lastmod>2018-07-22T14:06:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

@@ -52,7 +52,7 @@
 
 
 
-<meta property="og:updated_time" content="2014-06-26T00:00:00&#43;08:00"/>
+<meta property="og:updated_time" content="2014-07-01T00:00:00&#43;08:00"/>
 
 
 
@@ -131,6 +131,27 @@
   <section id="posts" class="posts">
     
     
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/configuration/setup-haproxy-and-keepalived-on-debian-wheezy/">setup haproxy and keepalived on debian (wheezy)</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2014-07-01 </span>
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      准备机器 harpoxy_MASTER - 172.16.8.129 haproxy_BACKUP - 172.16.8.130 WEB_APP_SERVER_1 - 172.16.8.131 WEB_APP_SERVER_2 - 172.16.8.132 注: 1. virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP) 2. 所有机器都安装的Debian 7.5 (wheezy) 安装
+    </div>
+    <div class="read-more">
+      <a href="/post/configuration/setup-haproxy-and-keepalived-on-debian-wheezy/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
     
       <article class="post">
   <header class="post-header">
@@ -388,31 +409,6 @@ wget --save-cookies cookies.txt \ --post-data 'user=foo&amp;password=bar' \ http
     </div>
     <div class="read-more">
       <a href="/post/data-science/pydata/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/elasticsearch/elasticsearch-forbidden-12-index-read-only-allow-delete-api/"></a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 0001-01-01 </span>
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      由于我的 Mac OSX 硬盘基本没空间了，导致 ElasticSearch 创建索引报错了。
-ElasticSearch 报错:
-FORBIDDEN/12/index read-only / allow delete (api)  默认情况，当硬盘空间使用率超过 90% 时，ElasticSearch 就变成 read only 不允许再创建索引了。
-可以修改一些参数，改变它的默认行为：(可用空间小于 1G 才变成 read only)
-$ cat /usr/local/etc/elasticsearch/elasticsearch.yml cluster.routing.allocation.disk.watermark.low: 3gb cluster.routing.allocation.disk.watermark.high: 1gb cluster.routing.allocation.disk.watermark.flood_stage: 1gb  参考链接：Disk-based Shard Allocation
-    </div>
-    <div class="read-more">
-      <a href="/post/elasticsearch/elasticsearch-forbidden-12-index-read-only-allow-delete-api/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
