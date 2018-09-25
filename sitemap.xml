@@ -3,6 +3,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ox0spy.github.io/post/jenkins/jenkins-tips/</loc>
+    <lastmod>2018-09-22T10:06:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/post/linux-commands/restore-linux-command-executable-mode/</loc>
+    <lastmod>2018-08-09T16:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/bigdata/spark-log-location-on-emr/</loc>
     <lastmod>2018-05-17T09:22:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -957,6 +971,12 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/categories/database/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/tags/debian/</loc>
     <lastmod>2017-12-15T19:22:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -994,6 +1014,12 @@
   <url>
     <loc>https://ox0spy.github.io/tags/ec2/</loc>
     <lastmod>2017-12-15T19:21:57+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/eclipse/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1207,6 +1233,12 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/categories/idea/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/tags/install/</loc>
     <lastmod>2017-12-15T19:21:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1250,7 +1282,14 @@
   
   <url>
     <loc>https://ox0spy.github.io/tags/jenkins/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <lastmod>2018-09-22T10:06:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/jenkins/</loc>
+    <lastmod>2018-09-22T10:06:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1292,7 +1331,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/categories/linux/</loc>
-    <lastmod>2013-08-06T00:00:00+08:00</lastmod>
+    <lastmod>2018-08-09T16:21:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1300,6 +1339,12 @@
   <url>
     <loc>https://ox0spy.github.io/categories/linux-commands/</loc>
     <lastmod>2017-12-15T19:21:57+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/liquibase/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1349,6 +1394,12 @@
   <url>
     <loc>https://ox0spy.github.io/tags/maven/</loc>
     <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/migration/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1515,7 +1566,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/post/</loc>
-    <lastmod>2018-05-17T09:22:01+08:00</lastmod>
+    <lastmod>2018-09-22T10:06:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1885,7 +1936,19 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/post/java/code-formatter-with-ide/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/java/jvm/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/post/java/liquibase-database-migration/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1910,7 +1973,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/</loc>
-    <lastmod>2018-05-17T09:22:01+08:00</lastmod>
+    <lastmod>2018-09-22T10:06:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

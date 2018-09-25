@@ -6,10 +6,19 @@
     <description>Recent content in Linux on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 06 Aug 2013 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 09 Aug 2018 16:21:59 +0800</lastBuildDate>
     
 	<atom:link href="https://ox0spy.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>复恢Linux命令的执行权限</title>
+      <link>https://ox0spy.github.io/post/linux-commands/restore-linux-command-executable-mode/</link>
+      <pubDate>Thu, 09 Aug 2018 16:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/post/linux-commands/restore-linux-command-executable-mode/</guid>
+      <description>问题：linux服务器上/bin,/sbin,/usr/bin目录下所有文件都被执行了chmod -x，但是bash窗口还在，并且是sudo权</description>
+    </item>
     
     <item>
       <title>Bash Multiprocess</title>

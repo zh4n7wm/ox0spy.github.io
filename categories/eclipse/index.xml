@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eclipse on wiseturtles&#39;s team blog</title>
+    <link>https://ox0spy.github.io/categories/eclipse/</link>
+    <description>Recent content in Eclipse on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    
+	<atom:link href="https://ox0spy.github.io/categories/eclipse/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>code formatter with ide</title>
+      <link>https://ox0spy.github.io/post/java/code-formatter-with-ide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ox0spy.github.io/post/java/code-formatter-with-ide/</guid>
+      <description>代码格式化 导入 Google java code style xml 配置 从 google style guide 下载配置文件。 IDEA Intellij 下载 intellij-java-google-style.xml IDEA -&amp;gt; Preferences -&amp;gt; Editor -&amp;gt; Code Style -&amp;gt; Java，Scheme -&amp;gt; Import Scheme -&amp;gt; Intellij IDEA code style xml，选择下载的 intellij-java-google-style.xml 文件</description>
+    </item>
+    
+  </channel>
+</rss>

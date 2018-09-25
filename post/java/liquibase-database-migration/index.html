@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>liquibase for Java database migration - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ox0spy" />
+  <meta name="description" content="维护项目中的数据库 schema 简介 团队开发项目时，每个人都有可能修改数据库表的结构，但不同人修改了表结构后，如何确保修改记录的同步？ 也许让所有人维护一" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+<meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="https://ox0spy.github.io/post/java/liquibase-database-migration/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="liquibase for Java database migration" />
+<meta property="og:description" content="维护项目中的数据库 schema 简介 团队开发项目时，每个人都有可能修改数据库表的结构，但不同人修改了表结构后，如何确保修改记录的同步？ 也许让所有人维护一" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ox0spy.github.io/post/java/liquibase-database-migration/" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="liquibase for Java database migration">
+<meta itemprop="description" content="维护项目中的数据库 schema 简介 团队开发项目时，每个人都有可能修改数据库表的结构，但不同人修改了表结构后，如何确保修改记录的同步？ 也许让所有人维护一">
+
+
+
+<meta itemprop="wordCount" content="919">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="liquibase for Java database migration"/>
+<meta name="twitter:description" content="维护项目中的数据库 schema 简介 团队开发项目时，每个人都有可能修改数据库表的结构，但不同人修改了表结构后，如何确保修改记录的同步？ 也许让所有人维护一"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">liquibase for Java database migration</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 0001-01-01 </span>
+        <div class="post-category">
+            
+              <a href="/categories/java/"> java </a>
+            
+              <a href="/categories/database/"> database </a>
+            
+              <a href="/categories/migration/"> migration </a>
+            
+              <a href="/categories/liquibase/"> liquibase </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#维护项目中的数据库-schema">维护项目中的数据库 schema</a>
+<ul>
+<li><a href="#简介">简介</a>
+<ul>
+<li><a href="#安装-liquibase-命令行工具-如果在命令行使用才需要安装">安装 Liquibase 命令行工具：(如果在命令行使用才需要安装)</a></li>
+</ul></li>
+<li><a href="#通过-maven-plugin-集成到项目中使用">通过 Maven plugin 集成到项目中使用</a>
+<ul>
+<li><a href="#liquibase-配置">liquibase 配置</a>
+<ul>
+<li><a href="#changelog-文件">changelog 文件</a></li>
+</ul></li>
+<li><a href="#更新数据库">更新数据库</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#参考文档">参考文档</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h2 id="维护项目中的数据库-schema">维护项目中的数据库 schema</h2>
+
+<h3 id="简介">简介</h3>
+
+<p>团队开发项目时，每个人都有可能修改数据库表的结构，但不同人修改了表结构后，如何确保修改记录的同步？</p>
+
+<p>也许让所有人维护一个 SQL 文件，所有人修改表结构时都要修改、提交 该 SQL 文件记录。</p>
+
+<p>应该能起到一定作用，但想回退数据库又比较麻烦了。</p>
+
+<p>一些项目已经能协助我们完成该工作，Java 世界最流行的应该是下面两个：</p>
+
+<ul>
+<li><a href="https://www.liquibase.org/">Liquibase</a></li>
+<li><a href="https://flywaydb.org/">Flywaydb</a></li>
+</ul>
+
+<p>本文只介绍 Liquibase。</p>
+
+<h4 id="安装-liquibase-命令行工具-如果在命令行使用才需要安装">安装 Liquibase 命令行工具：(如果在命令行使用才需要安装)</h4>
+
+<pre><code>$ brew install liquibase
+</code></pre>
+
+<h3 id="通过-maven-plugin-集成到项目中使用">通过 Maven plugin 集成到项目中使用</h3>
+
+<p>通过 Maven plugin 集成到项目中，方便使用。</p>
+
+<p>在 pom.xm 中添加：</p>
+
+<pre><code>&lt;plugin&gt;
+    &lt;groupId&gt;org.liquibase&lt;/groupId&gt;
+    &lt;artifactId&gt;liquibase-maven-plugin&lt;/artifactId&gt;
+    &lt;version&gt;3.6.2&lt;/version&gt;
+    &lt;configuration&gt;
+        &lt;verbose&gt;true&lt;/verbose&gt;
+        &lt;propertyFile&gt;${basedir}/src/main/resources/liquibase/liquibase.properties&lt;/propertyFile&gt;
+        &lt;changeLogFile&gt;${basedir}/src/main/resources/liquibase/db.changelog.xml&lt;/changeLogFile&gt;
+        &lt;outputChangeLogFile&gt;${basedir}/src/main/resources/liquibase/output.xml&lt;/outputChangeLogFile&gt;
+        &lt;promptOnNonLocalDatabase&gt;false&lt;/promptOnNonLocalDatabase&gt;
+    &lt;/configuration&gt;
+&lt;/plugin&gt;
+</code></pre>
+
+<h4 id="liquibase-配置">liquibase 配置</h4>
+
+<p>liquibase 配置文件：<code>${basedir}/src/main/resources/liquibase/liquibase.properties</code></p>
+
+<p>让 liquibase 知道如何连接数据库，内容如下：（liquibase支持很多数据库，我用MySQL做测试）</p>
+
+<pre><code>driver=com.mysql.jdbc.Driver
+url=jdbc:MySQL://localhost:3306/testdb?createDatabaseIfNotExist=true
+username=mysql-username
+password=mysql-password
+</code></pre>
+
+<p>注：testdb 是本文的测试库，根据自己实际情况设置</p>
+
+<p>changelog 配置文件：<code>${basedir}/src/main/resources/liquibase/db.changelog.xml</code></p>
+
+<p>该文件记录了数据库变更，liquibase 将数据库变更更新到数据库中，文件内容如下：</p>
+
+<pre><code>&lt;?xml version=&quot;1.1&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
+&lt;databaseChangeLog xmlns=&quot;http://www.liquibase.org/xml/ns/dbchangelog&quot; xmlns:ext=&quot;http://www.liquibase.org/xml/ns/dbchangelog-ext&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd&quot;&gt;
+&lt;include file=&quot;src/main/resources/liquibase/changelog/initial.xml&quot; relativeToChangelogFile=&quot;false&quot;/&gt;
+&lt;include file=&quot;src/main/resources/liquibase/changelog/add-new-table-just_test.xml&quot; relativeToChangelogFile=&quot;false&quot;/&gt;
+&lt;/databaseChangeLog&gt;
+</code></pre>
+
+<h5 id="changelog-文件">changelog 文件</h5>
+
+<p>changelog 文件支持多种书写语法，下面是它自己的 dsl 语法：</p>
+
+<p><code>&lt;include file=&quot;src/main/resources/liquibase/changelog/initial.xml&quot; relativeToChangelogFile=&quot;false&quot;/&gt;</code>，引入一个变更文件。</p>
+
+<pre><code>$ cat src/main/resources/liquibase/changelog/initial.xml
+&lt;?xml version=&quot;1.1&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
+&lt;databaseChangeLog xmlns=&quot;http://www.liquibase.org/xml/ns/dbchangelog&quot; xmlns:ext=&quot;http://www.liquibase.org/xml/ns/dbchangelog-ext&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd&quot;&gt;
+    &lt;changeSet id=&quot;add-new-table-just_test&quot; author=&quot;wm&quot;&gt;
+        &lt;createTable tableName=&quot;just_test&quot;&gt;
+            &lt;column autoIncrement=&quot;true&quot; name=&quot;id&quot; type=&quot;BIGINT&quot;&gt;
+                &lt;constraints primaryKey=&quot;true&quot;/&gt;
+            &lt;/column&gt;
+            &lt;column name=&quot;name&quot; remarks=&quot;用户名&quot; type=&quot;VARCHAR(255)&quot;/&gt;
+        &lt;/createTable&gt;
+        &lt;rollback&gt; &lt;!-- 回滚操作 --&gt;
+            &lt;dropTable tableName=&quot;just_test&quot; /&gt;
+        &lt;/rollback&gt;
+    &lt;/changeSet&gt;
+&lt;/databaseChangeLog&gt;
+</code></pre>
+
+<p>changelog 同时支持 SQL 语句书写：</p>
+
+<pre><code>$ cat src/main/resources/liquibase/changelog/initial.xml
+&lt;?xml version=&quot;1.1&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
+&lt;databaseChangeLog xmlns=&quot;http://www.liquibase.org/xml/ns/dbchangelog&quot; xmlns:ext=&quot;http://www.liquibase.org/xml/ns/dbchangelog-ext&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd&quot;&gt;
+    &lt;changeSet id=&quot;add-new-table-just_test&quot; author=&quot;wm&quot;&gt;
+        &lt;sql&gt;
+            CREATE TABLE just_test ( id bigint(20) NOT NULL AUTO_INCREMENT, name varchar(255) DEFAULT NULL COMMENT '用户名', PRIMARY KEY (`id`));
+        &lt;/sql&gt;
+        &lt;rollback&gt; &lt;!-- 回滚操作 --&gt;
+            &lt;sql&gt;
+                DROP TABLE just_test;
+            &lt;/sql&gt;
+        &lt;/rollback&gt;
+    &lt;/changeSet&gt;
+&lt;/databaseChangeLog&gt;
+</code></pre>
+
+<h4 id="更新数据库">更新数据库</h4>
+
+<p>通过上面的配置，就可以更新数据库了。</p>
+
+<p>generateChangeLog 命令，可以将当前数据库的schema导出为 changelog 文件，适用于已经存在的项目。</p>
+
+<pre><code>$ mvn -X liquibase:generateChangeLog
+</code></pre>
+
+<p>update 命令，将所有 changeset 更新到数据库：</p>
+
+<pre><code>$ mvn liquibase:update
+</code></pre>
+
+<p>tag 命令，标记 checkpoint，方便未来回滚到指定 checkpoint</p>
+
+<pre><code>$ mvn liquibase:tag -Dliquibase.tag=checkpoint
+</code></pre>
+
+<p>rollback 回滚命令，将数据库中的一些 changeset 回滚：</p>
+
+<pre><code>$ mvn liquibase:rollback -Dliquibase.rollbackCount=1  # 回滚最后一次 changeset
+
+$ mvn liquibase:rollback -Dliquibase.rollbackTag=checkpoint  # 回滚到指定 checkpoint
+</code></pre>
+
+<p>注：命令后面带 <code>SQL</code> 意思是生成对应的 SQL 语句</p>
+
+<h2 id="参考文档">参考文档</h2>
+
+<ul>
+<li><a href="https://blog.smaato.com/how-to-execute-database-migrations-with-liquibase">How To Execute Database Migrations With Liquibase</a></li>
+</ul>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ox0spy</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">0001-01-01</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/java/jvm/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">jvm</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/mac-osx/mac-tips/">
+            <span class="next-text nav-default">mac osx tips</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'ox0spy';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com/" class="dsq-brlink" target="_blank">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="https://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-42986901-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>
