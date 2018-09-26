@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>liquibase for Java database migration - wiseturtles&#39;s team blog</title>
+  <title>liquibase with Maven support multiply deploy environments - wiseturtles&#39;s team blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="ox0spy" />
-  <meta name="description" content="维护项目中的数据库 schema 简介 团队开发项目时，每个人都有可能修改数据库表的结构，但不同人修改了表结构后，如何确保修改记录的同步？ 也许让所有人维护一" />
+  <meta name="description" content="Liquibase 简介 Liquibase is an open-source database-independent library for tracking, managing and applying database schema changes. It was started in 2006 to allow easier tracking of database changes, especially in an agile software development environment. 方便管理、维护数据库 schema 变化。 Maven 集成 Liquibase 目录结构 |-- pom.xml `-- src `-- main |-- resources | `-- liquibase.properties |" />
 
   <meta name="keywords" content="Hugo, theme, even" />
 
@@ -29,7 +29,7 @@
 <meta name="generator" content="Hugo 0.32-DEV" />
 
 
-<link rel="canonical" href="https://ox0spy.github.io/post/java/liquibase-database-migration/" />
+<link rel="canonical" href="https://ox0spy.github.io/post/java/liquibase-with-maven-multi-deploy-environments/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -44,20 +44,16 @@
 <link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
 <link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
-<meta property="og:title" content="liquibase for Java database migration" />
-<meta property="og:description" content="维护项目中的数据库 schema 简介 团队开发项目时，每个人都有可能修改数据库表的结构，但不同人修改了表结构后，如何确保修改记录的同步？ 也许让所有人维护一" />
+<meta property="og:title" content="liquibase with Maven support multiply deploy environments" />
+<meta property="og:description" content="Liquibase 简介 Liquibase is an open-source database-independent library for tracking, managing and applying database schema changes. It was started in 2006 to allow easier tracking of database changes, especially in an agile software development environment. 方便管理、维护数据库 schema 变化。 Maven 集成 Liquibase 目录结构 |-- pom.xml `-- src `-- main |-- resources | `-- liquibase.properties |" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/java/liquibase-database-migration/" />
+<meta property="og:url" content="https://ox0spy.github.io/post/java/liquibase-with-maven-multi-deploy-environments/" />
 
 
 
-<meta property="article:published_time" content="2018-09-25T21:06:00&#43;08:00"/>
+<meta property="article:published_time" content="2018-09-26T10:06:00&#43;08:00"/>
 
-<meta property="article:modified_time" content="2018-09-25T21:06:00&#43;08:00"/>
-
-
-
-
+<meta property="article:modified_time" content="2018-09-26T10:06:00&#43;08:00"/>
 
 
 
@@ -65,19 +61,23 @@
 
 
 
-<meta itemprop="name" content="liquibase for Java database migration">
-<meta itemprop="description" content="维护项目中的数据库 schema 简介 团队开发项目时，每个人都有可能修改数据库表的结构，但不同人修改了表结构后，如何确保修改记录的同步？ 也许让所有人维护一">
 
 
-<meta itemprop="datePublished" content="2018-09-25T21:06:00&#43;08:00" />
-<meta itemprop="dateModified" content="2018-09-25T21:06:00&#43;08:00" />
-<meta itemprop="wordCount" content="922">
+
+
+<meta itemprop="name" content="liquibase with Maven support multiply deploy environments">
+<meta itemprop="description" content="Liquibase 简介 Liquibase is an open-source database-independent library for tracking, managing and applying database schema changes. It was started in 2006 to allow easier tracking of database changes, especially in an agile software development environment. 方便管理、维护数据库 schema 变化。 Maven 集成 Liquibase 目录结构 |-- pom.xml `-- src `-- main |-- resources | `-- liquibase.properties |">
+
+
+<meta itemprop="datePublished" content="2018-09-26T10:06:00&#43;08:00" />
+<meta itemprop="dateModified" content="2018-09-26T10:06:00&#43;08:00" />
+<meta itemprop="wordCount" content="768">
 
 
 
 <meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="liquibase for Java database migration"/>
-<meta name="twitter:description" content="维护项目中的数据库 schema 简介 团队开发项目时，每个人都有可能修改数据库表的结构，但不同人修改了表结构后，如何确保修改记录的同步？ 也许让所有人维护一"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="liquibase with Maven support multiply deploy environments"/>
+<meta name="twitter:description" content="Liquibase 简介 Liquibase is an open-source database-independent library for tracking, managing and applying database schema changes. It was started in 2006 to allow easier tracking of database changes, especially in an agile software development environment. 方便管理、维护数据库 schema 变化。 Maven 集成 Liquibase 目录结构 |-- pom.xml `-- src `-- main |-- resources | `-- liquibase.properties |"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -140,10 +140,10 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">liquibase for Java database migration</h1>
+      <h1 class="post-title">liquibase with Maven support multiply deploy environments</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2018-09-25 </span>
+        <span class="post-time"> 2018-09-26 </span>
         <div class="post-category">
             
               <a href="/categories/java/"> java </a>
@@ -169,22 +169,21 @@
 <ul>
 <li>
 <ul>
-<li><a href="#维护项目中的数据库-schema">维护项目中的数据库 schema</a>
+<li><a href="#liquibase-简介">Liquibase 简介</a></li>
+<li><a href="#maven-集成-liquibase">Maven 集成 Liquibase</a>
 <ul>
-<li><a href="#简介">简介</a>
+<li><a href="#pom-xml-配置文件">pom.xml 配置文件</a></li>
+<li><a href="#src-main-filters-目录里的配置文件">src/main/filters 目录里的配置文件</a></li>
+<li><a href="#src-main-resources-liquibase-properties-配置文件">src/main/resources/liquibase.properties 配置文件</a></li>
+<li><a href="#changelog-xml-文件">changelog xml 文件</a></li>
+<li><a href="#管理-schema">管理 schema</a>
 <ul>
-<li><a href="#安装-liquibase-命令行工具-如果在命令行使用才需要安装">安装 Liquibase 命令行工具：(如果在命令行使用才需要安装)</a></li>
-</ul></li>
-<li><a href="#通过-maven-plugin-集成到项目中使用">通过 Maven plugin 集成到项目中使用</a>
-<ul>
-<li><a href="#liquibase-配置">liquibase 配置</a>
-<ul>
-<li><a href="#changelog-文件">changelog 文件</a></li>
-</ul></li>
-<li><a href="#更新数据库">更新数据库</a></li>
+<li><a href="#将-changelog-xml-中的更新应用到数据库">将 changelog xml 中的更新应用到数据库</a></li>
+<li><a href="#将数据库schema-生成-changelog-xml">将数据库schema 生成 changelog xml</a></li>
+<li><a href="#标记-checkpoint">标记 checkpoint</a></li>
+<li><a href="#回滚数据库-schema-修改">回滚数据库 schema 修改</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#参考文档">参考文档</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -195,83 +194,124 @@
     <div class="post-content">
       
 
-<h2 id="维护项目中的数据库-schema">维护项目中的数据库 schema</h2>
+<h2 id="liquibase-简介">Liquibase 简介</h2>
 
-<h3 id="简介">简介</h3>
+<blockquote>
+<p>Liquibase is an open-source database-independent library for tracking, managing and applying database schema changes. It was started in 2006 to allow easier tracking of database changes, especially in an agile software development environment.</p>
+</blockquote>
 
-<p>团队开发项目时，每个人都有可能修改数据库表的结构，但不同人修改了表结构后，如何确保修改记录的同步？</p>
+<p>方便管理、维护数据库 schema 变化。</p>
 
-<p>也许让所有人维护一个 SQL 文件，所有人修改表结构时都要修改、提交 该 SQL 文件记录。</p>
+<h2 id="maven-集成-liquibase">Maven 集成 Liquibase</h2>
 
-<p>应该能起到一定作用，但想回退数据库又比较麻烦了。</p>
+<p>目录结构</p>
 
-<p>一些项目已经能协助我们完成该工作，Java 世界最流行的应该是下面两个：</p>
-
-<ul>
-<li><a href="https://www.liquibase.org/">Liquibase</a></li>
-<li><a href="https://flywaydb.org/">Flywaydb</a></li>
-</ul>
-
-<p>本文只介绍 Liquibase。</p>
-
-<h4 id="安装-liquibase-命令行工具-如果在命令行使用才需要安装">安装 Liquibase 命令行工具：(如果在命令行使用才需要安装)</h4>
-
-<pre><code>$ brew install liquibase
+<pre><code>|-- pom.xml
+`-- src
+    `-- main
+    |-- resources
+    |   `-- liquibase.properties
+    |   |-- changelog
+    |       `-- db-changelog-master.xml
+    |       `-- db-changelog-1.0.xml
+    |       `-- db-changelog-add-table-admin.xml
+    |-- filters
+        |-- dev
+        |   `-- db.properties
+        |-- prod
+        |   `-- db.properties
 </code></pre>
 
-<h3 id="通过-maven-plugin-集成到项目中使用">通过 Maven plugin 集成到项目中使用</h3>
+<h3 id="pom-xml-配置文件">pom.xml 配置文件</h3>
 
-<p>通过 Maven plugin 集成到项目中，方便使用。</p>
-
-<p>在 pom.xm 中添加：</p>
+<p>添加 liquibase-maven-plugin</p>
 
 <pre><code>&lt;plugin&gt;
     &lt;groupId&gt;org.liquibase&lt;/groupId&gt;
     &lt;artifactId&gt;liquibase-maven-plugin&lt;/artifactId&gt;
     &lt;version&gt;3.6.2&lt;/version&gt;
     &lt;configuration&gt;
-        &lt;verbose&gt;true&lt;/verbose&gt;
-        &lt;propertyFile&gt;${basedir}/src/main/resources/liquibase/liquibase.properties&lt;/propertyFile&gt;
-        &lt;changeLogFile&gt;${basedir}/src/main/resources/liquibase/db.changelog.xml&lt;/changeLogFile&gt;
-        &lt;outputChangeLogFile&gt;${basedir}/src/main/resources/liquibase/output.xml&lt;/outputChangeLogFile&gt;
-        &lt;promptOnNonLocalDatabase&gt;false&lt;/promptOnNonLocalDatabase&gt;
+        &lt;propertyFile&gt;target/classes/liquibase.properties&lt;/propertyFile&gt;
     &lt;/configuration&gt;
 &lt;/plugin&gt;
 </code></pre>
 
-<h4 id="liquibase-配置">liquibase 配置</h4>
+<p>添加 maven filters</p>
 
-<p>liquibase 配置文件：<code>${basedir}/src/main/resources/liquibase/liquibase.properties</code></p>
-
-<p>让 liquibase 知道如何连接数据库，内容如下：（liquibase支持很多数据库，我用MySQL做测试）</p>
-
-<pre><code>driver=com.mysql.jdbc.Driver
-url=jdbc:MySQL://localhost:3306/testdb?createDatabaseIfNotExist=true
-username=mysql-username
-password=mysql-password
+<pre><code>&lt;profiles&gt;
+    &lt;profile&gt;
+        &lt;id&gt;dev&lt;/id&gt;
+        &lt;activation&gt;
+        &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;
+        &lt;/activation&gt;
+        &lt;build&gt;
+        &lt;filters&gt;
+            &lt;filter&gt;src/main/filters/dev/db.properties&lt;/filter&gt;
+        &lt;/filters&gt;
+        &lt;resources&gt;
+            &lt;resource&gt;
+            &lt;directory&gt;src/main/resources&lt;/directory&gt;
+            &lt;filtering&gt;true&lt;/filtering&gt;
+            &lt;/resource&gt;
+        &lt;/resources&gt;
+        &lt;/build&gt;
+    &lt;/profile&gt;
+    &lt;profile&gt;
+        &lt;id&gt;prod&lt;/id&gt;
+        &lt;build&gt;
+        &lt;filters&gt;
+            &lt;filter&gt;src/main/filters/prod/db.properties&lt;/filter&gt;
+        &lt;/filters&gt;
+        &lt;resources&gt;
+            &lt;resource&gt;
+            &lt;directory&gt;src/main/resources&lt;/directory&gt;
+            &lt;filtering&gt;true&lt;/filtering&gt;
+            &lt;/resource&gt;
+        &lt;/resources&gt;
+        &lt;/build&gt;
+    &lt;/profile&gt;
+&lt;/profiles&gt;
 </code></pre>
 
-<p>注：testdb 是本文的测试库，根据自己实际情况设置</p>
+<h3 id="src-main-filters-目录里的配置文件">src/main/filters 目录里的配置文件</h3>
 
-<p>changelog 配置文件：<code>${basedir}/src/main/resources/liquibase/db.changelog.xml</code></p>
+<p>src/main/filters 目录结构</p>
 
-<p>该文件记录了数据库变更，liquibase 将数据库变更更新到数据库中，文件内容如下：</p>
-
-<pre><code>&lt;?xml version=&quot;1.1&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
-&lt;databaseChangeLog xmlns=&quot;http://www.liquibase.org/xml/ns/dbchangelog&quot; xmlns:ext=&quot;http://www.liquibase.org/xml/ns/dbchangelog-ext&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd&quot;&gt;
-&lt;include file=&quot;src/main/resources/liquibase/changelog/initial.xml&quot; relativeToChangelogFile=&quot;false&quot;/&gt;
-&lt;include file=&quot;src/main/resources/liquibase/changelog/add-new-table-just_test.xml&quot; relativeToChangelogFile=&quot;false&quot;/&gt;
-&lt;/databaseChangeLog&gt;
+<pre><code>src/main/filters
+├── dev
+│   └── db.properties
+└── prod
+    └── db.properties
 </code></pre>
 
-<h5 id="changelog-文件">changelog 文件</h5>
+<p>可以为不同环境创建不同的配置文件。</p>
+
+<p>src/main/filters/dev/db.properties 文件内容</p>
+
+<pre><code>database.driver=com.mysql.jdbc.Driver
+database.url=jdbc:MySQL://localhost:3306/your-dbname?createDatabaseIfNotExist=true
+database.username=dbuser
+database.password=dbpasswd
+</code></pre>
+
+<p>注：** 根据自己数据库配置，修改 db.properties **</p>
+
+<h3 id="src-main-resources-liquibase-properties-配置文件">src/main/resources/liquibase.properties 配置文件</h3>
+
+<pre><code>driver: ${database.driver}
+url: ${database.url}
+username: ${database.username}
+password: ${database.password}
+changeLogFile: changelog/db-changelog-master.xml
+outputChangeLogFile: output.xml
+verbose: true
+</code></pre>
+
+<h3 id="changelog-xml-文件">changelog xml 文件</h3>
 
 <p>changelog 文件支持多种书写语法，下面是它自己的 dsl 语法：</p>
 
-<p><code>&lt;include file=&quot;src/main/resources/liquibase/changelog/initial.xml&quot; relativeToChangelogFile=&quot;false&quot;/&gt;</code>，引入一个变更文件。</p>
-
-<pre><code>$ cat src/main/resources/liquibase/changelog/initial.xml
-&lt;?xml version=&quot;1.1&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
+<pre><code>&lt;?xml version=&quot;1.1&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
 &lt;databaseChangeLog xmlns=&quot;http://www.liquibase.org/xml/ns/dbchangelog&quot; xmlns:ext=&quot;http://www.liquibase.org/xml/ns/dbchangelog-ext&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd&quot;&gt;
     &lt;changeSet id=&quot;add-new-table-just_test&quot; author=&quot;wm&quot;&gt;
         &lt;createTable tableName=&quot;just_test&quot;&gt;
@@ -289,8 +329,7 @@ password=mysql-password
 
 <p>changelog 同时支持 SQL 语句书写：</p>
 
-<pre><code>$ cat src/main/resources/liquibase/changelog/initial.xml
-&lt;?xml version=&quot;1.1&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
+<pre><code>&lt;?xml version=&quot;1.1&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
 &lt;databaseChangeLog xmlns=&quot;http://www.liquibase.org/xml/ns/dbchangelog&quot; xmlns:ext=&quot;http://www.liquibase.org/xml/ns/dbchangelog-ext&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd&quot;&gt;
     &lt;changeSet id=&quot;add-new-table-just_test&quot; author=&quot;wm&quot;&gt;
         &lt;sql&gt;
@@ -305,40 +344,45 @@ password=mysql-password
 &lt;/databaseChangeLog&gt;
 </code></pre>
 
-<h4 id="更新数据库">更新数据库</h4>
+<p>更详细的学习changelog 语法：<a href="https://www.liquibase.org/documentation/changeset.html">https://www.liquibase.org/documentation/changeset.html</a></p>
 
-<p>通过上面的配置，就可以更新数据库了。</p>
+<h3 id="管理-schema">管理 schema</h3>
 
-<p>generateChangeLog 命令，可以将当前数据库的schema导出为 changelog 文件，适用于已经存在的项目。</p>
+<h4 id="将-changelog-xml-中的更新应用到数据库">将 changelog xml 中的更新应用到数据库</h4>
 
-<pre><code>$ mvn -X liquibase:generateChangeLog
+<p>update 命令</p>
+
+<pre><code>$ mvn resources:resources liquibase:update -Pdev  # -Pprod 使用 src/main/filters/prod/db.properties 配置连接数据库，并更新数据库 schema
 </code></pre>
 
-<p>update 命令，将所有 changeset 更新到数据库：</p>
+<h4 id="将数据库schema-生成-changelog-xml">将数据库schema 生成 changelog xml</h4>
 
-<pre><code>$ mvn liquibase:update
+<p>generateChangeLog 命令</p>
+
+<pre><code>$ mvn resources:resources liquibase:generateChangeLog -Pdev
 </code></pre>
+
+<p>** 如果项目已经开发了一段时间后才将 Liquibase 引入项目，则可以用该命令生成初始的 changelog xml。以后在这个基础上更新数据库 schema 时添加新的 changelog xml。**</p>
+
+<p>注：** 多次运行该命令将导致一个数据库 schema 被多次写入 output.xml，所以，确保运行命令前先删除 output.xml。**</p>
+
+<h4 id="标记-checkpoint">标记 checkpoint</h4>
 
 <p>tag 命令，标记 checkpoint，方便未来回滚到指定 checkpoint</p>
 
-<pre><code>$ mvn liquibase:tag -Dliquibase.tag=checkpoint
+<pre><code>$ mvn resources:resources liquibase:tag -Dliquibase.tag=checkpoint
 </code></pre>
 
-<p>rollback 回滚命令，将数据库中的一些 changeset 回滚：</p>
+<h4 id="回滚数据库-schema-修改">回滚数据库 schema 修改</h4>
 
-<pre><code>$ mvn liquibase:rollback -Dliquibase.rollbackCount=1  # 回滚最后一次 changeset
+<p>如果已经修改了数据库 schema，但又想回滚，可以通过 rollback 命令完成。</p>
 
-$ mvn liquibase:rollback -Dliquibase.rollbackTag=checkpoint  # 回滚到指定 checkpoint
+<p>rollback 命令</p>
+
+<pre><code>$ mvn resources:resources liquibase:rollback -Dliquibase.rollbackCount=1  # 回滚最后一次 changeset
+
+$ mvn resources:resources liquibase:rollback -Dliquibase.rollbackTag=checkpoint  # 回滚到指定 checkpoint
 </code></pre>
-
-<p>注：命令后面带 <code>SQL</code> 意思是生成对应的 SQL 语句</p>
-
-<h2 id="参考文档">参考文档</h2>
-
-<ul>
-<li><a href="https://blog.smaato.com/how-to-execute-database-migrations-with-liquibase">How To Execute Database Migrations With Liquibase</a></li>
-<li><a href="http://blog.kent-chiu.com/2014/08/30/liquibase-101.html">Liquibase 筆記</a></li>
-</ul>
 
     </div>
 
@@ -351,7 +395,7 @@ $ mvn liquibase:rollback -Dliquibase.rollbackTag=checkpoint  # 回滚到指定 c
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2018-09-25</span>
+    <span class="item-content">2018-09-26</span>
   </p>
   
   <p class="copyright-item">
@@ -369,14 +413,9 @@ $ mvn liquibase:rollback -Dliquibase.rollbackTag=checkpoint  # 回滚到指定 c
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/java/liquibase-with-maven-multi-deploy-environments/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">liquibase with Maven support multiply deploy environments</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/java/code-formatter-with-ide/">
-            <span class="next-text nav-default">code formatter with ide</span>
+          <a class="next" href="/post/java/liquibase-database-migration/">
+            <span class="next-text nav-default">liquibase for Java database migration</span>
             <span class="prev-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

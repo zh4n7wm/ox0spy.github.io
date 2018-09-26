@@ -6,10 +6,19 @@
     <description>Recent content in Migration on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 25 Sep 2018 21:06:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 26 Sep 2018 10:06:00 +0800</lastBuildDate>
     
 	<atom:link href="https://ox0spy.github.io/categories/migration/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>liquibase with Maven support multiply deploy environments</title>
+      <link>https://ox0spy.github.io/post/java/liquibase-with-maven-multi-deploy-environments/</link>
+      <pubDate>Wed, 26 Sep 2018 10:06:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/post/java/liquibase-with-maven-multi-deploy-environments/</guid>
+      <description>Liquibase 简介 Liquibase is an open-source database-independent library for tracking, managing and applying database schema changes. It was started in 2006 to allow easier tracking of database changes, especially in an agile software development environment. 方便管理、维护数据库 schema 变化。 Maven 集成 Liquibase 目录结构 |-- pom.xml `-- src `-- main |-- resources | `-- liquibase.properties |</description>
+    </item>
     
     <item>
       <title>liquibase for Java database migration</title>
