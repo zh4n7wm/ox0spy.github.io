@@ -134,6 +134,31 @@
     
       <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/mysql/nginx-as-database-load-balancer-for-mysql/">nginx as database load balancer for mysql</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/mysql/"> mysql </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      这个配置能完成几件事情： 如题，通过Nginx做MySQL负载均衡 从外网的内网中的RDS 安装 $ sudo apt-get install nginx 配置 /etc/nginx/nginx.conf user www-data; worker_processes auto; pid /run/nginx.pid; events { worker_connections 768; # multi_accept on; } stream { include
+    </div>
+    <div class="read-more">
+      <a href="/post/mysql/nginx-as-database-load-balancer-for-mysql/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/node/getstarted-node.js/">node.js入门</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2017-12-15 </span>
@@ -602,31 +627,6 @@
     </div>
     <div class="read-more">
       <a href="/post/python/scrapyd/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/python/get-starred-scrapy/">scrapy入门</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-12-15 </span>
-      <div class="post-category">
-          
-            <a href="/categories/python/"> python </a>
-          
-        </div>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      常用命令 # 运行一个爬虫 $ scrapy runspider stackoverflow_spider.py -o top-stackoverflow-questions.json # 创建项目 $ scrapy startproject tutorial # 开始爬取 $ scrapy crawl dmoz 有用的代码片段 http://snipplr.com/all/tags/scrapy/ 命令行工具 命令行工具运行时会加载Scrapy的配置文件
-    </div>
-    <div class="read-more">
-      <a href="/post/python/get-starred-scrapy/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

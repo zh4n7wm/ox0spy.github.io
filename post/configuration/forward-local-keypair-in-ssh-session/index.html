@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>forward local keypair in ssh session - wiseturtles&#39;s team blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="ox0spy" />
+  <meta name="description" content="SSH 不应该通过密码认证，只应该通过 ssh keypair 认证。 如果我既有登录 A 机器的权限，也有登录 B 机器的权限。那么，通过 ssh-copy-id 配置后，就可以从本地自动登录 A、B 机" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+<meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
+
+
+<meta name="generator" content="Hugo 0.32-DEV" />
+
+
+<link rel="canonical" href="https://ox0spy.github.io/post/configuration/forward-local-keypair-in-ssh-session/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="forward local keypair in ssh session" />
+<meta property="og:description" content="SSH 不应该通过密码认证，只应该通过 ssh keypair 认证。 如果我既有登录 A 机器的权限，也有登录 B 机器的权限。那么，通过 ssh-copy-id 配置后，就可以从本地自动登录 A、B 机" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ox0spy.github.io/post/configuration/forward-local-keypair-in-ssh-session/" />
+
+
+
+<meta property="article:published_time" content="2018-10-25T18:01:58&#43;08:00"/>
+
+<meta property="article:modified_time" content="2018-10-25T18:01:58&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="forward local keypair in ssh session">
+<meta itemprop="description" content="SSH 不应该通过密码认证，只应该通过 ssh keypair 认证。 如果我既有登录 A 机器的权限，也有登录 B 机器的权限。那么，通过 ssh-copy-id 配置后，就可以从本地自动登录 A、B 机">
+
+
+<meta itemprop="datePublished" content="2018-10-25T18:01:58&#43;08:00" />
+<meta itemprop="dateModified" content="2018-10-25T18:01:58&#43;08:00" />
+<meta itemprop="wordCount" content="547">
+
+
+
+<meta itemprop="keywords" content="linux, ssh, tunnel," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="forward local keypair in ssh session"/>
+<meta name="twitter:description" content="SSH 不应该通过密码认证，只应该通过 ssh keypair 认证。 如果我既有登录 A 机器的权限，也有登录 B 机器的权限。那么，通过 ssh-copy-id 配置后，就可以从本地自动登录 A、B 机"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">wiseturtles</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">wiseturtles</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">forward local keypair in ssh session</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-10-25 </span>
+        <div class="post-category">
+            
+              <a href="/categories/configuration/"> configuration </a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#forward-agent">forward agent</a>
+<ul>
+<li><a href="#确保-ssh-agent-已经运行">确保 ssh-agent 已经运行</a></li>
+<li><a href="#添加想要转发的-ssh-private-key-到-ssh-agent">添加想要转发的 ssh private key 到 ssh agent</a></li>
+<li><a href="#登录-a主机">登录 A主机</a></li>
+<li><a href="#登录-b-主机">登录 B 主机：</a></li>
+<li><a href="#每次都需要手动输入-a-很麻烦">每次都需要手动输入 -A 很麻烦</a></li>
+<li><a href="#能不能对所有主机配置">能不能对所有主机配置？</a></li>
+<li><a href="#ssh-agent-还能让你避免每次为ssh-key-输入密码">ssh-agent 还能让你避免每次为ssh key 输入密码</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p><strong>SSH 不应该通过密码认证，只应该通过 ssh keypair 认证。</strong></p>
+
+<p>如果我既有登录 A 机器的权限，也有登录 B 机器的权限。那么，通过 <code>ssh-copy-id</code> 配置后，就可以从本地自动登录 A、B 机器了。但 A 机器没有登录 B 机器的权限。</p>
+
+<p>如果需要从 A 机器 登录 B 机器，应该怎么办呢？</p>
+
+<ul>
+<li><del>在 A 机器上通过 <code>ssh-keygen</code> 生成 keypair，然后将公钥放到B机器的 <code>~/.ssh/authorized_keys</code>？</del></li>
+<li>forward agent？</li>
+</ul>
+
+<p>服务器上不应该放 keypair，所以，方案一不可取。</p>
+
+<p>本文介绍 <code>forward agent</code> 方案。</p>
+
+<h2 id="forward-agent">forward agent</h2>
+
+<h3 id="确保-ssh-agent-已经运行">确保 ssh-agent 已经运行</h3>
+
+<pre><code>$ ssh-agent
+
+或者
+
+$ eval &quot;$(ssh-agent)&quot;
+</code></pre>
+
+<h3 id="添加想要转发的-ssh-private-key-到-ssh-agent">添加想要转发的 ssh private key 到 ssh agent</h3>
+
+<pre><code>$ ssh-add &lt;path-to-key/private-key-name&gt;
+</code></pre>
+
+<p>比如：</p>
+
+<pre><code>$ ssh-add ~/.ssh/id_rsa
+</code></pre>
+
+<p>列出 ssh agent 中的key:</p>
+
+<pre><code>$ ssh-add -L
+</code></pre>
+
+<h3 id="登录-a主机">登录 A主机</h3>
+
+<p>从本地登录 主机A：</p>
+
+<pre><code>$ ssh -A host-A  # 假设 host-A 的登录信息已经在 ~/.ssh/config 中配置过
+</code></pre>
+
+<p>注：<code>-A</code> 参数用来转发 key</p>
+
+<p>通过上面命令登录到 主机A 后，通过 <code>ssh-add -L</code> 查看是否有 key。</p>
+
+<pre><code>host-A:~$ ssh-add -L  # 应该能看到自己之前添加的 key，否则无法登录到 主机B 的
+</code></pre>
+
+<h3 id="登录-b-主机">登录 B 主机：</h3>
+
+<p>在 A主机 上登录 B主机：</p>
+
+<pre><code>host-A:~$ ssh host-B
+</code></pre>
+
+<h3 id="每次都需要手动输入-a-很麻烦">每次都需要手动输入 -A 很麻烦</h3>
+
+<p>修改 <code>~/.ssh/config</code>，如下：</p>
+
+<pre><code>Host host-B
+    Hostname host-B
+    user &lt;username&gt;
+    Port &lt;port&gt;
+    IdentityFile &lt;~/.ssh/id_rsa&gt;
+    ForwardAgent yes
+</code></pre>
+
+<p>注：其实就是加了：<code>ForwardAgent yes</code>。这样就不需要每次手动输入 <code>ssh -A</code>。</p>
+
+<h3 id="能不能对所有主机配置">能不能对所有主机配置？</h3>
+
+<p>答案当然是肯定的！</p>
+
+<pre><code>Host *
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentityFile ~/.ssh/id_rsa
+</code></pre>
+
+<h3 id="ssh-agent-还能让你避免每次为ssh-key-输入密码">ssh-agent 还能让你避免每次为ssh key 输入密码</h3>
+
+<p>如果你的 ssh keypair 设置过密码，那么 <code>ssh-add</code> 时就要求输入密码，这样避免每次使用 ssh keypair 都需要输入密码。</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ox0spy</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-10-25</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/linux/">linux</a>
+          
+          <a href="/tags/ssh/"> ssh</a>
+          
+          <a href="/tags/tunnel/"> tunnel</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/java/liquibase-with-maven-multi-deploy-environments/">
+            <span class="next-text nav-default">liquibase with Maven support multiply deploy environments</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'ox0spy';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com/" class="dsq-brlink" target="_blank">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ox0spy@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/ox0spy" class="iconfont icon-github" title="github"></a>
+  <a href="https://ox0spy.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ox0spy</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-42986901-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

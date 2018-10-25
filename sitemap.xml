@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ox0spy.github.io/post/configuration/forward-local-keypair-in-ssh-session/</loc>
+    <lastmod>2018-10-25T18:01:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/java/liquibase-with-maven-multi-deploy-environments/</loc>
     <lastmod>2018-09-26T10:06:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -981,7 +988,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/categories/configuration/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <lastmod>2018-10-25T18:01:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1356,7 +1363,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/tags/linux/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <lastmod>2018-10-25T18:01:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1600,7 +1607,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/post/</loc>
-    <lastmod>2018-09-26T10:06:00+08:00</lastmod>
+    <lastmod>2018-10-25T18:01:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1768,7 +1775,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/tags/ssh/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <lastmod>2018-10-25T18:01:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1866,7 +1873,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/tags/tunnel/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <lastmod>2018-10-25T18:01:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1989,7 +1996,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/</loc>
-    <lastmod>2018-09-26T10:06:00+08:00</lastmod>
+    <lastmod>2018-10-25T18:01:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

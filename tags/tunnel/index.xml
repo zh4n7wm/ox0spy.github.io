@@ -6,10 +6,19 @@
     <description>Recent content in Tunnel on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 15 Dec 2017 19:21:58 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 25 Oct 2018 18:01:58 +0800</lastBuildDate>
     
 	<atom:link href="https://ox0spy.github.io/tags/tunnel/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>forward local keypair in ssh session</title>
+      <link>https://ox0spy.github.io/post/configuration/forward-local-keypair-in-ssh-session/</link>
+      <pubDate>Thu, 25 Oct 2018 18:01:58 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/post/configuration/forward-local-keypair-in-ssh-session/</guid>
+      <description>SSH 不应该通过密码认证，只应该通过 ssh keypair 认证。 如果我既有登录 A 机器的权限，也有登录 B 机器的权限。那么，通过 ssh-copy-id 配置后，就可以从本地自动登录 A、B 机</description>
+    </item>
     
     <item>
       <title>create restricted linux user for ssh tunnel</title>
