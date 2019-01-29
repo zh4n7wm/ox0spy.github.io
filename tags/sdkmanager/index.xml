@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sdkmanager on wiseturtles&#39;s team blog</title>
+    <link>https://ox0spy.github.io/tags/sdkmanager/</link>
+    <description>Recent content in Sdkmanager on wiseturtles&#39;s team blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 29 Jan 2019 09:02:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://ox0spy.github.io/tags/sdkmanager/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>accept android sdk license</title>
+      <link>https://ox0spy.github.io/post/android/android-sdkmanager-accept-licenses/</link>
+      <pubDate>Tue, 29 Jan 2019 09:02:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/post/android/android-sdkmanager-accept-licenses/</guid>
+      <description>Build Error Message android app build failed, error message:
+&amp;gt; Failed to install the following Android SDK packages as some licences have not been accepted. build-tools;28.0.3 Android SDK Build-Tools 28.0.3 platforms;android-28 Android SDK Platform 28 To build this project, accept the SDK license agreements and install the missing components using the Android Studio SDK Manager. Alternatively, to transfer the license agreements from one workstation to another, see http://d.android.com/r/studio-ui/export-licenses.html Using Android SDK: /opt/android-sdk-linux  Install Build-Tools 28.</description>
+    </item>
+    
+  </channel>
+</rss>

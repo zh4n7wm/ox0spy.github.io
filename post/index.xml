@@ -6,10 +6,20 @@
     <description>Recent content in Posts on wiseturtles&#39;s team blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 25 Oct 2018 18:01:58 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 29 Jan 2019 09:02:00 +0800</lastBuildDate>
     
 	<atom:link href="https://ox0spy.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>accept android sdk license</title>
+      <link>https://ox0spy.github.io/post/android/android-sdkmanager-accept-licenses/</link>
+      <pubDate>Tue, 29 Jan 2019 09:02:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/post/android/android-sdkmanager-accept-licenses/</guid>
+      <description>Build Error Message android app build failed, error message:
+&amp;gt; Failed to install the following Android SDK packages as some licences have not been accepted. build-tools;28.0.3 Android SDK Build-Tools 28.0.3 platforms;android-28 Android SDK Platform 28 To build this project, accept the SDK license agreements and install the missing components using the Android Studio SDK Manager. Alternatively, to transfer the license agreements from one workstation to another, see http://d.android.com/r/studio-ui/export-licenses.html Using Android SDK: /opt/android-sdk-linux  Install Build-Tools 28.</description>
+    </item>
     
     <item>
       <title>forward local keypair in ssh session</title>
@@ -1041,6 +1051,15 @@ wget --save-cookies cookies.txt \ --post-data &#39;user=foo&amp;amp;password=bar
       
       <guid>https://ox0spy.github.io/post/data-science/pydata/</guid>
       <description>pandas的plot没有显示所画图片 三种方法解决: import matplotlib.pyplot as plt; plt.show() plt.ion() echo &amp;ldquo;c.InteractiveShellApp.pylab = &amp;lsquo;auto&amp;rsquo;&amp;rdquo; &amp;gt;&amp;gt; ~/.ipython/profile_default/ipython_config.py</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://ox0spy.github.io/post/django/get-started/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ox0spy.github.io/post/django/get-started/</guid>
+      <description> django-admin 常用命令  创建项目：django-admin startproject  在项目内创建新的 app：django-admin startapp   manage.py 常用命令  make database migration: python manage.py makemigrations show sql: python manage.py sqlmigrate   database migrate: python manage.py migrate shell: python manage.py shell 创建管理员用户：python manage.py createsuperuser  </description>
     </item>
     
     <item>
