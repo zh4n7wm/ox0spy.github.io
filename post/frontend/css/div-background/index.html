@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="ox0spy" />
-  <meta name="description" content="为页面设置一个背景图片，要求背景图片全屏显示。 解决方法 在 body 中添加一个空 div，比如：``````````&amp;lt;div id=&#39;bg&#39;&amp;gt;" />
+  <meta name="description" content="为页面设置一个背景图片，要求背景图片全屏显示。 解决方法 在 body 中添加一个空 div，比如： &amp;lt;html&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&#39;bg&#39;&amp;gt;&amp;lt;/div&amp;gt;。 &amp;" />
 
   <meta name="keywords" content="Hugo, theme, even" />
 
@@ -45,7 +45,7 @@
 <link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
 <meta property="og:title" content="背景图全屏显示" />
-<meta property="og:description" content="为页面设置一个背景图片，要求背景图片全屏显示。 解决方法 在 body 中添加一个空 div，比如：``````````&lt;div id=&#39;bg&#39;&gt;" />
+<meta property="og:description" content="为页面设置一个背景图片，要求背景图片全屏显示。 解决方法 在 body 中添加一个空 div，比如： &lt;html&gt; &lt;body&gt; &lt;div id=&#39;bg&#39;&gt;&lt;/div&gt;。 &" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ox0spy.github.io/post/frontend/css/div-background/" />
 
@@ -66,18 +66,18 @@
 
 
 <meta itemprop="name" content="背景图全屏显示">
-<meta itemprop="description" content="为页面设置一个背景图片，要求背景图片全屏显示。 解决方法 在 body 中添加一个空 div，比如：``````````&lt;div id=&#39;bg&#39;&gt;">
+<meta itemprop="description" content="为页面设置一个背景图片，要求背景图片全屏显示。 解决方法 在 body 中添加一个空 div，比如： &lt;html&gt; &lt;body&gt; &lt;div id=&#39;bg&#39;&gt;&lt;/div&gt;。 &">
 
 
 <meta itemprop="datePublished" content="2019-02-01T16:21:59&#43;08:00" />
 <meta itemprop="dateModified" content="2019-02-01T16:21:59&#43;08:00" />
-<meta itemprop="wordCount" content="114">
+<meta itemprop="wordCount" content="126">
 
 
 
 <meta itemprop="keywords" content="css," />
 <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="背景图全屏显示"/>
-<meta name="twitter:description" content="为页面设置一个背景图片，要求背景图片全屏显示。 解决方法 在 body 中添加一个空 div，比如：``````````&lt;div id=&#39;bg&#39;&gt;"/>
+<meta name="twitter:description" content="为页面设置一个背景图片，要求背景图片全屏显示。 解决方法 在 body 中添加一个空 div，比如： &lt;html&gt; &lt;body&gt; &lt;div id=&#39;bg&#39;&gt;&lt;/div&gt;。 &"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -182,9 +182,17 @@
 
 <h3 id="解决方法">解决方法</h3>
 
-<p>在 body 中添加一个空 div，比如：``````````<code>&lt;div id='bg'&gt;&lt;/div&gt;</code>。</p>
+<p>在 body 中添加一个空 div，比如：</p>
 
-<p>然后，为该 ````<code>div</code> 设置 css：</p>
+<pre><code>&lt;html&gt;
+&lt;body&gt;
+    &lt;div id='bg'&gt;&lt;/div&gt;。
+    &lt;div&gt;其它功能代码&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>然后，为该 div 设置 css：</p>
 
 <pre><code>#bg {
     background: url(/static/img/bg.jpg) no-repeat;

@@ -17,7 +17,7 @@
       <pubDate>Fri, 01 Feb 2019 16:21:59 +0800</pubDate>
       
       <guid>https://ox0spy.github.io/post/frontend/css/div-background/</guid>
-      <description>为页面设置一个背景图片，要求背景图片全屏显示。 解决方法 在 body 中添加一个空 div，比如：``````````&amp;lt;div id=&#39;bg&#39;&amp;gt;</description>
+      <description>为页面设置一个背景图片，要求背景图片全屏显示。 解决方法 在 body 中添加一个空 div，比如： &amp;lt;html&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&#39;bg&#39;&amp;gt;&amp;lt;/div&amp;gt;。 &amp;</description>
     </item>
     
     <item>
