@@ -134,6 +134,31 @@
     
       <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/java/maven-tomcat-jetty-run/">maven通过plugin在tomcat、jetty中运行项目</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/java/"> java </a>
+          
+        </div>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      记录下如何在pom.xml中配置插件，通过tomcat、Jetty运行项目. 配置pom.xml &lt;build&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt; &lt;artifactId&gt;tomcat6-maven-plugin&lt;/artifactId&gt; &lt;version&gt;2.2&lt;/version&gt; &lt;/plugin&gt; &lt;plugin&gt; &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt; &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt; &lt;version&gt;2.2&lt;/version&gt; &lt;/plugin&gt; &lt;plugin&gt; &lt;groupId&gt;org.mortbay.jetty&lt;/groupId&gt; &lt;artifactId&gt;jetty-maven-plugin&lt;/artifactId&gt; &lt;/plugin&gt; &lt;/plugins&gt; &lt;/build&gt; 测试 Maven Tomcat plugin
+    </div>
+    <div class="read-more">
+      <a href="/post/java/maven-tomcat-jetty-run/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/mysql/show-users-grants/">mysql查看用户权限</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2017-12-15 </span>
@@ -602,31 +627,6 @@
     </div>
     <div class="read-more">
       <a href="/post/python/python-download-large-file-without-out-of-memory/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/redis/install-redis-cluster/">redis集群搭建</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-12-15 </span>
-      <div class="post-category">
-          
-            <a href="/categories/redis/"> redis </a>
-          
-        </div>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Redis集群搭建 # 下载 $ wget http://download.redis.io/releases/redis-3.0.4.tar.gz $ tar -zxvf redis-3.0.4.tar.gz $ cd redis-3.0.4 # 编译 $ make # 检查依赖， 如果有错误就修复 # 如果遇到错误“Test replication partial resync: ok psync”, 可以忽略或再
-    </div>
-    <div class="read-more">
-      <a href="/post/redis/install-redis-cluster/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
