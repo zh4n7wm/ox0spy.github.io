@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ox0spy.github.io/about/</loc>
+    <lastmod>2019-02-01T19:05:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/frontend/css/div-background/</loc>
     <lastmod>2019-02-01T16:21:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -2031,7 +2038,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/</loc>
-    <lastmod>2019-02-01T16:21:59+08:00</lastmod>
+    <lastmod>2019-02-01T19:05:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
