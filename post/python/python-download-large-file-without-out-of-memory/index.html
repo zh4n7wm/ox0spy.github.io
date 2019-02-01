@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>python下载大文件 - wiseturtles&#39;s team blog</title>
+  <title>python下载大文件 - ox0spy&#39;s blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -19,7 +19,7 @@
 <meta name="author" content="ox0spy" />
   <meta name="description" content="requests :::python def download_file(url): local_filename = url.split(&#39;/&#39;)[-1] # NOTE the stream=True parameter r = requests.get(url, stream=True) with open(local_filename, &#39;wb&#39;) as f: for chunk in r.iter_content(chunk_size=1024): if chunk: # filter out keep-alive new chunks f.write(chunk) f.flush() return local_filename urllib2 :::python file = urllib2.urlopen(&#39;url&#39;) with open(&#39;filename&#39;,&#39;w&#39;) as f: while True: tmp = file.read(1024) if not tmp: break f.write(tmp) 详见: http://stackoverflow.com/questions/16694907/how-to-download-large-file-in-python-with-requests-py http://stackoverflow.com/questions/27053028/how-to-download-large-file-without-memoryerror-in-python" />
 
-  <meta name="keywords" content="Hugo, theme, even" />
+  <meta name="keywords" content="ox0spy, python, flask, django, go, golang, programming, coding, even" />
 
 
 
@@ -149,7 +149,8 @@
               <a href="/categories/python/"> python </a>
             
           </div>
-        
+        <span class="more-meta"> 约 61 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
 
@@ -232,6 +233,23 @@ with open('filename','w') as f:
 
     
     
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="static/img/reward/wechat.jpg">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="static/img/reward/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
 
     <footer class="post-footer">
       <div class="post-tags">
