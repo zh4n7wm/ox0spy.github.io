@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>背景图全屏显示 - ox0spy&#39;s blog</title>
+  <title>禁用笔记本键盘 - ox0spy&#39;s blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="ox0spy" />
-  <meta name="description" content="为页面设置一个背景图片，要求背景图片全屏显示。 解决方法 在 body 中添加一个空 div，比如： &amp;lt;html&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&#39;bg&#39;&amp;gt;&amp;lt;/div&amp;gt;。 &amp;" />
+  <meta name="description" content="记录如何禁用笔记本自带键盘。 因为笔记本自带键盘坏了，Enter 键随机处于被按下的状态，导致无法使用。接入外接键盘后，禁用笔记本自带键盘。 以下" />
 
   <meta name="keywords" content="ox0spy, python, flask, django, go, golang, programming, coding, even" />
 
@@ -29,7 +29,7 @@
 <meta name="generator" content="Hugo 0.32-DEV" />
 
 
-<link rel="canonical" href="https://ox0spy.github.io/post/frontend/css/div-background/" />
+<link rel="canonical" href="https://ox0spy.github.io/post/ubuntu/disable-laptop-keyboard/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -44,20 +44,16 @@
 <link href="/dist/even.min.css?v=2.7.0" rel="stylesheet">
 <link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
-<meta property="og:title" content="背景图全屏显示" />
-<meta property="og:description" content="为页面设置一个背景图片，要求背景图片全屏显示。 解决方法 在 body 中添加一个空 div，比如： &lt;html&gt; &lt;body&gt; &lt;div id=&#39;bg&#39;&gt;&lt;/div&gt;。 &" />
+<meta property="og:title" content="禁用笔记本键盘" />
+<meta property="og:description" content="记录如何禁用笔记本自带键盘。 因为笔记本自带键盘坏了，Enter 键随机处于被按下的状态，导致无法使用。接入外接键盘后，禁用笔记本自带键盘。 以下" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/frontend/css/div-background/" />
+<meta property="og:url" content="https://ox0spy.github.io/post/ubuntu/disable-laptop-keyboard/" />
 
 
 
-<meta property="article:published_time" content="2019-02-01T16:21:59&#43;08:00"/>
+<meta property="article:published_time" content="2019-02-26T09:22:01&#43;08:00"/>
 
-<meta property="article:modified_time" content="2019-02-01T16:21:59&#43;08:00"/>
-
-
-
-
+<meta property="article:modified_time" content="2019-02-26T09:22:01&#43;08:00"/>
 
 
 
@@ -65,19 +61,23 @@
 
 
 
-<meta itemprop="name" content="背景图全屏显示">
-<meta itemprop="description" content="为页面设置一个背景图片，要求背景图片全屏显示。 解决方法 在 body 中添加一个空 div，比如： &lt;html&gt; &lt;body&gt; &lt;div id=&#39;bg&#39;&gt;&lt;/div&gt;。 &">
-
-
-<meta itemprop="datePublished" content="2019-02-01T16:21:59&#43;08:00" />
-<meta itemprop="dateModified" content="2019-02-01T16:21:59&#43;08:00" />
-<meta itemprop="wordCount" content="126">
 
 
 
-<meta itemprop="keywords" content="css," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="背景图全屏显示"/>
-<meta name="twitter:description" content="为页面设置一个背景图片，要求背景图片全屏显示。 解决方法 在 body 中添加一个空 div，比如： &lt;html&gt; &lt;body&gt; &lt;div id=&#39;bg&#39;&gt;&lt;/div&gt;。 &"/>
+
+<meta itemprop="name" content="禁用笔记本键盘">
+<meta itemprop="description" content="记录如何禁用笔记本自带键盘。 因为笔记本自带键盘坏了，Enter 键随机处于被按下的状态，导致无法使用。接入外接键盘后，禁用笔记本自带键盘。 以下">
+
+
+<meta itemprop="datePublished" content="2019-02-26T09:22:01&#43;08:00" />
+<meta itemprop="dateModified" content="2019-02-26T09:22:01&#43;08:00" />
+<meta itemprop="wordCount" content="368">
+
+
+
+<meta itemprop="keywords" content="linux,tips," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="禁用笔记本键盘"/>
+<meta name="twitter:description" content="记录如何禁用笔记本自带键盘。 因为笔记本自带键盘坏了，Enter 键随机处于被按下的状态，导致无法使用。接入外接键盘后，禁用笔记本自带键盘。 以下"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -144,16 +144,16 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">背景图全屏显示</h1>
+      <h1 class="post-title">禁用笔记本键盘</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2019-02-01 </span>
+        <span class="post-time"> 2019-02-26 </span>
         <div class="post-category">
             
-              <a href="/categories/frontend/"> frontend </a>
+              <a href="/categories/linux/"> Linux </a>
             
           </div>
-        <span class="more-meta"> 约 126 字 </span>
+        <span class="more-meta"> 约 368 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -168,10 +168,12 @@
 <ul>
 <li>
 <ul>
-<li>
+<li><a href="#禁用笔记本键盘">禁用笔记本键盘</a>
 <ul>
-<li><a href="#解决方法">解决方法</a></li>
-<li><a href="#更多方法">更多方法</a></li>
+<li><a href="#查看键盘">查看键盘</a></li>
+<li><a href="#方法一-remove-slave-from-its-current-master-device">方法一：Remove slave from its current master device</a></li>
+<li><a href="#方法二-disable-the-device">方法二： Disable the device</a></li>
+<li><a href="#方法三-disabling-on-boot">方法三：Disabling on Boot</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -183,37 +185,63 @@
     <div class="post-content">
       
 
-<p>为页面设置一个背景图片，要求背景图片全屏显示。</p>
+<p>记录如何禁用笔记本自带键盘。</p>
 
-<h3 id="解决方法">解决方法</h3>
+<p>因为笔记本自带键盘坏了，<code>Enter</code> 键随机处于被按下的状态，导致无法使用。接入外接键盘后，禁用笔记本自带键盘。</p>
 
-<p>在 body 中添加一个空 div，比如：</p>
+<p>以下内容只在 <code>Ubuntu 18.04</code> 上测试过，虽然 <code>Linux</code> 系统差异不大，但不保证其它系统中可用。</p>
 
-<pre><code>&lt;html&gt;
-&lt;body&gt;
-    &lt;div id='bg'&gt;&lt;/div&gt;。
-    &lt;div&gt;其它功能代码&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<h2 id="禁用笔记本键盘">禁用笔记本键盘</h2>
+
+<p>用 <code>xinput</code> 工具查看、禁用、启用笔记本键盘，如果系统没有提供该工具，可以用包管理工具安装。</p>
+
+<h3 id="查看键盘">查看键盘</h3>
+
+<pre><code>$ xinput list
 </code></pre>
 
-<p>然后，为该 div 设置 css：</p>
+<h3 id="方法一-remove-slave-from-its-current-master-device">方法一：Remove slave from its current master device</h3>
 
-<pre><code>#bg {
-    background: url(/static/img/bg.jpg) no-repeat;
-    background-size: 100%;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
+<pre><code>$ sudo xinput float &lt;id&gt;
 </code></pre>
 
-<h3 id="更多方法">更多方法</h3>
+<p>注：<id> 是从 <code>xinput list</code> 输出的需要禁用的键盘 id</p>
 
-<p>请参考 <a href="http://huilang.me/perfect-full-page-background-image/">完美的背景图全屏css代码 – background-size:cover?</a></p>
+<p>如 <code>AT Translated Set 2 keyboard id=15 [slave  keyboard (3)]</code> 则 id 为 15</p>
+
+<h3 id="方法二-disable-the-device">方法二： Disable the device</h3>
+
+<p>禁用：</p>
+
+<pre><code>$ sudo xinput --disable &lt;id&gt;
+
+等同于
+$ sudo xinput --set-prop &lt;id&gt; &quot;Device Enabled&quot; 1
+</code></pre>
+
+<p>再次启用：</p>
+
+<pre><code>$ sudo xinput --enable &lt;id&gt;
+
+等同于
+$ sudo xinput --set-prop &lt;id&gt; &quot;Device Enabled&quot; 0
+</code></pre>
+
+<h3 id="方法三-disabling-on-boot">方法三：Disabling on Boot</h3>
+
+<p>修改 <code>grub</code> 的配置文件，启动时就禁用 <strong>内置键盘</strong>。</p>
+
+<p>修改 <code>/etc/default/grub</code>，将 <code>i8042.nokbd</code> 加入 <code>GRUB_CMDLINE_LINUX_DEFAULT</code>，如下：</p>
+
+<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash i8042.nokbd&quot;
+</code></pre>
+
+<p>更新 <code>grub</code>：</p>
+
+<pre><code>$ sudo update-grub
+</code></pre>
+
+<p>重启后，内置键盘将被禁用。</p>
 
     </div>
 
@@ -226,7 +254,7 @@
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2019-02-01</span>
+    <span class="item-content">2019-02-26</span>
   </p>
   
   <p class="copyright-item">
@@ -258,21 +286,18 @@
     <footer class="post-footer">
       <div class="post-tags">
           
-          <a href="/tags/css/">css</a>
+          <a href="/tags/linux/">linux</a>
+          
+          <a href="/tags/tips/">tips</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/ubuntu/disable-laptop-keyboard/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">禁用笔记本键盘</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/android/android-sdkmanager-accept-licenses/">
-            <span class="next-text nav-default">accept android sdk license</span>
+          <a class="next" href="/post/frontend/css/div-background/">
+            <span class="next-text nav-default">背景图全屏显示</span>
             <span class="prev-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/post/ubuntu/disable-laptop-keyboard/</loc>
+    <lastmod>2019-02-26T09:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/frontend/css/div-background/</loc>
     <lastmod>2019-02-01T16:21:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1398,14 +1405,14 @@
   
   <url>
     <loc>https://ox0spy.github.io/tags/linux/</loc>
-    <lastmod>2018-10-25T18:01:58+08:00</lastmod>
+    <lastmod>2019-02-26T09:22:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ox0spy.github.io/categories/linux/</loc>
-    <lastmod>2018-08-09T16:21:59+08:00</lastmod>
+    <lastmod>2019-02-26T09:22:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1642,7 +1649,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/post/</loc>
-    <lastmod>2019-02-01T16:21:59+08:00</lastmod>
+    <lastmod>2019-02-26T09:22:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1880,7 +1887,7 @@
   
   <url>
     <loc>https://ox0spy.github.io/tags/tips/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <lastmod>2019-02-26T09:22:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

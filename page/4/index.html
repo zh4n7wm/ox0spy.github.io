@@ -138,6 +138,32 @@
     
       <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/python/python-download-large-file-without-out-of-memory/">python下载大文件</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-12-15 </span>
+      <div class="post-category">
+          
+            <a href="/categories/python/"> python </a>
+          
+        </div>
+      <span class="more-meta"> 约 61 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      requests :::python def download_file(url): local_filename = url.split('/')[-1] # NOTE the stream=True parameter r = requests.get(url, stream=True) with open(local_filename, 'wb') as f: for chunk in r.iter_content(chunk_size=1024): if chunk: # filter out keep-alive new chunks f.write(chunk) f.flush() return local_filename urllib2 :::python file = urllib2.urlopen('url') with open('filename','w') as f: while True: tmp = file.read(1024) if not tmp: break f.write(tmp) 详见: http://stackoverflow.com/questions/16694907/how-to-download-large-file-in-python-with-requests-py http://stackoverflow.com/questions/27053028/how-to-download-large-file-without-memoryerror-in-python
+    </div>
+    <div class="read-more">
+      <a href="/post/python/python-download-large-file-without-out-of-memory/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/redis/install-redis-cluster/">redis集群搭建</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2017-12-15 </span>
@@ -625,32 +651,6 @@
     </div>
     <div class="read-more">
       <a href="/post/configuration/python-pypi/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/asm/setup-asm-development-environment/">ubuntu&#43;vim配置汇编程序开发环境</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-12-15 </span>
-      <div class="post-category">
-          
-            <a href="/categories/asm/"> asm </a>
-          
-        </div>
-      <span class="more-meta"> 约 1016 字 </span>
-      <span class="more-meta"> 预计阅读 3 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      本文专门介绍Ubuntu系统上基于Vim配置汇编程序开发环境。 Ubuntu系统配置 所有开发都在Ubuntu上完成，需要用的软件包：binut
-    </div>
-    <div class="read-more">
-      <a href="/post/asm/setup-asm-development-environment/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

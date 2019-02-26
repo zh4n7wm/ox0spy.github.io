@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>禁用笔记本键盘</title>
+      <link>https://ox0spy.github.io/post/ubuntu/disable-laptop-keyboard/</link>
+      <pubDate>Tue, 26 Feb 2019 09:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/post/ubuntu/disable-laptop-keyboard/</guid>
+      <description>记录如何禁用笔记本自带键盘。 因为笔记本自带键盘坏了，Enter 键随机处于被按下的状态，导致无法使用。接入外接键盘后，禁用笔记本自带键盘。 以下</description>
+    </item>
+    
+    <item>
       <title>背景图全屏显示</title>
       <link>https://ox0spy.github.io/post/frontend/css/div-background/</link>
       <pubDate>Fri, 01 Feb 2019 16:21:59 +0800</pubDate>
