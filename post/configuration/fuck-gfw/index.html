@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/configuration/fuck-gfw/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="fuck gfw" />
 <meta property="og:description" content="系统是ArchLinux. supervisor supervisor是一个进程启动管理工具，安装: $ sudo pacman -S supervisor 配置文件/etc/supervisord.conf默" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/configuration/fuck-gfw/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:21:58&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:21:58&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/configuration/fuck-gfw/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:21:58+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:21:58+08:00" />
 
 <meta itemprop="name" content="fuck gfw">
-<meta itemprop="description" content="系统是ArchLinux. supervisor supervisor是一个进程启动管理工具，安装: $ sudo pacman -S supervisor 配置文件/etc/supervisord.conf默">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:21:58&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:21:58&#43;08:00" />
-<meta itemprop="wordCount" content="629">
-
-
-
-<meta itemprop="keywords" content="gfw, archlinux," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="fuck gfw"/>
+<meta itemprop="description" content="系统是ArchLinux. supervisor supervisor是一个进程启动管理工具，安装: $ sudo pacman -S supervisor 配置文件/etc/supervisord.conf默"><meta itemprop="datePublished" content="2017-12-15T19:21:58+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:58+08:00" />
+<meta itemprop="wordCount" content="633">
+<meta itemprop="keywords" content="gfw, archlinux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="fuck gfw"/>
 <meta name="twitter:description" content="系统是ArchLinux. supervisor supervisor是一个进程启动管理工具，安装: $ sudo pacman -S supervisor 配置文件/etc/supervisord.conf默"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/configuration/"> configuration </a>
             
           </div>
-        <span class="more-meta"> 约 629 字 </span>
+        <span class="more-meta"> 约 633 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
       </div>
     </header>
@@ -165,45 +145,33 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#supervisor">supervisor</a></li>
-<li><a href="#shadowsocks-libev">shadowsocks-libev</a></li>
-<li><a href="#net-speeder加速">net-speeder加速</a></li>
-<li><a href="#strongswan">strongswan</a>
-<ul>
-<li><a href="#配置strongswan">配置strongswan</a></li>
-</ul></li>
-<li><a href="#本地dns配置">本地DNS配置</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#supervisor">supervisor</a></li>
+    <li><a href="#shadowsocks-libev">shadowsocks-libev</a></li>
+    <li><a href="#net-speeder加速">net-speeder加速</a></li>
+    <li><a href="#strongswan">strongswan</a>
+      <ul>
+        <li><a href="#配置strongswan">配置strongswan</a></li>
+      </ul>
+    </li>
+    <li><a href="#本地dns配置">本地DNS配置</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>系统是ArchLinux.</p>
-
+      <p>系统是ArchLinux.</p>
 <h2 id="supervisor">supervisor</h2>
-
 <p>supervisor是一个进程启动管理工具，安装:</p>
-
 <pre><code>$ sudo pacman -S supervisor
 </code></pre>
-
 <p>配置文件<code>/etc/supervisord.conf</code>默认只识别 <code>*.ini</code> 配置，修改为 <code>*.conf</code>:</p>
-
 <pre><code>files = /etc/supervisor.d/*.conf
 </code></pre>
-
 <h2 id="shadowsocks-libev">shadowsocks-libev</h2>
-
 <p>安装shadowsocks-libev:</p>
-
 <pre><code>$ sudo pacman -S shadowsocks-libev
 $ sudo mkdir -p /etc/shadowsocks/
 $ cat /etc/shadowsocks/config.json
@@ -216,85 +184,58 @@ $ cat /etc/shadowsocks/config.json
     &quot;method&quot;:&quot;aes-256-cfb&quot;
 }
 </code></pre>
-
 <p>通过supervisor配置自启动:</p>
-
 <pre><code>$ cat /etc/supervisor.d/shadowsocks-libev.conf
 [program:shadowsocks-libev]
 command=/usr/bin/ss-server -c /etc/shadowsocks/config.json -d 8.8.8.8 -u
 autorestart=true
 user=nobody
 </code></pre>
-
 <h2 id="net-speeder加速">net-speeder加速</h2>
-
 <p>服务器上安装net-speeder:</p>
-
 <pre><code>$ yaourt -S net-speeder
 </code></pre>
-
 <p>通过supervisor配置自启动:</p>
-
 <pre><code>$ cat /etc/supervisor.d/net-speeder.conf
 [program:net-speeder]
 command=/usr/bin/net-speeder ens3 &quot;ip&quot;
 autorestart=true
 user=root
 </code></pre>
-
 <h2 id="strongswan">strongswan</h2>
-
 <p>生成CA证书的私钥:</p>
-
 <pre><code>$ ipsec pki --gen --outform pem &gt; ca.pem
 </code></pre>
-
 <p>使用私钥，签名CA证书:</p>
-
 <pre><code>$ ipsec pki --self --in ca.pem --dn &quot;C=com, O=wiseturtles, CN=kx CA&quot; --ca --outform pem &gt;ca.cert.pem
 </code></pre>
-
 <p>生成服务器证书所需的私钥:</p>
-
 <pre><code>$ ipsec pki --gen --outform pem &gt; server.pem
 </code></pre>
-
 <p>用CA证书签发服务器证书:</p>
-
 <pre><code>$ ipsec pki --pub --in server.pem | ipsec pki --issue --cacert ca.cert.pem \
 --cakey ca.pem --dn &quot;C=com, O=wiseturtles, CN=kx.wiseturtles.com&quot; \
 --san=&quot;kx.wiseturtles.com&quot; --flag serverAuth --flag ikeIntermediate \
 --outform pem &gt; server.cert.pem
 </code></pre>
-
 <p>生成客户端证书所需的私钥:</p>
-
 <pre><code>$ ipsec pki --gen --outform pem &gt; client.pem
 </code></pre>
-
 <p>用CA签名客户端证书(C,O的值要与上面第2步CA的值一致,CN的值随意):</p>
-
 <pre><code>$ ipsec pki --pub --in client.pem | ipsec pki --issue --cacert ca.cert.pem --cakey ca.pem --dn &quot;C=com, O=wiseturtles, CN=kx Client&quot; --outform pem &gt; client.cert.pem
 </code></pre>
-
 <p>生成pkcs12证书:</p>
-
 <pre><code>$ openssl pkcs12 -export -inkey client.pem -in client.cert.pem -name &quot;client&quot; -certfile ca.cert.pem -caname &quot;kx CA&quot;  -out client.cert.p12
 </code></pre>
-
 <p>安装证书:</p>
-
 <pre><code>$ sudo cp -f ca.cert.pem  /etc/ipsec.d/cacerts/
 $ sudo cp -f server.cert.pem  /etc/ipsec.d/certs/
 $ sudo cp -f server.pem  /etc/ipsec.d/private/
 $ sudo cp -f client.cert.pem  /etc/ipsec.d/certs/
 $ sudo cp -f client.pem  /etc/ipsec.d/private/
 </code></pre>
-
 <h3 id="配置strongswan">配置strongswan</h3>
-
 <p>修改/etc/ipsec.conf</p>
-
 <pre><code>$ cat /etc/ipsec.conf
 config setup
     uniqueids=never
@@ -352,16 +293,14 @@ conn windows7
     eap_identity=%any
     auto=add
 </code></pre>
-
 <p>修改/etc/strongswan.conf</p>
-
 <pre><code>$ cat /etc/strongswan.conf
 charon {
 load_modular = yes
 duplicheck.enable = no
 compress = yes
 plugins {
-    include strongswan.d/charon/*.conf
+	include strongswan.d/charon/*.conf
 }
     dns1 = 8.8.8.8
     dns2 = 8.8.4.4
@@ -371,7 +310,6 @@ plugins {
 
 include strongswan.d/*.conf
 </code></pre>
-
 <h2 id="本地dns配置">本地DNS配置</h2>
 
     </div>
@@ -483,7 +421,7 @@ include strongswan.d/*.conf
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -504,12 +442,16 @@ include strongswan.d/*.conf
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

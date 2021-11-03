@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/configuration/debian-ubuntu-automatic-security-updates/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="ubuntu/debian自动安装安全更新" />
 <meta property="og:description" content="有台Ubuntu机器，仅仅为了科学上网，但，这年头漏洞这么多，万一哪天成肉鸡了呢。。。 本文简单记录下Ubuntu系统配置自己安装系统安全补丁" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/configuration/debian-ubuntu-automatic-security-updates/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:21:57&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:21:57&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/configuration/debian-ubuntu-automatic-security-updates/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:21:57+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:21:57+08:00" />
 
 <meta itemprop="name" content="ubuntu/debian自动安装安全更新">
-<meta itemprop="description" content="有台Ubuntu机器，仅仅为了科学上网，但，这年头漏洞这么多，万一哪天成肉鸡了呢。。。 本文简单记录下Ubuntu系统配置自己安装系统安全补丁">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:21:57&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:21:57&#43;08:00" />
-<meta itemprop="wordCount" content="208">
-
-
-
-<meta itemprop="keywords" content="ubunu, debian," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="ubuntu/debian自动安装安全更新"/>
+<meta itemprop="description" content="有台Ubuntu机器，仅仅为了科学上网，但，这年头漏洞这么多，万一哪天成肉鸡了呢。。。 本文简单记录下Ubuntu系统配置自己安装系统安全补丁"><meta itemprop="datePublished" content="2017-12-15T19:21:57+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:57+08:00" />
+<meta itemprop="wordCount" content="224">
+<meta itemprop="keywords" content="ubunu, debian," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ubuntu/debian自动安装安全更新"/>
 <meta name="twitter:description" content="有台Ubuntu机器，仅仅为了科学上网，但，这年头漏洞这么多，万一哪天成肉鸡了呢。。。 本文简单记录下Ubuntu系统配置自己安装系统安全补丁"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/configuration/"> configuration </a>
             
           </div>
-        <span class="more-meta"> 约 208 字 </span>
+        <span class="more-meta"> 约 224 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -165,52 +145,35 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#安装unattended-upgrades自动更新安全补丁">安装unattended-upgrades自动更新安全补丁</a></li>
-<li><a href="#如果只想收到邮件通知-可以安装apticron">如果只想收到邮件通知，可以安装apticron</a></li>
-<li><a href="#订阅相关邮件列表-了解最新安全信息">订阅相关邮件列表，了解最新安全信息</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#安装unattended-upgrades自动更新安全补丁">安装unattended-upgrades自动更新安全补丁</a></li>
+    <li><a href="#如果只想收到邮件通知可以安装apticron">如果只想收到邮件通知，可以安装apticron</a></li>
+    <li><a href="#订阅相关邮件列表了解最新安全信息">订阅相关邮件列表，了解最新安全信息</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>有台Ubuntu机器，仅仅为了科学上网，但，这年头漏洞这么多，万一哪天成肉鸡了呢。。。</p>
-
+      <p>有台Ubuntu机器，仅仅为了科学上网，但，这年头漏洞这么多，万一哪天成肉鸡了呢。。。</p>
 <p>本文简单记录下Ubuntu系统配置自己安装系统安全补丁。(Debian系统应该也适用)</p>
-
 <h2 id="安装unattended-upgrades自动更新安全补丁">安装unattended-upgrades自动更新安全补丁</h2>
-
 <pre><code>$ sudo apt-get install unattended-upgrades
 $ sudo dpkg-reconfigure unattended-upgrades  # 选Yes，自动下载安装
 </code></pre>
-
 <p>根据自己情况修改配置文件 - <code>/etc/apt/apt.conf.d/50unattended-upgrades</code></p>
-
 <p>可以设置邮件通知。</p>
-
-<h2 id="如果只想收到邮件通知-可以安装apticron">如果只想收到邮件通知，可以安装apticron</h2>
-
+<h2 id="如果只想收到邮件通知可以安装apticron">如果只想收到邮件通知，可以安装apticron</h2>
 <pre><code>$ apt-get install apticron
 </code></pre>
-
 <p>修改配置文件 - <code>/etc/apticron/apticron.conf</code></p>
-
-<h2 id="订阅相关邮件列表-了解最新安全信息">订阅相关邮件列表，了解最新安全信息</h2>
-
+<h2 id="订阅相关邮件列表了解最新安全信息">订阅相关邮件列表，了解最新安全信息</h2>
 <ul>
 <li>[Ubuntu Security Notices]<a href="http://www.ubuntu.com/usn/">http://www.ubuntu.com/usn/</a></li>
 <li>[Debian Security Information]<a href="https://www.debian.org/security/index.en.html">https://www.debian.org/security/index.en.html</a></li>
 </ul>
-
 <p>参考链接:</p>
-
 <ul>
 <li><a href="https://help.ubuntu.com/community/AutomaticSecurityUpdates">https://help.ubuntu.com/community/AutomaticSecurityUpdates</a></li>
 <li><a href="https://spin.atomicobject.com/2014/08/04/debian-ubuntu-security-updates/">https://spin.atomicobject.com/2014/08/04/debian-ubuntu-security-updates/</a></li>
@@ -325,7 +288,7 @@ $ sudo dpkg-reconfigure unattended-upgrades  # 选Yes，自动下载安装
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -346,12 +309,16 @@ $ sudo dpkg-reconfigure unattended-upgrades  # 选Yes，自动下载安装
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

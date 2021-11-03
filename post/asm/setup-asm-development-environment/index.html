@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/asm/setup-asm-development-environment/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="ubuntu&#43;vim配置汇编程序开发环境" />
 <meta property="og:description" content="本文专门介绍Ubuntu系统上基于Vim配置汇编程序开发环境。 Ubuntu系统配置 所有开发都在Ubuntu上完成，需要用的软件包：binut" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/asm/setup-asm-development-environment/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:21:58&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:21:58&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/asm/setup-asm-development-environment/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:21:58+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:21:58+08:00" />
 
 <meta itemprop="name" content="ubuntu&#43;vim配置汇编程序开发环境">
-<meta itemprop="description" content="本文专门介绍Ubuntu系统上基于Vim配置汇编程序开发环境。 Ubuntu系统配置 所有开发都在Ubuntu上完成，需要用的软件包：binut">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:21:58&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:21:58&#43;08:00" />
-<meta itemprop="wordCount" content="1016">
-
-
-
-<meta itemprop="keywords" content="asm, linux, vim," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="ubuntu&#43;vim配置汇编程序开发环境"/>
+<meta itemprop="description" content="本文专门介绍Ubuntu系统上基于Vim配置汇编程序开发环境。 Ubuntu系统配置 所有开发都在Ubuntu上完成，需要用的软件包：binut"><meta itemprop="datePublished" content="2017-12-15T19:21:58+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:58+08:00" />
+<meta itemprop="wordCount" content="1020">
+<meta itemprop="keywords" content="asm, linux, vim," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ubuntu&#43;vim配置汇编程序开发环境"/>
 <meta name="twitter:description" content="本文专门介绍Ubuntu系统上基于Vim配置汇编程序开发环境。 Ubuntu系统配置 所有开发都在Ubuntu上完成，需要用的软件包：binut"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/asm/"> asm </a>
             
           </div>
-        <span class="more-meta"> 约 1016 字 </span>
+        <span class="more-meta"> 约 1020 字 </span>
         <span class="more-meta"> 预计阅读 3 分钟 </span>
       </div>
     </header>
@@ -165,47 +145,32 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#ubuntu系统配置">Ubuntu系统配置</a></li>
-<li><a href="#vim配置">Vim配置</a></li>
-<li><a href="#在ubuntu-64位系统上编译-运行32位汇编">在Ubuntu 64位系统上编译、运行32位汇编</a>
-<ul>
-<li><a href="#64位ubuntu编译-链接32位汇编程序">64位Ubuntu编译、链接32位汇编程序</a></li>
-<li><a href="#vim">Vim</a>
-<ul>
-<li><a href="#asm在vim中的语法检查">asm在Vim中的语法检查</a></li>
-</ul></li>
-<li><a href="#64位ubuntu通过gcc生成c代码对应的32位汇编代码">64位Ubuntu通过gcc生成C代码对应的32位汇编代码</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#ubuntu系统配置">Ubuntu系统配置</a></li>
+    <li><a href="#vim配置">Vim配置</a></li>
+    <li><a href="#在ubuntu-64位系统上编译运行32位汇编">在Ubuntu 64位系统上编译、运行32位汇编</a>
+      <ul>
+        <li><a href="#64位ubuntu编译链接32位汇编程序">64位Ubuntu编译、链接32位汇编程序</a></li>
+        <li><a href="#vim">Vim</a></li>
+        <li><a href="#64位ubuntu通过gcc生成c代码对应的32位汇编代码">64位Ubuntu通过gcc生成C代码对应的32位汇编代码</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>本文专门介绍Ubuntu系统上基于Vim配置汇编程序开发环境。</p>
-
+      <p>本文专门介绍Ubuntu系统上基于Vim配置汇编程序开发环境。</p>
 <h2 id="ubuntu系统配置">Ubuntu系统配置</h2>
-
 <p>所有开发都在Ubuntu上完成，需要用的软件包：binutils, gcc, gdb等软件。</p>
-
 <p>Ubuntu上安装软件很方便，指令如下：</p>
-
 <pre><code>$ sudo apt-get install binutils gcc gdb libc6-i386 libc6-dev-i386
 </code></pre>
-
 <h2 id="vim配置">Vim配置</h2>
-
 <p>个人比较喜欢<a href="https://github.com/wklken/k-vim">k-vim</a>，根据项目的安装文档安装即可。</p>
-
 <p>汇编源代码的基本结构类似，每次都写一遍 <code>.section .data</code> 之类的很麻烦，通过下面补丁，新建汇编源文件时，自动加载模板：</p>
-
 <pre><code>diff --git a/vimrc b/vimrc
 index e073d53..596bcc1 100644
 --- a/vimrc
@@ -245,40 +210,26 @@ function! AutoSetFileHead()
 +
 endfunc
 </code></pre>
-
-<h2 id="在ubuntu-64位系统上编译-运行32位汇编">在Ubuntu 64位系统上编译、运行32位汇编</h2>
-
+<h2 id="在ubuntu-64位系统上编译运行32位汇编">在Ubuntu 64位系统上编译、运行32位汇编</h2>
 <p>之前提到过我学习的参考书籍讲的是32位AT&amp;T汇编，而我的系统是64位，所以，这里介绍在64位Ubuntu上编译、运行32位汇编程序需要做那些配置。</p>
-
-<h3 id="64位ubuntu编译-链接32位汇编程序">64位Ubuntu编译、链接32位汇编程序</h3>
-
+<h3 id="64位ubuntu编译链接32位汇编程序">64位Ubuntu编译、链接32位汇编程序</h3>
 <p>在 <code>~/.bashrc</code> 中添加下面的行：</p>
-
 <pre><code># asm i386
 alias as='as --32 -gstabs'
 alias ld='ld -m elf_i386'
 alias gcc='gcc -m32'
 </code></pre>
-
 <p>每次输入指令编译、运行、查看返回值也很麻烦，可以写个脚本自动完成这些工作，参考：<a href="http://blog.wiseturtles.com/posts/Compile-Link-and-Run-ASM-Program.html">编译、链接、运行汇编程序</a></p>
-
 <p>注：</p>
-
 <ul>
 <li>上面链接中提到的那坨脚本基本可以用 <code>gcc -m32 -o myhello myhello.s</code> 代替😂</li>
 <li>如果用上面的gcc指令编译汇编代码，只能在汇编代码中使用<code>.globl main</code>；而不能使用as默认的<code>.globl _start</code></li>
 </ul>
-
 <h3 id="vim">Vim</h3>
-
 <h4 id="asm在vim中的语法检查">asm在Vim中的语法检查</h4>
-
 <p><a href="https://github.com/wklken/k-vim">k-vim</a>使用<code>syntastic</code>做语法检查，<code>syntastic</code>对asm源码默认检查会使用<code>as</code>编译源码，如果不指定<code>as --32</code>有些32位处理器特有的指令会引起报错。</p>
-
 <p>现象就是每次在Vim中<code>:w</code>保存时，可能会报：<code>Error: invalid instruction suffix for 'push'</code> 或 <code>Error: 'jcxz' is not supported in 64-bit mode</code> 之类的错误。</p>
-
 <p>可以在vim配置中指定<code>g:syntastic_asm_compiler_options</code>参数，避免错误，补丁如下:</p>
-
 <pre><code>diff --git a/vimrc.bundles b/vimrc.bundles
 index c7428e8..7a4555d 100644
 --- a/vimrc.bundles
@@ -291,16 +242,11 @@ index c7428e8..7a4555d 100644
 +    let g:syntastic_asm_compiler_options = &quot;--32&quot;
 +
 </code></pre>
-
 <p>注：参考syntastic文档 - <a href="https://github.com/scrooloose/syntastic/wiki/ASM:---gcc">ASM: gcc</a></p>
-
 <h3 id="64位ubuntu通过gcc生成c代码对应的32位汇编代码">64位Ubuntu通过gcc生成C代码对应的32位汇编代码</h3>
-
 <p>直接通过gcc生成C代码对应的汇编代码只需<code>gcc -S</code>，但生成32位汇编代码就需要：</p>
-
 <pre><code>$ gcc -m32 -S hello.c
 </code></pre>
-
 <p>注：需要安装<code>libc6-dev-i386</code>，否则会报错。</p>
 
     </div>
@@ -414,7 +360,7 @@ index c7428e8..7a4555d 100644
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -435,12 +381,16 @@ index c7428e8..7a4555d 100644
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

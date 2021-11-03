@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/bigdata/%E5%88%86%E6%9E%90elb%E8%AE%BF%E9%97%AE%E6%97%A5%E5%BF%97/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="hive分析elb访问日志" />
 <meta property="og:description" content="Hive分析ELB访问日志 Hive 分析 创建Hive table CREATE EXTERNAL TABLE IF NOT EXISTS elb_raw_access_logs ( request_timestamp string, elb_name string, request_ip string, request_port int, backend_ip string, backend_port int, request_processing_time double, backend_processing_time double, client_response_time double, elb_response_code string, backend_response_code string, received_bytes bigint, sent_bytes bigint, request_verb string, url string, protocol string, user_agent string, ssl_cipher string, ssl_protocol string )" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/bigdata/%E5%88%86%E6%9E%90elb%E8%AE%BF%E9%97%AE%E6%97%A5%E5%BF%97/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:22:01&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:22:01&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/bigdata/%E5%88%86%E6%9E%90elb%E8%AE%BF%E9%97%AE%E6%97%A5%E5%BF%97/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:22:01+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:22:01+08:00" />
 
 <meta itemprop="name" content="hive分析elb访问日志">
-<meta itemprop="description" content="Hive分析ELB访问日志 Hive 分析 创建Hive table CREATE EXTERNAL TABLE IF NOT EXISTS elb_raw_access_logs ( request_timestamp string, elb_name string, request_ip string, request_port int, backend_ip string, backend_port int, request_processing_time double, backend_processing_time double, client_response_time double, elb_response_code string, backend_response_code string, received_bytes bigint, sent_bytes bigint, request_verb string, url string, protocol string, user_agent string, ssl_cipher string, ssl_protocol string )">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:22:01&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:22:01&#43;08:00" />
+<meta itemprop="description" content="Hive分析ELB访问日志 Hive 分析 创建Hive table CREATE EXTERNAL TABLE IF NOT EXISTS elb_raw_access_logs ( request_timestamp string, elb_name string, request_ip string, request_port int, backend_ip string, backend_port int, request_processing_time double, backend_processing_time double, client_response_time double, elb_response_code string, backend_response_code string, received_bytes bigint, sent_bytes bigint, request_verb string, url string, protocol string, user_agent string, ssl_cipher string, ssl_protocol string )"><meta itemprop="datePublished" content="2017-12-15T19:22:01+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:22:01+08:00" />
 <meta itemprop="wordCount" content="416">
-
-
-
-<meta itemprop="keywords" content="hive," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="hive分析elb访问日志"/>
+<meta itemprop="keywords" content="hive," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="hive分析elb访问日志"/>
 <meta name="twitter:description" content="Hive分析ELB访问日志 Hive 分析 创建Hive table CREATE EXTERNAL TABLE IF NOT EXISTS elb_raw_access_logs ( request_timestamp string, elb_name string, request_ip string, request_port int, backend_ip string, backend_port int, request_processing_time double, backend_processing_time double, client_response_time double, elb_response_code string, backend_response_code string, received_bytes bigint, sent_bytes bigint, request_verb string, url string, protocol string, user_agent string, ssl_cipher string, ssl_protocol string )"/>
 
 <!--[if lte IE 9]>
@@ -165,36 +145,24 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#hive分析elb访问日志">Hive分析ELB访问日志</a>
-<ul>
-<li><a href="#hive-分析">Hive 分析</a>
-<ul>
-<li><a href="#创建hive-table">创建Hive table</a></li>
-<li><a href="#分析">分析</a>
-<ul>
-<li><a href="#hive-partition">Hive partition</a></li>
-<li><a href="#alert-table">alert table</a></li>
-<li><a href="#分析-1">分析</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#hive-分析">Hive 分析</a>
+      <ul>
+        <li><a href="#创建hive-table">创建Hive table</a></li>
+        <li><a href="#分析">分析</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h1 id="hive分析elb访问日志">Hive分析ELB访问日志</h1>
-
+      <h1 id="hive分析elb访问日志">Hive分析ELB访问日志</h1>
 <h2 id="hive-分析">Hive 分析</h2>
-
 <h3 id="创建hive-table">创建Hive table</h3>
-
-<pre><code>CREATE EXTERNAL TABLE IF NOT EXISTS elb_raw_access_logs (
+<pre tabindex="0"><code>CREATE EXTERNAL TABLE IF NOT EXISTS elb_raw_access_logs (
   request_timestamp string, 
   elb_name string, 
   request_ip string, 
@@ -218,28 +186,18 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.RegexSerDe'
 WITH SERDEPROPERTIES (
          'serialization.format' = '1','input.regex' = '([^ ]*) ([^ ]*) ([^ ]*):([0-9]*) ([^ ]*)[:\-]([0-9]*) ([-.0-9]*) ([-.0-9]*) ([-.0-9]*) (|[-0-9]*) (-|[-0-9]*) ([-0-9]*) ([-0-9]*) \\\&quot;([^ ]*) ([^ ]*) (- |[^ ]*)\\\&quot; (\&quot;[^\&quot;]*\&quot;) ([A-Z0-9-]+) ([A-Za-z0-9.-]*)$' ) 
 LOCATION 's3://onetouch-test-elb/';
-</code></pre>
-
-<h3 id="分析">分析</h3>
-
+</code></pre><h3 id="分析">分析</h3>
 <p>查看数据：</p>
-
-<pre><code>SELECT * FROM elb_raw_access_logs WHERE elb_response_code = '200' LIMIT 10;
-</code></pre>
-
-<p>日期：2017-04-17T10:11:32.623734Z</p>
-
+<pre tabindex="0"><code>SELECT * FROM elb_raw_access_logs WHERE elb_response_code = '200' LIMIT 10;
+</code></pre><p>日期：2017-04-17T10:11:32.623734Z</p>
 <p>各模块正常请求的平均响应时间:</p>
-
 <pre><code>SELECT elb_name, avg(backend_processing_time)
-    FROM elb_raw_access_logs
-    WHERE elb_response_code == '200'
-    GROUP BY elb_name;
+	FROM elb_raw_access_logs
+	WHERE elb_response_code == '200'
+	GROUP BY elb_name;
 </code></pre>
-
 <h4 id="hive-partition">Hive partition</h4>
-
-<pre><code>CREATE EXTERNAL TABLE IF NOT EXISTS elb_raw_access_logs_part (
+<pre tabindex="0"><code>CREATE EXTERNAL TABLE IF NOT EXISTS elb_raw_access_logs_part (
   request_timestamp string, 
   elb_name string, 
   request_ip string, 
@@ -264,46 +222,29 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.RegexSerDe'
 WITH SERDEPROPERTIES (
          'serialization.format' = '1','input.regex' = '([^ ]*) ([^ ]*) ([^ ]*):([0-9]*) ([^ ]*)[:\-]([0-9]*) ([-.0-9]*) ([-.0-9]*) ([-.0-9]*) (|[-0-9]*) (-|[-0-9]*) ([-0-9]*) ([-0-9]*) \\\&quot;([^ ]*) ([^ ]*) (- |[^ ]*)\\\&quot; (\&quot;[^\&quot;]*\&quot;) ([A-Z0-9-]+) ([A-Za-z0-9.-]*)$' )
 LOCATION 's3://onetouch-test-elb/';
-</code></pre>
-
-<h4 id="alert-table">alert table</h4>
-
-<pre><code>ALTER TABLE elb_raw_access_logs_part ADD PARTITION (year='2017',month='05',day='30') 
+</code></pre><h4 id="alert-table">alert table</h4>
+<pre tabindex="0"><code>ALTER TABLE elb_raw_access_logs_part ADD PARTITION (year='2017',month='05',day='30') 
     location 's3://onetouch-test-elb/proxy/AWSLogs/677234397898/elasticloadbalancing/us-east-1/2017/05/30/';
 
 show partitions elb_raw_access_logs_part;
-</code></pre>
-
-<h4 id="分析-1">分析</h4>
-
+</code></pre><h4 id="分析-1">分析</h4>
 <p>2017-05-30 的数据按 <code>elb_response_code</code> 分组：</p>
-
-<pre><code>SELECT elb_response_code, count(url) FROM elb_raw_access_logs_part
+<pre tabindex="0"><code>SELECT elb_response_code, count(url) FROM elb_raw_access_logs_part
     WHERE year = '2017' AND month = '05' AND day = '30'
     GROUP BY elb_response_code;
-</code></pre>
-
-<p>以天为单位统计模块吞吐量：</p>
-
-<pre><code>select year, month, day, count(*) as total_request_count 
+</code></pre><p>以天为单位统计模块吞吐量：</p>
+<pre tabindex="0"><code>select year, month, day, count(*) as total_request_count 
+from auth_elb_access_logs_part
+group by year, month, day;
+</code></pre><p>以天为单位统计错误率:</p>
+<pre tabindex="0"><code>select year, month, day, SUM( IF( substr(elb_response_code, 1, 1) != '2', 1 , 0 ) )/ COUNT(*) * 100 as error_rate_pct 
+from auth_elb_access_logs_part
+group by year, month, day;
+</code></pre><p>以天为单位计算平均响应时间：</p>
+<pre tabindex="0"><code>select year, month, day, avg(backend_processing_time) as avg_backend_processing_time
 from auth_elb_access_logs_part
 group by year, month, day;
 </code></pre>
-
-<p>以天为单位统计错误率:</p>
-
-<pre><code>select year, month, day, SUM( IF( substr(elb_response_code, 1, 1) != '2', 1 , 0 ) )/ COUNT(*) * 100 as error_rate_pct 
-from auth_elb_access_logs_part
-group by year, month, day;
-</code></pre>
-
-<p>以天为单位计算平均响应时间：</p>
-
-<pre><code>select year, month, day, avg(backend_processing_time) as avg_backend_processing_time
-from auth_elb_access_logs_part
-group by year, month, day;
-</code></pre>
-
     </div>
 
     
@@ -411,7 +352,7 @@ group by year, month, day;
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -432,12 +373,16 @@ group by year, month, day;
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

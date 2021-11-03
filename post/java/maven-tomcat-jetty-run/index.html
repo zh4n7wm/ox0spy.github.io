@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/java/maven-tomcat-jetty-run/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="maven通过plugin在tomcat、jetty中运行项目" />
 <meta property="og:description" content="记录下如何在pom.xml中配置插件，通过tomcat、Jetty运行项目. 配置pom.xml &lt;build&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt; &lt;artifactId&gt;tomcat6-maven-plugin&lt;/artifactId&gt; &lt;version&gt;2.2&lt;/version&gt; &lt;/plugin&gt; &lt;plugin&gt; &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt; &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt; &lt;version&gt;2.2&lt;/version&gt; &lt;/plugin&gt; &lt;plugin&gt; &lt;groupId&gt;org.mortbay.jetty&lt;/groupId&gt; &lt;artifactId&gt;jetty-maven-plugin&lt;/artifactId&gt; &lt;/plugin&gt; &lt;/plugins&gt; &lt;/build&gt; 测试 Maven Tomcat plugin" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/java/maven-tomcat-jetty-run/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:22:00&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:22:00&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/java/maven-tomcat-jetty-run/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:22:00+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:22:00+08:00" />
 
 <meta itemprop="name" content="maven通过plugin在tomcat、jetty中运行项目">
-<meta itemprop="description" content="记录下如何在pom.xml中配置插件，通过tomcat、Jetty运行项目. 配置pom.xml &lt;build&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt; &lt;artifactId&gt;tomcat6-maven-plugin&lt;/artifactId&gt; &lt;version&gt;2.2&lt;/version&gt; &lt;/plugin&gt; &lt;plugin&gt; &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt; &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt; &lt;version&gt;2.2&lt;/version&gt; &lt;/plugin&gt; &lt;plugin&gt; &lt;groupId&gt;org.mortbay.jetty&lt;/groupId&gt; &lt;artifactId&gt;jetty-maven-plugin&lt;/artifactId&gt; &lt;/plugin&gt; &lt;/plugins&gt; &lt;/build&gt; 测试 Maven Tomcat plugin">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:22:00&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:22:00&#43;08:00" />
+<meta itemprop="description" content="记录下如何在pom.xml中配置插件，通过tomcat、Jetty运行项目. 配置pom.xml &lt;build&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt; &lt;artifactId&gt;tomcat6-maven-plugin&lt;/artifactId&gt; &lt;version&gt;2.2&lt;/version&gt; &lt;/plugin&gt; &lt;plugin&gt; &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt; &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt; &lt;version&gt;2.2&lt;/version&gt; &lt;/plugin&gt; &lt;plugin&gt; &lt;groupId&gt;org.mortbay.jetty&lt;/groupId&gt; &lt;artifactId&gt;jetty-maven-plugin&lt;/artifactId&gt; &lt;/plugin&gt; &lt;/plugins&gt; &lt;/build&gt; 测试 Maven Tomcat plugin"><meta itemprop="datePublished" content="2017-12-15T19:22:00+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:22:00+08:00" />
 <meta itemprop="wordCount" content="84">
-
-
-
-<meta itemprop="keywords" content="java,maven,tomcat,jetty," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="maven通过plugin在tomcat、jetty中运行项目"/>
+<meta itemprop="keywords" content="java,maven,tomcat,jetty," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="maven通过plugin在tomcat、jetty中运行项目"/>
 <meta name="twitter:description" content="记录下如何在pom.xml中配置插件，通过tomcat、Jetty运行项目. 配置pom.xml &lt;build&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt; &lt;artifactId&gt;tomcat6-maven-plugin&lt;/artifactId&gt; &lt;version&gt;2.2&lt;/version&gt; &lt;/plugin&gt; &lt;plugin&gt; &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt; &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt; &lt;version&gt;2.2&lt;/version&gt; &lt;/plugin&gt; &lt;plugin&gt; &lt;groupId&gt;org.mortbay.jetty&lt;/groupId&gt; &lt;artifactId&gt;jetty-maven-plugin&lt;/artifactId&gt; &lt;/plugin&gt; &lt;/plugins&gt; &lt;/build&gt; 测试 Maven Tomcat plugin"/>
 
 <!--[if lte IE 9]>
@@ -165,30 +145,24 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#配置pom-xml">配置pom.xml</a></li>
-<li><a href="#测试">测试</a>
-<ul>
-<li><a href="#maven-tomcat-plugin">Maven Tomcat plugin</a></li>
-<li><a href="#maven-jetty-plugin">Maven Jetty plugin</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#配置pomxml">配置pom.xml</a></li>
+    <li><a href="#测试">测试</a>
+      <ul>
+        <li><a href="#maven-tomcat-plugin">Maven Tomcat plugin</a></li>
+        <li><a href="#maven-jetty-plugin">Maven Jetty plugin</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>记录下如何在pom.xml中配置插件，通过tomcat、Jetty运行项目.</p>
-
-<h2 id="配置pom-xml">配置pom.xml</h2>
-
-<pre><code>&lt;build&gt;
+      <p>记录下如何在pom.xml中配置插件，通过tomcat、Jetty运行项目.</p>
+<h2 id="配置pomxml">配置pom.xml</h2>
+<pre tabindex="0"><code>&lt;build&gt;
     &lt;plugins&gt;
         &lt;plugin&gt;
             &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;
@@ -208,22 +182,15 @@
         &lt;/plugin&gt;
     &lt;/plugins&gt;
 &lt;/build&gt;
-</code></pre>
-
-<h2 id="测试">测试</h2>
-
+</code></pre><h2 id="测试">测试</h2>
 <h3 id="maven-tomcat-plugin">Maven Tomcat plugin</h3>
-
 <pre><code>:::bash
 $ mvn tomcat:run
 $ mvn tomcat7:run
 </code></pre>
-
 <h3 id="maven-jetty-plugin">Maven Jetty plugin</h3>
-
 <pre><code>:::bash
-$ mvn jetty:run
-</code></pre>
+$ mvn jetty:run</code></pre>
 
     </div>
 
@@ -338,7 +305,7 @@ $ mvn jetty:run
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -359,12 +326,16 @@ $ mvn jetty:run
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

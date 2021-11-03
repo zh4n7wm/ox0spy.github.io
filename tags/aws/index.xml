@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Aws on ox0spy&#39;s blog</title>
+    <title>aws on ox0spy&#39;s blog</title>
     <link>https://ox0spy.github.io/tags/aws/</link>
-    <description>Recent content in Aws on ox0spy&#39;s blog</description>
+    <description>Recent content in aws on ox0spy&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 17 May 2018 09:22:01 +0800</lastBuildDate>
-    
-	<atom:link href="https://ox0spy.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 17 May 2018 09:22:01 +0800</lastBuildDate><atom:link href="https://ox0spy.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spark logs location on AWS EMR</title>
       <link>https://ox0spy.github.io/post/bigdata/spark-log-location-on-emr/</link>

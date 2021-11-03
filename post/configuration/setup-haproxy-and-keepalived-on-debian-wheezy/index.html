@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="ox0spy" />
-  <meta name="description" content="准备机器 harpoxy_MASTER - 172.16.8.129 haproxy_BACKUP - 172.16.8.130 WEB_APP_SERVER_1 - 172.16.8.131 WEB_APP_SERVER_2 - 172.16.8.132 注: 1. virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP) 2. 所有机器都安装的Debian 7.5 (wheezy) 安装" />
+  <meta name="description" content="准备机器 harpoxy_MASTER - 172.16.8.129 haproxy_BACKUP - 172.16.8.130 WEB_APP_SERVER_1 - 172.16.8.131 WEB_APP_SERVER_2 - 172.16.8.132 注: virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP) 所有机器都安装的Debian 7.5 (wheezy) 安装软件" />
 
   <meta name="keywords" content="ox0spy, python, flask, django, go, golang, programming, coding, even" />
 
@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/configuration/setup-haproxy-and-keepalived-on-debian-wheezy/" />
@@ -45,39 +45,19 @@
 <link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
 <meta property="og:title" content="setup haproxy and keepalived on debian (wheezy)" />
-<meta property="og:description" content="准备机器 harpoxy_MASTER - 172.16.8.129 haproxy_BACKUP - 172.16.8.130 WEB_APP_SERVER_1 - 172.16.8.131 WEB_APP_SERVER_2 - 172.16.8.132 注: 1. virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP) 2. 所有机器都安装的Debian 7.5 (wheezy) 安装" />
+<meta property="og:description" content="准备机器 harpoxy_MASTER - 172.16.8.129 haproxy_BACKUP - 172.16.8.130 WEB_APP_SERVER_1 - 172.16.8.131 WEB_APP_SERVER_2 - 172.16.8.132 注: virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP) 所有机器都安装的Debian 7.5 (wheezy) 安装软件" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/configuration/setup-haproxy-and-keepalived-on-debian-wheezy/" />
-
-
-
-<meta property="article:published_time" content="2014-07-01T00:00:00&#43;08:00"/>
-
-<meta property="article:modified_time" content="2014-07-01T00:00:00&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/configuration/setup-haproxy-and-keepalived-on-debian-wheezy/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2014-07-01T00:00:00+08:00" />
+<meta property="article:modified_time" content="2014-07-01T00:00:00+08:00" />
 
 <meta itemprop="name" content="setup haproxy and keepalived on debian (wheezy)">
-<meta itemprop="description" content="准备机器 harpoxy_MASTER - 172.16.8.129 haproxy_BACKUP - 172.16.8.130 WEB_APP_SERVER_1 - 172.16.8.131 WEB_APP_SERVER_2 - 172.16.8.132 注: 1. virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP) 2. 所有机器都安装的Debian 7.5 (wheezy) 安装">
-
-
-<meta itemprop="datePublished" content="2014-07-01T00:00:00&#43;08:00" />
-<meta itemprop="dateModified" content="2014-07-01T00:00:00&#43;08:00" />
+<meta itemprop="description" content="准备机器 harpoxy_MASTER - 172.16.8.129 haproxy_BACKUP - 172.16.8.130 WEB_APP_SERVER_1 - 172.16.8.131 WEB_APP_SERVER_2 - 172.16.8.132 注: virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP) 所有机器都安装的Debian 7.5 (wheezy) 安装软件"><meta itemprop="datePublished" content="2014-07-01T00:00:00+08:00" />
+<meta itemprop="dateModified" content="2014-07-01T00:00:00+08:00" />
 <meta itemprop="wordCount" content="1183">
-
-
-
-<meta itemprop="keywords" content="haproxy,keepalived," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="setup haproxy and keepalived on debian (wheezy)"/>
-<meta name="twitter:description" content="准备机器 harpoxy_MASTER - 172.16.8.129 haproxy_BACKUP - 172.16.8.130 WEB_APP_SERVER_1 - 172.16.8.131 WEB_APP_SERVER_2 - 172.16.8.132 注: 1. virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP) 2. 所有机器都安装的Debian 7.5 (wheezy) 安装"/>
+<meta itemprop="keywords" content="haproxy,keepalived," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="setup haproxy and keepalived on debian (wheezy)"/>
+<meta name="twitter:description" content="准备机器 harpoxy_MASTER - 172.16.8.129 haproxy_BACKUP - 172.16.8.130 WEB_APP_SERVER_1 - 172.16.8.131 WEB_APP_SERVER_2 - 172.16.8.132 注: virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP) 所有机器都安装的Debian 7.5 (wheezy) 安装软件"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -161,73 +141,65 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#准备机器">准备机器</a></li>
-<li><a href="#安装软件">安装软件</a>
-<ul>
-<li><a href="#haproxy-master上安装配置haproxy和keepalived">haproxy_MASTER上安装配置haproxy和keepalived</a>
-<ul>
-<li><a href="#配置haproxy">配置haproxy</a></li>
-<li><a href="#配置keepalived">配置keepalived</a></li>
-</ul></li>
-<li><a href="#haproxy-backup上安装配置haproxy和keepalived">haproxy_BACKUP上安装配置haproxy和keepalived</a>
-<ul>
-<li><a href="#配置haproxy-1">配置haproxy</a></li>
-<li><a href="#配置keepalived-1">配置keepalived</a></li>
-</ul></li>
-<li><a href="#配置web-app-server-1">配置WEB_APP_SERVER_1</a>
-<ul>
-<li><a href="#安装nginx">安装nginx</a></li>
-<li><a href="#配置ip">配置IP</a></li>
-</ul></li>
-<li><a href="#配置web-app-server-2">配置WEB_APP_SERVER_2</a>
-<ul>
-<li><a href="#安装nginx-1">安装nginx</a></li>
-<li><a href="#配置ip-1">配置IP</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#启动haproxy-keepalived">启动haproxy, keepalived</a></li>
-<li><a href="#测试">测试</a>
-<ul>
-<li><a href="#查看服务器状态">查看服务器状态</a></li>
-<li><a href="#查看haproxy状态">查看haproxy状态</a></li>
-<li><a href="#关闭haproxy-master查看web服务是否正常工作">关闭haproxy_MASTER查看web服务是否正常工作</a></li>
-<li><a href="#关闭web-app-server-1查看web服务是否正常工作">关闭WEB_APP_SERVER_1查看web服务是否正常工作</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#haproxy_master上安装配置haproxy和keepalived">haproxy_MASTER上安装配置haproxy和keepalived</a>
+      <ul>
+        <li><a href="#配置haproxy">配置haproxy</a></li>
+        <li><a href="#配置keepalived">配置keepalived</a></li>
+      </ul>
+    </li>
+    <li><a href="#haproxy_backup上安装配置haproxy和keepalived">haproxy_BACKUP上安装配置haproxy和keepalived</a>
+      <ul>
+        <li><a href="#配置haproxy-1">配置haproxy</a></li>
+        <li><a href="#配置keepalived-1">配置keepalived</a></li>
+      </ul>
+    </li>
+    <li><a href="#配置web_app_server_1">配置WEB_APP_SERVER_1</a>
+      <ul>
+        <li><a href="#安装nginx">安装nginx</a></li>
+        <li><a href="#配置ip">配置IP</a></li>
+      </ul>
+    </li>
+    <li><a href="#配置web_app_server_2">配置WEB_APP_SERVER_2</a>
+      <ul>
+        <li><a href="#安装nginx-1">安装nginx</a></li>
+        <li><a href="#配置ip-1">配置IP</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#查看服务器状态">查看服务器状态</a></li>
+    <li><a href="#查看haproxy状态">查看haproxy状态</a></li>
+    <li><a href="#关闭haproxy_master查看web服务是否正常工作">关闭haproxy_MASTER查看web服务是否正常工作</a></li>
+    <li><a href="#关闭web_app_server_1查看web服务是否正常工作">关闭WEB_APP_SERVER_1查看web服务是否正常工作</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h1 id="准备机器">准备机器</h1>
-
+      <h1 id="准备机器">准备机器</h1>
 <ul>
 <li>harpoxy_MASTER - 172.16.8.129</li>
 <li>haproxy_BACKUP - 172.16.8.130</li>
 <li>WEB_APP_SERVER_1 - 172.16.8.131</li>
 <li>WEB_APP_SERVER_2 - 172.16.8.132</li>
 </ul>
-
-<p>注:
-1. virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP)
-2. 所有机器都安装的Debian 7.5 (wheezy)</p>
-
+<p>注:</p>
+<ol>
+<li>virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP)</li>
+<li>所有机器都安装的Debian 7.5 (wheezy)</li>
+</ol>
 <h1 id="安装软件">安装软件</h1>
-
-<h2 id="haproxy-master上安装配置haproxy和keepalived">haproxy_MASTER上安装配置haproxy和keepalived</h2>
-
+<h2 id="haproxy_master上安装配置haproxy和keepalived">haproxy_MASTER上安装配置haproxy和keepalived</h2>
 <pre><code>$ ssh haproxy_MASTER
 $ sudo bash -c &quot;echo 'deb http://ftp.debian.org/debian/ wheezy-backports main' &gt;&gt; /etc/apt/sources.list&quot;
 $ sudo apt-get update
 $ sudo apt-get install haproxy keepalived
 </code></pre>
-
 <h3 id="配置haproxy">配置haproxy</h3>
-
 <pre><code>$ cat /etc/haproxy/haproxy.cfg
 global
         log 127.0.0.1   local0 notice
@@ -270,9 +242,7 @@ listen webserver 0.0.0.0:80
     server app1 172.16.8.131:80 cookie S1 check
     server app2 172.16.8.132:80 cookie S2 check
 </code></pre>
-
 <h3 id="配置keepalived">配置keepalived</h3>
-
 <pre><code>$ cat /etc/keepalived/keepalived.conf
 global_defs {
 router_id LVS_MASTER #BACKUP上修改为LVS_BACKUP
@@ -293,17 +263,13 @@ vrrp_instance VI_1 {
     }
 }
 </code></pre>
-
-<h2 id="haproxy-backup上安装配置haproxy和keepalived">haproxy_BACKUP上安装配置haproxy和keepalived</h2>
-
+<h2 id="haproxy_backup上安装配置haproxy和keepalived">haproxy_BACKUP上安装配置haproxy和keepalived</h2>
 <pre><code>$ ssh haproxy_BACKUP
 $ sudo bash -c &quot;echo 'deb http://ftp.debian.org/debian/ wheezy-backports main' &gt;&gt; /etc/apt/sources.list&quot;
 $ sudo apt-get update
 $ sudo apt-get install haproxy keepalived
 </code></pre>
-
 <h3 id="配置haproxy-1">配置haproxy</h3>
-
 <pre><code>$ cat /etc/haproxy/haproxy.cfg
 global
         log 127.0.0.1   local0 notice
@@ -346,9 +312,7 @@ listen webserver 0.0.0.0:80
     server app1 172.16.8.131:80 cookie S1 check
     server app2 172.16.8.132:80 cookie S2 check
 </code></pre>
-
 <h3 id="配置keepalived-1">配置keepalived</h3>
-
 <pre><code>$ cat /etc/keepalived/keepalived.conf
 global_defs {
 router_id LVS_BACKUP #BACKUP上修改为LVS_BACKUP
@@ -369,23 +333,16 @@ vrrp_instance VI_1 {
     }
 }
 </code></pre>
-
-<h2 id="配置web-app-server-1">配置WEB_APP_SERVER_1</h2>
-
+<h2 id="配置web_app_server_1">配置WEB_APP_SERVER_1</h2>
 <h3 id="安装nginx">安装nginx</h3>
-
 <pre><code>$ ssh WEB_APP_SERVER_1
 $ sudo apt-get install nginx
 $ sudo bash -c 'echo &quot;Web App Server 1&quot; &gt; /usr/share/nginx/www/index.html'
 </code></pre>
-
 <h3 id="配置ip">配置IP</h3>
-
 <pre><code>$ sudo ifconfig eth0:0 172.16.8.252 netmask 255.255.255.255 up
 </code></pre>
-
 <p>修改配置文件 （上面的配置重启后需要重新输入命令）</p>
-
 <pre><code>$ cat /etc/network/interfaces
 # This file describes the network interfaces available on your system
 # and how to activate them. For more information, see interfaces(5).
@@ -410,23 +367,16 @@ iface eth0:0 inet static
         netmask 255.255.255.255
         gateway 172.16.8.2
 </code></pre>
-
-<h2 id="配置web-app-server-2">配置WEB_APP_SERVER_2</h2>
-
+<h2 id="配置web_app_server_2">配置WEB_APP_SERVER_2</h2>
 <h3 id="安装nginx-1">安装nginx</h3>
-
 <pre><code>$ ssh WEB_APP_SERVER_2
 $ sudo apt-get install nginx
 $ sudo bash -c 'echo &quot;Web App Server 2&quot; &gt; /usr/share/nginx/www/index.html'
 </code></pre>
-
 <h3 id="配置ip-1">配置IP</h3>
-
 <pre><code>$ sudo ifconfig eth0:0 172.16.8.252 netmask 255.255.255.255 up
 </code></pre>
-
 <p>修改配置文件 （上面的配置重启后需要重新输入命令）</p>
-
 <pre><code>$ cat /etc/network/interfaces
 # This file describes the network interfaces available on your system
 # and how to activate them. For more information, see interfaces(5).
@@ -451,9 +401,7 @@ iface eth0:0 inet static
         netmask 255.255.255.255
         gateway 172.16.8.2
 </code></pre>
-
 <h1 id="启动haproxy-keepalived">启动haproxy, keepalived</h1>
-
 <pre><code>$ ssh haproxy_MASTER
 $ sudo service haproxy restart
 $ sudo service keepalived restart
@@ -462,11 +410,8 @@ $ ssh haproxy_BACKUP
 $ sudo service haproxy restart
 $ sudo service keepalived restart
 </code></pre>
-
 <h1 id="测试">测试</h1>
-
 <h2 id="查看服务器状态">查看服务器状态</h2>
-
 <pre><code>$ while true; do curl 172.16.8.252; curl 172.16.8.252; sleep 1; done
 Web App Server 1
 Web App Server 2
@@ -474,15 +419,11 @@ Web App Server 1
 Web App Server 2
 ...
 </code></pre>
-
 <h2 id="查看haproxy状态">查看haproxy状态</h2>
-
 <ul>
-<li>用/etc/haproxy/haproxy.cfg中的用户名、密码登录 <a href="http://172.16.8.129/haproxy?stats">http://172.16.8.129/haproxy?stats</a></li>
+<li>用/etc/haproxy/haproxy.cfg中的用户名、密码登录 http://172.16.8.129/haproxy?stats</li>
 </ul>
-
-<h2 id="关闭haproxy-master查看web服务是否正常工作">关闭haproxy_MASTER查看web服务是否正常工作</h2>
-
+<h2 id="关闭haproxy_master查看web服务是否正常工作">关闭haproxy_MASTER查看web服务是否正常工作</h2>
 <pre><code>$ ssh haproxy_MASTER
 $ sudo shutdown -h now
 
@@ -493,9 +434,7 @@ Web App Server 1
 Web App Server 2
 ...
 </code></pre>
-
-<h2 id="关闭web-app-server-1查看web服务是否正常工作">关闭WEB_APP_SERVER_1查看web服务是否正常工作</h2>
-
+<h2 id="关闭web_app_server_1查看web服务是否正常工作">关闭WEB_APP_SERVER_1查看web服务是否正常工作</h2>
 <pre><code>$ ssh WEB_APP_SERVER_1
 $ sudo shutdown -h now
 
@@ -616,7 +555,7 @@ Web App Server 2
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -637,12 +576,16 @@ Web App Server 2
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/bigdata/install-hadoop-on-mac-osx/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="在mac osx上安装hadoop" />
 <meta property="og:description" content="安装Hadoop 只是安装来学习Hadoop，所以，在自己笔记本上安装的。正式的线上环境会用多台机器搭建集群 或者 直接使用AWS的EMR。 我希望" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/bigdata/install-hadoop-on-mac-osx/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:22:01&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:22:01&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/bigdata/install-hadoop-on-mac-osx/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:22:01+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:22:01+08:00" />
 
 <meta itemprop="name" content="在mac osx上安装hadoop">
-<meta itemprop="description" content="安装Hadoop 只是安装来学习Hadoop，所以，在自己笔记本上安装的。正式的线上环境会用多台机器搭建集群 或者 直接使用AWS的EMR。 我希望">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:22:01&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:22:01&#43;08:00" />
-<meta itemprop="wordCount" content="354">
-
-
-
-<meta itemprop="keywords" content="mac, hadoop, bigdata," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="在mac osx上安装hadoop"/>
+<meta itemprop="description" content="安装Hadoop 只是安装来学习Hadoop，所以，在自己笔记本上安装的。正式的线上环境会用多台机器搭建集群 或者 直接使用AWS的EMR。 我希望"><meta itemprop="datePublished" content="2017-12-15T19:22:01+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:22:01+08:00" />
+<meta itemprop="wordCount" content="382">
+<meta itemprop="keywords" content="mac, hadoop, bigdata," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="在mac osx上安装hadoop"/>
 <meta name="twitter:description" content="安装Hadoop 只是安装来学习Hadoop，所以，在自己笔记本上安装的。正式的线上环境会用多台机器搭建集群 或者 直接使用AWS的EMR。 我希望"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/bigdata/"> bigdata </a>
             
           </div>
-        <span class="more-meta"> 约 354 字 </span>
+        <span class="more-meta"> 约 382 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -165,129 +145,111 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#安装hadoop">安装Hadoop</a>
-<ul>
-<li><a href="#修改配置文件">修改配置文件</a></li>
-<li><a href="#启动hdfs-namenode-datanode">启动HDFS (NameNode, DataNode)</a></li>
-<li><a href="#yarn-resourcemanager">YARN (ResourceManager)</a></li>
-</ul></li>
-<li><a href="#参考文档">参考文档</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#安装hadoop">安装Hadoop</a>
+      <ul>
+        <li><a href="#修改配置文件">修改配置文件</a></li>
+        <li><a href="#启动hdfs-namenode-datanode">启动HDFS (NameNode, DataNode)</a></li>
+        <li><a href="#yarn-resourcemanager">YARN (ResourceManager)</a></li>
+      </ul>
+    </li>
+    <li><a href="#参考文档">参考文档</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="安装hadoop">安装Hadoop</h2>
-
+      <h2 id="安装hadoop">安装Hadoop</h2>
 <p>只是安装来学习Hadoop，所以，在自己笔记本上安装的。正式的线上环境会用多台机器搭建集群 或者 直接使用AWS的EMR。</p>
-
 <p>我希望尽可能的通过包管理安装软件，而不是手动下载安装。</p>
-
 <pre><code>$ brew install hadoop
 </code></pre>
-
 <h3 id="修改配置文件">修改配置文件</h3>
-
 <p>Hadoop安装路径: <code>brew --prefix hadoop</code> 。</p>
-
 <p>配置文件路径: <code>$(brew --prefix hadoop)/libexec/etc/hadoop/</code>。</p>
-
 <p><strong>core-site.xml:</strong></p>
-
 <pre><code>&lt;configuration&gt;
-    &lt;property&gt;
-        &lt;name&gt;fs.defaultFS&lt;/name&gt;
-        &lt;value&gt;hdfs://localhost:9000&lt;/value&gt;
-    &lt;/property&gt;
+	&lt;property&gt;
+	    &lt;name&gt;fs.defaultFS&lt;/name&gt;
+	    &lt;value&gt;hdfs://localhost:9000&lt;/value&gt;
+	&lt;/property&gt;
 &lt;/configuration&gt;
 </code></pre>
-
 <p><strong>hdfs-site.xml:</strong></p>
-
 <pre><code>&lt;configuration&gt;
-    &lt;property&gt;
-        &lt;name&gt;dfs.replication&lt;/name&gt;
-        &lt;value&gt;1&lt;/value&gt;
-    &lt;/property&gt;
+	&lt;property&gt;
+	    &lt;name&gt;dfs.replication&lt;/name&gt;
+	    &lt;value&gt;1&lt;/value&gt;
+	&lt;/property&gt;
 &lt;/configuration&gt;
 </code></pre>
-
 <p><strong>mapred-site.xml:</strong></p>
-
 <pre><code>&lt;configuration&gt;
-    &lt;property&gt;
-        &lt;name&gt;mapreduce.framework.name&lt;/name&gt;
-        &lt;value&gt;yarn&lt;/value&gt;
-    &lt;/property&gt;
+	&lt;property&gt;
+	    &lt;name&gt;mapreduce.framework.name&lt;/name&gt;
+	    &lt;value&gt;yarn&lt;/value&gt;
+	&lt;/property&gt;
 &lt;/configuration&gt;
 </code></pre>
-
 <p><strong>yarn-site.xml:</strong></p>
-
 <pre><code>&lt;configuration&gt;
-    &lt;property&gt;
-        &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
-        &lt;value&gt;mapreduce_shuffle&lt;/value&gt;
-    &lt;/property&gt;
+	&lt;property&gt;
+	    &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
+	    &lt;value&gt;mapreduce_shuffle&lt;/value&gt;
+	&lt;/property&gt;
 &lt;/configuration&gt;
 </code></pre>
-
 <h3 id="启动hdfs-namenode-datanode">启动HDFS (NameNode, DataNode)</h3>
-
 <ol>
-<li>格式化HDFS文件系统：<code>$ bin/hdfs namenode -format</code></li>
-<li>启动NameNode 和 DataNode：<code>$ sbin/start-dfs.sh</code></li>
-
-<li><p>创建HDFS目录，为运行MapReduce做准备</p>
-
-<pre><code>$ bin/hdfs dfs -mkdir /user
+<li>
+<p>格式化HDFS文件系统：<code>$ bin/hdfs namenode -format</code></p>
+</li>
+<li>
+<p>启动NameNode 和 DataNode：<code>$ sbin/start-dfs.sh</code></p>
+</li>
+<li>
+<p>创建HDFS目录，为运行MapReduce做准备</p>
+<pre tabindex="0"><code>$ bin/hdfs dfs -mkdir /user
 $ bin/hdfs dfs -mkdir /user/&lt;username&gt;
 $ bin/hdfs dfs -put libexec/etc/hadoop input
-</code></pre></li>
-
-<li><p>运行demo:</p>
-
-<pre><code>$ bin/hadoop jar libexec/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.8.0.jar grep input output 'dfs[a-z.]+'
-</code></pre></li>
-
-<li><p>查看demo输出: <code>$ bin/hdfs dfs -cat outpu/*</code></p></li>
-
-<li><p>停止NameNode 和 DataNode: <code>$ sbin/stop-dfs.sh</code></p></li>
+</code></pre><p>``</p>
+</li>
+<li>
+<p>运行demo:</p>
+<pre tabindex="0"><code>$ bin/hadoop jar libexec/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.8.0.jar grep input output 'dfs[a-z.]+'
+</code></pre><p>``</p>
+</li>
+<li>
+<p>查看demo输出: <code>$ bin/hdfs dfs -cat outpu/*</code></p>
+</li>
+<li>
+<p>停止NameNode 和 DataNode: <code>$ sbin/stop-dfs.sh</code></p>
+</li>
 </ol>
-
 <p>修改 ~/.zshrc ，将hadoop的bin, sbin加入PATH环境变量：</p>
-
 <pre><code># hadoop
 HADOOP_HOME=$(brew --prefix hadoop)
 export PATH=&quot;$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH&quot;
 </code></pre>
-
 <h3 id="yarn-resourcemanager">YARN (ResourceManager)</h3>
-
 <ol>
-<li><p>启动:</p>
-
-<pre><code>$ sbin/start-yarn.sh
-</code></pre></li>
-
-<li><p>查看: <a href="http://localhost:8088/">http://localhost:8088/</a></p></li>
-
-<li><p>停止:</p>
-
-<pre><code>$ sbin/stop-yarn.sh
-</code></pre></li>
+<li>
+<p>启动:</p>
+<pre tabindex="0"><code>$ sbin/start-yarn.sh
+</code></pre><p>``</p>
+</li>
+<li>
+<p>查看: <a href="http://localhost:8088/">http://localhost:8088/</a></p>
+</li>
+<li>
+<p>停止:</p>
+<pre tabindex="0"><code>$ sbin/stop-yarn.sh
+</code></pre><p>``</p>
+</li>
 </ol>
-
 <h2 id="参考文档">参考文档</h2>
-
 <ul>
 <li><a href="https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html">Hadoop: Setting up a Single Node Cluster.</a></li>
 </ul>
@@ -403,7 +365,7 @@ export PATH=&quot;$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH&quot;
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -424,12 +386,16 @@ export PATH=&quot;$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH&quot;
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Data Science on ox0spy&#39;s blog</title>
+    <title>data-science on ox0spy&#39;s blog</title>
     <link>https://ox0spy.github.io/categories/data-science/</link>
-    <description>Recent content in Data Science on ox0spy&#39;s blog</description>
+    <description>Recent content in data-science on ox0spy&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    
-	<atom:link href="https://ox0spy.github.io/categories/data-science/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>zh-cn</language><atom:link href="https://ox0spy.github.io/categories/data-science/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>https://ox0spy.github.io/post/data-science/pydata/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ox0spy.github.io/post/data-science/pydata/</guid>
-      <description>pandas的plot没有显示所画图片 三种方法解决: import matplotlib.pyplot as plt; plt.show() plt.ion() echo &amp;ldquo;c.InteractiveShellApp.pylab = &amp;lsquo;auto&amp;rsquo;&amp;rdquo; &amp;gt;&amp;gt; ~/.ipython/profile_default/ipython_config.py</description>
+      <description>pandas的plot没有显示所画图片 三种方法解决: import matplotlib.pyplot as plt; plt.show() plt.ion() echo &amp;ldquo;c.InteractiveShellApp.pylab = &amp;lsquo;auto&amp;rsquo;&amp;rdquo; &amp;raquo; ~/.ipython/profile_default/ipython_config.py</description>
     </item>
     
   </channel>

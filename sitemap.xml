@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <?xml-stylesheet type="text/xsl" href="https://ox0spy.github.io/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
@@ -10,8 +9,71 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/tags/linux/</loc>
+    <lastmod>2019-02-26T09:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/</loc>
+    <lastmod>2019-02-26T09:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/linux/</loc>
+    <lastmod>2019-02-26T09:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/</loc>
+    <lastmod>2019-02-26T09:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/post/</loc>
+    <lastmod>2019-02-26T09:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/</loc>
+    <lastmod>2019-02-26T09:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/tips/</loc>
+    <lastmod>2019-02-26T09:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/ubuntu/disable-laptop-keyboard/</loc>
     <lastmod>2019-02-26T09:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/css/</loc>
+    <lastmod>2019-02-01T16:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/frontend/</loc>
+    <lastmod>2019-02-01T16:21:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -31,6 +93,48 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/tags/android/</loc>
+    <lastmod>2019-01-29T09:02:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/android/</loc>
+    <lastmod>2019-01-29T09:02:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/sdkmanager/</loc>
+    <lastmod>2019-01-29T09:02:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/ssh/</loc>
+    <lastmod>2018-10-25T18:01:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/tunnel/</loc>
+    <lastmod>2018-10-25T18:01:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/configuration/</loc>
+    <lastmod>2018-10-25T18:01:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/configuration/forward-local-keypair-in-ssh-session/</loc>
     <lastmod>2018-10-25T18:01:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -38,7 +142,35 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/categories/database/</loc>
+    <lastmod>2018-09-26T10:06:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/java/</loc>
+    <lastmod>2018-09-26T10:06:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/liquibase/</loc>
+    <lastmod>2018-09-26T10:06:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/java/liquibase-with-maven-multi-deploy-environments/</loc>
+    <lastmod>2018-09-26T10:06:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/migration/</loc>
     <lastmod>2018-09-26T10:06:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -54,6 +186,34 @@
   <url>
     <loc>https://ox0spy.github.io/post/java/code-formatter-with-ide/</loc>
     <lastmod>2018-09-22T14:06:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/eclipse/</loc>
+    <lastmod>2018-09-22T14:06:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/idea/</loc>
+    <lastmod>2018-09-22T14:06:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/jenkins/</loc>
+    <lastmod>2018-09-22T10:06:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/jenkins/</loc>
+    <lastmod>2018-09-22T10:06:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -80,8 +240,50 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/categories/elasticsearch/</loc>
+    <lastmod>2018-07-22T14:06:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/elasticsearch/elasticsearch-forbidden-12-index-read-only-allow-delete-api/</loc>
     <lastmod>2018-07-22T14:06:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/bigdata/</loc>
+    <lastmod>2018-05-17T09:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/emr/</loc>
+    <lastmod>2018-05-17T09:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/aws/</loc>
+    <lastmod>2018-05-17T09:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/bigdata/</loc>
+    <lastmod>2018-05-17T09:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/spark/</loc>
+    <lastmod>2018-05-17T09:22:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -94,8 +296,22 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/categories/dns/</loc>
+    <lastmod>2018-03-31T21:49:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/configuration/dnscrypt-proxy-and-dnsmasq/</loc>
     <lastmod>2018-03-31T21:49:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/aws/</loc>
+    <lastmod>2018-02-09T18:06:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -108,6 +324,20 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/tags/mac/</loc>
+    <lastmod>2018-01-16T15:34:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/s3/</loc>
+    <lastmod>2018-01-16T15:34:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/bigdata/spark-with-s3a/</loc>
     <lastmod>2018-01-16T15:34:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -115,8 +345,141 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/tags/blog/</loc>
+    <lastmod>2017-12-15T21:08:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/hugo/</loc>
+    <lastmod>2017-12-15T21:08:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/configuration/setup-hugo-github-pages/</loc>
     <lastmod>2017-12-15T21:08:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/debian/</loc>
+    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/elk/</loc>
+    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/hive/</loc>
+    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/logstash/</loc>
+    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/management/</loc>
+    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/monitor/</loc>
+    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/nginx/</loc>
+    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/nis/</loc>
+    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/pig/</loc>
+    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/proxy/</loc>
+    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/python/</loc>
+    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/restore/</loc>
+    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/reverse/</loc>
+    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/snapshot/</loc>
+    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/ssmtp/</loc>
+    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/transfer/</loc>
+    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/dashboard/</loc>
+    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -130,6 +493,20 @@
   
   <url>
     <loc>https://ox0spy.github.io/post/elasticsearch/elasticsearch-snapshot-restore/</loc>
+    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/elasticsearch/</loc>
+    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/hadoop/</loc>
     <lastmod>2017-12-15T19:22:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -171,6 +548,13 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/tags/pandas/</loc>
+    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/bigdata/pandas%E5%88%86%E6%9E%90nginx%E6%97%A5%E5%BF%97/</loc>
     <lastmod>2017-12-15T19:22:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -186,6 +570,27 @@
   
   <url>
     <loc>https://ox0spy.github.io/post/ubuntu/install-ssmtp/</loc>
+    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/tensorflow/</loc>
+    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/ubuntu/</loc>
+    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/ubuntu/</loc>
     <lastmod>2017-12-15T19:22:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -234,6 +639,90 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/tags/adb/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/brew/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/github/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/grants/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/ios/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/shell/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/sip/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/spring/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/user/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/vcard/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/%E6%8B%9B%E5%95%86%E9%93%B6%E8%A1%8C/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/404/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/performance/c10k/</loc>
     <lastmod>2017-12-15T19:22:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -241,7 +730,21 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/tags/docker/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/android/export-android-contacts-via-adb/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/gradle/</loc>
     <lastmod>2017-12-15T19:22:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -262,6 +765,13 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/tags/java/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/java/get_started_with_java_web/</loc>
     <lastmod>2017-12-15T19:22:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -270,6 +780,27 @@
   
   <url>
     <loc>https://ox0spy.github.io/post/mac-osx/jenkins-build-ios-apps/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/jetty/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/life/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/life/</loc>
     <lastmod>2017-12-15T19:22:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -297,7 +828,35 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/categories/mac-osx/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/maven/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/java/maven-tomcat-jetty-run/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/mysql/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/mysql/</loc>
     <lastmod>2017-12-15T19:22:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -318,7 +877,42 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/categories/node/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/node.js/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/node/getstarted-node.js/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/pages/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/pelican/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/pelican/</loc>
     <lastmod>2017-12-15T19:22:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -332,14 +926,21 @@
   </url>
   
   <url>
-    <loc>https://ox0spy.github.io/post/pages/404/</loc>
+    <loc>https://ox0spy.github.io/categories/performance/</loc>
     <lastmod>2017-12-15T19:22:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ox0spy.github.io/post/pages/about-us/</loc>
+    <loc>https://ox0spy.github.io/tags/tomcat/</loc>
+    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/post/pages/404/</loc>
     <lastmod>2017-12-15T19:22:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -360,6 +961,125 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/tags/beego/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/django/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/eventlet/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/gevent/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/ide/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/logging/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/oom/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/redis/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/scrapy/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/scrapyd-client/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/sort/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/sublime/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/tornado/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/workbench/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/%E5%85%A5%E9%97%A8/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/ab/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/cluster/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/python/get-starred-django/</loc>
     <lastmod>2017-12-15T19:21:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -367,7 +1087,28 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/tags/flask/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/python/flask-logging/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/go/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/go/</loc>
     <lastmod>2017-12-15T19:21:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -409,7 +1150,28 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/tags/gunicorn/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/web-test/gunicorn-worker-class/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/install/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/python/</loc>
     <lastmod>2017-12-15T19:21:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -437,7 +1199,21 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/categories/redis/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/redis/install-redis-cluster/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/scrapyd/</loc>
     <lastmod>2017-12-15T19:21:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -465,6 +1241,13 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/categories/web-test/</loc>
+    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/web-test/ab-webbench/</loc>
     <lastmod>2017-12-15T19:21:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -479,7 +1262,112 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/tags/archlinux/</loc>
+    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/chef/</loc>
+    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/https/</loc>
+    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/mirrors/</loc>
+    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/note/</loc>
+    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/openresty/</loc>
+    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/pip/</loc>
+    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/pypi/</loc>
+    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/ssl/</loc>
+    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/supervisor/</loc>
+    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/vim/</loc>
+    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/wamp/</loc>
+    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/configuration/android-command-line-tools/</loc>
+    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/asm/</loc>
+    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/asm/</loc>
+    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/centos/</loc>
     <lastmod>2017-12-15T19:21:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -507,7 +1395,21 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/tags/developer/</loc>
+    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/configuration/fuck-gfw/</loc>
+    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/gerrit/</loc>
     <lastmod>2017-12-15T19:21:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -521,7 +1423,35 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/tags/gfw/</loc>
+    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/git/</loc>
+    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/go/04-go-notes/</loc>
+    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/install/</loc>
+    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/iptables/</loc>
     <lastmod>2017-12-15T19:21:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -542,6 +1472,13 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/tags/opengrok/</loc>
+    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/install/setup-opengrok/</loc>
     <lastmod>2017-12-15T19:21:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -550,6 +1487,13 @@
   
   <url>
     <loc>https://ox0spy.github.io/post/install/openresty/</loc>
+    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/php/</loc>
     <lastmod>2017-12-15T19:21:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -612,6 +1556,97 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/tags/ansible/</loc>
+    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/backup/</loc>
+    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/command/</loc>
+    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/ec2/</loc>
+    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/free/</loc>
+    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/htop/</loc>
+    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/netstat/</loc>
+    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/ps/</loc>
+    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/saltstack/</loc>
+    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/top/</loc>
+    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/uptime/</loc>
+    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/x_forwarded_for/</loc>
+    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/x_real_ip/</loc>
+    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/configuration/assh-aws-ec2/</loc>
     <lastmod>2017-12-15T19:21:57+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -620,6 +1655,13 @@
   
   <url>
     <loc>https://ox0spy.github.io/post/configuration/ansible-get-started/</loc>
+    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/assh/</loc>
     <lastmod>2017-12-15T19:21:57+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -647,6 +1689,13 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/tags/gitlab/</loc>
+    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/configuration/gitlab-setup-centos6/</loc>
     <lastmod>2017-12-15T19:21:57+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -662,6 +1711,13 @@
   
   <url>
     <loc>https://ox0spy.github.io/post/linux-commands/htop/</loc>
+    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/linux-commands/</loc>
     <lastmod>2017-12-15T19:21:57+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -696,7 +1752,21 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/tags/replication/</loc>
+    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/configuration/saltstack/</loc>
+    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/sentry/</loc>
     <lastmod>2017-12-15T19:21:57+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -724,7 +1794,21 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/tags/ubunu/</loc>
+    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/linux-commands/uptime/</loc>
+    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/vim/</loc>
     <lastmod>2017-12-15T19:21:57+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -738,8 +1822,36 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/tags/sync/</loc>
+    <lastmod>2017-12-15T19:21:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/tar/</loc>
+    <lastmod>2017-12-15T19:21:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/linux-commands/copy-remote-file/</loc>
     <lastmod>2017-12-15T19:21:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/haproxy/</loc>
+    <lastmod>2014-07-01T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/keepalived/</loc>
+    <lastmod>2014-07-01T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -752,8 +1864,36 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/tags/lvs/</loc>
+    <lastmod>2014-06-26T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/configuration/setup-lvs-and-keepalived-on-debian/</loc>
     <lastmod>2014-06-26T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/bash/</loc>
+    <lastmod>2013-08-14T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/ci/</loc>
+    <lastmod>2013-08-14T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/git/</loc>
+    <lastmod>2013-08-14T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -766,7 +1906,14 @@
   </url>
   
   <url>
-    <loc>https://ox0spy.github.io/post/configuration/setup-opengrok/</loc>
+    <loc>https://ox0spy.github.io/categories/opengrok/</loc>
+    <lastmod>2013-08-14T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/tags/programming/</loc>
     <lastmod>2013-08-14T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -787,6 +1934,13 @@
   </url>
   
   <url>
+    <loc>https://ox0spy.github.io/post/configuration/setup-opengrok/</loc>
+    <lastmod>2013-08-14T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ox0spy.github.io/post/configuration/git-tips/</loc>
     <lastmod>2013-08-09T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -801,14 +1955,28 @@
   </url>
   
   <url>
-    <loc>https://ox0spy.github.io/post/configuration/http-command-line-tools/</loc>
+    <loc>https://ox0spy.github.io/post/configuration/hello-world/</loc>
     <lastmod>2013-08-06T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ox0spy.github.io/post/configuration/hello-world/</loc>
+    <loc>https://ox0spy.github.io/tags/http/</loc>
+    <lastmod>2013-08-06T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/categories/http/</loc>
+    <lastmod>2013-08-06T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ox0spy.github.io/post/configuration/http-command-line-tools/</loc>
     <lastmod>2013-08-06T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -839,1190 +2007,15 @@
   </url>
   
   <url>
-    <loc>https://ox0spy.github.io/tags/404/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/ab/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/about/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/adb/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/android/</loc>
-    <lastmod>2019-01-29T09:02:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/android/</loc>
-    <lastmod>2019-01-29T09:02:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/ansible/</loc>
-    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/archlinux/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/asm/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/asm/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/assh/</loc>
-    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/aws/</loc>
-    <lastmod>2018-05-17T09:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/aws/</loc>
-    <lastmod>2018-02-09T18:06:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/backup/</loc>
-    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/bash/</loc>
-    <lastmod>2013-08-14T00:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/beego/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/bigdata/</loc>
-    <lastmod>2018-05-17T09:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/bigdata/</loc>
-    <lastmod>2018-05-17T09:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/blog/</loc>
-    <lastmod>2017-12-15T21:08:54+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/brew/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/</loc>
-    <lastmod>2019-01-29T09:02:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/centos/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/chef/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/ci/</loc>
-    <lastmod>2013-08-14T00:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/cluster/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/command/</loc>
-    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/configuration/</loc>
-    <lastmod>2018-10-25T18:01:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/css/</loc>
-    <lastmod>2019-02-01T16:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/dashboard/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://ox0spy.github.io/categories/data-science/</loc>
     <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/database/</loc>
-    <lastmod>2018-09-26T10:06:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/debian/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/developer/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/django/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/dns/</loc>
-    <lastmod>2018-03-31T21:49:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/docker/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/ec2/</loc>
-    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/eclipse/</loc>
-    <lastmod>2018-09-22T14:06:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/elasticsearch/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/elasticsearch/</loc>
-    <lastmod>2018-07-22T14:06:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/elk/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/emr/</loc>
-    <lastmod>2018-05-17T09:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/eventlet/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/flask/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/free/</loc>
-    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://ox0spy.github.io/tags/frontend/</loc>
     <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/frontend/</loc>
-    <lastmod>2019-02-01T16:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/gerrit/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/gevent/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/gfw/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/git/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/git/</loc>
-    <lastmod>2013-08-14T00:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/github/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/gitlab/</loc>
-    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/go/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/go/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/gradle/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/grants/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/gunicorn/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/hadoop/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/haproxy/</loc>
-    <lastmod>2014-07-01T00:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/hive/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/htop/</loc>
-    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/http/</loc>
-    <lastmod>2013-08-06T00:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/http/</loc>
-    <lastmod>2013-08-06T00:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/https/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/hugo/</loc>
-    <lastmod>2017-12-15T21:08:54+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/ide/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/idea/</loc>
-    <lastmod>2018-09-22T14:06:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/install/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/install/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/ios/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/iptables/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/java/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/java/</loc>
-    <lastmod>2018-09-26T10:06:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/jenkins/</loc>
-    <lastmod>2018-09-22T10:06:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/jenkins/</loc>
-    <lastmod>2018-09-22T10:06:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/jetty/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/keepalived/</loc>
-    <lastmod>2014-07-01T00:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/life/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/life/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/linux/</loc>
-    <lastmod>2019-02-26T09:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/linux/</loc>
-    <lastmod>2019-02-26T09:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/linux-commands/</loc>
-    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/liquibase/</loc>
-    <lastmod>2018-09-26T10:06:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/logging/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/logstash/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/lvs/</loc>
-    <lastmod>2014-06-26T00:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/mac/</loc>
-    <lastmod>2018-01-16T15:34:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/mac-osx/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/management/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/maven/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/migration/</loc>
-    <lastmod>2018-09-26T10:06:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/mirrors/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/monitor/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/mysql/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/mysql/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/netstat/</loc>
-    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/nginx/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/nis/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/node/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/node.js/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/note/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/oom/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/opengrok/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/opengrok/</loc>
-    <lastmod>2013-08-14T00:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/openresty/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/openresty/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/pages/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/pandas/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/pelican/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/pelican/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/performance/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/php/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/pig/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/pip/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/post/</loc>
-    <lastmod>2019-02-26T09:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/programming/</loc>
-    <lastmod>2013-08-14T00:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/proxy/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/ps/</loc>
-    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/pypi/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/python/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/python/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/redis/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/redis/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/replication/</loc>
-    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/restore/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/reverse/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/s3/</loc>
-    <lastmod>2018-01-16T15:34:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/saltstack/</loc>
-    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/scrapy/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/scrapyd/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/scrapyd-client/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/sdkmanager/</loc>
-    <lastmod>2019-01-29T09:02:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/sentry/</loc>
-    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/shell/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/sip/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/snapshot/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/sort/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/spark/</loc>
-    <lastmod>2018-05-17T09:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/spring/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/ssh/</loc>
-    <lastmod>2018-10-25T18:01:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/ssl/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/ssmtp/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/sublime/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/supervisor/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/sync/</loc>
-    <lastmod>2017-12-15T19:21:56+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/tar/</loc>
-    <lastmod>2017-12-15T19:21:56+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/tensorflow/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/tips/</loc>
-    <lastmod>2019-02-26T09:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/tomcat/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/top/</loc>
-    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/tornado/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/transfer/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/tunnel/</loc>
-    <lastmod>2018-10-25T18:01:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/ubuntu/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/ubuntu/</loc>
-    <lastmod>2017-12-15T19:22:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/ubunu/</loc>
-    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/uptime/</loc>
-    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/us/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/user/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/vcard/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/vim/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/vim/</loc>
-    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/wamp/</loc>
-    <lastmod>2017-12-15T19:21:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/categories/web-test/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/workbench/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/x_forwarded_for/</loc>
-    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/x_real_ip/</loc>
-    <lastmod>2017-12-15T19:21:57+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -2038,23 +2031,15 @@
   </url>
   
   <url>
-    <loc>https://ox0spy.github.io/post/openresty/openresty-study/</loc>
+    <loc>https://ox0spy.github.io/categories/openresty/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ox0spy.github.io/</loc>
-    <lastmod>2019-02-01T19:05:06+08:00</lastmod>
+    <loc>https://ox0spy.github.io/post/openresty/openresty-study/</loc>
     <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/%E5%85%A5%E9%97%A8/</loc>
-    <lastmod>2017-12-15T19:21:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -2067,13 +2052,6 @@
     <loc>https://ox0spy.github.io/post/bigdata/basemap/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://ox0spy.github.io/tags/%E6%8B%9B%E5%95%86%E9%93%B6%E8%A1%8C/</loc>
-    <lastmod>2017-12-15T19:22:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
   </url>
   
 </urlset>

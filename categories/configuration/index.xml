@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Configuration on ox0spy&#39;s blog</title>
+    <title>configuration on ox0spy&#39;s blog</title>
     <link>https://ox0spy.github.io/categories/configuration/</link>
-    <description>Recent content in Configuration on ox0spy&#39;s blog</description>
+    <description>Recent content in configuration on ox0spy&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 25 Oct 2018 18:01:58 +0800</lastBuildDate>
-    
-	<atom:link href="https://ox0spy.github.io/categories/configuration/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 25 Oct 2018 18:01:58 +0800</lastBuildDate><atom:link href="https://ox0spy.github.io/categories/configuration/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>forward local keypair in ssh session</title>
       <link>https://ox0spy.github.io/post/configuration/forward-local-keypair-in-ssh-session/</link>
@@ -170,7 +166,7 @@
       <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
       
       <guid>https://ox0spy.github.io/post/configuration/nginx-config/</guid>
-      <description>本文参考于: http://serverfault.com/questions/314574/nginx-real-ip-header-and-x-forwarded-for-seems-wrong/414166 http://luyadong.blog.51cto.com/2876653/851964 http://nginx.org/en/docs/http/ngx_http_realip_module.html http://distinctplace.com/infrastructure/2014/04/23/story-behind-x-forwarded-for-and-x-real-ip-headers/ X-Real-IP和X-Forwarded-For的注意 在配置nginx反向代理时，我们往往做如下配置 location /uri { proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr;</description>
+      <description>本文参考于: http://serverfault.com/questions/314574/nginx-real-ip-header-and-x-forwarded-for-seems-wrong/414166 http://luyadong.blog.51cto.com/2876653/851964 http://nginx.org/en/docs/http/ngx_http_realip_module.html http://distinctplace.com/infrastructure/2014/04/23/story-behind-x-forwarded-for-and-x-real-ip-headers/ X-Real-IP和X-Forwarded-For的注意 在配置nginx反向代理时，我们往往做如下配置 注意当中的这两行 proxy_set_header</description>
     </item>
     
     <item>

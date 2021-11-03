@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on ox0spy&#39;s blog</title>
+    <title> python on ox0spy&#39;s blog</title>
     <link>https://ox0spy.github.io/tags/python/</link>
-    <description>Recent content in Python on ox0spy&#39;s blog</description>
+    <description>Recent content in  python on ox0spy&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 15 Dec 2017 19:22:01 +0800</lastBuildDate>
-    
-	<atom:link href="https://ox0spy.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 15 Dec 2017 19:22:01 +0800</lastBuildDate><atom:link href="https://ox0spy.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>hadoop with python</title>
       <link>https://ox0spy.github.io/post/bigdata/hadoop-with-python/</link>
@@ -44,7 +40,7 @@
       <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
       
       <guid>https://ox0spy.github.io/post/python/python-sorted/</guid>
-      <description>#!/usr/bin/env python # -*- coding: utf-8 -*- import random def get_random_list(num): t = [] for i in range(0, num): t.append(random.randint(0, 200)) return t def bubble_sort(t): &#39;&#39;&#39;从小到大&#39;&#39;&#39; passnum = len(t) - 1 exchanges = True while passnum &amp;gt; 0 and exchanges: for i in range(passnum): if t[i] &amp;gt; t[i + 1]: exchanges = True t[i], t[i + 1] = t[i + 1],</description>
+      <description>#!/usr/bin/env python # -*- coding: utf-8 -*- import random def get_random_list(num): t = [] for i in range(0, num): t.append(random.randint(0, 200)) return t def bubble_sort(t): &amp;#39;&amp;#39;&amp;#39;从小到大&amp;#39;&amp;#39;&amp;#39; passnum = len(t) - 1 exchanges = True while passnum &amp;gt;</description>
     </item>
     
     <item>

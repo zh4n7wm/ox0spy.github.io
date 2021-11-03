@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/bigdata/hadoop-with-python/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="hadoop with python" />
 <meta property="og:description" content="HDFS 可以通过hdfs命令访问HDFS文件系统： $ hdfs dfs -ls / $ hdfs dfs -get /var/log/hadoop.log /tmp/ # 将HDFS的/var/log/hadoop.log拷贝到本机/tmp/目" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/bigdata/hadoop-with-python/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:22:01&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:22:01&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/bigdata/hadoop-with-python/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:22:01+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:22:01+08:00" />
 
 <meta itemprop="name" content="hadoop with python">
-<meta itemprop="description" content="HDFS 可以通过hdfs命令访问HDFS文件系统： $ hdfs dfs -ls / $ hdfs dfs -get /var/log/hadoop.log /tmp/ # 将HDFS的/var/log/hadoop.log拷贝到本机/tmp/目">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:22:01&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:22:01&#43;08:00" />
-<meta itemprop="wordCount" content="639">
-
-
-
-<meta itemprop="keywords" content="hadoop, python," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="hadoop with python"/>
+<meta itemprop="description" content="HDFS 可以通过hdfs命令访问HDFS文件系统： $ hdfs dfs -ls / $ hdfs dfs -get /var/log/hadoop.log /tmp/ # 将HDFS的/var/log/hadoop.log拷贝到本机/tmp/目"><meta itemprop="datePublished" content="2017-12-15T19:22:01+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:22:01+08:00" />
+<meta itemprop="wordCount" content="640">
+<meta itemprop="keywords" content="hadoop, python," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="hadoop with python"/>
 <meta name="twitter:description" content="HDFS 可以通过hdfs命令访问HDFS文件系统： $ hdfs dfs -ls / $ hdfs dfs -get /var/log/hadoop.log /tmp/ # 将HDFS的/var/log/hadoop.log拷贝到本机/tmp/目"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/bigdata/"> bigdata </a>
             
           </div>
-        <span class="more-meta"> 约 639 字 </span>
+        <span class="more-meta"> 约 640 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
       </div>
     </header>
@@ -165,76 +145,56 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#hdfs">HDFS</a></li>
-<li><a href="#mapreduce">MapReduce</a>
-<ul>
-<li><a href="#测试">测试</a></li>
-<li><a href="#mrjob">mrjob</a>
-<ul>
-<li><a href="#安装">安装</a></li>
-<li><a href="#用mrjob写wordcount">用mrjob写wordcount</a></li>
-<li><a href="#fixme-如何在emr上运行">FIXME 如何在EMR上运行</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#pig">Pig</a>
-<ul>
-<li><a href="#安装-1">安装</a></li>
-</ul></li>
-<li><a href="#hive">Hive</a>
-<ul>
-<li><a href="#安装-2">安装</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#hdfs">HDFS</a></li>
+    <li><a href="#mapreduce">MapReduce</a>
+      <ul>
+        <li><a href="#测试">测试</a></li>
+        <li><a href="#mrjob">mrjob</a></li>
+      </ul>
+    </li>
+    <li><a href="#pig">Pig</a>
+      <ul>
+        <li><a href="#安装-1">安装</a></li>
+      </ul>
+    </li>
+    <li><a href="#hive">Hive</a>
+      <ul>
+        <li><a href="#安装-2">安装</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="hdfs">HDFS</h2>
-
+      <h2 id="hdfs">HDFS</h2>
 <p>可以通过hdfs命令访问HDFS文件系统：</p>
-
 <pre><code>$ hdfs dfs -ls /
 $ hdfs dfs -get /var/log/hadoop.log /tmp/  # 将HDFS的/var/log/hadoop.log拷贝到本机/tmp/目录
 $ hdfs dfs -put /tmp/a /user/hadoop/  # 将本机/tmp/a文件拷贝到HDFS的/user/hadoop/目录下
 $ hdfs dfs # 查看完整命令
 </code></pre>
-
 <p>Python Client:</p>
-
 <ul>
 <li><a href="https://github.com/dask/hdfs3">hdfs3</a></li>
 <li><a href="https://github.com/spotify/snakebite">snakebite</a></li>
 <li><a href="https://arrow.apache.org/">Apache Arrow</a></li>
 <li><a href="http://wesmckinney.com/blog/python-hdfs-interfaces/">Native Hadoop file system (HDFS) connectivity in Python</a></li>
 </ul>
-
 <h2 id="mapreduce">MapReduce</h2>
-
 <p>MapReduce 是一种编程模型，受函数式编程启发。主要由三部分组成：map、shuffle and sort、reduce。</p>
-
 <p>Hadoop streaming是Hadoop自带的工具，它允许通过任何语言编写MapReduce任务。</p>
-
 <h3 id="测试">测试</h3>
-
 <p>使用hadoop mapreduce example 测试，确保搭建的环境正常工作：</p>
-
 <pre><code>$ hdfs dfs -mkdir -p /user/$USER/input
 $ hdfs dfs -put $HADOOP_HOME/libexec/etc/hadoop /user/$USER/input
 $ hadoop jar $HADOOP_HOME/libexec/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.8.0.jar grep input output 'dfs[a-z.]+'
 </code></pre>
-
 <p>用Python写mapper、reducer来测试：</p>
-
 <p><strong>mapper.py</strong></p>
-
 <pre><code>#!/usr/bin/env python
 # encoding: utf-8
 import sys
@@ -245,9 +205,7 @@ for line in sys.stdin:
   for word in words:
       print('{}\t{}'.format(word.strip(), 1))
 </code></pre>
-
 <p><strong>reducer.py</strong></p>
-
 <pre><code>#!/usr/bin/env python
 # encoding: utf-8
 import sys
@@ -271,14 +229,10 @@ for line in sys.stdin:
 if curr_word == word:
   print('{}\t{}'.format(curr_word, curr_count))
 </code></pre>
-
 <p>执行Python写的mapper、reducer：</p>
-
 <pre><code>$ hadoop jar $HADOOP_HOME/libexec/share/hadoop/tools/lib/hadoop-streaming-2.8.0.jar -files mapper.py,reducer.py -mapper mapper.py -reducer reducer.py -input input -output output
 </code></pre>
-
 <p>Hadoop streaming的命令行参数如下：</p>
-
 <ul>
 <li><code>-files</code>: A command-separated list of  les to be copied to the MapReduce cluster</li>
 <li><code>-mapper</code>: The command to be run as the mapper</li>
@@ -286,18 +240,12 @@ if curr_word == word:
 <li><code>-input</code>: The DFS input path for the Map step</li>
 <li><code>-output</code>: The DFS output directory for the Reduce step</li>
 </ul>
-
 <h3 id="mrjob">mrjob</h3>
-
 <h4 id="安装">安装</h4>
-
 <pre><code>$ pip install mrjob
 </code></pre>
-
 <h4 id="用mrjob写wordcount">用mrjob写wordcount</h4>
-
 <p>代码如下：</p>
-
 <pre><code>$ cat word_count.py
 #!/usr/bin/env python
 # encoding: utf-8
@@ -317,41 +265,27 @@ class MRWordCount(MRJob):
 if __name__ == '__main__':
     MRWordCount.run()s
 </code></pre>
-
 <p>本机运行：</p>
-
 <pre><code>$ python word_count.py data.txt
 </code></pre>
-
 <p>Hadoop上运行：</p>
-
 <pre><code>$ python word_count.py -r hadoop hdfs:///user/wm/input/data.txt
 </code></pre>
-
 <p>mrjob runner 可选值：</p>
-
 <ul>
 <li><code>-r inline</code>: (Default) Run in a single Python process</li>
 <li><code>-r local</code>: Run locally in a few subprocesses simulating some Hadoop features</li>
 <li><code>-r hadoop</code>: Run on a Hadoop cluster</li>
 <li><code>-r emr</code>: Run on Amazon Elastic Map Reduce (EMR)</li>
 </ul>
-
 <h4 id="fixme-如何在emr上运行">FIXME 如何在EMR上运行</h4>
-
 <h2 id="pig">Pig</h2>
-
 <h3 id="安装-1">安装</h3>
-
 <pre><code>$ brew install pig
 </code></pre>
-
 <h2 id="hive">Hive</h2>
-
 <h3 id="安装-2">安装</h3>
-
-<pre><code>$ brew install hive
-</code></pre>
+<pre><code>$ brew install hive</code></pre>
 
     </div>
 
@@ -462,7 +396,7 @@ if __name__ == '__main__':
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -483,12 +417,16 @@ if __name__ == '__main__':
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

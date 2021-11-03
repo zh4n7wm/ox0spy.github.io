@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/bigdata/hive/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="在mac osx练习hive" />
 <meta property="og:description" content="Hive 安装 将Hive的metastore存在MySQL中。 Mac OSX 上安装 Hive $ brew install hive mysql $ brew services start mysql $ tail -n 3 ~/.zshrc # Hive export HIVE_HOME=&quot;/usr/local/opt/hive&quot; export HCAT_HOME=&quot;$HIVE_HOME/libexec/hcatalog&quot; $ source ~/.zshrc 为Hive在MySQL中创" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/bigdata/hive/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:22:01&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:22:01&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/bigdata/hive/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:22:01+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:22:01+08:00" />
 
 <meta itemprop="name" content="在mac osx练习hive">
-<meta itemprop="description" content="Hive 安装 将Hive的metastore存在MySQL中。 Mac OSX 上安装 Hive $ brew install hive mysql $ brew services start mysql $ tail -n 3 ~/.zshrc # Hive export HIVE_HOME=&quot;/usr/local/opt/hive&quot; export HCAT_HOME=&quot;$HIVE_HOME/libexec/hcatalog&quot; $ source ~/.zshrc 为Hive在MySQL中创">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:22:01&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:22:01&#43;08:00" />
-<meta itemprop="wordCount" content="470">
-
-
-
-<meta itemprop="keywords" content="mac, hive, bigdata," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="在mac osx练习hive"/>
+<meta itemprop="description" content="Hive 安装 将Hive的metastore存在MySQL中。 Mac OSX 上安装 Hive $ brew install hive mysql $ brew services start mysql $ tail -n 3 ~/.zshrc # Hive export HIVE_HOME=&quot;/usr/local/opt/hive&quot; export HCAT_HOME=&quot;$HIVE_HOME/libexec/hcatalog&quot; $ source ~/.zshrc 为Hive在MySQL中创"><meta itemprop="datePublished" content="2017-12-15T19:22:01+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:22:01+08:00" />
+<meta itemprop="wordCount" content="485">
+<meta itemprop="keywords" content="mac, hive, bigdata," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="在mac osx练习hive"/>
 <meta name="twitter:description" content="Hive 安装 将Hive的metastore存在MySQL中。 Mac OSX 上安装 Hive $ brew install hive mysql $ brew services start mysql $ tail -n 3 ~/.zshrc # Hive export HIVE_HOME=&quot;/usr/local/opt/hive&quot; export HCAT_HOME=&quot;$HIVE_HOME/libexec/hcatalog&quot; $ source ~/.zshrc 为Hive在MySQL中创"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/bigdata/"> bigdata </a>
             
           </div>
-        <span class="more-meta"> 约 470 字 </span>
+        <span class="more-meta"> 约 485 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -165,36 +145,29 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#hive">Hive</a>
-<ul>
-<li><a href="#安装">安装</a>
-<ul>
-<li><a href="#参考">参考</a></li>
-</ul></li>
-<li><a href="#访问hdfs和主机">访问hdfs和主机</a></li>
-<li><a href="#hive数据处理">Hive数据处理</a>
-<ul>
-<li><a href="#创建表结构-并加载数据">创建表结构，并加载数据</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#安装">安装</a>
+      <ul>
+        <li><a href="#参考">参考</a></li>
+      </ul>
+    </li>
+    <li><a href="#访问hdfs和主机">访问hdfs和主机</a></li>
+    <li><a href="#hive数据处理">Hive数据处理</a>
+      <ul>
+        <li><a href="#创建表结构并加载数据">创建表结构，并加载数据</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h1 id="hive">Hive</h1>
-
+      <h1 id="hive">Hive</h1>
 <h2 id="安装">安装</h2>
-
 <p>将Hive的metastore存在MySQL中。</p>
-
 <p>Mac OSX 上安装 Hive</p>
-
 <pre><code>$ brew install hive mysql
 $ brew services start mysql
 $ tail -n 3 ~/.zshrc
@@ -203,94 +176,74 @@ export HIVE_HOME=&quot;/usr/local/opt/hive&quot;
 export HCAT_HOME=&quot;$HIVE_HOME/libexec/hcatalog&quot;
 $ source ~/.zshrc
 </code></pre>
-
 <p>为Hive在MySQL中创建数据库，并分配用户访问权限。</p>
-
 <pre><code>$ mysql -u root -p
 mysql&gt; create database metastore;
 mysql&gt; grant all privileges on metastore.* to 'hive'@'localhost' identified by 'hive';
 </code></pre>
-
 <p>下载MySQL jdbc connector：</p>
-
 <pre><code>$ wget -P /tmp/ https://cdn.mysql.com//Downloads/Connector-J/mysql-connector-java-5.1.42.tar.gz
 $ cd /tmp/ &amp;&amp; tar zxf mysql-connector-java-5.1.42.tar.gz
 $ mv mysql-connector-java-5.1.42/mysql-connector-java-5.1.42-bin.jar $(brew --prefix hive)/libexec/lib/
 </code></pre>
-
 <p>修改 libexec/conf/hive-site.xml</p>
-
 <pre><code>$ cd $(brew --prefix hive)
 $ cp libexec/conf/hive-default.xml.template libexec/conf/hive-site.xml
 $ 修改 hive-site.xml
 &lt;property&gt;
-    &lt;name&gt;javax.jdo.option.ConnectionURL&lt;/name&gt;
-    &lt;value&gt;jdbc:mysql://localhost/metastore?useSSL=false&lt;/value&gt;
-    &lt;description&gt;
-    JDBC connect string for a JDBC metastore.
-    To use SSL to encrypt/authenticate the connection, provide database-specific SSL flag in the connection URL.
-    For example, jdbc:postgresql://myhost/db?ssl=true for postgres database.
-    &lt;/description&gt;
+	&lt;name&gt;javax.jdo.option.ConnectionURL&lt;/name&gt;
+	&lt;value&gt;jdbc:mysql://localhost/metastore?useSSL=false&lt;/value&gt;
+	&lt;description&gt;
+	JDBC connect string for a JDBC metastore.
+	To use SSL to encrypt/authenticate the connection, provide database-specific SSL flag in the connection URL.
+	For example, jdbc:postgresql://myhost/db?ssl=true for postgres database.
+	&lt;/description&gt;
 &lt;/property&gt;
 &lt;property&gt;
-    &lt;name&gt;javax.jdo.option.ConnectionDriverName&lt;/name&gt;
-    &lt;value&gt;com.mysql.jdbc.Driver&lt;/value&gt;
-    &lt;description&gt;Driver class name for a JDBC metastore&lt;/description&gt;
+	&lt;name&gt;javax.jdo.option.ConnectionDriverName&lt;/name&gt;
+	&lt;value&gt;com.mysql.jdbc.Driver&lt;/value&gt;
+	&lt;description&gt;Driver class name for a JDBC metastore&lt;/description&gt;
 &lt;/property&gt;
 &lt;property&gt;
-    &lt;name&gt;javax.jdo.option.ConnectionUserName&lt;/name&gt;
-    &lt;value&gt;hive&lt;/value&gt;
-    &lt;description&gt;Username to use against metastore database&lt;/description&gt;
+	&lt;name&gt;javax.jdo.option.ConnectionUserName&lt;/name&gt;
+	&lt;value&gt;hive&lt;/value&gt;
+	&lt;description&gt;Username to use against metastore database&lt;/description&gt;
 &lt;/property&gt;
 &lt;property&gt;
-    &lt;name&gt;javax.jdo.option.ConnectionPassword&lt;/name&gt;
-    &lt;value&gt;hive&lt;/value&gt;
-    &lt;description&gt;password to use against metastore database&lt;/description&gt;
+	&lt;name&gt;javax.jdo.option.ConnectionPassword&lt;/name&gt;
+	&lt;value&gt;hive&lt;/value&gt;
+	&lt;description&gt;password to use against metastore database&lt;/description&gt;
 &lt;/property&gt;
 </code></pre>
-
 <p>运行 Hive：</p>
-
 <pre><code>$ hive
 hive&gt; show tables;
 </code></pre>
-
 <h3 id="参考">参考</h3>
-
 <ul>
 <li><a href="https://www.cloudera.com/documentation/enterprise/5-6-x/topics/cdh_ig_hive_metastore_configure.html">Configuring the Hive Metastore</a></li>
 </ul>
-
 <h2 id="访问hdfs和主机">访问hdfs和主机</h2>
-
 <ul>
 <li>!前缀运行宿主操作系统的命令</li>
 <li>dfs 命令访问hdfs</li>
 </ul>
-
 <p>示例：</p>
-
 <pre><code>hive&gt; !pwd;
 hive&gt; dfs -ls;
 
 注：命令都必须以';'结尾
 </code></pre>
-
 <h2 id="hive数据处理">Hive数据处理</h2>
-
-<h3 id="创建表结构-并加载数据">创建表结构，并加载数据</h3>
-
+<h3 id="创建表结构并加载数据">创建表结构，并加载数据</h3>
 <pre><code>hive&gt; CREATE TABLE records (year STRING, temperature INT, quality INT) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
 hive&gt; LOAD DATA LOCAL INPATH './sample.txt' OVERWRITE INTO TABLE records;
 
 注：最后一条命令从本机的当前目录加载数据
    OVERWRITE关键字告诉Hive删除表对应目录中已有的所有文件；如果省去这一关键字，Hive就简单地把新的文件加入目录。
 </code></pre>
-
 <p>演示如何用Hive解决之前Pig解决的问题 - 得到年度最高气温：</p>
-
-<pre><code>hive&gt; SELECT year, MAX(temperature) FROM records WHERE temperature != 9999 and (quality = 0 OR quality = 1 OR quality = 4 OR quality = 5 OR quality = 9) GROUP BY year;
-</code></pre>
+<pre><code>hive&gt; SELECT year, MAX(temperature) FROM records WHERE temperature != 9999 and (quality = 0 OR quality = 1 OR quality = 4 OR quality = 5 OR quality = 9) GROUP BY year;</code></pre>
 
     </div>
 
@@ -403,7 +356,7 @@ hive&gt; LOAD DATA LOCAL INPATH './sample.txt' OVERWRITE INTO TABLE records;
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -424,12 +377,16 @@ hive&gt; LOAD DATA LOCAL INPATH './sample.txt' OVERWRITE INTO TABLE records;
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

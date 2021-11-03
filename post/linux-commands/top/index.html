@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="crazygit" />
-  <meta name="description" content="简介 top命令的具体就不解释了，记录一些实用的命令 # redis用户此时所使用的内存总数 # 这里的内存使用 top -bn1 -u redis | awk &#39;{mem &#43;= $10} END {print mem}&#39; # 查看服务器所" />
+  <meta name="description" content="简介 top命令的具体就不解释了，记录一些实用的命令 # redis用户此时所使用的内存总数 # 这里的内存使用 top -bn1 -u redis | awk &amp;#39;{mem &#43;= $10} END {print mem}&amp;#39; # 查看服务器所" />
 
   <meta name="keywords" content="ox0spy, python, flask, django, go, golang, programming, coding, even" />
 
@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/linux-commands/top/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="top" />
 <meta property="og:description" content="简介 top命令的具体就不解释了，记录一些实用的命令 # redis用户此时所使用的内存总数 # 这里的内存使用 top -bn1 -u redis | awk &#39;{mem &#43;= $10} END {print mem}&#39; # 查看服务器所" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/linux-commands/top/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:21:57&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:21:57&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/linux-commands/top/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:21:57+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:21:57+08:00" />
 
 <meta itemprop="name" content="top">
-<meta itemprop="description" content="简介 top命令的具体就不解释了，记录一些实用的命令 # redis用户此时所使用的内存总数 # 这里的内存使用 top -bn1 -u redis | awk &#39;{mem &#43;= $10} END {print mem}&#39; # 查看服务器所">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:21:57&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:21:57&#43;08:00" />
-<meta itemprop="wordCount" content="118">
-
-
-
-<meta itemprop="keywords" content="linux, command, top," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="top"/>
+<meta itemprop="description" content="简介 top命令的具体就不解释了，记录一些实用的命令 # redis用户此时所使用的内存总数 # 这里的内存使用 top -bn1 -u redis | awk &#39;{mem &#43;= $10} END {print mem}&#39; # 查看服务器所"><meta itemprop="datePublished" content="2017-12-15T19:21:57+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:57+08:00" />
+<meta itemprop="wordCount" content="128">
+<meta itemprop="keywords" content="linux, command, top," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="top"/>
 <meta name="twitter:description" content="简介 top命令的具体就不解释了，记录一些实用的命令 # redis用户此时所使用的内存总数 # 这里的内存使用 top -bn1 -u redis | awk &#39;{mem &#43;= $10} END {print mem}&#39; # 查看服务器所"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/linux-commands/"> linux-commands </a>
             
           </div>
-        <span class="more-meta"> 约 118 字 </span>
+        <span class="more-meta"> 约 128 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -165,38 +145,30 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#简介">简介</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#简介">简介</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="简介">简介</h2>
-
+      <h2 id="简介">简介</h2>
 <p>top命令的具体就不解释了，记录一些实用的命令</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+<span style="color:#75715e"># redis用户此时所使用的内存总数</span>
+<span style="color:#75715e"># 这里的内存使用</span>
+top -bn1 -u redis |  awk <span style="color:#e6db74">&#39;{mem += $10} END {print mem}&#39;</span>
 
-<pre><code class="language-bash">
-# redis用户此时所使用的内存总数
-# 这里的内存使用
-top -bn1 -u redis |  awk '{mem += $10} END {print mem}'
-
-# 查看服务器所有进程的内容使用总数
-# 结果可能大于100%，反应出目前机器内容可用较少, 具体解释可以参考
-# http://serverfault.com/questions/471757/sum-of-memory-of-few-processes-in-top-is-greater-than-100
-$ top -bn1 |  awk '{mem += $10} END {print mem}'
+<span style="color:#75715e"># 查看服务器所有进程的内容使用总数</span>
+<span style="color:#75715e"># 结果可能大于100%，反应出目前机器内容可用较少, 具体解释可以参考</span>
+<span style="color:#75715e"># http://serverfault.com/questions/471757/sum-of-memory-of-few-processes-in-top-is-greater-than-100</span>
+$ top -bn1 |  awk <span style="color:#e6db74">&#39;{mem += $10} END {print mem}&#39;</span>
 135.6
 
 
-</code></pre>
-
+</code></pre></div>
     </div>
 
     
@@ -308,7 +280,7 @@ $ top -bn1 |  awk '{mem += $10} END {print mem}'
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -329,12 +301,16 @@ $ top -bn1 |  awk '{mem += $10} END {print mem}'
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

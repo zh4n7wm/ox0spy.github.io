@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/ubuntu/ubuntu-debian-install-nagios4/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="install nagios 4 on ubuntu/debian" />
 <meta property="og:description" content="Ucloud后台监控系统功能很简单，最近发现之前设置过的监控项也无法正常显示，更不能编辑了。 虽然，马上就要将系统迁移到公司自己大家的云平台，" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/ubuntu/ubuntu-debian-install-nagios4/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:22:01&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:22:01&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/ubuntu/ubuntu-debian-install-nagios4/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:22:01+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:22:01+08:00" />
 
 <meta itemprop="name" content="install nagios 4 on ubuntu/debian">
-<meta itemprop="description" content="Ucloud后台监控系统功能很简单，最近发现之前设置过的监控项也无法正常显示，更不能编辑了。 虽然，马上就要将系统迁移到公司自己大家的云平台，">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:22:01&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:22:01&#43;08:00" />
-<meta itemprop="wordCount" content="1363">
-
-
-
-<meta itemprop="keywords" content="ubuntu, debian, monitor, management," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="install nagios 4 on ubuntu/debian"/>
+<meta itemprop="description" content="Ucloud后台监控系统功能很简单，最近发现之前设置过的监控项也无法正常显示，更不能编辑了。 虽然，马上就要将系统迁移到公司自己大家的云平台，"><meta itemprop="datePublished" content="2017-12-15T19:22:01+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:22:01+08:00" />
+<meta itemprop="wordCount" content="1409">
+<meta itemprop="keywords" content="ubuntu, debian, monitor, management," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="install nagios 4 on ubuntu/debian"/>
 <meta name="twitter:description" content="Ucloud后台监控系统功能很简单，最近发现之前设置过的监控项也无法正常显示，更不能编辑了。 虽然，马上就要将系统迁移到公司自己大家的云平台，"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/ubuntu/"> ubuntu </a>
             
           </div>
-        <span class="more-meta"> 约 1363 字 </span>
+        <span class="more-meta"> 约 1409 字 </span>
         <span class="more-meta"> 预计阅读 3 分钟 </span>
       </div>
     </header>
@@ -165,60 +145,46 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#监控主机安装nagios">监控主机安装Nagios</a>
-<ul>
-<li><a href="#安装需要的软件包">安装需要的软件包</a></li>
-<li><a href="#创建用户-组">创建用户、组</a></li>
-<li><a href="#安装nagios-4">安装nagios 4</a></li>
-<li><a href="#安装nagios-plugins-2-0-3">安装nagios-plugins-2.0.3</a></li>
-<li><a href="#安装nagios-nrpe-2-15">安装nagios-nrpe-2.15</a></li>
-</ul></li>
-<li><a href="#被监控主机安装nagios-nrpe">被监控主机安装Nagios NRPE</a></li>
-<li><a href="#配置">配置</a>
-<ul>
-<li><a href="#配置监控主机">配置监控主机</a></li>
-<li><a href="#配置被监控主机">配置被监控主机</a></li>
-</ul></li>
-<li><a href="#配置过程中碰到的问题">配置过程中碰到的问题</a>
-<ul>
-<li><a href="#监控服务器上没有check-nrpe命令">监控服务器上没有check_nrpe命令</a></li>
-<li><a href="#check-nrpe-error-could-not-complete-ssl-handshake">CHECK_NRPE: Error - Could not complete SSL handshake.</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#安装需要的软件包">安装需要的软件包</a></li>
+    <li><a href="#创建用户组">创建用户、组</a></li>
+    <li><a href="#安装nagios-4">安装nagios 4</a></li>
+    <li><a href="#安装nagios-plugins-203">安装nagios-plugins-2.0.3</a></li>
+    <li><a href="#安装nagios-nrpe-215">安装nagios-nrpe-2.15</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#配置监控主机">配置监控主机</a></li>
+    <li><a href="#配置被监控主机">配置被监控主机</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#监控服务器上没有check_nrpe命令">监控服务器上没有check_nrpe命令</a></li>
+    <li><a href="#check_nrpe-error---could-not-complete-ssl-handshake">CHECK_NRPE: Error - Could not complete SSL handshake.</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>Ucloud后台监控系统功能很简单，最近发现之前设置过的监控项也无法正常显示，更不能编辑了。
+      <p>Ucloud后台监控系统功能很简单，最近发现之前设置过的监控项也无法正常显示，更不能编辑了。
 虽然，马上就要将系统迁移到公司自己大家的云平台，但，最近Ucloud服务器压力很大，周末抽空先将Nagios搭建起来，让自己能及时收到报警。</p>
-
 <p>我们Ucloud服务器都用的Debian 7 (wheezy)，源里只有nagios3，所以，自己编译、安装Nagios 4。</p>
-
 <h1 id="监控主机安装nagios">监控主机安装Nagios</h1>
-
 <h2 id="安装需要的软件包">安装需要的软件包</h2>
-
 <pre><code>:::bash
 
 $ sudo apt-get install build-essential libgd2-xpm-dev openssl libssl-dev apache2 php5 libapache2-mod-php5 apache2-utils postfix
 </code></pre>
-
-<h2 id="创建用户-组">创建用户、组</h2>
-
+<h2 id="创建用户组">创建用户、组</h2>
 <pre><code>:::bash
 
 $ sudo useradd nagios
 $ sudo groupadd nagcmd
 $ sudo usermod -a -G nagcmd nagios
 </code></pre>
-
 <h2 id="安装nagios-4">安装nagios 4</h2>
-
 <pre><code>:::bash
 
 $ cd /data/software
@@ -231,9 +197,7 @@ $ sudo make install &amp;&amp; make install-commandmode &amp;&amp; make install-
 $ sudo ln -s /etc/init.d/nagios /etc/rcS.d/S99nagios # 开机自启动
 $ sudo service nagios restart
 </code></pre>
-
 <p>配置apache2</p>
-
 <pre><code>:::bash
 
 $ sudo /usr/bin/install -c -m 644 sample-config/httpd.conf /etc/apache2/sites-available/nagios.conf
@@ -243,12 +207,9 @@ $ sudo a2enmod cgi
 $ sudo htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
 $ sudo service apache2 restart
 </code></pre>
-
 <p>浏览器访问 http://监控主机IP/nagios 查看监控情况, 登录用户名、密码就是 htpasswd 设置的。
 nagios 4将被安装到 /usr/local/nagios 目录，该目录下的 etc 是配置文件夹。</p>
-
-<h2 id="安装nagios-plugins-2-0-3">安装nagios-plugins-2.0.3</h2>
-
+<h2 id="安装nagios-plugins-203">安装nagios-plugins-2.0.3</h2>
 <pre><code>:::bash
 
 $ cd /data/software
@@ -258,11 +219,8 @@ $ cd nagios-plugins-2.0.3
 $ ./configure --with-nagios-user=nagios --with-nagios-group=nagios --with-openssl
 $ make all &amp;&amp; make install
 </code></pre>
-
 <p>nagios-plugins 命令安装在 /usr/local/nagios/libexec 目录。</p>
-
-<h2 id="安装nagios-nrpe-2-15">安装nagios-nrpe-2.15</h2>
-
+<h2 id="安装nagios-nrpe-215">安装nagios-nrpe-2.15</h2>
 <pre><code>:::bash
 
 $ cd /data/software
@@ -274,37 +232,26 @@ $ make all
 $ find -iname 'check_nrpe'
 $ sudo /usr/bin/install -c -m 755 ./src/check_nrpe /usr/local/nagios/libexec/
 </code></pre>
-
 <p>测试是否可以工作:</p>
-
 <pre><code>:::bash
 
 $ /usr/local/nagios/libexec/check_nrpe -H 10.4.2.2 # 该IP是被监控主机的IP
 NRPE v2.13
 </code></pre>
-
 <h1 id="被监控主机安装nagios-nrpe">被监控主机安装Nagios NRPE</h1>
-
 <p>安装nagios-plugins, nagios-nrpe-server</p>
-
 <pre><code>:::bash
 $ sudo apt-get install nagios-plugins nagios-nrpe-server
 </code></pre>
-
 <p>配置nagios-nrpe-server，允许监控主机连接该被监控主机。</p>
-
 <pre><code>:::bash
 $ sudo vim /etc/nagios/nrpe.cfg
 $ 将 监控主机IP 填入 allowed_hosts 字段，如: allowed_hosts=127.0.0.1,10.4.22.22
 $ sudo service nagios-nrpe-server restart
 </code></pre>
-
 <h1 id="配置">配置</h1>
-
 <h2 id="配置监控主机">配置监控主机</h2>
-
 <p>/usr/local/nagios/etc/nagios.cfg</p>
-
 <pre><code>:::bash
 $ diff -u nagios.cfg.back nagios.cfg
 --- nagios.cfg.back2015-05-23 11:07:51.436491931 +0800
@@ -316,20 +263,18 @@ cfg_file=/usr/local/nagios/etc/objects/templates.cfg
 +cfg_file=/usr/local/nagios/etc/objects/hosts.cfg
 +cfg_file=/usr/local/nagios/etc/objects/groups.cfg
 +cfg_file=/usr/local/nagios/etc/objects/services.cfg
-
+    
 # Definitions for monitoring the local (Linux) host
 cfg_file=/usr/local/nagios/etc/objects/localhost.cfg
 @@ -1174,7 +1177,7 @@
 # using the $ADMINEMAIL$ and $ADMINPAGER$ macros in your notification
 # commands.
-
+     
 -admin_email=nagios@localhost
 +admin_email=your-emai-address
 admin_pager=pagenagios@localhost
 </code></pre>
-
 <p>/usr/local/nagios/etc/objects/hosts.cfg</p>
-
 <pre><code>:::bash
 
 $ # Define a host for the local machine
@@ -357,9 +302,7 @@ define host{
     address                         10.4.2.22
     }
 </code></pre>
-
 <p>/usr/local/nagios/etc/objects/groups.cfg</p>
-
 <pre><code>:::bash
 
 # Define an optional hostgroup for Linux machines
@@ -369,9 +312,7 @@ define hostgroup{
     members         appstore01,appstore02     ; Comma separated list of hosts that belong to this group
     }
 </code></pre>
-
 <p>/etc/local/nagios/etc/objects/commands.cfg</p>
-
 <pre><code>:::bash
 $ diff -u objects/commands.cfg.back objects/commands.cfg
 +########################
@@ -382,7 +323,7 @@ $ diff -u objects/commands.cfg.back objects/commands.cfg
 +   command_name    check_mysql
 +   command_line    $USER1$/check_mysql -H $HOSTADDRESS$ -u $ARG1$ -p $ARG2$ -d $ARG3$ -P 3306
 +   }
-
+ 
 +# 'check_http_with_url_port' command definition
 +define command{
 +        command_name    check_http_with_url_port
@@ -401,9 +342,7 @@ $ diff -u objects/commands.cfg.back objects/commands.cfg
 +        command_line $USER1$/check_tcp -H $HOSTADDRESS$ -p 11211 -t 5 -E -s 'stats\r\nquit\r\n' -e 'uptime' -M crit
 +        }
 </code></pre>
-
 <p>/etc/local/nagios/etc/objects/services.cfg</p>
-
 <pre><code>:::bash
 
 $ cat objects/services.cfg 
@@ -499,9 +438,7 @@ define service {
         check_command                   check_nrpe!check_disk_data
 }
 </code></pre>
-
 <h2 id="配置被监控主机">配置被监控主机</h2>
-
 <pre><code>:::bash
 $ cat /etc/nagios/nrpe_local.cfg 
 ######################################
@@ -516,29 +453,19 @@ command[check_http_tdanceweb]=/usr/lib/nagios/plugins/check_http -H localhost -p
 command[check_http_appstore]=/usr/lib/nagios/plugins/check_http -H localhost -p 8888 -t 3 -u /m3/subjects
 command[check_http_launcher]=/usr/lib/nagios/plugins/check_http -H localhost -p 9999 -t 3
 </code></pre>
-
 <h1 id="配置过程中碰到的问题">配置过程中碰到的问题</h1>
-
-<h2 id="监控服务器上没有check-nrpe命令">监控服务器上没有check_nrpe命令</h2>
-
+<h2 id="监控服务器上没有check_nrpe命令">监控服务器上没有check_nrpe命令</h2>
 <p>如果没有安装nrpe，请下载、编译、安装，请参考 安装nagios-nrpe-2.15</p>
-
-<h2 id="check-nrpe-error-could-not-complete-ssl-handshake">CHECK_NRPE: Error - Could not complete SSL handshake.</h2>
-
+<h2 id="check_nrpe-error---could-not-complete-ssl-handshake">CHECK_NRPE: Error - Could not complete SSL handshake.</h2>
 <p>编辑/etc/nagios/nrpe.cfg, 确定 allowed_hosts 中加入监控主机IP，多个IP以 &ldquo;,&rdquo; 分隔。
 如: allowed_hosts=127.0.0.1,10.4.13.14</p>
-
 <p>然后，重新加载 nagios-nrpe-server 配置文件，如下：</p>
-
 <pre><code>:::bash
 
 $ service nagios-nrpe-server reload
 </code></pre>
-
 <p>下次再学习并补充联系人及报警相关设置。</p>
-
 <p>参考：</p>
-
 <ol>
 <li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-14-04">https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-14-04</a></li>
 <li><a href="http://netkiller.github.io/monitoring/nagios/">http://netkiller.github.io/monitoring/nagios/</a></li>
@@ -657,7 +584,7 @@ $ service nagios-nrpe-server reload
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -678,12 +605,16 @@ $ service nagios-nrpe-server reload
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/asm/write-32bit-asm-program-and-run-on-64bit-machine/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="在64位机器上编写、运行32位汇编代码" />
 <meta property="og:description" content="我按照 &lt;&lt;professional assembly language&gt;&gt;（中文名为：编译语言程序设计) 学习汇编，但使用pushl在我的Ubuntu 64bit上报错Erro" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/asm/write-32bit-asm-program-and-run-on-64bit-machine/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:21:58&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:21:58&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/asm/write-32bit-asm-program-and-run-on-64bit-machine/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:21:58+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:21:58+08:00" />
 
 <meta itemprop="name" content="在64位机器上编写、运行32位汇编代码">
-<meta itemprop="description" content="我按照 &lt;&lt;professional assembly language&gt;&gt;（中文名为：编译语言程序设计) 学习汇编，但使用pushl在我的Ubuntu 64bit上报错Erro">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:21:58&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:21:58&#43;08:00" />
-<meta itemprop="wordCount" content="574">
-
-
-
-<meta itemprop="keywords" content="asm, linux," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="在64位机器上编写、运行32位汇编代码"/>
+<meta itemprop="description" content="我按照 &lt;&lt;professional assembly language&gt;&gt;（中文名为：编译语言程序设计) 学习汇编，但使用pushl在我的Ubuntu 64bit上报错Erro"><meta itemprop="datePublished" content="2017-12-15T19:21:58+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:58+08:00" />
+<meta itemprop="wordCount" content="576">
+<meta itemprop="keywords" content="asm, linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="在64位机器上编写、运行32位汇编代码"/>
 <meta name="twitter:description" content="我按照 &lt;&lt;professional assembly language&gt;&gt;（中文名为：编译语言程序设计) 学习汇编，但使用pushl在我的Ubuntu 64bit上报错Erro"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/asm/"> asm </a>
             
           </div>
-        <span class="more-meta"> 约 574 字 </span>
+        <span class="more-meta"> 约 576 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
       </div>
     </header>
@@ -165,39 +145,27 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#安装libc6-i386">安装libc6-i386</a></li>
-<li><a href="#在64位机器上编译-链接-运行32位汇编代码">在64位机器上编译、链接、运行32位汇编代码</a></li>
-<li><a href="#设置bash-alias">设置bash alias</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#安装libc6-i386">安装libc6-i386</a></li>
+    <li><a href="#在64位机器上编译链接运行32位汇编代码">在64位机器上编译、链接、运行32位汇编代码</a></li>
+    <li><a href="#设置bash-alias">设置bash alias</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>我按照 <code>&lt;&lt;professional assembly language&gt;&gt;</code>（中文名为：编译语言程序设计) 学习汇编，但使用pushl在我的Ubuntu 64bit上报错<code>Error: invalid instruction suffix for 'push'</code>。
+      <p>我按照 <code>&lt;&lt;professional assembly language&gt;&gt;</code>（中文名为：编译语言程序设计) 学习汇编，但使用pushl在我的Ubuntu 64bit上报错<code>Error: invalid instruction suffix for 'push'</code>。
 Google一圈发现需要在代码头部加上<code>.code32</code>，并且ld时需要额外指定些参数。</p>
-
 <h2 id="安装libc6-i386">安装libc6-i386</h2>
-
 <p>ld链接时会用到libc-i386，所以，先安装并做个软链接。</p>
-
 <pre><code>$ sudo apt-get install libc6-i386
 $ sudo ln -s /lib32/libc-2.19.so /lib32/libc.so
 </code></pre>
-
 <p>注：不做软链接可能会导致<code>ld -lc</code>报错：<code>ld: cannot find -lc</code></p>
-
-<h2 id="在64位机器上编译-链接-运行32位汇编代码">在64位机器上编译、链接、运行32位汇编代码</h2>
-
+<h2 id="在64位机器上编译链接运行32位汇编代码">在64位机器上编译、链接、运行32位汇编代码</h2>
 <p>源代码如下，代码中调用printf输出<code>Hello World\n</code>，然后调用exit(0)退出。</p>
-
 <pre><code>$ cat myhello.s
 #myhello.s Just output &quot;Hello World\n&quot;
 .code32
@@ -218,9 +186,7 @@ $ ld -e main -m elf_i386 -L/lib32 -lc -dynamic-linker /lib32/ld-linux.so.2 -o my
 $ ./myhello
 Hello World
 </code></pre>
-
 <p>注：</p>
-
 <ul>
 <li><code>as --32</code> 指定生成32位object文件</li>
 <li><code>ld -e main</code> 因为程序中用了<code>.globl main</code> 而非 <code>.globl _start</code>，所以，用它指定汇编入口</li>
@@ -228,11 +194,8 @@ Hello World
 <li><code>-L/lib32 -lc</code>指定从<code>/lib32</code>目录下找<code>libc.so</code>；可以简写为<code>-lc</code></li>
 <li><code>-dynamic-linker /lib32/ld-linux.so.2</code> 指定操作系统用来动态地查找和加载库文件的程序</li>
 </ul>
-
 <h2 id="设置bash-alias">设置bash alias</h2>
-
 <p>每次都需要输入<code>as --32</code>和<code>ld -m elf_i386</code>很麻烦，我们可以通过bash alias简化输入。</p>
-
 <pre><code>$ tail -2 ~/.bashrc
 alias as='as --32'
 alias ld='ld -m elf_i386'
@@ -242,7 +205,6 @@ $ ld -e main -lc -dynamic-linker /lib32/ld-linux.so.2 -o myhello myhello.o
 $ ./myhello
 Hello World
 </code></pre>
-
 <p>这样就方便多了，当然也可以根据个人喜好把其它参数一起加入alias中。</p>
 
     </div>
@@ -354,7 +316,7 @@ Hello World
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -375,12 +337,16 @@ Hello World
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

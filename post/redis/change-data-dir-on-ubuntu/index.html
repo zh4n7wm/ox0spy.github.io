@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/redis/change-data-dir-on-ubuntu/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="ubuntu 16.04上修改redis data dir" />
 <meta property="og:description" content="修改redis 的data dir redis是通过sudo apt-get install redis-server命令安装的。 修改 /etc/redis/redis.conf dir /data/redisdata 注：将redis data dir 修改为dir /data/redisdata 修改 /etc/systemd/system/redis.service" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/redis/change-data-dir-on-ubuntu/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:21:59&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:21:59&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/redis/change-data-dir-on-ubuntu/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:21:59+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:21:59+08:00" />
 
 <meta itemprop="name" content="ubuntu 16.04上修改redis data dir">
-<meta itemprop="description" content="修改redis 的data dir redis是通过sudo apt-get install redis-server命令安装的。 修改 /etc/redis/redis.conf dir /data/redisdata 注：将redis data dir 修改为dir /data/redisdata 修改 /etc/systemd/system/redis.service">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:21:59&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:21:59&#43;08:00" />
+<meta itemprop="description" content="修改redis 的data dir redis是通过sudo apt-get install redis-server命令安装的。 修改 /etc/redis/redis.conf dir /data/redisdata 注：将redis data dir 修改为dir /data/redisdata 修改 /etc/systemd/system/redis.service"><meta itemprop="datePublished" content="2017-12-15T19:21:59+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:59+08:00" />
 <meta itemprop="wordCount" content="175">
-
-
-
-<meta itemprop="keywords" content="redis, ubuntu," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="ubuntu 16.04上修改redis data dir"/>
+<meta itemprop="keywords" content="redis, ubuntu," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ubuntu 16.04上修改redis data dir"/>
 <meta name="twitter:description" content="修改redis 的data dir redis是通过sudo apt-get install redis-server命令安装的。 修改 /etc/redis/redis.conf dir /data/redisdata 注：将redis data dir 修改为dir /data/redisdata 修改 /etc/systemd/system/redis.service"/>
 
 <!--[if lte IE 9]>
@@ -165,49 +145,34 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#修改redis-的data-dir">修改redis 的data dir</a>
-<ul>
-<li><a href="#修改-etc-redis-redis-conf">修改 /etc/redis/redis.conf</a></li>
-<li><a href="#修改-etc-systemd-system-redis-service">修改 /etc/systemd/system/redis.service</a></li>
-<li><a href="#测试是否可以正常保存">测试是否可以正常保存</a></li>
-</ul></li>
-<li><a href="#报错">报错</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#修改redis-的data-dir">修改redis 的data dir</a>
+      <ul>
+        <li><a href="#修改-etcredisredisconf">修改 /etc/redis/redis.conf</a></li>
+        <li><a href="#修改-etcsystemdsystemredisservice">修改 /etc/systemd/system/redis.service</a></li>
+        <li><a href="#测试是否可以正常保存">测试是否可以正常保存</a></li>
+      </ul>
+    </li>
+    <li><a href="#报错">报错</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="修改redis-的data-dir">修改redis 的data dir</h2>
-
+      <h2 id="修改redis-的data-dir">修改redis 的data dir</h2>
 <p>redis是通过<code>sudo apt-get install redis-server</code>命令安装的。</p>
-
-<h3 id="修改-etc-redis-redis-conf">修改 /etc/redis/redis.conf</h3>
-
+<h3 id="修改-etcredisredisconf">修改 /etc/redis/redis.conf</h3>
 <p>dir /data/redisdata</p>
-
 <p>注：将redis data dir 修改为<code>dir /data/redisdata</code></p>
-
-<h3 id="修改-etc-systemd-system-redis-service">修改 /etc/systemd/system/redis.service</h3>
-
+<h3 id="修改-etcsystemdsystemredisservice">修改 /etc/systemd/system/redis.service</h3>
 <p>在该文件中加入一行：<code>ReadWriteDirectories=-/data/redisdata</code></p>
-
 <h3 id="测试是否可以正常保存">测试是否可以正常保存</h3>
-
 <p>$ redis-cli
-  127.0.0.1:6379&gt; save</p>
-
+127.0.0.1:6379&gt; save</p>
 <h2 id="报错">报错</h2>
-
 <p>之前只修改了 <code>/etc/redis/redis.conf</code> 下的配置，而没有修改 <code>/etc/systemd/system/redis.service</code> ，所以一直报如下错误：</p>
-
 <p>9827:M 17 Jan 15:08:22.596 # Failed opening .rdb for saving: Read-only file system</p>
 
     </div>
@@ -319,7 +284,7 @@
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -340,12 +305,16 @@
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/configuration/mysql-backup-to-amazon-s3/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="mysql自动备份，并同步到amazons3" />
 <meta property="og:description" content="MySQL自动备份，并将本地备份同步到Amazon S3，然后配置邮件通知。 注: 系统为Ubuntu 14.04，Debian系统也类似。 安装au" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/configuration/mysql-backup-to-amazon-s3/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:21:57&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:21:57&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/configuration/mysql-backup-to-amazon-s3/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:21:57+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:21:57+08:00" />
 
 <meta itemprop="name" content="mysql自动备份，并同步到amazons3">
-<meta itemprop="description" content="MySQL自动备份，并将本地备份同步到Amazon S3，然后配置邮件通知。 注: 系统为Ubuntu 14.04，Debian系统也类似。 安装au">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:21:57&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:21:57&#43;08:00" />
-<meta itemprop="wordCount" content="491">
-
-
-
-<meta itemprop="keywords" content="mysql, backup, s3," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="mysql自动备份，并同步到amazons3"/>
+<meta itemprop="description" content="MySQL自动备份，并将本地备份同步到Amazon S3，然后配置邮件通知。 注: 系统为Ubuntu 14.04，Debian系统也类似。 安装au"><meta itemprop="datePublished" content="2017-12-15T19:21:57+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:57+08:00" />
+<meta itemprop="wordCount" content="504">
+<meta itemprop="keywords" content="mysql, backup, s3," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="mysql自动备份，并同步到amazons3"/>
 <meta name="twitter:description" content="MySQL自动备份，并将本地备份同步到Amazon S3，然后配置邮件通知。 注: 系统为Ubuntu 14.04，Debian系统也类似。 安装au"/>
 
 <!--[if lte IE 9]>
@@ -153,8 +133,8 @@
               <a href="/categories/configuration/"> configuration </a>
             
           </div>
-        <span class="more-meta"> 约 491 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span class="more-meta"> 约 504 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
       </div>
     </header>
 
@@ -165,41 +145,30 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#安装automysqlbackup">安装automysqlbackup</a></li>
-<li><a href="#配置automysqlbackup">配置automysqlbackup</a>
-<ul>
-<li><a href="#参数介绍">参数介绍</a></li>
-<li><a href="#发送邮件通知">发送邮件通知</a></li>
-<li><a href="#备份到amazon-s3">备份到Amazon S3</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#安装automysqlbackup">安装automysqlbackup</a></li>
+    <li><a href="#配置automysqlbackup">配置automysqlbackup</a>
+      <ul>
+        <li><a href="#参数介绍">参数介绍</a></li>
+        <li><a href="#发送邮件通知">发送邮件通知</a></li>
+        <li><a href="#备份到amazon-s3">备份到Amazon S3</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>MySQL自动备份，并将本地备份同步到Amazon S3，然后配置邮件通知。</p>
-
+      <p>MySQL自动备份，并将本地备份同步到Amazon S3，然后配置邮件通知。</p>
 <p>注: 系统为Ubuntu 14.04，Debian系统也类似。</p>
-
 <h2 id="安装automysqlbackup">安装automysqlbackup</h2>
-
 <pre><code>$ sudo apt-get install automysqlbackup
 </code></pre>
-
 <h2 id="配置automysqlbackup">配置automysqlbackup</h2>
-
 <h3 id="参数介绍">参数介绍</h3>
-
 <p>配置文件路径: <code>/etc/default/automysqlbackup</code></p>
-
 <p>主要参数:
 USERNAME - 数据库登陆用户名
 PASSWORD - 数据库登陆密码
@@ -212,33 +181,22 @@ MAXATTSIZE - 最大允许的邮件内容大小
 MAILADDR - 接收通知的邮箱地址
 PREBACKUP - 备份前运行的脚本
 POSTBACKUP - 备份后运行的脚本</p>
-
 <p>其它参数参考 <code>/etc/default/automysqlbackup</code></p>
-
 <p>修改<code>DBNAMES</code>, <code>BACKUPDIR</code>，指定需要备份的数据库名称和备份文件存放路径。</p>
-
 <h3 id="发送邮件通知">发送邮件通知</h3>
-
 <p>修改<code>MAILCONTENT</code>, <code>MAILADDR</code>指定发送什么内容到指定邮箱。</p>
-
 <p>注: 先确保通过postfix在命令行可以发送邮件到你的邮箱.</p>
-
 <h3 id="备份到amazon-s3">备份到Amazon S3</h3>
-
 <p>安装s3cmd，使用s3cmd同步备份文件到Amazon S3。</p>
-
 <pre><code>$ sudo pip install s3cmd
 </code></pre>
-
 <p>修改<code>POSTBACKUP</code>，备份完成后同步备份文件到Amazon S3。</p>
-
 <pre><code>POSTBACKUP=/etc/automysqlbackup/mysql-backup-post
 $ cat /etc/automysqlbackup/mysql-backup-post
 #!/bin/bash
 
 sudo /usr/local/bin/s3cmd -c /home/user/.s3cfg -r sync local-automysqlbackup-path s3://your-backup-bucket/
 </code></pre>
-
 <p>注: 备份前配置s3cmd，确保它有权限操作你的S3 bucket</p>
 
     </div>
@@ -352,7 +310,7 @@ sudo /usr/local/bin/s3cmd -c /home/user/.s3cfg -r sync local-automysqlbackup-pat
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -373,12 +331,16 @@ sudo /usr/local/bin/s3cmd -c /home/user/.s3cfg -r sync local-automysqlbackup-pat
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

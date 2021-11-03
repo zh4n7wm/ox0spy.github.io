@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ox0spy&#39;s blog</title>
@@ -6,11 +6,7 @@
     <description>Recent content on ox0spy&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 01 Feb 2019 18:05:06 +0800</lastBuildDate>
-    
-	<atom:link href="https://ox0spy.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 26 Feb 2019 09:22:01 +0800</lastBuildDate><atom:link href="https://ox0spy.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>https://ox0spy.github.io/about/</link>
@@ -99,7 +95,7 @@
       <pubDate>Thu, 20 Sep 2018 10:06:00 +0800</pubDate>
       
       <guid>https://ox0spy.github.io/post/java/jvm/</guid>
-      <description>Java options JAVA_OPTIONS=&amp;ldquo;-server -XX:+AggressiveOpts -XX:+UseFastAccessorMethods -Xms1096m -Xmx1096m&amp;rdquo; if [[ &amp;ldquo;gcprof&amp;rdquo; == &amp;ldquo;$1&amp;rdquo; ]]; then JAVA_OPTIONS=&amp;ldquo;$JAVA_OPTIONS -Xloggc:gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps&amp;rdquo; shift fi JVM GC GC专家系列目录索引 深入理解JVM 火焰图 白话火焰图 Java火焰图 SCALE13x: Linux Profiling at Netflix Java in Flames CPU Flame Graphs</description>
+      <description>Java options JAVA_OPTIONS=&amp;quot;-server -XX:+AggressiveOpts -XX:+UseFastAccessorMethods -Xms1096m -Xmx1096m&amp;quot; if [[ &amp;ldquo;gcprof&amp;rdquo; == &amp;ldquo;$1&amp;rdquo; ]]; then JAVA_OPTIONS=&amp;quot;$JAVA_OPTIONS -Xloggc:gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps&amp;quot; shift fi JVM GC GC专家系列目录索引 深入理解JVM 火焰图 白话火焰图 Java火焰图 SCALE13x: Linux Profiling at Netflix Java in Flames CPU Flame Graphs</description>
     </item>
     
     <item>
@@ -180,7 +176,7 @@
       <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
       
       <guid>https://ox0spy.github.io/post/elasticsearch/elasticsearch-snapshot-restore/</guid>
-      <description>参考资料: https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-your-cluster.html https://www.elastic.co/guide/en/elasticsearch/guide/current/_restoring_from_a_snapshot.html https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html https://www.elastic.co/blog/introducing-snapshot-restore http://stackoverflow.com/questions/27903929/elasticsearch-snapshot-across-cluster 最近工作需要，要将一个索引的数据迁移到新的另一个集群，查阅了一些资料过后，便开始操作。由于数据量大，整个过程也花费了不少</description>
+      <description>参考资料: https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-your-cluster.html https://www.elastic.co/guide/en/elasticsearch/guide/current/\_restoring_from_a_snapshot.html https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html https://www.elastic.co/blog/introducing-snapshot-restore http://stackoverflow.com/questions/27903929/elasticsearch-snapshot-across-cluster 最近工作需要，要将一个索引的数据迁移到新的另一个集群，查阅了一些资料过后，便开始操作。由于数据量大，整个过程也花费了不少</description>
     </item>
     
     <item>
@@ -315,7 +311,7 @@
       <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
       
       <guid>https://ox0spy.github.io/post/performance/c10k/</guid>
-      <description> C10K  http://www.kegel.com/c10k.html http://www.cnblogs.com/fll/archive/2008/05/17/1201540.html  </description>
+      <description>C10K  http://www.kegel.com/c10k.html http://www.cnblogs.com/fll/archive/2008/05/17/1201540.html  </description>
     </item>
     
     <item>
@@ -351,7 +347,7 @@
       <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
       
       <guid>https://ox0spy.github.io/post/java/get_started_with_java_web/</guid>
-      <description>近期由于工作需要，需要学习Java Web开发，虽然以前也接触过Java, 不过也就仅限于写个&amp;rdquo;Hello World&amp;rdquo;. 为了尽快掌握Java We</description>
+      <description>近期由于工作需要，需要学习Java Web开发，虽然以前也接触过Java, 不过也就仅限于写个&amp;quot;Hello World&amp;quot;. 为了尽快掌握Java Web</description>
     </item>
     
     <item>
@@ -441,16 +437,7 @@
       <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
       
       <guid>https://ox0spy.github.io/post/pages/404/</guid>
-      <description>  </description>
-    </item>
-    
-    <item>
-      <title>关于我们</title>
-      <link>https://ox0spy.github.io/post/pages/about-us/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/post/pages/about-us/</guid>
-      <description>我们是一群活跃于成都南边的程序猿, 喜欢技术分享和交流。不定期聚在一起, 畅谈技术, 理想和人生！ 为什么要有这个博客 方便知识的整理，分享和交流, 结</description>
+      <description></description>
     </item>
     
     <item>
@@ -558,7 +545,7 @@
       <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
       
       <guid>https://ox0spy.github.io/post/python/python-sorted/</guid>
-      <description>#!/usr/bin/env python # -*- coding: utf-8 -*- import random def get_random_list(num): t = [] for i in range(0, num): t.append(random.randint(0, 200)) return t def bubble_sort(t): &#39;&#39;&#39;从小到大&#39;&#39;&#39; passnum = len(t) - 1 exchanges = True while passnum &amp;gt; 0 and exchanges: for i in range(passnum): if t[i] &amp;gt; t[i + 1]: exchanges = True t[i], t[i + 1] = t[i + 1],</description>
+      <description>#!/usr/bin/env python # -*- coding: utf-8 -*- import random def get_random_list(num): t = [] for i in range(0, num): t.append(random.randint(0, 200)) return t def bubble_sort(t): &amp;#39;&amp;#39;&amp;#39;从小到大&amp;#39;&amp;#39;&amp;#39; passnum = len(t) - 1 exchanges = True while passnum &amp;gt;</description>
     </item>
     
     <item>
@@ -828,7 +815,7 @@
       <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
       
       <guid>https://ox0spy.github.io/post/linux-commands/free/</guid>
-      <description>本来转载自: http://www.cnblogs.com/coldplayerest/archive/2010/02/20/1669949.html 更多free命令可参看: 这里 http://www.linuxatemyram.com/ top命令输出解释 下面是free的运行结果，一共有4行。为了方便说明，我加上了列号. 1 2 3 4 5 6</description>
+      <description>本来转载自: http://www.cnblogs.com/coldplayerest/archive/2010/02/20/1669949.html 更多free命令可参看: 这里 http://www.linuxatemyram.com/ top命令输出解释 下面是free的运行结果，一共有4行。为了方便说明，我加上了列号. 这样可以把f</description>
     </item>
     
     <item>
@@ -891,7 +878,7 @@
       <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
       
       <guid>https://ox0spy.github.io/post/configuration/nginx-config/</guid>
-      <description>本文参考于: http://serverfault.com/questions/314574/nginx-real-ip-header-and-x-forwarded-for-seems-wrong/414166 http://luyadong.blog.51cto.com/2876653/851964 http://nginx.org/en/docs/http/ngx_http_realip_module.html http://distinctplace.com/infrastructure/2014/04/23/story-behind-x-forwarded-for-and-x-real-ip-headers/ X-Real-IP和X-Forwarded-For的注意 在配置nginx反向代理时，我们往往做如下配置 location /uri { proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr;</description>
+      <description>本文参考于: http://serverfault.com/questions/314574/nginx-real-ip-header-and-x-forwarded-for-seems-wrong/414166 http://luyadong.blog.51cto.com/2876653/851964 http://nginx.org/en/docs/http/ngx_http_realip_module.html http://distinctplace.com/infrastructure/2014/04/23/story-behind-x-forwarded-for-and-x-real-ip-headers/ X-Real-IP和X-Forwarded-For的注意 在配置nginx反向代理时，我们往往做如下配置 注意当中的这两行 proxy_set_header</description>
     </item>
     
     <item>
@@ -927,7 +914,7 @@
       <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
       
       <guid>https://ox0spy.github.io/post/linux-commands/top/</guid>
-      <description>简介 top命令的具体就不解释了，记录一些实用的命令 # redis用户此时所使用的内存总数 # 这里的内存使用 top -bn1 -u redis | awk &#39;{mem += $10} END {print mem}&#39; # 查看服务器所</description>
+      <description>简介 top命令的具体就不解释了，记录一些实用的命令 # redis用户此时所使用的内存总数 # 这里的内存使用 top -bn1 -u redis | awk &amp;#39;{mem += $10} END {print mem}&amp;#39; # 查看服务器所</description>
     </item>
     
     <item>
@@ -972,7 +959,7 @@
       <pubDate>Tue, 01 Jul 2014 00:00:00 +0800</pubDate>
       
       <guid>https://ox0spy.github.io/post/configuration/setup-haproxy-and-keepalived-on-debian-wheezy/</guid>
-      <description>准备机器 harpoxy_MASTER - 172.16.8.129 haproxy_BACKUP - 172.16.8.130 WEB_APP_SERVER_1 - 172.16.8.131 WEB_APP_SERVER_2 - 172.16.8.132 注: 1. virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP) 2. 所有机器都安装的Debian 7.5 (wheezy) 安装</description>
+      <description>准备机器 harpoxy_MASTER - 172.16.8.129 haproxy_BACKUP - 172.16.8.130 WEB_APP_SERVER_1 - 172.16.8.131 WEB_APP_SERVER_2 - 172.16.8.132 注: virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP) 所有机器都安装的Debian 7.5 (wheezy) 安装软件</description>
     </item>
     
     <item>
@@ -981,7 +968,7 @@
       <pubDate>Thu, 26 Jun 2014 00:00:00 +0800</pubDate>
       
       <guid>https://ox0spy.github.io/post/configuration/setup-lvs-and-keepalived-on-debian/</guid>
-      <description>准备机器 LVS_MASTER - 172.16.8.129 LVS_BACKUP - 172.16.8.130 WEB_APP_SERVER_1 - 172.16.8.131 WEB_APP_SERVER_2 - 172.16.8.132 注: 1. virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP) 2. 所有机器都安装的Debian 7.5 (wheezy) 安装</description>
+      <description>准备机器 LVS_MASTER - 172.16.8.129 LVS_BACKUP - 172.16.8.130 WEB_APP_SERVER_1 - 172.16.8.131 WEB_APP_SERVER_2 - 172.16.8.132 注: virtual server: 172.16.8.252 (非真实机器, 只需要在web app server上配下这个IP) 所有机器都安装的Debian 7.5 (wheezy) 安装软件</description>
     </item>
     
     <item>
@@ -992,15 +979,6 @@
       <guid>https://ox0spy.github.io/post/configuration/linux-bash-tips/</guid>
       <description>Command line option parse while (( $# &amp;gt; 0 )) ; do case $1 in --local_branch) git_local_branch=$2 shift ;; --remote_branch) git_remote_branch=$2 shift ;; --remote_repo) git_remote_repo=$2 shift ;; --tag) git_tag=$2 shift ;; -f|--force) git_force=&amp;quot;-f&amp;quot; ;; --keyfile) export git_publish_keyfile=$2 shift ;; esac shift done  Pointer variable The example shows how to make a bash environment variable reference the value of another:
 $ foo=bar $ name=foo $ echo ${!name} bar  The example shows how to get a list of all variables beginning with &amp;ldquo;H&amp;rdquo; (Note: the wildcard can only go at the end)</description>
-    </item>
-    
-    <item>
-      <title>Setup OpenGrok</title>
-      <link>https://ox0spy.github.io/post/configuration/setup-opengrok/</link>
-      <pubDate>Wed, 14 Aug 2013 00:00:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/post/configuration/setup-opengrok/</guid>
-      <description>OpenGrok安装使用指南 参考： https://github.com/OpenGrok/OpenGrok/wiki/How-to-install-OpenGrok 注意：最好是单独建立一个opengrok用户，并保证该用户对代码和后面创建索引的目录读写权限 下面整个流程</description>
     </item>
     
     <item>
@@ -1019,6 +997,15 @@ $ foo=bar $ name=foo $ echo ${!name} bar  The example shows how to get a list of
       
       <guid>https://ox0spy.github.io/post/configuration/setup-new-jenkins-slave/</guid>
       <description>Setup new Jenkins slave Install Ubuntu 10.04 Create jenkins/jenkins (user/group) # login new Jenkins slave $ sudo addgroup jenkins $ sudo useradd -m -s /bin/bash -g jenkins jenkins $ sudo su - jenkins $ scp -r jenkins@172.26.32.85:~/.ssh ~/ $ passwd jenkins # change hostname $ sudo vim /etc/hostname # login Jenkins master $ ssh jenkins@master $ ssh-copy-id jenkins@new-slave-host # login new Jenkins slave $ sudo scp jenkins@master:/etc/apt/sources.list /etc/apt/sources.list $ sudo apt-get update $ sudo apt-get upgrade $ sudo apt-get install git-core  Setup nis/autofs $ sudo tail -n 1 /etc/passwd /etc/group /etc/shadow ==&amp;gt; /etc/passwd &amp;lt;== +:::::: ==&amp;gt; /etc/group &amp;lt;== +::: ==&amp;gt; /etc/shadow &amp;lt;== +:::::::: $ sudo apt-get install nis portmap autofs $ sudo bash -c &#39;echo &amp;quot;ypserver int.</description>
+    </item>
+    
+    <item>
+      <title>Setup OpenGrok</title>
+      <link>https://ox0spy.github.io/post/configuration/setup-opengrok/</link>
+      <pubDate>Wed, 14 Aug 2013 00:00:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/post/configuration/setup-opengrok/</guid>
+      <description>OpenGrok安装使用指南 参考： https://github.com/OpenGrok/OpenGrok/wiki/How-to-install-OpenGrok 注意：最好是单独建立一个opengrok用户，并保证该用户对代码和后面创建索引的目录读写权限 下面整个流程</description>
     </item>
     
     <item>
@@ -1043,6 +1030,15 @@ $ git checkout . $ git clean -fd  Find &amp;lt;commit&amp;gt; which you want to 
     </item>
     
     <item>
+      <title>Hello World</title>
+      <link>https://ox0spy.github.io/post/configuration/hello-world/</link>
+      <pubDate>Tue, 06 Aug 2013 00:00:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/post/configuration/hello-world/</guid>
+      <description>Hello World.</description>
+    </item>
+    
+    <item>
       <title>HTTP Command Line Tools</title>
       <link>https://ox0spy.github.io/post/configuration/http-command-line-tools/</link>
       <pubDate>Tue, 06 Aug 2013 00:00:00 +0800</pubDate>
@@ -1051,15 +1047,6 @@ $ git checkout . $ git clean -fd  Find &amp;lt;commit&amp;gt; which you want to 
       <description>Linux Network Tools wget  GNU Wget is a free utility for non-interactive download of files from the Web. It supports HTTP, HTTPS, and FTP protocols, as well as retrieval through HTTP proxies.
  log to a server using POST and then proceed to download the desired pages, presumably only accessible to authorized users Log in to the server. This can be done only once.
 wget --save-cookies cookies.txt \ --post-data &#39;user=foo&amp;amp;password=bar&#39; \ http://server.</description>
-    </item>
-    
-    <item>
-      <title>Hello World</title>
-      <link>https://ox0spy.github.io/post/configuration/hello-world/</link>
-      <pubDate>Tue, 06 Aug 2013 00:00:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/post/configuration/hello-world/</guid>
-      <description>Hello World.</description>
     </item>
     
     <item>
@@ -1077,7 +1064,7 @@ wget --save-cookies cookies.txt \ --post-data &#39;user=foo&amp;amp;password=bar
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ox0spy.github.io/post/data-science/pydata/</guid>
-      <description>pandas的plot没有显示所画图片 三种方法解决: import matplotlib.pyplot as plt; plt.show() plt.ion() echo &amp;ldquo;c.InteractiveShellApp.pylab = &amp;lsquo;auto&amp;rsquo;&amp;rdquo; &amp;gt;&amp;gt; ~/.ipython/profile_default/ipython_config.py</description>
+      <description>pandas的plot没有显示所画图片 三种方法解决: import matplotlib.pyplot as plt; plt.show() plt.ion() echo &amp;ldquo;c.InteractiveShellApp.pylab = &amp;lsquo;auto&amp;rsquo;&amp;rdquo; &amp;raquo; ~/.ipython/profile_default/ipython_config.py</description>
     </item>
     
     <item>
@@ -1086,7 +1073,7 @@ wget --save-cookies cookies.txt \ --post-data &#39;user=foo&amp;amp;password=bar
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ox0spy.github.io/post/django/get-started/</guid>
-      <description> django-admin 常用命令  创建项目：django-admin startproject  在项目内创建新的 app：django-admin startapp   manage.py 常用命令  make database migration: python manage.py makemigrations show sql: python manage.py sqlmigrate   database migrate: python manage.py migrate shell: python manage.py shell 创建管理员用户：python manage.py createsuperuser  </description>
+      <description>django-admin 常用命令 创建项目：django-admin startproject 在项目内创建新的 app：django-admin startapp manage.py 常用命令 make database migration: python manage.py makemigrations show sql: python manage.py sqlmigrate database migrate: python manage.py migrate shell:</description>
     </item>
     
     <item>
@@ -1122,7 +1109,7 @@ wget --save-cookies cookies.txt \ --post-data &#39;user=foo&amp;amp;password=bar
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ox0spy.github.io/post/openresty/openresty-study/</guid>
-      <description> openresty best practices  https://moonbingbing.gitbooks.io/openresty-best-practices/content/base/web_evolution.html  </description>
+      <description>openresty best practices  https://moonbingbing.gitbooks.io/openresty-best-practices/content/base/web_evolution.html  </description>
     </item>
     
     <item>

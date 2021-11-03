@@ -27,7 +27,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/android/android-sdkmanager-accept-licenses/" />
@@ -49,37 +49,17 @@
 <meta property="og:description" content="Build Error Message android app build failed, error message:
 &gt; Failed to install the following Android SDK packages as some licences have not been accepted. build-tools;28.0.3 Android SDK Build-Tools 28.0.3 platforms;android-28 Android SDK Platform 28 To build this project, accept the SDK license agreements and install the missing components using the Android Studio SDK Manager. Alternatively, to transfer the license agreements from one workstation to another, see http://d.android.com/r/studio-ui/export-licenses.html Using Android SDK: /opt/android-sdk-linux  Install Build-Tools 28." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/android/android-sdkmanager-accept-licenses/" />
-
-
-
-<meta property="article:published_time" content="2019-01-29T09:02:00&#43;08:00"/>
-
-<meta property="article:modified_time" content="2019-01-29T09:02:00&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/android/android-sdkmanager-accept-licenses/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-01-29T09:02:00+08:00" />
+<meta property="article:modified_time" content="2019-01-29T09:02:00+08:00" />
 
 <meta itemprop="name" content="accept android sdk license">
 <meta itemprop="description" content="Build Error Message android app build failed, error message:
-&gt; Failed to install the following Android SDK packages as some licences have not been accepted. build-tools;28.0.3 Android SDK Build-Tools 28.0.3 platforms;android-28 Android SDK Platform 28 To build this project, accept the SDK license agreements and install the missing components using the Android Studio SDK Manager. Alternatively, to transfer the license agreements from one workstation to another, see http://d.android.com/r/studio-ui/export-licenses.html Using Android SDK: /opt/android-sdk-linux  Install Build-Tools 28.">
-
-
-<meta itemprop="datePublished" content="2019-01-29T09:02:00&#43;08:00" />
-<meta itemprop="dateModified" content="2019-01-29T09:02:00&#43;08:00" />
+&gt; Failed to install the following Android SDK packages as some licences have not been accepted. build-tools;28.0.3 Android SDK Build-Tools 28.0.3 platforms;android-28 Android SDK Platform 28 To build this project, accept the SDK license agreements and install the missing components using the Android Studio SDK Manager. Alternatively, to transfer the license agreements from one workstation to another, see http://d.android.com/r/studio-ui/export-licenses.html Using Android SDK: /opt/android-sdk-linux  Install Build-Tools 28."><meta itemprop="datePublished" content="2019-01-29T09:02:00+08:00" />
+<meta itemprop="dateModified" content="2019-01-29T09:02:00+08:00" />
 <meta itemprop="wordCount" content="91">
-
-
-
-<meta itemprop="keywords" content="android,sdkmanager," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="accept android sdk license"/>
+<meta itemprop="keywords" content="android,sdkmanager," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="accept android sdk license"/>
 <meta name="twitter:description" content="Build Error Message android app build failed, error message:
 &gt; Failed to install the following Android SDK packages as some licences have not been accepted. build-tools;28.0.3 Android SDK Build-Tools 28.0.3 platforms;android-28 Android SDK Platform 28 To build this project, accept the SDK license agreements and install the missing components using the Android Studio SDK Manager. Alternatively, to transfer the license agreements from one workstation to another, see http://d.android.com/r/studio-ui/export-licenses.html Using Android SDK: /opt/android-sdk-linux  Install Build-Tools 28."/>
 
@@ -169,26 +149,19 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#build-error-message">Build Error Message</a></li>
-<li><a href="#install-build-tools-28-0-3">Install Build-Tools 28.0.3</a></li>
-<li><a href="#accept-all-sdk-licences">Accept all SDK licences</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#build-error-message">Build Error Message</a></li>
+    <li><a href="#install-build-tools-2803">Install Build-Tools 28.0.3</a></li>
+    <li><a href="#accept-all-sdk-licences">Accept all SDK licences</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="build-error-message">Build Error Message</h2>
-
+      <h2 id="build-error-message">Build Error Message</h2>
 <p>android app build failed, error message:</p>
-
 <pre><code>&gt; Failed to install the following Android SDK packages as some licences have not been accepted.
  build-tools;28.0.3 Android SDK Build-Tools 28.0.3
  platforms;android-28 Android SDK Platform 28
@@ -198,14 +171,10 @@ Alternatively, to transfer the license agreements from one workstation to anothe
 
 Using Android SDK: /opt/android-sdk-linux
 </code></pre>
-
-<h2 id="install-build-tools-28-0-3">Install Build-Tools 28.0.3</h2>
-
+<h2 id="install-build-tools-2803">Install Build-Tools 28.0.3</h2>
 <pre><code>$ yes y | sdkmanager &quot;build-tools;28.0.3&quot;
 </code></pre>
-
 <h2 id="accept-all-sdk-licences">Accept all SDK licences</h2>
-
 <pre><code>$ yes y | sdkmanager --licenses
 </code></pre>
 
@@ -318,7 +287,7 @@ Using Android SDK: /opt/android-sdk-linux
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -339,12 +308,16 @@ Using Android SDK: /opt/android-sdk-linux
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

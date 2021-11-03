@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/linux-commands/restore-linux-command-executable-mode/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="复恢Linux命令的执行权限" />
 <meta property="og:description" content="问题：linux服务器上/bin,/sbin,/usr/bin目录下所有文件都被执行了chmod -x，但是bash窗口还在，并且是sudo权" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/linux-commands/restore-linux-command-executable-mode/" />
-
-
-
-<meta property="article:published_time" content="2018-08-09T16:21:59&#43;08:00"/>
-
-<meta property="article:modified_time" content="2018-08-09T16:21:59&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/linux-commands/restore-linux-command-executable-mode/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2018-08-09T16:21:59+08:00" />
+<meta property="article:modified_time" content="2018-08-09T16:21:59+08:00" />
 
 <meta itemprop="name" content="复恢Linux命令的执行权限">
-<meta itemprop="description" content="问题：linux服务器上/bin,/sbin,/usr/bin目录下所有文件都被执行了chmod -x，但是bash窗口还在，并且是sudo权">
-
-
-<meta itemprop="datePublished" content="2018-08-09T16:21:59&#43;08:00" />
-<meta itemprop="dateModified" content="2018-08-09T16:21:59&#43;08:00" />
-<meta itemprop="wordCount" content="425">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="复恢Linux命令的执行权限"/>
+<meta itemprop="description" content="问题：linux服务器上/bin,/sbin,/usr/bin目录下所有文件都被执行了chmod -x，但是bash窗口还在，并且是sudo权"><meta itemprop="datePublished" content="2018-08-09T16:21:59+08:00" />
+<meta itemprop="dateModified" content="2018-08-09T16:21:59+08:00" />
+<meta itemprop="wordCount" content="426">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="复恢Linux命令的执行权限"/>
 <meta name="twitter:description" content="问题：linux服务器上/bin,/sbin,/usr/bin目录下所有文件都被执行了chmod -x，但是bash窗口还在，并且是sudo权"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/linux/"> Linux </a>
             
           </div>
-        <span class="more-meta"> 约 425 字 </span>
+        <span class="more-meta"> 约 426 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -165,83 +145,58 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#解决方法">解决方法</a>
-<ul>
-<li><a href="#umask">umask</a></li>
-<li><a href="#ld-linux">ld-linux</a></li>
-<li><a href="#其它语言的-chmod">其它语言的 chmod</a>
-<ul>
-<li><a href="#python">Python</a></li>
-</ul></li>
-<li><a href="#重启进-recovery-mode">重启进 recovery mode</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#解决方法">解决方法</a>
+      <ul>
+        <li><a href="#umask">umask</a></li>
+        <li><a href="#ld-linux">ld-linux</a></li>
+        <li><a href="#其它语言的-chmod">其它语言的 chmod</a></li>
+        <li><a href="#重启进-recovery-mode">重启进 recovery mode</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<blockquote>
+      <blockquote>
 <p>问题：linux服务器上/bin,/sbin,/usr/bin目录下所有文件都被执行了chmod
 -x，但是bash窗口还在，并且是sudo权限 - <code>蛋疼的axb</code></p>
 </blockquote>
-
 <p>详见：<a href="https://weibo.com/1809500942/GswhBroTL">https://weibo.com/1809500942/GswhBroTL</a></p>
-
 <p>整理下大家贴出来的方案。</p>
-
 <h2 id="解决方法">解决方法</h2>
-
 <h3 id="umask">umask</h3>
-
 <p>设置 umask 后，新创建的文件权限会基于 umask 值来设置。</p>
-
 <p>比如：默认 umask 的值为 <code>022</code></p>
-
 <p>新创建文件的权限：666 - 022 = 644</p>
-
 <h3 id="ld-linux">ld-linux</h3>
-
 <blockquote>
 <p>可以用 /lib/ld-linux.so.2 （或 /lib64/ld-linux-x86-64.so.2） 直接加载运行 ELF
 程序，不需要执行权限，比如 /lib/ld-linux.so.2 /bin/chmod +x /bin/* &hellip; &ndash; by Verdano</p>
 </blockquote>
-
 <pre><code>$ sudo /lib64/ld-linux-x86-64.so.2 /bin/chmod +x /bin/*
 </code></pre>
-
 <h3 id="其它语言的-chmod">其它语言的 chmod</h3>
-
 <blockquote>
 <p>用/usr/local/bin 下的python，直接os.chmod()，瞬间命令全搞定？[吃瓜] &ndash; by 我是谁我是在哪儿我又在干什么</p>
 </blockquote>
-
 <h4 id="python">Python</h4>
-
 <pre><code># Python 2
 $ python -c 'import os; os.chmod(&quot;/bin/chmod&quot;, 0755)'
 
 # Python 3
 $ python -c 'import os; os.chmod(&quot;/bin/chmod&quot;, 0o755)'
 </code></pre>
-
 <p>注：</p>
-
 <ul>
 <li>其它语言类似，差不多所有语言都有操作系统的 API 封装。</li>
 <li>如果 <code>/usr/bin/</code>
 下的所有命令都被去掉可执行权限的话，大部分语言的解析器也没法运行起来了。</li>
 </ul>
-
 <h3 id="重启进-recovery-mode">重启进 recovery mode</h3>
-
 <p>并不适合线上服务器。</p>
 
     </div>
@@ -347,7 +302,7 @@ $ python -c 'import os; os.chmod(&quot;/bin/chmod&quot;, 0o755)'
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -368,12 +323,16 @@ $ python -c 'import os; os.chmod(&quot;/bin/chmod&quot;, 0o755)'
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

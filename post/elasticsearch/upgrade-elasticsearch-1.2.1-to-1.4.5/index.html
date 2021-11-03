@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/elasticsearch/upgrade-elasticsearch-1.2.1-to-1.4.5/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="upgrade elasticsearch 1.2.1 to 1.4.5" />
 <meta property="og:description" content="一年前刚开始做应用市场数据统计，团队选用了ELK中的EL (Elasticsearch, Logstash)，没有用Kibana；而且根据产品、运营需求调用ES Restful API，自" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/elasticsearch/upgrade-elasticsearch-1.2.1-to-1.4.5/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:22:01&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:22:01&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/elasticsearch/upgrade-elasticsearch-1.2.1-to-1.4.5/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:22:01+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:22:01+08:00" />
 
 <meta itemprop="name" content="upgrade elasticsearch 1.2.1 to 1.4.5">
-<meta itemprop="description" content="一年前刚开始做应用市场数据统计，团队选用了ELK中的EL (Elasticsearch, Logstash)，没有用Kibana；而且根据产品、运营需求调用ES Restful API，自">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:22:01&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:22:01&#43;08:00" />
-<meta itemprop="wordCount" content="1692">
-
-
-
-<meta itemprop="keywords" content="dashboard, elasticsearch, logstash, elk," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="upgrade elasticsearch 1.2.1 to 1.4.5"/>
+<meta itemprop="description" content="一年前刚开始做应用市场数据统计，团队选用了ELK中的EL (Elasticsearch, Logstash)，没有用Kibana；而且根据产品、运营需求调用ES Restful API，自"><meta itemprop="datePublished" content="2017-12-15T19:22:01+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:22:01+08:00" />
+<meta itemprop="wordCount" content="1698">
+<meta itemprop="keywords" content="dashboard, elasticsearch, logstash, elk," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="upgrade elasticsearch 1.2.1 to 1.4.5"/>
 <meta name="twitter:description" content="一年前刚开始做应用市场数据统计，团队选用了ELK中的EL (Elasticsearch, Logstash)，没有用Kibana；而且根据产品、运营需求调用ES Restful API，自"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/elasticsearch/"> elasticsearch </a>
             
           </div>
-        <span class="more-meta"> 约 1692 字 </span>
+        <span class="more-meta"> 约 1698 字 </span>
         <span class="more-meta"> 预计阅读 4 分钟 </span>
       </div>
     </header>
@@ -165,59 +145,43 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#安装logstash-1-4-3">安装Logstash 1.4.3</a>
-<ul>
-<li><a href="#安装需要的软件包">安装需要的软件包</a></li>
-<li><a href="#修改配置文件">修改配置文件</a></li>
-<li><a href="#启动测试">启动测试</a></li>
-</ul></li>
-<li><a href="#安装elasticsearch-1-4-5">安装Elasticsearch 1.4.5</a>
-<ul>
-<li><a href="#安装需要的软件包-1">安装需要的软件包</a></li>
-<li><a href="#修改配置文件-1">修改配置文件</a></li>
-<li><a href="#启动elasticsearch">启动Elasticsearch</a></li>
-<li><a href="#监控插件使用">监控插件使用</a></li>
-</ul></li>
-<li><a href="#配置supervisor">配置supervisor</a></li>
-<li><a href="#常用的es命令别名">常用的ES命令别名</a></li>
-<li><a href="#升级">升级</a></li>
-<li><a href="#碰到的问题">碰到的问题</a>
-<ul>
-<li><a href="#没有将shard同步到新加入的es-1-4-5机器上">没有将shard同步到新加入的ES 1.4.5机器上</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#安装需要的软件包">安装需要的软件包</a></li>
+    <li><a href="#修改配置文件">修改配置文件</a></li>
+    <li><a href="#启动测试">启动测试</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#安装需要的软件包-1">安装需要的软件包</a></li>
+    <li><a href="#修改配置文件-1">修改配置文件</a></li>
+    <li><a href="#启动elasticsearch">启动Elasticsearch</a></li>
+    <li><a href="#监控插件使用">监控插件使用</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#没有将shard同步到新加入的es-145机器上">没有将shard同步到新加入的ES 1.4.5机器上</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>一年前刚开始做应用市场数据统计，团队选用了ELK中的EL (Elasticsearch, Logstash)，没有用Kibana；而且根据产品、运营需求调用ES Restful API，自己做Web展示。
+      <p>一年前刚开始做应用市场数据统计，团队选用了ELK中的EL (Elasticsearch, Logstash)，没有用Kibana；而且根据产品、运营需求调用ES Restful API，自己做Web展示。
 用了以下插件:analysis-icu, analysis-ik, analysis-mmseg, analysis-pinyin
 当时ES版本为1.2.1，一直没有升级，最近升级到1.4.5。</p>
-
 <p>我们之前服务器是Debian 7，现在服务器是CentOS 6.5；服务器版本和ES没有关系，至少我没碰到任何系统问题。</p>
-
 <p>目前有两台ES 1.2.1，准备用三台ES 1.4.5替换。刚开始没有root权限，只好下载压缩包安装。</p>
-
 <p>注: Elasticsearch和Logstash都需要安装JDK, 我们用的JDK 1.7</p>
-
-<h1 id="安装logstash-1-4-3">安装Logstash 1.4.3</h1>
-
+<h1 id="安装logstash-143">安装Logstash 1.4.3</h1>
 <h2 id="安装需要的软件包">安装需要的软件包</h2>
-
 <pre><code>:::bash
 
 $ cd /data/software
 $ wget https://download.elastic.co/logstash/logstash/logstash-1.4.3.tar.gz
 $ tar zxf logstash-1.4.3.tar.gz
 </code></pre>
-
 <h2 id="修改配置文件">修改配置文件</h2>
-
 <pre><code>:::bash
 
 $ cat /data/softwares/logstash-1.4.3/logstash.conf | grep -Ev '^#|^$'
@@ -266,7 +230,7 @@ input {
      key =&gt; &quot;appstore:overview_model_reports&quot; 
      tags =&gt; [&quot;overview_model_reports&quot;] 
      db =&gt; 3
-
+  
    } 
 }
 filter {
@@ -331,28 +295,21 @@ output {
    }   
 }
 </code></pre>
-
 <h2 id="启动测试">启动测试</h2>
-
 <pre><code>:::bash
 
 $ cd /data/softwares/logstash-1.4.3
 $ bin/logstash -f logstash.conf
 </code></pre>
-
-<h1 id="安装elasticsearch-1-4-5">安装Elasticsearch 1.4.5</h1>
-
+<h1 id="安装elasticsearch-145">安装Elasticsearch 1.4.5</h1>
 <h2 id="安装需要的软件包-1">安装需要的软件包</h2>
-
 <pre><code>:::bash
 
 $ cd /data/software
 $ wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.4.5.tar.gz
 $ tar zxf elasticsearch-1.4.5.tar.gz
 </code></pre>
-
 <p>安装插件：</p>
-
 <pre><code>:::bash
 
 $ cd /data/software # 安装分词插件
@@ -369,9 +326,7 @@ $ cd elasticsearch-1.4.5
 $ bin/plugin -install mobz/elasticsearch-head # head插件
 $ bin/plugin -install lukas-vlcek/bigdesk     # bigdesk插件
 </code></pre>
-
 <h2 id="修改配置文件-1">修改配置文件</h2>
-
 <pre><code>:::bash
 
 $ cat /data/softwares/elasticsearch-1.4.5/config/elasticsearch.yml | grep -Ev '^#|^$'
@@ -429,33 +384,26 @@ index:
         type: dictionary_decompounder
         word_list: [cool, iris, fire, bug, flag, fox, grease, monkey, flash, block, forecast, screen, grab, cookie, auto, fill, text, all, so, think, mega, upload, download, video, map, spring, fix, input, clip, fly, lang, up, down, persona, css, html, all, http, ball, firefox, bookmark, chat, zilla, edit, menu, menus, status, bar, with, easy, sync, search, google, time, window, js, super, scroll, title, close, undo, user, inspect, inspector, browser, context, dictionary, mail, button, url, password, secure, image, new, tab, delete, click, name, smart, down, manager, open, query, net, link, blog, this, color, select, key, keys, foxy, translate, word]
 </code></pre>
-
-<p>注：
-1. 删除了注释
-2. 其它机器配置文件类似，只需要修改和IP相关的字段值</p>
-
+<p>注：</p>
+<ol>
+<li>删除了注释</li>
+<li>其它机器配置文件类似，只需要修改和IP相关的字段值</li>
+</ol>
 <h2 id="启动elasticsearch">启动Elasticsearch</h2>
-
 <p>测试能否正常启动：</p>
-
 <pre><code>:::bash
 
 $ cd /data/software/elasticsearch-1.4.5
 $ bin/elasticsearch  # 启动ES，测试是否可以正常启动
 $ tail -f /data/log/elasticsearch/elasticsearch_dashboard.log # 查看日志
 </code></pre>
-
 <h2 id="监控插件使用">监控插件使用</h2>
-
 <ul>
 <li>head: http://&lt;your-es-ip&gt;:9200/_plugin/head/</li>
 <li>bigdesk: http://&lt;your-es-ip&gt;:9200/_plugin/bigdesk/</li>
 </ul>
-
 <h1 id="配置supervisor">配置supervisor</h1>
-
 <p>如果可以正常启动，我们通过supervisor管理Elasticsearch和Logstash。</p>
-
 <pre><code>:::bash
 
 $ sudo pip install supervisor # 后来拿到root权限，否则还要先弄Python virtual env
@@ -512,9 +460,7 @@ autorestart=true
 stdout_logfile=/data/log/supervisor/logstash.stdout
 stderr_logfile=/data/log/supervisor/logstash.stderr
 </code></pre>
-
 <h1 id="常用的es命令别名">常用的ES命令别名</h1>
-
 <pre><code>:::bash
 
 $ tail -n3 ~/.bashrc 
@@ -524,18 +470,12 @@ alias ess=&quot;curl $(ip -4 -o addr show dev eth0 | awk '{split($4,a,&quot;/&qu
 alias esdownlocal=&quot;curl $(ip -4 -o addr show dev eth0 | awk '{split($4,a,&quot;/&quot;);print a[1]}'):9200/_cluster/nodes/_local/_shutdown&quot;
 alias esdownall=&quot;curl $(ip -4 -o addr show dev eth0 | awk '{split($4,a,&quot;/&quot;);print a[1]}'):9200/_shutdown&quot;
 </code></pre>
-
 <h1 id="升级">升级</h1>
-
 <p>通过上面步骤，配置好3台Elasticsearch 1.4.5，然后，将这三台ES机器加入以前的Elasticsearch 1.2.1的集群。
 数据逐步同步到ES 1.4.5后，逐步将ES 1.2.1的机器停掉。</p>
-
 <h1 id="碰到的问题">碰到的问题</h1>
-
-<h2 id="没有将shard同步到新加入的es-1-4-5机器上">没有将shard同步到新加入的ES 1.4.5机器上</h2>
-
+<h2 id="没有将shard同步到新加入的es-145机器上">没有将shard同步到新加入的ES 1.4.5机器上</h2>
 <p>修改number_of_replicas，根据机器个数修改。</p>
-
 <pre><code>:::bash
 
 $ curl -XPUT '&lt;your-ip&gt;:9200/&lt;your-index&gt;/_settings' -d '{
@@ -544,9 +484,7 @@ $ curl -XPUT '&lt;your-ip&gt;:9200/&lt;your-index&gt;/_settings' -d '{
       }
 }'
 </code></pre>
-
 <p>明确让某个index的某个shard分配到指定机器上。</p>
-
 <pre><code>:::bash
 
 $ curl -XPOST '&lt;your-es-ip&gt;:9200/_cluster/reroute' -d '{
@@ -565,9 +503,7 @@ $ curl -XPOST '&lt;your-es-ip&gt;:9200/_cluster/reroute' -d '{
     ]
 }'
 </code></pre>
-
 <p>比如：</p>
-
 <pre><code>:::bash
 
 $ curl -XPOST 'localhost:9200/_cluster/reroute' -d '{
@@ -586,9 +522,7 @@ $ curl -XPOST 'localhost:9200/_cluster/reroute' -d '{
     ]
 }'
 </code></pre>
-
 <p>参考：</p>
-
 <ol>
 <li><a href="http://stackoverflow.com/questions/23656458/elasticsearch-what-to-do-with-unassigned-shards/">http://stackoverflow.com/questions/23656458/elasticsearch-what-to-do-with-unassigned-shards/</a></li>
 <li><a href="http://stackoverflow.com/questions/25135869/how-to-rebalance-shard-elasticsearch">http://stackoverflow.com/questions/25135869/how-to-rebalance-shard-elasticsearch</a></li>
@@ -709,7 +643,7 @@ $ curl -XPOST 'localhost:9200/_cluster/reroute' -d '{
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -730,12 +664,16 @@ $ curl -XPOST 'localhost:9200/_cluster/reroute' -d '{
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/configuration/nginx-config-copy/" />
@@ -47,34 +47,16 @@
 <meta property="og:title" content="" />
 <meta property="og:description" content="##################### global config ##################### daemon on; master_process on; timer_resolution 100ms; lock_file /var/run/nginx.lock; worker_priority -10; user admin admin; pid /var/run/nginx.pid; worker_processes auto; worker_rlimit_nofile 102400; error_log /var/log/nginx/error.log; ##################### event config ##################### events { use epoll; worker_connections 51200; multi_accept off; } ##################### http config ##################### http { server_tokens off; sendfile on; tcp_nopush on; tcp_nodelay on; keepalive_timeout 10; client_header_timeout 10; client_body_timeout 10; reset_timedout_connection on; send_timeout 10; # 限制同一IP并" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/configuration/nginx-config-copy/" />
-
-
-
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/configuration/nginx-config-copy/" /><meta property="article:section" content="post" />
 
 
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="##################### global config ##################### daemon on; master_process on; timer_resolution 100ms; lock_file /var/run/nginx.lock; worker_priority -10; user admin admin; pid /var/run/nginx.pid; worker_processes auto; worker_rlimit_nofile 102400; error_log /var/log/nginx/error.log; ##################### event config ##################### events { use epoll; worker_connections 51200; multi_accept off; } ##################### http config ##################### http { server_tokens off; sendfile on; tcp_nopush on; tcp_nodelay on; keepalive_timeout 10; client_header_timeout 10; client_body_timeout 10; reset_timedout_connection on; send_timeout 10; # 限制同一IP并">
 
-
-
-<meta itemprop="wordCount" content="464">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content=""/>
+<meta itemprop="wordCount" content="468">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
 <meta name="twitter:description" content="##################### global config ##################### daemon on; master_process on; timer_resolution 100ms; lock_file /var/run/nginx.lock; worker_priority -10; user admin admin; pid /var/run/nginx.pid; worker_processes auto; worker_rlimit_nofile 102400; error_log /var/log/nginx/error.log; ##################### event config ##################### events { use epoll; worker_connections 51200; multi_accept off; } ##################### http config ##################### http { server_tokens off; sendfile on; tcp_nopush on; tcp_nodelay on; keepalive_timeout 10; client_header_timeout 10; client_body_timeout 10; reset_timedout_connection on; send_timeout 10; # 限制同一IP并"/>
 
 <!--[if lte IE 9]>
@@ -151,7 +133,7 @@
               <a href="/categories/configuration/"> configuration </a>
             
           </div>
-        <span class="more-meta"> 约 464 字 </span>
+        <span class="more-meta"> 约 468 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -162,71 +144,41 @@
   <h2 class="post-toc-title">文章目录</h2>
   
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-<ul>
-<li><a href="#global-config">global config</a></li>
-<li><a href="#daemon-on">daemon on;</a></li>
-<li><a href="#master-process-on">master_process on;</a></li>
-<li><a href="#timer-resolution-100ms">timer_resolution 100ms;</a></li>
-<li><a href="#lock-file-var-run-nginx-lock">lock_file /var/run/nginx.lock;</a></li>
-<li><a href="#worker-priority-10">worker_priority -10;</a></li>
-<li><a href="#event-config">event config</a></li>
-<li><a href="#http-config">http config</a></li>
-</ul>
-</nav>
+    <nav id="TableOfContents"></nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>#####################</p>
-
+      <p>#####################</p>
 <h1 id="global-config">global config</h1>
-
 <p>#####################</p>
-
 <h1 id="daemon-on">daemon on;</h1>
-
-<h1 id="master-process-on">master_process on;</h1>
-
-<h1 id="timer-resolution-100ms">timer_resolution 100ms;</h1>
-
-<h1 id="lock-file-var-run-nginx-lock">lock_file /var/run/nginx.lock;</h1>
-
-<h1 id="worker-priority-10">worker_priority -10;</h1>
-
+<h1 id="master_process-on">master_process on;</h1>
+<h1 id="timer_resolution-100ms">timer_resolution 100ms;</h1>
+<h1 id="lock_file-varrunnginxlock">lock_file /var/run/nginx.lock;</h1>
+<h1 id="worker_priority--10">worker_priority -10;</h1>
 <p>user admin admin;
 pid /var/run/nginx.pid;
 worker_processes auto;
 worker_rlimit_nofile 102400;
 error_log /var/log/nginx/error.log;</p>
-
 <p>#####################</p>
-
 <h1 id="event-config">event config</h1>
-
 <p>#####################</p>
-
 <p>events {
-    use epoll;
-    worker_connections 51200;
-    multi_accept off;
+use epoll;
+worker_connections 51200;
+multi_accept off;
 }</p>
-
 <p>#####################</p>
-
 <h1 id="http-config">http config</h1>
-
 <p>#####################</p>
-
 <p>http {
-    server_tokens off;
-    sendfile on;
-    tcp_nopush on;
-    tcp_nodelay on;</p>
-
+server_tokens off;
+sendfile on;
+tcp_nopush on;
+tcp_nodelay on;</p>
 <pre><code>keepalive_timeout 10;
 client_header_timeout 10;
 client_body_timeout 10;
@@ -359,8 +311,7 @@ server {
     }
 }
 
-include /usr/local/nginx/conf/sites-enabled/*.conf;
-</code></pre>
+include /usr/local/nginx/conf/sites-enabled/*.conf;</code></pre>
 
     </div>
 
@@ -408,9 +359,9 @@ include /usr/local/nginx/conf/sites-enabled/*.conf;
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/configuration/hello-world/">
+          <a class="prev" href="/post/configuration/http-command-line-tools/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Hello World</span>
+            <span class="prev-text nav-default">HTTP Command Line Tools</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
@@ -465,7 +416,7 @@ include /usr/local/nginx/conf/sites-enabled/*.conf;
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -486,12 +437,16 @@ include /usr/local/nginx/conf/sites-enabled/*.conf;
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

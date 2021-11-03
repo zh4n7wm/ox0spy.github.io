@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on ox0spy&#39;s blog</title>
@@ -6,13 +6,27 @@
     <description>Recent content in Categories on ox0spy&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 29 Jan 2019 09:02:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://ox0spy.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Tue, 26 Feb 2019 09:22:01 +0800</lastBuildDate><atom:link href="https://ox0spy.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>https://ox0spy.github.io/categories/linux/</link>
+      <pubDate>Tue, 26 Feb 2019 09:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/linux/</guid>
+      <description></description>
+    </item>
     
     <item>
-      <title>Android</title>
+      <title>frontend</title>
+      <link>https://ox0spy.github.io/categories/frontend/</link>
+      <pubDate>Fri, 01 Feb 2019 16:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/frontend/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>android</title>
       <link>https://ox0spy.github.io/categories/android/</link>
       <pubDate>Tue, 29 Jan 2019 09:02:00 +0800</pubDate>
       
@@ -21,34 +35,7 @@
     </item>
     
     <item>
-      <title>Asm</title>
-      <link>https://ox0spy.github.io/categories/asm/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/asm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Aws</title>
-      <link>https://ox0spy.github.io/categories/aws/</link>
-      <pubDate>Fri, 09 Feb 2018 18:06:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/aws/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bigdata</title>
-      <link>https://ox0spy.github.io/categories/bigdata/</link>
-      <pubDate>Thu, 17 May 2018 09:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/bigdata/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Configuration</title>
+      <title>configuration</title>
       <link>https://ox0spy.github.io/categories/configuration/</link>
       <pubDate>Thu, 25 Oct 2018 18:01:58 +0800</pubDate>
       
@@ -57,16 +44,7 @@
     </item>
     
     <item>
-      <title>Data Science</title>
-      <link>https://ox0spy.github.io/categories/data-science/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/data-science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Database</title>
+      <title>database</title>
       <link>https://ox0spy.github.io/categories/database/</link>
       <pubDate>Wed, 26 Sep 2018 10:06:00 +0800</pubDate>
       
@@ -75,16 +53,34 @@
     </item>
     
     <item>
-      <title>Dns</title>
-      <link>https://ox0spy.github.io/categories/dns/</link>
-      <pubDate>Sat, 31 Mar 2018 21:49:01 +0800</pubDate>
+      <title>java</title>
+      <link>https://ox0spy.github.io/categories/java/</link>
+      <pubDate>Wed, 26 Sep 2018 10:06:00 +0800</pubDate>
       
-      <guid>https://ox0spy.github.io/categories/dns/</guid>
+      <guid>https://ox0spy.github.io/categories/java/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Eclipse</title>
+      <title>liquibase</title>
+      <link>https://ox0spy.github.io/categories/liquibase/</link>
+      <pubDate>Wed, 26 Sep 2018 10:06:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/liquibase/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>migration</title>
+      <link>https://ox0spy.github.io/categories/migration/</link>
+      <pubDate>Wed, 26 Sep 2018 10:06:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/migration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>eclipse</title>
       <link>https://ox0spy.github.io/categories/eclipse/</link>
       <pubDate>Sat, 22 Sep 2018 14:06:00 +0800</pubDate>
       
@@ -93,7 +89,25 @@
     </item>
     
     <item>
-      <title>Elasticsearch</title>
+      <title>IDEA</title>
+      <link>https://ox0spy.github.io/categories/idea/</link>
+      <pubDate>Sat, 22 Sep 2018 14:06:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/idea/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jenkins</title>
+      <link>https://ox0spy.github.io/categories/jenkins/</link>
+      <pubDate>Sat, 22 Sep 2018 10:06:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/jenkins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elasticsearch</title>
       <link>https://ox0spy.github.io/categories/elasticsearch/</link>
       <pubDate>Sun, 22 Jul 2018 14:06:00 +0800</pubDate>
       
@@ -102,11 +116,173 @@
     </item>
     
     <item>
-      <title>Frontend</title>
-      <link>https://ox0spy.github.io/categories/frontend/</link>
-      <pubDate>Fri, 01 Feb 2019 16:21:59 +0800</pubDate>
+      <title>bigdata</title>
+      <link>https://ox0spy.github.io/categories/bigdata/</link>
+      <pubDate>Thu, 17 May 2018 09:22:01 +0800</pubDate>
       
-      <guid>https://ox0spy.github.io/categories/frontend/</guid>
+      <guid>https://ox0spy.github.io/categories/bigdata/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dns</title>
+      <link>https://ox0spy.github.io/categories/dns/</link>
+      <pubDate>Sat, 31 Mar 2018 21:49:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/dns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aws</title>
+      <link>https://ox0spy.github.io/categories/aws/</link>
+      <pubDate>Fri, 09 Feb 2018 18:06:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link>https://ox0spy.github.io/categories/ubuntu/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>life</title>
+      <link>https://ox0spy.github.io/categories/life/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/life/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mac-osx</title>
+      <link>https://ox0spy.github.io/categories/mac-osx/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/mac-osx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mysql</title>
+      <link>https://ox0spy.github.io/categories/mysql/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>node</title>
+      <link>https://ox0spy.github.io/categories/node/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/node/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pages</title>
+      <link>https://ox0spy.github.io/categories/pages/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/pages/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pelican</title>
+      <link>https://ox0spy.github.io/categories/pelican/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/pelican/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>performance</title>
+      <link>https://ox0spy.github.io/categories/performance/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/performance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go</title>
+      <link>https://ox0spy.github.io/categories/go/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://ox0spy.github.io/categories/python/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>redis</title>
+      <link>https://ox0spy.github.io/categories/redis/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/redis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web-test</title>
+      <link>https://ox0spy.github.io/categories/web-test/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/web-test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>asm</title>
+      <link>https://ox0spy.github.io/categories/asm/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/asm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>install</title>
+      <link>https://ox0spy.github.io/categories/install/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/install/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux-commands</title>
+      <link>https://ox0spy.github.io/categories/linux-commands/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/linux-commands/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>https://ox0spy.github.io/categories/vim/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/vim/</guid>
       <description></description>
     </item>
     
@@ -120,133 +296,7 @@
     </item>
     
     <item>
-      <title>Go</title>
-      <link>https://ox0spy.github.io/categories/go/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Http</title>
-      <link>https://ox0spy.github.io/categories/http/</link>
-      <pubDate>Tue, 06 Aug 2013 00:00:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/http/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Idea</title>
-      <link>https://ox0spy.github.io/categories/idea/</link>
-      <pubDate>Sat, 22 Sep 2018 14:06:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/idea/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Install</title>
-      <link>https://ox0spy.github.io/categories/install/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/install/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java</title>
-      <link>https://ox0spy.github.io/categories/java/</link>
-      <pubDate>Wed, 26 Sep 2018 10:06:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jenkins</title>
-      <link>https://ox0spy.github.io/categories/jenkins/</link>
-      <pubDate>Sat, 22 Sep 2018 10:06:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/jenkins/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Life</title>
-      <link>https://ox0spy.github.io/categories/life/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/life/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://ox0spy.github.io/categories/linux/</link>
-      <pubDate>Tue, 26 Feb 2019 09:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux Commands</title>
-      <link>https://ox0spy.github.io/categories/linux-commands/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/linux-commands/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Liquibase</title>
-      <link>https://ox0spy.github.io/categories/liquibase/</link>
-      <pubDate>Wed, 26 Sep 2018 10:06:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/liquibase/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mac Osx</title>
-      <link>https://ox0spy.github.io/categories/mac-osx/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/mac-osx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Migration</title>
-      <link>https://ox0spy.github.io/categories/migration/</link>
-      <pubDate>Wed, 26 Sep 2018 10:06:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/migration/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mysql</title>
-      <link>https://ox0spy.github.io/categories/mysql/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/mysql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Node</title>
-      <link>https://ox0spy.github.io/categories/node/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/node/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Opengrok</title>
+      <title>OpenGrok</title>
       <link>https://ox0spy.github.io/categories/opengrok/</link>
       <pubDate>Wed, 14 Aug 2013 00:00:00 +0800</pubDate>
       
@@ -255,83 +305,29 @@
     </item>
     
     <item>
-      <title>Openresty</title>
+      <title>HTTP</title>
+      <link>https://ox0spy.github.io/categories/http/</link>
+      <pubDate>Tue, 06 Aug 2013 00:00:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/http/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data-science</title>
+      <link>https://ox0spy.github.io/categories/data-science/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ox0spy.github.io/categories/data-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>openresty</title>
       <link>https://ox0spy.github.io/categories/openresty/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ox0spy.github.io/categories/openresty/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pages</title>
-      <link>https://ox0spy.github.io/categories/pages/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/pages/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pelican</title>
-      <link>https://ox0spy.github.io/categories/pelican/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/pelican/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Performance</title>
-      <link>https://ox0spy.github.io/categories/performance/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/performance/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://ox0spy.github.io/categories/python/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Redis</title>
-      <link>https://ox0spy.github.io/categories/redis/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/redis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ubuntu</title>
-      <link>https://ox0spy.github.io/categories/ubuntu/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/ubuntu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vim</title>
-      <link>https://ox0spy.github.io/categories/vim/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/vim/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Web Test</title>
-      <link>https://ox0spy.github.io/categories/web-test/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/categories/web-test/</guid>
       <description></description>
     </item>
     

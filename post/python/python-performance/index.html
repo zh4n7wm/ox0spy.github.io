@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/python/python-performance/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="python performance" />
 <meta property="og:description" content="Python IPC https://docs.python.org/3/library/ipc.html 线程与协程 http://blog.rainy.im/2016/04/07/python-thread-and-coroutine/ Python中的进程、线程、协程、同步、异步和回调 Gevent http://www.sunzhongwei.com/gevent.html gevent: Asynchronous I/O made easy Logging，gevent 与死锁 Python 3 asyncio https://community.nitrous.io/tutorials/asynchronous-programming-with-python-3" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/python/python-performance/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:21:59&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:21:59&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/python/python-performance/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:21:59+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:21:59+08:00" />
 
 <meta itemprop="name" content="python performance">
-<meta itemprop="description" content="Python IPC https://docs.python.org/3/library/ipc.html 线程与协程 http://blog.rainy.im/2016/04/07/python-thread-and-coroutine/ Python中的进程、线程、协程、同步、异步和回调 Gevent http://www.sunzhongwei.com/gevent.html gevent: Asynchronous I/O made easy Logging，gevent 与死锁 Python 3 asyncio https://community.nitrous.io/tutorials/asynchronous-programming-with-python-3">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:21:59&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:21:59&#43;08:00" />
+<meta itemprop="description" content="Python IPC https://docs.python.org/3/library/ipc.html 线程与协程 http://blog.rainy.im/2016/04/07/python-thread-and-coroutine/ Python中的进程、线程、协程、同步、异步和回调 Gevent http://www.sunzhongwei.com/gevent.html gevent: Asynchronous I/O made easy Logging，gevent 与死锁 Python 3 asyncio https://community.nitrous.io/tutorials/asynchronous-programming-with-python-3"><meta itemprop="datePublished" content="2017-12-15T19:21:59+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:59+08:00" />
 <meta itemprop="wordCount" content="62">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="python performance"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="python performance"/>
 <meta name="twitter:description" content="Python IPC https://docs.python.org/3/library/ipc.html 线程与协程 http://blog.rainy.im/2016/04/07/python-thread-and-coroutine/ Python中的进程、线程、协程、同步、异步和回调 Gevent http://www.sunzhongwei.com/gevent.html gevent: Asynchronous I/O made easy Logging，gevent 与死锁 Python 3 asyncio https://community.nitrous.io/tutorials/asynchronous-programming-with-python-3"/>
 
 <!--[if lte IE 9]>
@@ -165,46 +145,34 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#python-ipc">Python IPC</a></li>
-<li><a href="#线程与协程">线程与协程</a></li>
-<li><a href="#gevent">Gevent</a></li>
-<li><a href="#python-3-asyncio">Python 3 asyncio</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#python-ipc">Python IPC</a></li>
+    <li><a href="#线程与协程">线程与协程</a></li>
+    <li><a href="#gevent">Gevent</a></li>
+    <li><a href="#python-3-asyncio">Python 3 asyncio</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="python-ipc">Python IPC</h2>
-
+      <h2 id="python-ipc">Python IPC</h2>
 <ul>
 <li><a href="https://docs.python.org/3/library/ipc.html">https://docs.python.org/3/library/ipc.html</a></li>
 </ul>
-
 <h2 id="线程与协程">线程与协程</h2>
-
 <ul>
 <li><a href="http://blog.rainy.im/2016/04/07/python-thread-and-coroutine/">http://blog.rainy.im/2016/04/07/python-thread-and-coroutine/</a></li>
 <li><a href="http://boolan.com/lecture/1000001045">Python中的进程、线程、协程、同步、异步和回调</a></li>
 </ul>
-
 <h2 id="gevent">Gevent</h2>
-
 <ul>
 <li><a href="http://www.sunzhongwei.com/gevent.html">http://www.sunzhongwei.com/gevent.html</a></li>
 <li><a href="http://mauveweb.co.uk/posts/2014/07/gevent-asynchronous-io-made-easy.html">gevent: Asynchronous I/O made easy</a></li>
 <li><a href="http://blog.psjay.com/posts/logging_gevent_and_deadlock/">Logging，gevent 与死锁</a></li>
 </ul>
-
 <h2 id="python-3-asyncio">Python 3 asyncio</h2>
-
 <ul>
 <li><a href="https://community.nitrous.io/tutorials/asynchronous-programming-with-python-3">https://community.nitrous.io/tutorials/asynchronous-programming-with-python-3</a></li>
 </ul>
@@ -312,7 +280,7 @@
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -333,12 +301,16 @@
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/mac-osx/mac-pro-get-started/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="mac pro初体验" />
 <meta property="og:description" content="貌似如今不玩下Mac总觉得逼格不够，最近08年买的Thinkpad R60也坏掉了，就入手一台Mac Pro。 下面记录下环境配置和最近使用感受。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/mac-osx/mac-pro-get-started/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:22:00&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:22:00&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/mac-osx/mac-pro-get-started/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:22:00+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:22:00+08:00" />
 
 <meta itemprop="name" content="mac pro初体验">
-<meta itemprop="description" content="貌似如今不玩下Mac总觉得逼格不够，最近08年买的Thinkpad R60也坏掉了，就入手一台Mac Pro。 下面记录下环境配置和最近使用感受。">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:22:00&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:22:00&#43;08:00" />
-<meta itemprop="wordCount" content="2056">
-
-
-
-<meta itemprop="keywords" content="mac," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="mac pro初体验"/>
+<meta itemprop="description" content="貌似如今不玩下Mac总觉得逼格不够，最近08年买的Thinkpad R60也坏掉了，就入手一台Mac Pro。 下面记录下环境配置和最近使用感受。"><meta itemprop="datePublished" content="2017-12-15T19:22:00+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:22:00+08:00" />
+<meta itemprop="wordCount" content="2052">
+<meta itemprop="keywords" content="mac," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="mac pro初体验"/>
 <meta name="twitter:description" content="貌似如今不玩下Mac总觉得逼格不够，最近08年买的Thinkpad R60也坏掉了，就入手一台Mac Pro。 下面记录下环境配置和最近使用感受。"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/mac-osx/"> mac-osx </a>
             
           </div>
-        <span class="more-meta"> 约 2056 字 </span>
+        <span class="more-meta"> 约 2052 字 </span>
         <span class="more-meta"> 预计阅读 5 分钟 </span>
       </div>
     </header>
@@ -165,69 +145,54 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#xcode">Xcode</a>
-<ul>
-<li><a href="#安装xcode命令行工具">安装Xcode命令行工具:</a></li>
-<li><a href="#xcode包管理工具-alcatraz-http-alcatraz-io-安装">Xcode包管理工具<a href="http://alcatraz.io/">Alcatraz</a>安装:</a></li>
-<li><a href="#xcode安装solarized-dark-for-xcode主题">Xcode安装Solarized-Dark-for-Xcode主题:</a></li>
-</ul></li>
-<li><a href="#homebrew">Homebrew</a></li>
-<li><a href="#homebrew-cask">Homebrew Cask</a></li>
-<li><a href="#iterm2">iTerm2</a></li>
-<li><a href="#zsh">Zsh</a></li>
-<li><a href="#gnu-command-line-tools">GNU command line tools</a></li>
-<li><a href="#pip">pip</a></li>
-<li><a href="#cocoapods">CocoaPods</a></li>
-<li><a href="#vim">vim</a></li>
-<li><a href="#安装java-jdk">安装Java JDK</a></li>
-<li><a href="#intellij-idea">Intellij IDEA</a></li>
-<li><a href="#最后">最后</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#xcode">Xcode</a>
+      <ul>
+        <li><a href="#安装xcode命令行工具">安装Xcode命令行工具:</a></li>
+        <li><a href="#xcode包管理工具alcatrazhttpalcatrazio安装">Xcode包管理工具<a href="http://alcatraz.io/">Alcatraz</a>安装:</a></li>
+        <li><a href="#xcode安装solarized-dark-for-xcode主题">Xcode安装Solarized-Dark-for-Xcode主题:</a></li>
+      </ul>
+    </li>
+    <li><a href="#homebrew">Homebrew</a></li>
+    <li><a href="#homebrew-cask">Homebrew Cask</a></li>
+    <li><a href="#iterm2">iTerm2</a></li>
+    <li><a href="#zsh">Zsh</a></li>
+    <li><a href="#gnu-command-line-tools">GNU command line tools</a></li>
+    <li><a href="#pip">pip</a></li>
+    <li><a href="#cocoapods">CocoaPods</a></li>
+    <li><a href="#vim">vim</a></li>
+    <li><a href="#安装java-jdk">安装Java JDK</a></li>
+    <li><a href="#intellij-idea">Intellij IDEA</a></li>
+    <li><a href="#最后">最后</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>貌似如今不玩下Mac总觉得逼格不够，最近08年买的Thinkpad R60也坏掉了，就入手一台Mac Pro。
+      <p>貌似如今不玩下Mac总觉得逼格不够，最近08年买的Thinkpad R60也坏掉了，就入手一台Mac Pro。
 下面记录下环境配置和最近使用感受。</p>
-
 <h2 id="xcode">Xcode</h2>
-
 <h3 id="安装xcode命令行工具">安装Xcode命令行工具:</h3>
-
 <pre><code>:::bash
 $ xcode-select --install
 </code></pre>
-
-<h3 id="xcode包管理工具-alcatraz-http-alcatraz-io-安装">Xcode包管理工具<a href="http://alcatraz.io/">Alcatraz</a>安装:</h3>
-
+<h3 id="xcode包管理工具alcatrazhttpalcatrazio安装">Xcode包管理工具<a href="http://alcatraz.io/">Alcatraz</a>安装:</h3>
 <pre><code>:::bash
 $ curl -fsSL https://raw.githubusercontent.com/supermarin/Alcatraz/deploy/Scripts/install.sh | sh
 </code></pre>
-
 <h3 id="xcode安装solarized-dark-for-xcode主题">Xcode安装Solarized-Dark-for-Xcode主题:</h3>
-
 <ul>
 <li>打开Xcode，Window -&gt; Package Manager，选择Color Themes，搜索solar，安装ArtSabintsev/Solarized-Dark-for-Xcode</li>
 <li>重启Xcode，Xcode -&gt; Preference -&gt; Fonts &amp; Colors，选择刚才安装的Solarized-Dark-for-Xcode</li>
 <li>再重启Xcode生效</li>
 </ul>
-
 <blockquote>
 <p>注：如果想修改字体及字体大小，请手动修改<code>~/Library/Developer/Xcode/UserData/FontAndColorThemes/Solarized\ Dark\ for\ Xcode.dvtcolortheme</code></p>
 </blockquote>
-
 <h2 id="homebrew">Homebrew</h2>
-
 <p><a href="http://brew.sh">Homebrew</a>是Mac中非常受欢迎的包管理工具，熟悉Linux的朋友一定知道rpm/yum, dpkg/apt等。</p>
-
 <pre><code>:::bash
 $ ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
 $ brew doctor
@@ -239,47 +204,33 @@ $ brew upgrade &lt;package-name&gt;
 $ brew cleanup
 $ brew list --versions
 </code></pre>
-
 <p>使用<code>清华大学Tuna镜像源</code>：<a href="https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/">Homebrew 镜像使用帮助</a></p>
-
 <h2 id="homebrew-cask">Homebrew Cask</h2>
-
 <p>通过Homebrew可以方便的管理命令行程序，Homebrew Cask可以管理图形界面程序。</p>
-
 <pre><code>:::bash
 $ brew tap caskroom/cask
 $ brew install brew-cask
 $ brew cask install google-chrome
 $ brew update &amp;&amp; brew upgrade brew-cask &amp;&amp; brew cleanup
 </code></pre>
-
 <h2 id="iterm2">iTerm2</h2>
-
 <ul>
 <li>从<a href="https://www.iterm2.com/">官网</a>下载、安装iTerm2。</li>
 <li>关闭烦人的bell: <code>iTerm 2: Preferences -&gt; Profiles -&gt; Tab: Terminal -&gt; Notifications -&gt; Silence Bell</code></li>
 </ul>
-
 <h2 id="zsh">Zsh</h2>
-
 <pre><code>:::bash
 $ brew install zsh zsh-completions
 $ sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;
 $ chsh -s /bin/zsh
 </code></pre>
-
 <p>Zsh还配置了powerline，开始Zsh、vim都使用powerline，后来vim使用vim-airline。
 powerline要显示一些Unicode字符，需要安装打过patch的powerline字体。</p>
-
 <p>安装powerline: <a href="https://powerline.readthedocs.org/en/latest/installation/linux.html">https://powerline.readthedocs.org/en/latest/installation/linux.html</a>
 powerline font: <a href="https://github.com/powerline/fonts">https://github.com/powerline/fonts</a></p>
-
 <p>字体安装后需要在iTerm2中选用刚安装的打过powerline patch的字体。</p>
-
 <h2 id="gnu-command-line-tools">GNU command line tools</h2>
-
 <p>Mac默认的命令行工具太蛋疼了，至少对我这样非常熟悉Linux的人来说是这样的。下面介绍下如何安装GNU命令行工具:</p>
-
 <pre><code>:::bash
 brew install coreutils
 brew tap homebrew/dupes
@@ -298,30 +249,19 @@ brew install watch
 brew install wdiff --with-gettext
 brew install wget
 </code></pre>
-
 <h2 id="pip">pip</h2>
-
 <p>个人经常写点Python代码，需要安装Python模块管理工具-<code>pip</code></p>
-
 <p><a href="https://pip.pypa.io/en/stable/installing/">Installing with get-pip.py</a></p>
-
 <p>pypi源设置请参考：<a href="https://mirrors.tuna.tsinghua.edu.cn/help/pypi/">清华大学Tuna的pypi 镜像使用帮助</a></p>
-
 <h2 id="cocoapods">CocoaPods</h2>
-
 <p><a href="https://cocoapods.org/">CocoaPods</a>是Xcode项目的依赖库管理工具。</p>
-
 <p>我将它安装到自己的$HOME目录下，也可以直接安装到系统目录。</p>
-
 <p>将下面内容添加到 $HOME/.zshrc中</p>
-
 <blockquote>
 <p>export GEM_HOME=$HOME/.gem
 export PATH=$GEM_HOME/ruby/2.0.0/bin:$PATH</p>
 </blockquote>
-
 <p>通过下面命令安装CocoaPods:</p>
-
 <pre><code>:::bash
 $ source ~/.zshrc  # 获取GEM_HOME, PATH配置
 $ gem sources -l  # 列出当前ruby gem源地址
@@ -330,55 +270,40 @@ $ gem sources -a https://ruby.taobao.org/  # 使用淘宝ruby gem镜像
 $ gem install cocoapods --user-install  # 安装CocoaPods
 $ pod install
 </code></pre>
-
 <p>使用CocoaPods国内镜像索引:</p>
-
 <pre><code>:::bash
 $ pod repo  # 查看repo信息，下面修改repo master git URL
 $ pod repo remove master
 $ pod repo add master https://gitcafe.com/akuandev/Specs.git
 $ pod repo update
 </code></pre>
-
 <p>CocoaPods的更多介绍请阅读<a href="http://blog.devtang.com/blog/2014/05/25/use-cocoapod-to-manage-ios-lib-dependency/">用CocoaPods做iOS程序的依赖管理</a></p>
-
 <h2 id="vim">vim</h2>
-
-<p>常用vim，在mac上配置下，曾经自己的vim配置有点乱了，发现［k-vim](<a href="https://github.com/wklken/k-vim)不错，就使用它了。">https://github.com/wklken/k-vim)不错，就使用它了。</a></p>
-
+<p>常用vim，在mac上配置下，曾经自己的vim配置有点乱了，发现［k-vim](<a href="https://github.com/wklken/k-vim">https://github.com/wklken/k-vim</a>)不错，就使用它了。</p>
 <pre><code>:::bash
 $ brew install macvim  # 只使用了macvim，没有用原生vim
 $ ln -s /usr/local/bin/mvim /usr/local/bin/vim  # 否则YouCompleteMe等plugin会报无法安装需要 vim 7.4 之类的
 $ git clone https://github.com/wklken/k-vim.git ~/k-vim
 $ cd ~/k-vim &amp;&amp; bash -x install.sh
 </code></pre>
-
-<p>注：
-1. k-vim没有适配最新版的vbundle，导致运行安装程序报错，基本就是Bundle修改为Plugin。。。
-2. YouCompleteMe安装总失败，后来手动下载安装</p>
-
+<p>注：</p>
+<ol>
+<li>k-vim没有适配最新版的vbundle，导致运行安装程序报错，基本就是Bundle修改为Plugin。。。</li>
+<li>YouCompleteMe安装总失败，后来手动下载安装</li>
+</ol>
 <h2 id="安装java-jdk">安装Java JDK</h2>
-
 <pre><code>$ brew cask install java
 </code></pre>
-
 <h2 id="intellij-idea">Intellij IDEA</h2>
-
 <p>IDEA运行需要JDK。</p>
-
 <p>从IDEA -&gt; Project Default -&gt; Project Structure -&gt; SDKS中添加JDK和Intellij Platform Plugin SDK。（需要选择JDK、Intellij的目录）</p>
-
 <p>安装go-lang-idea-plugin插件，可以从<a href="https://plugins.jetbrains.com/plugin/5047">官网</a>下载安装；也可以通过下面方式编译安装。</p>
-
 <pre><code>:::bash
 $ git clone https://github.com/go-lang-plugin-org/go-lang-idea-plugin.git
 </code></pre>
-
 <p>IDEA中打开该plugin代码，配置IDEA Platform SDK版本，Build出jar包。然后，选择jar包安装。</p>
-
 <p>配置IDEA的golang开发环境浪费了很多时间，尝试了不同版本的<a href="https://github.com/go-lang-plugin-org/go-lang-idea-plugin">go-lang-idea-plugin</a>，总是报错“The selected directory is not a valid home for Go SDK”。
 最后运行下面命令再选择GO SDK目录终于可以了。</p>
-
 <pre><code>:::bash
 $ echo $GOROOT
 /Users/&lt;my-home&gt;/Projects/golang/sdk
@@ -390,13 +315,12 @@ $ cd src &amp;&amp; ./all.bash
 $ cp $GOPATH/bin/go $GOROOT/bin/
 $ cp $GOPATH/bin/gofmt $GOROOT/bin/
 </code></pre>
-
-<p>注：
-1. GOROOT是go的源代码，下载地址：<a href="https://github.com/golang/go">https://github.com/golang/go</a>
-2. GOPATH是go workspace，自己的代码都$GOPATH/src下</p>
-
+<p>注：</p>
+<ol>
+<li>GOROOT是go的源代码，下载地址：https://github.com/golang/go</li>
+<li>GOPATH是go workspace，自己的代码都$GOPATH/src下</li>
+</ol>
 <h2 id="最后">最后</h2>
-
 <ol>
 <li>mac的屏的确要比我之前用过的笔记本好很多</li>
 <li>严重怀疑网上那些把mac捧得太高的人只用过Windows，根本没用过Ubuntu之类的桌面Linux (至少目前自己还没体会到mac比Linux高效在哪里)</li>
@@ -510,7 +434,7 @@ $ cp $GOPATH/bin/gofmt $GOROOT/bin/
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -531,12 +455,16 @@ $ cp $GOPATH/bin/gofmt $GOROOT/bin/
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

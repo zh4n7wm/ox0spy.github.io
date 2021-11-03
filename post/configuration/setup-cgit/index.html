@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/configuration/setup-cgit/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="Setup cgit" />
 <meta property="og:description" content="cgit setup cgit install $ git://hjemli.net/pub/git/cgit $ cd cgit $ git submodule init # register the git submodule in .git/config $ $EDITOR .git/config # if you want to specify a different url for git $ git submodule update # clone/fetch and checkout correct git version $ make $ sudo make install  setup cgitrc $ cat /etc/cgitrc # # cgit config # css=/cgit/cgit.css logo=/cgit/cgit.png # if you don&#39;t want that webcrawler (like google) index your site robots=noindex, nofollow # # List of repositories." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/configuration/setup-cgit/" />
-
-
-
-<meta property="article:published_time" content="2013-08-14T00:00:00&#43;08:00"/>
-
-<meta property="article:modified_time" content="2013-08-14T00:00:00&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/configuration/setup-cgit/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2013-08-14T00:00:00+08:00" />
+<meta property="article:modified_time" content="2013-08-14T00:00:00+08:00" />
 
 <meta itemprop="name" content="Setup cgit">
-<meta itemprop="description" content="cgit setup cgit install $ git://hjemli.net/pub/git/cgit $ cd cgit $ git submodule init # register the git submodule in .git/config $ $EDITOR .git/config # if you want to specify a different url for git $ git submodule update # clone/fetch and checkout correct git version $ make $ sudo make install  setup cgitrc $ cat /etc/cgitrc # # cgit config # css=/cgit/cgit.css logo=/cgit/cgit.png # if you don&#39;t want that webcrawler (like google) index your site robots=noindex, nofollow # # List of repositories.">
-
-
-<meta itemprop="datePublished" content="2013-08-14T00:00:00&#43;08:00" />
-<meta itemprop="dateModified" content="2013-08-14T00:00:00&#43;08:00" />
+<meta itemprop="description" content="cgit setup cgit install $ git://hjemli.net/pub/git/cgit $ cd cgit $ git submodule init # register the git submodule in .git/config $ $EDITOR .git/config # if you want to specify a different url for git $ git submodule update # clone/fetch and checkout correct git version $ make $ sudo make install  setup cgitrc $ cat /etc/cgitrc # # cgit config # css=/cgit/cgit.css logo=/cgit/cgit.png # if you don&#39;t want that webcrawler (like google) index your site robots=noindex, nofollow # # List of repositories."><meta itemprop="datePublished" content="2013-08-14T00:00:00+08:00" />
+<meta itemprop="dateModified" content="2013-08-14T00:00:00+08:00" />
 <meta itemprop="wordCount" content="154">
-
-
-
-<meta itemprop="keywords" content="Linux,Git," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Setup cgit"/>
+<meta itemprop="keywords" content="Linux,Git," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Setup cgit"/>
 <meta name="twitter:description" content="cgit setup cgit install $ git://hjemli.net/pub/git/cgit $ cd cgit $ git submodule init # register the git submodule in .git/config $ $EDITOR .git/config # if you want to specify a different url for git $ git submodule update # clone/fetch and checkout correct git version $ make $ sudo make install  setup cgitrc $ cat /etc/cgitrc # # cgit config # css=/cgit/cgit.css logo=/cgit/cgit.png # if you don&#39;t want that webcrawler (like google) index your site robots=noindex, nofollow # # List of repositories."/>
 
 <!--[if lte IE 9]>
@@ -165,33 +145,26 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#cgit">cgit</a>
-<ul>
-<li><a href="#setup-cgit">setup cgit</a>
-<ul>
-<li><a href="#install">install</a></li>
-<li><a href="#setup-cgitrc">setup cgitrc</a></li>
-<li><a href="#setup-apache2">setup apache2</a></li>
-<li><a href="#reload-apache2-configuration-file">reload apache2 configuration file</a></li>
-<li><a href="#test">test</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#setup-cgit">setup cgit</a>
+      <ul>
+        <li><a href="#install">install</a></li>
+        <li><a href="#setup-cgitrc">setup cgitrc</a></li>
+        <li><a href="#setup-apache2">setup apache2</a></li>
+        <li><a href="#reload-apache2-configuration-file">reload apache2 configuration file</a></li>
+        <li><a href="#test">test</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h1 id="cgit">cgit</h1>
-
+      <h1 id="cgit">cgit</h1>
 <h2 id="setup-cgit">setup cgit</h2>
-
 <h3 id="install">install</h3>
-
 <pre><code>$ git://hjemli.net/pub/git/cgit
 $ cd cgit
 $ git submodule init     # register the git submodule in .git/config
@@ -201,9 +174,7 @@ $ git submodule update   # clone/fetch and checkout correct git version
 $ make
 $ sudo make install
 </code></pre>
-
 <h3 id="setup-cgitrc">setup cgitrc</h3>
-
 <pre><code>$ cat  /etc/cgitrc
 #
 # cgit config
@@ -243,9 +214,7 @@ max-atom-items=0
 max-stats=quarter
 #snapshots=tar.bz2
 </code></pre>
-
 <h3 id="setup-apache2">setup apache2</h3>
-
 <pre><code>$ cat /etc/apache2/conf.d/cgit
 Alias /cgit /usr/share/cgit
 
@@ -257,14 +226,10 @@ Allow from all
 AddHandler cgi-script .cgi
 &lt;/Directory&gt;
 </code></pre>
-
 <h3 id="reload-apache2-configuration-file">reload apache2 configuration file</h3>
-
 <pre><code>$ sudo services apache2 reload
 </code></pre>
-
 <h3 id="test">test</h3>
-
 <ul>
 <li><a href="http://your-server-ip/cgit">http://your-server-ip/cgit</a></li>
 </ul>
@@ -321,9 +286,9 @@ AddHandler cgi-script .cgi
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/configuration/setup-opengrok/">
+          <a class="prev" href="/post/configuration/linux-bash-tips/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Setup OpenGrok</span>
+            <span class="prev-text nav-default">Linux Bash Tips</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
@@ -378,7 +343,7 @@ AddHandler cgi-script .cgi
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -399,12 +364,16 @@ AddHandler cgi-script .cgi
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/python/python-download-large-file-without-out-of-memory/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="python下载大文件" />
 <meta property="og:description" content="requests :::python def download_file(url): local_filename = url.split(&#39;/&#39;)[-1] # NOTE the stream=True parameter r = requests.get(url, stream=True) with open(local_filename, &#39;wb&#39;) as f: for chunk in r.iter_content(chunk_size=1024): if chunk: # filter out keep-alive new chunks f.write(chunk) f.flush() return local_filename urllib2 :::python file = urllib2.urlopen(&#39;url&#39;) with open(&#39;filename&#39;,&#39;w&#39;) as f: while True: tmp = file.read(1024) if not tmp: break f.write(tmp) 详见: http://stackoverflow.com/questions/16694907/how-to-download-large-file-in-python-with-requests-py http://stackoverflow.com/questions/27053028/how-to-download-large-file-without-memoryerror-in-python" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/python/python-download-large-file-without-out-of-memory/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:21:59&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:21:59&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/python/python-download-large-file-without-out-of-memory/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:21:59+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:21:59+08:00" />
 
 <meta itemprop="name" content="python下载大文件">
-<meta itemprop="description" content="requests :::python def download_file(url): local_filename = url.split(&#39;/&#39;)[-1] # NOTE the stream=True parameter r = requests.get(url, stream=True) with open(local_filename, &#39;wb&#39;) as f: for chunk in r.iter_content(chunk_size=1024): if chunk: # filter out keep-alive new chunks f.write(chunk) f.flush() return local_filename urllib2 :::python file = urllib2.urlopen(&#39;url&#39;) with open(&#39;filename&#39;,&#39;w&#39;) as f: while True: tmp = file.read(1024) if not tmp: break f.write(tmp) 详见: http://stackoverflow.com/questions/16694907/how-to-download-large-file-in-python-with-requests-py http://stackoverflow.com/questions/27053028/how-to-download-large-file-without-memoryerror-in-python">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:21:59&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:21:59&#43;08:00" />
+<meta itemprop="description" content="requests :::python def download_file(url): local_filename = url.split(&#39;/&#39;)[-1] # NOTE the stream=True parameter r = requests.get(url, stream=True) with open(local_filename, &#39;wb&#39;) as f: for chunk in r.iter_content(chunk_size=1024): if chunk: # filter out keep-alive new chunks f.write(chunk) f.flush() return local_filename urllib2 :::python file = urllib2.urlopen(&#39;url&#39;) with open(&#39;filename&#39;,&#39;w&#39;) as f: while True: tmp = file.read(1024) if not tmp: break f.write(tmp) 详见: http://stackoverflow.com/questions/16694907/how-to-download-large-file-in-python-with-requests-py http://stackoverflow.com/questions/27053028/how-to-download-large-file-without-memoryerror-in-python"><meta itemprop="datePublished" content="2017-12-15T19:21:59+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:59+08:00" />
 <meta itemprop="wordCount" content="61">
-
-
-
-<meta itemprop="keywords" content="python, oom," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="python下载大文件"/>
+<meta itemprop="keywords" content="python, oom," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="python下载大文件"/>
 <meta name="twitter:description" content="requests :::python def download_file(url): local_filename = url.split(&#39;/&#39;)[-1] # NOTE the stream=True parameter r = requests.get(url, stream=True) with open(local_filename, &#39;wb&#39;) as f: for chunk in r.iter_content(chunk_size=1024): if chunk: # filter out keep-alive new chunks f.write(chunk) f.flush() return local_filename urllib2 :::python file = urllib2.urlopen(&#39;url&#39;) with open(&#39;filename&#39;,&#39;w&#39;) as f: while True: tmp = file.read(1024) if not tmp: break f.write(tmp) 详见: http://stackoverflow.com/questions/16694907/how-to-download-large-file-in-python-with-requests-py http://stackoverflow.com/questions/27053028/how-to-download-large-file-without-memoryerror-in-python"/>
 
 <!--[if lte IE 9]>
@@ -165,23 +145,17 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#requests">requests</a></li>
-<li><a href="#urllib2">urllib2</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#requests">requests</a></li>
+    <li><a href="#urllib2">urllib2</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="requests">requests</h2>
-
+      <h2 id="requests">requests</h2>
 <pre><code>:::python
 
 def download_file(url):
@@ -195,9 +169,7 @@ with open(local_filename, 'wb') as f:
             f.flush()
 return local_filename
 </code></pre>
-
 <h2 id="urllib2">urllib2</h2>
-
 <pre><code>:::python
 file = urllib2.urlopen('url')
 with open('filename','w') as f:
@@ -207,9 +179,7 @@ with open('filename','w') as f:
             break 
         f.write(tmp)
 </code></pre>
-
 <p>详见:</p>
-
 <ol>
 <li><a href="http://stackoverflow.com/questions/16694907/how-to-download-large-file-in-python-with-requests-py">http://stackoverflow.com/questions/16694907/how-to-download-large-file-in-python-with-requests-py</a></li>
 <li><a href="http://stackoverflow.com/questions/27053028/how-to-download-large-file-without-memoryerror-in-python">http://stackoverflow.com/questions/27053028/how-to-download-large-file-without-memoryerror-in-python</a></li>
@@ -324,7 +294,7 @@ with open('filename','w') as f:
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -345,12 +315,16 @@ with open('filename','w') as f:
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

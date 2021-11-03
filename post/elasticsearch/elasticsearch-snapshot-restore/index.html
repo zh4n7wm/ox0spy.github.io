@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="ox0spy" />
-  <meta name="description" content="参考资料: https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-your-cluster.html https://www.elastic.co/guide/en/elasticsearch/guide/current/_restoring_from_a_snapshot.html https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html https://www.elastic.co/blog/introducing-snapshot-restore http://stackoverflow.com/questions/27903929/elasticsearch-snapshot-across-cluster 最近工作需要，要将一个索引的数据迁移到新的另一个集群，查阅了一些资料过后，便开始操作。由于数据量大，整个过程也花费了不少" />
+  <meta name="description" content="参考资料: https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-your-cluster.html https://www.elastic.co/guide/en/elasticsearch/guide/current/\_restoring_from_a_snapshot.html https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html https://www.elastic.co/blog/introducing-snapshot-restore http://stackoverflow.com/questions/27903929/elasticsearch-snapshot-across-cluster 最近工作需要，要将一个索引的数据迁移到新的另一个集群，查阅了一些资料过后，便开始操作。由于数据量大，整个过程也花费了不少" />
 
   <meta name="keywords" content="ox0spy, python, flask, django, go, golang, programming, coding, even" />
 
@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/elasticsearch/elasticsearch-snapshot-restore/" />
@@ -45,39 +45,19 @@
 <link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
 <meta property="og:title" content="elastichsearch数据备份，恢复，及迁移" />
-<meta property="og:description" content="参考资料: https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-your-cluster.html https://www.elastic.co/guide/en/elasticsearch/guide/current/_restoring_from_a_snapshot.html https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html https://www.elastic.co/blog/introducing-snapshot-restore http://stackoverflow.com/questions/27903929/elasticsearch-snapshot-across-cluster 最近工作需要，要将一个索引的数据迁移到新的另一个集群，查阅了一些资料过后，便开始操作。由于数据量大，整个过程也花费了不少" />
+<meta property="og:description" content="参考资料: https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-your-cluster.html https://www.elastic.co/guide/en/elasticsearch/guide/current/\_restoring_from_a_snapshot.html https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html https://www.elastic.co/blog/introducing-snapshot-restore http://stackoverflow.com/questions/27903929/elasticsearch-snapshot-across-cluster 最近工作需要，要将一个索引的数据迁移到新的另一个集群，查阅了一些资料过后，便开始操作。由于数据量大，整个过程也花费了不少" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/elasticsearch/elasticsearch-snapshot-restore/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:22:01&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:22:01&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/elasticsearch/elasticsearch-snapshot-restore/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:22:01+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:22:01+08:00" />
 
 <meta itemprop="name" content="elastichsearch数据备份，恢复，及迁移">
-<meta itemprop="description" content="参考资料: https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-your-cluster.html https://www.elastic.co/guide/en/elasticsearch/guide/current/_restoring_from_a_snapshot.html https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html https://www.elastic.co/blog/introducing-snapshot-restore http://stackoverflow.com/questions/27903929/elasticsearch-snapshot-across-cluster 最近工作需要，要将一个索引的数据迁移到新的另一个集群，查阅了一些资料过后，便开始操作。由于数据量大，整个过程也花费了不少">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:22:01&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:22:01&#43;08:00" />
-<meta itemprop="wordCount" content="1503">
-
-
-
-<meta itemprop="keywords" content="elasticsearch, snapshot, restore, transfer," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="elastichsearch数据备份，恢复，及迁移"/>
-<meta name="twitter:description" content="参考资料: https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-your-cluster.html https://www.elastic.co/guide/en/elasticsearch/guide/current/_restoring_from_a_snapshot.html https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html https://www.elastic.co/blog/introducing-snapshot-restore http://stackoverflow.com/questions/27903929/elasticsearch-snapshot-across-cluster 最近工作需要，要将一个索引的数据迁移到新的另一个集群，查阅了一些资料过后，便开始操作。由于数据量大，整个过程也花费了不少"/>
+<meta itemprop="description" content="参考资料: https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-your-cluster.html https://www.elastic.co/guide/en/elasticsearch/guide/current/\_restoring_from_a_snapshot.html https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html https://www.elastic.co/blog/introducing-snapshot-restore http://stackoverflow.com/questions/27903929/elasticsearch-snapshot-across-cluster 最近工作需要，要将一个索引的数据迁移到新的另一个集群，查阅了一些资料过后，便开始操作。由于数据量大，整个过程也花费了不少"><meta itemprop="datePublished" content="2017-12-15T19:22:01+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:22:01+08:00" />
+<meta itemprop="wordCount" content="1518">
+<meta itemprop="keywords" content="elasticsearch, snapshot, restore, transfer," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="elastichsearch数据备份，恢复，及迁移"/>
+<meta name="twitter:description" content="参考资料: https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-your-cluster.html https://www.elastic.co/guide/en/elasticsearch/guide/current/\_restoring_from_a_snapshot.html https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html https://www.elastic.co/blog/introducing-snapshot-restore http://stackoverflow.com/questions/27903929/elasticsearch-snapshot-across-cluster 最近工作需要，要将一个索引的数据迁移到新的另一个集群，查阅了一些资料过后，便开始操作。由于数据量大，整个过程也花费了不少"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -153,8 +133,8 @@
               <a href="/categories/elasticsearch/"> elasticsearch </a>
             
           </div>
-        <span class="more-meta"> 约 1503 字 </span>
-        <span class="more-meta"> 预计阅读 3 分钟 </span>
+        <span class="more-meta"> 约 1518 字 </span>
+        <span class="more-meta"> 预计阅读 4 分钟 </span>
       </div>
     </header>
 
@@ -165,146 +145,102 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#参考资料">参考资料:</a></li>
-<li><a href="#迁移注意事项">迁移注意事项</a></li>
-<li><a href="#注册快照仓库">注册快照仓库</a></li>
-<li><a href="#检查注册的仓库信息">检查注册的仓库信息</a></li>
-<li><a href="#开始备份">开始备份</a></li>
-<li><a href="#查看备份状态">查看备份状态</a></li>
-<li><a href="#取消备份">取消备份</a></li>
-<li><a href="#恢复备份">恢复备份</a></li>
-<li><a href="#查看恢复进度">查看恢复进度</a></li>
-<li><a href="#取消恢复">取消恢复</a></li>
-<li><a href="#备份快照迁移">备份快照迁移</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#参考资料">参考资料:</a></li>
+        <li><a href="#迁移注意事项">迁移注意事项</a></li>
+        <li><a href="#注册快照仓库">注册快照仓库</a></li>
+        <li><a href="#检查注册的仓库信息">检查注册的仓库信息</a></li>
+        <li><a href="#开始备份">开始备份</a></li>
+        <li><a href="#查看备份状态">查看备份状态</a></li>
+        <li><a href="#取消备份">取消备份</a></li>
+        <li><a href="#恢复备份">恢复备份</a></li>
+        <li><a href="#查看恢复进度">查看恢复进度</a></li>
+        <li><a href="#取消恢复">取消恢复</a></li>
+        <li><a href="#备份快照迁移">备份快照迁移</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h3 id="参考资料">参考资料:</h3>
-
+      <h3 id="参考资料">参考资料:</h3>
 <ul>
 <li><a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-your-cluster.html">https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-your-cluster.html</a></li>
-<li><a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/_restoring_from_a_snapshot.html">https://www.elastic.co/guide/en/elasticsearch/guide/current/_restoring_from_a_snapshot.html</a></li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/%5C_restoring_from_a_snapshot.html">https://www.elastic.co/guide/en/elasticsearch/guide/current/\_restoring_from_a_snapshot.html</a></li>
 <li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html">https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html</a></li>
 <li><a href="https://www.elastic.co/blog/introducing-snapshot-restore">https://www.elastic.co/blog/introducing-snapshot-restore</a></li>
 <li><a href="http://stackoverflow.com/questions/27903929/elasticsearch-snapshot-across-cluster">http://stackoverflow.com/questions/27903929/elasticsearch-snapshot-across-cluster</a></li>
 </ul>
-
 <p>最近工作需要，要将一个索引的数据迁移到新的另一个集群，查阅了一些资料过后，便开始操作。由于数据量大，整个过程也花费了不少时间，遇到一些坑，特此整理一下整个过程。</p>
-
 <h3 id="迁移注意事项">迁移注意事项</h3>
-
 <ul>
 <li>保证ES集群不再接受新的数据(如果是备份的话，这一点可以不考虑，但是做数据迁移的话，建议这样做）.</li>
 <li>不建议直接在生产环境做这些操作，最好是先在本地搭建一个和生产环境一样的集群环境，创建一些测试数据，把整个过程先跑一遍，然后再到生产环境操作。</li>
 </ul>
-
 <p>本文假设ES集群有3个节点，IP分别是: 192.168.0.1, 193.168.0.2, 192.168.0.3</p>
-
 <h3 id="注册快照仓库">注册快照仓库</h3>
-
 <p>ES是通过快照的方式来实现数据备份，并且是以增量的方式，所以一般第一次做的话会花费较长的时间。为了做快照，那么就需要注册一个快照仓库，告诉ES我们的快照应该如何保存以及将快照保存到哪里.</p>
-
 <p>ES的快照仓库支持如下几种形式：</p>
-
 <ul>
 <li>共享的文件系统，如NAS</li>
 <li>Amazon S3</li>
 <li>HDFS (Hadoop Distributed File System)</li>
 <li>Azure Cloud</li>
 </ul>
-
 <p>通常选择注册第一种形式。</p>
-
 <p>任意选择一个节点，执行如下命令</p>
-
-<pre><code class="language-bash">$ curl -XPUT  http://192.168.0.1:9200/_snapshot/my_backup -d '
-{
-    &quot;type&quot;: &quot;fs&quot;,
-    &quot;settings&quot;: {
-        &quot;location&quot;: &quot;/data/backups/elasticsearch&quot;
-    }
-}
-'
-</code></pre>
-
-<p>这样就注册了一个名为<code>my_backup</code>的仓库，这里的<code>location</code>需要注意，最好是设置一个每个节点都能访问并且有写权限的共享目录，如smb目录等(如果整个集群就一个节点那么设置为本地目录也无所谓)。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -XPUT  http://192.168.0.1:9200/_snapshot/my_backup -d <span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">{
+</span><span style="color:#e6db74">    &#34;type&#34;: &#34;fs&#34;,
+</span><span style="color:#e6db74">    &#34;settings&#34;: {
+</span><span style="color:#e6db74">        &#34;location&#34;: &#34;/data/backups/elasticsearch&#34;
+</span><span style="color:#e6db74">    }
+</span><span style="color:#e6db74">}
+</span><span style="color:#e6db74">&#39;</span>
+</code></pre></div><p>这样就注册了一个名为<code>my_backup</code>的仓库，这里的<code>location</code>需要注意，最好是设置一个每个节点都能访问并且有写权限的共享目录，如smb目录等(如果整个集群就一个节点那么设置为本地目录也无所谓)。
 我自己在做的时候由于设置了本地目录<code>/data/backups/elasticsearch</code>, 最后做出来发现快照被分别保存在集群每个节点的<code>/data/backups/elasticsearch</code>目录下，并且一个节点保存了一些信息。最后做数据迁移的时候，不得不从每个节点将快照文件拷贝出来，然后合并到一起。</p>
-
 <p>除了<code>location</code>外，还有一些其他选项可以设置:</p>
-
 <ul>
 <li>compress 是否压缩</li>
 <li>max_snapshot_bytes_per_sec 制作快照的速度，默认20mb/s</li>
 <li>max_restore_bytes_per_sec  快照恢复的速度，默认20mb/s</li>
 </ul>
-
 <p>更新仓库设置如下:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -XPOST http://192.168.0.1:9200/_snapshot/my_backup/
+<span style="color:#f92672">{</span>
+    <span style="color:#e6db74">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;fs&#34;</span>,
+    <span style="color:#e6db74">&#34;settings&#34;</span>: <span style="color:#f92672">{</span>
+        <span style="color:#e6db74">&#34;location&#34;</span>: <span style="color:#e6db74">&#34;/data/backups/elasticsearch&#34;</span>,
+        <span style="color:#e6db74">&#34;max_snapshot_bytes_per_sec&#34;</span> : <span style="color:#e6db74">&#34;50mb&#34;</span>,
+        <span style="color:#e6db74">&#34;max_restore_bytes_per_sec&#34;</span> : <span style="color:#e6db74">&#34;50mb&#34;</span>,
+        <span style="color:#e6db74">&#34;compress&#34;</span> : true
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
 
-<pre><code class="language-bash">curl -XPOST http://192.168.0.1:9200/_snapshot/my_backup/
-{
-    &quot;type&quot;: &quot;fs&quot;,
-    &quot;settings&quot;: {
-        &quot;location&quot;: &quot;/data/backups/elasticsearch&quot;,
-        &quot;max_snapshot_bytes_per_sec&quot; : &quot;50mb&quot;,
-        &quot;max_restore_bytes_per_sec&quot; : &quot;50mb&quot;,
-        &quot;compress&quot; : true
-    }
-}
-
-</code></pre>
-
-<p>这里需要注意一点是，注册仓库用的是<code>PUT</code>, 而更新仓库设置用的是<code>POST</code>.</p>
-
+</code></pre></div><p>这里需要注意一点是，注册仓库用的是<code>PUT</code>, 而更新仓库设置用的是<code>POST</code>.</p>
 <h3 id="检查注册的仓库信息">检查注册的仓库信息</h3>
-
-<pre><code class="language-bash">$ curl -XGET http://192.168.0.1:9200/_snapshot/my_backup
-</code></pre>
-
-<h3 id="开始备份">开始备份</h3>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -XGET http://192.168.0.1:9200/_snapshot/my_backup
+</code></pre></div><h3 id="开始备份">开始备份</h3>
 <p>指定快照名称为<code>snapshot_20150812</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -XPUT  http://192.168.0.1:9200/_snapshot/my_backup/snapshot_20150812
 
-<pre><code class="language-bash">$ curl -XPUT  http://192.168.0.1:9200/_snapshot/my_backup/snapshot_20150812
-
-</code></pre>
-
-<p>执行上面的上面的命令会马上返回，并在后台执行备份操作, 如果想等到备份完成，可以加上参数<code>wait_for_completion=true</code></p>
-
-<pre><code class="language-bash">$ curl -XPUT  http://192.168.0.1:9200/_snapshot/my_backup/snapshot_20150812?wait_for_completion=true
-</code></pre>
-
-<p>默认是备份所有的索引indices, 如果要指定index,可以</p>
-
-<pre><code class="language-bash">curl -XPUT http://192.168.0.1:9200/_snapshot/my_backup/snapshot_20150812
-{
-    &quot;indices&quot;: &quot;index_1,index_2&quot;
-}
-</code></pre>
-
-<p>这个备份过程需要的时间视数据量而定.</p>
-
+</code></pre></div><p>执行上面的上面的命令会马上返回，并在后台执行备份操作, 如果想等到备份完成，可以加上参数<code>wait_for_completion=true</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -XPUT  http://192.168.0.1:9200/_snapshot/my_backup/snapshot_20150812?wait_for_completion<span style="color:#f92672">=</span>true
+</code></pre></div><p>默认是备份所有的索引indices, 如果要指定index,可以</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -XPUT http://192.168.0.1:9200/_snapshot/my_backup/snapshot_20150812
+<span style="color:#f92672">{</span>
+    <span style="color:#e6db74">&#34;indices&#34;</span>: <span style="color:#e6db74">&#34;index_1,index_2&#34;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>这个备份过程需要的时间视数据量而定.</p>
 <h3 id="查看备份状态">查看备份状态</h3>
-
 <p>整个备份过程中，可以通过如下命令查看备份进度</p>
-
-<pre><code class="language-bash">curl -XGET http://192.168.0.1:9200/_snapshot/my_backup/snapshot_20150812/_status
-</code></pre>
-
-<p>主要由如下几种状态：</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -XGET http://192.168.0.1:9200/_snapshot/my_backup/snapshot_20150812/_status
+</code></pre></div><p>主要由如下几种状态：</p>
 <ul>
 <li>INITIALIZING  集群状态检查，检查当前集群是否可以做快照，通常这个过程会非常快</li>
 <li>STARTED  正在转移数据到仓库</li>
@@ -312,57 +248,35 @@
 <li>DONE　完成</li>
 <li>FAILED 备份失败</li>
 </ul>
-
 <h3 id="取消备份">取消备份</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -XDELETE http://192.168.0.1:9200/_snapshot/my_backup/snapshot_20150812
+</code></pre></div><h3 id="恢复备份">恢复备份</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -XPOST http://192.168.0.1:9200/_snapshot/my_backup/snapshot_20150812/_restore
+</code></pre></div><p>同备份一样，也可以设置wait_for_completion=true等待恢复结果</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -XPOST http://192.168.0.1:9200/_snapshot/my_backup/snapshot_20150812/_restore?wait_for_completion<span style="color:#f92672">=</span>true
 
-<pre><code class="language-bash">curl -XDELETE http://192.168.0.1:9200/_snapshot/my_backup/snapshot_20150812
-</code></pre>
-
-<h3 id="恢复备份">恢复备份</h3>
-
-<pre><code class="language-bash">curl -XPOST http://192.168.0.1:9200/_snapshot/my_backup/snapshot_20150812/_restore
-</code></pre>
-
-<p>同备份一样，也可以设置wait_for_completion=true等待恢复结果</p>
-
-<pre><code class="language-bash">curl -XPOST http://192.168.0.1:9200/_snapshot/my_backup/snapshot_20150812/_restore?wait_for_completion=true
-
-</code></pre>
-
-<p>默认情况下，是恢复所有的索引，我们也可以设置一些参数来指定恢复的索引，以及重命令恢复的索引，这样可以避免覆盖原有的数据.</p>
-
-<pre><code class="language-bash">curl -XPOST http://192.168.0.1:9200/_snapshot/my_backup/snapshot_20150812/_restore
-{
-    &quot;indices&quot;: &quot;index_1&quot;,
-    &quot;rename_pattern&quot;: &quot;index_(.+)&quot;,
-    &quot;rename_replacement&quot;: &quot;restored_index_$1&quot;
-}
-</code></pre>
-
-<ul>
-<li>上面的indices, 表示只恢复索引&rsquo;index_1&rsquo;</li>
-<li>rename<em>pattern: 表示重命名索引以&rsquo;index</em>&lsquo;开头的索引.</li>
+</code></pre></div><p>默认情况下，是恢复所有的索引，我们也可以设置一些参数来指定恢复的索引，以及重命令恢复的索引，这样可以避免覆盖原有的数据.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -XPOST http://192.168.0.1:9200/_snapshot/my_backup/snapshot_20150812/_restore
+<span style="color:#f92672">{</span>
+    <span style="color:#e6db74">&#34;indices&#34;</span>: <span style="color:#e6db74">&#34;index_1&#34;</span>,
+    <span style="color:#e6db74">&#34;rename_pattern&#34;</span>: <span style="color:#e6db74">&#34;index_(.+)&#34;</span>,
+    <span style="color:#e6db74">&#34;rename_replacement&#34;</span>: <span style="color:#e6db74">&#34;restored_index_</span>$1<span style="color:#e6db74">&#34;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><ul>
+<li>上面的indices, 表示只恢复索引&rsquo;index_1'</li>
+<li>rename_pattern: 表示重命名索引以&rsquo;index_&lsquo;开头的索引.</li>
 <li>rename_replacement: 表示将所有的索引重命名为&rsquo;restored_index_xxx&rsquo;.如index_1会被重命名为restored_index_1.</li>
 </ul>
-
 <h3 id="查看恢复进度">查看恢复进度</h3>
-
-<pre><code class="language-bash"># 查看所有索引的恢复进度
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 查看所有索引的恢复进度</span>
 curl -XGET http://192.168.0.1:9200/_recovery/
 
-# 查看索引restored_index_1的恢复进度
+<span style="color:#75715e"># 查看索引restored_index_1的恢复进度</span>
 curl -XGET http://192.168.0.1:9200/_recovery/restored_index_1
-</code></pre>
-
-<h3 id="取消恢复">取消恢复</h3>
-
+</code></pre></div><h3 id="取消恢复">取消恢复</h3>
 <p>只需要删除索引，即可取消恢复</p>
-
-<pre><code class="language-bash">curl -XDELETE http://192.168.0.1:9200/restored_index_1
-</code></pre>
-
-<h3 id="备份快照迁移">备份快照迁移</h3>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -XDELETE http://192.168.0.1:9200/restored_index_1
+</code></pre></div><h3 id="备份快照迁移">备份快照迁移</h3>
 <p>如果需要将快照迁移到另一个集群.只需要将备份文件全部拷贝到要迁移的机器上, 然后再在新的集群上注册一个快照仓库,设置<code>location</code>的位置为备份文件所在的地方，然后执行恢复备份的命令即可。</p>
 
     </div>
@@ -478,7 +392,7 @@ curl -XGET http://192.168.0.1:9200/_recovery/restored_index_1
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -499,12 +413,16 @@ curl -XGET http://192.168.0.1:9200/_recovery/restored_index_1
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

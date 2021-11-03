@@ -27,7 +27,7 @@ $ foo=bar $ name=foo $ echo ${!name} bar  The example shows how to get a list of
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/configuration/linux-bash-tips/" />
@@ -49,37 +49,17 @@ $ foo=bar $ name=foo $ echo ${!name} bar  The example shows how to get a list of
 <meta property="og:description" content="Command line option parse while (( $# &gt; 0 )) ; do case $1 in --local_branch) git_local_branch=$2 shift ;; --remote_branch) git_remote_branch=$2 shift ;; --remote_repo) git_remote_repo=$2 shift ;; --tag) git_tag=$2 shift ;; -f|--force) git_force=&quot;-f&quot; ;; --keyfile) export git_publish_keyfile=$2 shift ;; esac shift done  Pointer variable The example shows how to make a bash environment variable reference the value of another:
 $ foo=bar $ name=foo $ echo ${!name} bar  The example shows how to get a list of all variables beginning with &ldquo;H&rdquo; (Note: the wildcard can only go at the end)" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/configuration/linux-bash-tips/" />
-
-
-
-<meta property="article:published_time" content="2013-08-14T00:00:00&#43;08:00"/>
-
-<meta property="article:modified_time" content="2013-08-14T00:00:00&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/configuration/linux-bash-tips/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2013-08-14T00:00:00+08:00" />
+<meta property="article:modified_time" content="2013-08-14T00:00:00+08:00" />
 
 <meta itemprop="name" content="Linux Bash Tips">
 <meta itemprop="description" content="Command line option parse while (( $# &gt; 0 )) ; do case $1 in --local_branch) git_local_branch=$2 shift ;; --remote_branch) git_remote_branch=$2 shift ;; --remote_repo) git_remote_repo=$2 shift ;; --tag) git_tag=$2 shift ;; -f|--force) git_force=&quot;-f&quot; ;; --keyfile) export git_publish_keyfile=$2 shift ;; esac shift done  Pointer variable The example shows how to make a bash environment variable reference the value of another:
-$ foo=bar $ name=foo $ echo ${!name} bar  The example shows how to get a list of all variables beginning with &ldquo;H&rdquo; (Note: the wildcard can only go at the end)">
-
-
-<meta itemprop="datePublished" content="2013-08-14T00:00:00&#43;08:00" />
-<meta itemprop="dateModified" content="2013-08-14T00:00:00&#43;08:00" />
+$ foo=bar $ name=foo $ echo ${!name} bar  The example shows how to get a list of all variables beginning with &ldquo;H&rdquo; (Note: the wildcard can only go at the end)"><meta itemprop="datePublished" content="2013-08-14T00:00:00+08:00" />
+<meta itemprop="dateModified" content="2013-08-14T00:00:00+08:00" />
 <meta itemprop="wordCount" content="417">
-
-
-
-<meta itemprop="keywords" content="Linux,Bash,Programming," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Linux Bash Tips"/>
+<meta itemprop="keywords" content="Linux,Bash,Programming," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux Bash Tips"/>
 <meta name="twitter:description" content="Command line option parse while (( $# &gt; 0 )) ; do case $1 in --local_branch) git_local_branch=$2 shift ;; --remote_branch) git_remote_branch=$2 shift ;; --remote_repo) git_remote_repo=$2 shift ;; --tag) git_tag=$2 shift ;; -f|--force) git_force=&quot;-f&quot; ;; --keyfile) export git_publish_keyfile=$2 shift ;; esac shift done  Pointer variable The example shows how to make a bash environment variable reference the value of another:
 $ foo=bar $ name=foo $ echo ${!name} bar  The example shows how to get a list of all variables beginning with &ldquo;H&rdquo; (Note: the wildcard can only go at the end)"/>
 
@@ -165,34 +145,26 @@ $ foo=bar $ name=foo $ echo ${!name} bar  The example shows how to get a list of
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#command-line-option-parse">Command line option parse</a></li>
-<li><a href="#pointer-variable">Pointer variable</a></li>
-<li><a href="#send-email">Send email</a></li>
-<li><a href="#newline">Newline</a></li>
-<li><a href="#bash-command-line-editor">Bash command line editor</a>
-<ul>
-<li><a href="#set-vi-mode-in-bash">Set vi mode in Bash</a>
-<ul>
-<li><a href="#find-history-commands">find history commands</a></li>
-</ul></li>
-<li><a href="#set-emacs-mode-in-bash">Set emacs mode in Bash</a></li>
-</ul></li>
-<li><a href="#bash-with-mysql">Bash with MySQL</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#command-line-option-parse">Command line option parse</a></li>
+    <li><a href="#pointer-variable">Pointer variable</a></li>
+    <li><a href="#send-email">Send email</a></li>
+    <li><a href="#newline">Newline</a></li>
+    <li><a href="#bash-command-line-editor">Bash command line editor</a>
+      <ul>
+        <li><a href="#set-vi-mode-in-bash">Set vi mode in Bash</a></li>
+        <li><a href="#set-emacs-mode-in-bash">Set emacs mode in Bash</a></li>
+      </ul>
+    </li>
+    <li><a href="#bash-with-mysql">Bash with MySQL</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="command-line-option-parse">Command line option parse</h2>
-
+      <h2 id="command-line-option-parse">Command line option parse</h2>
 <pre><code>while (( $# &gt; 0 )) ; do
     case $1 in
         --local_branch)
@@ -222,25 +194,18 @@ $ foo=bar $ name=foo $ echo ${!name} bar  The example shows how to get a list of
     shift
 done
 </code></pre>
-
 <h2 id="pointer-variable">Pointer variable</h2>
-
 <p>The example shows how to make a bash environment variable reference the value of another:</p>
-
 <pre><code>$ foo=bar
 $ name=foo
 $ echo ${!name}
 bar
 </code></pre>
-
 <p>The example shows how to get a list of all variables beginning with &ldquo;H&rdquo; (Note: the wildcard can only go at the end)</p>
-
 <pre><code>$ echo ${!H*}
 foo fs_abc_opts fs_name
 </code></pre>
-
 <h2 id="send-email">Send email</h2>
-
 <pre><code>$ cat a
 From: &quot;Liang Lin&quot; &lt;linliang@tcl.com&gt;
 To: &quot;Wanming Zhang&quot; &lt;wanming.zhang@tcl.com&gt;
@@ -252,72 +217,54 @@ hello world!
 
 $ cat a | sendmail -t -f root@localhost
 </code></pre>
-
 <h2 id="newline">Newline</h2>
-
 <ul>
-<li><p>check if exist &lsquo;\r&rsquo; in inputfile</p>
-
-<p>$ od -c inputfile | grep -E &lsquo;\r&rsquo;</p></li>
-
-<li><p>remove &lsquo;\r&rsquo;</p>
-
-<p>$ tr -d &lsquo;\r&rsquo; &lt; inputfile &gt; outputfile</p></li>
+<li>
+<p>check if exist &lsquo;\r&rsquo; in inputfile</p>
+<p>$ od -c inputfile | grep -E &lsquo;\r&rsquo;</p>
+</li>
+<li>
+<p>remove &lsquo;\r&rsquo;</p>
+<p>$ tr -d &lsquo;\r&rsquo; &lt; inputfile &gt; outputfile</p>
+</li>
 </ul>
-
 <p>or</p>
-
 <pre><code>$ sed -i 's#\r##g' inputfile
 </code></pre>
-
 <ul>
-<li><p>converting all CR newlines to LF</p>
-
-<p>$ tr &lsquo;\r&rsquo; &lsquo;\n&rsquo; &lt; inputfile &gt; outputfile</p></li>
+<li>
+<p>converting all CR newlines to LF</p>
+<p>$ tr &lsquo;\r&rsquo; &lsquo;\n&rsquo; &lt; inputfile &gt; outputfile</p>
+</li>
 </ul>
-
 <p>or</p>
-
 <pre><code>$ sed -i 's#\r#\n#g' inputfile
 </code></pre>
-
 <ul>
-<li><p>converting DOS format file to UNIX format</p>
-
-<p>$ fromdos inputfile</p></li>
+<li>
+<p>converting DOS format file to UNIX format</p>
+<p>$ fromdos inputfile</p>
+</li>
 </ul>
-
 <p>Reference: <a href="https://en.wikipedia.org/wiki/Newline">https://en.wikipedia.org/wiki/Newline</a></p>
-
 <h2 id="bash-command-line-editor">Bash command line editor</h2>
-
 <h3 id="set-vi-mode-in-bash">Set vi mode in Bash</h3>
-
 <p>Vi mode allows for the use of vi like commands when at the bash prompt. When set to this mode initially you will be in insert mode (be able to type at the prompt unlike when you enter vi). Hitting the escape key takes you into command mode.</p>
-
 <pre><code>$ set -o vi
 </code></pre>
-
 <h4 id="find-history-commands">find history commands</h4>
-
 <pre><code>$ ESC , /keyword
 
 e.g.:
 $ /ls , then press enter
 $ ls mtk6582* | xargs
 </code></pre>
-
 <h3 id="set-emacs-mode-in-bash">Set emacs mode in Bash</h3>
-
 <p>This is usually the default editing mode when in the bash environment and means that you are able to use commands like those in Emacs (defined in the Readline library) to move the cursor, cut and paste text, or undo editing.</p>
-
 <pre><code>$ set -o emacs
 </code></pre>
-
 <h2 id="bash-with-mysql">Bash with MySQL</h2>
-
 <p>Simple bash example to store the output of a MySQL query in an array:</p>
-
 <pre><code>dbquery=$(mysql -u username -p password -e &quot;use table; select field from table;&quot;)
 array=( $( for i in $dbquery ; do echo $i ; done ) )
 
@@ -336,7 +283,6 @@ do
     echo &quot;Record No. $i: ${array[$i]}&quot;
 done
 </code></pre>
-
 <p>simple, but effective !</p>
 
     </div>
@@ -399,8 +345,8 @@ done
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/configuration/setup-opengrok/">
-            <span class="next-text nav-default">Setup OpenGrok</span>
+          <a class="next" href="/post/configuration/setup-cgit/">
+            <span class="next-text nav-default">Setup cgit</span>
             <span class="prev-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -450,7 +396,7 @@ done
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -471,12 +417,16 @@ done
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

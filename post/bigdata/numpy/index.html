@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/bigdata/numpy/" />
@@ -47,34 +47,16 @@
 <meta property="og:title" content="numpy" />
 <meta property="og:description" content="花式索引 花式索引和切片不一样，它总是将数据复制到新数组中。 整数数组进行索引： In [60]: arr = np.empty((8, 4)) In [61]: for i in range(8): arr[i] = i In [62]: arr Out[62]: array([[ 0., 0., 0., 0.], [ 1., 1., 1., 1.], [ 2., 2.," />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/bigdata/numpy/" />
-
-
-
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/bigdata/numpy/" /><meta property="article:section" content="post" />
 
 
 
 <meta itemprop="name" content="numpy">
 <meta itemprop="description" content="花式索引 花式索引和切片不一样，它总是将数据复制到新数组中。 整数数组进行索引： In [60]: arr = np.empty((8, 4)) In [61]: for i in range(8): arr[i] = i In [62]: arr Out[62]: array([[ 0., 0., 0., 0.], [ 1., 1., 1., 1.], [ 2., 2.,">
 
-
-
 <meta itemprop="wordCount" content="392">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="numpy"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="numpy"/>
 <meta name="twitter:description" content="花式索引 花式索引和切片不一样，它总是将数据复制到新数组中。 整数数组进行索引： In [60]: arr = np.empty((8, 4)) In [61]: for i in range(8): arr[i] = i In [62]: arr Out[62]: array([[ 0., 0., 0., 0.], [ 1., 1., 1., 1.], [ 2., 2.,"/>
 
 <!--[if lte IE 9]>
@@ -163,30 +145,22 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#花式索引">花式索引</a></li>
-<li><a href="#数组转置和轴对换">数组转置和轴对换</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#花式索引">花式索引</a></li>
+    <li><a href="#数组转置和轴对换">数组转置和轴对换</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="花式索引">花式索引</h2>
-
+      <h2 id="花式索引">花式索引</h2>
 <p>花式索引和切片<strong>不一样</strong>，它总是将数据复制到新数组中。</p>
-
 <p>整数数组进行索引：</p>
-
 <pre><code>In [60]: arr = np.empty((8, 4))
 In [61]: for i in range(8):
-    arr[i] = i
+	arr[i] = i
 In [62]: arr
 Out[62]:
 array([[ 0.,  0.,  0.,  0.],
@@ -204,9 +178,7 @@ array([[ 3.,  3.,  3.,  3.],
        [ 1.,  1.,  1.,  1.],
        [ 0.,  0.,  0.,  0.]])
 </code></pre>
-
 <p>一次传入多个索引数组会返回一个一维数组：</p>
-
 <pre><code>In [68]: arr = np.arange(32).reshape((8, 4))
 In [69]: arr
 Out[69]:
@@ -221,9 +193,7 @@ array([[ 0,  1,  2,  3],
 In[70]: arr[[1, 5, 7, 2], [0, 3, 1, 2]]
 Out[70]: array([ 4, 23, 29, 10])
 </code></pre>
-
 <p>选取矩阵的行列子集：</p>
-
 <pre><code>In [75]: arr[[1, 5, 7, 2]][:, [0, 3, 1, 2]]
 Out[75]:
 array([[ 4,  7,  5,  6],
@@ -237,13 +207,9 @@ array([[ 4,  7,  5,  6],
        [28, 31, 29, 30],
        [ 8, 11,  9, 10]])
 </code></pre>
-
 <h2 id="数组转置和轴对换">数组转置和轴对换</h2>
-
 <p>转置(transpose)是重塑的一种特殊形式，它将返回的源数据视图（不会进行复制操作）</p>
-
 <p>T属性：</p>
-
 <pre><code>In [77]: arr = np.arange(15).reshape((3, 5))
 
 In [78]: arr
@@ -258,8 +224,7 @@ array([[ 0,  5, 10],
        [ 1,  6, 11],
        [ 2,  7, 12],
        [ 3,  8, 13],
-       [ 4,  9, 14]])
-</code></pre>
+       [ 4,  9, 14]])</code></pre>
 
     </div>
 
@@ -364,7 +329,7 @@ array([[ 0,  5, 10],
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -385,12 +350,16 @@ array([[ 0,  5, 10],
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

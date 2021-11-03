@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/linux-commands/uptime/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="uptime" />
 <meta property="og:description" content="用途 man page uptime gives a one line display of the following information. The cur‐ rent time, how long the system has been running, how many users are currently logged on, and the system load averages for the past 1, 5, and 15 minutes. System load averages is the average number of processes that are either in a runnable or uninterruptable state. A process in a" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/linux-commands/uptime/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:21:57&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:21:57&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/linux-commands/uptime/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:21:57+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:21:57+08:00" />
 
 <meta itemprop="name" content="uptime">
-<meta itemprop="description" content="用途 man page uptime gives a one line display of the following information. The cur‐ rent time, how long the system has been running, how many users are currently logged on, and the system load averages for the past 1, 5, and 15 minutes. System load averages is the average number of processes that are either in a runnable or uninterruptable state. A process in a">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:21:57&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:21:57&#43;08:00" />
+<meta itemprop="description" content="用途 man page uptime gives a one line display of the following information. The cur‐ rent time, how long the system has been running, how many users are currently logged on, and the system load averages for the past 1, 5, and 15 minutes. System load averages is the average number of processes that are either in a runnable or uninterruptable state. A process in a"><meta itemprop="datePublished" content="2017-12-15T19:21:57+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:57+08:00" />
 <meta itemprop="wordCount" content="333">
-
-
-
-<meta itemprop="keywords" content="linux, command, uptime," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="uptime"/>
+<meta itemprop="keywords" content="linux, command, uptime," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="uptime"/>
 <meta name="twitter:description" content="用途 man page uptime gives a one line display of the following information. The cur‐ rent time, how long the system has been running, how many users are currently logged on, and the system load averages for the past 1, 5, and 15 minutes. System load averages is the average number of processes that are either in a runnable or uninterruptable state. A process in a"/>
 
 <!--[if lte IE 9]>
@@ -165,31 +145,23 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#用途">用途</a></li>
-<li><a href="#语法">语法</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#用途">用途</a></li>
+    <li><a href="#语法">语法</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="用途">用途</h2>
-
+      <h2 id="用途">用途</h2>
 <p>man page</p>
-
 <blockquote>
 <p>uptime gives a one line display of the following information.  The cur‐
 rent time, how long the system has been running,  how  many  users  are
 currently  logged  on,  and the system load averages for the past 1, 5,
 and 15 minutes.</p>
-
 <p>System load averages is the average number of processes that are either
 in a runnable or uninterruptable state.  A process in a runnable  state
 is  either  using the CPU or waiting to use the CPU. A process in unin‐
@@ -199,21 +171,15 @@ are not normalized for the number of CPUs in a system, so a load  aver‐
 age  of 1 means a single CPU system is loaded all the time while on a 4
 CPU system it means it was idle 75% of the time.</p>
 </blockquote>
-
 <p><em>Load averages are not normalized for the number of CPUs in a system, so a load  aver‐ age  of 1 means a single CPU system is loaded all the time while on a 4 CPU system it means it was idle 75% of the time.</em></p>
-
 <h2 id="语法">语法</h2>
-
 <pre><code>:::bash
 $ uptime
 10:14:31 up 10 days, 20:55,  6 users,  load average: 0.28, 0.42, 0.54
 </code></pre>
-
 <p>上面的结果显示的分别是系统的当前时间，运行时间，当前用户数，过去1, 5, 15分钟的系统平均负载
 总体来说，值为1时，当只有单个CPU表示已经完全利用，当有４个CPU时，表示还有75%的空闲.</p>
-
 <p>关于平均负载的值可以阅读</p>
-
 <p><a href="http://blog.scoutapp.com/articles/2009/07/31/understanding-load-averages">http://blog.scoutapp.com/articles/2009/07/31/understanding-load-averages</a></p>
 
     </div>
@@ -327,7 +293,7 @@ $ uptime
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -348,12 +314,16 @@ $ uptime
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

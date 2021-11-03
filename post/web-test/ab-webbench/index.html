@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/web-test/ab-webbench/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="压力测试工具ab &amp;&amp; webbench" />
 <meta property="og:description" content="ab ab是apache自带的压力测试工具。使用简单，便于一些简单的压力测试. 安装 :::bash $ sudo apt-get install apache2-utils 使用帮助 :::bash $ ab -h Usage: ab [options] [http[s]://]hostname[:port]/path Options are: -n requests Number of requests to perform # 请求次" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/web-test/ab-webbench/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:21:59&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:21:59&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/web-test/ab-webbench/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:21:59+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:21:59+08:00" />
 
 <meta itemprop="name" content="压力测试工具ab &amp;&amp; webbench">
-<meta itemprop="description" content="ab ab是apache自带的压力测试工具。使用简单，便于一些简单的压力测试. 安装 :::bash $ sudo apt-get install apache2-utils 使用帮助 :::bash $ ab -h Usage: ab [options] [http[s]://]hostname[:port]/path Options are: -n requests Number of requests to perform # 请求次">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:21:59&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:21:59&#43;08:00" />
-<meta itemprop="wordCount" content="868">
-
-
-
-<meta itemprop="keywords" content="ab, workbench," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="压力测试工具ab &amp;&amp; webbench"/>
+<meta itemprop="description" content="ab ab是apache自带的压力测试工具。使用简单，便于一些简单的压力测试. 安装 :::bash $ sudo apt-get install apache2-utils 使用帮助 :::bash $ ab -h Usage: ab [options] [http[s]://]hostname[:port]/path Options are: -n requests Number of requests to perform # 请求次"><meta itemprop="datePublished" content="2017-12-15T19:21:59+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:59+08:00" />
+<meta itemprop="wordCount" content="869">
+<meta itemprop="keywords" content="ab, workbench," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="压力测试工具ab &amp;&amp; webbench"/>
 <meta name="twitter:description" content="ab ab是apache自带的压力测试工具。使用简单，便于一些简单的压力测试. 安装 :::bash $ sudo apt-get install apache2-utils 使用帮助 :::bash $ ab -h Usage: ab [options] [http[s]://]hostname[:port]/path Options are: -n requests Number of requests to perform # 请求次"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/web-test/"> web-test </a>
             
           </div>
-        <span class="more-meta"> 约 868 字 </span>
+        <span class="more-meta"> 约 869 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
       </div>
     </header>
@@ -165,43 +145,35 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#ab">ab</a>
-<ul>
-<li><a href="#安装">安装</a></li>
-<li><a href="#使用帮助">使用帮助</a></li>
-<li><a href="#使用示例">使用示例</a></li>
-<li><a href="#更多">更多</a></li>
-</ul></li>
-<li><a href="#webbench">webbench</a>
-<ul>
-<li><a href="#安装-1">安装</a></li>
-<li><a href="#使用帮助-1">使用帮助</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#ab">ab</a>
+      <ul>
+        <li><a href="#安装">安装</a></li>
+        <li><a href="#使用帮助">使用帮助</a></li>
+        <li><a href="#使用示例">使用示例</a></li>
+        <li><a href="#更多">更多</a></li>
+      </ul>
+    </li>
+    <li><a href="#webbench">webbench</a>
+      <ul>
+        <li><a href="#安装-1">安装</a></li>
+        <li><a href="#使用帮助-1">使用帮助</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="ab">ab</h2>
-
+      <h2 id="ab">ab</h2>
 <p>ab是apache自带的压力测试工具。使用简单，便于一些简单的压力测试.</p>
-
 <h3 id="安装">安装</h3>
-
 <pre><code>:::bash
 $ sudo apt-get install apache2-utils
 </code></pre>
-
 <h3 id="使用帮助">使用帮助</h3>
-
 <pre><code>:::bash
 $ ab -h
 Usage: ab [options] [http[s]://]hostname[:port]/path
@@ -247,9 +219,7 @@ Options are:
     -f protocol     Specify SSL/TLS protocol
                     (SSL3, TLS1, TLS1.1, TLS1.2 or ALL)
 </code></pre>
-
 <h3 id="使用示例">使用示例</h3>
-
 <pre><code>:::bash
 
 # GET
@@ -267,33 +237,20 @@ $ cat data.json
 # post json 数据
 $ ab -c 1000 -t 30 -p data.json -T &quot;application/json&quot; -r &quot;127.0.0.1:8888/m3/apps/update&quot;
 </code></pre>
-
 <h3 id="更多">更多</h3>
-
 <p>关于其他的命令选项及命令的结果输出介绍，可以参看：</p>
-
 <p><a href="http://httpd.apache.org/docs/2.2/programs/ab.html">http://httpd.apache.org/docs/2.2/programs/ab.html</a></p>
-
 <h2 id="webbench">webbench</h2>
-
 <p>另一个轻量级的压力测试工具，据说比ab好用，但是好像不支持模拟POST请求</p>
-
 <h3 id="安装-1">安装</h3>
-
 <p>可以到<a href="http://home.tiscali.cz/~cz210552/webbench.html">http://home.tiscali.cz/~cz210552/webbench.html</a>获取最新版本的下载地址</p>
-
 <pre><code>$ wget http://home.tiscali.cz/~cz210552/distfiles/webbench-1.5.tar.gz
 </code></pre>
-
 <p>解压之后</p>
-
 <pre><code>$ make &amp;&amp; sudo make install
 </code></pre>
-
 <h3 id="使用帮助-1">使用帮助</h3>
-
 <p>使用上和ab差不多，具体参数可以参考下面</p>
-
 <pre><code>:::bash
 $ webbench
 webbench [option]... URL
@@ -310,8 +267,7 @@ webbench [option]... URL
 --options                Use OPTIONS request method.
 --trace                  Use TRACE request method.
 -?|-h|--help             This information.
--V|--version             Display program version.
-</code></pre>
+-V|--version             Display program version.</code></pre>
 
     </div>
 
@@ -422,7 +378,7 @@ webbench [option]... URL
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -443,12 +399,16 @@ webbench [option]... URL
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

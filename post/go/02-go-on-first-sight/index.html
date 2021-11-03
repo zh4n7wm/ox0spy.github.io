@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/go/02-go-on-first-sight/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="go学习笔记2之初识go" />
 <meta property="og:description" content="本文参考于: How to Write Go Code 代码组织 工作空间 Go tool先天就是设计来与开源仓库协作的，不管你愿不愿意发布你的代码，构建开发环境的方式是一样的。 Go" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/go/02-go-on-first-sight/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:21:59&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:21:59&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/go/02-go-on-first-sight/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:21:59+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:21:59+08:00" />
 
 <meta itemprop="name" content="go学习笔记2之初识go">
-<meta itemprop="description" content="本文参考于: How to Write Go Code 代码组织 工作空间 Go tool先天就是设计来与开源仓库协作的，不管你愿不愿意发布你的代码，构建开发环境的方式是一样的。 Go">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:21:59&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:21:59&#43;08:00" />
-<meta itemprop="wordCount" content="1479">
-
-
-
-<meta itemprop="keywords" content="go, 入门," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="go学习笔记2之初识go"/>
+<meta itemprop="description" content="本文参考于: How to Write Go Code 代码组织 工作空间 Go tool先天就是设计来与开源仓库协作的，不管你愿不愿意发布你的代码，构建开发环境的方式是一样的。 Go"><meta itemprop="datePublished" content="2017-12-15T19:21:59+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:59+08:00" />
+<meta itemprop="wordCount" content="1445">
+<meta itemprop="keywords" content="go, 入门," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="go学习笔记2之初识go"/>
 <meta name="twitter:description" content="本文参考于: How to Write Go Code 代码组织 工作空间 Go tool先天就是设计来与开源仓库协作的，不管你愿不愿意发布你的代码，构建开发环境的方式是一样的。 Go"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/go/"> go </a>
             
           </div>
-        <span class="more-meta"> 约 1479 字 </span>
+        <span class="more-meta"> 约 1445 字 </span>
         <span class="more-meta"> 预计阅读 3 分钟 </span>
       </div>
     </header>
@@ -165,87 +145,55 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#代码组织">代码组织</a>
-<ul>
-<li><a href="#工作空间">工作空间</a></li>
-<li><a href="#设置gopath环境变量">设置GOPATH环境变量</a></li>
-<li><a href="#包路径">包路径</a></li>
-<li><a href="#第一个go程序">第一个Go程序</a></li>
-<li><a href="#第一个go库">第一个Go库</a></li>
-<li><a href="#包名">包名</a></li>
-</ul></li>
-<li><a href="#测试">测试</a></li>
-<li><a href="#第三方包">第三方包</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#代码组织">代码组织</a>
+      <ul>
+        <li><a href="#工作空间">工作空间</a></li>
+        <li><a href="#设置gopath环境变量">设置GOPATH环境变量</a></li>
+        <li><a href="#包路径">包路径</a></li>
+        <li><a href="#第一个go程序">第一个Go程序</a></li>
+        <li><a href="#第一个go库">第一个Go库</a></li>
+        <li><a href="#包名">包名</a></li>
+      </ul>
+    </li>
+    <li><a href="#测试">测试</a></li>
+    <li><a href="#第三方包">第三方包</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>本文参考于:
+      <p>本文参考于:
 <a href="https://golang.org/doc/code.html">How to Write Go Code</a></p>
-
 <h2 id="代码组织">代码组织</h2>
-
 <h3 id="工作空间">工作空间</h3>
-
 <p>Go tool先天就是设计来与开源仓库协作的，不管你愿不愿意发布你的代码，构建开发环境的方式是一样的。</p>
-
 <p>Go代码必须保存在一个工作空间里，　一个工作空间要有三个根目录</p>
-
 <ul>
-<li><p>src
-Go源代码</p></li>
-
-<li><p>pkg
-Go库文件</p></li>
-
-<li><p>bin
-包含可执行命令</p></li>
+<li>
+<p>src
+Go源代码</p>
+</li>
+<li>
+<p>pkg
+Go库文件</p>
+</li>
+<li>
+<p>bin
+包含可执行命令</p>
+</li>
 </ul>
-
-<p>一个工作空间的示例:
-<pre>
-bin/
-    hello                          # command executable
-    outyet                         # command executable
-pkg/
-    linux_amd64/
-        github.com/golang/example/
-            stringutil.a           # package object
-src/
-    github.com/golang/example/
-        .git/                      # Git repository metadata
-    hello/
-        hello.go               # command source
-    outyet/
-        main.go                # command source
-        main_test.go           # test source
-    stringutil/
-        reverse.go             # package source
-        reverse_test.go        # test source
-    github.com/golang/project1/
-        &hellip;&hellip;
-    github.com/golang/project2/
-        &hellip;&hellip;
-</pre></p>
-
+<p>一个工作空间的示例:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h3 id="设置gopath环境变量">设置GOPATH环境变量</h3>
-
 <p>GOPATH是Go中唯一必须需要设置的环境变量, GOPATH就是工作空间的路径, 并且GOPATH可
 以设置多个值，区别是使用<code>go get</code>命令的时候默认将下载的包安装在GOPATH第一个路径
 下面，我自己一般设置两个路径作为GOPATH的值，一个用于专门下载第三方包，一个作为
 自己的工作环境,　这有的好处是可以在代码版本控制时, 不受第三方库的影响</p>
-
 <p>如:</p>
-
 <pre><code># $HOME/golang作为第三方包的下载目录
 # $HOME/github/golang作为自己的开发目录
 $ export GOPATH=&quot;$HOME/golang:$HOME/github/golang&quot;
@@ -253,32 +201,22 @@ $ export GOPATH=&quot;$HOME/golang:$HOME/github/golang&quot;
 # 将每个GOPATH下面的bin目录添加到PATH变量
 $ export PATH=$PATH:$GOROOT/bin:${GOPATH//://bin:}/bin
 </code></pre>
-
 <h3 id="包路径">包路径</h3>
-
 <p>无论你是否要发布你的程序, 你都应该以要发布的方式来构建你的程序,最好的包名是
 github.com/user</p>
-
 <pre><code>$ mkdir -p $GOPATH/src/github.com/user
 </code></pre>
-
 <h3 id="第一个go程序">第一个Go程序</h3>
-
 <p>下面，我将介绍如何将从头构建一个简单的go程序.
 首先, 我们以<code>/data/github/golang</code>为工作空间</p>
-
 <pre><code>$ mkdir -p /data/github/golang
 $ cd /data/github/golang
 $ export GOPATH=$(pwd)
 </code></pre>
-
 <p>为了创建一个简单的程序. 首先要选择包路径, 如<code>github.com/crazygit/hello</code>, 并创建对于的目录结构</p>
-
 <pre><code>$ mkdir -p $GOPATH/src/github.com/crazygit/hello
 </code></pre>
-
 <p>在目录<code>$GOPATH/src/github.com/crazygit/hello</code>里创建<code>hello.go</code></p>
-
 <pre><code>:::go
 package main
 
@@ -288,34 +226,23 @@ func main() {
         fmt.Println(&quot;Hello world&quot;)
 }
 </code></pre>
-
 <p>使用go工具编译并安装程序</p>
-
 <pre><code>$ cd $GOPATH
 $ go install github.com/crazygit/hello
 </code></pre>
-
 <p>或者</p>
-
 <pre><code>$ cd $GOPATH/github.com/crazygit/hello
 $ go install
 </code></pre>
-
 <p>执行了之后，可以看到<code>$GOPATH</code>中多了一个<code>bin</code>目录，里面有一个名为<code>hello</code>的可执行文件</p>
-
 <pre><code>$ $GOPATH/bin/hello
 Hello, world.
 </code></pre>
-
 <h3 id="第一个go库">第一个Go库</h3>
-
 <p>让我们再创建一个库，同样，先创建包路径<code>github.com/crazygit/stringutil</code></p>
-
 <pre><code>$ mkdir $GOPATH/src/github.com/crazygit/stringutil
 </code></pre>
-
 <p>在里面再创建一个名为<code>reverse.go</code></p>
-
 <pre><code>:::go
 package stringutil
 
@@ -327,18 +254,13 @@ func Reverse(s string) string {
     return string(r)
 }
 </code></pre>
-
 <p>编译</p>
-
 <pre><code>$ cd $GOPATH
 $ go build github.com/crazygit/stringutil
 </code></pre>
-
 <p>编译过程不会有什么文件产生, 可以使用<code>go install</code>, 它会创建pkg目录
 并生成<code>pkg/linux_amd64/github.com/crazygit/stringutil.a</code>文件.</p>
-
 <p>修改<code>hello.go</code>,让它使用我们刚刚创建的库</p>
-
 <pre><code>:::go
 import (
     &quot;fmt&quot;
@@ -350,40 +272,25 @@ func main() {
     fmt.Printf(stringutil.Reverse(&quot;!oG ,olleH&quot;))
 }
 </code></pre>
-
 <p>安装，当安装的的时候，它会自动根据安装依赖,所以安装<code>hello</code>时, 它会自动安装<code>stringutil</code></p>
-
 <pre><code>$ go install github.com/crazygit/hello
 </code></pre>
-
 <p>运行</p>
-
 <pre><code>$ $GOPATH/bin/hello
 Hello, Go!
 </code></pre>
-
 <h3 id="包名">包名</h3>
-
 <p>Go代码文件的第一句话必须是</p>
-
 <pre><code>:::go
 package name
 </code></pre>
-
 <p>name就是要引起的包名，所有在同一个包下的包名也一样</p>
-
 <p>go里面为了方便，会使用引入包路径的最后一段作为包名，如 <code>crazygit/rot14</code>的包名就是<code>rot14</code></p>
-
 <p>可执行的命令必须引入包<code>package main</code></p>
-
 <h2 id="测试">测试</h2>
-
 <p>Go自带了一个使用<code>go test</code>的测试框架，为了写一个测试文件。</p>
-
 <p>应该创建一个文件名<code>_test.go</code>结尾的文件，函数名为如<code>TestXXX</code>的, 并且有参数<code>t *testing.T</code></p>
-
 <p>让我们为stringutil包创建测试<code>$GOPATH/src/github.com/crazygit/stringutil/reverse_test.go</code></p>
-
 <pre><code>:::go
 package stringutil
 
@@ -406,22 +313,16 @@ func TestReverse(t *testing.T) {
     }
 }
 </code></pre>
-
 <p>执行测试</p>
-
 <pre><code>$ go test github.com/crazygit/stringutil
 ok      github.com/crazygit/stringutil  0.002s
 </code></pre>
-
 <h2 id="第三方包">第三方包</h2>
-
 <pre><code>$ go get github.com/golang/example/hello
 $ $GOPATH/bin/hello
 Hello, Go examples!
 </code></pre>
-
 <p>如果当前包已经存在，<code>go get</code>会跳过下载</p>
-
 <p>到此，我们对go有了个大致的印象，虽然有些地方看不懂，不过没有关系，我们后面会继续学习。</p>
 
     </div>
@@ -533,7 +434,7 @@ Hello, Go examples!
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -554,12 +455,16 @@ Hello, Go examples!
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

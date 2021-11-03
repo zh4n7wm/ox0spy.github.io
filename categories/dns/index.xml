@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dns on ox0spy&#39;s blog</title>
+    <title>dns on ox0spy&#39;s blog</title>
     <link>https://ox0spy.github.io/categories/dns/</link>
-    <description>Recent content in Dns on ox0spy&#39;s blog</description>
+    <description>Recent content in dns on ox0spy&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 31 Mar 2018 21:49:01 +0800</lastBuildDate>
-    
-	<atom:link href="https://ox0spy.github.io/categories/dns/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 31 Mar 2018 21:49:01 +0800</lastBuildDate><atom:link href="https://ox0spy.github.io/categories/dns/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DNSCrypt &#43; dnsmasq</title>
       <link>https://ox0spy.github.io/post/configuration/dnscrypt-proxy-and-dnsmasq/</link>

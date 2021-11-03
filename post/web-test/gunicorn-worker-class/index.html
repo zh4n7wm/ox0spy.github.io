@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/web-test/gunicorn-worker-class/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="gunicorn 几种 worker class 性能测试比较" />
 <meta property="og:description" content="简介 Gunicorn, 一个支持WSGI协议的web服务器 Flask, 一个轻量级的python web框架 Gunicorn目前自带支持几种工作方式: sync (默认值) eventlet gevent tornado 测试" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/web-test/gunicorn-worker-class/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:21:59&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:21:59&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/web-test/gunicorn-worker-class/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:21:59+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:21:59+08:00" />
 
 <meta itemprop="name" content="gunicorn 几种 worker class 性能测试比较">
-<meta itemprop="description" content="简介 Gunicorn, 一个支持WSGI协议的web服务器 Flask, 一个轻量级的python web框架 Gunicorn目前自带支持几种工作方式: sync (默认值) eventlet gevent tornado 测试">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:21:59&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:21:59&#43;08:00" />
-<meta itemprop="wordCount" content="602">
-
-
-
-<meta itemprop="keywords" content="gunicorn, flask, gevent, eventlet, tornado," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="gunicorn 几种 worker class 性能测试比较"/>
+<meta itemprop="description" content="简介 Gunicorn, 一个支持WSGI协议的web服务器 Flask, 一个轻量级的python web框架 Gunicorn目前自带支持几种工作方式: sync (默认值) eventlet gevent tornado 测试"><meta itemprop="datePublished" content="2017-12-15T19:21:59+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:59+08:00" />
+<meta itemprop="wordCount" content="371">
+<meta itemprop="keywords" content="gunicorn, flask, gevent, eventlet, tornado," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="gunicorn 几种 worker class 性能测试比较"/>
 <meta name="twitter:description" content="简介 Gunicorn, 一个支持WSGI协议的web服务器 Flask, 一个轻量级的python web框架 Gunicorn目前自带支持几种工作方式: sync (默认值) eventlet gevent tornado 测试"/>
 
 <!--[if lte IE 9]>
@@ -153,8 +133,8 @@
               <a href="/categories/web-test/"> web-test </a>
             
           </div>
-        <span class="more-meta"> 约 602 字 </span>
-        <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span class="more-meta"> 约 371 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
 
@@ -165,302 +145,102 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#简介">简介</a></li>
-<li><a href="#测试环境准备">测试环境准备</a></li>
-<li><a href="#开始测试">开始测试</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#测试环境准备">测试环境准备</a></li>
+    <li><a href="#开始测试">开始测试</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="简介">简介</h2>
-
+      <h2 id="简介">简介</h2>
 <ul>
 <li>Gunicorn, 一个支持WSGI协议的web服务器</li>
 <li>Flask, 一个轻量级的python web框架</li>
 </ul>
-
 <p>Gunicorn目前自带支持几种工作方式:</p>
-
 <ul>
 <li>sync (默认值)</li>
 <li>eventlet</li>
 <li>gevent</li>
 <li>tornado</li>
 </ul>
-
 <h2 id="测试环境准备">测试环境准备</h2>
-
 <ol>
-<li>python 2.7+</li>
-<li>redis-server 2.8.4</li>
-<li>压力测试工具ab</li>
-
-<li><p>代码及相关python包准备
+<li>
+<p>python 2.7+</p>
+</li>
+<li>
+<p>redis-server 2.8.4</p>
+</li>
+<li>
+<p>压力测试工具ab</p>
+</li>
+<li>
+<p>代码及相关python包准备
 创建虚一个新的虚拟环境并安装需要的包</p>
+<pre><code> :::bash
+ $ mkvirtualenv test
+ $ workon test
 
-<pre><code>:::bash
-$ mkvirtualenv test
-$ workon test
+ $ cat requirements.txt
+ gunicorn==19.3.0
+ flask==0.10.1
+ flask-redis==0.1.0
+ gevent==1.0.2
+ tornado==4.2
+ eventlet==0.17.4
 
-$ cat requirements.txt
-gunicorn==19.3.0
-flask==0.10.1
-flask-redis==0.1.0
-gevent==1.0.2
-tornado==4.2
-eventlet==0.17.4
-
-$ pip install -r requirements.txt
+ $ pip install -r requirements.txt
 </code></pre>
-
 <p>测试程序<code>app.py</code></p>
+<pre><code> :::python
+ from flask import Flask
+ from flask_redis import FlaskRedis
 
-<pre><code>:::python
-from flask import Flask
-from flask_redis import FlaskRedis
+ REDIS_URL = &quot;redis://:password-string@localhost:6379/0&quot;
+ app = Flask(__name__)
+ app.config.from_object(__name__)
 
-REDIS_URL = &quot;redis://:password-string@localhost:6379/0&quot;
-app = Flask(__name__)
-app.config.from_object(__name__)
+ redis = FlaskRedis(app, True)
 
-redis = FlaskRedis(app, True)
+ @app.route(&quot;/&quot;)
+ def index():
+     redis.incr(&quot;hit&quot;, 1)
+     return redis.get(&quot;hit&quot;)
 
-@app.route(&quot;/&quot;)
-def index():
-    redis.incr(&quot;hit&quot;, 1)
-    return redis.get(&quot;hit&quot;)
-
-if __name__ == '__main__':
-    app.run()
-</code></pre></li>
+ if __name__ == '__main__':
+     app.run()
+</code></pre>
+</li>
 </ol>
-
 <h2 id="开始测试">开始测试</h2>
-
 <ol>
-<li><p>使用ab工具,并行500个客户端, 发送50000次请求</p>
-
-<pre><code>$ ab -c 500 -t 30 -r &quot;http://127.0.0.1:8000/&quot;
-</code></pre></li>
-
-<li><p>分别使用四种方式启动使用服务， 并开启４个worker</p>
-
-<pre><code>$ gunicorn -w 4 app:app --error-logfile - --worker-class sync
-$ gunicorn -w 4 app:app --error-logfile - --worker-class gevent
-$ gunicorn -w 4 app:app --error-logfile - --worker-class tornado
-$ gunicorn -w 4 app:app --error-logfile - --worker-class eventlet
-</code></pre></li>
-
-<li><p>结果比较</p></li>
+<li>
+<p>使用ab工具,并行500个客户端, 发送50000次请求</p>
+<pre><code> $ ab -c 500 -t 30 -r &quot;http://127.0.0.1:8000/&quot;
+</code></pre>
+</li>
+<li>
+<p>分别使用四种方式启动使用服务， 并开启４个worker</p>
+<pre><code> $ gunicorn -w 4 app:app --error-logfile - --worker-class sync
+ $ gunicorn -w 4 app:app --error-logfile - --worker-class gevent
+ $ gunicorn -w 4 app:app --error-logfile - --worker-class tornado
+ $ gunicorn -w 4 app:app --error-logfile - --worker-class eventlet
+</code></pre>
+</li>
+<li>
+<p>结果比较</p>
+</li>
 </ol>
-
-<table class="table table-striped table-bordered table-hover table-condensed">
-    <tbody>
-        <tr>
-            <td>
-                Worker class
-            </td>
-            <td>
-                Time taken for tests
-            </td>
-            <td>
-                Complete requests
-            </td>
-            <td>
-                Failed requests
-            </td>
-            <td>
-                Requests per second
-            </td>
-            <td>
-                用户平均请求等待时间
-            </td>
-            <td>
-                服务器平均处理时间
-            </td>
-            <td>
-                最小连接时间
-            </td>
-            <td>
-                平均连接时间
-            </td>
-            <td>
-                50%的连接时间
-            </td>
-            <td>
-                最大连接时间
-            </td>
-        </tr>
-        <tr>
-            <td>
-                sync
-            </td>
-            <td>
-                37.363 s
-            </td>
-            <td>
-                49928
-            </td>
-            <td>
-                793
-            </td>
-            <td>
-                1336.29
-            </td>
-            <td>
-                374.169 ms
-            </td>
-            <td>
-                0.748 ms
-            </td>
-            <td>
-                5 ms
-            </td>
-            <td>
-                75 ms
-            </td>
-            <td>
-                17 ms
-            </td>
-            <td>
-                31746 ms
-            </td>
-        </tr>
-        <tr>
-            <td>
-               tornado
-            </td>
-            <td>
-               13.995
-            </td>
-            <td>
-                50000
-            </td>
-            <td>
-                543
-            </td>
-            <td>
-               3572.64
-            </td>
-            <td>
-                139.953 ms
-            </td>
-            <td>
-                0.280 ms
-            </td>
-            <td>
-                6 ms
-            </td>
-            <td>
-                110 ms
-            </td>
-            <td>
-                24 ms
-            </td>
-            <td>
-                13837 ms
-            </td>
-        </tr>
-        <tr>
-            <td>
-              eventlet
-            </td>
-            <td>
-              8.156
-            </td>
-            <td>
-                50000
-            </td>
-            <td>
-                0
-            </td>
-            <td>
-               6130.74
-            </td>
-            <td>
-               81.556
-            </td>
-            <td>
-                0.163 ms
-            </td>
-            <td>
-                2 ms
-            </td>
-            <td>
-                80 ms
-            </td>
-            <td>
-               62 ms
-            </td>
-            <td>
-               3153 ms
-            </td>
-        </tr>
-        <tr>
-            <td>
-                gevent
-            </td>
-            <td>
-                7.647 s
-            </td>
-            <td>
-                50000
-            </td>
-            <td>
-                0
-            </td>
-            <td>
-               6538.23
-            </td>
-            <td>
-                76.473 ms
-            </td>
-            <td>
-                0.153 ms
-            </td>
-            <td>
-                1 ms
-            </td>
-            <td>
-                74 ms
-            </td>
-            <td>
-                52 ms
-            </td>
-            <td>
-                1122 ms
-            </td>
-        </tr>
-    </tbody>
-</table>
-
+<!-- raw HTML omitted -->
 <p>从测试结果来看，默认自带sync效率很低，并且在测试时发现，采用sync方式在高并发时
 会出现woker重启的情况, 如下:</p>
-
-<pre>
-[2015-06-25 11:31:06 +0000] [27040] [CRITICAL] WORKER TIMEOUT (pid:27064)
-[2015-06-25 11:31:06 +0000] [27040] [CRITICAL] WORKER TIMEOUT (pid:27051)
-[2015-06-25 11:31:06 +0000] [27040] [CRITICAL] WORKER TIMEOUT (pid:27045)
-[2015-06-25 11:31:06 +0000] [27040] [CRITICAL] WORKER TIMEOUT (pid:27046)
-[2015-06-25 11:31:06 +0000] [27064] [INFO] Worker exiting (pid: 27064)
-[2015-06-25 11:31:06 +0000] [27051] [INFO] Worker exiting (pid: 27051)
-[2015-06-25 11:31:06 +0000] [27045] [INFO] Worker exiting (pid: 27045)
-[2015-06-25 11:31:06 +0000] [27046] [INFO] Worker exiting (pid: 27046)
-[2015-06-25 11:31:06 +0000] [27263] [INFO] Booting worker with pid: 27263
-[2015-06-25 11:31:06 +0000] [27264] [INFO] Booting worker with pid: 27264
-[2015-06-25 11:31:06 +0000] [27277] [INFO] Booting worker with pid: 27277
-[2015-06-25 11:31:06 +0000] [27280] [INFO] Booting worker with pid: 27280
-</pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>eventlet 和gevent两种方式效果最好，数据基本差不多.</p>
 
     </div>
@@ -578,7 +358,7 @@ $ gunicorn -w 4 app:app --error-logfile - --worker-class eventlet
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -599,12 +379,16 @@ $ gunicorn -w 4 app:app --error-logfile - --worker-class eventlet
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

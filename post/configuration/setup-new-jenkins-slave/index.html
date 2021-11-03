@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/configuration/setup-new-jenkins-slave/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="Setup new Jenkins slave" />
 <meta property="og:description" content="Setup new Jenkins slave Install Ubuntu 10.04 Create jenkins/jenkins (user/group) # login new Jenkins slave $ sudo addgroup jenkins $ sudo useradd -m -s /bin/bash -g jenkins jenkins $ sudo su - jenkins $ scp -r jenkins@172.26.32.85:~/.ssh ~/ $ passwd jenkins # change hostname $ sudo vim /etc/hostname # login Jenkins master $ ssh jenkins@master $ ssh-copy-id jenkins@new-slave-host # login new Jenkins slave $ sudo scp jenkins@master:/etc/apt/sources.list /etc/apt/sources.list $ sudo apt-get update $ sudo apt-get upgrade $ sudo apt-get install git-core  Setup nis/autofs $ sudo tail -n 1 /etc/passwd /etc/group /etc/shadow ==&gt; /etc/passwd &lt;== &#43;:::::: ==&gt; /etc/group &lt;== &#43;::: ==&gt; /etc/shadow &lt;== &#43;:::::::: $ sudo apt-get install nis portmap autofs $ sudo bash -c &#39;echo &quot;ypserver int." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/configuration/setup-new-jenkins-slave/" />
-
-
-
-<meta property="article:published_time" content="2013-08-14T00:00:00&#43;08:00"/>
-
-<meta property="article:modified_time" content="2013-08-14T00:00:00&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/configuration/setup-new-jenkins-slave/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2013-08-14T00:00:00+08:00" />
+<meta property="article:modified_time" content="2013-08-14T00:00:00+08:00" />
 
 <meta itemprop="name" content="Setup new Jenkins slave">
-<meta itemprop="description" content="Setup new Jenkins slave Install Ubuntu 10.04 Create jenkins/jenkins (user/group) # login new Jenkins slave $ sudo addgroup jenkins $ sudo useradd -m -s /bin/bash -g jenkins jenkins $ sudo su - jenkins $ scp -r jenkins@172.26.32.85:~/.ssh ~/ $ passwd jenkins # change hostname $ sudo vim /etc/hostname # login Jenkins master $ ssh jenkins@master $ ssh-copy-id jenkins@new-slave-host # login new Jenkins slave $ sudo scp jenkins@master:/etc/apt/sources.list /etc/apt/sources.list $ sudo apt-get update $ sudo apt-get upgrade $ sudo apt-get install git-core  Setup nis/autofs $ sudo tail -n 1 /etc/passwd /etc/group /etc/shadow ==&gt; /etc/passwd &lt;== &#43;:::::: ==&gt; /etc/group &lt;== &#43;::: ==&gt; /etc/shadow &lt;== &#43;:::::::: $ sudo apt-get install nis portmap autofs $ sudo bash -c &#39;echo &quot;ypserver int.">
-
-
-<meta itemprop="datePublished" content="2013-08-14T00:00:00&#43;08:00" />
-<meta itemprop="dateModified" content="2013-08-14T00:00:00&#43;08:00" />
+<meta itemprop="description" content="Setup new Jenkins slave Install Ubuntu 10.04 Create jenkins/jenkins (user/group) # login new Jenkins slave $ sudo addgroup jenkins $ sudo useradd -m -s /bin/bash -g jenkins jenkins $ sudo su - jenkins $ scp -r jenkins@172.26.32.85:~/.ssh ~/ $ passwd jenkins # change hostname $ sudo vim /etc/hostname # login Jenkins master $ ssh jenkins@master $ ssh-copy-id jenkins@new-slave-host # login new Jenkins slave $ sudo scp jenkins@master:/etc/apt/sources.list /etc/apt/sources.list $ sudo apt-get update $ sudo apt-get upgrade $ sudo apt-get install git-core  Setup nis/autofs $ sudo tail -n 1 /etc/passwd /etc/group /etc/shadow ==&gt; /etc/passwd &lt;== &#43;:::::: ==&gt; /etc/group &lt;== &#43;::: ==&gt; /etc/shadow &lt;== &#43;:::::::: $ sudo apt-get install nis portmap autofs $ sudo bash -c &#39;echo &quot;ypserver int."><meta itemprop="datePublished" content="2013-08-14T00:00:00+08:00" />
+<meta itemprop="dateModified" content="2013-08-14T00:00:00+08:00" />
 <meta itemprop="wordCount" content="242">
-
-
-
-<meta itemprop="keywords" content="Linux,CI,Jenkins," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Setup new Jenkins slave"/>
+<meta itemprop="keywords" content="Linux,CI,Jenkins," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Setup new Jenkins slave"/>
 <meta name="twitter:description" content="Setup new Jenkins slave Install Ubuntu 10.04 Create jenkins/jenkins (user/group) # login new Jenkins slave $ sudo addgroup jenkins $ sudo useradd -m -s /bin/bash -g jenkins jenkins $ sudo su - jenkins $ scp -r jenkins@172.26.32.85:~/.ssh ~/ $ passwd jenkins # change hostname $ sudo vim /etc/hostname # login Jenkins master $ ssh jenkins@master $ ssh-copy-id jenkins@new-slave-host # login new Jenkins slave $ sudo scp jenkins@master:/etc/apt/sources.list /etc/apt/sources.list $ sudo apt-get update $ sudo apt-get upgrade $ sudo apt-get install git-core  Setup nis/autofs $ sudo tail -n 1 /etc/passwd /etc/group /etc/shadow ==&gt; /etc/passwd &lt;== &#43;:::::: ==&gt; /etc/group &lt;== &#43;::: ==&gt; /etc/shadow &lt;== &#43;:::::::: $ sudo apt-get install nis portmap autofs $ sudo bash -c &#39;echo &quot;ypserver int."/>
 
 <!--[if lte IE 9]>
@@ -161,35 +141,28 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#setup-new-jenkins-slave">Setup new Jenkins slave</a>
-<ul>
-<li>
-<ul>
-<li><a href="#install-ubuntu-10-04">Install Ubuntu 10.04</a></li>
-<li><a href="#create-jenkins-jenkins-user-group">Create jenkins/jenkins (user/group)</a></li>
-<li><a href="#setup-nis-autofs">Setup nis/autofs</a></li>
-<li><a href="#install-java-jdk-jre-1-6">Install Java JDK/JRE 1.6</a></li>
-<li><a href="#install-nagios-client">Install nagios client</a></li>
-<li><a href="#setup-ntpdate">setup ntpdate</a></li>
-<li><a href="#join-this-machine-to-our-jenkins">join this machine to our Jenkins</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#install-ubuntu-1004">Install Ubuntu 10.04</a></li>
+        <li><a href="#create-jenkinsjenkins-usergroup">Create jenkins/jenkins (user/group)</a></li>
+        <li><a href="#setup-nisautofs">Setup nis/autofs</a></li>
+        <li><a href="#install-java-jdkjre-16">Install Java JDK/JRE 1.6</a></li>
+        <li><a href="#install-nagios-client">Install nagios client</a></li>
+        <li><a href="#setup-ntpdate">setup ntpdate</a></li>
+        <li><a href="#join-this-machine-to-our-jenkins">join this machine to our Jenkins</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h1 id="setup-new-jenkins-slave">Setup new Jenkins slave</h1>
-
-<h3 id="install-ubuntu-10-04">Install Ubuntu 10.04</h3>
-
-<h3 id="create-jenkins-jenkins-user-group">Create jenkins/jenkins (user/group)</h3>
-
+      <h1 id="setup-new-jenkins-slave">Setup new Jenkins slave</h1>
+<h3 id="install-ubuntu-1004">Install Ubuntu 10.04</h3>
+<h3 id="create-jenkinsjenkins-usergroup">Create jenkins/jenkins (user/group)</h3>
 <pre><code># login new Jenkins slave
 $ sudo addgroup jenkins
 $ sudo useradd -m -s /bin/bash -g jenkins jenkins
@@ -210,9 +183,7 @@ $ sudo apt-get update
 $ sudo apt-get upgrade
 $ sudo apt-get install git-core
 </code></pre>
-
-<h3 id="setup-nis-autofs">Setup nis/autofs</h3>
-
+<h3 id="setup-nisautofs">Setup nis/autofs</h3>
 <pre><code>$ sudo tail -n 1 /etc/passwd /etc/group /etc/shadow
 ==&gt; /etc/passwd &lt;==
 +::::::
@@ -240,15 +211,11 @@ $ sudo service ypbind restart
 $ sudo service portmap restart
 $ sudo service autofs restart
 </code></pre>
-
-<h3 id="install-java-jdk-jre-1-6">Install Java JDK/JRE 1.6</h3>
-
+<h3 id="install-java-jdkjre-16">Install Java JDK/JRE 1.6</h3>
 <pre><code>$ cd /tmp &amp;&amp; wget http://172.26.32.9/software/sun-java/install-sun-java6-jdk-jre.sh
 $ sudo bash install-sun-java6-jdk-jre.sh
 </code></pre>
-
 <h3 id="install-nagios-client">Install nagios client</h3>
-
 <pre><code>$ sudo apt-get install nagios-nrpe-server nagios-plugins-basic
 
 # change config files
@@ -265,9 +232,7 @@ command[check_data_disk]=/usr/lib/nagios/plugins/check_disk -w 20% -c 10% -p /da
 /etc/nagios3/conf.d/hosts.cfg
 /etc/nagios3/conf.d/hostsservices.cfg
 </code></pre>
-
 <h3 id="setup-ntpdate">setup ntpdate</h3>
-
 <pre><code>$ sudo apt-get install ntpdate
 $ cat /etc/cron.hourly/ntpdate
 #!/bin/bash
@@ -275,9 +240,7 @@ $ cat /etc/cron.hourly/ntpdate
 ntpdate 172.26.32.18
 $ sudo chmod +x /etc/cron.hourly/ntpdate
 </code></pre>
-
 <h3 id="join-this-machine-to-our-jenkins">join this machine to our Jenkins</h3>
-
 <ul>
 <li><a href="http://172.26.35.81:8080/computer/new">http://172.26.35.81:8080/computer/new</a></li>
 </ul>
@@ -342,8 +305,8 @@ $ sudo chmod +x /etc/cron.hourly/ntpdate
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/configuration/git-tips/">
-            <span class="next-text nav-default">Git Tips</span>
+          <a class="next" href="/post/configuration/setup-opengrok/">
+            <span class="next-text nav-default">Setup OpenGrok</span>
             <span class="prev-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -393,7 +356,7 @@ $ sudo chmod +x /etc/cron.hourly/ntpdate
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -414,12 +377,16 @@ $ sudo chmod +x /etc/cron.hourly/ntpdate
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

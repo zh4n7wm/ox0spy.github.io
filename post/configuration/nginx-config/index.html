@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="crazygit" />
-  <meta name="description" content="本文参考于: http://serverfault.com/questions/314574/nginx-real-ip-header-and-x-forwarded-for-seems-wrong/414166 http://luyadong.blog.51cto.com/2876653/851964 http://nginx.org/en/docs/http/ngx_http_realip_module.html http://distinctplace.com/infrastructure/2014/04/23/story-behind-x-forwarded-for-and-x-real-ip-headers/ X-Real-IP和X-Forwarded-For的注意 在配置nginx反向代理时，我们往往做如下配置 location /uri { proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr;" />
+  <meta name="description" content="本文参考于: http://serverfault.com/questions/314574/nginx-real-ip-header-and-x-forwarded-for-seems-wrong/414166 http://luyadong.blog.51cto.com/2876653/851964 http://nginx.org/en/docs/http/ngx_http_realip_module.html http://distinctplace.com/infrastructure/2014/04/23/story-behind-x-forwarded-for-and-x-real-ip-headers/ X-Real-IP和X-Forwarded-For的注意 在配置nginx反向代理时，我们往往做如下配置 注意当中的这两行 proxy_set_header" />
 
   <meta name="keywords" content="ox0spy, python, flask, django, go, golang, programming, coding, even" />
 
@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/configuration/nginx-config/" />
@@ -45,39 +45,19 @@
 <link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
 <meta property="og:title" content="nginx获取客户端真实ip，x-real-ip和x-forwarded-for注意" />
-<meta property="og:description" content="本文参考于: http://serverfault.com/questions/314574/nginx-real-ip-header-and-x-forwarded-for-seems-wrong/414166 http://luyadong.blog.51cto.com/2876653/851964 http://nginx.org/en/docs/http/ngx_http_realip_module.html http://distinctplace.com/infrastructure/2014/04/23/story-behind-x-forwarded-for-and-x-real-ip-headers/ X-Real-IP和X-Forwarded-For的注意 在配置nginx反向代理时，我们往往做如下配置 location /uri { proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr;" />
+<meta property="og:description" content="本文参考于: http://serverfault.com/questions/314574/nginx-real-ip-header-and-x-forwarded-for-seems-wrong/414166 http://luyadong.blog.51cto.com/2876653/851964 http://nginx.org/en/docs/http/ngx_http_realip_module.html http://distinctplace.com/infrastructure/2014/04/23/story-behind-x-forwarded-for-and-x-real-ip-headers/ X-Real-IP和X-Forwarded-For的注意 在配置nginx反向代理时，我们往往做如下配置 注意当中的这两行 proxy_set_header" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/configuration/nginx-config/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:21:57&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:21:57&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/configuration/nginx-config/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:21:57+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:21:57+08:00" />
 
 <meta itemprop="name" content="nginx获取客户端真实ip，x-real-ip和x-forwarded-for注意">
-<meta itemprop="description" content="本文参考于: http://serverfault.com/questions/314574/nginx-real-ip-header-and-x-forwarded-for-seems-wrong/414166 http://luyadong.blog.51cto.com/2876653/851964 http://nginx.org/en/docs/http/ngx_http_realip_module.html http://distinctplace.com/infrastructure/2014/04/23/story-behind-x-forwarded-for-and-x-real-ip-headers/ X-Real-IP和X-Forwarded-For的注意 在配置nginx反向代理时，我们往往做如下配置 location /uri { proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr;">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:21:57&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:21:57&#43;08:00" />
-<meta itemprop="wordCount" content="578">
-
-
-
-<meta itemprop="keywords" content="nginx, x_real_ip, x_forwarded_for," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="nginx获取客户端真实ip，x-real-ip和x-forwarded-for注意"/>
-<meta name="twitter:description" content="本文参考于: http://serverfault.com/questions/314574/nginx-real-ip-header-and-x-forwarded-for-seems-wrong/414166 http://luyadong.blog.51cto.com/2876653/851964 http://nginx.org/en/docs/http/ngx_http_realip_module.html http://distinctplace.com/infrastructure/2014/04/23/story-behind-x-forwarded-for-and-x-real-ip-headers/ X-Real-IP和X-Forwarded-For的注意 在配置nginx反向代理时，我们往往做如下配置 location /uri { proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr;"/>
+<meta itemprop="description" content="本文参考于: http://serverfault.com/questions/314574/nginx-real-ip-header-and-x-forwarded-for-seems-wrong/414166 http://luyadong.blog.51cto.com/2876653/851964 http://nginx.org/en/docs/http/ngx_http_realip_module.html http://distinctplace.com/infrastructure/2014/04/23/story-behind-x-forwarded-for-and-x-real-ip-headers/ X-Real-IP和X-Forwarded-For的注意 在配置nginx反向代理时，我们往往做如下配置 注意当中的这两行 proxy_set_header"><meta itemprop="datePublished" content="2017-12-15T19:21:57+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:57+08:00" />
+<meta itemprop="wordCount" content="359">
+<meta itemprop="keywords" content="nginx, x_real_ip, x_forwarded_for," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="nginx获取客户端真实ip，x-real-ip和x-forwarded-for注意"/>
+<meta name="twitter:description" content="本文参考于: http://serverfault.com/questions/314574/nginx-real-ip-header-and-x-forwarded-for-seems-wrong/414166 http://luyadong.blog.51cto.com/2876653/851964 http://nginx.org/en/docs/http/ngx_http_realip_module.html http://distinctplace.com/infrastructure/2014/04/23/story-behind-x-forwarded-for-and-x-real-ip-headers/ X-Real-IP和X-Forwarded-For的注意 在配置nginx反向代理时，我们往往做如下配置 注意当中的这两行 proxy_set_header"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -153,8 +133,8 @@
               <a href="/categories/configuration/"> configuration </a>
             
           </div>
-        <span class="more-meta"> 约 578 字 </span>
-        <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span class="more-meta"> 约 359 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
 
@@ -165,66 +145,36 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#x-real-ip和x-forwarded-for的注意">X-Real-IP和X-Forwarded-For的注意</a>
-<ul>
-<li><a href="#获取真实的客户端ip">获取真实的客户端IP</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#获取真实的客户端ip">获取真实的客户端IP</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>本文参考于:</p>
-
+      <p>本文参考于:</p>
 <ul>
 <li><a href="http://serverfault.com/questions/314574/nginx-real-ip-header-and-x-forwarded-for-seems-wrong/414166">http://serverfault.com/questions/314574/nginx-real-ip-header-and-x-forwarded-for-seems-wrong/414166</a></li>
 <li><a href="http://luyadong.blog.51cto.com/2876653/851964">http://luyadong.blog.51cto.com/2876653/851964</a></li>
 <li><a href="http://nginx.org/en/docs/http/ngx_http_realip_module.html">http://nginx.org/en/docs/http/ngx_http_realip_module.html</a></li>
 <li><a href="http://distinctplace.com/infrastructure/2014/04/23/story-behind-x-forwarded-for-and-x-real-ip-headers/">http://distinctplace.com/infrastructure/2014/04/23/story-behind-x-forwarded-for-and-x-real-ip-headers/</a></li>
 </ul>
-
 <h1 id="x-real-ip和x-forwarded-for的注意">X-Real-IP和X-Forwarded-For的注意</h1>
-
-<p>在配置nginx反向代理时，我们往往做如下配置
-<pre>
-    location /uri {
-            proxy_set_header   Host             $host;
-            proxy_set_header   X-Real-IP        $remote_addr;
-            proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
-            proxy_connect_timeout   60s;  # nginx跟后端服务器连接超时时间(代理连接超时)
-            proxy_send_timeout      90s;  # 后端服务器数据回传时间(代理发送超时)
-            proxy_read_timeout      90s;  # 连接成功后，后端服务器响应时间(代理接收超时)
-            proxy_buffer_size        4k;  # 设置代理服务器（nginx）保存用户头信息的缓冲区大小
-            proxy_buffers         4 32k;  # proxy_buffers缓冲区，网页平均在32k以下的设置
-            proxy_busy_buffers_size 64k;  # 高负荷下缓冲大小（proxy_buffers*2）
-            proxy_temp_file_write_size 64k; # 设定缓存文件夹大小，大于这个值，将从upstream服务器传
-            proxy_buffering         off;
-            proxy_ignore_client_abort on;
-            proxy_pass   <a href="http://xx.xx.xx.xx">http://xx.xx.xx.xx</a>;
-</pre></p>
-
+<p>在配置nginx反向代理时，我们往往做如下配置</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>注意当中的这两行</p>
-
 <pre><code>proxy_set_header   X-Real-IP        $remote_addr;
 proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
 </code></pre>
-
 <p>根据维基百科描述,</p>
-
 <p>X-Forwarded-for的格式应该如下:</p>
-
 <pre><code>X-Forwarded-For: client1, proxy1, proxy2, ...
 </code></pre>
-
 <p>而nginx中，每次都是取X-Forwarded-For 中最右边的IP作为X-Real-IP的值，明显最右边的IP是一个反向代理的IP，而不是真实的客户端IP，这么做貌似是不正确的, 我们应该使用最左边的值作为X-Real-IP的值，但是nginx为什么要做么做时。</p>
-
 <h2 id="获取真实的客户端ip">获取真实的客户端IP</h2>
-
 <p>为了获取真实的客户端IP,　需要使用ngx_http_realip_module模块，默认这个模块没有启动，需要在安装时使用<code>--with-http_realip_module</code>作为configuration的参数。</p>
 
     </div>
@@ -338,7 +288,7 @@ proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -359,12 +309,16 @@ proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

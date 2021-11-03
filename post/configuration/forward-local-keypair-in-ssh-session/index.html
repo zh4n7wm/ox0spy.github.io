@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/configuration/forward-local-keypair-in-ssh-session/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="forward local keypair in ssh session" />
 <meta property="og:description" content="SSH 不应该通过密码认证，只应该通过 ssh keypair 认证。 如果我既有登录 A 机器的权限，也有登录 B 机器的权限。那么，通过 ssh-copy-id 配置后，就可以从本地自动登录 A、B 机" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/configuration/forward-local-keypair-in-ssh-session/" />
-
-
-
-<meta property="article:published_time" content="2018-10-25T18:01:58&#43;08:00"/>
-
-<meta property="article:modified_time" content="2018-10-25T18:01:58&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/configuration/forward-local-keypair-in-ssh-session/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2018-10-25T18:01:58+08:00" />
+<meta property="article:modified_time" content="2018-10-25T18:01:58+08:00" />
 
 <meta itemprop="name" content="forward local keypair in ssh session">
-<meta itemprop="description" content="SSH 不应该通过密码认证，只应该通过 ssh keypair 认证。 如果我既有登录 A 机器的权限，也有登录 B 机器的权限。那么，通过 ssh-copy-id 配置后，就可以从本地自动登录 A、B 机">
-
-
-<meta itemprop="datePublished" content="2018-10-25T18:01:58&#43;08:00" />
-<meta itemprop="dateModified" content="2018-10-25T18:01:58&#43;08:00" />
-<meta itemprop="wordCount" content="547">
-
-
-
-<meta itemprop="keywords" content="linux, ssh, tunnel," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="forward local keypair in ssh session"/>
+<meta itemprop="description" content="SSH 不应该通过密码认证，只应该通过 ssh keypair 认证。 如果我既有登录 A 机器的权限，也有登录 B 机器的权限。那么，通过 ssh-copy-id 配置后，就可以从本地自动登录 A、B 机"><meta itemprop="datePublished" content="2018-10-25T18:01:58+08:00" />
+<meta itemprop="dateModified" content="2018-10-25T18:01:58+08:00" />
+<meta itemprop="wordCount" content="551">
+<meta itemprop="keywords" content="linux, ssh, tunnel," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="forward local keypair in ssh session"/>
 <meta name="twitter:description" content="SSH 不应该通过密码认证，只应该通过 ssh keypair 认证。 如果我既有登录 A 机器的权限，也有登录 B 机器的权限。那么，通过 ssh-copy-id 配置后，就可以从本地自动登录 A、B 机"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/configuration/"> configuration </a>
             
           </div>
-        <span class="more-meta"> 约 547 字 </span>
+        <span class="more-meta"> 约 551 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
       </div>
     </header>
@@ -165,95 +145,65 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#forward-agent">forward agent</a>
-<ul>
-<li><a href="#确保-ssh-agent-已经运行">确保 ssh-agent 已经运行</a></li>
-<li><a href="#添加想要转发的-ssh-private-key-到-ssh-agent">添加想要转发的 ssh private key 到 ssh agent</a></li>
-<li><a href="#登录-a主机">登录 A主机</a></li>
-<li><a href="#登录-b-主机">登录 B 主机：</a></li>
-<li><a href="#每次都需要手动输入-a-很麻烦">每次都需要手动输入 -A 很麻烦</a></li>
-<li><a href="#能不能对所有主机配置">能不能对所有主机配置？</a></li>
-<li><a href="#ssh-agent-还能让你避免每次为ssh-key-输入密码">ssh-agent 还能让你避免每次为ssh key 输入密码</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#forward-agent">forward agent</a>
+      <ul>
+        <li><a href="#确保-ssh-agent-已经运行">确保 ssh-agent 已经运行</a></li>
+        <li><a href="#添加想要转发的-ssh-private-key-到-ssh-agent">添加想要转发的 ssh private key 到 ssh agent</a></li>
+        <li><a href="#登录-a主机">登录 A主机</a></li>
+        <li><a href="#登录-b-主机">登录 B 主机：</a></li>
+        <li><a href="#每次都需要手动输入--a-很麻烦">每次都需要手动输入 -A 很麻烦</a></li>
+        <li><a href="#能不能对所有主机配置">能不能对所有主机配置？</a></li>
+        <li><a href="#ssh-agent-还能让你避免每次为ssh-key-输入密码">ssh-agent 还能让你避免每次为ssh key 输入密码</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p><strong>SSH 不应该通过密码认证，只应该通过 ssh keypair 认证。</strong></p>
-
+      <p><strong>SSH 不应该通过密码认证，只应该通过 ssh keypair 认证。</strong></p>
 <p>如果我既有登录 A 机器的权限，也有登录 B 机器的权限。那么，通过 <code>ssh-copy-id</code> 配置后，就可以从本地自动登录 A、B 机器了。但 A 机器没有登录 B 机器的权限。</p>
-
 <p>如果需要从 A 机器 登录 B 机器，应该怎么办呢？</p>
-
 <ul>
 <li><del>在 A 机器上通过 <code>ssh-keygen</code> 生成 keypair，然后将公钥放到B机器的 <code>~/.ssh/authorized_keys</code>？</del></li>
 <li>forward agent？</li>
 </ul>
-
 <p>服务器上不应该放 keypair，所以，方案一不可取。</p>
-
 <p>本文介绍 <code>forward agent</code> 方案。</p>
-
 <h2 id="forward-agent">forward agent</h2>
-
 <h3 id="确保-ssh-agent-已经运行">确保 ssh-agent 已经运行</h3>
-
 <pre><code>$ ssh-agent
 
 或者
 
 $ eval &quot;$(ssh-agent)&quot;
 </code></pre>
-
 <h3 id="添加想要转发的-ssh-private-key-到-ssh-agent">添加想要转发的 ssh private key 到 ssh agent</h3>
-
 <pre><code>$ ssh-add &lt;path-to-key/private-key-name&gt;
 </code></pre>
-
 <p>比如：</p>
-
 <pre><code>$ ssh-add ~/.ssh/id_rsa
 </code></pre>
-
 <p>列出 ssh agent 中的key:</p>
-
 <pre><code>$ ssh-add -L
 </code></pre>
-
 <h3 id="登录-a主机">登录 A主机</h3>
-
 <p>从本地登录 主机A：</p>
-
 <pre><code>$ ssh -A host-A  # 假设 host-A 的登录信息已经在 ~/.ssh/config 中配置过
 </code></pre>
-
 <p>注：<code>-A</code> 参数用来转发 key</p>
-
 <p>通过上面命令登录到 主机A 后，通过 <code>ssh-add -L</code> 查看是否有 key。</p>
-
 <pre><code>host-A:~$ ssh-add -L  # 应该能看到自己之前添加的 key，否则无法登录到 主机B 的
 </code></pre>
-
 <h3 id="登录-b-主机">登录 B 主机：</h3>
-
 <p>在 A主机 上登录 B主机：</p>
-
 <pre><code>host-A:~$ ssh host-B
 </code></pre>
-
-<h3 id="每次都需要手动输入-a-很麻烦">每次都需要手动输入 -A 很麻烦</h3>
-
+<h3 id="每次都需要手动输入--a-很麻烦">每次都需要手动输入 -A 很麻烦</h3>
 <p>修改 <code>~/.ssh/config</code>，如下：</p>
-
 <pre><code>Host host-B
     Hostname host-B
     user &lt;username&gt;
@@ -261,21 +211,15 @@ $ eval &quot;$(ssh-agent)&quot;
     IdentityFile &lt;~/.ssh/id_rsa&gt;
     ForwardAgent yes
 </code></pre>
-
 <p>注：其实就是加了：<code>ForwardAgent yes</code>。这样就不需要每次手动输入 <code>ssh -A</code>。</p>
-
 <h3 id="能不能对所有主机配置">能不能对所有主机配置？</h3>
-
 <p>答案当然是肯定的！</p>
-
 <pre><code>Host *
     AddKeysToAgent yes
     UseKeychain yes
     IdentityFile ~/.ssh/id_rsa
 </code></pre>
-
 <h3 id="ssh-agent-还能让你避免每次为ssh-key-输入密码">ssh-agent 还能让你避免每次为ssh key 输入密码</h3>
-
 <p>如果你的 ssh keypair 设置过密码，那么 <code>ssh-add</code> 时就要求输入密码，这样避免每次使用 ssh keypair 都需要输入密码。</p>
 
     </div>
@@ -389,7 +333,7 @@ $ eval &quot;$(ssh-agent)&quot;
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -410,12 +354,16 @@ $ eval &quot;$(ssh-agent)&quot;
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

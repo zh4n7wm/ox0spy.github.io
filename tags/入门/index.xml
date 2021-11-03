@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>入门 on ox0spy&#39;s blog</title>
+    <title> 入门 on ox0spy&#39;s blog</title>
     <link>https://ox0spy.github.io/tags/%E5%85%A5%E9%97%A8/</link>
-    <description>Recent content in 入门 on ox0spy&#39;s blog</description>
+    <description>Recent content in  入门 on ox0spy&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 15 Dec 2017 19:21:59 +0800</lastBuildDate>
-    
-	<atom:link href="https://ox0spy.github.io/tags/%E5%85%A5%E9%97%A8/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 15 Dec 2017 19:21:59 +0800</lastBuildDate><atom:link href="https://ox0spy.github.io/tags/%E5%85%A5%E9%97%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>go学习笔记1之安装go</title>
       <link>https://ox0spy.github.io/post/go/01-go-install/</link>

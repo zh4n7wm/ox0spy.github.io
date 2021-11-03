@@ -28,7 +28,7 @@ wget --save-cookies cookies.txt \ --post-data &#39;user=foo&amp;amp;password=bar
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/configuration/http-command-line-tools/" />
@@ -51,38 +51,18 @@ wget --save-cookies cookies.txt \ --post-data &#39;user=foo&amp;amp;password=bar
  log to a server using POST and then proceed to download the desired pages, presumably only accessible to authorized users Log in to the server. This can be done only once.
 wget --save-cookies cookies.txt \ --post-data &#39;user=foo&amp;password=bar&#39; \ http://server." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/configuration/http-command-line-tools/" />
-
-
-
-<meta property="article:published_time" content="2013-08-06T00:00:00&#43;08:00"/>
-
-<meta property="article:modified_time" content="2013-08-06T00:00:00&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/configuration/http-command-line-tools/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2013-08-06T00:00:00+08:00" />
+<meta property="article:modified_time" content="2013-08-06T00:00:00+08:00" />
 
 <meta itemprop="name" content="HTTP Command Line Tools">
 <meta itemprop="description" content="Linux Network Tools wget  GNU Wget is a free utility for non-interactive download of files from the Web. It supports HTTP, HTTPS, and FTP protocols, as well as retrieval through HTTP proxies.
  log to a server using POST and then proceed to download the desired pages, presumably only accessible to authorized users Log in to the server. This can be done only once.
-wget --save-cookies cookies.txt \ --post-data &#39;user=foo&amp;password=bar&#39; \ http://server.">
-
-
-<meta itemprop="datePublished" content="2013-08-06T00:00:00&#43;08:00" />
-<meta itemprop="dateModified" content="2013-08-06T00:00:00&#43;08:00" />
+wget --save-cookies cookies.txt \ --post-data &#39;user=foo&amp;password=bar&#39; \ http://server."><meta itemprop="datePublished" content="2013-08-06T00:00:00+08:00" />
+<meta itemprop="dateModified" content="2013-08-06T00:00:00+08:00" />
 <meta itemprop="wordCount" content="318">
-
-
-
-<meta itemprop="keywords" content="HTTP,Linux," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="HTTP Command Line Tools"/>
+<meta itemprop="keywords" content="HTTP,Linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HTTP Command Line Tools"/>
 <meta name="twitter:description" content="Linux Network Tools wget  GNU Wget is a free utility for non-interactive download of files from the Web. It supports HTTP, HTTPS, and FTP protocols, as well as retrieval through HTTP proxies.
  log to a server using POST and then proceed to download the desired pages, presumably only accessible to authorized users Log in to the server. This can be done only once.
 wget --save-cookies cookies.txt \ --post-data &#39;user=foo&amp;password=bar&#39; \ http://server."/>
@@ -173,101 +153,68 @@ wget --save-cookies cookies.txt \ --post-data &#39;user=foo&amp;password=bar&#39
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#linux-network-tools">Linux Network Tools</a>
-<ul>
-<li><a href="#wget">wget</a>
-<ul>
-<li><a href="#log-to-a-server-using-post-and-then-proceed-to-download-the-desired-pages-presumably-only-accessible-to-authorized-users">log to a server using POST and then proceed to download the desired pages, presumably only accessible to authorized users</a></li>
-<li><a href="#download-all-the-files-that-are-necessary-to-properly-display-a-given-html-page">download all the files that are necessary to properly display a given HTML page</a></li>
-<li><a href="#mirror-site">mirror site</a></li>
-<li><a href="#debug-wget-with-d-and-o">debug wget with -d (and -o)</a></li>
-</ul></li>
-<li><a href="#curl">curl</a>
-<ul>
-<li><a href="#curl-auth">curl auth</a></li>
-<li><a href="#curl-post-data">curl post data</a></li>
-<li><a href="#curl-and-cookies">curl and cookies</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#linux-network-tools">Linux Network Tools</a>
+      <ul>
+        <li><a href="#wget">wget</a></li>
+        <li><a href="#curl">curl</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="linux-network-tools">Linux Network Tools</h2>
-
+      <h2 id="linux-network-tools">Linux Network Tools</h2>
 <h3 id="wget">wget</h3>
-
 <blockquote>
 <p>GNU Wget is a free utility for non-interactive download of files from
 the Web.  It supports HTTP, HTTPS, and FTP protocols, as well as
 retrieval through HTTP proxies.</p>
 </blockquote>
-
 <h4 id="log-to-a-server-using-post-and-then-proceed-to-download-the-desired-pages-presumably-only-accessible-to-authorized-users">log to a server using POST and then proceed to download the desired pages, presumably only accessible to authorized users</h4>
-
 <p>Log in to the server.  This can be done only once.</p>
-
 <pre><code>wget --save-cookies cookies.txt \
     --post-data 'user=foo&amp;password=bar' \
     http://server.com/auth.php
 </code></pre>
-
 <p>Now grab the page or pages we care about.</p>
-
 <pre><code>wget --load-cookies cookies.txt \
     -p http://server.com/interesting/article.php
 </code></pre>
-
 <p>Note: If the server is using session cookies to track user
 authentication, the above will not work because &ndash;save-cookies will
 not save them (and neither will browsers) and the cookies.txt file
 will be empty.  In that case use &ndash;keep-session-cookies along with
 &ndash;save-cookies to force saving of session cookies.</p>
-
 <h4 id="download-all-the-files-that-are-necessary-to-properly-display-a-given-html-page">download all the files that are necessary to properly display a given HTML page</h4>
-
 <pre><code>wget -E -H -k -K -p http://www.test.com/interestring.html
 </code></pre>
-
 <h4 id="mirror-site">mirror site</h4>
-
 <ul>
-<li><p>perso zip - sync_perso_zip.sh</p>
-
+<li>
+<p>perso zip - sync_perso_zip.sh</p>
 <p>#!/bin/bash</p>
-
-<p>wget &ndash;no-proxy -c -r  -np  -nH &ndash;cut-dirs=2 &ndash;reject=index* -N <br />
-    <a href="http://172.24.220.169/teleweb/perso/MOD_BEETLE_NEW/">http://172.24.220.169/teleweb/perso/MOD_BEETLE_NEW/</a> <br />
-    -P /home/opengrok/teleweb/perso/</p></li>
-
-<li><p>DocTree - sync_mtk_video.sh</p>
-
+<p>wget &ndash;no-proxy -c -r  -np  -nH &ndash;cut-dirs=2 &ndash;reject=index* -N<br>
+http://172.24.220.169/teleweb/perso/MOD_BEETLE_NEW/<br>
+-P /home/opengrok/teleweb/perso/</p>
+</li>
+<li>
+<p>DocTree - sync_mtk_video.sh</p>
 <p>#!/bin/bash</p>
-
-<p>wget &ndash;user wanming.zhang &ndash;password xxxx <br />
-    &ndash;no-proxy -c -r -np  -nH &ndash;cut-dirs=7 &ndash;reject=index* -N <br />
-    <a href="http://172.24.61.76/dx/swd/Projects/Android/7-Platform_Documents&amp;Tools/MTK/Document/MTK_Training_Video_20130226/">http://172.24.61.76/dx/swd/Projects/Android/7-Platform_Documents&amp;Tools/MTK/Document/MTK_Training_Video_20130226/</a> <br />
-    -P /data/docs</p></li>
+<p>wget &ndash;user wanming.zhang &ndash;password xxxx<br>
+&ndash;no-proxy -c -r -np  -nH &ndash;cut-dirs=7 &ndash;reject=index* -N<br>
+http://172.24.61.76/dx/swd/Projects/Android/7-Platform_Documents&amp;Tools/MTK/Document/MTK_Training_Video_20130226/<br>
+-P /data/docs</p>
+</li>
 </ul>
-
-<h4 id="debug-wget-with-d-and-o">debug wget with -d (and -o)</h4>
-
+<h4 id="debug-wget-with--d-and--o">debug wget with -d (and -o)</h4>
 <p>run wget with &ldquo;-d&rdquo; to check how to send HTTP request</p>
-
 <pre><code>$ wget -d --load-cookies cookies.txt --content-disposition http://bugzilla.tcl-ta.com/show_bug.cgi?id=214397
 </code></pre>
-
 <p>output</p>
-
 <pre><code>---request begin---
 HEAD /show_bug.cgi?id=214397 HTTP/1.0
 User-Agent: Wget/1.12 (linux-gnu)
@@ -278,46 +225,34 @@ Cookie: Bugzilla_login=2088; Bugzilla_logincookie=iehkBQOdds
 
 ---request end---
 </code></pre>
-
 <p>then, run wget with your your HTTP header.</p>
-
 <pre><code>$ wget --no-cookies --header &quot;Cookie: Bugzilla_login=2088; Bugzilla_logincookie=iehkBQOdds&quot; \
     http://bugzilla.tcl-ta.com/show_bug.cgi?id=214397
 </code></pre>
-
 <p>with <code>-o</code>, save output to a file.</p>
-
 <h3 id="curl">curl</h3>
-
 <h4 id="curl-auth">curl auth</h4>
-
 <pre><code>curl --user name:pass http://www.example.com
 curl -u name:pass http://example.com/secret-page/
 curl http://name:pass@protected.example.com
 </code></pre>
-
 <h4 id="curl-post-data">curl post data</h4>
-
 <p>for post data:</p>
-
 <pre><code>curl --request POST --data 'key1=val1&amp;key2=val2' http://example.com/resource.cgi
 </code></pre>
-
 <p>for file upload:</p>
-
 <pre><code>curl --request POST --data &quot;fileupload=@filename.txt&quot; http://example.com/upload.cgi
 </code></pre>
-
 <h4 id="curl-and-cookies">curl and cookies</h4>
-
 <ul>
-<li><p>log to bugzilla and save cookies</p>
-
-<p>curl -d &lsquo;Bugzilla_login=wmzhang&amp;Bugzilla_password=xxxxxx&amp;Bugzilla_restrictlogin=on&amp;GoAheadAndLogIn=1&amp;GoAheadAndLogIn=Log+in&rsquo; <a href="http://bugzilla.tcl-ta.com/index.cgi">http://bugzilla.tcl-ta.com/index.cgi</a> -c curl_cookies.txt</p></li>
-
-<li><p>use this cookies</p>
-
-<p>curl -b curl_cookies.txt <a href="http://bugzilla.tcl-ta.c_bug.cgi?id=407177">http://bugzilla.tcl-ta.c_bug.cgi?id=407177</a></p></li>
+<li>
+<p>log to bugzilla and save cookies</p>
+<p>curl -d &lsquo;Bugzilla_login=wmzhang&amp;Bugzilla_password=xxxxxx&amp;Bugzilla_restrictlogin=on&amp;GoAheadAndLogIn=1&amp;GoAheadAndLogIn=Log+in&rsquo; <a href="http://bugzilla.tcl-ta.com/index.cgi">http://bugzilla.tcl-ta.com/index.cgi</a> -c curl_cookies.txt</p>
+</li>
+<li>
+<p>use this cookies</p>
+<p>curl -b curl_cookies.txt <a href="http://bugzilla.tcl-ta.c_bug.cgi?id=407177">http://bugzilla.tcl-ta.c_bug.cgi?id=407177</a></p>
+</li>
 </ul>
 
     </div>
@@ -372,14 +307,14 @@ curl http://name:pass@protected.example.com
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/configuration/bash-multiprocess/">
+          <a class="prev" href="/post/configuration/hello-world/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Bash Multiprocess</span>
+            <span class="prev-text nav-default">Hello World</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/configuration/hello-world/">
-            <span class="next-text nav-default">Hello World</span>
+          <a class="next" href="/post/configuration/nginx-config-copy/">
+            <span class="next-text nav-default"></span>
             <span class="prev-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -429,7 +364,7 @@ curl http://name:pass@protected.example.com
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -450,12 +385,16 @@ curl http://name:pass@protected.example.com
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

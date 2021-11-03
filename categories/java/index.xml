@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Java on ox0spy&#39;s blog</title>
+    <title>java on ox0spy&#39;s blog</title>
     <link>https://ox0spy.github.io/categories/java/</link>
-    <description>Recent content in Java on ox0spy&#39;s blog</description>
+    <description>Recent content in java on ox0spy&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 26 Sep 2018 10:06:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://ox0spy.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 26 Sep 2018 10:06:00 +0800</lastBuildDate><atom:link href="https://ox0spy.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>liquibase with Maven support multiply deploy environments</title>
       <link>https://ox0spy.github.io/post/java/liquibase-with-maven-multi-deploy-environments/</link>
@@ -44,7 +40,7 @@
       <pubDate>Thu, 20 Sep 2018 10:06:00 +0800</pubDate>
       
       <guid>https://ox0spy.github.io/post/java/jvm/</guid>
-      <description>Java options JAVA_OPTIONS=&amp;ldquo;-server -XX:+AggressiveOpts -XX:+UseFastAccessorMethods -Xms1096m -Xmx1096m&amp;rdquo; if [[ &amp;ldquo;gcprof&amp;rdquo; == &amp;ldquo;$1&amp;rdquo; ]]; then JAVA_OPTIONS=&amp;ldquo;$JAVA_OPTIONS -Xloggc:gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps&amp;rdquo; shift fi JVM GC GC专家系列目录索引 深入理解JVM 火焰图 白话火焰图 Java火焰图 SCALE13x: Linux Profiling at Netflix Java in Flames CPU Flame Graphs</description>
+      <description>Java options JAVA_OPTIONS=&amp;quot;-server -XX:+AggressiveOpts -XX:+UseFastAccessorMethods -Xms1096m -Xmx1096m&amp;quot; if [[ &amp;ldquo;gcprof&amp;rdquo; == &amp;ldquo;$1&amp;rdquo; ]]; then JAVA_OPTIONS=&amp;quot;$JAVA_OPTIONS -Xloggc:gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps&amp;quot; shift fi JVM GC GC专家系列目录索引 深入理解JVM 火焰图 白话火焰图 Java火焰图 SCALE13x: Linux Profiling at Netflix Java in Flames CPU Flame Graphs</description>
     </item>
     
     <item>
@@ -53,7 +49,7 @@
       <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
       
       <guid>https://ox0spy.github.io/post/java/get_started_with_java_web/</guid>
-      <description>近期由于工作需要，需要学习Java Web开发，虽然以前也接触过Java, 不过也就仅限于写个&amp;rdquo;Hello World&amp;rdquo;. 为了尽快掌握Java We</description>
+      <description>近期由于工作需要，需要学习Java Web开发，虽然以前也接触过Java, 不过也就仅限于写个&amp;quot;Hello World&amp;quot;. 为了尽快掌握Java Web</description>
     </item>
     
     <item>

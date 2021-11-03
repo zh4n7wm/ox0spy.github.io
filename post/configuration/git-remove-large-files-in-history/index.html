@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/configuration/git-remove-large-files-in-history/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="git从历史中删除大文件" />
 <meta property="og:description" content="如果有人在git库中提交了超大文件导致所有人下载代码都比较耗时怎么办？ 删除git库中的大文件 我们知道git会保留历史记录，即使删除这些大文件" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/configuration/git-remove-large-files-in-history/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:21:57&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:21:57&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/configuration/git-remove-large-files-in-history/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:21:57+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:21:57+08:00" />
 
 <meta itemprop="name" content="git从历史中删除大文件">
-<meta itemprop="description" content="如果有人在git库中提交了超大文件导致所有人下载代码都比较耗时怎么办？ 删除git库中的大文件 我们知道git会保留历史记录，即使删除这些大文件">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:21:57&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:21:57&#43;08:00" />
-<meta itemprop="wordCount" content="191">
-
-
-
-<meta itemprop="keywords" content="git," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="git从历史中删除大文件"/>
+<meta itemprop="description" content="如果有人在git库中提交了超大文件导致所有人下载代码都比较耗时怎么办？ 删除git库中的大文件 我们知道git会保留历史记录，即使删除这些大文件"><meta itemprop="datePublished" content="2017-12-15T19:21:57+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:57+08:00" />
+<meta itemprop="wordCount" content="205">
+<meta itemprop="keywords" content="git," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="git从历史中删除大文件"/>
 <meta name="twitter:description" content="如果有人在git库中提交了超大文件导致所有人下载代码都比较耗时怎么办？ 删除git库中的大文件 我们知道git会保留历史记录，即使删除这些大文件"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/configuration/"> configuration </a>
             
           </div>
-        <span class="more-meta"> 约 191 字 </span>
+        <span class="more-meta"> 约 205 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -165,34 +145,23 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#删除git库中的大文件">删除git库中的大文件</a></li>
-<li><a href="#找出git库中体积最大的文件">找出git库中体积最大的文件</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#删除git库中的大文件">删除git库中的大文件</a></li>
+    <li><a href="#找出git库中体积最大的文件">找出git库中体积最大的文件</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>如果有人在git库中提交了超大文件导致所有人下载代码都比较耗时怎么办？</p>
-
+      <p>如果有人在git库中提交了超大文件导致所有人下载代码都比较耗时怎么办？</p>
 <h2 id="删除git库中的大文件">删除git库中的大文件</h2>
-
 <p>我们知道git会保留历史记录，即使删除这些大文件并提交也无法减少git库的体积。</p>
-
 <p>可以用 <code>git filter-branch</code> 解决，比如：删除误提交的 <code>src/node_modules</code> 目录。</p>
-
 <pre><code>$ git filter-branch --tree-filter 'rm -rf src/node_modules' --prune-empty
 </code></pre>
-
 <h2 id="找出git库中体积最大的文件">找出git库中体积最大的文件</h2>
-
 <pre><code>$ git rev-list master | while read rev; do git ls-tree -lr $rev | cut -c54- | grep -v '^ '; done | sort -u | perl -e '
     while (&lt;&gt;) {
         chomp;
@@ -202,10 +171,11 @@
     print &quot;$sums{$_} $_\n&quot; for (keys %sums);
     ' | sort -rn
 </code></pre>
-
-<p>注：
-1. 这段代码来自 - <a href="http://blog.jessitron.com/2013/08/finding-and-removing-large-files-in-git.html">http://blog.jessitron.com/2013/08/finding-and-removing-large-files-in-git.html</a>
-2. 还有个类似的工具有兴趣可以尝试 - <a href="https://rtyley.github.io/bfg-repo-cleaner/">BFG Repo-Cleaner</a></p>
+<p>注：</p>
+<ol>
+<li>这段代码来自 - <a href="http://blog.jessitron.com/2013/08/finding-and-removing-large-files-in-git.html">http://blog.jessitron.com/2013/08/finding-and-removing-large-files-in-git.html</a></li>
+<li>还有个类似的工具有兴趣可以尝试 - <a href="https://rtyley.github.io/bfg-repo-cleaner/">BFG Repo-Cleaner</a></li>
+</ol>
 
     </div>
 
@@ -314,7 +284,7 @@
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -335,12 +305,16 @@
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

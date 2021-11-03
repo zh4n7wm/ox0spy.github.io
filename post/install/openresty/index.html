@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/install/openresty/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="openresty" />
 <meta property="og:description" content="什么是OpenResty OpenResty（也称为 ngx_openresty）是一个全功能的 Web 应用服务器，它打包了标准 的Nginx 核心，很多" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/install/openresty/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:21:58&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:21:58&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/install/openresty/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:21:58+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:21:58+08:00" />
 
 <meta itemprop="name" content="openresty">
-<meta itemprop="description" content="什么是OpenResty OpenResty（也称为 ngx_openresty）是一个全功能的 Web 应用服务器，它打包了标准 的Nginx 核心，很多">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:21:58&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:21:58&#43;08:00" />
-<meta itemprop="wordCount" content="1012">
-
-
-
-<meta itemprop="keywords" content="nginx, openresty," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="openresty"/>
+<meta itemprop="description" content="什么是OpenResty OpenResty（也称为 ngx_openresty）是一个全功能的 Web 应用服务器，它打包了标准 的Nginx 核心，很多"><meta itemprop="datePublished" content="2017-12-15T19:21:58+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:58+08:00" />
+<meta itemprop="wordCount" content="1042">
+<meta itemprop="keywords" content="nginx, openresty," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="openresty"/>
 <meta name="twitter:description" content="什么是OpenResty OpenResty（也称为 ngx_openresty）是一个全功能的 Web 应用服务器，它打包了标准 的Nginx 核心，很多"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/install/"> install </a>
             
           </div>
-        <span class="more-meta"> 约 1012 字 </span>
+        <span class="more-meta"> 约 1042 字 </span>
         <span class="more-meta"> 预计阅读 3 分钟 </span>
       </div>
     </header>
@@ -165,200 +145,190 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#什么是openresty">什么是OpenResty</a></li>
-<li><a href="#下载及安装">下载及安装</a></li>
-<li><a href="#添加开机启动脚本">添加开机启动脚本</a></li>
-<li><a href="#使用logrotate切割日志">使用logrotate切割日志</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#什么是openresty">什么是OpenResty</a></li>
+    <li><a href="#下载及安装">下载及安装</a></li>
+    <li><a href="#添加开机启动脚本">添加开机启动脚本</a></li>
+    <li><a href="#使用logrotate切割日志">使用logrotate切割日志</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="什么是openresty">什么是OpenResty</h2>
-
+      <h2 id="什么是openresty">什么是OpenResty</h2>
 <p>OpenResty（也称为 ngx_openresty）是一个全功能的 Web 应用服务器，它打包了标准
 的Nginx 核心，很多的常用的第三方模块，以及它们的大多数依赖项。对于经常需要使用
 nginx第三方模块的人来说，是一个非常不错的选择.</p>
-
 <h2 id="下载及安装">下载及安装</h2>
-
 <p>关于如何下载及安装OpenResty, <a href="http://openresty.org/cn/">官网</a>已经有很详细的介
 绍，不再赘述。</p>
-
 <h2 id="添加开机启动脚本">添加开机启动脚本</h2>
-
 <ol>
-<li><p>创建如下文件:</p>
+<li>
+<p>创建如下文件:</p>
+<pre><code> :::bash
+ $ cat /etc/init.d/nginx
 
-<pre><code>:::bash
-$ cat /etc/init.d/nginx
+ #!/bin/bash
+ #
+ # chkconfig: 2345 55 25
+ # Description: Nginx init.d script, put in /etc/init.d, chmod +x /etc/init.d/nginx
+ #              For Debian, run: update-rc.d -f nginx defaults
+ #              For CentOS, run: chkconfig --add nginx
+ #
+ ### BEGIN INIT INFO
+ # Provides:          nginx
+ # Required-Start:    $all
+ # Required-Stop:     $all
+ # Default-Start:     2 3 4 5
+ # Default-Stop:      0 1 6
+ # Short-Description: nginx init.d script
+ # Description:       OpenResty (aka. ngx_openresty) is a full-fledged web application server by bundling the standard Nginx core,
+ #                    lots of 3rd-party Nginx modules, as well as most of their external dependencies.
+ ### END INIT INFO
+ #
 
-#!/bin/bash
-#
-# chkconfig: 2345 55 25
-# Description: Nginx init.d script, put in /etc/init.d, chmod +x /etc/init.d/nginx
-#              For Debian, run: update-rc.d -f nginx defaults
-#              For CentOS, run: chkconfig --add nginx
-#
-### BEGIN INIT INFO
-# Provides:          nginx
-# Required-Start:    $all
-# Required-Stop:     $all
-# Default-Start:     2 3 4 5
-# Default-Stop:      0 1 6
-# Short-Description: nginx init.d script
-# Description:       OpenResty (aka. ngx_openresty) is a full-fledged web application server by bundling the standard Nginx core,
-#                    lots of 3rd-party Nginx modules, as well as most of their external dependencies.
-### END INIT INFO
-#
+ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+ DESC=&quot;Nginx Daemon&quot;
+ NAME=nginx
+ PREFIX=/etc/openresty/nginx
+ DAEMON=$PREFIX/sbin/$NAME
+ CONF=$PREFIX/conf/$NAME.conf
+ PID=$PREFIX/logs/$NAME.pid
+ SCRIPT=/etc/init.d/$NAME
 
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-DESC=&quot;Nginx Daemon&quot;
-NAME=nginx
-PREFIX=/etc/openresty/nginx
-DAEMON=$PREFIX/sbin/$NAME
-CONF=$PREFIX/conf/$NAME.conf
-PID=$PREFIX/logs/$NAME.pid
-SCRIPT=/etc/init.d/$NAME
+ if [ ! -x &quot;$DAEMON&quot; ] || [ ! -f &quot;$CONF&quot; ]; then
+     echo -e &quot;\033[33m $DAEMON has no permission to run. \033[0m&quot;
+     echo -e &quot;\033[33m Or $CONF doesn't exist. \033[0m&quot;
+     sleep 1
+     exit 1
+ fi
 
-if [ ! -x &quot;$DAEMON&quot; ] || [ ! -f &quot;$CONF&quot; ]; then
-    echo -e &quot;\033[33m $DAEMON has no permission to run. \033[0m&quot;
-    echo -e &quot;\033[33m Or $CONF doesn't exist. \033[0m&quot;
-    sleep 1
-    exit 1
-fi
+ do_start() {
+     if [ -f $PID ]; then
+         echo -e &quot;\033[33m $PID already exists. \033[0m&quot;
+         echo -e &quot;\033[33m $DESC is already running or crashed. \033[0m&quot;
+         echo -e &quot;\033[32m $DESC Reopening $CONF ... \033[0m&quot;
+         $DAEMON -s reopen -c $CONF
+         sleep 1
+         echo -e &quot;\033[36m $DESC reopened. \033[0m&quot;
+     else
+         echo -e &quot;\033[32m $DESC Starting $CONF ... \033[0m&quot;
+         $DAEMON -c $CONF
+         sleep 1
+         echo -e &quot;\033[36m $DESC started. \033[0m&quot;
+     fi
+ }
 
-do_start() {
-    if [ -f $PID ]; then
-        echo -e &quot;\033[33m $PID already exists. \033[0m&quot;
-        echo -e &quot;\033[33m $DESC is already running or crashed. \033[0m&quot;
-        echo -e &quot;\033[32m $DESC Reopening $CONF ... \033[0m&quot;
-        $DAEMON -s reopen -c $CONF
-        sleep 1
-        echo -e &quot;\033[36m $DESC reopened. \033[0m&quot;
-    else
-        echo -e &quot;\033[32m $DESC Starting $CONF ... \033[0m&quot;
-        $DAEMON -c $CONF
-        sleep 1
-        echo -e &quot;\033[36m $DESC started. \033[0m&quot;
-    fi
-}
+ do_stop() {
+     if [ ! -f $PID ]; then
+         echo -e &quot;\033[33m $PID doesn't exist. \033[0m&quot;
+         echo -e &quot;\033[33m $DESC isn't running. \033[0m&quot;
+     else
+         echo -e &quot;\033[32m $DESC Stopping $CONF ... \033[0m&quot;
+         $DAEMON -s stop -c $CONF
+         sleep 1
+         echo -e &quot;\033[36m $DESC stopped. \033[0m&quot;
+     fi
+ }
 
-do_stop() {
-    if [ ! -f $PID ]; then
-        echo -e &quot;\033[33m $PID doesn't exist. \033[0m&quot;
-        echo -e &quot;\033[33m $DESC isn't running. \033[0m&quot;
-    else
-        echo -e &quot;\033[32m $DESC Stopping $CONF ... \033[0m&quot;
-        $DAEMON -s stop -c $CONF
-        sleep 1
-        echo -e &quot;\033[36m $DESC stopped. \033[0m&quot;
-    fi
-}
+ do_reload() {
+     if [ ! -f $PID ]; then
+         echo -e &quot;\033[33m $PID doesn't exist. \033[0m&quot;
+         echo -e &quot;\033[33m $DESC isn't running. \033[0m&quot;
+         echo -e &quot;\033[32m $DESC Starting $CONF ... \033[0m&quot;
+         $DAEMON -c $CONF
+         sleep 1
+         echo -e &quot;\033[36m $DESC started. \033[0m&quot;
+     else
+         echo -e &quot;\033[32m $DESC Reloading $CONF ... \033[0m&quot;
+         $DAEMON -s reload -c $CONF
+         sleep 1
+         echo -e &quot;\033[36m $DESC reloaded. \033[0m&quot;
+     fi
+ }
 
-do_reload() {
-    if [ ! -f $PID ]; then
-        echo -e &quot;\033[33m $PID doesn't exist. \033[0m&quot;
-        echo -e &quot;\033[33m $DESC isn't running. \033[0m&quot;
-        echo -e &quot;\033[32m $DESC Starting $CONF ... \033[0m&quot;
-        $DAEMON -c $CONF
-        sleep 1
-        echo -e &quot;\033[36m $DESC started. \033[0m&quot;
-    else
-        echo -e &quot;\033[32m $DESC Reloading $CONF ... \033[0m&quot;
-        $DAEMON -s reload -c $CONF
-        sleep 1
-        echo -e &quot;\033[36m $DESC reloaded. \033[0m&quot;
-    fi
-}
+ do_quit() {
+     if [ ! -f $PID ]; then
+         echo -e &quot;\033[33m $PID doesn't exist. \033[0m&quot;
+         echo -e &quot;\033[33m $DESC isn't running. \033[0m&quot;
+     else
+         echo -e &quot;\033[32m $DESC Quitting $CONF ... \033[0m&quot;
+         $DAEMON -s quit -c $CONF
+         sleep 1
+         echo -e &quot;\033[36m $DESC quitted. \033[0m&quot;
+     fi
+ }
 
-do_quit() {
-    if [ ! -f $PID ]; then
-        echo -e &quot;\033[33m $PID doesn't exist. \033[0m&quot;
-        echo -e &quot;\033[33m $DESC isn't running. \033[0m&quot;
-    else
-        echo -e &quot;\033[32m $DESC Quitting $CONF ... \033[0m&quot;
-        $DAEMON -s quit -c $CONF
-        sleep 1
-        echo -e &quot;\033[36m $DESC quitted. \033[0m&quot;
-    fi
-}
+ do_test() {
+     echo -e &quot;\033[32m $DESC Testing $CONF ... \033[0m&quot;
+     $DAEMON -t -c $CONF
+ }
 
-do_test() {
-    echo -e &quot;\033[32m $DESC Testing $CONF ... \033[0m&quot;
-    $DAEMON -t -c $CONF
-}
+ do_info() {
+     $DAEMON -V
+ }
 
-do_info() {
-    $DAEMON -V
-}
+ case &quot;$1&quot; in
+ start)
+ do_start
+ ;;
+ stop)
+ do_stop
+ ;;
+ reload)
+ do_reload
+ ;;
+ restart)
+ do_stop
+ do_start
+ ;;
+ quit)
+ do_quit
+ ;;
+ test)
+ do_test
+ ;;
+ info)
+ do_info
+ ;;
+ *)
+ echo &quot;Usage: $SCRIPT {start|stop|reload|restart|quit|test|info}&quot;
+ exit 2
+ ;;
+ esac
 
-case &quot;$1&quot; in
-start)
-do_start
-;;
-stop)
-do_stop
-;;
-reload)
-do_reload
-;;
-restart)
-do_stop
-do_start
-;;
-quit)
-do_quit
-;;
-test)
-do_test
-;;
-info)
-do_info
-;;
-*)
-echo &quot;Usage: $SCRIPT {start|stop|reload|restart|quit|test|info}&quot;
-exit 2
-;;
-esac
-
-exit 0
-</code></pre></li>
-
-<li><p>给文件设置执行权限<code>chmod +x /etc/init.d/nginx</code></p></li>
-
-<li><p>添加到开机启动</p>
-
+ exit 0
+</code></pre>
+</li>
+<li>
+<p>给文件设置执行权限<code>chmod +x /etc/init.d/nginx</code></p>
+</li>
+<li>
+<p>添加到开机启动</p>
 <ul>
-<li><p>CentOS系统</p>
-
-<pre><code>:::bash
-chkconfig --list nginx   # 列出系统nginx服务启动情况
-chkconfig --add nginx    # 添加nginx服务
-chkconfig --level 35 nginx on # 设定nginx在等级3和5为开机运行服务，--level 35表示操作只在等级3和5执行，on表示启动，off表示关闭
-</code></pre></li>
-
-<li><p>Debian系统</p>
-
-<pre><code>:::bash
-sudo update-rc.d -f nginx remove  # 删除nginx服务
-sudo update-rc.d apache2 defaults # 添加nginx服务
-</code></pre></li>
-</ul></li>
+<li>
+<p>CentOS系统</p>
+<pre><code>  :::bash
+  chkconfig --list nginx   # 列出系统nginx服务启动情况
+  chkconfig --add nginx    # 添加nginx服务
+  chkconfig --level 35 nginx on # 设定nginx在等级3和5为开机运行服务，--level 35表示操作只在等级3和5执行，on表示启动，off表示关闭
+</code></pre>
+</li>
+<li>
+<p>Debian系统</p>
+<pre><code>  :::bash
+  sudo update-rc.d -f nginx remove  # 删除nginx服务
+  sudo update-rc.d apache2 defaults # 添加nginx服务
+</code></pre>
+</li>
+</ul>
+</li>
 </ol>
-
 <h2 id="使用logrotate切割日志">使用logrotate切割日志</h2>
-
 <p>创建如下文件</p>
-
 <pre><code>:::bash
 $ cat /etc/logrotate.d/nginx
 /etc/openresty/nginx/logs/*.log {
@@ -377,9 +347,7 @@ $ cat /etc/logrotate.d/nginx
     endscript
 }
 </code></pre>
-
 <p>注释：</p>
-
 <ul>
 <li><code>/etc/openresty/nginx/logs/*.log</code> 为OpenResty的log目录</li>
 <li>daily：每天轮询</li>
@@ -392,12 +360,9 @@ $ cat /etc/logrotate.d/nginx
 <li>create: mode owner group 转储文件，使用指定的文件模式创建新的日志文件</li>
 <li>/etc/openresty/nginx/logs/nginx.pid：nginx主进程pid</li>
 </ul>
-
 <p>测试:</p>
-
 <pre><code>:::bash
-$ logroate -f /etc/logrotate.d/nginx
-</code></pre>
+$ logroate -f /etc/logrotate.d/nginx</code></pre>
 
     </div>
 
@@ -508,7 +473,7 @@ $ logroate -f /etc/logrotate.d/nginx
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -529,12 +494,16 @@ $ logroate -f /etc/logrotate.d/nginx
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

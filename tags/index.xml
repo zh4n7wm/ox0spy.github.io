@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on ox0spy&#39;s blog</title>
@@ -6,10 +6,447 @@
     <description>Recent content in Tags on ox0spy&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 15 Dec 2017 19:22:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 26 Feb 2019 09:22:01 +0800</lastBuildDate><atom:link href="https://ox0spy.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title> linux</title>
+      <link>https://ox0spy.github.io/tags/linux/</link>
+      <pubDate>Tue, 26 Feb 2019 09:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
     
-	<atom:link href="https://ox0spy.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tips</title>
+      <link>https://ox0spy.github.io/tags/tips/</link>
+      <pubDate>Tue, 26 Feb 2019 09:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/tips/</guid>
+      <description></description>
+    </item>
     
+    <item>
+      <title>css</title>
+      <link>https://ox0spy.github.io/tags/css/</link>
+      <pubDate>Fri, 01 Feb 2019 16:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>android</title>
+      <link>https://ox0spy.github.io/tags/android/</link>
+      <pubDate>Tue, 29 Jan 2019 09:02:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sdkmanager</title>
+      <link>https://ox0spy.github.io/tags/sdkmanager/</link>
+      <pubDate>Tue, 29 Jan 2019 09:02:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/sdkmanager/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> ssh</title>
+      <link>https://ox0spy.github.io/tags/ssh/</link>
+      <pubDate>Thu, 25 Oct 2018 18:01:58 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> tunnel</title>
+      <link>https://ox0spy.github.io/tags/tunnel/</link>
+      <pubDate>Thu, 25 Oct 2018 18:01:58 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/tunnel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jenkins</title>
+      <link>https://ox0spy.github.io/tags/jenkins/</link>
+      <pubDate>Sat, 22 Sep 2018 10:06:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/jenkins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> bigdata</title>
+      <link>https://ox0spy.github.io/tags/bigdata/</link>
+      <pubDate>Thu, 17 May 2018 09:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/bigdata/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> emr</title>
+      <link>https://ox0spy.github.io/tags/emr/</link>
+      <pubDate>Thu, 17 May 2018 09:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/emr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aws</title>
+      <link>https://ox0spy.github.io/tags/aws/</link>
+      <pubDate>Thu, 17 May 2018 09:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spark</title>
+      <link>https://ox0spy.github.io/tags/spark/</link>
+      <pubDate>Thu, 17 May 2018 09:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/spark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mac</title>
+      <link>https://ox0spy.github.io/tags/mac/</link>
+      <pubDate>Tue, 16 Jan 2018 15:34:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/mac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>s3</title>
+      <link>https://ox0spy.github.io/tags/s3/</link>
+      <pubDate>Tue, 16 Jan 2018 15:34:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/s3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blog</title>
+      <link>https://ox0spy.github.io/tags/blog/</link>
+      <pubDate>Fri, 15 Dec 2017 21:08:54 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://ox0spy.github.io/tags/hugo/</link>
+      <pubDate>Fri, 15 Dec 2017 21:08:54 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> debian</title>
+      <link>https://ox0spy.github.io/tags/debian/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/debian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> elk</title>
+      <link>https://ox0spy.github.io/tags/elk/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/elk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> hive</title>
+      <link>https://ox0spy.github.io/tags/hive/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/hive/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> logstash</title>
+      <link>https://ox0spy.github.io/tags/logstash/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/logstash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> management</title>
+      <link>https://ox0spy.github.io/tags/management/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> monitor</title>
+      <link>https://ox0spy.github.io/tags/monitor/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/monitor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> nginx</title>
+      <link>https://ox0spy.github.io/tags/nginx/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> nis</title>
+      <link>https://ox0spy.github.io/tags/nis/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/nis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> pig</title>
+      <link>https://ox0spy.github.io/tags/pig/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/pig/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> proxy</title>
+      <link>https://ox0spy.github.io/tags/proxy/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/proxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> python</title>
+      <link>https://ox0spy.github.io/tags/python/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> restore</title>
+      <link>https://ox0spy.github.io/tags/restore/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/restore/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> reverse</title>
+      <link>https://ox0spy.github.io/tags/reverse/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/reverse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> snapshot</title>
+      <link>https://ox0spy.github.io/tags/snapshot/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/snapshot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> ssmtp</title>
+      <link>https://ox0spy.github.io/tags/ssmtp/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/ssmtp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> transfer</title>
+      <link>https://ox0spy.github.io/tags/transfer/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/transfer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dashboard</title>
+      <link>https://ox0spy.github.io/tags/dashboard/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/dashboard/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elasticsearch</title>
+      <link>https://ox0spy.github.io/tags/elasticsearch/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/elasticsearch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hadoop</title>
+      <link>https://ox0spy.github.io/tags/hadoop/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/hadoop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pandas</title>
+      <link>https://ox0spy.github.io/tags/pandas/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/pandas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tensorflow</title>
+      <link>https://ox0spy.github.io/tags/tensorflow/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/tensorflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link>https://ox0spy.github.io/tags/ubuntu/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> adb</title>
+      <link>https://ox0spy.github.io/tags/adb/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/adb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> brew</title>
+      <link>https://ox0spy.github.io/tags/brew/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/brew/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> github</title>
+      <link>https://ox0spy.github.io/tags/github/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> grants</title>
+      <link>https://ox0spy.github.io/tags/grants/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/grants/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> ios</title>
+      <link>https://ox0spy.github.io/tags/ios/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/ios/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> shell</title>
+      <link>https://ox0spy.github.io/tags/shell/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> sip</title>
+      <link>https://ox0spy.github.io/tags/sip/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/sip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> spring</title>
+      <link>https://ox0spy.github.io/tags/spring/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/spring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> user</title>
+      <link>https://ox0spy.github.io/tags/user/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/user/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> vcard</title>
+      <link>https://ox0spy.github.io/tags/vcard/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/vcard/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> 招商银行</title>
+      <link>https://ox0spy.github.io/tags/%E6%8B%9B%E5%95%86%E9%93%B6%E8%A1%8C/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/%E6%8B%9B%E5%95%86%E9%93%B6%E8%A1%8C/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>404</title>
@@ -21,232 +458,7 @@
     </item>
     
     <item>
-      <title>Ab</title>
-      <link>https://ox0spy.github.io/tags/ab/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/ab/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://ox0spy.github.io/tags/about/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/about/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Adb</title>
-      <link>https://ox0spy.github.io/tags/adb/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/adb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Android</title>
-      <link>https://ox0spy.github.io/tags/android/</link>
-      <pubDate>Tue, 29 Jan 2019 09:02:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/android/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ansible</title>
-      <link>https://ox0spy.github.io/tags/ansible/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/ansible/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Archlinux</title>
-      <link>https://ox0spy.github.io/tags/archlinux/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/archlinux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Asm</title>
-      <link>https://ox0spy.github.io/tags/asm/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/asm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Assh</title>
-      <link>https://ox0spy.github.io/tags/assh/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/assh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Aws</title>
-      <link>https://ox0spy.github.io/tags/aws/</link>
-      <pubDate>Thu, 17 May 2018 09:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/aws/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Backup</title>
-      <link>https://ox0spy.github.io/tags/backup/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/backup/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bash</title>
-      <link>https://ox0spy.github.io/tags/bash/</link>
-      <pubDate>Wed, 14 Aug 2013 00:00:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/bash/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Beego</title>
-      <link>https://ox0spy.github.io/tags/beego/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/beego/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bigdata</title>
-      <link>https://ox0spy.github.io/tags/bigdata/</link>
-      <pubDate>Thu, 17 May 2018 09:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/bigdata/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Blog</title>
-      <link>https://ox0spy.github.io/tags/blog/</link>
-      <pubDate>Fri, 15 Dec 2017 21:08:54 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Brew</title>
-      <link>https://ox0spy.github.io/tags/brew/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/brew/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Centos</title>
-      <link>https://ox0spy.github.io/tags/centos/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/centos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Chef</title>
-      <link>https://ox0spy.github.io/tags/chef/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/chef/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ci</title>
-      <link>https://ox0spy.github.io/tags/ci/</link>
-      <pubDate>Wed, 14 Aug 2013 00:00:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/ci/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cluster</title>
-      <link>https://ox0spy.github.io/tags/cluster/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/cluster/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Command</title>
-      <link>https://ox0spy.github.io/tags/command/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/command/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Css</title>
-      <link>https://ox0spy.github.io/tags/css/</link>
-      <pubDate>Fri, 01 Feb 2019 16:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/css/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dashboard</title>
-      <link>https://ox0spy.github.io/tags/dashboard/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/dashboard/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Debian</title>
-      <link>https://ox0spy.github.io/tags/debian/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/debian/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Developer</title>
-      <link>https://ox0spy.github.io/tags/developer/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/developer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Django</title>
-      <link>https://ox0spy.github.io/tags/django/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/django/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Docker</title>
+      <title>docker</title>
       <link>https://ox0spy.github.io/tags/docker/</link>
       <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
       
@@ -255,43 +467,106 @@
     </item>
     
     <item>
-      <title>Ec2</title>
-      <link>https://ox0spy.github.io/tags/ec2/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      <title>gradle</title>
+      <link>https://ox0spy.github.io/tags/gradle/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
       
-      <guid>https://ox0spy.github.io/tags/ec2/</guid>
+      <guid>https://ox0spy.github.io/tags/gradle/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Elasticsearch</title>
-      <link>https://ox0spy.github.io/tags/elasticsearch/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      <title>java</title>
+      <link>https://ox0spy.github.io/tags/java/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
       
-      <guid>https://ox0spy.github.io/tags/elasticsearch/</guid>
+      <guid>https://ox0spy.github.io/tags/java/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Elk</title>
-      <link>https://ox0spy.github.io/tags/elk/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      <title>jetty</title>
+      <link>https://ox0spy.github.io/tags/jetty/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
       
-      <guid>https://ox0spy.github.io/tags/elk/</guid>
+      <guid>https://ox0spy.github.io/tags/jetty/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Emr</title>
-      <link>https://ox0spy.github.io/tags/emr/</link>
-      <pubDate>Thu, 17 May 2018 09:22:01 +0800</pubDate>
+      <title>life</title>
+      <link>https://ox0spy.github.io/tags/life/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
       
-      <guid>https://ox0spy.github.io/tags/emr/</guid>
+      <guid>https://ox0spy.github.io/tags/life/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Eventlet</title>
+      <title>maven</title>
+      <link>https://ox0spy.github.io/tags/maven/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/maven/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mysql</title>
+      <link>https://ox0spy.github.io/tags/mysql/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>node.js</title>
+      <link>https://ox0spy.github.io/tags/node.js/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/node.js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pelican</title>
+      <link>https://ox0spy.github.io/tags/pelican/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/pelican/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tomcat</title>
+      <link>https://ox0spy.github.io/tags/tomcat/</link>
+      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/tomcat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> beego</title>
+      <link>https://ox0spy.github.io/tags/beego/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/beego/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> django</title>
+      <link>https://ox0spy.github.io/tags/django/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> eventlet</title>
       <link>https://ox0spy.github.io/tags/eventlet/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
       
@@ -300,43 +575,7 @@
     </item>
     
     <item>
-      <title>Flask</title>
-      <link>https://ox0spy.github.io/tags/flask/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/flask/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Free</title>
-      <link>https://ox0spy.github.io/tags/free/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/free/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Frontend</title>
-      <link>https://ox0spy.github.io/tags/frontend/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/frontend/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gerrit</title>
-      <link>https://ox0spy.github.io/tags/gerrit/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/gerrit/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gevent</title>
+      <title> gevent</title>
       <link>https://ox0spy.github.io/tags/gevent/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
       
@@ -345,7 +584,313 @@
     </item>
     
     <item>
-      <title>Gfw</title>
+      <title> ide</title>
+      <link>https://ox0spy.github.io/tags/ide/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/ide/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> logging</title>
+      <link>https://ox0spy.github.io/tags/logging/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/logging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> oom</title>
+      <link>https://ox0spy.github.io/tags/oom/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/oom/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> redis</title>
+      <link>https://ox0spy.github.io/tags/redis/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/redis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> scrapy</title>
+      <link>https://ox0spy.github.io/tags/scrapy/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/scrapy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> scrapyd-client</title>
+      <link>https://ox0spy.github.io/tags/scrapyd-client/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/scrapyd-client/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> sort</title>
+      <link>https://ox0spy.github.io/tags/sort/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/sort/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> sublime</title>
+      <link>https://ox0spy.github.io/tags/sublime/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/sublime/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> tornado</title>
+      <link>https://ox0spy.github.io/tags/tornado/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/tornado/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> workbench</title>
+      <link>https://ox0spy.github.io/tags/workbench/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/workbench/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> 入门</title>
+      <link>https://ox0spy.github.io/tags/%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/%E5%85%A5%E9%97%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ab</title>
+      <link>https://ox0spy.github.io/tags/ab/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/ab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cluster</title>
+      <link>https://ox0spy.github.io/tags/cluster/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/cluster/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>flask</title>
+      <link>https://ox0spy.github.io/tags/flask/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/flask/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go</title>
+      <link>https://ox0spy.github.io/tags/go/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gunicorn</title>
+      <link>https://ox0spy.github.io/tags/gunicorn/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/gunicorn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>install</title>
+      <link>https://ox0spy.github.io/tags/install/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/install/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scrapyd</title>
+      <link>https://ox0spy.github.io/tags/scrapyd/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/scrapyd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> archlinux</title>
+      <link>https://ox0spy.github.io/tags/archlinux/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/archlinux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> chef</title>
+      <link>https://ox0spy.github.io/tags/chef/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/chef/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> https</title>
+      <link>https://ox0spy.github.io/tags/https/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/https/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> mirrors</title>
+      <link>https://ox0spy.github.io/tags/mirrors/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/mirrors/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> note</title>
+      <link>https://ox0spy.github.io/tags/note/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/note/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> openresty</title>
+      <link>https://ox0spy.github.io/tags/openresty/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/openresty/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> pip</title>
+      <link>https://ox0spy.github.io/tags/pip/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/pip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> pypi</title>
+      <link>https://ox0spy.github.io/tags/pypi/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/pypi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> ssl</title>
+      <link>https://ox0spy.github.io/tags/ssl/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/ssl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> supervisor</title>
+      <link>https://ox0spy.github.io/tags/supervisor/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/supervisor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> vim</title>
+      <link>https://ox0spy.github.io/tags/vim/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> wamp</title>
+      <link>https://ox0spy.github.io/tags/wamp/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/wamp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>asm</title>
+      <link>https://ox0spy.github.io/tags/asm/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/asm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>centos</title>
+      <link>https://ox0spy.github.io/tags/centos/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/centos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>developer</title>
+      <link>https://ox0spy.github.io/tags/developer/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/developer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gerrit</title>
+      <link>https://ox0spy.github.io/tags/gerrit/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/gerrit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gfw</title>
       <link>https://ox0spy.github.io/tags/gfw/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
       
@@ -363,151 +908,7 @@
     </item>
     
     <item>
-      <title>Github</title>
-      <link>https://ox0spy.github.io/tags/github/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gitlab</title>
-      <link>https://ox0spy.github.io/tags/gitlab/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/gitlab/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Go</title>
-      <link>https://ox0spy.github.io/tags/go/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gradle</title>
-      <link>https://ox0spy.github.io/tags/gradle/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/gradle/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Grants</title>
-      <link>https://ox0spy.github.io/tags/grants/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/grants/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gunicorn</title>
-      <link>https://ox0spy.github.io/tags/gunicorn/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/gunicorn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hadoop</title>
-      <link>https://ox0spy.github.io/tags/hadoop/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/hadoop/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Haproxy</title>
-      <link>https://ox0spy.github.io/tags/haproxy/</link>
-      <pubDate>Tue, 01 Jul 2014 00:00:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/haproxy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hive</title>
-      <link>https://ox0spy.github.io/tags/hive/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/hive/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Htop</title>
-      <link>https://ox0spy.github.io/tags/htop/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/htop/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Http</title>
-      <link>https://ox0spy.github.io/tags/http/</link>
-      <pubDate>Tue, 06 Aug 2013 00:00:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/http/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Https</title>
-      <link>https://ox0spy.github.io/tags/https/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/https/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>https://ox0spy.github.io/tags/hugo/</link>
-      <pubDate>Fri, 15 Dec 2017 21:08:54 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ide</title>
-      <link>https://ox0spy.github.io/tags/ide/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/ide/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Install</title>
-      <link>https://ox0spy.github.io/tags/install/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/install/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ios</title>
-      <link>https://ox0spy.github.io/tags/ios/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/ios/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Iptables</title>
+      <title>iptables</title>
       <link>https://ox0spy.github.io/tags/iptables/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
       
@@ -516,196 +917,7 @@
     </item>
     
     <item>
-      <title>Java</title>
-      <link>https://ox0spy.github.io/tags/java/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jenkins</title>
-      <link>https://ox0spy.github.io/tags/jenkins/</link>
-      <pubDate>Sat, 22 Sep 2018 10:06:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/jenkins/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jetty</title>
-      <link>https://ox0spy.github.io/tags/jetty/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/jetty/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Keepalived</title>
-      <link>https://ox0spy.github.io/tags/keepalived/</link>
-      <pubDate>Tue, 01 Jul 2014 00:00:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/keepalived/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Life</title>
-      <link>https://ox0spy.github.io/tags/life/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/life/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://ox0spy.github.io/tags/linux/</link>
-      <pubDate>Tue, 26 Feb 2019 09:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Logging</title>
-      <link>https://ox0spy.github.io/tags/logging/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/logging/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Logstash</title>
-      <link>https://ox0spy.github.io/tags/logstash/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/logstash/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lvs</title>
-      <link>https://ox0spy.github.io/tags/lvs/</link>
-      <pubDate>Thu, 26 Jun 2014 00:00:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/lvs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mac</title>
-      <link>https://ox0spy.github.io/tags/mac/</link>
-      <pubDate>Tue, 16 Jan 2018 15:34:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/mac/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Management</title>
-      <link>https://ox0spy.github.io/tags/management/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/management/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Maven</title>
-      <link>https://ox0spy.github.io/tags/maven/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/maven/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mirrors</title>
-      <link>https://ox0spy.github.io/tags/mirrors/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/mirrors/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Monitor</title>
-      <link>https://ox0spy.github.io/tags/monitor/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/monitor/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mysql</title>
-      <link>https://ox0spy.github.io/tags/mysql/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/mysql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Netstat</title>
-      <link>https://ox0spy.github.io/tags/netstat/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/netstat/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nginx</title>
-      <link>https://ox0spy.github.io/tags/nginx/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/nginx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nis</title>
-      <link>https://ox0spy.github.io/tags/nis/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/nis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Node.js</title>
-      <link>https://ox0spy.github.io/tags/node.js/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/node.js/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Note</title>
-      <link>https://ox0spy.github.io/tags/note/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/note/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Oom</title>
-      <link>https://ox0spy.github.io/tags/oom/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/oom/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Opengrok</title>
+      <title>OpenGrok</title>
       <link>https://ox0spy.github.io/tags/opengrok/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
       
@@ -714,34 +926,7 @@
     </item>
     
     <item>
-      <title>Openresty</title>
-      <link>https://ox0spy.github.io/tags/openresty/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/openresty/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pandas</title>
-      <link>https://ox0spy.github.io/tags/pandas/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/pandas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pelican</title>
-      <link>https://ox0spy.github.io/tags/pelican/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/pelican/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Php</title>
+      <title>php</title>
       <link>https://ox0spy.github.io/tags/php/</link>
       <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
       
@@ -750,20 +935,227 @@
     </item>
     
     <item>
-      <title>Pig</title>
-      <link>https://ox0spy.github.io/tags/pig/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      <title> ansible</title>
+      <link>https://ox0spy.github.io/tags/ansible/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
       
-      <guid>https://ox0spy.github.io/tags/pig/</guid>
+      <guid>https://ox0spy.github.io/tags/ansible/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Pip</title>
-      <link>https://ox0spy.github.io/tags/pip/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
+      <title> backup</title>
+      <link>https://ox0spy.github.io/tags/backup/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
       
-      <guid>https://ox0spy.github.io/tags/pip/</guid>
+      <guid>https://ox0spy.github.io/tags/backup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> command</title>
+      <link>https://ox0spy.github.io/tags/command/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/command/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> ec2</title>
+      <link>https://ox0spy.github.io/tags/ec2/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/ec2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> free</title>
+      <link>https://ox0spy.github.io/tags/free/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/free/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> htop</title>
+      <link>https://ox0spy.github.io/tags/htop/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/htop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> netstat</title>
+      <link>https://ox0spy.github.io/tags/netstat/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/netstat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> ps</title>
+      <link>https://ox0spy.github.io/tags/ps/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/ps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> saltstack</title>
+      <link>https://ox0spy.github.io/tags/saltstack/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/saltstack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> top</title>
+      <link>https://ox0spy.github.io/tags/top/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/top/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> uptime</title>
+      <link>https://ox0spy.github.io/tags/uptime/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/uptime/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> x_forwarded_for</title>
+      <link>https://ox0spy.github.io/tags/x_forwarded_for/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/x_forwarded_for/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> x_real_ip</title>
+      <link>https://ox0spy.github.io/tags/x_real_ip/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/x_real_ip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>assh</title>
+      <link>https://ox0spy.github.io/tags/assh/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/assh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gitlab</title>
+      <link>https://ox0spy.github.io/tags/gitlab/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/gitlab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>replication</title>
+      <link>https://ox0spy.github.io/tags/replication/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/replication/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sentry</title>
+      <link>https://ox0spy.github.io/tags/sentry/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/sentry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubunu</title>
+      <link>https://ox0spy.github.io/tags/ubunu/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/ubunu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> sync</title>
+      <link>https://ox0spy.github.io/tags/sync/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:56 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/sync/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> tar</title>
+      <link>https://ox0spy.github.io/tags/tar/</link>
+      <pubDate>Fri, 15 Dec 2017 19:21:56 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/tar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>haproxy</title>
+      <link>https://ox0spy.github.io/tags/haproxy/</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/haproxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>keepalived</title>
+      <link>https://ox0spy.github.io/tags/keepalived/</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/keepalived/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LVS</title>
+      <link>https://ox0spy.github.io/tags/lvs/</link>
+      <pubDate>Thu, 26 Jun 2014 00:00:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/lvs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bash</title>
+      <link>https://ox0spy.github.io/tags/bash/</link>
+      <pubDate>Wed, 14 Aug 2013 00:00:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CI</title>
+      <link>https://ox0spy.github.io/tags/ci/</link>
+      <pubDate>Wed, 14 Aug 2013 00:00:00 +0800</pubDate>
+      
+      <guid>https://ox0spy.github.io/tags/ci/</guid>
       <description></description>
     </item>
     
@@ -777,434 +1169,20 @@
     </item>
     
     <item>
-      <title>Proxy</title>
-      <link>https://ox0spy.github.io/tags/proxy/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
+      <title>HTTP</title>
+      <link>https://ox0spy.github.io/tags/http/</link>
+      <pubDate>Tue, 06 Aug 2013 00:00:00 +0800</pubDate>
       
-      <guid>https://ox0spy.github.io/tags/proxy/</guid>
+      <guid>https://ox0spy.github.io/tags/http/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Ps</title>
-      <link>https://ox0spy.github.io/tags/ps/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
+      <title>frontend</title>
+      <link>https://ox0spy.github.io/tags/frontend/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ox0spy.github.io/tags/ps/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pypi</title>
-      <link>https://ox0spy.github.io/tags/pypi/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/pypi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://ox0spy.github.io/tags/python/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Redis</title>
-      <link>https://ox0spy.github.io/tags/redis/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/redis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Replication</title>
-      <link>https://ox0spy.github.io/tags/replication/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/replication/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Restore</title>
-      <link>https://ox0spy.github.io/tags/restore/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/restore/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Reverse</title>
-      <link>https://ox0spy.github.io/tags/reverse/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/reverse/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>S3</title>
-      <link>https://ox0spy.github.io/tags/s3/</link>
-      <pubDate>Tue, 16 Jan 2018 15:34:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/s3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Saltstack</title>
-      <link>https://ox0spy.github.io/tags/saltstack/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/saltstack/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Scrapy</title>
-      <link>https://ox0spy.github.io/tags/scrapy/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/scrapy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Scrapyd</title>
-      <link>https://ox0spy.github.io/tags/scrapyd/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/scrapyd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Scrapyd Client</title>
-      <link>https://ox0spy.github.io/tags/scrapyd-client/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/scrapyd-client/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sdkmanager</title>
-      <link>https://ox0spy.github.io/tags/sdkmanager/</link>
-      <pubDate>Tue, 29 Jan 2019 09:02:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/sdkmanager/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sentry</title>
-      <link>https://ox0spy.github.io/tags/sentry/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/sentry/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Shell</title>
-      <link>https://ox0spy.github.io/tags/shell/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/shell/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sip</title>
-      <link>https://ox0spy.github.io/tags/sip/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/sip/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Snapshot</title>
-      <link>https://ox0spy.github.io/tags/snapshot/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/snapshot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sort</title>
-      <link>https://ox0spy.github.io/tags/sort/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/sort/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Spark</title>
-      <link>https://ox0spy.github.io/tags/spark/</link>
-      <pubDate>Thu, 17 May 2018 09:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/spark/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Spring</title>
-      <link>https://ox0spy.github.io/tags/spring/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/spring/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ssh</title>
-      <link>https://ox0spy.github.io/tags/ssh/</link>
-      <pubDate>Thu, 25 Oct 2018 18:01:58 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/ssh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ssl</title>
-      <link>https://ox0spy.github.io/tags/ssl/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/ssl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ssmtp</title>
-      <link>https://ox0spy.github.io/tags/ssmtp/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/ssmtp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sublime</title>
-      <link>https://ox0spy.github.io/tags/sublime/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/sublime/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Supervisor</title>
-      <link>https://ox0spy.github.io/tags/supervisor/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/supervisor/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sync</title>
-      <link>https://ox0spy.github.io/tags/sync/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:56 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/sync/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tar</title>
-      <link>https://ox0spy.github.io/tags/tar/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:56 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/tar/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tensorflow</title>
-      <link>https://ox0spy.github.io/tags/tensorflow/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/tensorflow/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tips</title>
-      <link>https://ox0spy.github.io/tags/tips/</link>
-      <pubDate>Tue, 26 Feb 2019 09:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/tips/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tomcat</title>
-      <link>https://ox0spy.github.io/tags/tomcat/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/tomcat/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Top</title>
-      <link>https://ox0spy.github.io/tags/top/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/top/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tornado</title>
-      <link>https://ox0spy.github.io/tags/tornado/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/tornado/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Transfer</title>
-      <link>https://ox0spy.github.io/tags/transfer/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/transfer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tunnel</title>
-      <link>https://ox0spy.github.io/tags/tunnel/</link>
-      <pubDate>Thu, 25 Oct 2018 18:01:58 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/tunnel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ubuntu</title>
-      <link>https://ox0spy.github.io/tags/ubuntu/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/ubuntu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ubunu</title>
-      <link>https://ox0spy.github.io/tags/ubunu/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/ubunu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Uptime</title>
-      <link>https://ox0spy.github.io/tags/uptime/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/uptime/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Us</title>
-      <link>https://ox0spy.github.io/tags/us/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/us/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>User</title>
-      <link>https://ox0spy.github.io/tags/user/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/user/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vcard</title>
-      <link>https://ox0spy.github.io/tags/vcard/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/vcard/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vim</title>
-      <link>https://ox0spy.github.io/tags/vim/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/vim/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Wamp</title>
-      <link>https://ox0spy.github.io/tags/wamp/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:58 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/wamp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Workbench</title>
-      <link>https://ox0spy.github.io/tags/workbench/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/workbench/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>X_forwarded_for</title>
-      <link>https://ox0spy.github.io/tags/x_forwarded_for/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/x_forwarded_for/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>X_real_ip</title>
-      <link>https://ox0spy.github.io/tags/x_real_ip/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:57 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/x_real_ip/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>入门</title>
-      <link>https://ox0spy.github.io/tags/%E5%85%A5%E9%97%A8/</link>
-      <pubDate>Fri, 15 Dec 2017 19:21:59 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/%E5%85%A5%E9%97%A8/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>招商银行</title>
-      <link>https://ox0spy.github.io/tags/%E6%8B%9B%E5%95%86%E9%93%B6%E8%A1%8C/</link>
-      <pubDate>Fri, 15 Dec 2017 19:22:00 +0800</pubDate>
-      
-      <guid>https://ox0spy.github.io/tags/%E6%8B%9B%E5%95%86%E9%93%B6%E8%A1%8C/</guid>
+      <guid>https://ox0spy.github.io/tags/frontend/</guid>
       <description></description>
     </item>
     

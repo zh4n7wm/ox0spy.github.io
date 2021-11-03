@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/configuration/bash-multiprocess/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="Bash Multiprocess" />
 <meta property="og:description" content="Git同步 成都和上海分别建有git server, 虽有 Gerrit Replication, 但新创建分支、git库无法自动同步, 直到该git库有新Gerrit merge. 所以, 写脚本通过 gitweb_url?a=project_index 获取所有g" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/configuration/bash-multiprocess/" />
-
-
-
-<meta property="article:published_time" content="2013-08-06T00:00:00&#43;08:00"/>
-
-<meta property="article:modified_time" content="2013-08-06T00:00:00&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/configuration/bash-multiprocess/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2013-08-06T00:00:00+08:00" />
+<meta property="article:modified_time" content="2013-08-06T00:00:00+08:00" />
 
 <meta itemprop="name" content="Bash Multiprocess">
-<meta itemprop="description" content="Git同步 成都和上海分别建有git server, 虽有 Gerrit Replication, 但新创建分支、git库无法自动同步, 直到该git库有新Gerrit merge. 所以, 写脚本通过 gitweb_url?a=project_index 获取所有g">
-
-
-<meta itemprop="datePublished" content="2013-08-06T00:00:00&#43;08:00" />
-<meta itemprop="dateModified" content="2013-08-06T00:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="499">
-
-
-
-<meta itemprop="keywords" content="Linux,Bash,Git," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Bash Multiprocess"/>
+<meta itemprop="description" content="Git同步 成都和上海分别建有git server, 虽有 Gerrit Replication, 但新创建分支、git库无法自动同步, 直到该git库有新Gerrit merge. 所以, 写脚本通过 gitweb_url?a=project_index 获取所有g"><meta itemprop="datePublished" content="2013-08-06T00:00:00+08:00" />
+<meta itemprop="dateModified" content="2013-08-06T00:00:00+08:00" />
+<meta itemprop="wordCount" content="503">
+<meta itemprop="keywords" content="Linux,Bash,Git," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Bash Multiprocess"/>
 <meta name="twitter:description" content="Git同步 成都和上海分别建有git server, 虽有 Gerrit Replication, 但新创建分支、git库无法自动同步, 直到该git库有新Gerrit merge. 所以, 写脚本通过 gitweb_url?a=project_index 获取所有g"/>
 
 <!--[if lte IE 9]>
@@ -153,8 +133,8 @@
               <a href="/categories/linux/"> Linux </a>
             
           </div>
-        <span class="more-meta"> 约 499 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span class="more-meta"> 约 503 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
       </div>
     </header>
 
@@ -165,30 +145,20 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#git同步">Git同步</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#git同步">Git同步</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="git同步">Git同步</h2>
-
+      <h2 id="git同步">Git同步</h2>
 <p>成都和上海分别建有git server, 虽有 Gerrit Replication, 但新创建分支、git库无法自动同步, 直到该git库有新Gerrit merge.</p>
-
 <p>所以, 写脚本通过 gitweb_url?a=project_index 获取所有git库, 然后, 已经下载的就做 git remote update, 否则通过 git clone &ndash;mirror克隆裸库到本地.</p>
-
 <p>当项目增加，需要同步的git库太多后，速度就是大问题了.</p>
-
 <p>下面Bash脚本用6个进程同步 (进程数可以自己调整)</p>
-
 <pre><code>#!/bin/bash
 ################################################################
 # Multiprocess Sync ShangHai modules, if no permission, skip it.
@@ -380,8 +350,8 @@ exit 0
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/configuration/http-command-line-tools/">
-            <span class="next-text nav-default">HTTP Command Line Tools</span>
+          <a class="next" href="/post/configuration/hello-world/">
+            <span class="next-text nav-default">Hello World</span>
             <span class="prev-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -431,7 +401,7 @@ exit 0
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -452,12 +422,16 @@ exit 0
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

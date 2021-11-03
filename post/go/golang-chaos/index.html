@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/go/golang-chaos/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="golang评价" />
 <meta property="og:description" content="djvu9 作为一具码了差不多20年C&#43;&#43;的C&#43;&#43;11爱好者，我觉得对于大部分后端半栈码农，golang才是未来的方向。C&#43;&#43;缺乏可用的标准库，Jav" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/go/golang-chaos/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:21:59&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:21:59&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/go/golang-chaos/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:21:59+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:21:59+08:00" />
 
 <meta itemprop="name" content="golang评价">
-<meta itemprop="description" content="djvu9 作为一具码了差不多20年C&#43;&#43;的C&#43;&#43;11爱好者，我觉得对于大部分后端半栈码农，golang才是未来的方向。C&#43;&#43;缺乏可用的标准库，Jav">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:21:59&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:21:59&#43;08:00" />
-<meta itemprop="wordCount" content="522">
-
-
-
-<meta itemprop="keywords" content="go," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="golang评价"/>
+<meta itemprop="description" content="djvu9 作为一具码了差不多20年C&#43;&#43;的C&#43;&#43;11爱好者，我觉得对于大部分后端半栈码农，golang才是未来的方向。C&#43;&#43;缺乏可用的标准库，Jav"><meta itemprop="datePublished" content="2017-12-15T19:21:59+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:59+08:00" />
+<meta itemprop="wordCount" content="545">
+<meta itemprop="keywords" content="go," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="golang评价"/>
 <meta name="twitter:description" content="djvu9 作为一具码了差不多20年C&#43;&#43;的C&#43;&#43;11爱好者，我觉得对于大部分后端半栈码农，golang才是未来的方向。C&#43;&#43;缺乏可用的标准库，Jav"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/go/"> go </a>
             
           </div>
-        <span class="more-meta"> 约 522 字 </span>
+        <span class="more-meta"> 约 545 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
       </div>
     </header>
@@ -165,39 +145,42 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#djvu9">djvu9</a></li>
-<li><a href="#yinwang">yinwang</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#djvu9">djvu9</a></li>
+        <li><a href="#yinwang">yinwang</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h3 id="djvu9">djvu9</h3>
-
+      <h3 id="djvu9">djvu9</h3>
 <blockquote>
 <ul>
-<li><p>作为一具码了差不多20年C++的C++11爱好者，我觉得对于大部分后端半栈码农，golang才是未来的方向。C++缺乏可用的标准库，Java的问题是JVM，python/php没有static typing，这些问题看来都没什么解决希望。golang的toolchain，runtime和标准库，目前来看是配合的最好的没有之一。语言本身其实不太重要。</p></li>
-
-<li><p>golang的最大特点就是方便，比如goroutine不用创建线程，chan通信不用消息队列，自带网络、压缩、加密、协议、编解码、图像、文本处理的库，全部用go实现所以交叉编译很简单，还有parser/serializer的支持，静态编译部署简单不担心运行库的版本问题。所以即使没有模版，代码累赘且丑也能接受了。</p></li>
-
-<li><p>有人问JVM有什么问题。软件的基本原理就是&rdquo;We can solve any problem by introducing an extra level of indirection&rdquo;。但是抽象就会带来新的问题：维护成本，跟外界的交互限制，信息的缺失等，所以要调gc，jni会影响优化，debug起来麻烦。JVM当年要解决的问题现在都不存在了所以它自己就成问题了。
-&gt; + 操作系统和体系结构的多样性减少，编译器基础设施的改进，以及开放源代码的发展。基本上现在换个平台重新编译下代码就好了。</p></li>
+<li>作为一具码了差不多20年C++的C++11爱好者，我觉得对于大部分后端半栈码农，golang才是未来的方向。C++缺乏可用的标准库，Java的问题是JVM，python/php没有static typing，这些问题看来都没什么解决希望。golang的toolchain，runtime和标准库，目前来看是配合的最好的没有之一。语言本身其实不太重要。</li>
 </ul>
 </blockquote>
-
+<blockquote>
+<ul>
+<li>golang的最大特点就是方便，比如goroutine不用创建线程，chan通信不用消息队列，自带网络、压缩、加密、协议、编解码、图像、文本处理的库，全部用go实现所以交叉编译很简单，还有parser/serializer的支持，静态编译部署简单不担心运行库的版本问题。所以即使没有模版，代码累赘且丑也能接受了。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>有人问JVM有什么问题。软件的基本原理就是&quot;We can solve any problem by introducing an extra level of indirection&quot;。但是抽象就会带来新的问题：维护成本，跟外界的交互限制，信息的缺失等，所以要调gc，jni会影响优化，debug起来麻烦。JVM当年要解决的问题现在都不存在了所以它自己就成问题了。</li>
+</ul>
+<blockquote>
+<ul>
+<li>操作系统和体系结构的多样性减少，编译器基础设施的改进，以及开放源代码的发展。基本上现在换个平台重新编译下代码就好了。</li>
+</ul>
+</blockquote>
+</blockquote>
 <h3 id="yinwang">yinwang</h3>
-
 <ul>
 <li><a href="http://www.yinwang.org/blog-cn/2014/04/18/golang/">对 Go 语言的综合评价</a></li>
 </ul>
@@ -309,7 +292,7 @@
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -330,12 +313,16 @@
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

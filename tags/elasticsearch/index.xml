@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Elasticsearch on ox0spy&#39;s blog</title>
+    <title>elasticsearch on ox0spy&#39;s blog</title>
     <link>https://ox0spy.github.io/tags/elasticsearch/</link>
-    <description>Recent content in Elasticsearch on ox0spy&#39;s blog</description>
+    <description>Recent content in elasticsearch on ox0spy&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 15 Dec 2017 19:22:01 +0800</lastBuildDate>
-    
-	<atom:link href="https://ox0spy.github.io/tags/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 15 Dec 2017 19:22:01 +0800</lastBuildDate><atom:link href="https://ox0spy.github.io/tags/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>elastichsearch反向代理设置</title>
       <link>https://ox0spy.github.io/post/elasticsearch/elasticsearch-reverse-proxy/</link>
@@ -26,7 +22,7 @@
       <pubDate>Fri, 15 Dec 2017 19:22:01 +0800</pubDate>
       
       <guid>https://ox0spy.github.io/post/elasticsearch/elasticsearch-snapshot-restore/</guid>
-      <description>参考资料: https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-your-cluster.html https://www.elastic.co/guide/en/elasticsearch/guide/current/_restoring_from_a_snapshot.html https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html https://www.elastic.co/blog/introducing-snapshot-restore http://stackoverflow.com/questions/27903929/elasticsearch-snapshot-across-cluster 最近工作需要，要将一个索引的数据迁移到新的另一个集群，查阅了一些资料过后，便开始操作。由于数据量大，整个过程也花费了不少</description>
+      <description>参考资料: https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-your-cluster.html https://www.elastic.co/guide/en/elasticsearch/guide/current/\_restoring_from_a_snapshot.html https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html https://www.elastic.co/blog/introducing-snapshot-restore http://stackoverflow.com/questions/27903929/elasticsearch-snapshot-across-cluster 最近工作需要，要将一个索引的数据迁移到新的另一个集群，查阅了一些资料过后，便开始操作。由于数据量大，整个过程也花费了不少</description>
     </item>
     
     <item>

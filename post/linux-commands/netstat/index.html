@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/linux-commands/netstat/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="netstat" />
 <meta property="og:description" content="本文参考： http://www.cnblogs.com/ggjucheng/archive/2012/01/08/2316661.html http://www.binarytides.com/linux-netstat-command-examples/ 作用 Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/linux-commands/netstat/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:21:57&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:21:57&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/linux-commands/netstat/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:21:57+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:21:57+08:00" />
 
 <meta itemprop="name" content="netstat">
-<meta itemprop="description" content="本文参考： http://www.cnblogs.com/ggjucheng/archive/2012/01/08/2316661.html http://www.binarytides.com/linux-netstat-command-examples/ 作用 Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:21:57&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:21:57&#43;08:00" />
-<meta itemprop="wordCount" content="1502">
-
-
-
-<meta itemprop="keywords" content="linux, command, netstat," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="netstat"/>
+<meta itemprop="description" content="本文参考： http://www.cnblogs.com/ggjucheng/archive/2012/01/08/2316661.html http://www.binarytides.com/linux-netstat-command-examples/ 作用 Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast"><meta itemprop="datePublished" content="2017-12-15T19:21:57+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:57+08:00" />
+<meta itemprop="wordCount" content="1410">
+<meta itemprop="keywords" content="linux, command, netstat," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="netstat"/>
 <meta name="twitter:description" content="本文参考： http://www.cnblogs.com/ggjucheng/archive/2012/01/08/2316661.html http://www.binarytides.com/linux-netstat-command-examples/ 作用 Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/linux-commands/"> linux-commands </a>
             
           </div>
-        <span class="more-meta"> 约 1502 字 </span>
+        <span class="more-meta"> 约 1410 字 </span>
         <span class="more-meta"> 预计阅读 3 分钟 </span>
       </div>
     </header>
@@ -165,84 +145,51 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#作用">作用</a></li>
-<li><a href="#输出信息含义">输出信息含义</a></li>
-<li><a href="#常见参数">常见参数</a></li>
-<li><a href="#实用命令实例">实用命令实例</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#作用">作用</a></li>
+    <li><a href="#输出信息含义">输出信息含义</a></li>
+    <li><a href="#常见参数">常见参数</a></li>
+    <li><a href="#实用命令实例">实用命令实例</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>本文参考：</p>
-
+      <p>本文参考：</p>
 <ul>
 <li><a href="http://www.cnblogs.com/ggjucheng/archive/2012/01/08/2316661.html">http://www.cnblogs.com/ggjucheng/archive/2012/01/08/2316661.html</a></li>
 <li><a href="http://www.binarytides.com/linux-netstat-command-examples/">http://www.binarytides.com/linux-netstat-command-examples/</a></li>
 </ul>
-
 <h2 id="作用">作用</h2>
-
 <p>Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态
 (Interface Statistics)，masquerade 连接，多播成员 (Multicast Memberships) 等
 等。</p>
-
 <h2 id="输出信息含义">输出信息含义</h2>
-
 <p>执行netstat后，其输出结果为</p>
-
-<pre>
-Active Internet connections (w/o servers)
-Proto Recv-Q Send-Q Local Address Foreign Address State
-tcp 0 2 210.34.6.89:telnet 210.34.6.96:2873 ESTABLISHED
-tcp 296 0 210.34.6.89:1165 210.34.6.84:netbios-ssn ESTABLISHED
-tcp 0 0 localhost.localdom:9001 localhost.localdom:1162 ESTABLISHED
-tcp 0 0 localhost.localdom:1162 localhost.localdom:9001 ESTABLISHED
-tcp 0 80 210.34.6.89:1161 210.34.6.10:netbios-ssn CLOSE
-
-Active UNIX domain sockets (w/o servers)
-Proto RefCnt Flags Type State I-Node Path
-unix 1 [ ] STREAM CONNECTED 16178 @000000dd
-unix 1 [ ] STREAM CONNECTED 16176 @000000dc
-unix 9 [ ] DGRAM 5292 /dev/log
-unix 1 [ ] STREAM CONNECTED 16182 @000000df
-</pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>从整体上看，netstat的输出结果可以分为两个部分：</p>
-
-<p>一个是Active Internet connections，称为有源TCP连接，其中&rdquo;Recv-Q&rdquo;和&rdquo;Send-Q&rdquo;指%0A的是接收队列和发送队列。这些数字一般都应该是0。如果不是则表示软件包正在队列中堆积。这种情况只能在非常少的情况见到。</p>
-
+<p>一个是Active Internet connections，称为有源TCP连接，其中&quot;Recv-Q&quot;和&quot;Send-Q&quot;指%0A的是接收队列和发送队列。这些数字一般都应该是0。如果不是则表示软件包正在队列中堆积。这种情况只能在非常少的情况见到。</p>
 <p>另一个是Active UNIX domain sockets，称为有源Unix域套接口(和网络套接字一样，但是只能用于本机通信，性能可以提高一倍)。
 Proto显示连接使用的协议,RefCnt表示连接到本套接口上的进程号,Types显示套接口的类型,State显示套接口当前的状态,Path表示连接到套接口的其它进程使用的路径名。</p>
-
 <h2 id="常见参数">常见参数</h2>
-
 <ul>
 <li>-a (all)显示所有监听和未监听的连接</li>
 <li>-t (tcp)仅显示tcp相关选项</li>
 <li>-u (udp)仅显示udp相关选项</li>
 <li>-n 拒绝显示别名，能显示数字的全部转化成数字。</li>
-<li>-l 仅列出有在 Listen (监听) 的服務状态
-*</li>
+<li>-l 仅列出有在 Listen (监听) 的服務状态</li>
+<li></li>
 <li>-p 显示建立相关链接的程序名</li>
 <li>-r 显示路由信息，路由表</li>
 <li>-e 显示扩展信息，例如uid等</li>
 <li>-s 按各个协议进行统计</li>
 <li>-c 每隔一个固定时间，执行该netstat命令。</li>
 </ul>
-
 <p><strong>提示</strong>：LISTEN和LISTENING的状态只有用-a或者-l才能看到</p>
-
 <h2 id="实用命令实例">实用命令实例</h2>
-
 <pre><code>:::bash
 # 列出所有连接（包括监听和未监听的)
 $ netstat -a
@@ -354,8 +301,7 @@ vboxnet0  Link encap:Ethernet  HWaddr 0a:00:27:00:00:00
         RX packets:0 errors:0 dropped:0 overruns:0 frame:0
         TX packets:1505 errors:0 dropped:0 overruns:0 carrier:0
         collisions:0 txqueuelen:1000
-        RX bytes:0 (0.0 B)  TX bytes:130893 (130.8 KB)
-</code></pre>
+        RX bytes:0 (0.0 B)  TX bytes:130893 (130.8 KB)</code></pre>
 
     </div>
 
@@ -468,7 +414,7 @@ vboxnet0  Link encap:Ethernet  HWaddr 0a:00:27:00:00:00
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -489,12 +435,16 @@ vboxnet0  Link encap:Ethernet  HWaddr 0a:00:27:00:00:00
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/bigdata/pig/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="在mac osx练习pig使用" />
 <meta property="og:description" content="Pig 看《Hadoop权威指南第三版》并记录在 Mac OSX 系统上练习Pig使用。 安装 在Mac OSX 上安装命令如下： $ brew install pig 命令行使用 Pig Latin语言 Pig Lat" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/bigdata/pig/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:22:01&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:22:01&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/bigdata/pig/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:22:01+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:22:01+08:00" />
 
 <meta itemprop="name" content="在mac osx练习pig使用">
-<meta itemprop="description" content="Pig 看《Hadoop权威指南第三版》并记录在 Mac OSX 系统上练习Pig使用。 安装 在Mac OSX 上安装命令如下： $ brew install pig 命令行使用 Pig Latin语言 Pig Lat">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:22:01&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:22:01&#43;08:00" />
-<meta itemprop="wordCount" content="3098">
-
-
-
-<meta itemprop="keywords" content="mac, pig, bigdata," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="在mac osx练习pig使用"/>
+<meta itemprop="description" content="Pig 看《Hadoop权威指南第三版》并记录在 Mac OSX 系统上练习Pig使用。 安装 在Mac OSX 上安装命令如下： $ brew install pig 命令行使用 Pig Latin语言 Pig Lat"><meta itemprop="datePublished" content="2017-12-15T19:22:01+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:22:01+08:00" />
+<meta itemprop="wordCount" content="3108">
+<meta itemprop="keywords" content="mac, pig, bigdata," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="在mac osx练习pig使用"/>
 <meta name="twitter:description" content="Pig 看《Hadoop权威指南第三版》并记录在 Mac OSX 系统上练习Pig使用。 安装 在Mac OSX 上安装命令如下： $ brew install pig 命令行使用 Pig Latin语言 Pig Lat"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/bigdata/"> bigdata </a>
             
           </div>
-        <span class="more-meta"> 约 3098 字 </span>
+        <span class="more-meta"> 约 3108 字 </span>
         <span class="more-meta"> 预计阅读 7 分钟 </span>
       </div>
     </header>
@@ -165,60 +145,47 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#pig">Pig</a>
-<ul>
-<li><a href="#安装">安装</a></li>
-<li><a href="#命令行使用">命令行使用</a></li>
-<li><a href="#pig-latin语言">Pig Latin语言</a></li>
-<li><a href="#schema">Schema</a></li>
-<li><a href="#函数">函数</a></li>
-<li><a href="#宏">宏</a></li>
-<li><a href="#用户自定义函数-udf">用户自定义函数 (UDF)</a></li>
-<li><a href="#数据加载和存储">数据加载和存储</a></li>
-<li><a href="#数据过滤">数据过滤</a>
-<ul>
-<li><a href="#stream操作">STREAM操作</a>
-<ul>
-<li><a href="#python写stream脚本">Python写stream脚本</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#数据分组与连接">数据分组与连接</a>
-<ul>
-<li><a href="#连接-join">连接/JOIN</a></li>
-</ul></li>
-<li><a href="#实战技巧">实战技巧</a>
-<ul>
-<li><a href="#并行处理">并行处理</a></li>
-<li><a href="#参数替换">参数替换</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#安装">安装</a></li>
+    <li><a href="#命令行使用">命令行使用</a></li>
+    <li><a href="#pig-latin语言">Pig Latin语言</a></li>
+    <li><a href="#schema">Schema</a></li>
+    <li><a href="#函数">函数</a></li>
+    <li><a href="#宏">宏</a></li>
+    <li><a href="#用户自定义函数-udf">用户自定义函数 (UDF)</a></li>
+    <li><a href="#数据加载和存储">数据加载和存储</a></li>
+    <li><a href="#数据过滤">数据过滤</a>
+      <ul>
+        <li><a href="#stream操作">STREAM操作</a></li>
+      </ul>
+    </li>
+    <li><a href="#数据分组与连接">数据分组与连接</a>
+      <ul>
+        <li><a href="#连接join">连接/JOIN</a></li>
+      </ul>
+    </li>
+    <li><a href="#实战技巧">实战技巧</a>
+      <ul>
+        <li><a href="#并行处理">并行处理</a></li>
+        <li><a href="#参数替换">参数替换</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h1 id="pig">Pig</h1>
-
+      <h1 id="pig">Pig</h1>
 <p>看《Hadoop权威指南第三版》并记录在 Mac OSX 系统上练习Pig使用。</p>
-
 <h2 id="安装">安装</h2>
-
 <p>在Mac OSX 上安装命令如下：</p>
-
 <pre><code>$ brew install pig
 </code></pre>
-
 <h2 id="命令行使用">命令行使用</h2>
-
 <h2 id="pig-latin语言">Pig Latin语言</h2>
-
 <p>Pig Latin的关系操作：</p>
-
 <table>
 <thead>
 <tr>
@@ -227,104 +194,87 @@
 <th>描述</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>加载与存储</td>
 <td>LOAD</td>
 <td>从文件系统或其他存储加载数据，存入关系</td>
 </tr>
-
 <tr>
 <td>加载与存储</td>
 <td>STORE</td>
 <td>将一个关系存放在文件系统或者其他存储中</td>
 </tr>
-
 <tr>
 <td>加载与存储</td>
 <td>DUMP</td>
 <td>将关系打印到控制台</td>
 </tr>
-
 <tr>
 <td>过滤</td>
 <td>FILTER</td>
 <td>将关系中删除不需要的行</td>
 </tr>
-
 <tr>
 <td>过滤</td>
 <td>DISTINCT</td>
 <td>将关系中删除重复的行</td>
 </tr>
-
 <tr>
 <td>过滤</td>
 <td>FOREACH &hellip; GENERATE</td>
 <td>将关系中添加或删除字段</td>
 </tr>
-
 <tr>
 <td>过滤</td>
 <td>MAPREDUCE</td>
 <td>以一个关系作为输入运行某个MapReduce 作业</td>
 </tr>
-
 <tr>
 <td>过滤</td>
 <td>STREAM</td>
 <td>使用外部程序对一个关系进行变换</td>
 </tr>
-
 <tr>
 <td>过滤</td>
 <td>SAMPLE</td>
 <td>对一个关系进行随机取样</td>
 </tr>
-
 <tr>
 <td>分组与连接</td>
 <td>JOIN</td>
 <td>连接两个或多个关系</td>
 </tr>
-
 <tr>
 <td>分组和连接</td>
 <td>COGROUP</td>
 <td>对两个或更多关系中的数据进行分组</td>
 </tr>
-
 <tr>
 <td>分组和连接</td>
 <td>GROUP</td>
 <td>在一个关系中对数据进行分组</td>
 </tr>
-
 <tr>
 <td>分组和连接</td>
 <td>CROSS</td>
 <td>创建两个或更多关系的乘积 (叉乘)</td>
 </tr>
-
 <tr>
 <td>排序</td>
 <td>ORDER</td>
 <td>根据一个或多个字段对某个关系进行排序</td>
 </tr>
-
 <tr>
 <td>排序</td>
 <td>LIMIT</td>
 <td>将一个关系的元组个人限定在一定数量内</td>
 </tr>
-
 <tr>
 <td>组合和切分</td>
 <td>UNION</td>
 <td>合并两个或多个关系为一个关系</td>
 </tr>
-
 <tr>
 <td>组合和切分</td>
 <td>SPLIT</td>
@@ -332,9 +282,7 @@
 </tr>
 </tbody>
 </table>
-
 <p>Pig Latin的诊断操作</p>
-
 <table>
 <thead>
 <tr>
@@ -342,34 +290,27 @@
 <th>描述</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>DESCRIBE</td>
 <td>打印关系的模式</td>
 </tr>
-
 <tr>
 <td>EXPLAIN</td>
 <td>打印逻辑和物理计划</td>
 </tr>
-
 <tr>
 <td>ILLUSTRATE</td>
 <td>使用生成的输入子集显示逻辑计划的试运行结果</td>
 </tr>
 </tbody>
 </table>
-
 <p>注：</p>
-
 <ul>
 <li>这些命令不会被加入逻辑计划中</li>
 <li>DUMP也是一种诊断操作</li>
 </ul>
-
 <p>Pig Latin的宏和UDF语句</p>
-
 <table>
 <thead>
 <tr>
@@ -377,34 +318,27 @@
 <th>描述</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>REGISTER</td>
 <td>在Pig运行时环境中注册一个JAR文件</td>
 </tr>
-
 <tr>
 <td>DEFINE</td>
 <td>为宏、UDF、流式脚本或命令规范新建别名</td>
 </tr>
-
 <tr>
 <td>IMPORT</td>
 <td>把另一个文件中定义的宏导入脚本</td>
 </tr>
 </tbody>
 </table>
-
 <p>注：</p>
-
 <ul>
 <li>这些命令不处理关系，所以它们不会被加入逻辑计划</li>
 <li>这些命令会被立即执行</li>
 </ul>
-
 <p>Pig Latin 命令</p>
-
 <table>
 <thead>
 <tr>
@@ -413,116 +347,97 @@
 <th>描述</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Hadoop文件系统</td>
 <td>cat</td>
 <td>打印一个或多个文件的内容</td>
 </tr>
-
 <tr>
 <td>Hadoop文件系统</td>
 <td>cd</td>
 <td>改变当前目录</td>
 </tr>
-
 <tr>
 <td>Hadoop文件系统</td>
 <td>copyFromLocal</td>
 <td>复制本地文件或目录</td>
 </tr>
-
 <tr>
 <td>Hadoop文件系统</td>
 <td>copyToLocal</td>
 <td>将一个文件或目录从Hadoop 文件系统复制到本地文件系统</td>
 </tr>
-
 <tr>
 <td>Hadoop文件系统</td>
 <td>cp</td>
 <td>把一个文件或目录复制到另一个目录</td>
 </tr>
-
 <tr>
 <td>Hadoop文件系统</td>
 <td>fs</td>
 <td>访问Hadoop文件系统外壳程序</td>
 </tr>
-
 <tr>
 <td>Hadoop文件系统</td>
 <td>ls</td>
 <td>打印文件列表信息</td>
 </tr>
-
 <tr>
 <td>Hadoop文件系统</td>
 <td>mkdir</td>
 <td>创建新目录</td>
 </tr>
-
 <tr>
 <td>Hadoop文件系统</td>
 <td>mv</td>
 <td>将一个文件或目录移动到另一个目录</td>
 </tr>
-
 <tr>
 <td>Hadoop文件系统</td>
 <td>pwd</td>
 <td>打印当前工作目录</td>
 </tr>
-
 <tr>
 <td>Hadoop文件系统</td>
 <td>rm</td>
 <td>删除一个文件或目录</td>
 </tr>
-
 <tr>
 <td>Hadoop文件系统</td>
 <td>rmf</td>
 <td>强制删除文件或目录 (文件或目录不存在也不会失败)</td>
 </tr>
-
 <tr>
 <td>Hadoop MapReduce 工具</td>
 <td>kill</td>
 <td>终止某个MapReduce 作业</td>
 </tr>
-
 <tr>
 <td>Hadoop MapReduce 工具</td>
 <td>exec</td>
 <td>在新的 Grunt 外壳程序中以批处理模式运行脚本</td>
 </tr>
-
 <tr>
 <td>Hadoop MapReduce 工具</td>
 <td>help</td>
 <td>显示可用的命令和选项</td>
 </tr>
-
 <tr>
 <td>Hadoop MapReduce 工具</td>
 <td>quit</td>
 <td>退出解释器</td>
 </tr>
-
 <tr>
 <td>Hadoop MapReduce 工具</td>
 <td>run</td>
 <td>在当前 Grunt 外壳程序中运行脚本</td>
 </tr>
-
 <tr>
 <td>Hadoop MapReduce 工具</td>
 <td>set</td>
 <td>设置 Pig 选项 和 MapReduce 作业属性</td>
 </tr>
-
 <tr>
 <td>Hadoop MapReduce 工具</td>
 <td>sh</td>
@@ -530,9 +445,7 @@
 </tr>
 </tbody>
 </table>
-
 <p>Pig Latin 表达式</p>
-
 <table>
 <thead>
 <tr>
@@ -542,7 +455,6 @@
 <th>示例</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>常量</td>
@@ -550,77 +462,66 @@
 <td>常量值</td>
 <td>1.0, &lsquo;a&rsquo;</td>
 </tr>
-
 <tr>
 <td>字段 (位置指定)</td>
 <td>$n</td>
 <td>第n个字段(从0开始)</td>
 <td>$0, $1</td>
 </tr>
-
 <tr>
 <td>字段 (名字指定)</td>
 <td>f</td>
 <td>字段名f</td>
 <td>year</td>
 </tr>
-
 <tr>
 <td>字段 (消除歧义)</td>
 <td>r::f</td>
 <td>分组或连接后，关系r中的名为f的字段</td>
 <td>A::year</td>
 </tr>
-
 <tr>
 <td>投影</td>
 <td>c.$n, c.f</td>
 <td>在容器c (关系、包或元组) 中的字段按位置 或 名称指定</td>
 <td>records.$0, records.year</td>
 </tr>
-
 <tr>
 <td>Map 查找</td>
 <td>m#k</td>
 <td>在映射m中键k所对应的值</td>
 <td>items#&lsquo;Coat&rsquo;</td>
 </tr>
-
 <tr>
 <td>类型转换</td>
 <td>(t) f</td>
 <td>将字段f转换为类型t</td>
 <td>(int) year</td>
 </tr>
-
 <tr>
 <td>算术</td>
 <td>+, -, *, /, %</td>
 <td>加、减、乘、除、取余</td>
 <td>$1 + $2, $1 - $2, $1 * $2, $1 / $2, $1 % $2</td>
 </tr>
-
 <tr>
 <td>条件</td>
 <td>x ? y : z</td>
 <td>三元运算符，如果 x 为真，则y，否则为 z</td>
 <td>quality == 0 ? 0 : 1</td>
 </tr>
-
 <tr>
 <td>比较</td>
 <td>==, !=, &gt;, &lt;, &gt;=, &lt;=, x matches y, x is null, x is not null</td>
 <td>相等、不等、大于、小于、大于等于、小于等于、正则匹配、是空值、不是空值</td>
 <td><code>quality matches '[01459]'</code></td>
 </tr>
-
 <tr>
 <td>布尔型</td>
 <td>or, and, not</td>
 <td>逻辑或，逻辑与，逻辑非</td>
 <td><code>q == 0 or q == 1</code>, <code>not q matches '[01459]'</code></td>
 </tr>
-
 <tr>
 <td>平面化</td>
 <td>FLATTEN(f)</td>
@@ -629,9 +530,7 @@
 </tr>
 </tbody>
 </table>
-
 <p>Pig Latin 类型</p>
-
 <table>
 <thead>
 <tr>
@@ -641,7 +540,6 @@
 <th>示例</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>数值</td>
@@ -649,56 +547,48 @@
 <td>32位有符号整数</td>
 <td>99</td>
 </tr>
-
 <tr>
 <td>数值</td>
 <td>long</td>
 <td>64位有符号整数</td>
 <td>199L</td>
 </tr>
-
 <tr>
 <td>数值</td>
 <td>float</td>
 <td>32位浮点数</td>
 <td>0.8F</td>
 </tr>
-
 <tr>
 <td>数值</td>
 <td>double</td>
 <td>64位浮点数</td>
 <td>0.88</td>
 </tr>
-
 <tr>
 <td>文本</td>
 <td>chararray</td>
 <td>UTF-16格式的字符数组</td>
 <td>&lsquo;hello world&rsquo;</td>
 </tr>
-
 <tr>
 <td>二进制</td>
 <td>bytearray</td>
 <td>字节数组</td>
 <td></td>
 </tr>
-
 <tr>
 <td>复杂类型</td>
 <td>tuple</td>
 <td>任何类型的字段序列</td>
 <td>(1, &lsquo;programmer&rsquo;)</td>
 </tr>
-
 <tr>
 <td>复杂类型</td>
 <td>bag</td>
 <td>元组的无序多重集合 (允许重复的元组)</td>
 <td>{(1, &lsquo;hello&rsquo;), (2)}</td>
 </tr>
-
 <tr>
 <td>复杂类型</td>
 <td>map</td>
@@ -707,20 +597,14 @@
 </tr>
 </tbody>
 </table>
-
 <p>注：</p>
-
 <ul>
 <li>内置函数：TOTUPLE, TOBAG, TOMAP 将表达式转换为元组、包以及映射。</li>
 <li>包必须在某个关系中。</li>
 </ul>
-
 <h2 id="schema">Schema</h2>
-
 <p>Pig 中的一个关系可以关联一个模式。模式为关系的字段指定名称和类型。</p>
-
 <p>Load语句的AS字句可以在关系上附以模式：</p>
-
 <pre><code>grunt&gt; records = LOAD 'input/ncdc/micro-tab/sample.txt' AS (year:int, temperature:int, quality:int);
 grunt&gt; DESCRIBE records;
 records: {year:int,temperature:int,quality:int}
@@ -728,49 +612,34 @@ records: {year:int,temperature:int,quality:int}
 注：不指定类型的话，默认是bytearray
     DESCRIBE 用来查看模式 (Schema)
 </code></pre>
-
 <h2 id="函数">函数</h2>
-
 <p>Pig的函数有四种类型：</p>
-
 <ul>
 <li>计算函数 (Eval function)</li>
 <li>过滤函数 (Filter function)</li>
 <li>加载函数 (Load function)</li>
 <li>存储函数 (Store function)</li>
 </ul>
-
 <h2 id="宏">宏</h2>
-
 <p>宏提供了在Pig Latin内对可重用的Pig Latin代码进行打包的功能。</p>
-
 <p>示例：</p>
-
 <pre><code>$ cat max_temp.macro
 DEFINE max_by_group(X, group_key, max_field) RETURNS Y {
 A = GROUP $X by $group_key;
 $Y = FOREACH A GENERATE group, MAX($X.$max_field);
 };
 </code></pre>
-
 <p>导入宏：</p>
-
 <pre><code>grunt&gt; IMPORT './max_temp.macro';
 </code></pre>
-
 <p>使用宏：</p>
-
 <pre><code>grunt&gt; records = LOAD '/input/ncdc/micro-tab/sample.txt' AS (year:chararray, temperature:int, quality:int);
 grunt&gt; max_temp = max_by_group(records, year, temperature);
 grunt&gt; DUMP max_temp;
 </code></pre>
-
 <h2 id="用户自定义函数-udf">用户自定义函数 (UDF)</h2>
-
 <p>以插件形式提供使用用户定制代码的能力。可以使用Java、Python、JavaScript写UDF。</p>
-
 <p>下面是删除不符合质量要求的气温记录 (Java代码)：</p>
-
 <pre><code>$ cat com/hadoopbook/pig/IsGoodQuality.java
 package com.hadoopbook.pig;
 
@@ -804,17 +673,13 @@ public class IsGoodQuality extends FilterFunc {
   }
 }
 </code></pre>
-
 <p>编译、打包：</p>
-
 <pre><code>$ javac -cp $(brew --prefix pig)/libexec/pig-0.16.0-core-h2.jar:$(hadoop classpath) com/hadoopbook/pig/IsGoodQuality.java
 $ jar -cf com/hadoopbook/pig/IsGoodQuality.jar com/hadoopbook/pig/IsGoodQuality.class
 
 注：我通过brew安装的pig所以使用了$(brew --prefix pig)；可以手动指定pig.jar的具体路径。
 </code></pre>
-
 <p>在Pig中使用该UDF：</p>
-
 <pre><code>$ pig
 grunt&gt; REGISTER ./com/hadoopbook/pig/IsGoodQuality.jar;
 grunt&gt; DEFINE isGood com.hadoopbook.pig.IsGoodQuality();
@@ -822,9 +687,7 @@ grunt&gt; records = LOAD '/input/ncdc/micro-tab/sample.txt' AS (year:chararray, 
 grunt&gt; filtered_records = FILTER records BY temperature != 9999 AND isGood(quality);
 grunt&gt; DUMP filtered_records;
 </code></pre>
-
 <p>写成pig程序：</p>
-
 <pre><code>$ cat max_temp_filter_udf.pig
 --max_temp_filter_udf.pig
 REGISTER com/hadoopbook/pig/IsGoodQuality.jar;
@@ -836,35 +699,23 @@ max_temp = FOREACH grouped_records GENERATE group, MAX(filtered_records.temperat
 DUMP max_temp;
 STORE max_temp INTO 'max_temp_output' USING PigStorage(':');
 </code></pre>
-
 <h2 id="数据加载和存储">数据加载和存储</h2>
-
 <p>前面已经有用Load加载数据了。下面看看怎么存储数据：</p>
-
 <pre><code>grunt&gt; STORE max_temp INTO 'max_temp_output' USING PigStorage(':');
 grunt&gt; cat max_temp_output
 </code></pre>
-
 <h2 id="数据过滤">数据过滤</h2>
-
 <p><code>FILTER</code> 、<code>LIMIT</code> 用来过滤行；<code>FOREACH ... GENERATE</code>用来删除、添加列(字段)。</p>
-
 <pre><code>grunt&gt; max_temp = FOREACH grouped_records GENERATE group, MAX(filtered_records.temperature);
 </code></pre>
-
 <h3 id="stream操作">STREAM操作</h3>
-
 <p>STREAM操作可以让外部程序或脚本对关系中的数据进行变换。这一操作的命名对应于Hadoop的Streaming，后者为MapReduce提供类似能力。</p>
-
 <pre><code>grunt&gt; records = LOAD '/input/ncdc/micro-tab/sample.txt' AS (year:chararray, temperature:int, quality:int);
 grunt&gt; second_field = STREAM records THROUGH `cut -f 2`;
 grunt&gt; DUMP second_field;
 </code></pre>
-
 <h4 id="python写stream脚本">Python写stream脚本</h4>
-
 <p>is_good_quality.py程序:</p>
-
 <pre><code>$ cat is_good_quality.py
 #!/usr/bin/env python
 # encoding: utf-8
@@ -876,9 +727,7 @@ for line in sys.stdin:
     if temp != '9999' and re.match('[01459]', q):
         print('{}\t{}'.format(year, temp))
 </code></pre>
-
 <p>Pig程序:</p>
-
 <pre><code>$ cat max_temp_filter_stream.pig
 --max_temp_filter_stream.pig
 
@@ -890,58 +739,38 @@ max_temp = FOREACH grouped_records GENERATE group, MAX(filtered_records.temperat
 DUMP max_temp;
 STORE max_temp INTO 'max_temp_stream';        
 </code></pre>
-
 <p>运行：</p>
-
 <pre><code>$ hdfs dfs -put max_temp_filter_stream.pig
 $ pig -f max_temp_filter_stream.pig
 $ hdfs dfs -cat max_temp_stream/*
-1949    111
-1950    22
+1949	111
+1950	22
 </code></pre>
-
 <h2 id="数据分组与连接">数据分组与连接</h2>
-
-<h3 id="连接-join">连接/JOIN</h3>
-
+<h3 id="连接join">连接/JOIN</h3>
 <p>连接：</p>
-
 <pre><code>grunt&gt; C = JOIN A BY $0, B BY $1;
 
 注：等式连接，即：连接A.$0 == B.$1 的行，结果中的字段由所有输入关系的所有字段组成。
 </code></pre>
-
 <p>如果要连接的关系太大，不能全部放入内存，则应该使用通用的连接操作。如果有一个关系小到能够全部放入内存，则可以使用分段复制连接(fragment replicate join)，它把小的输入关系发生到所有mapper，并在map端使用内存查找表对(分段的)较大的关系进行连接。</p>
-
 <p>分段复制连接：</p>
-
 <pre><code>grunt&gt; C = JOIN A BY $0, B BY $1 USING &quot;replicated&quot;;
 
 注：第一个关系必须是大的关系，后面则是一个或多个相对较小的关系。(能够全部放入内存)
 </code></pre>
-
 <h2 id="实战技巧">实战技巧</h2>
-
 <h3 id="并行处理">并行处理</h3>
-
 <p>Pig根据输入数据的大小设置reducer个数：每1GB 输入使用一个reducer，且 reducer 的个数不超过 999。可以设置 pig.exec.reducers.bytes.per.ducer 和 pig.exec.reducers.max 来修改默认设置。</p>
-
 <p>为了告诉 Pig 每个作业要用多少个 reducer ，可以在 reducer 阶段的操作中使用 PARALLEL 子句。在 reduce 阶段使用的操作包括所有的 分组(grouping)、连接 (joining)操作(GROUP, COGROUP, JOIN, CROSS)以及DISTINCT 和 ORDER。</p>
-
 <pre><code>grunt&gt; grouped_records = GROUP records BY year PARALLEL 30;
 </code></pre>
-
 <p>也可以通过设置 default_paralle 选项达到相同效果：</p>
-
 <pre><code>grunt&gt; set default_parallel 30;
 </code></pre>
-
 <p>注：map 任务的歌声由输入的大小决定(每个HDFS块一个map），不受PARALLEL 子句影响。</p>
-
 <h3 id="参数替换">参数替换</h3>
-
 <p>以下脚本中，$input, $output 用来指定输入和输出路径：</p>
-
 <pre><code>$ cat max_temp_param.pig
 records = LOAD '$input' AS (year:chararray, temperature:int, quality:int);
 filtered_records = FILTER records BY temperature != 9999 AND (quality == 0 OR quality == 1 OR quality == 4 OR quality == 5 OR quality == 9);
@@ -949,25 +778,18 @@ grouped_records = GROUP filtered_records BY year;
 max_temp = FOREACH grouped_records GENERATE group, MAX(filtered_records.temperature);
 STORE max_temp INTO '$output';
 </code></pre>
-
 <p>运行：</p>
-
 <pre><code>$ pig -param input=/input/ncdc/micro-tab/sample.txt -param output=/tmp/out max_temp_param.pig
 </code></pre>
-
 <p>也可以将参数放在文件中：</p>
-
 <pre><code>$ cat max_temp_param.param
 # Input file
 input=/input/ncdc/micro-tab/sample.txt
 # Output file
 output=/tmp/out
 </code></pre>
-
 <p>运行：</p>
-
-<pre><code>$ pig -param_file max_temp_param.param max_temp_param.pig
-</code></pre>
+<pre><code>$ pig -param_file max_temp_param.param max_temp_param.pig</code></pre>
 
     </div>
 
@@ -1080,7 +902,7 @@ output=/tmp/out
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -1101,12 +923,16 @@ output=/tmp/out
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

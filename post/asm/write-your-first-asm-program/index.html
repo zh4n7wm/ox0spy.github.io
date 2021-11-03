@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/asm/write-your-first-asm-program/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="write your first asm program" />
 <meta property="og:description" content="用汇编写个Hello World，同时看看如何一步一步将c程序编译成可执行文件。 开发环境准备 所有开发都在Ubuntu上完成，需要用的软件包：b" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/asm/write-your-first-asm-program/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:21:58&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:21:58&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/asm/write-your-first-asm-program/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:21:58+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:21:58+08:00" />
 
 <meta itemprop="name" content="write your first asm program">
-<meta itemprop="description" content="用汇编写个Hello World，同时看看如何一步一步将c程序编译成可执行文件。 开发环境准备 所有开发都在Ubuntu上完成，需要用的软件包：b">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:21:58&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:21:58&#43;08:00" />
-<meta itemprop="wordCount" content="791">
-
-
-
-<meta itemprop="keywords" content="asm, linux," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="write your first asm program"/>
+<meta itemprop="description" content="用汇编写个Hello World，同时看看如何一步一步将c程序编译成可执行文件。 开发环境准备 所有开发都在Ubuntu上完成，需要用的软件包：b"><meta itemprop="datePublished" content="2017-12-15T19:21:58+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:58+08:00" />
+<meta itemprop="wordCount" content="799">
+<meta itemprop="keywords" content="asm, linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="write your first asm program"/>
 <meta name="twitter:description" content="用汇编写个Hello World，同时看看如何一步一步将c程序编译成可执行文件。 开发环境准备 所有开发都在Ubuntu上完成，需要用的软件包：b"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/asm/"> asm </a>
             
           </div>
-        <span class="more-meta"> 约 791 字 </span>
+        <span class="more-meta"> 约 799 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
       </div>
     </header>
@@ -165,39 +145,27 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#开发环境准备">开发环境准备</a></li>
-<li><a href="#asm-hello-world">asm Hello World</a></li>
-<li><a href="#如何一步一步编译-链接c程序">如何一步一步编译、链接c程序</a></li>
-<li><a href="#asm-hello-world-改进版">asm Hello World (改进版)</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#开发环境准备">开发环境准备</a></li>
+    <li><a href="#asm-hello-world">asm Hello World</a></li>
+    <li><a href="#如何一步一步编译链接c程序">如何一步一步编译、链接c程序</a></li>
+    <li><a href="#asm-hello-world-改进版">asm Hello World (改进版)</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>用汇编写个Hello World，同时看看如何一步一步将c程序编译成可执行文件。</p>
-
+      <p>用汇编写个Hello World，同时看看如何一步一步将c程序编译成可执行文件。</p>
 <h2 id="开发环境准备">开发环境准备</h2>
-
 <p>所有开发都在Ubuntu上完成，需要用的软件包：binutils, gcc, gdb。</p>
-
 <p>Ubuntu上安装软件很方便，指令如下：</p>
-
 <pre><code>$ sudo apt-get install binutils gcc gdb
 </code></pre>
-
 <h2 id="asm-hello-world">asm Hello World</h2>
-
 <p>用asm写个Hello World，<code>.data</code>数据段中定义msg变量为 <code>&quot;Hello World\n&quot;</code>，<code>.text</code>指令段从<code>_start</code>开始，否则需要ld时指定<code>-e label</code>。
 程序调用了printf输出msg，然后调用exit(0)退出。</p>
-
 <pre><code>$ cat hello.s
 #hello.s Just a Hello World in asm.
 .section .data
@@ -219,9 +187,7 @@ $ ld -o hello hello.o
 $ ./hello
 Hello World
 </code></pre>
-
-<h2 id="如何一步一步编译-链接c程序">如何一步一步编译、链接c程序</h2>
-
+<h2 id="如何一步一步编译链接c程序">如何一步一步编译、链接c程序</h2>
 <pre><code>$ cat helloc.c
 #include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
@@ -238,22 +204,17 @@ $ ld -e main -lc -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o helloc helloc.o
 $ ./helloc
 Hello World
 </code></pre>
-
 <p>说明：</p>
-
 <ul>
 <li>gcc -S生成c代码对应的汇编代码，但是汇编代码中的<code>.globl label</code>为main</li>
 <li>因为汇编代码的<code>.globl label</code>是<code>main</code>，所以必须使用<code>-e</code>参数指定label为<code>main</code>；默认是<code>_start</code></li>
 <li>因为汇编代码直接使用了c的库函数printf、exit，所以必须指定-lc链接c标准库</li>
 <li>-lc动态链接c标准库，所以，必须指定运行时加载动态库的程序，即：<code>-dynamic-linker /lib64/ld-linux-x86-64.so.2</code></li>
 </ul>
-
 <h2 id="asm-hello-world-改进版">asm Hello World (改进版)</h2>
-
 <p>既然汇编代码中可以直接调用c的标准库函数，那就看看怎么改进之前的hello.s。
 下面代码调用c库中的puts和exit函数。
 可以用gcc编译、链接汇编代码，而gcc默认只认<code>.globl main</code>而不是<code>.globl _start</code>，所以，我们下面用<code>.globl main</code>。</p>
-
 <pre><code>$ cat new_hello.s
 #new_hello.s Just a &quot;Hello World&quot;
 .section .data
@@ -273,7 +234,6 @@ Hello World
 
 $ gcc -o new_hello new_hello.s  # 当然可以直接用这条指令编译、链接生成可执行文件
 </code></pre>
-
 <p>本文简单介绍了如何用汇编写<code>Hello World</code>，并尝试手动编译、链接c程序，最好介绍了在汇编中如何调用c库函数。</p>
 
     </div>
@@ -385,7 +345,7 @@ $ gcc -o new_hello new_hello.s  # 当然可以直接用这条指令编译、链�
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -406,12 +366,16 @@ $ gcc -o new_hello new_hello.s  # 当然可以直接用这条指令编译、链�
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

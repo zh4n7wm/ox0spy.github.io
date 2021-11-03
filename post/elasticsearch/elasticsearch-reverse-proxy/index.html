@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/elasticsearch/elasticsearch-reverse-proxy/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="elastichsearch反向代理设置" />
 <meta property="og:description" content="内网的ES集群，平时操作都是通过命令行，有点不方便，而且安装的site插件也没法使用 ，比较蛋疼，所以配置nginx作为elasticsear" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/elasticsearch/elasticsearch-reverse-proxy/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:22:01&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:22:01&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/elasticsearch/elasticsearch-reverse-proxy/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:22:01+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:22:01+08:00" />
 
 <meta itemprop="name" content="elastichsearch反向代理设置">
-<meta itemprop="description" content="内网的ES集群，平时操作都是通过命令行，有点不方便，而且安装的site插件也没法使用 ，比较蛋疼，所以配置nginx作为elasticsear">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:22:01&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:22:01&#43;08:00" />
-<meta itemprop="wordCount" content="357">
-
-
-
-<meta itemprop="keywords" content="elasticsearch, reverse, proxy," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="elastichsearch反向代理设置"/>
+<meta itemprop="description" content="内网的ES集群，平时操作都是通过命令行，有点不方便，而且安装的site插件也没法使用 ，比较蛋疼，所以配置nginx作为elasticsear"><meta itemprop="datePublished" content="2017-12-15T19:22:01+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:22:01+08:00" />
+<meta itemprop="wordCount" content="353">
+<meta itemprop="keywords" content="elasticsearch, reverse, proxy," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="elastichsearch反向代理设置"/>
 <meta name="twitter:description" content="内网的ES集群，平时操作都是通过命令行，有点不方便，而且安装的site插件也没法使用 ，比较蛋疼，所以配置nginx作为elasticsear"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/elasticsearch/"> elasticsearch </a>
             
           </div>
-        <span class="more-meta"> 约 357 字 </span>
+        <span class="more-meta"> 约 353 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -164,7 +144,7 @@
   <h2 class="post-toc-title">文章目录</h2>
   
   <div class="post-toc-content always-active">
-    
+    <nav id="TableOfContents"></nav>
   </div>
 </div>
 
@@ -172,38 +152,22 @@
     <div class="post-content">
       <p>内网的ES集群，平时操作都是通过命令行，有点不方便，而且安装的site插件也没法使用
 ，比较蛋疼，所以配置nginx作为elasticsearch的反向代理，并且添加认证信息.</p>
-
 <p>如果是直接用域名的根节点作为反向代理的话，比较简单，直接配置一下就可以，但是问
 题是根节点被暂用，需要设置一个前缀来来访问, 就稍微麻烦一点.</p>
-
 <p>nginx配置如下:</p>
-
-<pre>
-    location ~ ^/es/ {
-            rewrite ^/es/(.*)$ /$1 break;
-            include proxy_params;
-            proxy_pass http://es_node_ip:9200;
-            proxy_redirect http://$host/ http://$host/es/;
-            auth_basic "please login";
-            auth_basic_user_file /data/passwd/es.htpasswd;
-    }
-</pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>几点需要注意：</p>
-
 <ol>
 <li><code>include proxy_params;</code> proxy_params为一些反向代理设置参数，没有的话可以去掉</li>
 <li><code>proxy_pass http://es_node_ip:9200;</code> 需要替换es_node_ip 为ES集群的IP,</li>
 <li><code>auth_basic_user_file /data/passwd/es.htpasswd</code>中<code>/data/passwd/es.htpasswd</code>为认证文件，可以用apache工具或一些<a href="http://tool.oschina.net/htpasswd">在线工具</a>生成</li>
 </ol>
-
 <p>假设域名为www.example.com, 那么就可以直接访问</p>
-
 <ul>
 <li><a href="http://www.example.com/es/">http://www.example.com/es/</a></li>
-<li><a href="http://www.example.com/es/_plugin/head/">http://www.example.com/es/_plugin/head/</a></li>
+<li><a href="http://www.example.com/es/%5C_plugin/head/">http://www.example.com/es/\_plugin/head/</a></li>
 </ul>
-
 <p>配置好之后，用起来爽多了。</p>
 
     </div>
@@ -317,7 +281,7 @@
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -338,12 +302,16 @@
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

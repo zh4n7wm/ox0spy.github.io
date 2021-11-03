@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/linux-commands/copy-remote-file/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="linux远程文件拷贝" />
 <meta property="og:description" content="我们经常会碰到从一个主机上拷贝文件到其他主机，本文汇总下常用方法。 ssh 提到远程文件拷贝，大家肯定首先想到的是ssh。(啥? 你想到的是ftp??" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/linux-commands/copy-remote-file/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:21:56&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:21:56&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/linux-commands/copy-remote-file/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:21:56+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:21:56+08:00" />
 
 <meta itemprop="name" content="linux远程文件拷贝">
-<meta itemprop="description" content="我们经常会碰到从一个主机上拷贝文件到其他主机，本文汇总下常用方法。 ssh 提到远程文件拷贝，大家肯定首先想到的是ssh。(啥? 你想到的是ftp??">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:21:56&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:21:56&#43;08:00" />
+<meta itemprop="description" content="我们经常会碰到从一个主机上拷贝文件到其他主机，本文汇总下常用方法。 ssh 提到远程文件拷贝，大家肯定首先想到的是ssh。(啥? 你想到的是ftp??"><meta itemprop="datePublished" content="2017-12-15T19:21:56+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:56+08:00" />
 <meta itemprop="wordCount" content="729">
-
-
-
-<meta itemprop="keywords" content="linux, ssh, sync, python, tar," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="linux远程文件拷贝"/>
+<meta itemprop="keywords" content="linux, ssh, sync, python, tar," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="linux远程文件拷贝"/>
 <meta name="twitter:description" content="我们经常会碰到从一个主机上拷贝文件到其他主机，本文汇总下常用方法。 ssh 提到远程文件拷贝，大家肯定首先想到的是ssh。(啥? 你想到的是ftp??"/>
 
 <!--[if lte IE 9]>
@@ -165,78 +145,54 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#ssh">ssh</a></li>
-<li><a href="#http">HTTP</a></li>
-<li><a href="#rsync">rsync</a></li>
-<li><a href="#zsync">zsync</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#ssh">ssh</a></li>
+    <li><a href="#http">HTTP</a></li>
+    <li><a href="#rsync">rsync</a></li>
+    <li><a href="#zsync">zsync</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>我们经常会碰到从一个主机上拷贝文件到其他主机，本文汇总下常用方法。</p>
-
+      <p>我们经常会碰到从一个主机上拷贝文件到其他主机，本文汇总下常用方法。</p>
 <h2 id="ssh">ssh</h2>
-
 <p>提到远程文件拷贝，大家肯定首先想到的是ssh。(啥? 你想到的是ftp?? 搭建个ftp好麻烦&hellip;)</p>
-
 <p>避免输入用户密码，可以先运行:</p>
-
 <pre><code>:::bash
 $ ssh-copy-id &lt;user@remote-host&gt;  # 输入密码，它会将你的key(~/.ssh/id_rsa.pub)添加到remote-host:~user/.ssh/authorized_keys
 </code></pre>
-
 <p>通过scp做文件拷贝:</p>
-
 <pre><code>:::bash
 $ scp [-r] [-P port] &lt;your-local-file&gt; []&lt;user&gt;@]&lt;remote-host&gt;:&lt;remote-file-path&gt;
 </code></pre>
-
 <p>如果网络比较慢可以先压缩再拷贝:</p>
-
 <pre><code>:::bash
 $ ssh user@remote-host &quot;tar zcf - /file/path/to/copy&quot; | tar zxf - -C /file/path/to/receive  # 从remote-host拷贝文件回来
 $ tar zcf - /file/path/to/copy | ssh user@remote-host &quot;tar zxf - -C /file/path/to/receive&quot;  # 将本地文件拷贝到remote-host
 </code></pre>
-
 <h2 id="http">HTTP</h2>
-
 <p>也可以通过HTTP协议拷贝，如果本地正好有nginx/apache，ln -s 创建个软链接到外部可以访问的路径，从其它机器可以通过wget下载。
 但，不是所有机器都装了nginx/apache，可以通过Python自带模块快速启动一个HTTP Simple Server。</p>
-
 <pre><code>:::bash
 $ python -mSimpleHTTPServer  # 默认监听8000端口，你当然可以自己指定端口
 $ python -mSimpleHTTPServer 8888  # 指定监听端口为8888
 $ wget listen-ip:port/&lt;file/path&gt; # 从其它主机拷贝文件
 </code></pre>
-
 <p>既然已经有了HTTP Server，你当然可以通过浏览器访问了。</p>
-
 <p>HTTP完全可以支持断点续传，wget -c 就可以。</p>
-
 <h2 id="rsync">rsync</h2>
-
 <p>大家可能都体会过scp传输过程中，网络、主机异常导致必须重新传，小文件、网络快还好，不然真的想打人。
 你一定想如果可以断点续传就好了，rsync可以完成你的心愿。</p>
-
 <pre><code>:::bash
 $ rsync -P --rsh=ssh --progress &lt;your-local-file&gt; user@remote-host:&lt;receive-file-path&gt;
 $ rsync -P -v -e ssh &lt;local-file&gt; user@remote-host:receive-file-path  # 本地同步文件到remote-host
 $ rsync -P -v -e ssh user@remote-host:receive-file-path &lt;local-file-path&gt;  # remote-host文件同步到本地
 </code></pre>
-
 <p>rsync功能强大，以后再补充。</p>
-
 <h2 id="zsync">zsync</h2>
-
 <p>先安装后看文档吧，基于HTTP的rsync，使用有一定限制，必须服务端有 .zsync 才行。优点是速度非常快。</p>
 
     </div>
@@ -354,7 +310,7 @@ $ rsync -P -v -e ssh user@remote-host:receive-file-path &lt;local-file-path&gt; 
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -375,12 +331,16 @@ $ rsync -P -v -e ssh user@remote-host:receive-file-path &lt;local-file-path&gt; 
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

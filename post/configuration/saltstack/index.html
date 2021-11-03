@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/configuration/saltstack/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="saltstack介绍" />
 <meta property="og:description" content="本文只介绍了SaltStack在CentOS上的安装，其它其它有类似的包管理工具可以安装. CentOS上安装salt-master和salt" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/configuration/saltstack/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:21:57&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:21:57&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/configuration/saltstack/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:21:57+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:21:57+08:00" />
 
 <meta itemprop="name" content="saltstack介绍">
-<meta itemprop="description" content="本文只介绍了SaltStack在CentOS上的安装，其它其它有类似的包管理工具可以安装. CentOS上安装salt-master和salt">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:21:57&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:21:57&#43;08:00" />
-<meta itemprop="wordCount" content="922">
-
-
-
-<meta itemprop="keywords" content="centos, saltstack," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="saltstack介绍"/>
+<meta itemprop="description" content="本文只介绍了SaltStack在CentOS上的安装，其它其它有类似的包管理工具可以安装. CentOS上安装salt-master和salt"><meta itemprop="datePublished" content="2017-12-15T19:21:57+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:57+08:00" />
+<meta itemprop="wordCount" content="929">
+<meta itemprop="keywords" content="centos, saltstack," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="saltstack介绍"/>
 <meta name="twitter:description" content="本文只介绍了SaltStack在CentOS上的安装，其它其它有类似的包管理工具可以安装. CentOS上安装salt-master和salt"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/configuration/"> configuration </a>
             
           </div>
-        <span class="more-meta"> 约 922 字 </span>
+        <span class="more-meta"> 约 929 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
       </div>
     </header>
@@ -165,51 +145,46 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#centos上安装salt-master和salt-minion">CentOS上安装salt-master和salt-minion</a>
-<ul>
-<li><a href="#安装salt-master">安装salt-master</a></li>
-<li><a href="#安装salt-minion">安装salt-minion</a></li>
-<li><a href="#简单测试">简单测试</a></li>
-</ul></li>
-<li><a href="#选择主机">选择主机</a>
-<ul>
-<li><a href="#globbing">globbing</a></li>
-<li><a href="#grains-system">grains system</a></li>
-<li><a href="#regular-expression">regular expression</a></li>
-<li><a href="#明确指定一个列表">明确指定一个列表</a></li>
-<li><a href="#multiple-target-types-can-be-combined-in-one-command">multiple target types can be combined in one command</a></li>
-</ul></li>
-<li><a href="#执行命令">执行命令</a>
-<ul>
-<li><a href="#执行单个命令-比如-在minion上执行-id-命令并输出">执行单个命令，比如：在minion上执行<code>id</code>命令并输出:</a></li>
-<li><a href="#执行脚本">执行脚本：</a></li>
-</ul></li>
-<li><a href="#tips">Tips</a>
-<ul>
-<li><a href="#以指定用户运行salt-master-避免每次输入salt指令都需要加-sudo-比如以centos用户运行salt-master">以指定用户运行salt-master，避免每次输入salt指令都需要加 sudo；比如以centos用户运行salt-master</a></li>
-<li><a href="#删除无法连接的salt-minion">删除无法连接的salt minion</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#centos上安装salt-master和salt-minion">CentOS上安装salt-master和salt-minion</a>
+      <ul>
+        <li><a href="#安装salt-master">安装salt-master</a></li>
+        <li><a href="#安装salt-minion">安装salt-minion</a></li>
+        <li><a href="#简单测试">简单测试</a></li>
+      </ul>
+    </li>
+    <li><a href="#选择主机">选择主机</a>
+      <ul>
+        <li><a href="#globbing">globbing</a></li>
+        <li><a href="#grains-system">grains system</a></li>
+        <li><a href="#regular-expression">regular expression</a></li>
+        <li><a href="#明确指定一个列表">明确指定一个列表</a></li>
+        <li><a href="#multiple-target-types-can-be-combined-in-one-command">multiple target types can be combined in one command</a></li>
+      </ul>
+    </li>
+    <li><a href="#执行命令">执行命令</a>
+      <ul>
+        <li><a href="#执行单个命令比如在minion上执行id命令并输出">执行单个命令，比如：在minion上执行<code>id</code>命令并输出:</a></li>
+        <li><a href="#执行脚本">执行脚本：</a></li>
+      </ul>
+    </li>
+    <li><a href="#tips">Tips</a>
+      <ul>
+        <li><a href="#以指定用户运行salt-master避免每次输入salt指令都需要加-sudo比如以centos用户运行salt-master">以指定用户运行salt-master，避免每次输入salt指令都需要加 sudo；比如以centos用户运行salt-master</a></li>
+        <li><a href="#删除无法连接的salt-minion">删除无法连接的salt minion</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>本文只介绍了SaltStack在CentOS上的安装，其它其它有类似的包管理工具可以安装.</p>
-
+      <p>本文只介绍了SaltStack在CentOS上的安装，其它其它有类似的包管理工具可以安装.</p>
 <h2 id="centos上安装salt-master和salt-minion">CentOS上安装salt-master和salt-minion</h2>
-
 <h3 id="安装salt-master">安装salt-master</h3>
-
 <p>在centos上安装salt-master:</p>
-
 <pre><code>$ sudo rpm --import https://repo.saltstack.com/yum/redhat/7/x86_64/latest/SALTSTACK-GPG-KEY.pub
 $ sudo bash -c 'cat - &gt; /etc/yum.repos.d/saltstack.repo &lt;&lt;&quot;EOF&quot;
 [saltstack-repo]
@@ -224,11 +199,8 @@ $ sudo yum install -y salt-master
 $ sudo systemctl enable salt-master.service
 $ sudo systemctl restart salt-master.service
 </code></pre>
-
 <h3 id="安装salt-minion">安装salt-minion</h3>
-
 <p>在centos上安装salt-minion:</p>
-
 <pre><code>$ sudo rpm --import https://repo.saltstack.com/yum/redhat/7/x86_64/latest/SALTSTACK-GPG-KEY.pub
 $ sudo bash -c 'cat - &gt; /etc/yum.repos.d/saltstack.repo &lt;&lt;&quot;EOF&quot;
 [saltstack-repo]
@@ -244,73 +216,45 @@ $ sudo bash -c &quot;echo 'master: $SALT_MASTER' &gt;&gt; /etc/salt/minion&quot;
 $ sudo systemctl enable salt-minion.service
 $ sudo systemctl restart salt-minion.service
 </code></pre>
-
 <p>注: 如果salt-master使用默认配置，请确保salt-master的4505, 4506端口可以被salt-minion访问.</p>
-
 <h3 id="简单测试">简单测试</h3>
-
 <p>salt-minion设置过master IP并重启salt-minion后，应该在salt-master上可以通过下面命令看到minion:</p>
-
 <pre><code>[root@master ~]$ salt-key -L  # 列出所有minion
 [root@master ~]$ salt-key -A  # 接受所有minion，也可以通过 -a 接受指定minion
 </code></pre>
-
 <p>接受minion后，就可以在salt-master上发布命令到minion了。</p>
-
 <pre><code>[root@master ~]$ salt '*' test.ping  # 简单测试master &lt;-&gt; minion是否连通
 </code></pre>
-
 <h2 id="选择主机">选择主机</h2>
-
 <p>经常会看到 <code>salt '*' test.ping</code> 这里的 <code>'*'</code> 意思是作用于所有主机。</p>
-
 <p>下面介绍 salt 支持的匹配方式。</p>
-
 <h3 id="globbing">globbing</h3>
-
 <pre><code>[root@master ~]$ salt 'ubuntu*' disk.usage
 </code></pre>
-
 <h3 id="grains-system">grains system</h3>
-
 <pre><code>[root@master ~]$ salt -G 'os:CentOS' cmd.run 'id'
 </code></pre>
-
 <h3 id="regular-expression">regular expression</h3>
-
 <pre><code>[root@master ~]$ salt -E 'centos[0-9]' test.ping
 </code></pre>
-
 <h3 id="明确指定一个列表">明确指定一个列表</h3>
-
 <pre><code>[root@master ~]$ salt -L 'centos1,centos2' test.ping
 </code></pre>
-
 <h3 id="multiple-target-types-can-be-combined-in-one-command">multiple target types can be combined in one command</h3>
-
 <pre><code>[root@master ~]$ salt -C 'G@os:CentOS and centos* or S@192.168.50.*' test.ping
 </code></pre>
-
 <p>注: 参考 - <a href="https://docs.saltstack.com/en/getstarted/fundamentals/targeting.html">https://docs.saltstack.com/en/getstarted/fundamentals/targeting.html</a></p>
-
 <h2 id="执行命令">执行命令</h2>
-
-<h3 id="执行单个命令-比如-在minion上执行-id-命令并输出">执行单个命令，比如：在minion上执行<code>id</code>命令并输出:</h3>
-
+<h3 id="执行单个命令比如在minion上执行id命令并输出">执行单个命令，比如：在minion上执行<code>id</code>命令并输出:</h3>
 <pre><code>[root@master ~]$ salt '*' cmd.run 'id'
 </code></pre>
-
 <h3 id="执行脚本">执行脚本：</h3>
-
 <p>首先要开启<code>/etc/salt/master</code>的如下设置:</p>
-
 <pre><code>file_roots:
   base:
     - /srv/salt
 </code></pre>
-
 <p>如果salt-master没有<code>/srv/salt/scripts</code>目录请自己创建，然后写个简单脚本:</p>
-
 <pre><code>[root@master ~]$ cat /srv/salt/scripts/get_ip.sh
 #!/bin/bash
 
@@ -318,23 +262,16 @@ ifconfig | grep 'inet ' | grep -Ev '127.0.0.1' | awk '{print $2}'
 
 [root@master ~]$ salt '*' cmd.script 'salt://scripts/get_ip.sh'
 </code></pre>
-
 <h2 id="tips">Tips</h2>
-
-<h3 id="以指定用户运行salt-master-避免每次输入salt指令都需要加-sudo-比如以centos用户运行salt-master">以指定用户运行salt-master，避免每次输入salt指令都需要加 sudo；比如以centos用户运行salt-master</h3>
-
+<h3 id="以指定用户运行salt-master避免每次输入salt指令都需要加-sudo比如以centos用户运行salt-master">以指定用户运行salt-master，避免每次输入salt指令都需要加 sudo；比如以centos用户运行salt-master</h3>
 <pre><code>[centos@master ~]$ sudo chown -R centos /etc/salt /var/log/salt /var/cache/salt /var/run/salt
 [centos@master ~]$ sudo mkdir -p /srv/salt
 [centos@master ~]$ sudo chown -R centos /srv/salt
 在 /etc/salt/master 中设置 user: centos
 </code></pre>
-
 <p>注: 理论上salt-minion也可以通过这种方式运行以指定用户运行，但我测试会报错 &ldquo;Minion did not return. [No response]&rdquo;</p>
-
 <h3 id="删除无法连接的salt-minion">删除无法连接的salt minion</h3>
-
-<pre><code>[root@master ~]$ salt-run manage.down removekeys=True
-</code></pre>
+<pre><code>[root@master ~]$ salt-run manage.down removekeys=True</code></pre>
 
     </div>
 
@@ -445,7 +382,7 @@ ifconfig | grep 'inet ' | grep -Ev '127.0.0.1' | awk '{print $2}'
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -466,12 +403,16 @@ ifconfig | grep 'inet ' | grep -Ev '127.0.0.1' | awk '{print $2}'
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

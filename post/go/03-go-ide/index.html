@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/go/03-go-ide/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="go学习笔记3之打造sublime text 3作为go的集成开发环境" />
 <meta property="og:description" content="可用于GO开发的工具 可以用于GO开发的工具和插件目前已经非常多了,如VIM, Emacs, atom等，这里IDEs and Plugins for Go罗列了许多可以作为GO开发 的" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/go/03-go-ide/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:21:59&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:21:59&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/go/03-go-ide/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:21:59+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:21:59+08:00" />
 
 <meta itemprop="name" content="go学习笔记3之打造sublime text 3作为go的集成开发环境">
-<meta itemprop="description" content="可用于GO开发的工具 可以用于GO开发的工具和插件目前已经非常多了,如VIM, Emacs, atom等，这里IDEs and Plugins for Go罗列了许多可以作为GO开发 的">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:21:59&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:21:59&#43;08:00" />
-<meta itemprop="wordCount" content="902">
-
-
-
-<meta itemprop="keywords" content="go, ide, sublime," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="go学习笔记3之打造sublime text 3作为go的集成开发环境"/>
+<meta itemprop="description" content="可用于GO开发的工具 可以用于GO开发的工具和插件目前已经非常多了,如VIM, Emacs, atom等，这里IDEs and Plugins for Go罗列了许多可以作为GO开发 的"><meta itemprop="datePublished" content="2017-12-15T19:21:59+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:59+08:00" />
+<meta itemprop="wordCount" content="944">
+<meta itemprop="keywords" content="go, ide, sublime," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="go学习笔记3之打造sublime text 3作为go的集成开发环境"/>
 <meta name="twitter:description" content="可用于GO开发的工具 可以用于GO开发的工具和插件目前已经非常多了,如VIM, Emacs, atom等，这里IDEs and Plugins for Go罗列了许多可以作为GO开发 的"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/go/"> go </a>
             
           </div>
-        <span class="more-meta"> 约 902 字 </span>
+        <span class="more-meta"> 约 944 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
       </div>
     </header>
@@ -165,58 +145,44 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#可用于go开发的工具">可用于GO开发的工具</a></li>
-<li><a href="#安装sublime-text-3及插件">安装Sublime text 3及插件</a></li>
-<li><a href="#安装插件依赖的go-package">安装插件依赖的Go Package</a></li>
-<li><a href="#配置插件">配置插件:</a></li>
-<li><a href="#使用">使用</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#可用于go开发的工具">可用于GO开发的工具</a></li>
+        <li><a href="#安装sublime-text-3及插件">安装Sublime text 3及插件</a></li>
+        <li><a href="#安装插件依赖的go-package">安装插件依赖的Go Package</a></li>
+        <li><a href="#配置插件">配置插件:</a></li>
+        <li><a href="#使用">使用</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h3 id="可用于go开发的工具">可用于GO开发的工具</h3>
-
+      <h3 id="可用于go开发的工具">可用于GO开发的工具</h3>
 <p>可以用于GO开发的工具和插件目前已经非常多了,如VIM, Emacs, atom等，这里<a href="https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins">IDEs and Plugins for
 Go</a>罗列了许多可以作为GO开发
 的IDE和插件，我们可以根据自己的使用习惯自行选择。本文主要阐述如何利用Sublime
 Text 3 作为GO的开发环境.</p>
-
 <h3 id="安装sublime-text-3及插件">安装Sublime text 3及插件</h3>
-
 <p>到Sublime 官网选择适合自己系统的版本<a href="http://www.sublimetext.com/3">http://www.sublimetext.com/3</a>, 我选择的是
 Ubuntu 64位的tarball包，解压出来可以直接用了。</p>
-
 <p>依次安装插件</p>
-
 <ul>
 <li>Package Control</li>
 <li>GoSublime</li>
 <li>GoDef</li>
 </ul>
-
 <p>这里我只列出了Go开发必须的插件, 其他的一些插件可以根据自身需要选择安装或者从
 <a href="http://blog.wiseturtles.com/posts/go-introduce.html">http://blog.wiseturtles.com/posts/go-introduce.html</a>选择热门插件</p>
-
 <h3 id="安装插件依赖的go-package">安装插件依赖的Go Package</h3>
-
 <p>上面的插件需要用到一些go cmd tools, 但是这些工具因为墙的问题，没法直接下载，好
 在Github上面由这些工具的镜像，因此我们可以曲线救国，从镜像下载。在下载之前，首先，还是要先设置<code>GOPATH</code>变
 量, 怎么设置可以参考本系列文章第二篇<a href="http://blog.wiseturtles.com/posts/go-introduce.html">http://blog.wiseturtles.com/posts/go-introduce.html</a></p>
-
 <p>安装必备的cmd tools</p>
-
 <pre><code>:::bash
 #　创建目录
 $ export GOPATH='your_go_path'
@@ -238,67 +204,62 @@ $ go get github.com/rogpeppe/godef
 $ go get github.com/astaxie/beego
 $ go get github.com/beego/bee
 </code></pre>
-
 <h3 id="配置插件">配置插件:</h3>
-
 <ul>
-<li><p>GoSublime 配置, Preferences -&gt; Package Settings -&gt; GoSublime -&gt;　Settings - User</p>
+<li>
+<p>GoSublime 配置, Preferences -&gt; Package Settings -&gt; GoSublime -&gt;　Settings - User</p>
+<pre><code>  {
+      // you may set specific environment variables here
+      // e.g &quot;env&quot;: { &quot;PATH&quot;: &quot;$HOME/go/bin:$PATH&quot; }
+      // in values, $PATH and ${PATH} are replaced with
+      // the corresponding environment(PATH) variable, if it exists.
+      //根据实际情况设置如下变量
+      &quot;env&quot;: {&quot;GOROOT&quot;: &quot;/usr/local/go&quot;, &quot;GOPATH&quot;: &quot;$HOME/golang&quot;, &quot;PATH&quot;: &quot;$GOPATH/bin:$GOROOT/bin:$PATH&quot; },
 
-<pre><code>{
-    // you may set specific environment variables here
-    // e.g &quot;env&quot;: { &quot;PATH&quot;: &quot;$HOME/go/bin:$PATH&quot; }
-    // in values, $PATH and ${PATH} are replaced with
-    // the corresponding environment(PATH) variable, if it exists.
-    //根据实际情况设置如下变量
-    &quot;env&quot;: {&quot;GOROOT&quot;: &quot;/usr/local/go&quot;, &quot;GOPATH&quot;: &quot;$HOME/golang&quot;, &quot;PATH&quot;: &quot;$GOPATH/bin:$GOROOT/bin:$PATH&quot; },
+      &quot;fmt_cmd&quot;: [&quot;goimports&quot;],
 
-    &quot;fmt_cmd&quot;: [&quot;goimports&quot;],
+      // enable comp-lint, this will effectively disable the live linter
+      &quot;comp_lint_enabled&quot;: true,
 
-    // enable comp-lint, this will effectively disable the live linter
-    &quot;comp_lint_enabled&quot;: true,
+      // list of commands to run
+      &quot;comp_lint_commands&quot;: [
+          // run `golint` on all files in the package
+          // &quot;shell&quot;:true is required in order to run the command through your shell (to expand `*.go`)
+          // also see: the documentation for the `shell` setting in the default settings file ctrl+dot,ctrl+4
+          {&quot;cmd&quot;: [&quot;golint *.go&quot;], &quot;shell&quot;: true},
 
-    // list of commands to run
-    &quot;comp_lint_commands&quot;: [
-        // run `golint` on all files in the package
-        // &quot;shell&quot;:true is required in order to run the command through your shell (to expand `*.go`)
-        // also see: the documentation for the `shell` setting in the default settings file ctrl+dot,ctrl+4
-        {&quot;cmd&quot;: [&quot;golint *.go&quot;], &quot;shell&quot;: true},
+          // run go vet on the package
+          {&quot;cmd&quot;: [&quot;go&quot;, &quot;vet&quot;]},
 
-        // run go vet on the package
-        {&quot;cmd&quot;: [&quot;go&quot;, &quot;vet&quot;]},
+          // run `go install` on the package. GOBIN is set,
+          // so `main` packages shouldn't result in the installation of a binary
+          {&quot;cmd&quot;: [&quot;go&quot;, &quot;install&quot;]}
+      ],
 
-        // run `go install` on the package. GOBIN is set,
-        // so `main` packages shouldn't result in the installation of a binary
-        {&quot;cmd&quot;: [&quot;go&quot;, &quot;install&quot;]}
-    ],
-
-    &quot;on_save&quot;: [
-        // run comp-lint when you save,
-        // naturally, you can also bind this command `gs_comp_lint`
-        // to a key binding if you want
-        {&quot;cmd&quot;: &quot;gs_comp_lint&quot;}
-    ]
-}
-</code></pre></li>
-
-<li><p>GoDef 配置, Preferences -&gt; Package Settings -&gt; GoDef -&gt;　Settings - User</p>
-
-<pre><code>{
-    //根据实际情况设置如下变量
-    &quot;gopath&quot;: &quot;/home/linliang/golang&quot;
-}
-</code></pre></li>
+      &quot;on_save&quot;: [
+          // run comp-lint when you save,
+          // naturally, you can also bind this command `gs_comp_lint`
+          // to a key binding if you want
+          {&quot;cmd&quot;: &quot;gs_comp_lint&quot;}
+      ]
+  }
+</code></pre>
+</li>
+<li>
+<p>GoDef 配置, Preferences -&gt; Package Settings -&gt; GoDef -&gt;　Settings - User</p>
+<pre><code>  {
+      //根据实际情况设置如下变量
+      &quot;gopath&quot;: &quot;/home/linliang/golang&quot;
+  }
+</code></pre>
+</li>
 </ul>
-
 <h3 id="使用">使用</h3>
-
 <p>创建一个Go文件，默认情况下:</p>
-
 <ul>
 <li>连续两次输入<code>Ctrl + dot(.)</code>, 可以查看GoSublime的功能和快捷键</li>
 <li>使用<code>gd</code>可以使用GoDef插件的跳转</li>
 </ul>
-
 <p>更多使用可以参考两个插件的帮助文档</p>
 
     </div>
@@ -412,7 +373,7 @@ $ go get github.com/beego/bee
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -433,12 +394,16 @@ $ go get github.com/beego/bee
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

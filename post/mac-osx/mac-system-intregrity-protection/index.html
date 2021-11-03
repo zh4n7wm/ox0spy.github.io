@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/mac-osx/mac-system-intregrity-protection/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="mac system intregrity protection - operation not permitted" />
 <meta property="og:description" content="貌似刚拿到电脑是自己手动编译安装了vim 7.3，后来都是brew install vim最新版本。 今天vim出了点问题，发现系统上还有个vim 7.3，准备删" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/mac-osx/mac-system-intregrity-protection/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:22:00&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:22:00&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/mac-osx/mac-system-intregrity-protection/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:22:00+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:22:00+08:00" />
 
 <meta itemprop="name" content="mac system intregrity protection - operation not permitted">
-<meta itemprop="description" content="貌似刚拿到电脑是自己手动编译安装了vim 7.3，后来都是brew install vim最新版本。 今天vim出了点问题，发现系统上还有个vim 7.3，准备删">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:22:00&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:22:00&#43;08:00" />
-<meta itemprop="wordCount" content="380">
-
-
-
-<meta itemprop="keywords" content="mac, sip," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="mac system intregrity protection - operation not permitted"/>
+<meta itemprop="description" content="貌似刚拿到电脑是自己手动编译安装了vim 7.3，后来都是brew install vim最新版本。 今天vim出了点问题，发现系统上还有个vim 7.3，准备删"><meta itemprop="datePublished" content="2017-12-15T19:22:00+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:22:00+08:00" />
+<meta itemprop="wordCount" content="393">
+<meta itemprop="keywords" content="mac, sip," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="mac system intregrity protection - operation not permitted"/>
 <meta name="twitter:description" content="貌似刚拿到电脑是自己手动编译安装了vim 7.3，后来都是brew install vim最新版本。 今天vim出了点问题，发现系统上还有个vim 7.3，准备删"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/mac-osx/"> mac-osx </a>
             
           </div>
-        <span class="more-meta"> 约 380 字 </span>
+        <span class="more-meta"> 约 393 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -165,45 +145,28 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#问题描述">问题描述</a></li>
-<li><a href="#解决">解决</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#问题描述">问题描述</a></li>
+    <li><a href="#解决">解决</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>貌似刚拿到电脑是自己手动编译安装了vim 7.3，后来都是brew install vim最新版本。</p>
-
+      <p>貌似刚拿到电脑是自己手动编译安装了vim 7.3，后来都是brew install vim最新版本。</p>
 <p>今天vim出了点问题，发现系统上还有个vim 7.3，准备删除时就报<code>Operation not permitted</code></p>
-
 <h2 id="问题描述">问题描述</h2>
-
-<pre><code>$ sudo rm -rf /usr/share/vim/
+<pre tabindex="0"><code>$ sudo rm -rf /usr/share/vim/
 rm: /usr/share/vim: Operation not permitted
-</code></pre>
-
-<p>习惯Linux我就觉得有没有搞错，我是root呀，什么文件不能删除呢。。。</p>
-
+</code></pre><p>习惯Linux我就觉得有没有搞错，我是root呀，什么文件不能删除呢。。。</p>
 <p>Google下才知道Apple为了防止恶意软件破坏系统开启了<a href="https://support.apple.com/en-us/HT204899">System Intregrity Protection</a>。</p>
-
 <h2 id="解决">解决</h2>
-
 <p>查看文件flag:</p>
-
-<pre><code>$ ls -lO /usr/share/vim
+<pre tabindex="0"><code>$ ls -lO /usr/share/vim
 -rwxr-xr-x  8 root  wheel  restricted - Aug  2 22:36 /usr/share/vim
-</code></pre>
-
-<p>参考: <a href="http://stackoverflow.com/questions/30768087/restricted-folder-files-in-os-x-el-capitan">http://stackoverflow.com/questions/30768087/restricted-folder-files-in-os-x-el-capitan</a></p>
-
+</code></pre><p>参考: <a href="http://stackoverflow.com/questions/30768087/restricted-folder-files-in-os-x-el-capitan">http://stackoverflow.com/questions/30768087/restricted-folder-files-in-os-x-el-capitan</a></p>
 <ul>
 <li>reboot</li>
 <li>as soon as you hear the &ldquo;Mac sound&rdquo; on the grey screen, press Cmd+R to enter Recovery mode</li>
@@ -217,17 +180,12 @@ rm: /usr/share/vim: Operation not permitted
 <li>Reboot again</li>
 <li>done</li>
 </ul>
-
 <p>流程如下:</p>
-
 <p>重启 -&gt; Command+R，进入恢复模式 -&gt; 在终端通过<code>csrutil disable</code>禁掉SIP -&gt; 重启 -&gt; 删除文件 -&gt; 再通过Command+R，进入恢复模式 -&gt; 通过 <code>csrutil enable</code> 启用SIP -&gt; 再次重启</p>
-
 <p>查看SIP状态:</p>
-
-<pre><code>$ csrutil status
+<pre tabindex="0"><code>$ csrutil status
 System Integrity Protection status: enabled.
 </code></pre>
-
     </div>
 
     
@@ -337,7 +295,7 @@ System Integrity Protection status: enabled.
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -358,12 +316,16 @@ System Integrity Protection status: enabled.
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

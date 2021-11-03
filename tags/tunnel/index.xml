@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tunnel on ox0spy&#39;s blog</title>
+    <title> tunnel on ox0spy&#39;s blog</title>
     <link>https://ox0spy.github.io/tags/tunnel/</link>
-    <description>Recent content in Tunnel on ox0spy&#39;s blog</description>
+    <description>Recent content in  tunnel on ox0spy&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 25 Oct 2018 18:01:58 +0800</lastBuildDate>
-    
-	<atom:link href="https://ox0spy.github.io/tags/tunnel/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 25 Oct 2018 18:01:58 +0800</lastBuildDate><atom:link href="https://ox0spy.github.io/tags/tunnel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>forward local keypair in ssh session</title>
       <link>https://ox0spy.github.io/post/configuration/forward-local-keypair-in-ssh-session/</link>

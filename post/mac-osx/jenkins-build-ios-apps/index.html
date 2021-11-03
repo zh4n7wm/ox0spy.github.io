@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/mac-osx/jenkins-build-ios-apps/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="jenkins自动构建ios应用" />
 <meta property="og:description" content="最近折腾用Jenkins自动构建iOS应用。 编译环境 为了构建iOS应用，必须找台Mac电脑做slave。 安装很简单，貌似brew install jenki" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/mac-osx/jenkins-build-ios-apps/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:22:00&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:22:00&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/mac-osx/jenkins-build-ios-apps/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:22:00+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:22:00+08:00" />
 
 <meta itemprop="name" content="jenkins自动构建ios应用">
-<meta itemprop="description" content="最近折腾用Jenkins自动构建iOS应用。 编译环境 为了构建iOS应用，必须找台Mac电脑做slave。 安装很简单，貌似brew install jenki">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:22:00&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:22:00&#43;08:00" />
-<meta itemprop="wordCount" content="363">
-
-
-
-<meta itemprop="keywords" content="jenkins, mac, ios," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="jenkins自动构建ios应用"/>
+<meta itemprop="description" content="最近折腾用Jenkins自动构建iOS应用。 编译环境 为了构建iOS应用，必须找台Mac电脑做slave。 安装很简单，貌似brew install jenki"><meta itemprop="datePublished" content="2017-12-15T19:22:00+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:22:00+08:00" />
+<meta itemprop="wordCount" content="399">
+<meta itemprop="keywords" content="jenkins, mac, ios," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="jenkins自动构建ios应用"/>
 <meta name="twitter:description" content="最近折腾用Jenkins自动构建iOS应用。 编译环境 为了构建iOS应用，必须找台Mac电脑做slave。 安装很简单，貌似brew install jenki"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/mac-osx/"> mac-osx </a>
             
           </div>
-        <span class="more-meta"> 约 363 字 </span>
+        <span class="more-meta"> 约 399 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -165,86 +145,61 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#编译环境">编译环境</a></li>
-<li><a href="#开发者证书">开发者证书</a></li>
-<li><a href="#编译-打包命令">编译、打包命令</a></li>
-<li><a href="#碰到的问题">碰到的问题</a>
-<ul>
-<li><a href="#user-interaction-is-not-allowed">User interaction is not allowed</a></li>
-</ul></li>
-<li><a href="#参考文章">参考文章</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#编译环境">编译环境</a></li>
+    <li><a href="#开发者证书">开发者证书</a></li>
+    <li><a href="#编译打包命令">编译、打包命令</a></li>
+    <li><a href="#碰到的问题">碰到的问题</a>
+      <ul>
+        <li><a href="#user-interaction-is-not-allowed">User interaction is not allowed</a></li>
+      </ul>
+    </li>
+    <li><a href="#参考文章">参考文章</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>最近折腾用Jenkins自动构建iOS应用。</p>
-
+      <p>最近折腾用Jenkins自动构建iOS应用。</p>
 <h2 id="编译环境">编译环境</h2>
-
 <p>为了构建iOS应用，必须找台Mac电脑做slave。
 安装很简单，貌似brew install jenkins就可以了，然后，Jenkins页面上将它加入作为slave。</p>
-
 <h2 id="开发者证书">开发者证书</h2>
-
 <p>为了可以编译、打包，需要制作开发者证书，并导出为.p12, .cer, .mobileprovision
 生成过程自己Google吧。</p>
-
-<h2 id="编译-打包命令">编译、打包命令</h2>
-
+<h2 id="编译打包命令">编译、打包命令</h2>
 <p>同意Xcode和Apple SDK协议:</p>
-
 <pre><code>:::bash
 $ sudo xcodebuild -license
 </code></pre>
-
 <p>我用Facebook开源的xctool编译iOS应用，安装xctool。</p>
-
 <pre><code>:::bash
 $ brew install xctool
 </code></pre>
-
 <p>我没有使用Jenkins的Xcode插件，直接通过如下命令编译:</p>
-
 <pre><code>:::bash
 $ xctool -workspace ${WORKSPACE} -scheme ${SCHEME} archive -archivePath &quot;${ARCHIVEPATH}/${IPA_NAME}&quot;
 $ xcrun -sdk iphoneos PackageApplication -v &quot;${PROJECT_BUILDDIR}&quot;/*.app -o &quot;${ARCHIVEPATH}/${IPA_NAME}.ipa&quot;
 </code></pre>
-
 <p>生成dSYM:</p>
-
 <pre><code>:::bash
 $ ( cd ${DSYM_INPUT_PATH} ; zip -r -X ${DSYM_ZIP_OUTPUT_PATH} *.dSYM )  # zipping dSYM for testflight upload
 </code></pre>
-
 <h2 id="碰到的问题">碰到的问题</h2>
-
 <h3 id="user-interaction-is-not-allowed">User interaction is not allowed</h3>
-
 <pre><code>:::bash
 $ security unlock-keychain -p &lt;your-passwd&gt; /Users/wlw/Library/Keychains/login.keychain
 $ security show-keychain-info ~/Library/Keychains/login.keychain
 $ set-keychain-settings -t 3600 -l ~/Library/Keychains/login.keychain
 </code></pre>
-
 <p>开始在命令行运行完还是一直报这个错误，后来，将unlock-keychain命令放在编译命令前就好了。</p>
-
 <p>记得编译前先运行:</p>
-
 <pre><code>:::bash
 $ security unlock-keychain -p &lt;your-passwd&gt; &quot;$HOME/Library/Keychains/login.keychain&quot;
 </code></pre>
-
 <h2 id="参考文章">参考文章</h2>
-
 <ul>
 <li><a href="http://www.egeek.me/2013/02/23/jenkins-and-xcode-user-interaction-is-not-allowed/">http://www.egeek.me/2013/02/23/jenkins-and-xcode-user-interaction-is-not-allowed/</a></li>
 </ul>
@@ -360,7 +315,7 @@ $ security unlock-keychain -p &lt;your-passwd&gt; &quot;$HOME/Library/Keychains/
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -381,12 +336,16 @@ $ security unlock-keychain -p &lt;your-passwd&gt; &quot;$HOME/Library/Keychains/
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

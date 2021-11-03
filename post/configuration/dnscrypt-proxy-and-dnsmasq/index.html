@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/configuration/dnscrypt-proxy-and-dnsmasq/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="DNSCrypt &#43; dnsmasq" />
 <meta property="og:description" content="本文介绍如何使用 dnscrypt-proxy &#43; dnsmasq 避免 DNS 污染， dnscrypt-proxy 是 dnscrypt 的一种实现，它能让古老的 DNS 协议更安全，然后 dnsmasq 从 dnscrypt-proxy 上获取正确的 DNS 解析，并做本地缓存加快速度。 DNSCrypt DNSCrypt 是协议" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/configuration/dnscrypt-proxy-and-dnsmasq/" />
-
-
-
-<meta property="article:published_time" content="2018-03-31T21:49:01&#43;08:00"/>
-
-<meta property="article:modified_time" content="2018-03-31T21:49:01&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/configuration/dnscrypt-proxy-and-dnsmasq/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2018-03-31T21:49:01+08:00" />
+<meta property="article:modified_time" content="2018-03-31T21:49:01+08:00" />
 
 <meta itemprop="name" content="DNSCrypt &#43; dnsmasq">
-<meta itemprop="description" content="本文介绍如何使用 dnscrypt-proxy &#43; dnsmasq 避免 DNS 污染， dnscrypt-proxy 是 dnscrypt 的一种实现，它能让古老的 DNS 协议更安全，然后 dnsmasq 从 dnscrypt-proxy 上获取正确的 DNS 解析，并做本地缓存加快速度。 DNSCrypt DNSCrypt 是协议">
-
-
-<meta itemprop="datePublished" content="2018-03-31T21:49:01&#43;08:00" />
-<meta itemprop="dateModified" content="2018-03-31T21:49:01&#43;08:00" />
-<meta itemprop="wordCount" content="478">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="DNSCrypt &#43; dnsmasq"/>
+<meta itemprop="description" content="本文介绍如何使用 dnscrypt-proxy &#43; dnsmasq 避免 DNS 污染， dnscrypt-proxy 是 dnscrypt 的一种实现，它能让古老的 DNS 协议更安全，然后 dnsmasq 从 dnscrypt-proxy 上获取正确的 DNS 解析，并做本地缓存加快速度。 DNSCrypt DNSCrypt 是协议"><meta itemprop="datePublished" content="2018-03-31T21:49:01+08:00" />
+<meta itemprop="dateModified" content="2018-03-31T21:49:01+08:00" />
+<meta itemprop="wordCount" content="481">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="DNSCrypt &#43; dnsmasq"/>
 <meta name="twitter:description" content="本文介绍如何使用 dnscrypt-proxy &#43; dnsmasq 避免 DNS 污染， dnscrypt-proxy 是 dnscrypt 的一种实现，它能让古老的 DNS 协议更安全，然后 dnsmasq 从 dnscrypt-proxy 上获取正确的 DNS 解析，并做本地缓存加快速度。 DNSCrypt DNSCrypt 是协议"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/dns/"> dns </a>
             
           </div>
-        <span class="more-meta"> 约 478 字 </span>
+        <span class="more-meta"> 约 481 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -165,53 +145,41 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#dnscrypt">DNSCrypt</a>
-<ul>
-<li><a href="#安装-dnscrypt-proxy">安装 dnscrypt-proxy</a></li>
-<li><a href="#修改配置文件">修改配置文件</a></li>
-<li><a href="#启动服务">启动服务</a></li>
-<li><a href="#测试">测试</a></li>
-</ul></li>
-<li><a href="#dnsmasq">dnsmasq</a>
-<ul>
-<li><a href="#安装-dnsmasq">安装 dnsmasq</a></li>
-<li><a href="#修改配置文件-1">修改配置文件</a></li>
-<li><a href="#启动服务-1">启动服务</a></li>
-<li><a href="#修改-etc-resolv-conf">修改 /etc/resolv.conf</a></li>
-<li><a href="#测试-1">测试</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#dnscrypt">DNSCrypt</a>
+      <ul>
+        <li><a href="#安装-dnscrypt-proxy">安装 dnscrypt-proxy</a></li>
+        <li><a href="#修改配置文件">修改配置文件</a></li>
+        <li><a href="#启动服务">启动服务</a></li>
+        <li><a href="#测试">测试</a></li>
+      </ul>
+    </li>
+    <li><a href="#dnsmasq">dnsmasq</a>
+      <ul>
+        <li><a href="#安装-dnsmasq">安装 dnsmasq</a></li>
+        <li><a href="#修改配置文件-1">修改配置文件</a></li>
+        <li><a href="#启动服务-1">启动服务</a></li>
+        <li><a href="#修改-etcresolvconf">修改 /etc/resolv.conf</a></li>
+        <li><a href="#测试-1">测试</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>本文介绍如何使用 <code>dnscrypt-proxy + dnsmasq</code> 避免 DNS 污染， <code>dnscrypt-proxy</code> 是 <code>dnscrypt</code> 的一种实现，它能让古老的 DNS 协议更安全，然后 <code>dnsmasq</code> 从 <code>dnscrypt-proxy</code> 上获取正确的 DNS 解析，并做本地缓存加快速度。</p>
-
+      <p>本文介绍如何使用 <code>dnscrypt-proxy + dnsmasq</code> 避免 DNS 污染， <code>dnscrypt-proxy</code> 是 <code>dnscrypt</code> 的一种实现，它能让古老的 DNS 协议更安全，然后 <code>dnsmasq</code> 从 <code>dnscrypt-proxy</code> 上获取正确的 DNS 解析，并做本地缓存加快速度。</p>
 <h2 id="dnscrypt">DNSCrypt</h2>
-
 <p><code>DNSCrypt</code> 是协议，它使 <code>DNS client</code> 和 <code>DNS resolver</code> 之间的通讯是经过认证的，避免 DNS 污染。</p>
-
 <p><code>dnscrypt-proxy</code> 是 <code>DNSCrypt</code> 的一种实现。</p>
-
 <p>更多信息：<a href="https://dnscrypt.info/">https://dnscrypt.info/</a></p>
-
 <h3 id="安装-dnscrypt-proxy">安装 dnscrypt-proxy</h3>
-
 <pre><code>$ brew install dnscrypt-proxy
 </code></pre>
-
 <h3 id="修改配置文件">修改配置文件</h3>
-
 <p>让 <code>dnscrypt-proxy</code> 监听到 <code>127.0.0.1:40</code> 及 IPv6 的 <code>[::1]:40</code></p>
-
 <pre><code>$ grep -Pv '^\s*#|^$' /usr/local/etc/dnscrypt-proxy.toml
 listen_addresses = ['127.0.0.1:40', '[::1]:40']
 max_clients = 250
@@ -252,14 +220,10 @@ refresh_delay = 72
 prefix = ''
 [static]
 </code></pre>
-
 <h3 id="启动服务">启动服务</h3>
-
 <pre><code>$ sudo brew services restart dnscrypt-proxy
 </code></pre>
-
 <h3 id="测试">测试</h3>
-
 <pre><code>$ dnscrypt-proxy -resolve twitter.com
 Resolving [twitter.com]
 
@@ -269,22 +233,14 @@ IP addresses:   104.244.42.1, 104.244.42.129
 TXT records:    google-site-verification=h6dJIv0HXjLOkGAotLAWEzvoi9SxqP4vjpx98vrCvvQ v=spf1 ip4:199.16.156.0/22 ip4:199.59.148.0/22 ip4:8.25.194.0/23 ip4:8.25.196.0/23 ip4:204.92.114.203 ip4:204.92.114.204/31 ip4:54.156.255.69 include:_spf.google.com include:_thirdparty.twitter.com -all
 Resolver IP:    45.76.91.215 (45.76.91.215.vultr.com.)
 </code></pre>
-
 <h2 id="dnsmasq">dnsmasq</h2>
-
 <h3 id="安装-dnsmasq">安装 dnsmasq</h3>
-
 <pre><code>$ brew install dnsmasq
 </code></pre>
-
 <h3 id="修改配置文件-1">修改配置文件</h3>
-
 <p><code>server=127.0.0.1#40</code> 该行让 dnsmasq 请求 <code>dnscrypt-proxy</code> 来获取 DNS 解析。</p>
-
 <p><code>conf-dir=/usr/local/etc/dnsmasq.d</code> 目录中的文件是 <a href="https://github.com/felixonmars/dnsmasq-china-list">felixonmars/dnsmasq-china-list</a> 中的 <code>*.conf</code> 文件，这样会使国内域名通过国内DNS解析，加快解析速度。</p>
-
 <p><code>addn-hosts=/usr/local/etc/dnsmasq.hosts</code> 类似 <code>/etc/hosts</code> ，暂时并没有创建该文件。</p>
-
 <pre><code>$ grep -Pv '^\s*#|^$' /usr/local/etc/dnsmasq.conf
 no-resolv
 no-poll
@@ -306,28 +262,19 @@ cache-size=2000
 proxy-dnssec
 log-queries
 </code></pre>
-
 <h3 id="启动服务-1">启动服务</h3>
-
 <pre><code>$ sudo brew services restart dnsmasq
 </code></pre>
-
-<h3 id="修改-etc-resolv-conf">修改 /etc/resolv.conf</h3>
-
+<h3 id="修改-etcresolvconf">修改 /etc/resolv.conf</h3>
 <pre><code>$ cat /etc/resolv.conf
 nameserver 127.0.0.1
 </code></pre>
-
 <p>查看系统使用的 DNS</p>
-
 <pre><code>$ scutil --dns
 </code></pre>
-
 <h3 id="测试-1">测试</h3>
-
 <pre><code>$ dig twitter.com
 </code></pre>
-
 <p>可以看看 <code>Query time</code> 第二次的查询时间为 0，也就是 dnsmasq 做了本地缓存。</p>
 
     </div>
@@ -433,7 +380,7 @@ nameserver 127.0.0.1
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -454,12 +401,16 @@ nameserver 127.0.0.1
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/configuration/android-command-line-tools/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="android命令行工具" />
 <meta property="og:description" content="Android命令行工具 android 下面介绍命令行下使用android脚本。 场景：命令行下安装android build tools、sdk、API。 获取所有可用" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/configuration/android-command-line-tools/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:21:58&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:21:58&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/configuration/android-command-line-tools/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:21:58+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:21:58+08:00" />
 
 <meta itemprop="name" content="android命令行工具">
-<meta itemprop="description" content="Android命令行工具 android 下面介绍命令行下使用android脚本。 场景：命令行下安装android build tools、sdk、API。 获取所有可用">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:21:58&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:21:58&#43;08:00" />
-<meta itemprop="wordCount" content="163">
-
-
-
-<meta itemprop="keywords" content="android," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="android命令行工具"/>
+<meta itemprop="description" content="Android命令行工具 android 下面介绍命令行下使用android脚本。 场景：命令行下安装android build tools、sdk、API。 获取所有可用"><meta itemprop="datePublished" content="2017-12-15T19:21:58+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:58+08:00" />
+<meta itemprop="wordCount" content="166">
+<meta itemprop="keywords" content="android," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="android命令行工具"/>
 <meta name="twitter:description" content="Android命令行工具 android 下面介绍命令行下使用android脚本。 场景：命令行下安装android build tools、sdk、API。 获取所有可用"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/configuration/"> configuration </a>
             
           </div>
-        <span class="more-meta"> 约 163 字 </span>
+        <span class="more-meta"> 约 166 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -165,49 +145,35 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#android命令行工具">Android命令行工具</a>
-<ul>
-<li><a href="#android">android</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#android命令行工具">Android命令行工具</a>
+      <ul>
+        <li><a href="#android">android</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="android命令行工具">Android命令行工具</h2>
-
+      <h2 id="android命令行工具">Android命令行工具</h2>
 <h3 id="android">android</h3>
-
 <p>下面介绍命令行下使用android脚本。</p>
-
 <p>场景：命令行下安装android build tools、sdk、API。</p>
-
 <p>获取所有可用的包:</p>
-
 <pre><code>:::bash
 $ android list sdk -a -u
 $ android list sdk -a -u --proxy-host proxy-host --proxy-port proxy-port  # 设置代理
 </code></pre>
-
 <p>安装指定的包：(num1, num2是上面命令返回的序号)</p>
-
 <pre><code>:::bash
 $ android update sdk -u -a -t &lt;num1,num2&gt;
 </code></pre>
-
 <p>安装指定平台的包:</p>
-
 <pre><code>$ android update sdk -u --filter platform-tools,android-24
-$ android update sdk -u --all --filter &lt;number&gt; # item前面的编号
-</code></pre>
+$ android update sdk -u --all --filter &lt;number&gt; # item前面的编号</code></pre>
 
     </div>
 
@@ -316,7 +282,7 @@ $ android update sdk -u --all --filter &lt;number&gt; # item前面的编号
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -337,12 +303,16 @@ $ android update sdk -u --all --filter &lt;number&gt; # item前面的编号
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

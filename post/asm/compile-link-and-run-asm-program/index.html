@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/asm/compile-link-and-run-asm-program/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="编译、链接、运行汇编程序" />
 <meta property="og:description" content="学习汇编过程中每次输入as, ld的一堆命令行参数编译、链接程序实在很麻烦。 所以，写个小脚本完成汇编程序的编译、链接及运行。 脚本介绍 脚本内容如" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/asm/compile-link-and-run-asm-program/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:21:58&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:21:58&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/asm/compile-link-and-run-asm-program/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:21:58+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:21:58+08:00" />
 
 <meta itemprop="name" content="编译、链接、运行汇编程序">
-<meta itemprop="description" content="学习汇编过程中每次输入as, ld的一堆命令行参数编译、链接程序实在很麻烦。 所以，写个小脚本完成汇编程序的编译、链接及运行。 脚本介绍 脚本内容如">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:21:58&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:21:58&#43;08:00" />
-<meta itemprop="wordCount" content="534">
-
-
-
-<meta itemprop="keywords" content="asm, linux," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="编译、链接、运行汇编程序"/>
+<meta itemprop="description" content="学习汇编过程中每次输入as, ld的一堆命令行参数编译、链接程序实在很麻烦。 所以，写个小脚本完成汇编程序的编译、链接及运行。 脚本介绍 脚本内容如"><meta itemprop="datePublished" content="2017-12-15T19:21:58+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:21:58+08:00" />
+<meta itemprop="wordCount" content="536">
+<meta itemprop="keywords" content="asm, linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="编译、链接、运行汇编程序"/>
 <meta name="twitter:description" content="学习汇编过程中每次输入as, ld的一堆命令行参数编译、链接程序实在很麻烦。 所以，写个小脚本完成汇编程序的编译、链接及运行。 脚本介绍 脚本内容如"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/asm/"> asm </a>
             
           </div>
-        <span class="more-meta"> 约 534 字 </span>
+        <span class="more-meta"> 约 536 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
       </div>
     </header>
@@ -165,29 +145,20 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#脚本介绍">脚本介绍</a></li>
-<li><a href="#如何使用呢">如何使用呢?</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#脚本介绍">脚本介绍</a></li>
+    <li><a href="#如何使用呢">如何使用呢?</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>学习汇编过程中每次输入as, ld的一堆命令行参数编译、链接程序实在很麻烦。</p>
-
+      <p>学习汇编过程中每次输入as, ld的一堆命令行参数编译、链接程序实在很麻烦。</p>
 <p>所以，写个小脚本完成汇编程序的编译、链接及运行。</p>
-
 <h2 id="脚本介绍">脚本介绍</h2>
-
 <p>脚本内容如下：</p>
-
 <pre><code>#!/bin/bash -e
 
 function usage()
@@ -238,27 +209,19 @@ echo &quot;return value: $?&quot;
 # `set -e` 重新开启命令执行返回值不为零就退出程序
 set -e
 </code></pre>
-
 <p>注：上篇文章已经讲过学习资料是AT&amp;T 32位汇编，而个人电脑是64位系统，所以，指定了 <code>as --32</code> 和 <code>ld -m elf_i386</code>。</p>
-
 <h2 id="如何使用呢">如何使用呢?</h2>
-
 <p>将脚本放入 <code>~/bin/</code> 目录内，并设置可执行权限 <code>chmod +x ~/bin/asm-run.sh</code>，然后将 <code>$HOME/bin</code> 加入 <code>$PATH</code> 环境变量。</p>
-
 <pre><code>$ echo 'export PATH=$HOME/bin:$PATH' &gt;&gt; ~/.bashrc &amp;&amp; source ~/.bashrc
 </code></pre>
-
 <p>这样就可以在任意目录中直接通过 <code>asm-run.sh</code> 运行脚本了。</p>
-
 <p>假如现在有<code>myhello.s</code>的汇编源码，通过该脚本编译运行的方法如下：</p>
-
 <pre><code>$ asm-run.sh myhello.s
 as --32 -o ./myhello.o myhello.s
 ld -m elf_i386 -e main -lc -dynamic-linker /lib32/ld-linux.so.2 -o ./myhello ./myhello.o
 run ./myhello ...
 Hello World
 </code></pre>
-
 <p>终于不用一遍一遍的输入指令编译、链接、运行汇编程序了。</p>
 
     </div>
@@ -370,7 +333,7 @@ Hello World
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -391,12 +354,16 @@ Hello World
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

@@ -29,7 +29,7 @@ $ git checkout . $ git clean -fd  Find &amp;lt;commit&amp;gt; which you want to 
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/configuration/git-tips/" />
@@ -53,39 +53,19 @@ Check git repository status:
 $ git status  Make git repository clean:
 $ git checkout . $ git clean -fd  Find &lt;commit&gt; which you want to revert:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/configuration/git-tips/" />
-
-
-
-<meta property="article:published_time" content="2013-08-09T00:00:00&#43;08:00"/>
-
-<meta property="article:modified_time" content="2013-08-09T00:00:00&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/configuration/git-tips/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2013-08-09T00:00:00+08:00" />
+<meta property="article:modified_time" content="2013-08-09T00:00:00+08:00" />
 
 <meta itemprop="name" content="Git Tips">
 <meta itemprop="description" content="Git Tips Revert a git patch Chengdu Gerrit has “Revert Change” button, so you can revert patch very easy. But, Shanghai Gerrit version is too old, it doesn’t support “Revert Change” on Gerrit, for this case, you can try the below git commands.
 Check git repository status:
 $ git status  Make git repository clean:
-$ git checkout . $ git clean -fd  Find &lt;commit&gt; which you want to revert:">
-
-
-<meta itemprop="datePublished" content="2013-08-09T00:00:00&#43;08:00" />
-<meta itemprop="dateModified" content="2013-08-09T00:00:00&#43;08:00" />
+$ git checkout . $ git clean -fd  Find &lt;commit&gt; which you want to revert:"><meta itemprop="datePublished" content="2013-08-09T00:00:00+08:00" />
+<meta itemprop="dateModified" content="2013-08-09T00:00:00+08:00" />
 <meta itemprop="wordCount" content="400">
-
-
-
-<meta itemprop="keywords" content="GIT,Linux," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Git Tips"/>
+<meta itemprop="keywords" content="GIT,Linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git Tips"/>
 <meta name="twitter:description" content="Git Tips Revert a git patch Chengdu Gerrit has “Revert Change” button, so you can revert patch very easy. But, Shanghai Gerrit version is too old, it doesn’t support “Revert Change” on Gerrit, for this case, you can try the below git commands.
 Check git repository status:
 $ git status  Make git repository clean:
@@ -173,61 +153,40 @@ $ git checkout . $ git clean -fd  Find &lt;commit&gt; which you want to revert:"
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#git-tips">Git Tips</a>
-<ul>
-<li><a href="#revert-a-git-patch">Revert a git patch</a></li>
-<li><a href="#how-to-tell-which-commit-a-tag-points-to">How to tell which commit a tag points to</a></li>
-<li><a href="#switch-current-branch-in-git-bare-repository">Switch current branch in git bare repository</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#revert-a-git-patch">Revert a git patch</a></li>
+    <li><a href="#how-to-tell-which-commit-a-tag-points-to">How to tell which commit a tag points to</a></li>
+    <li><a href="#switch-current-branch-in-git-bare-repository">Switch current branch in git bare repository</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h1 id="git-tips">Git Tips</h1>
-
+      <h1 id="git-tips">Git Tips</h1>
 <h2 id="revert-a-git-patch">Revert a git patch</h2>
-
 <p>Chengdu Gerrit has “Revert Change” button, so you can revert patch very easy.
 But, Shanghai Gerrit version is too old, it doesn’t support “Revert Change” on Gerrit, for this case, you can try the below git commands.</p>
-
 <p>Check git repository status:</p>
-
 <pre><code>$ git status
 </code></pre>
-
 <p>Make git repository clean:</p>
-
 <pre><code>$ git checkout .
 $ git clean -fd
 </code></pre>
-
 <p>Find &lt;commit&gt; which you want to revert:</p>
-
 <pre><code>$ git log
 </code></pre>
-
 <p>Revert patch:</p>
-
 <p>For plain text files:</p>
-
 <pre><code>$ git show &amp;lt;commit&amp;gt; | git apply -R
 </code></pre>
-
 <p>For binary files:</p>
-
 <pre><code>$ git show --binary &amp;lt;commit&amp;gt; | git apply -R
 </code></pre>
-
 <h2 id="how-to-tell-which-commit-a-tag-points-to">How to tell which commit a tag points to</h2>
-
 <p>Summary: Since there are about 4 almost equally acceptable yet different answers I will summarise all the different ways to skin a tag.</p>
-
 <ul>
 <li>git rev-list $TAG | head -n 1 (thanks mipadi). git rev-list outputs the commits that lead up to the $TAG similar to git log but only showing the SHA1 of the commit. For non-unix heads like myself head -n 1 will show the first line of the output, which is the tip of the tag.</li>
 <li>git show-ref &ndash;tags (thanks Charles Bailey) will show all tags (local and fetched from remote) and their SHA1s.</li>
@@ -236,30 +195,20 @@ $ git clean -fd
 <li>git rev-parse &ndash;verify $TAG^{commit} (thanks Jakub Narębski) will show a SHA1 of both annotated and unannotated tags. On Windows use git rev-parse &ndash;verify %TAG%^^^^{commit} (four hats).</li>
 <li><code>cat .git/refs/tags/*</code> or <code>cat .git/packed-refs</code> (thanks The MYYN) depending on whether or not the tag is local or fetched from remote.</li>
 </ul>
-
 <p>reference: <a href="http://stackoverflow.com/questions/1862423/git-how-to-tell-which-commit-a-tag-points-to">http://stackoverflow.com/questions/1862423/git-how-to-tell-which-commit-a-tag-points-to</a></p>
-
 <h2 id="switch-current-branch-in-git-bare-repository">Switch current branch in git bare repository</h2>
-
 <p>I actually want to remove a branch in the bare repository i am working with, but this task hits a dead end because I cannot switch away from the master repository without a &lsquo;work tree&rsquo; which a bare repository does not have.</p>
-
 <p>When I run &ldquo;git branch -d master&rdquo; the output is:</p>
-
 <pre><code>error: Cannot delete the branch 'master' which you are currently on.
 </code></pre>
-
 <p>So I try to switch to another branch called &lsquo;develop&rsquo; by running &ldquo;git checkout develop&rdquo; and the output is:</p>
-
 <pre><code>fatal: This operation must be run in a work tree
 </code></pre>
-
 <p>Solution:</p>
-
 <pre><code>git symbolic-ref HEAD refs/heads/develop
 git branch -d master
 git branch -a # check the current default branch
 </code></pre>
-
 <p>reference: <a href="http://stackoverflow.com/questions/4468322/switch-current-branch-in-git-bare-repository">http://stackoverflow.com/questions/4468322/switch-current-branch-in-git-bare-repository</a></p>
 
     </div>
@@ -314,9 +263,9 @@ git branch -a # check the current default branch
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/configuration/setup-new-jenkins-slave/">
+          <a class="prev" href="/post/configuration/setup-opengrok/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Setup new Jenkins slave</span>
+            <span class="prev-text nav-default">Setup OpenGrok</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
@@ -371,7 +320,7 @@ git branch -a # check the current default branch
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -392,12 +341,16 @@ git branch -a # check the current default branch
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

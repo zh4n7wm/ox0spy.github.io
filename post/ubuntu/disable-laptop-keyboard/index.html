@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/ubuntu/disable-laptop-keyboard/" />
@@ -47,36 +47,16 @@
 <meta property="og:title" content="禁用笔记本键盘" />
 <meta property="og:description" content="记录如何禁用笔记本自带键盘。 因为笔记本自带键盘坏了，Enter 键随机处于被按下的状态，导致无法使用。接入外接键盘后，禁用笔记本自带键盘。 以下" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/ubuntu/disable-laptop-keyboard/" />
-
-
-
-<meta property="article:published_time" content="2019-02-26T09:22:01&#43;08:00"/>
-
-<meta property="article:modified_time" content="2019-02-26T09:22:01&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/ubuntu/disable-laptop-keyboard/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-02-26T09:22:01+08:00" />
+<meta property="article:modified_time" content="2019-02-26T09:22:01+08:00" />
 
 <meta itemprop="name" content="禁用笔记本键盘">
-<meta itemprop="description" content="记录如何禁用笔记本自带键盘。 因为笔记本自带键盘坏了，Enter 键随机处于被按下的状态，导致无法使用。接入外接键盘后，禁用笔记本自带键盘。 以下">
-
-
-<meta itemprop="datePublished" content="2019-02-26T09:22:01&#43;08:00" />
-<meta itemprop="dateModified" content="2019-02-26T09:22:01&#43;08:00" />
-<meta itemprop="wordCount" content="368">
-
-
-
-<meta itemprop="keywords" content="linux,tips," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="禁用笔记本键盘"/>
+<meta itemprop="description" content="记录如何禁用笔记本自带键盘。 因为笔记本自带键盘坏了，Enter 键随机处于被按下的状态，导致无法使用。接入外接键盘后，禁用笔记本自带键盘。 以下"><meta itemprop="datePublished" content="2019-02-26T09:22:01+08:00" />
+<meta itemprop="dateModified" content="2019-02-26T09:22:01+08:00" />
+<meta itemprop="wordCount" content="372">
+<meta itemprop="keywords" content="linux,tips," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="禁用笔记本键盘"/>
 <meta name="twitter:description" content="记录如何禁用笔记本自带键盘。 因为笔记本自带键盘坏了，Enter 键随机处于被按下的状态，导致无法使用。接入外接键盘后，禁用笔记本自带键盘。 以下"/>
 
 <!--[if lte IE 9]>
@@ -153,7 +133,7 @@
               <a href="/categories/linux/"> Linux </a>
             
           </div>
-        <span class="more-meta"> 约 368 字 </span>
+        <span class="more-meta"> 约 372 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -165,82 +145,56 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#禁用笔记本键盘">禁用笔记本键盘</a>
-<ul>
-<li><a href="#查看键盘">查看键盘</a></li>
-<li><a href="#方法一-remove-slave-from-its-current-master-device">方法一：Remove slave from its current master device</a></li>
-<li><a href="#方法二-disable-the-device">方法二： Disable the device</a></li>
-<li><a href="#方法三-disabling-on-boot">方法三：Disabling on Boot</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#禁用笔记本键盘">禁用笔记本键盘</a>
+      <ul>
+        <li><a href="#查看键盘">查看键盘</a></li>
+        <li><a href="#方法一remove-slave-from-its-current-master-device">方法一：Remove slave from its current master device</a></li>
+        <li><a href="#方法二-disable-the-device">方法二： Disable the device</a></li>
+        <li><a href="#方法三disabling-on-boot">方法三：Disabling on Boot</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>记录如何禁用笔记本自带键盘。</p>
-
+      <p>记录如何禁用笔记本自带键盘。</p>
 <p>因为笔记本自带键盘坏了，<code>Enter</code> 键随机处于被按下的状态，导致无法使用。接入外接键盘后，禁用笔记本自带键盘。</p>
-
 <p>以下内容只在 <code>Ubuntu 18.04</code> 上测试过，虽然 <code>Linux</code> 系统差异不大，但不保证其它系统中可用。</p>
-
 <h2 id="禁用笔记本键盘">禁用笔记本键盘</h2>
-
 <p>用 <code>xinput</code> 工具查看、禁用、启用笔记本键盘，如果系统没有提供该工具，可以用包管理工具安装。</p>
-
 <h3 id="查看键盘">查看键盘</h3>
-
 <pre><code>$ xinput list
 </code></pre>
-
-<h3 id="方法一-remove-slave-from-its-current-master-device">方法一：Remove slave from its current master device</h3>
-
+<h3 id="方法一remove-slave-from-its-current-master-device">方法一：Remove slave from its current master device</h3>
 <pre><code>$ sudo xinput float &lt;id&gt;
 </code></pre>
-
-<p>注：<id> 是从 <code>xinput list</code> 输出的需要禁用的键盘 id</p>
-
+<p>注：<!-- raw HTML omitted --> 是从 <code>xinput list</code> 输出的需要禁用的键盘 id</p>
 <p>如 <code>AT Translated Set 2 keyboard id=15 [slave  keyboard (3)]</code> 则 id 为 15</p>
-
 <h3 id="方法二-disable-the-device">方法二： Disable the device</h3>
-
 <p>禁用：</p>
-
 <pre><code>$ sudo xinput --disable &lt;id&gt;
 
 等同于
 $ sudo xinput --set-prop &lt;id&gt; &quot;Device Enabled&quot; 1
 </code></pre>
-
 <p>再次启用：</p>
-
 <pre><code>$ sudo xinput --enable &lt;id&gt;
 
 等同于
 $ sudo xinput --set-prop &lt;id&gt; &quot;Device Enabled&quot; 0
 </code></pre>
-
-<h3 id="方法三-disabling-on-boot">方法三：Disabling on Boot</h3>
-
+<h3 id="方法三disabling-on-boot">方法三：Disabling on Boot</h3>
 <p>修改 <code>grub</code> 的配置文件，启动时就禁用 <strong>内置键盘</strong>。</p>
-
 <p>修改 <code>/etc/default/grub</code>，将 <code>i8042.nokbd</code> 加入 <code>GRUB_CMDLINE_LINUX_DEFAULT</code>，如下：</p>
-
 <pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash i8042.nokbd&quot;
 </code></pre>
-
 <p>更新 <code>grub</code>：</p>
-
 <pre><code>$ sudo update-grub
 </code></pre>
-
 <p>重启后，内置键盘将被禁用。</p>
 
     </div>
@@ -347,7 +301,7 @@ $ sudo xinput --set-prop &lt;id&gt; &quot;Device Enabled&quot; 0
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -368,12 +322,16 @@ $ sudo xinput --set-prop &lt;id&gt; &quot;Device Enabled&quot; 0
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="crazygit" />
-  <meta name="description" content="近期由于工作需要，需要学习Java Web开发，虽然以前也接触过Java, 不过也就仅限于写个&amp;rdquo;Hello World&amp;rdquo;. 为了尽快掌握Java We" />
+  <meta name="description" content="近期由于工作需要，需要学习Java Web开发，虽然以前也接触过Java, 不过也就仅限于写个&amp;quot;Hello World&amp;quot;. 为了尽快掌握Java Web" />
 
   <meta name="keywords" content="ox0spy, python, flask, django, go, golang, programming, coding, even" />
 
@@ -26,7 +26,7 @@
 <meta name="google-site-verification" content="ClLKCL5AmIdaPZLA6ES3w676yZlC8RUUmKgPMHZkI0E" />
 
 
-<meta name="generator" content="Hugo 0.32-DEV" />
+<meta name="generator" content="Hugo 0.89.0" />
 
 
 <link rel="canonical" href="https://ox0spy.github.io/post/java/get_started_with_java_web/" />
@@ -45,39 +45,19 @@
 <link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
 <meta property="og:title" content="java spring 学习索引" />
-<meta property="og:description" content="近期由于工作需要，需要学习Java Web开发，虽然以前也接触过Java, 不过也就仅限于写个&rdquo;Hello World&rdquo;. 为了尽快掌握Java We" />
+<meta property="og:description" content="近期由于工作需要，需要学习Java Web开发，虽然以前也接触过Java, 不过也就仅限于写个&quot;Hello World&quot;. 为了尽快掌握Java Web" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ox0spy.github.io/post/java/get_started_with_java_web/" />
-
-
-
-<meta property="article:published_time" content="2017-12-15T19:22:00&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-12-15T19:22:00&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://ox0spy.github.io/post/java/get_started_with_java_web/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-12-15T19:22:00+08:00" />
+<meta property="article:modified_time" content="2017-12-15T19:22:00+08:00" />
 
 <meta itemprop="name" content="java spring 学习索引">
-<meta itemprop="description" content="近期由于工作需要，需要学习Java Web开发，虽然以前也接触过Java, 不过也就仅限于写个&rdquo;Hello World&rdquo;. 为了尽快掌握Java We">
-
-
-<meta itemprop="datePublished" content="2017-12-15T19:22:00&#43;08:00" />
-<meta itemprop="dateModified" content="2017-12-15T19:22:00&#43;08:00" />
-<meta itemprop="wordCount" content="794">
-
-
-
-<meta itemprop="keywords" content="java, spring," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="java spring 学习索引"/>
-<meta name="twitter:description" content="近期由于工作需要，需要学习Java Web开发，虽然以前也接触过Java, 不过也就仅限于写个&rdquo;Hello World&rdquo;. 为了尽快掌握Java We"/>
+<meta itemprop="description" content="近期由于工作需要，需要学习Java Web开发，虽然以前也接触过Java, 不过也就仅限于写个&quot;Hello World&quot;. 为了尽快掌握Java Web"><meta itemprop="datePublished" content="2017-12-15T19:22:00+08:00" />
+<meta itemprop="dateModified" content="2017-12-15T19:22:00+08:00" />
+<meta itemprop="wordCount" content="812">
+<meta itemprop="keywords" content="java, spring," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="java spring 学习索引"/>
+<meta name="twitter:description" content="近期由于工作需要，需要学习Java Web开发，虽然以前也接触过Java, 不过也就仅限于写个&quot;Hello World&quot;. 为了尽快掌握Java Web"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -153,7 +133,7 @@
               <a href="/categories/java/"> java </a>
             
           </div>
-        <span class="more-meta"> 约 794 字 </span>
+        <span class="more-meta"> 约 812 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
       </div>
     </header>
@@ -164,43 +144,38 @@
   <h2 class="post-toc-title">文章目录</h2>
   
   <div class="post-toc-content always-active">
-    
+    <nav id="TableOfContents"></nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      <p>近期由于工作需要，需要学习Java Web开发，虽然以前也接触过Java, 不过也就仅限于写个&rdquo;Hello World&rdquo;. 为了尽快掌握Java Web开发，面对网上琳琅满目的学习资料，
+      <p>近期由于工作需要，需要学习Java Web开发，虽然以前也接触过Java, 不过也就仅限于写个&quot;Hello World&quot;. 为了尽快掌握Java Web开发，面对网上琳琅满目的学习资料，
 必须梳理一条清晰的学习路线，不然就会陷入无尽的文档流中了。结合本人的学习情况，整理出如下学习过程。</p>
-
 <ol>
-<li><p>Java基础语法</p>
-
-<p>千里之行，始于足下，如果连Java语法都搞不清楚，后面的也就无从谈起了，这个过程主要是了解Java的基本语法，和一些常用的API(由于时间关系，常用API我是选择跳过了，一般要用到了，再临时查询, 不过也要大概了解一下，至少做到查询的时候知道要查什么),学习资料我选择的是林信良写的&lt;&lt;Java学习笔记&gt;&gt;.</p></li>
-
-<li><p>Java Web基础</p>
-
+<li>
+<p>Java基础语法</p>
+<p>千里之行，始于足下，如果连Java语法都搞不清楚，后面的也就无从谈起了，这个过程主要是了解Java的基本语法，和一些常用的API(由于时间关系，常用API我是选择跳过了，一般要用到了，再临时查询, 不过也要大概了解一下，至少做到查询的时候知道要查什么),学习资料我选择的是林信良写的&lt;&lt;Java学习笔记&gt;&gt;.</p>
+</li>
+<li>
+<p>Java Web基础</p>
 <p>主要了解一些Web开发的基本概念，好歹知道什么是Servlet吧，这个阶段我选择看的是林信良写的&lt;&lt;JSP&amp;Servlet学习笔记&gt;&gt;。(不过由于实际关系，也是匆匆瞄了几章，后面有时间再慢慢回来看，
-毕竟无论什么Web开发框架，都是建立在这些基础上搭建起来的, 以后要研究框架深入一点, 都是无法摆脱这些基础的)。</p></li>
-
-<li><p>Spring框架学习</p>
-
+毕竟无论什么Web开发框架，都是建立在这些基础上搭建起来的, 以后要研究框架深入一点, 都是无法摆脱这些基础的)。</p>
+</li>
+<li>
+<p>Spring框架学习</p>
 <p>首先不得不吐槽一下, Spring真的太庞大了，打开官网，看到一大堆的文档，不知如何下手啊, 经过一番摸索，好在找到了一些思路.</p>
-
 <ol>
 <li><a href="http://spring.io/guides/gs/maven/">使用Maven创建Java项目</a></li>
 <li><a href="http://spring.io/guides/gs/gradle/">使用Gradle创建Java项目</a></li>
 <li><a href="http://projects.spring.io/spring-framework/">Spring Framework入门</a></li>
 </ol>
-
 <p>首先，上面的Maven和Gradle是Java的依赖管理工具，先暂时简单了解一下就行，暂时不做深入研究，要明确我们的目录是学习Web开发，而不是学习工具的使用，这些知识
 后面慢慢补上.(多说一句，貌似Gradle已经慢慢要取代Maven).</p>
-
-<p>Spring 看样子是分了很多项目的，Web开发主要要用到Framework, 所以就先学习Framework.</p></li>
+<p>Spring 看样子是分了很多项目的，Web开发主要要用到Framework, 所以就先学习Framework.</p>
+</li>
 </ol>
-
 <p>暂时就整理这么多吧，后面学习了之后再继续整理。</p>
-
 <p>未完，待续&hellip;&hellip;</p>
 
     </div>
@@ -312,7 +287,7 @@
     &copy; 
     
       2017 - 
-    2019
+    2021
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -333,12 +308,16 @@
 <script type="text/javascript" src="/dist/even.min.js?v=2.7.0"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-42986901-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42986901-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
